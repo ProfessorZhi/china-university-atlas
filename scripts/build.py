@@ -6,6 +6,7 @@ def load_data():
     data=json.loads((ROOT/'data/metadata.json').read_text(encoding='utf-8'))
     for key in ['universities','campuses']:
         data[key]=[json.loads(line) for line in (ROOT/'data'/f'{key}.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()]
+    data['districtAssociations']=[json.loads(line) for line in (ROOT/'data/district-associations.jsonl').read_text(encoding='utf-8').splitlines() if line.strip()]
     for key in ['regions','sources']:data[key]=json.loads((ROOT/'data'/f'{key}.json').read_text(encoding='utf-8'))
     return data
 

@@ -4,16 +4,22 @@ import gzip,json,re,hashlib,sys
 from build import ROOT,load_data,build
 
 def validate():
-    d=load_data();u=d['universities'];c=d['campuses'];st=d['stats'];errors=[]
+    d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);st=d['stats'];errors=[]
     check=lambda ok,msg:errors.append(msg) if not ok else None
     ids={r['id'] for r in u};check(len(ids)==len(u),'duplicate university ids');check(len({r['id'] for r in c})==len(c),'duplicate campus ids')
     regions={(n['p'],n['c'],n['d']) for n in d['regions'].values()};positioned=0
     for r in c:
-        check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','profile','historical'],'missing provenance '+r['id'])
+        check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','government','corroborated','profile','historical'],'missing provenance '+r['id'])
         check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid source URL '+r['id'])
         if r.get('d'):check((r['p'],r['c'],r['d']) in regions,'unmapped county '+r['id'])
         if 'lng' in r or 'lat' in r:
             positioned+=1;check(isinstance(r.get('lng'),(int,float)) and isinstance(r.get('lat'),(int,float)) and 72<r['lng']<136 and 3<r['lat']<55,'invalid coordinates '+r['id'])
+    aids=set()
+    for r in a:
+        check(r['id'] not in aids,'duplicate association '+r['id']);aids.add(r['id']);check(r['uid'] in ids,'orphan association '+r['id'])
+        check(r.get('sourceKind') in ['profile-county','government-district'],'invalid association provenance '+r['id']);check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid association source '+r['id'])
+        check((r['p'],r['c'],r['d']) in regions,'unmapped association '+r['id']);check(not any(k in r for k in ['lng','lat','address']),'association must not claim campus precision '+r['id'])
+    check(st.get('districtAssociationRecords')==len(a),'wrong district association count')
     check(st['schoolEntities']==len(u),'wrong entity count');check(st['campusRecords']==len(c),'wrong campus count');check(st['positionedCampuses']==positioned,'wrong point count')
     check(st['officialLocationRecords']==sum(bool(r.get('verified')) for r in c),'wrong official count')
     check(st['ordinarySchools']==sum(r['level']!='成人' for r in u),'wrong ordinary school count')
@@ -28,6 +34,6 @@ def validate():
         if f.suffix in ['.gz','.png','.zip']:continue
         text=f.read_text(encoding='utf-8-sig',errors='replace');scanned+=1
         if f.name!='validate.py':check(not forbidden.search(text),'private path or credential pattern in '+str(f.relative_to(ROOT)))
-    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
+    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
     print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':sys.exit(0 if validate()['pass'] else 1)
