@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "format": "UTF-8; JSONL: one entity per line",
+  "universityPrimaryKey": "id",
+  "campusPrimaryKey": "id",
+  "campusForeignKey": "uid -> universities.id",
+  "geography": "p/c/d = province/city/district; empty d = unresolved county, NOT city centre",
+  "sourceKinds": [
+    "official",
+    "profile",
+    "historical"
+  ],
+  "coordinateSystem": "GCJ-02 for existing POI coordinates",
+  "geometryEncoding": "gzip JSON; rows [adcode,name,center,level,childrenNum,encodedRings]; delta polyline integers / 1000"
+}

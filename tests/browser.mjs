@@ -1,0 +1,26 @@
+// Dependency-free browser smoke test using Chrome DevTools Protocol; Node.js 22+.
+import fs from 'node:fs';import path from 'node:path';import os from 'node:os';import {spawn,execFileSync} from 'node:child_process';import {pathToFileURL,fileURLToPath} from 'node:url';
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),profile=fs.mkdtempSync(path.join(os.tmpdir(),'university-atlas-test-'));
+const errors=[],network=[],wait=ms=>new Promise(r=>setTimeout(r,ms));let proc,ws;
+async function main(){
+ const chrome=process.env.CHROME_BIN||execFileSync('which',['google-chrome'],{encoding:'utf8'}).trim();
+ proc=spawn(chrome,['--headless','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--user-data-dir='+profile,'about:blank'],{stdio:'ignore'});
+ const portFile=path.join(profile,'DevToolsActivePort');for(let i=0;i<300&&!fs.existsSync(portFile);i++)await wait(100);if(!fs.existsSync(portFile))throw Error('Chrome DevTools startup failed');
+ const port=fs.readFileSync(portFile,'utf8').split('\n')[0],tabs=await(await fetch('http://127.0.0.1:'+port+'/json/list')).json(),tab=tabs.find(t=>t.type==='page');
+ ws=new WebSocket(tab.webSocketDebuggerUrl);await new Promise((resolve,reject)=>{ws.onopen=resolve;ws.onerror=reject});let seq=0;const pending=new Map();
+ ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);if(p){pending.delete(m.id);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result)}}else if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);else if(m.method==='Network.requestWillBeSent'&&/^https?:/.test(m.params.request.url))network.push(m.params.request.url);};
+ const send=(method,params={})=>new Promise((resolve,reject)=>{const id=++seq;pending.set(id,{resolve,reject});ws.send(JSON.stringify({id,method,params}));});
+ const evaluate=async expression=>{const r=await send('Runtime.evaluate',{expression,awaitPromise:true,returnByValue:true});if(r.exceptionDetails)throw Error(JSON.stringify(r.exceptionDetails));return r.result.value;};
+ await send('Runtime.enable');await send('Page.enable');await send('Network.enable');await send('Network.emulateNetworkConditions',{offline:true,latency:0,downloadThroughput:0,uploadThroughput:0});
+ await send('Emulation.setDeviceMetricsOverride',{width:1440,height:1000,deviceScaleFactor:1,mobile:false});
+ await send('Page.navigate',{url:pathToFileURL(path.join(ROOT,'dist/china-university-atlas.html')).href});
+ let ready=false;for(let i=0;i<300;i++){await wait(100);if(await evaluate('!!window.__atlas')){ready=true;break;}}
+ if(!ready)throw Error('Atlas did not boot');
+ const result=await evaluate('__atlas.selfTest()');result.browserNetworkOffline=true;result.httpRequests=network;result.runtimeErrors=errors;result.pass=result.pass&&!network.length&&!errors.length;result.artifact='dist/china-university-atlas.html';
+ fs.writeFileSync(path.join(ROOT,'reports/offline-browser-test.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+ for(const [name,id,width,height]of [['national-desktop.png','100000',1440,1000],['hangzhou-desktop.png','330100',1440,1000],['national-mobile.png','100000',390,844]]){
+  await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});await evaluate(`__atlas.navigateID('${id}')`);await wait(400);const shot=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(ROOT,'docs',name),Buffer.from(shot.data,'base64'));
+ }
+ await send('Browser.close').catch(()=>{});ws.close();if(!result.pass)throw Error('Offline test failed');
+}
+main().catch(e=>{console.error(e.message);process.exitCode=1;}).finally(()=>{if(ws)ws.close();if(proc)proc.kill();setTimeout(()=>fs.rmSync(profile,{recursive:true,force:true}),500);});

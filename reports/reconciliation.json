@@ -1,0 +1,91 @@
+{
+  "merged": [
+    {
+      "id": "PROFILE114_4",
+      "school": "浙江大学",
+      "campus": "华家池校区",
+      "retainedId": "POI914",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "PROFILE52_1",
+      "school": "北京师范大学",
+      "campus": "珠海校区",
+      "retainedId": "POI1943",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "PROFILE104_3",
+      "school": "中山大学",
+      "campus": "珠海校区",
+      "retainedId": "POI1944",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "PROFILE34_2",
+      "school": "哈尔滨工业大学",
+      "campus": "深圳校区",
+      "retainedId": "OFFICIAL2806",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "POI941",
+      "school": "中国美术学院",
+      "campus": "象山中心校区",
+      "retainedId": "PROFILE259_1",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "POI988",
+      "school": "浙江大学",
+      "campus": "国际校区(海宁",
+      "retainedId": "PROFILE114_7",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "PROFILE259_2",
+      "school": "中国美术学院",
+      "campus": "张江校区",
+      "retainedId": "OFF5_689fe3ce8635",
+      "reason": "官网关联去重或校区区县补全"
+    },
+    {
+      "id": "PROFILE246_0",
+      "school": "浙江科技大学",
+      "campus": "小和山校区",
+      "retainedId": "OFF5_fb5a6e003517",
+      "reason": "官网关联去重或校区区县补全"
+    }
+  ],
+  "quarantined": [
+    {
+      "id": "PROFILE114_1",
+      "uid": "4133010335",
+      "u": "浙江大学",
+      "p": "浙江省",
+      "c": "宁波市",
+      "d": "",
+      "campus": "宁波校区",
+      "address": "浙江省宁波市钱湖南路1号",
+      "level": "本科",
+      "rank": 2,
+      "rankLabel": "3",
+      "tags": [
+        "985",
+        "211",
+        "双一流"
+      ],
+      "sourceName": "浙江大学",
+      "source": "教育在线院校档案",
+      "sourceKind": "profile",
+      "sourceUrl": "https://www.gaokao.cn/school/114",
+      "dataUrl": "https://static-data.gaokao.cn/www/2.0/school/114/info.json",
+      "verified": false,
+      "retrievedAt": "2026-09-08",
+      "locationMethod": "仅定位至城市，县区待核",
+      "status": "本轮读取第三方档案 · 仅定位至城市，县区待核 · 办学状态仍需官网复核",
+      "reason": "第三方列为宁波校区，但2026学校官网列举的七校区不含此项；不据此改变宁波最佳大学",
+      "verificationSource": "https://zjui.intl.zju.edu.cn/join-info/3342"
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+[
+  {
+    "u": "浙江大学",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "西湖区",
+    "campus": "紫金港校区",
+    "address": "杭州市西湖区余杭塘路866号",
+    "sourceUrl": "https://www.zju.edu.cn/550/listm.htm"
+  },
+  {
+    "u": "浙江大学",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "西湖区",
+    "campus": "玉泉校区",
+    "address": "杭州市西湖区浙大路38号",
+    "sourceUrl": "https://www.zju.edu.cn/550/listm.htm"
+  },
+  {
+    "u": "浙江大学",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "西湖区",
+    "campus": "西溪校区",
+    "address": "杭州市西湖区天目山路148号",
+    "sourceUrl": "https://www.zju.edu.cn/550/listm.htm"
+  },
+  {
+    "u": "浙江大学",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "西湖区",
+    "campus": "之江校区",
+    "address": "杭州市西湖区之江路51号",
+    "sourceUrl": "https://www.zju.edu.cn/550/listm.htm"
+  },
+  {
+    "u": "浙江大学",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "上城区",
+    "campus": "华家池校区",
+    "address": "杭州市上城区凯旋路268号",
+    "sourceUrl": "https://itm.zju.edu.cn/index.php/contactus.html"
+  },
+  {
+    "u": "浙江大学",
+    "p": "浙江省",
+    "c": "嘉兴市",
+    "d": "海宁市",
+    "campus": "海宁国际校区",
+    "address": "浙江省海宁市海州东路718号",
+    "sourceUrl": "https://zje.zju.edu.cn/lxwm/list.htm"
+  },
+  {
+    "u": "南京大学",
+    "p": "江苏省",
+    "c": "南京市",
+    "d": "栖霞区",
+    "campus": "仙林校区",
+    "address": "南京市栖霞区仙林大道163号",
+    "sourceUrl": "https://bwc.nju.edu.cn/96/36/c64526a824886/page.htm"
+  },
+  {
+    "u": "南京大学",
+    "p": "江苏省",
+    "c": "南京市",
+    "d": "鼓楼区",
+    "campus": "鼓楼校区",
+    "address": "南京市鼓楼区汉口路9号",
+    "sourceUrl": "https://bwc.nju.edu.cn/96/36/c64526a824886/page.htm"
+  },
+  {
+    "u": "南京大学",
+    "p": "江苏省",
+    "c": "南京市",
+    "d": "浦口区",
+    "campus": "浦口校区",
+    "address": "南京市浦口区学府路8号",
+    "sourceUrl": "https://bwc.nju.edu.cn/96/36/c64526a824886/page.htm"
+  },
+  {
+    "u": "南京大学",
+    "p": "江苏省",
+    "c": "苏州市",
+    "d": "虎丘区",
+    "campus": "苏州校区",
+    "address": "江苏省苏州市虎丘区太湖大道1520号",
+    "sourceUrl": "https://is.nju.edu.cn/13/88/c57166a725896/page.htm"
+  },
+  {
+    "u": "中山大学",
+    "p": "广东省",
+    "c": "广州市",
+    "d": "海珠区",
+    "campus": "广州校区南校园",
+    "address": "广州市海珠区新港西路135号",
+    "sourceUrl": "https://www.sysu.edu.cn/xxg/zdxq.htm"
+  },
+  {
+    "u": "中山大学",
+    "p": "广东省",
+    "c": "广州市",
+    "d": "越秀区",
+    "campus": "广州校区北校园",
+    "address": "广州市越秀区中山二路74号",
+    "sourceUrl": "https://www.sysu.edu.cn/xxg/zdxq.htm"
+  },
+  {
+    "u": "中山大学",
+    "p": "广东省",
+    "c": "广州市",
+    "d": "番禺区",
+    "campus": "广州校区东校园",
+    "address": "广州市番禺区大学城外环东路132号",
+    "sourceUrl": "https://www.sysu.edu.cn/xxg/zdxq.htm"
+  },
+  {
+    "u": "中山大学",
+    "p": "广东省",
+    "c": "珠海市",
+    "d": "香洲区",
+    "campus": "珠海校区",
+    "address": "珠海市香洲区唐家湾",
+    "sourceUrl": "https://www.sysu.edu.cn/xxg/zdxq.htm"
+  },
+  {
+    "u": "中山大学",
+    "p": "广东省",
+    "c": "深圳市",
+    "d": "光明区",
+    "campus": "深圳校区",
+    "address": "深圳市光明区公常路66号",
+    "sourceUrl": "https://www.sysu.edu.cn/xxg/zdxq.htm"
+  },
+  {
+    "u": "暨南大学",
+    "p": "广东省",
+    "c": "广州市",
+    "d": "天河区",
+    "campus": "石牌校区（校本部）",
+    "address": "广州市天河区黄埔大道西601号",
+    "sourceUrl": "https://jnu.edu.cn/main.htm"
+  },
+  {
+    "u": "暨南大学",
+    "p": "广东省",
+    "c": "广州市",
+    "d": "番禺区",
+    "campus": "番禺校区",
+    "address": "广州市番禺区兴业大道东855号",
+    "sourceUrl": "https://jnu.edu.cn/main.htm"
+  },
+  {
+    "u": "暨南大学",
+    "p": "广东省",
+    "c": "珠海市",
+    "d": "香洲区",
+    "campus": "珠海校区",
+    "address": "珠海市香洲区前山路206号",
+    "sourceUrl": "https://jnu.edu.cn/main.htm"
+  },
+  {
+    "u": "暨南大学",
+    "p": "广东省",
+    "c": "广州市",
+    "d": "天河区",
+    "campus": "广园东校区",
+    "address": "广州市天河区瘦狗岭路377号",
+    "sourceUrl": "https://jnu.edu.cn/main.htm"
+  },
+  {
+    "u": "暨南大学",
+    "p": "广东省",
+    "c": "深圳市",
+    "d": "南山区",
+    "campus": "深圳校区",
+    "address": "深圳市南山区侨城东街6号",
+    "sourceUrl": "https://jnu.edu.cn/main.htm"
+  },
+  {
+    "u": "山东大学",
+    "p": "山东省",
+    "c": "济南市",
+    "d": "历城区",
+    "campus": "中心校区",
+    "address": "济南市历城区山大南路27号",
+    "sourceUrl": "https://www.mpa.sdu.edu.cn/zxgk/lxxx.htm"
+  },
+  {
+    "u": "山东大学",
+    "p": "山东省",
+    "c": "青岛市",
+    "d": "即墨区",
+    "campus": "青岛校区",
+    "address": "青岛市即墨区鳌山卫街道滨海路72号",
+    "sourceUrl": "https://www.mpa.sdu.edu.cn/zxgk/lxxx.htm"
+  },
+  {
+    "u": "山东大学",
+    "p": "山东省",
+    "c": "威海市",
+    "d": "环翠区",
+    "campus": "威海校区",
+    "address": "威海市环翠区文化西路180号",
+    "sourceUrl": "https://www.mpa.sdu.edu.cn/zxgk/lxxx.htm"
+  },
+  {
+    "u": "北京师范大学",
+    "p": "广东省",
+    "c": "珠海市",
+    "d": "香洲区",
+    "campus": "珠海校区",
+    "address": "珠海市香洲区唐家湾金凤路18号",
+    "sourceUrl": "https://www.bnuzh.edu.cn/"
+  },
+  {
+    "u": "中国人民大学",
+    "p": "北京市",
+    "c": "北京市",
+    "d": "海淀区",
+    "campus": "中关村校区",
+    "address": "北京市海淀区中关村大街59号",
+    "sourceUrl": "https://www.ruc.edu.cn/2066325130557194242.html"
+  },
+  {
+    "u": "中国人民大学",
+    "p": "北京市",
+    "c": "北京市",
+    "d": "通州区",
+    "campus": "通州校区",
+    "address": "北京市通州区运河东大街37号",
+    "sourceUrl": "https://www.ruc.edu.cn/2066325130557194242.html"
+  },
+  {
+    "u": "中国人民大学",
+    "p": "北京市",
+    "c": "北京市",
+    "d": "东城区",
+    "campus": "张自忠路校区",
+    "address": "北京市东城区张自忠路3号",
+    "sourceUrl": "https://www.ruc.edu.cn/2066325130557194242.html"
+  },
+  {
+    "u": "中国人民大学",
+    "p": "江苏省",
+    "c": "苏州市",
+    "d": "",
+    "campus": "苏州校区",
+    "address": "江苏省苏州市工业园区仁爱路158号",
+    "sourceUrl": "https://www.ruc.edu.cn/2066325130557194242.html",
+    "notes": "官网地址为功能区苏州工业园区；本轮不强行归入其他县区。"
+  },
+  {
+    "u": "哈尔滨工程大学",
+    "p": "黑龙江省",
+    "c": "哈尔滨市",
+    "d": "南岗区",
+    "campus": "校本部",
+    "address": "黑龙江省哈尔滨市南岗区南通大街145号",
+    "sourceUrl": "https://www.hrbeu.edu.cn/"
+  },
+  {
+    "u": "中国地质大学（武汉）",
+    "p": "湖北省",
+    "c": "武汉市",
+    "d": "洪山区",
+    "campus": "南望山校区",
+    "address": "湖北省武汉市洪山区鲁磨路388号",
+    "sourceUrl": "https://www.cug.edu.cn/xxgk/lxwm.htm"
+  },
+  {
+    "u": "中国地质大学（武汉）",
+    "p": "湖北省",
+    "c": "武汉市",
+    "d": "",
+    "campus": "未来城校区",
+    "address": "湖北省武汉市东湖新技术开发区锦程街68号",
+    "sourceUrl": "https://www.cug.edu.cn/xxgk/lxwm.htm",
+    "notes": "官网列东湖新技术开发区功能区地址；正式县区暂不强行推断。"
+  },
+  {
+    "u": "北京信息科技大学",
+    "p": "北京市",
+    "c": "北京市",
+    "d": "昌平区",
+    "campus": "沙河校区",
+    "address": "北京市昌平区太行路55号",
+    "sourceUrl": "https://zhaosheng.bistu.edu.cn/zczx/b9ba0b33c6cf450f8b42b6c38ecb7446.htm"
+  },
+  {
+    "u": "北京信息科技大学",
+    "p": "河北省",
+    "c": "张家口市",
+    "d": "怀来县",
+    "campus": "张家口校区",
+    "address": "河北省张家口市怀来县",
+    "sourceUrl": "https://zhaosheng.bistu.edu.cn/zczx/b9ba0b33c6cf450f8b42b6c38ecb7446.htm",
+    "notes": "2026本科招生章程明确在怀来县设校区；本记录未补造详细门牌或坐标。"
+  },
+  {
+    "u": "中国青年政治学院",
+    "p": "北京市",
+    "c": "北京市",
+    "d": "海淀区",
+    "campus": "校本部",
+    "address": "北京市海淀区西三环北路25号",
+    "sourceUrl": "https://www.cyu.edu.cn/",
+    "notes": "官网地址核对；不能据机构本科分类推定其当前普通本科招生。"
+  },
+  {
+    "u": "中国美术学院",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "西湖区",
+    "campus": "象山校区",
+    "address": "杭州市西湖区转塘镇象山352号",
+    "sourceUrl": "https://www.caa.edu.cn/xy/lxwm1/xsxq.htm"
+  },
+  {
+    "u": "中国美术学院",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "余杭区",
+    "campus": "良渚校区",
+    "address": "杭州市余杭区良渚街道美学街321号",
+    "sourceUrl": "https://zb.caa.edu.cn/info/1021/6151.htm",
+    "addressAliases": [
+      "杭州市余杭区古墩路2849号"
+    ],
+    "notes": "来源注明美学街321号原为古墩路2849号。"
+  },
+  {
+    "u": "中国美术学院",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "上城区",
+    "campus": "南山校区",
+    "address": "浙江省杭州市上城区南山路218号",
+    "sourceUrl": "https://grs.caa.edu.cn/info/1055/2135.htm"
+  },
+  {
+    "u": "中国美术学院",
+    "p": "上海市",
+    "c": "上海市",
+    "d": "浦东新区",
+    "campus": "张江校区",
+    "address": "上海市浦东新区张江高科技园区泾牛路249号",
+    "sourceUrl": "https://www.caa.edu.cn/xy/lxwm1/zjxq.htm",
+    "notes": "官网校区联系资料核对；并未逐年核对招生专业及教学使用情况。"
+  },
+  {
+    "u": "浙江科技大学",
+    "p": "浙江省",
+    "c": "杭州市",
+    "d": "西湖区",
+    "campus": "小和山校区",
+    "address": "杭州市西湖区留和路318号",
+    "sourceUrl": "https://www.zust.edu.cn/fw/jtzx.htm"
+  },
+  {
+    "u": "浙江科技大学",
+    "p": "浙江省",
+    "c": "湖州市",
+    "d": "安吉县",
+    "campus": "安吉校区",
+    "address": "湖州市安吉县孝源街道中德路1号",
+    "sourceUrl": "https://www.zust.edu.cn/fw/jtzx.htm"
+  }
+]

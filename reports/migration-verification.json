@@ -1,0 +1,52 @@
+{
+  "v4/moe.csv": {
+    "bytes": 258952,
+    "sha256": "5160264ffb98090209f8f277756f5c4691c762a9aae6e7b42d0d07b0ed132f7f"
+  },
+  "v4/adult.csv": {
+    "bytes": 16226,
+    "sha256": "a22cc67f9a77dbb1756be25ee5e752fdea0c3d1a43397cbfc85c5cf228a72a3e"
+  },
+  "v4/rank.csv": {
+    "bytes": 604108,
+    "sha256": "8805e351c723d9a82c888a367ea3d87bce8f01a91e72542e6a7f3c5db0a0f53d"
+  },
+  "v4/poi.json": {
+    "bytes": 1752894,
+    "sha256": "6f8e241c2fb6f799308b1541d88f22b9c6904dca16666ab74836bdf49e563913"
+  },
+  "v4/poi_schools.json": {
+    "bytes": 6056707,
+    "sha256": "714a36d3d5d201b067cb08d0834a0411f124af83e43e2efdd83fde2e14fa5c50"
+  },
+  "v4/geo_compact.json": {
+    "bytes": 2241196,
+    "sha256": "74d4d64d080f84dbef0996e4070d2b314a0fb69a768bb5bdc1647f1973194610"
+  },
+  "v5/school_data_v5.json": {
+    "bytes": 6793713,
+    "sha256": "37b877ad4b26b520da4376f81f73774731a15d00e57fc2a586fb5346a8995292"
+  },
+  "v5/eol_names.json": {
+    "bytes": 629118,
+    "sha256": "6b20ed90bb084d6c1331a414d6f7ae17846827a6c7f5c8b24c5d58d42ae97b78"
+  },
+  "v5/export.html": {
+    "bytes": 8805370,
+    "sha256": "8e303497aac5145f4508a2404701820927208bb6021fed7eedc4d774113c6c4a"
+  },
+  "semanticAtlasSHA256": "22297c19ef6f2c145009f6f44704386e9f8c7efedd8e38bafac166ca18222128",
+  "migrationDate": "2026-09-08",
+  "method": "Project code and overrides copied from Windows through authorized file tools; five public source files re-fetched and SHA256-matched; V5 atlas reconstructed and canonical JSON SHA256 verified against Windows; boundary file SHA256 matched.",
+  "excluded": [
+    "browser profiles",
+    "credentials",
+    "temporary transfer files",
+    "personal absolute paths",
+    "raw third-party profile descriptions"
+  ],
+  "dataMatchesWindowsV5": true,
+  "boundaryMatchesWindowsV5": true,
+  "htmlIsRebuilt": true,
+  "rebuildFix": "Deterministic geographic name matching: prioritize address occurrence, preventing Meishan substring from matching Emeishan."
+}

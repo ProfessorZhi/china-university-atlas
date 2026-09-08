@@ -1,0 +1,37 @@
+[
+  {
+    "name": "教育部全国高等学校名单（2026-06-17）",
+    "url": "https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/A03/202606/t20260618_1441074.html",
+    "note": "普通高校2952所、成人高校244所；本文件读取开源项目转录CSV并保留全部条目。"
+  },
+  {
+    "name": "名录与软科字段CSV镜像",
+    "url": "https://github.com/theo-the-menace/China-World-University-Index",
+    "note": "排名保留主榜/分类榜原标签；院校库顺序仅供候选排序，不声称为统一全国名次。"
+  },
+  {
+    "name": "全国学校/大学位置POI",
+    "url": "https://github.com/pg7go/The-Location-Data-of-Schools-in-China",
+    "note": "原采集时间未逐条注明；匹配至现行名录不代表校区仍在办学。过滤中小学、医院、培训、函授、研究院及未匹配实体。"
+  },
+  {
+    "name": "DataV.GeoAtlas",
+    "url": "https://datav.aliyun.com/portal/school/atlas/area_selector",
+    "note": "363份可获得的省市县边界已内嵌；采用源行政区划快照，不是2026实时测绘图。台湾仅省级轮廓；少数不设县区城市保留本级真实轮廓。"
+  },
+  {
+    "name": "更名关联依据（教育部批复）",
+    "url": "https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431461.html",
+    "note": "湖州师范学院→湖州师范大学；绍兴文理学院→绍兴大学（1431459）；安徽科技学院→安徽科技工程大学（1431452）。北师香港浸会大学更名由该校2025-03-11通告确认：https://bnbu.edu.cn/info/1078/105619.htm。名称匹配不等于旧校区仍在使用。"
+  },
+  {
+    "name": "教育在线院校档案（2026-09-08读取）",
+    "url": "https://www.gaokao.cn/school",
+    "note": "按学校现名精确匹配2896份公开档案，再拆分其地址字段。属于第三方位置候选，不作为官方办学状态核验；没有地址或区县冲突的项进入缺失/待核清单。每条记录保留来源网址、档案ID和位置匹配方式；不继承该来源的排名。"
+  },
+  {
+    "name": "本轮学校官网校区核对",
+    "url": "https://www.sysu.edu.cn/xxg/zdxq.htm",
+    "note": "各条官网记录有各自sourceUrl/核对日期。官网校区与地址核对不代表已核验各年招生专业或精确经纬度；缺坐标时不绘制伪点。"
+  }
+]

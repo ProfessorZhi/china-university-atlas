@@ -1,0 +1,44 @@
+{
+  "ordinarySchools": 2952,
+  "bachelorSchools": 1412,
+  "vocationalSchools": 1540,
+  "adultSchools": 244,
+  "schoolEntities": 3196,
+  "campusRecords": 6762,
+  "positionedCampuses": 2798,
+  "officialCampusAssociations": 42,
+  "schoolsWithCampuses": 2903,
+  "districtsWithCampuses": 1201,
+  "districtPolygons": 2840,
+  "districtsWithCandidates": 1201,
+  "cityLabels": 344,
+  "boundaryFiles": 363,
+  "rawPOIRecords": 36694,
+  "rejectedPOI": {
+    "school_identity_unmatched": 10126,
+    "excluded_non_campus": 20692,
+    "duplicate": 3035,
+    "ambiguous_cross_province": 30,
+    "district_unresolved": 5
+  },
+  "unresolvedRegistryPlaces": [
+    [
+      "新星职业技术学院",
+      "新疆维吾尔自治区",
+      "新星市"
+    ]
+  ],
+  "pointsAfterSimplification": 851820,
+  "ordinarySchoolsWithLocations": 2882,
+  "ordinarySchoolsWithoutLocations": 70,
+  "ordinarySchoolsOnlyCityLocation": 150,
+  "profileRecordsFetched": 2896,
+  "profileLocationRecords": 4864,
+  "historicalLocationRecords": 1856,
+  "officialLocationRecords": 42,
+  "profileLocationHints": 44,
+  "addressesToReview": 1130,
+  "profileRejections": {
+    "profile_address_empty": 34
+  }
+}
