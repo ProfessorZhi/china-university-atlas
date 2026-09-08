@@ -33,5 +33,10 @@
     "name": "本轮学校官网校区核对",
     "url": "https://www.sysu.edu.cn/xxg/zdxq.htm",
     "note": "各条官网记录有各自sourceUrl/核对日期。官网校区与地址核对不代表已核验各年招生专业或精确经纬度；缺坐标时不绘制伪点。"
+  },
+  {
+    "name": "V5.2地点与县区证据分层",
+    "url": "https://github.com/ProfessorZhi/china-university-atlas/blob/main/docs/v5.2.md",
+    "note": "新增学校官网/政府公开地点与交叉核对地址；第三方县区字段保存为district association，政府县区资料可覆盖冲突字段。association不作为校园地址或坐标。"
   }
 ]

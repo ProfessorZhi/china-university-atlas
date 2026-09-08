@@ -16,9 +16,11 @@ async function main(){
  await send('Page.navigate',{url:pathToFileURL(path.join(ROOT,'dist/china-university-atlas.html')).href});
  let ready=false;for(let i=0;i<300;i++){await wait(100);if(await evaluate('!!window.__atlas')){ready=true;break;}}
  if(!ready)throw Error('Atlas did not boot');
- const result=await evaluate('__atlas.selfTest()');result.browserNetworkOffline=true;result.httpRequests=network;result.runtimeErrors=errors;result.pass=result.pass&&!network.length&&!errors.length;result.artifact='dist/china-university-atlas.html';
+ const result=await evaluate('__atlas.selfTest()');
+ const v52=await evaluate(`({associationCount:__atlas.D.districtAssociations.length,linyiDistrict:__atlas.schoolRows('山东省','临沂市','河东区').some(u=>u.u==='临沂工学院'&&u.associations.length>0),taiyuanExact:__atlas.schoolRows('山西省','太原市','尖草坪区').some(u=>u.u==='太原卫生职业学院'&&u.campuses.some(c=>c.verified)),fakeAssociationPrecision:__atlas.D.districtAssociations.some(a=>'lng' in a||'lat' in a||'address' in a),cqCorrect:__atlas.D.districtAssociations.some(a=>a.u==='重庆城乡发展职业学院'&&a.d==='云阳县'&&a.verified)&&__atlas.D.districtAssociations.some(a=>a.u==='重庆中药职业学院'&&a.d==='涪陵区'&&a.verified)&&!__atlas.D.districtAssociations.some(a=>a.u==='重庆城乡发展职业学院'&&a.d==='南岸区'),scCorrect:__atlas.schoolRows('四川省','成都市','彭州市').some(u=>u.u==='四川中医药职业学院'&&u.campuses.some(c=>c.verified))&&!__atlas.D.districtAssociations.some(a=>a.u==='四川中医药职业学院'&&a.d==='龙泉驿区')})`);
+ result.v52=v52;result.browserNetworkOffline=true;result.httpRequests=network;result.runtimeErrors=errors;result.pass=result.pass&&!network.length&&!errors.length&&v52.associationCount===33&&v52.linyiDistrict&&v52.taiyuanExact&&!v52.fakeAssociationPrecision&&v52.cqCorrect&&v52.scCorrect;result.artifact='dist/china-university-atlas.html';
  fs.writeFileSync(path.join(ROOT,'reports/offline-browser-test.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
- for(const [name,id,width,height]of [['national-desktop.png','100000',1440,1000],['hangzhou-desktop.png','330100',1440,1000],['national-mobile.png','100000',390,844]]){
+ for(const [name,id,width,height]of [['national-desktop.png','100000',1440,1000],['hangzhou-desktop.png','330100',1440,1000],['linyi-hedong-evidence.png','371312',1440,1000],['national-mobile.png','100000',390,844]]){
   await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});await evaluate(`__atlas.navigateID('${id}')`);await wait(400);const shot=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(ROOT,'docs',name),Buffer.from(shot.data,'base64'));
  }
  await send('Browser.close').catch(()=>{});ws.close();if(!result.pass)throw Error('Offline test failed');

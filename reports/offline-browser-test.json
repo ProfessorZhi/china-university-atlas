@@ -26,7 +26,16 @@
   "fontBefore": 10.28,
   "fontAfter": 13.38,
   "schoolEntities": 3196,
-  "campusRecords": 6762,
+  "campusRecords": 6773,
+  "districtAssociations": 33,
+  "v52": {
+    "associationCount": 33,
+    "linyiDistrict": true,
+    "taiyuanExact": true,
+    "fakeAssociationPrecision": false,
+    "cqCorrect": true,
+    "scCorrect": true
+  },
   "browserNetworkOffline": true,
   "httpRequests": [],
   "runtimeErrors": [],

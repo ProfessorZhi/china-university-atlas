@@ -1,44 +1,426 @@
 {
-  "ordinarySchools": 2952,
-  "bachelorSchools": 1412,
-  "vocationalSchools": 1540,
-  "adultSchools": 244,
-  "schoolEntities": 3196,
-  "campusRecords": 6762,
-  "positionedCampuses": 2798,
-  "officialCampusAssociations": 42,
-  "schoolsWithCampuses": 2903,
-  "districtsWithCampuses": 1201,
-  "districtPolygons": 2840,
-  "districtsWithCandidates": 1201,
-  "cityLabels": 344,
-  "boundaryFiles": 363,
-  "rawPOIRecords": 36694,
-  "rejectedPOI": {
-    "school_identity_unmatched": 10126,
-    "excluded_non_campus": 20692,
-    "duplicate": 3035,
-    "ambiguous_cross_province": 30,
-    "district_unresolved": 5
+  "stats": {
+    "ordinarySchools": 2952,
+    "bachelorSchools": 1412,
+    "vocationalSchools": 1540,
+    "adultSchools": 244,
+    "schoolEntities": 3196,
+    "campusRecords": 6773,
+    "positionedCampuses": 2798,
+    "officialCampusAssociations": 50,
+    "schoolsWithCampuses": 2914,
+    "districtsWithCampuses": 1202,
+    "districtPolygons": 2840,
+    "districtsWithCandidates": 1208,
+    "cityLabels": 344,
+    "boundaryFiles": 363,
+    "rawPOIRecords": 36694,
+    "rejectedPOI": {
+      "school_identity_unmatched": 10126,
+      "excluded_non_campus": 20692,
+      "duplicate": 3035,
+      "ambiguous_cross_province": 30,
+      "district_unresolved": 5
+    },
+    "unresolvedRegistryPlaces": [
+      [
+        "新星职业技术学院",
+        "新疆维吾尔自治区",
+        "新星市"
+      ]
+    ],
+    "pointsAfterSimplification": 851820,
+    "ordinarySchoolsWithLocations": 2893,
+    "ordinarySchoolsWithoutLocations": 59,
+    "ordinarySchoolsOnlyCityLocation": 152,
+    "profileRecordsFetched": 2896,
+    "profileLocationRecords": 4864,
+    "historicalLocationRecords": 1856,
+    "officialLocationRecords": 50,
+    "profileLocationHints": 44,
+    "addressesToReview": 1130,
+    "profileRejections": {
+      "profile_address_empty": 34
+    },
+    "districtAssociationRecords": 33,
+    "districtAssociationSchools": 33,
+    "ordinarySchoolsWithDistrictEvidence": 2764,
+    "verifiedDistrictAssociationRecords": 2
   },
-  "unresolvedRegistryPlaces": [
-    [
-      "新星职业技术学院",
-      "新疆维吾尔自治区",
-      "新星市"
-    ]
-  ],
-  "pointsAfterSimplification": 851820,
-  "ordinarySchoolsWithLocations": 2882,
-  "ordinarySchoolsWithoutLocations": 70,
-  "ordinarySchoolsOnlyCityLocation": 150,
-  "profileRecordsFetched": 2896,
-  "profileLocationRecords": 4864,
-  "historicalLocationRecords": 1856,
-  "officialLocationRecords": 42,
-  "profileLocationHints": 44,
-  "addressesToReview": 1130,
-  "profileRejections": {
-    "profile_address_empty": 34
-  }
+  "coverage": [
+    {
+      "province": "北京市",
+      "schools": 92,
+      "locatedSchools": 92,
+      "missingSchools": 0,
+      "campuses": 209,
+      "districtAssociations": 1,
+      "districts": 15,
+      "allDistricts": 16,
+      "verifiedRecords": 5
+    },
+    {
+      "province": "天津市",
+      "schools": 57,
+      "locatedSchools": 55,
+      "missingSchools": 2,
+      "campuses": 124,
+      "districtAssociations": 0,
+      "districts": 16,
+      "allDistricts": 16,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "河北省",
+      "schools": 132,
+      "locatedSchools": 130,
+      "missingSchools": 2,
+      "campuses": 343,
+      "districtAssociations": 4,
+      "districts": 66,
+      "allDistricts": 167,
+      "verifiedRecords": 1
+    },
+    {
+      "province": "山西省",
+      "schools": 84,
+      "locatedSchools": 83,
+      "missingSchools": 1,
+      "campuses": 193,
+      "districtAssociations": 2,
+      "districts": 32,
+      "allDistricts": 117,
+      "verifiedRecords": 1
+    },
+    {
+      "province": "内蒙古自治区",
+      "schools": 54,
+      "locatedSchools": 51,
+      "missingSchools": 3,
+      "campuses": 114,
+      "districtAssociations": 0,
+      "districts": 28,
+      "allDistricts": 103,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "辽宁省",
+      "schools": 115,
+      "locatedSchools": 106,
+      "missingSchools": 9,
+      "campuses": 231,
+      "districtAssociations": 1,
+      "districts": 49,
+      "allDistricts": 100,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "吉林省",
+      "schools": 68,
+      "locatedSchools": 68,
+      "missingSchools": 0,
+      "campuses": 166,
+      "districtAssociations": 0,
+      "districts": 28,
+      "allDistricts": 60,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "黑龙江省",
+      "schools": 81,
+      "locatedSchools": 79,
+      "missingSchools": 2,
+      "campuses": 147,
+      "districtAssociations": 2,
+      "districts": 37,
+      "allDistricts": 122,
+      "verifiedRecords": 1
+    },
+    {
+      "province": "上海市",
+      "schools": 69,
+      "locatedSchools": 67,
+      "missingSchools": 2,
+      "campuses": 187,
+      "districtAssociations": 0,
+      "districts": 16,
+      "allDistricts": 16,
+      "verifiedRecords": 1
+    },
+    {
+      "province": "江苏省",
+      "schools": 175,
+      "locatedSchools": 172,
+      "missingSchools": 3,
+      "campuses": 427,
+      "districtAssociations": 1,
+      "districts": 70,
+      "allDistricts": 95,
+      "verifiedRecords": 5
+    },
+    {
+      "province": "浙江省",
+      "schools": 111,
+      "locatedSchools": 110,
+      "missingSchools": 1,
+      "campuses": 285,
+      "districtAssociations": 0,
+      "districts": 61,
+      "allDistricts": 90,
+      "verifiedRecords": 11
+    },
+    {
+      "province": "安徽省",
+      "schools": 126,
+      "locatedSchools": 123,
+      "missingSchools": 3,
+      "campuses": 282,
+      "districtAssociations": 0,
+      "districts": 52,
+      "allDistricts": 104,
+      "verifiedRecords": 1
+    },
+    {
+      "province": "福建省",
+      "schools": 90,
+      "locatedSchools": 90,
+      "missingSchools": 0,
+      "campuses": 208,
+      "districtAssociations": 0,
+      "districts": 46,
+      "allDistricts": 84,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "江西省",
+      "schools": 120,
+      "locatedSchools": 117,
+      "missingSchools": 3,
+      "campuses": 269,
+      "districtAssociations": 2,
+      "districts": 44,
+      "allDistricts": 100,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "山东省",
+      "schools": 171,
+      "locatedSchools": 166,
+      "missingSchools": 5,
+      "campuses": 408,
+      "districtAssociations": 5,
+      "districts": 82,
+      "allDistricts": 136,
+      "verifiedRecords": 4
+    },
+    {
+      "province": "河南省",
+      "schools": 182,
+      "locatedSchools": 180,
+      "missingSchools": 2,
+      "campuses": 424,
+      "districtAssociations": 3,
+      "districts": 80,
+      "allDistricts": 156,
+      "verifiedRecords": 1
+    },
+    {
+      "province": "湖北省",
+      "schools": 134,
+      "locatedSchools": 134,
+      "missingSchools": 0,
+      "campuses": 262,
+      "districtAssociations": 0,
+      "districts": 45,
+      "allDistricts": 99,
+      "verifiedRecords": 2
+    },
+    {
+      "province": "湖南省",
+      "schools": 148,
+      "locatedSchools": 145,
+      "missingSchools": 3,
+      "campuses": 305,
+      "districtAssociations": 1,
+      "districts": 52,
+      "allDistricts": 122,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "广东省",
+      "schools": 167,
+      "locatedSchools": 165,
+      "missingSchools": 2,
+      "campuses": 433,
+      "districtAssociations": 1,
+      "districts": 66,
+      "allDistricts": 122,
+      "verifiedRecords": 12
+    },
+    {
+      "province": "广西壮族自治区",
+      "schools": 93,
+      "locatedSchools": 90,
+      "missingSchools": 3,
+      "campuses": 223,
+      "districtAssociations": 4,
+      "districts": 40,
+      "allDistricts": 111,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "海南省",
+      "schools": 29,
+      "locatedSchools": 28,
+      "missingSchools": 1,
+      "campuses": 47,
+      "districtAssociations": 0,
+      "districts": 7,
+      "allDistricts": 10,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "重庆市",
+      "schools": 77,
+      "locatedSchools": 75,
+      "missingSchools": 2,
+      "campuses": 168,
+      "districtAssociations": 2,
+      "districts": 24,
+      "allDistricts": 38,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "四川省",
+      "schools": 146,
+      "locatedSchools": 146,
+      "missingSchools": 0,
+      "campuses": 361,
+      "districtAssociations": 1,
+      "districts": 78,
+      "allDistricts": 183,
+      "verifiedRecords": 3
+    },
+    {
+      "province": "贵州省",
+      "schools": 80,
+      "locatedSchools": 79,
+      "missingSchools": 1,
+      "campuses": 172,
+      "districtAssociations": 0,
+      "districts": 28,
+      "allDistricts": 88,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "云南省",
+      "schools": 91,
+      "locatedSchools": 90,
+      "missingSchools": 1,
+      "campuses": 198,
+      "districtAssociations": 0,
+      "districts": 33,
+      "allDistricts": 129,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "西藏自治区",
+      "schools": 7,
+      "locatedSchools": 6,
+      "missingSchools": 1,
+      "campuses": 15,
+      "districtAssociations": 1,
+      "districts": 3,
+      "allDistricts": 74,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "陕西省",
+      "schools": 99,
+      "locatedSchools": 96,
+      "missingSchools": 3,
+      "campuses": 243,
+      "districtAssociations": 0,
+      "districts": 36,
+      "allDistricts": 107,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "甘肃省",
+      "schools": 49,
+      "locatedSchools": 49,
+      "missingSchools": 0,
+      "campuses": 110,
+      "districtAssociations": 0,
+      "districts": 24,
+      "allDistricts": 86,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "青海省",
+      "schools": 13,
+      "locatedSchools": 13,
+      "missingSchools": 0,
+      "campuses": 28,
+      "districtAssociations": 0,
+      "districts": 8,
+      "allDistricts": 45,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "宁夏回族自治区",
+      "schools": 24,
+      "locatedSchools": 23,
+      "missingSchools": 1,
+      "campuses": 46,
+      "districtAssociations": 1,
+      "districts": 10,
+      "allDistricts": 22,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "新疆维吾尔自治区",
+      "schools": 68,
+      "locatedSchools": 65,
+      "missingSchools": 3,
+      "campuses": 145,
+      "districtAssociations": 1,
+      "districts": 32,
+      "allDistricts": 96,
+      "verifiedRecords": 2
+    },
+    {
+      "province": "台湾省",
+      "schools": 0,
+      "locatedSchools": 0,
+      "missingSchools": 0,
+      "campuses": 0,
+      "districtAssociations": 0,
+      "districts": 0,
+      "allDistricts": 0,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "香港特别行政区",
+      "schools": 0,
+      "locatedSchools": 0,
+      "missingSchools": 0,
+      "campuses": 0,
+      "districtAssociations": 0,
+      "districts": 0,
+      "allDistricts": 18,
+      "verifiedRecords": 0
+    },
+    {
+      "province": "澳门特别行政区",
+      "schools": 0,
+      "locatedSchools": 0,
+      "missingSchools": 0,
+      "campuses": 0,
+      "districtAssociations": 0,
+      "districts": 0,
+      "allDistricts": 8,
+      "verifiedRecords": 0
+    }
+  ]
 }
