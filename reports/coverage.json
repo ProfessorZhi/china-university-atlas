@@ -53,7 +53,7 @@
     "ordinarySchoolsDistrictEvidenceOnly": 4,
     "resolvedInactiveOrdinarySchools": 17,
     "activeOrdinarySchools": 2935,
-    "pendingNewHostCitySchools": 1,
+    "pendingNewHostCitySchools": 2,
     "corroboratedLocationRecords": 19,
     "terminalCityBoundaries": 34,
     "activeSchoolsAtTerminalCityBoundary": 38,
@@ -583,6 +583,6 @@
     "activeWithoutCampusRecords": 4,
     "districtEvidenceOnlySchools": 4,
     "resolvedInactiveOrdinarySchools": 17,
-    "pendingNewHostCitySchools": 1
+    "pendingNewHostCitySchools": 2
   }
 }
