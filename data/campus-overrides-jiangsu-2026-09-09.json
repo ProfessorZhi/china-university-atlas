@@ -1,0 +1,106 @@
+{
+  "PROFILE149_0": {
+    "d": "鼓楼区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.nua.edu.cn/",
+    "districtEvidence": "南京艺术学院信息公开网当前直接列办公地址为“江苏省南京市鼓楼区北京西路74号”，与现有学校地址完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1435_0": {
+    "d": "滨湖区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgkw.wxut.edu.cn/info/1040/71321.htm",
+    "districtEvidence": "无锡职业技术大学2026年提前招生简章直接写明学校办学地址“江苏省无锡市滨湖区高浪西路1600号”，与现有主校区地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1181_0": {
+    "d": "吴中区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zhaosheng.jsspu.edu.cn/2026/0224/c1211a190094/page.htm",
+    "districtEvidence": "苏州职业技术大学2026年提前招生简章直接写明石湖校区为“苏州市吴中区致能大道106号”，与现有记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1181_1": {
+    "d": "姑苏区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zhaosheng.jsspu.edu.cn/2026/0224/c1211a190094/page.htm",
+    "districtEvidence": "苏州职业技术大学2026年提前招生简章直接写明干将路校区为“苏州市姑苏区干将西路1122号”，与现有记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1370_0": {
+    "d": "江宁区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://jshrss.jiangsu.gov.cn/art/2026/4/7/art_78506_11754741.html",
+    "districtEvidence": "江苏省人社厅2026年南京交通职业技术学院公开招聘公告直接写明学校位于“江苏省南京市江宁区龙眠大道629号”，与现有记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1155_0": {
+    "d": "邗江区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--infoId-7666704211%2Cmethod-view%2CschId-1993.dhtml",
+    "districtEvidence": "经主管部门审核发布的扬州工业职业技术学院2026年招生章程直接列通讯地址“江苏省扬州市邗江区华扬西路199号”，与现有记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3089_0": {
+    "d": "鼓楼区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B020403NT0",
+    "districtEvidence": "学校2026年招生章程确认洞山校区办学地址为徐州经济技术开发区桃园路6号；高德当前同门牌学校附属机构地址明确落为徐州市鼓楼区桃园路6号。经开区为功能区，本地图法定县区按鼓楼区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3089_1": {
+    "d": "鼓楼区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B020402M24",
+    "districtEvidence": "学校当前招考通知确认碧螺校区地址为徐州经济技术开发区洞山路17号；高德当前学校实体将同一门牌明确落为徐州市鼓楼区洞山路17号，故法定县区按鼓楼区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_JS_CZ_01": {
+    "d": "武进区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://jyj.changzhou.gov.cn/index.php?a=show&c=phone&catid=35113&id=110630",
+    "districtEvidence": "常州市教育局2025年机构信息将同址“常州铁道高等职业技术学校—常州市经开区东方东路68号”的所在地明确列为武进区；当前常州信用公示显示升格后的常州铁道职业技术学院住所仍为东方东路68号，故法定县区为武进区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3767_0": {
+    "d": "崇川区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B02010X12K",
+    "districtEvidence": "经主管部门审核的2026年招生章程确认学校办学地址为南通经济技术开发区振兴东路288号；高德当前学校实体将同一门牌明确落为南通市崇川区，故法定县区按崇川区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1097_0": {
+    "d": "虎丘区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jiangsu.eol.cn/jsgd/202507/t20250718_2681949.shtml",
+    "districtEvidence": "苏州百年职业学院官网当前地址为苏州工业园区仁爱路1号；公开继续教育教学点资料将同一“苏州百年职业学院A座/仁爱路1号”明确写作苏州市虎丘区。工业园区不是本项目法定县区边界，故按虎丘区做低置信地理映射。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2662_0": {
+    "d": "虎丘区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ranks.amap.com/ranking/%E8%81%8C%E4%B8%9A%E9%99%A2%E6%A0%A1/%E8%99%8E%E4%B8%98%E5%8C%BA/%E7%99%BD%E9%A2%86",
+    "districtEvidence": "学校2026年招生章程确认地址为苏州独墅湖科教创新区松涛街208号；高德当前区域实体将苏州工业园区服务外包职业学院松涛街208号列入虎丘区。因工业园区不是本项目法定县区边界，按虎丘区做低置信地理映射。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2857_0": {
+    "d": "鹿泉区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sjzlq.gov.cn/columns/10ccbcb0-fab6-4299-a0a9-c0db764c85d6/202606/22/ce5e6b63-24ac-4363-8182-ccaedb7535e5.html",
+    "districtEvidence": "石家庄市鹿泉区政府2026年医疗机构校验公示列石家庄幼儿师范高等专科学校医务室地址为石家庄市鹿泉区御园路88号，与现有学校地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
