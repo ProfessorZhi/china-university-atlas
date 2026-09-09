@@ -1,8 +1,21 @@
 {
-  "version": "5.2.0",
-  "date": "2026-09-08",
-  "previousVersion": "5.1.0",
-  "addedAuthoritativeLocationRecords": 11,
-  "districtAssociationRecords": 33,
-  "scope": "补充高置信学校/政府地址，并把县区归属证据与实际校区记录分层建模"
+  "version": "5.3.0",
+  "date": "2026-09-09",
+  "previousVersion": "5.2.0",
+  "scope": "V5.3 以学校主体归属、实际办学地点、县区证据和停招/并转状态分层；城市主榜仅本地主体高校参与；排名、录取与财务采用版本化事实层。",
+  "activeOrdinarySchools": 2935,
+  "resolvedInactiveOrdinarySchools": 17,
+  "activeMissingAnyLocationEvidence": 0,
+  "activeCityOnlyLocation": 162,
+  "activeWithoutCampusRecords": 4,
+  "districtEvidenceOnlySchools": 4,
+  "pendingNewHostCitySchools": 1,
+  "campusRecords": 6813,
+  "districtAssociationRecords": 36,
+  "rankingFactRecords": 27,
+  "rankingFactSchools": 10,
+  "admissionFactRecords": 0,
+  "financeFactRecords": 0,
+  "cityAffiliateCities": 2,
+  "cityAffiliateItems": 7
 }
