@@ -1,0 +1,21 @@
+{
+  "PROFILE2505_0": {
+    "d": "龙泉驿区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.sceea.cn/GZDZ/Html/141750.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sceea.cn/GZDZ/Html/141750.html",
+    "districtEvidence": "四川省教育考试院发布的四川城市职业学院2026年高职单招招生章程直接列成都校区为四川省成都市龙泉驿区大面洪河中路351号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2505_1": {
+    "d": "东坡区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.ms.gov.cn/__local/B/55/AA/177025385E8E436C761250C89E8_FAEE1EEC_38CD7.pdf",
+    "districtEvidence": "四川省教育考试院2026年招生章程确认眉山校区为眉山市岷东新区岷东大道南段1号；眉山市政府重点项目表将岷东片区项目列入东坡区，市级规划也将岷东新区纳入东坡城区发展空间。因学校章程本身未直接写东坡区，按交叉核对等级映射最低法定县区为东坡区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
