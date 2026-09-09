@@ -1,0 +1,50 @@
+{
+  "PROFILE2038_0": {
+    "d": "长沙县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnuit.edu.cn/p1/tzgg/20250727/93405.html",
+    "verified": true,
+    "status": "学校官方采购公告直接确认的现用校址及县区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnuit.edu.cn/p1/tzgg/20250727/93405.html",
+    "districtEvidence": "湖南信息学院2025年官方采购公告将开标地点直接写为“湖南信息学院（长沙县国家级长沙经济技术开发区毛塘工业园湖南信息学院）”；学校2026网站仍持续使用国家级长沙经济技术开发区毛塘工业园地址。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2029_0": {
+    "d": "岳塘区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.xlgy.com/102/130/index.htm",
+    "verified": true,
+    "status": "学校2026官方招生网直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.xlgy.com/102/130/index.htm",
+    "districtEvidence": "湖南理工职业技术学院2026官方招生网联系方式直接写“湖南省湘潭市岳塘区河东大道10号”，2026高职单招章程同样使用该地址。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2000_0": {
+    "d": "长沙县",
+    "sourceKind": "official",
+    "sourceUrl": "https://hnjtzy.bysjy.com.cn/index",
+    "verified": true,
+    "status": "学校当前就业网确认黄兴镇现址；省住建厅项目批复直接确认最低法定县区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://zjt.hunan.gov.cn/xxgk/xinxigongkaimulu/xzzfzl/shgs/xzyk/202005/t20200527_13976536.html",
+    "districtEvidence": "湖南交通职业技术学院当前就业网仍列联系地址“湖南长沙黄兴镇湖南交通职业技术学院”；湖南省住建厅项目初步设计批复直接写项目位于“长沙县黄兴镇湖南交通职业技术学院干杉校区内”，故最低法定县区为长沙县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1996_0": {
+    "d": "长沙县",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsw.hnmmc.edu.cn/2026/0809/c895a54051/page.htm",
+    "verified": true,
+    "status": "学校2026新生报到须知确认现用天华路校址；湖南省水利厅2026行政许可直接确认学校住所县区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://slt.hunan.gov.cn/slt/xxgk/c103054/202601/t20260126_33902356.html",
+    "districtEvidence": "湖南大众传媒职业技术学院2026级新生报到须知持续使用“星沙经济技术开发区天华路322号”；湖南省水利厅2026年第三实训楼项目行政许可将申请人住所直接写为“长沙县星沙街道天华北路322号”，故最低法定县区确定为长沙县。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
