@@ -1,0 +1,144 @@
+{
+  "PROFILE3594_0": {
+    "d": "长寿区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15721835.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15721835.html",
+    "districtEvidence": "重庆市政府发布的重庆工信职业学院2026年招生章程直接列长寿校区地址为重庆市长寿区北城大道2020号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3405_0": {
+    "d": "呈贡区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.yntzy.edu.cn/cnmainMb/lxfs.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.yntzy.edu.cn/cnmainMb/lxfs.html",
+    "districtEvidence": "云南特殊教育职业学院官网当前联系方式页直接列呈贡校区为昆明市呈贡大学城吴家营街道万峰街1909号，法定县区为呈贡区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3385_0": {
+    "d": "长沙县",
+    "sourceKind": "government",
+    "sourceUrl": "https://rst.hunan.gov.cn/rst/xxgk/tzgg/202307/29413643/files/593d8c28aefe4636bc0918bec6bffac3.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rst.hunan.gov.cn/rst/xxgk/tzgg/202307/29413643/files/593d8c28aefe4636bc0918bec6bffac3.pdf",
+    "districtEvidence": "湖南省人社系统公开材料直接写考试地址为长沙县开元东路1319号湖南劳动人事职业学院，与现有Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3376_0": {
+    "d": "黄陂区",
+    "sourceKind": "government",
+    "sourceUrl": "https://14554.gaokao.haedu.cn/policy/brochure/2026/0623/154652.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://14554.gaokao.haedu.cn/policy/brochure/2026/0623/154652.html",
+    "districtEvidence": "2026年招生章程公开页直接列武汉海事职业学院地址为武汉市黄陂区滠口街十里棚特1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3345_0": {
+    "d": "钟楼区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jscc.edu.cn/html/1061/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jscc.edu.cn/html/1061/",
+    "districtEvidence": "江苏城乡建设职业学院官网当前学校简介直接写殷村校区位于常州市钟楼区殷村职教园和裕路1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3340_0": {
+    "d": "栖霞区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsb.naujsc.edu.cn/2026/0107/c155a22490/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.naujsc.edu.cn/2026/0107/c155a22490/page.htm",
+    "districtEvidence": "南京审计大学金审学院2026年专转本招生简章直接列办学地点为南京市栖霞区仙林大学城仙林大道100号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3332_0": {
+    "d": "藁城区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B013706CQK",
+    "districtEvidence": "学校官网当前确认岗上校区为石家庄经济技术开发区岗上镇文明路12号；高德当前学校实体将同一门牌明确落到石家庄市藁城区，故按法定县区藁城区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3348_0": {
+    "d": "邗江区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/cjgg/202312/t20231213_21263448.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/cjgg/202312/t20231213_21263448.htm",
+    "districtEvidence": "中国政府采购网江苏旅游职业学院项目公告直接写采购人地址为邗江区毓秀路88号，与现有九龙湖校区Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3374_1": {
+    "d": "华容区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.hbhr.gov.cn/hrqxxgk/zc/gsgg/202604/t20260401_757471.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.hbhr.gov.cn/hrqxxgk/zc/gsgg/202604/t20260401_757471.html",
+    "districtEvidence": "湖北幼专2026招生章程确认武汉新城校区在葛店经济技术开发区；华容区政府2026教师资格认定公告明确华容区范围“含葛店开发区”，故葛店校区法定县区为华容区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3362_0": {
+    "d": "华龙区",
+    "sourceKind": "government",
+    "sourceUrl": "https://puyang.zfcg.henan.gov.cn/cmsweb81e27e/nas/webfile2024/puyang/rootfiles/2025/03/21/04880aef5d054ab6a7d81e306bd7b1a7.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://puyang.zfcg.henan.gov.cn/cmsweb81e27e/nas/webfile2024/puyang/rootfiles/2025/03/21/04880aef5d054ab6a7d81e306bd7b1a7.pdf",
+    "districtEvidence": "濮阳市政府采购文件直接将濮阳医学高等专科学校地址写为濮阳市华龙区城乡一体化示范区文岩街商鞅路交叉口向东160米，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3355_0": {
+    "d": "临川区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.jxfz.gov.cn/art/2025/10/29/art_3831_4372609.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jxfz.gov.cn/art/2025/10/29/art_3831_4372609.html",
+    "districtEvidence": "抚州市政府公开遴选资格审查公告直接列抚州幼儿师范高等专科学校地址为抚州市临川区王安石大道99号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3478_1": {
+    "d": "浑南区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.sinogk.com/Gaokao/College/Charter/GBZK1111",
+    "districtEvidence": "辽宁师范高等专科学校2026招生章程公开镜像明确奥体校区地址为辽宁省沈阳市浑南区富民南街56号，与现有Campus一致；待学校官网或辽宁教育主管部门直链后可升级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3342_0": {
+    "d": "盐都区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B0L3CKIJ4Z",
+    "districtEvidence": "学校2026招生资料确认学海路校区为盐城市高职园区学海路28号；高德当前校区实体将同一门牌明确落到盐都区，故按盐都区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3342_1": {
+    "d": "盐都区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B0203029K2",
+    "districtEvidence": "学校2026招生资料确认海洋路校区为盐城市高职园区海洋路28号；高德当前校区实体将同一门牌明确落到盐都区，故按盐都区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
