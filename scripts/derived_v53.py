@@ -50,10 +50,10 @@ def refresh_derived(data, version, date='2026-09-09'):
     data['pendingHostCities']=pending_rows;data['pendingBoundarySchools']=pending_rows
     coverage=[]
     for p in data.get('provinceCities',{}):
-        us=[u for u in active if u['p']==p];rs=[r for r in campuses if r['p']==p];aa=[a for a in associations if a['p']==p];p_assoc={a['uid'] for a in aa};p_campus={r['uid'] for r in rs};p_evidence=p_assoc|p_campus
+        us=[u for u in active if u['p']==p];rs=[r for r in campuses if r['p']==p];aa=[a for a in associations if a['p']==p]
         terminal_in_p={(pp,c) for pp,c in terminal_keys if pp==p}
         local_units={(r['c'],r['d']) for r in rs if r.get('d')}|{(r['c'],'') for r in rs if (r.get('p'),r.get('c')) in terminal_keys}|{(a['c'],a['d']) for a in aa if a.get('d')}
         all_local_units={(n['c'],n['d']) for n in regions.values() if n['p']==p and n.get('d')}|{(c,'') for pp,c in terminal_in_p}
-        coverage.append({'province':p,'schools':len(us),'registrySchools':sum(u['p']==p for u in ordinary),'inactiveSchools':sum(u['p']==p for u in inactive),'locatedSchools':sum(u['id'] in p_evidence for u in us),'campusLocatedSchools':sum(u['id'] in p_campus for u in us),'districtEvidenceOnly':sum(u['id'] in p_assoc and u['id'] not in p_campus for u in us),'missingSchools':sum(u['id'] not in p_evidence for u in us),'pendingBoundarySchools':sum(u['id'] in pending_boundary_ids for u in us),'campuses':len(rs),'districtAssociations':len(aa),'districts':len(local_units),'allDistricts':len(all_local_units),'verifiedRecords':sum(bool(r.get('verified')) for r in rs)})
+        coverage.append({'province':p,'schools':len(us),'registrySchools':sum(u['p']==p for u in ordinary),'inactiveSchools':sum(u['p']==p for u in inactive),'locatedSchools':sum(u['id'] in evidence_ids for u in us),'campusLocatedSchools':sum(u['id'] in campus_ids for u in us),'districtEvidenceOnly':sum(u['id'] in assoc_ids and u['id'] not in campus_ids for u in us),'missingSchools':sum(u['id'] not in evidence_ids for u in us),'pendingBoundarySchools':sum(u['id'] in pending_boundary_ids for u in us),'campuses':len(rs),'districtAssociations':len(aa),'districts':len(local_units),'allDistricts':len(all_local_units),'verifiedRecords':sum(bool(r.get('verified')) for r in rs)})
     data['coverage']=coverage;data.setdefault('revision',{})['version']=version;data['revision']['date']=date
     return data
