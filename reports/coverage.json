@@ -7,7 +7,7 @@
     "schoolEntities": 3196,
     "campusRecords": 6817,
     "positionedCampuses": 2799,
-    "officialCampusAssociations": 96,
+    "officialCampusAssociations": 106,
     "schoolsWithCampuses": 2952,
     "districtsWithCampuses": 1235,
     "districtPolygons": 2840,
@@ -36,7 +36,7 @@
     "profileRecordsFetched": 2896,
     "profileLocationRecords": 4864,
     "historicalLocationRecords": 1856,
-    "officialLocationRecords": 96,
+    "officialLocationRecords": 106,
     "profileLocationHints": 44,
     "addressesToReview": 1130,
     "profileRejections": {
@@ -46,8 +46,8 @@
     "districtAssociationSchools": 35,
     "ordinarySchoolsWithDistrictEvidence": 2935,
     "verifiedDistrictAssociationRecords": 4,
-    "campusRecordsWithLowestLegalBoundary": 5892,
-    "campusRecordsOnlyCityLocation": 925,
+    "campusRecordsWithLowestLegalBoundary": 5906,
+    "campusRecordsOnlyCityLocation": 911,
     "campusRecordsPendingBoundary": 2,
     "ordinarySchoolsWithAnyLocationEvidence": 2935,
     "ordinarySchoolsWithCampusRecords": 2931,
@@ -120,8 +120,8 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 345,
-      "campusRecordsWithLowestLegalBoundary": 278,
-      "campusLocationGaps": 67,
+      "campusRecordsWithLowestLegalBoundary": 279,
+      "campusLocationGaps": 66,
       "districtAssociations": 4,
       "districts": 66,
       "allDistricts": 167,
@@ -174,8 +174,8 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 237,
-      "campusRecordsWithLowestLegalBoundary": 204,
-      "campusLocationGaps": 33,
+      "campusRecordsWithLowestLegalBoundary": 205,
+      "campusLocationGaps": 32,
       "districtAssociations": 2,
       "districts": 49,
       "allDistricts": 100,
@@ -246,12 +246,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 429,
-      "campusRecordsWithLowestLegalBoundary": 360,
-      "campusLocationGaps": 69,
+      "campusRecordsWithLowestLegalBoundary": 365,
+      "campusLocationGaps": 64,
       "districtAssociations": 1,
       "districts": 70,
       "allDistricts": 95,
-      "verifiedRecords": 7
+      "verifiedRecords": 10
     },
     {
       "province": "浙江省",
@@ -318,12 +318,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 271,
-      "campusRecordsWithLowestLegalBoundary": 210,
-      "campusLocationGaps": 61,
+      "campusRecordsWithLowestLegalBoundary": 211,
+      "campusLocationGaps": 60,
       "districtAssociations": 3,
       "districts": 44,
       "allDistricts": 100,
-      "verifiedRecords": 0
+      "verifiedRecords": 1
     },
     {
       "province": "山东省",
@@ -354,12 +354,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 427,
-      "campusRecordsWithLowestLegalBoundary": 342,
-      "campusLocationGaps": 85,
+      "campusRecordsWithLowestLegalBoundary": 343,
+      "campusLocationGaps": 84,
       "districtAssociations": 3,
       "districts": 82,
       "allDistricts": 157,
-      "verifiedRecords": 18
+      "verifiedRecords": 19
     },
     {
       "province": "湖北省",
@@ -372,12 +372,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 262,
-      "campusRecordsWithLowestLegalBoundary": 227,
-      "campusLocationGaps": 35,
+      "campusRecordsWithLowestLegalBoundary": 229,
+      "campusLocationGaps": 33,
       "districtAssociations": 0,
       "districts": 48,
       "allDistricts": 103,
-      "verifiedRecords": 2
+      "verifiedRecords": 4
     },
     {
       "province": "湖南省",
@@ -390,12 +390,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 307,
-      "campusRecordsWithLowestLegalBoundary": 280,
-      "campusLocationGaps": 27,
+      "campusRecordsWithLowestLegalBoundary": 281,
+      "campusLocationGaps": 26,
       "districtAssociations": 1,
       "districts": 52,
       "allDistricts": 122,
-      "verifiedRecords": 1
+      "verifiedRecords": 2
     },
     {
       "province": "广东省",
@@ -462,12 +462,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 170,
-      "campusRecordsWithLowestLegalBoundary": 160,
-      "campusLocationGaps": 10,
+      "campusRecordsWithLowestLegalBoundary": 161,
+      "campusLocationGaps": 9,
       "districtAssociations": 2,
       "districts": 24,
       "allDistricts": 38,
-      "verifiedRecords": 0
+      "verifiedRecords": 1
     },
     {
       "province": "四川省",
@@ -516,12 +516,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 198,
-      "campusRecordsWithLowestLegalBoundary": 172,
-      "campusLocationGaps": 26,
+      "campusRecordsWithLowestLegalBoundary": 173,
+      "campusLocationGaps": 25,
       "districtAssociations": 0,
       "districts": 33,
       "allDistricts": 129,
-      "verifiedRecords": 2
+      "verifiedRecords": 3
     },
     {
       "province": "西藏自治区",
@@ -691,7 +691,7 @@
     "activeCityOnlyLocation": 0,
     "activeWithoutCampusRecords": 4,
     "districtEvidenceOnlySchools": 4,
-    "campusRecordsOnlyCityLocation": 925,
+    "campusRecordsOnlyCityLocation": 911,
     "pendingNewBoundarySchools": 2,
     "resolvedInactiveOrdinarySchools": 17
   }
