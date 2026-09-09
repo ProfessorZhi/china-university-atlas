@@ -25,12 +25,19 @@ def validate():
             pending_hosts+=1;check(status=='pending-new-region','unmapped host city without pending-new-region '+uid+' '+p+'|'+city)
         else:check(status in [None,'','mapped'],'mapped host city incorrectly marked '+uid)
     check(st.get('pendingNewHostCitySchools')==pending_hosts,'wrong pending host city count')
+    inferred=0
     for r in c:
         check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','government','corroborated','profile','historical'],'missing provenance '+r['id'])
         check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid source URL '+r['id'])
         if r.get('d'):check((r['p'],r['c'],r['d']) in regions,'unmapped county '+r['id'])
+        if r.get('districtInferenceMethod'):
+            inferred+=1
+            check(r.get('districtInferenceMethod')=='exact-legal-name-in-address','unknown district inference method '+r['id'])
+            check(bool(r.get('d')) and str(r.get('d')) in str(r.get('address') or ''),'address-derived district not present verbatim '+r['id'])
+            check(r.get('districtSourceKind')=='address-exact','wrong address-derived district source kind '+r['id'])
         if 'lng' in r or 'lat' in r:
             positioned+=1;check(isinstance(r.get('lng'),(int,float)) and isinstance(r.get('lat'),(int,float)) and 72<r['lng']<136 and 3<r['lat']<55,'invalid coordinates '+r['id'])
+    check(st.get('addressInferredCampusDistricts')==inferred,'wrong address inferred campus district count')
     aids=set()
     for r in a:
         check(r['id'] not in aids,'duplicate association '+r['id']);aids.add(r['id']);check(r['uid'] in ids,'orphan association '+r['id'])
@@ -64,6 +71,6 @@ def validate():
         text=f.read_text(encoding='utf-8-sig',errors='replace');scanned+=1
         if f.name!='validate.py':check(not forbidden.search(text),'private path or credential pattern in '+str(f.relative_to(ROOT)))
     live_missing=[{'uid':r.get('uid'),'school':r.get('学校'),'province':r.get('省份'),'city':r.get('城市'),'level':r.get('层次')} for r in d.get('missingSchools',[])]
-    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeMissingSchools':live_missing,'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'pendingNewHostCitySchools':pending_hosts,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
+    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeMissingSchools':live_missing,'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'campusLocationGaps':st.get('campusRecordsOnlyCityLocation'),'addressInferredCampusDistricts':inferred,'pendingNewHostCitySchools':pending_hosts,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
     print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':sys.exit(0 if validate()['pass'] else 1)
