@@ -1,7 +1,9 @@
 // V5.3: one university entity has one host city for city-ranking purposes.
 // Physical campuses remain visible at district level; city hover discloses two external tiers.
+const CITY_DIRECT_REGIONS=new Set(['北京市','天津市','上海市','重庆市','香港特别行政区','澳门特别行政区']);
 function cityAffiliatesFor(p,c){return(D.cityAffiliates||{})[keyOf(p,c)]||null;}
 function hasCityAffiliates(a){return!!a&&((a.undergraduate||[]).length>0||(a.graduate||[]).length>0);}
+function isProvinceCityFeature(node,f,l){return node.kind==='province'&&!CITY_DIRECT_REGIONS.has(node.p)&&!!l.c&&!l.d&&l.c===f.name;}
 function localCityRows(p,c){return(UIX.get(keyOf(p,c))||[]).filter(allowed).map(u=>({...u,campuses:[],associations:[],branch:false})).sort(compareU);}
 function schoolRows(p,c='',d=''){
   if(c&&!d)return localCityRows(p,c);
@@ -13,7 +15,7 @@ function schoolRows(p,c='',d=''){
 }
 function best(f,node=current()){
   const l=locationFor(f,node),isP=node.kind==='country';
-  if(node.kind==='province'&&f.level==='city'){
+  if(isProvinceCityFeature(node,f,l)){
     const rs=localCityRows(l.p,l.c),extra=cityAffiliatesFor(l.p,l.c),showExtra=$('includeBranch').checked&&hasCityAffiliates(extra);
     if(rs.length){const u=rs[0];return{u:u.u+(showExtra?'＋':''),rawU:u.u,uid:u.id,level:u.level,cityAffiliates:showExtra?extra:null,meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),showExtra?'＋ 悬浮查看异地办学':'本地主体高校'].filter(Boolean).join(' · '),count:rs.length,sample:false};}
     return{u:'',rawU:'',meta:showExtra?'本地主体高校尚未匹配 · ＋ 悬浮查看异地办学':'本地主体高校尚未匹配',count:0,cityAffiliates:showExtra?extra:null};
