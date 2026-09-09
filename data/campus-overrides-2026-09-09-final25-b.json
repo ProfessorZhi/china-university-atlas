@@ -1,0 +1,74 @@
+{
+  "PROFILE3329_0": {
+    "d": "南关区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/BV11364907",
+    "districtEvidence": "学校2026招生站直接使用“长春市净月区聚业大街6566号”；长春市政府行政区划显示净月高新区不是法定市辖区，高德当前将同路段聚业大街定位为南关区，吉林省民政厅乡镇区划又将净月街道、永顺街道等列在南关区。故地图法定县级边界按南关区记录，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3572_0": {
+    "d": "船营区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://xxgk.jlcity.gov.cn/szf/xbgkml/202512/t20251202_1297590.html",
+    "districtEvidence": "吉林省公共资源交易平台2026公告确认学校地址为吉林市高新北区科技大路777号；吉林市人民政府现行通告明确行政口径为“船营区（含高新北区）”，故法定县级单元为船营区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3703_0": {
+    "d": "城阳区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://ggzy.qingdao.gov.cn/TradeDetals-ZtbShow/123492-5070-0-2-0/cfde9cf6-c0bf-4fb2-ab1e-53b29dcde5c1",
+    "districtEvidence": "康复大学官网当前地址为青岛高新区登云路369号；青岛市公共资源交易平台将包含康复大学的岸线生态修复项目明确列在城阳区并以康复大学为工程定位参照，故高新区Campus对应法定县级单元城阳区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2119_0": {
+    "d": "寒亭区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gcjs.ggzyjy.weihai.cn/wz/PortalQDManage/ShareResources/CorpAchievementInfo?keyValue=e1f2196c-91f2-40e1-a0b7-1f0c03f6a2b9",
+    "districtEvidence": "山东省高校就业服务平台2026仍使用潍坊滨海经济技术开发区汉江东一街03699号；公共资源交易业绩档案将山东化工职业学院新校区项目所属地区明确标为“山东省·潍坊市·寒亭区”，项目地址为潍坊滨海经济技术开发区，故法定县级单元为寒亭区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3641_0": {
+    "d": "莱山区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B021705HQX",
+    "districtEvidence": "学校官网和2026招聘均确认现址为烟台市高新区科创西路60号；高德当前学校实体将同一门牌明确定位为烟台市莱山区高新区科创西路60号，因此法定县级单元按莱山区记录，等待政府门牌直证后再升级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2042_0": {
+    "d": "雨湖区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B02DC01NY2",
+    "districtEvidence": "2026招生章程确认和平校区位于湘潭经开区开源路25号；高德当前学校实体将同一门牌定位为湘潭市雨湖区开源路25号，故功能区向法定县级单元映射为雨湖区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2042_1": {
+    "d": "雨湖区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B0FFM8HNOR",
+    "districtEvidence": "2026招生章程确认九华校区位于湘潭经开区湘江路15号；高德当前学校实体将同一门牌定位为湘潭市雨湖区湘潭经济技术开发区湘江路15号，故法定县级单元为雨湖区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2293_0": {
+    "d": "天涯区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnasatc.edu.cn/index/xxgk.htm",
+    "districtEvidence": "三亚航空旅游职业学院2026信息公开页与官网页脚直接写明地址为海南省三亚市天涯区凤凰路218号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_SD_BZ_01": {
+    "d": "滨城区",
+    "districtVerified": false,
+    "districtSourceKind": "profile-county",
+    "districtSourceUrl": "https://www.gaokao.cn/school/3898",
+    "districtEvidence": "学校2026招生章程确认现址为滨州市高新区新三路433号；仓库既有District Association已将该校县区归属记录为滨城区。这里只把同一低置信县区归属同步到当前Campus，不提升为官方门牌级核验。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
