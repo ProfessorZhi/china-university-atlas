@@ -32,11 +32,12 @@
     "districtVerifiedAt": "2026-09-09"
   },
   "PROFILE3912_0": {
+    "c": "乐山市",
     "d": "峨眉山市",
     "districtVerified": true,
     "districtSourceKind": "official",
     "districtSourceUrl": "https://www.scqec.edu.cn/info/1017/1301.htm",
-    "districtEvidence": "四川质量工程职业技术学院2026年招生章程直接写明学校地址为四川省峨眉山市光辉路919号，与现有Campus一致。",
+    "districtEvidence": "四川质量工程职业技术学院2026年招生章程直接写明学校地址为四川省峨眉山市光辉路919号；据此同时纠正旧Campus误写的城市字段“眉山市”为地级市“乐山市”，县级单元为峨眉山市。",
     "districtVerifiedAt": "2026-09-09"
   },
   "PROFILE3404_0": {
