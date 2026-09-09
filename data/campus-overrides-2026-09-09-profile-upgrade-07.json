@@ -1,0 +1,62 @@
+{
+  "PROFILE2005_0": {
+    "d": "天心区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnou.edu.cn/sites/html/xxgk/",
+    "verified": true,
+    "status": "湖南开放大学（湖南网络工程职业学院）信息公开网直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnou.edu.cn/sites/html/xxgk/",
+    "districtEvidence": "学校信息公开网直接列办公地址“湖南省长沙市天心区青园路168号”；湖南网络工程职业学院招生章程亦直接写位于长沙市天心区、地址青园路168号。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1993_0": {
+    "d": "岳麓区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.casamillor.com/",
+    "verified": true,
+    "status": "学校官网当前页脚直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.casamillor.com/",
+    "districtEvidence": "湖南工业职业技术学院官网当前页面直接列学院地址“湖南省长沙市岳麓区含浦中路80号”，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1985_0": {
+    "d": "岳麓区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hufe.edu.cn/glcx/info/1021/12491.htm",
+    "verified": true,
+    "status": "学校2026采购公告与学校章程直接确认的校本部",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hufe.edu.cn/fzghc/info/1326/1482.htm",
+    "districtEvidence": "湖南财政经济学院2026年招标公告直接列采购人地址“湖南省长沙市岳麓区枫林二路139号”；学校章程亦将法定住所明确为同址。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1995_0": {
+    "d": "雨花区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnwu.edu.cn/html/839/2026-07-22/content-18151.html",
+    "verified": true,
+    "status": "学校2026采购公告持续确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnwu.edu.cn/html/839/2026-05-09/content-17631.html",
+    "districtEvidence": "湖南女子学院2026年多份采购公告均直接将采购人地址写为“长沙市雨花区中意一路160号”，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1991_0": {
+    "d": "赫山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnyyyz.com/xwzx/tzgg/content_32535",
+    "verified": true,
+    "status": "学校2026招聘/采购公告直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.yiyang.gov.cn/yyshjbhj/uploadfiles/202305/2023051611134661707.pdf",
+    "districtEvidence": "益阳医学高等专科学校2026招聘公告直接写“益阳市赫山区迎宾东路516号”；益阳市政府公开的学校建设项目环评亦将建设地点明确为同址。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
