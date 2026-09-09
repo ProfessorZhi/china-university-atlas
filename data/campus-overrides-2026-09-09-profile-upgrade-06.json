@@ -1,0 +1,38 @@
+{
+  "PROFILE3075_1": {
+    "d": "大足区",
+    "sourceKind": "government",
+    "sourceUrl": "https://rlsbj.cq.gov.cn/zwxx_182/tzgg/202307/t20230713_12146172.html",
+    "verified": true,
+    "status": "重庆市级和大足区政府材料持续确认的双桥校区同址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.dazu.gov.cn/qzfbm/qgaj/zwgk_53321/fdzdgknr_53323/jdjc/202406/t20240604_13264305.html",
+    "districtEvidence": "重庆市人社局补贴性职业培训机构目录直接列“重庆科技职业学院，大足区双桥经济技术开发区天星大道25号”；大足区公安局2024监督检查亦列该校为“大足区龙滩子所天星大道25号1-1”，故最低法定区县为大足区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3040_1": {
+    "d": "北关区",
+    "sourceKind": "historical",
+    "sourceUrl": "https://14349.gaokao.haedu.cn/policy/news/2012/0425/63821.html",
+    "verified": false,
+    "status": "历史招生材料确认的北关区旧校址；不视作2026现用校区，当前办学状态待学校官网复核",
+    "districtVerified": true,
+    "districtSourceKind": "historical",
+    "districtSourceUrl": "https://14349.gaokao.haedu.cn/policy/news/2012/0425/63821.html",
+    "districtEvidence": "河南省阳光高考平台2012年河南护理职业学院招生动态直接写学校地址“河南省安阳市北关区盘庚街67号（安阳市原轻工路67号）”。该证据只证明历史校址及县区，不包装为2026现用校区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3035_0": {
+    "d": "中牟县",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://tzpy.zepc.edu.cn/info/1190/5777.htm",
+    "verified": false,
+    "status": "郑州市教育局确认现用郑开大道66号；省高职技能大赛承办信息将同一门牌明确落中牟县",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://tzpy.zepc.edu.cn/info/1190/5777.htm",
+    "districtEvidence": "郑州市教育局当前市管公办高校查询列郑州幼儿师范高等专科学校地址为郑东新区郑开大道66号；2025河南省高职院校技能大赛承办学校信息将同一地址直接写为“郑州市中牟县郑开大道66号”，故最低法定县区确定为中牟县。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
