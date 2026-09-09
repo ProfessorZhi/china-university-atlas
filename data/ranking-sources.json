@@ -1,0 +1,64 @@
+{
+  "updatedAt": "2026-09-09",
+  "sources": [
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcur",
+      "name": "软科中国大学排名",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-15",
+      "scope": "中国本科高校；含主榜、单科性分类榜、民办及合作办学榜",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/2026",
+      "methodologyUrl": "https://www.shanghairanking.cn/methodology/bcur/2026",
+      "notes": "分类榜名次不得冒充全国名次；跨类型比较优先使用主榜或主榜参考排名。2026最终排名对象1086所。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcvcr",
+      "name": "软科中国高职院校排名",
+      "latestEdition": "2026",
+      "scope": "高职高专及职业本科",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026",
+      "notes": "2025年起职业大学和职业技术大学不再纳入软科中国大学排名，转入高职院校排名体系。"
+    },
+    {
+      "agency": "QS",
+      "rankingId": "qs-wur",
+      "name": "QS World University Rankings",
+      "latestEdition": "2027",
+      "publishedAt": "2026-06-18",
+      "scope": "全球大学",
+      "sourceUrl": "https://www.topuniversities.com/world-university-rankings",
+      "notes": "保存世界名次/区间和总分；未进入榜单不得解释为零分。"
+    },
+    {
+      "agency": "Times Higher Education",
+      "rankingId": "the-wur",
+      "name": "Times Higher Education World University Rankings",
+      "latestEdition": "2026",
+      "scope": "全球大学",
+      "sourceUrl": "https://www.timeshighereducation.com/world-university-rankings/latest/world-ranking",
+      "notes": "截至2026-09-09，WUR 2027计划于2026-09-30发布，因此当前最新完整世界榜仍为2026版。"
+    },
+    {
+      "agency": "Times Higher Education",
+      "rankingId": "the-asia",
+      "name": "Times Higher Education Asia University Rankings",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-23",
+      "scope": "亚洲大学",
+      "sourceUrl": "https://www.timeshighereducation.com/world-university-rankings/2026/regional-ranking",
+      "notes": "与THE世界榜分开保存，不把亚洲名次冒充世界名次。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "arwu",
+      "name": "Academic Ranking of World Universities",
+      "latestEdition": "2026",
+      "scope": "全球研究型大学",
+      "sourceUrl": "https://www.shanghairanking.com/rankings/arwu/2026",
+      "methodologyUrl": "https://www.shanghairanking.com/methodology/arwu/2026",
+      "notes": "2026榜单实际评估2500余所，公布前1000。保存世界名次/区间、国家地区名次及总分。"
+    }
+  ]
+}
