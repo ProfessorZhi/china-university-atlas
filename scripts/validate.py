@@ -1,13 +1,13 @@
 """Validate the committed data, sources, offline contract and publication hygiene."""
 from pathlib import Path
-import gzip,json,re,hashlib,sys
+import gzip,json,re,sys
 from build import ROOT,load_data,build
 
 def validate():
-    d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);st=d['stats'];errors=[]
+    d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);aff=d.get('cityAffiliates',{});st=d['stats'];errors=[]
     check=lambda ok,msg:errors.append(msg) if not ok else None
-    ids={r['id'] for r in u};check(len(ids)==len(u),'duplicate university ids');check(len({r['id'] for r in c})==len(c),'duplicate campus ids')
-    regions={(n['p'],n['c'],n['d']) for n in d['regions'].values()};positioned=0
+    ids={r['id'] for r in u};names={r['u']:r for r in u};check(len(ids)==len(u),'duplicate university ids');check(len({r['id'] for r in c})==len(c),'duplicate campus ids')
+    regions={(n['p'],n['c'],n['d']) for n in d['regions'].values()};cities={(n['p'],n['c']) for n in d['regions'].values() if n['c'] and not n['d']};positioned=0
     for r in c:
         check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','government','corroborated','profile','historical'],'missing provenance '+r['id'])
         check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid source URL '+r['id'])
@@ -19,13 +19,24 @@ def validate():
         check(r['id'] not in aids,'duplicate association '+r['id']);aids.add(r['id']);check(r['uid'] in ids,'orphan association '+r['id'])
         check(r.get('sourceKind') in ['profile-county','government-district'],'invalid association provenance '+r['id']);check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid association source '+r['id'])
         check((r['p'],r['c'],r['d']) in regions,'unmapped association '+r['id']);check(not any(k in r for k in ['lng','lat','address']),'association must not claim campus precision '+r['id'])
+    affiliate_items=0
+    for city_key,tiers in aff.items():
+        parts=city_key.split('|');check(len(parts)==2,'invalid city affiliate key '+city_key)
+        if len(parts)!=2:continue
+        p,city=parts;check((p,city) in cities,'unmapped city affiliate '+city_key);seen=set()
+        for tier in ['undergraduate','graduate']:
+            rows=tiers.get(tier,[]);check(isinstance(rows,list),'invalid affiliate tier '+city_key+' '+tier)
+            if not isinstance(rows,list):continue
+            for item in rows:
+                affiliate_items+=1;name=item.get('name','');parent=item.get('parent','');url=str(item.get('sourceUrl',''));evidence=item.get('evidence','')
+                check(bool(name and parent and evidence),'incomplete city affiliate '+city_key+' '+name);check(url.startswith(('https://','http://')),'invalid affiliate source '+city_key+' '+name)
+                check(name not in seen,'duplicate city affiliate '+city_key+' '+name);seen.add(name);check(parent in names,'unknown affiliate parent '+city_key+' '+parent)
+                if parent in names:check((names[parent]['p'],names[parent]['c'])!=(p,city),'local university wrongly placed in affiliate tier '+city_key+' '+parent)
     check(st.get('districtAssociationRecords')==len(a),'wrong district association count')
     check(st['schoolEntities']==len(u),'wrong entity count');check(st['campusRecords']==len(c),'wrong campus count');check(st['positionedCampuses']==positioned,'wrong point count')
-    check(st['officialLocationRecords']==sum(bool(r.get('verified')) for r in c),'wrong official count')
-    check(st['ordinarySchools']==sum(r['level']!='成人' for r in u),'wrong ordinary school count')
-    check(st['ordinarySchoolsWithoutLocations']==len(d['missingSchools']),'wrong missing school count')
+    check(st['officialLocationRecords']==sum(bool(r.get('verified')) for r in c),'wrong official count');check(st['ordinarySchools']==sum(r['level']!='成人' for r in u),'wrong ordinary school count');check(st['ordinarySchoolsWithoutLocations']==len(d['missingSchools']),'wrong missing school count')
     geometry=json.loads(gzip.decompress((ROOT/'data/boundaries.compact.json.gz').read_bytes()));check(len(geometry)==st['boundaryFiles'],'wrong boundary file count')
-    html=build().decode();check("connect-src 'none'" in html,'network not disabled by CSP');check(not re.search(r'<(?:script|link)\b[^>]*(?:src|href)\s*=\s*[\"\']https?://',html,re.I),'external runtime dependency')
+    html=build().decode();check("connect-src 'none'" in html,'network not disabled by CSP');check('本科校区 / 分校' in html and '研究生院 / 研究院' in html,'city tier UI not embedded');check(not re.search(r'<(?:script|link)\b[^>]*(?:src|href)\s*=\s*[\"\']https?://',html,re.I),'external runtime dependency')
     forbidden=re.compile(r'gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|[A-Za-z]:[\\\\/]+Users[\\\\/]+[^\\\\/\s]+|/home/(?:hwz|vince)(?:/|\b)',re.I)
     scanned=0
     for f in ROOT.rglob('*'):
@@ -34,6 +45,6 @@ def validate():
         if f.suffix in ['.gz','.png','.zip']:continue
         text=f.read_text(encoding='utf-8-sig',errors='replace');scanned+=1
         if f.name!='validate.py':check(not forbidden.search(text),'private path or credential pattern in '+str(f.relative_to(ROOT)))
-    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
+    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
     print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':sys.exit(0 if validate()['pass'] else 1)
