@@ -13,14 +13,14 @@
   },
   "PROFILE1993_0": {
     "d": "岳麓区",
-    "sourceKind": "official",
-    "sourceUrl": "https://www.casamillor.com/",
+    "sourceKind": "government",
+    "sourceUrl": "https://rst.hunan.gov.cn/rst/hnrsksw/c103103/2025gwy/202512/t20251203_33879648.html",
     "verified": true,
-    "status": "学校官网当前页脚直接确认的现用校址",
+    "status": "湖南人事考试网及省级公开招聘材料直接确认的含浦校址",
     "districtVerified": true,
-    "districtSourceKind": "official",
-    "districtSourceUrl": "https://www.casamillor.com/",
-    "districtEvidence": "湖南工业职业技术学院官网当前页面直接列学院地址“湖南省长沙市岳麓区含浦中路80号”，与现有Campus一致。",
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rst.hunan.gov.cn/rst/hnrsksw/c103103/2025gwy/202512/t20251203_33879648.html",
+    "districtEvidence": "湖南人事考试网考点信息直接将湖南工业职业技术学院东南门写为“长沙市岳麓区含浦科教园含浦大道80号”；省教育厅、省政府公开招聘材料亦将学校明确定位在长沙市岳麓区含浦科教园。",
     "districtVerifiedAt": "2026-09-09"
   },
   "PROFILE1985_0": {
