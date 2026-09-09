@@ -7,6 +7,10 @@ def validate():
     d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);aff=d.get('cityAffiliates',{});st=d['stats'];errors=[]
     check=lambda ok,msg:errors.append(msg) if not ok else None
     ids={r['id'] for r in u};names={r['u']:r for r in u};check(len(ids)==len(u),'duplicate university ids');check(len({r['id'] for r in c})==len(c),'duplicate campus ids')
+    inactive=[r for r in u if r['level']!='成人' and r.get('rankingEligible') is False]
+    for r in inactive:
+        check(bool(r.get('entityStatus') and r.get('statusLabel') and r.get('statusEvidence')),'incomplete inactive status '+r['id'])
+        check(str(r.get('statusSourceUrl','')).startswith(('https://','http://')),'invalid inactive source '+r['id'])
     regions={(n['p'],n['c'],n['d']) for n in d['regions'].values()};cities={(n['p'],n['c']) for n in d['regions'].values() if n['c'] and not n['d']};positioned=0
     for r in c:
         check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','government','corroborated','profile','historical'],'missing provenance '+r['id'])
@@ -33,10 +37,11 @@ def validate():
                 check(name not in seen,'duplicate city affiliate '+city_key+' '+name);seen.add(name);check(parent in names,'unknown affiliate parent '+city_key+' '+parent)
                 if parent in names:check((names[parent]['p'],names[parent]['c'])!=(p,city),'local university wrongly placed in affiliate tier '+city_key+' '+parent)
     check(st.get('districtAssociationRecords')==len(a),'wrong district association count')
+    check(st.get('resolvedInactiveOrdinarySchools')==len(inactive),'wrong inactive school count')
     check(st['schoolEntities']==len(u),'wrong entity count');check(st['campusRecords']==len(c),'wrong campus count');check(st['positionedCampuses']==positioned,'wrong point count')
     check(st['officialLocationRecords']==sum(bool(r.get('verified')) for r in c),'wrong official count');check(st['ordinarySchools']==sum(r['level']!='成人' for r in u),'wrong ordinary school count');check(st['ordinarySchoolsWithoutLocations']==len(d['missingSchools']),'wrong missing school count')
     geometry=json.loads(gzip.decompress((ROOT/'data/boundaries.compact.json.gz').read_bytes()));check(len(geometry)==st['boundaryFiles'],'wrong boundary file count')
-    html=build().decode();check("connect-src 'none'" in html,'network not disabled by CSP');check('本科校区 / 分校' in html and '研究生院 / 研究院' in html,'city tier UI not embedded');check(not re.search(r'<(?:script|link)\b[^>]*(?:src|href)\s*=\s*[\"\']https?://',html,re.I),'external runtime dependency')
+    html=build().decode();check("connect-src 'none'" in html,'network not disabled by CSP');check('本科校区 / 分校' in html and '研究生院 / 研究院' in html,'city tier UI not embedded');check('rankingEligible!==false' in html,'inactive entity filter not embedded');check(not re.search(r'<(?:script|link)\b[^>]*(?:src|href)\s*=\s*[\"\']https?://',html,re.I),'external runtime dependency')
     forbidden=re.compile(r'gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|[A-Za-z]:[\\\\/]+Users[\\\\/]+[^\\\\/\s]+|/home/(?:hwz|vince)(?:/|\b)',re.I)
     scanned=0
     for f in ROOT.rglob('*'):
@@ -45,6 +50,6 @@ def validate():
         if f.suffix in ['.gz','.png','.zip']:continue
         text=f.read_text(encoding='utf-8-sig',errors='replace');scanned+=1
         if f.name!='validate.py':check(not forbidden.search(text),'private path or credential pattern in '+str(f.relative_to(ROOT)))
-    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
+    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
     print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':sys.exit(0 if validate()['pass'] else 1)
