@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "format": "UTF-8; JSONL: one entity per line",
   "universityPrimaryKey": "id",
   "campusPrimaryKey": "id",
@@ -7,18 +7,15 @@
   "districtAssociationPrimaryKey": "id",
   "districtAssociationForeignKey": "uid -> universities.id",
   "districtAssociationMeaning": "county/district evidence only; NOT a campus address or coordinate",
+  "cityRankingMeaning": "a university entity competes only in its single host city; physical campuses in other cities do not replace that city's host-university label",
+  "cityAffiliatesFile": "data/city-affiliates.json",
+  "cityAffiliateTiers": {
+    "undergraduate": "external university campus/branch with undergraduate admission or undergraduate education in the city",
+    "graduate": "external graduate school/institute or graduate education base; does not compete for the city main label"
+  },
   "geography": "p/c/d = province/city/district; empty d = unresolved county, NOT city centre",
-  "campusSourceKinds": [
-    "official",
-    "government",
-    "corroborated",
-    "profile",
-    "historical"
-  ],
-  "districtAssociationSourceKinds": [
-    "profile-county",
-    "government-district"
-  ],
+  "campusSourceKinds": ["official", "government", "corroborated", "profile", "historical"],
+  "districtAssociationSourceKinds": ["profile-county", "government-district"],
   "coordinateSystem": "GCJ-02 for existing POI coordinates",
   "geometryEncoding": "gzip JSON; rows [adcode,name,center,level,childrenNum,encodedRings]; delta polyline integers / 1000"
 }
