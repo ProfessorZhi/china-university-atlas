@@ -21,7 +21,10 @@ def load_data():
     additions=[]
     for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):additions.extend(jsonl(path))
     campuses=jsonl(ROOT/'data/campuses.jsonl')+additions
-    campus_override_path=ROOT/'data/campus-overrides.json';campus_overrides=json.loads(campus_override_path.read_text(encoding='utf-8')) if campus_override_path.exists() else {}
+    campus_overrides={}
+    campus_override_paths=[ROOT/'data/campus-overrides.json']+sorted((ROOT/'data').glob('campus-overrides-*.json'))
+    for path in campus_override_paths:
+        if path.exists():campus_overrides.update(json.loads(path.read_text(encoding='utf-8')))
     for record in campuses:
         override=campus_overrides.get(record['id'])
         if override:record.update(override)
