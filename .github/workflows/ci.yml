@@ -10,12 +10,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Build offline HTML
         run: python scripts/build.py
       - name: Validate data and publication hygiene
         run: python scripts/validate.py
       - name: Verify deterministic rebuild
         run: python scripts/build.py --check
+      - name: Offline browser and city-layer UI test
+        run: |
+          google-chrome --version
+          node tests/browser.mjs
       - name: Build complete ZIP
         run: python scripts/build.py --zip
       - name: Upload preview artifact
@@ -29,3 +36,4 @@ jobs:
             release-assets/*.zip
             release-assets/SHA256SUMS.txt
             reports/*.json
+            docs/*city-layer.png
