@@ -2,6 +2,7 @@
 from pathlib import Path
 import gzip,json,re,sys
 from build import ROOT,load_data,build
+from derived_v53 import terminal_city_boundaries
 
 def validate():
     d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);aff=d.get('cityAffiliates',{});host=d.get('entityLocationOverrides',{});st=d['stats'];errors=[]
@@ -12,6 +13,10 @@ def validate():
         check(bool(r.get('entityStatus') and r.get('statusLabel') and r.get('statusEvidence')),'incomplete inactive status '+r['id'])
         check(str(r.get('statusSourceUrl','')).startswith(('https://','http://')),'invalid inactive source '+r['id'])
     regions={(n['p'],n['c'],n['d']) for n in d['regions'].values()};cities={(n['p'],n['c']) for n in d['regions'].values() if n['c'] and not n['d']};positioned=0
+    terminal=terminal_city_boundaries(d['regions'])
+    for key in [('河南省','济源市'),('广东省','东莞市'),('海南省','儋州市'),('甘肃省','嘉峪关市'),('新疆维吾尔自治区','石河子市')]:check(key in terminal,'terminal legal boundary regression '+('|'.join(key)))
+    for row in d.get('cityOnlySchools',[]):check((row.get('省份'),row.get('城市')) not in terminal,'terminal legal boundary wrongly reported city-only '+str(row.get('uid')))
+    check(st.get('terminalCityBoundaries')==len(terminal),'wrong terminal city boundary count')
     pending_hosts=0
     for uid,h in host.items():
         check(uid in ids,'orphan host override '+uid);p=h.get('p','');city=h.get('c','');url=str(h.get('sourceUrl',''));evidence=h.get('evidence','');status=h.get('boundaryStatus')
@@ -49,7 +54,7 @@ def validate():
     check(st['schoolEntities']==len(u),'wrong entity count');check(st['campusRecords']==len(c),'wrong campus count');check(st['positionedCampuses']==positioned,'wrong point count')
     check(st['officialLocationRecords']==sum(bool(r.get('verified')) for r in c),'wrong official count');check(st['ordinarySchools']==sum(r['level']!='成人' for r in u),'wrong ordinary school count');check(st['ordinarySchoolsWithoutLocations']==len(d['missingSchools']),'wrong missing school count')
     geometry=json.loads(gzip.decompress((ROOT/'data/boundaries.compact.json.gz').read_bytes()));check(len(geometry)==st['boundaryFiles'],'wrong boundary file count')
-    html=build().decode();check("connect-src 'none'" in html,'network not disabled by CSP');check('本科校区 / 分校' in html and '研究生院 / 研究院' in html,'city tier UI not embedded');check('rankingEligible!==false' in html,'inactive entity filter not embedded');check(not re.search(r'<(?:script|link)\b[^>]*(?:src|href)\s*=\s*[\"\']https?://',html,re.I),'external runtime dependency')
+    html=build().decode();check("connect-src 'none'" in html,'network not disabled by CSP');check('本科校区 / 分校' in html and '研究生院 / 研究院' in html,'city tier UI not embedded');check('rankingEligible!==false' in html,'inactive entity filter not embedded');check(not re.search(r'<(?:script|link)\b[^>]*(?:src|href)\s*=\s*["\']https?://',html,re.I),'external runtime dependency')
     forbidden=re.compile(r'gh[pousr]_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}|-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----|[A-Za-z]:[\\\\/]+Users[\\\\/]+[^\\\\/\s]+|/home/(?:hwz|vince)(?:/|\b)',re.I)
     scanned=0
     for f in ROOT.rglob('*'):
