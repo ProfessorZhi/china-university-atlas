@@ -22,5 +22,37 @@
     "label": "已停止招生",
     "sourceUrl": "https://www.moe.gov.cn/jyb_xwfb/s5147/201506/t20150630_191703.html",
     "evidence": "教育部2015年报道辽宁本科专业信息时明确将沈阳工业大学工程学院列为已经停止招生的独立学院。"
+  },
+  "4131012585": {
+    "status": "closed",
+    "rankingEligible": false,
+    "effectiveFrom": "2022-01-24",
+    "label": "办学许可证已废止",
+    "sourceUrl": "https://edu.sh.gov.cn/xxgk2_zdgz_mbjy_01/20220125/8e1beb15111f459882a48d67e7a9cf09.html",
+    "evidence": "上海市教育委员会2022年公告：上海欧华职业技术学院无实际招生、办学行为，办学许可证到期后自然废止并予公告。"
+  },
+  "4131014023": {
+    "status": "nonDegreeTraining",
+    "rankingEligible": false,
+    "effectiveFrom": "2016-07",
+    "label": "已剥离学历教育功能",
+    "sourceUrl": "https://www.shghxy.org.cn/xyjj.jhtml",
+    "evidence": "上海工会管理职业学院官网简介明确：2016年7月剥离学历教育功能，全面回归工会干部教育培训和工会理论研究主责主业。"
+  },
+  "4143011604": {
+    "status": "merged",
+    "rankingEligible": false,
+    "effectiveFrom": "2006",
+    "label": "已并入湖南工业大学",
+    "sourceUrl": "https://job.hut.edu.cn/detail/news?id=19351&menu_id=947",
+    "evidence": "湖南工业大学官方学校简介明确：2006年学校更名为湖南工业大学，同年合并株洲师范高等专科学校和湖南冶金职业技术学院。"
+  },
+  "4161014034": {
+    "status": "nonRecruiting",
+    "rankingEligible": false,
+    "effectiveFrom": "2021年前",
+    "label": "已停止招生",
+    "sourceUrl": "https://www.xags.edu.cn/tzgg/webinfo/2024/3/1000000000031143.htm",
+    "evidence": "西安工商学院2021年学生转学公示中，长安大学兴华学院学生转出理由明确写为“转出学校停止招生”。"
   }
 }
