@@ -1,9 +1,25 @@
 // V5.3: one university entity has one host city for city-ranking purposes.
 // Physical campuses remain visible at district level; city hover discloses two external tiers.
-const CITY_DIRECT_REGIONS=new Set(['北京市','天津市','上海市','重庆市','香港特别行政区','澳门特别行政区']);
+function regionNodeForFeature(f){return(D.regions||{})[String(f.id)]||null;}
+function provinceChildIsCity(node,f){const r=regionNodeForFeature(f);return node.kind==='province'&&!!r&&r.p===node.p&&!!r.c&&!r.d;}
 function cityAffiliatesFor(p,c){return(D.cityAffiliates||{})[keyOf(p,c)]||null;}
 function hasCityAffiliates(a){return!!a&&((a.undergraduate||[]).length>0||(a.graduate||[]).length>0);}
-function isProvinceCityFeature(node,f,l){return node.kind==='province'&&!CITY_DIRECT_REGIONS.has(node.p)&&!!l.c&&!l.d&&l.c===f.name;}
+function locationFor(f,node=current()){
+  if(node.kind==='country')return{p:f.name,c:'',d:''};
+  if(node.kind==='province'){
+    const r=regionNodeForFeature(f);if(r&&r.p===node.p)return{p:r.p,c:r.c||'',d:r.d||''};
+    if(f.level==='city')return{p:node.p,c:f.name,d:''};
+    if(['北京市','天津市','上海市','重庆市','香港特别行政区','澳门特别行政区'].includes(node.p))return{p:node.p,c:cityForDistrict(node.p,f.name),d:f.name};
+    return{p:node.p,c:f.name,d:f.name};
+  }
+  return{p:node.p,c:node.c,d:node.kind==='district'?node.d:f.name};
+}
+function enter(f){
+  if(S.loading)return;if(!f.name||f.id==='0'||f.id.includes('JD'))return;const v=current();
+  if(v.loadError){delete v.loadError;renderView();return;}if(v.kind==='district'){toast(f.name+' 已是当前最细地图层级');return;}if(v.noChildren){toast('当前数据源没有该地区进一步细分边界');return;}
+  const l=locationFor(f,v);let kind=v.kind==='country'?'province':(provinceChildIsCity(v,f)||v.kind==='province'&&f.level==='city'?'city':'district');const noChildren=kind==='city'&&!f.n&&!CACHE[String(f.id)];
+  S.stack.push({id:f.id,name:f.name,kind,...l,f,noChildren});renderView();
+}
 function localCityRows(p,c){return(UIX.get(keyOf(p,c))||[]).filter(allowed).map(u=>({...u,campuses:[],associations:[],branch:false})).sort(compareU);}
 function schoolRows(p,c='',d=''){
   if(c&&!d)return localCityRows(p,c);
@@ -15,7 +31,7 @@ function schoolRows(p,c='',d=''){
 }
 function best(f,node=current()){
   const l=locationFor(f,node),isP=node.kind==='country';
-  if(isProvinceCityFeature(node,f,l)){
+  if(provinceChildIsCity(node,f)||node.kind==='province'&&f.level==='city'&&!l.d){
     const rs=localCityRows(l.p,l.c),extra=cityAffiliatesFor(l.p,l.c),showExtra=$('includeBranch').checked&&hasCityAffiliates(extra);
     if(rs.length){const u=rs[0];return{u:u.u+(showExtra?'＋':''),rawU:u.u,uid:u.id,level:u.level,cityAffiliates:showExtra?extra:null,meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),showExtra?'＋ 悬浮查看异地办学':'本地主体高校'].filter(Boolean).join(' · '),count:rs.length,sample:false};}
     return{u:'',rawU:'',meta:showExtra?'本地主体高校尚未匹配 · ＋ 悬浮查看异地办学':'本地主体高校尚未匹配',count:0,cityAffiliates:showExtra?extra:null};
@@ -25,12 +41,7 @@ function best(f,node=current()){
   if(isP&&D.provinceBest[f.name])return{u:D.provinceBest[f.name],rawU:D.provinceBest[f.name],meta:'沿用参考标签；港澳台名录尚未系统纳入',count:0,sample:false};
   return{u:'',rawU:'',meta:l.d?'尚无校区或县区归属证据；不代表当地没有高校':'当前口径未匹配本地主体高校；不代表当地没有高校',count:0,sample:false};
 }
-function affiliateLines(a){
-  const lines=[];
-  if(a?.undergraduate?.length)lines.push({label:'本科校区 / 分校',items:a.undergraduate});
-  if(a?.graduate?.length)lines.push({label:'研究生院 / 研究院',items:a.graduate});
-  return lines;
-}
+function affiliateLines(a){const lines=[];if(a?.undergraduate?.length)lines.push({label:'本科校区 / 分校',items:a.undergraduate});if(a?.graduate?.length)lines.push({label:'研究生院 / 研究院',items:a.graduate});return lines;}
 function showTip(e,f){
   const b=best(f),t=$('tooltip'),main=b.rawU||b.u||'本地主体高校待补',tiers=affiliateLines(b.cityAffiliates);
   let html=`<strong>${esc(f.name)}</strong><div class="citymain">${esc(main)}</div><span class="tipmeta">${esc(b.meta)}</span>`;
