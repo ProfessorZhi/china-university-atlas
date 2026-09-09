@@ -1,15 +1,23 @@
 // V5.3: one university entity has one host city for city-ranking purposes.
 // Physical campuses remain visible at district level; city hover discloses two external tiers.
+const CITY_DIRECT_REGIONS=new Set(['北京市','天津市','上海市','重庆市','香港特别行政区','澳门特别行政区']);
 function regionNodeForFeature(f){return(D.regions||{})[String(f.id)]||null;}
-function provinceChildIsCity(node,f){const r=regionNodeForFeature(f);return node.kind==='province'&&!!r&&r.p===node.p&&!!r.c&&!r.d;}
 function cityAffiliatesFor(p,c){return(D.cityAffiliates||{})[keyOf(p,c)]||null;}
 function hasCityAffiliates(a){return!!a&&((a.undergraduate||[]).length>0||(a.graduate||[]).length>0);}
+function provinceChildCityName(node,f){
+  if(node.kind!=='province'||CITY_DIRECT_REGIONS.has(node.p))return'';
+  const r=regionNodeForFeature(f);if(r&&r.p===node.p&&r.c&&!r.d)return r.c;
+  if((D.provinceCities?.[node.p]||[]).includes(f.name))return f.name;
+  if(cityAffiliatesFor(node.p,f.name))return f.name;
+  if(f.level==='city')return f.name;
+  return'';
+}
 function locationFor(f,node=current()){
   if(node.kind==='country')return{p:f.name,c:'',d:''};
   if(node.kind==='province'){
+    const cityName=provinceChildCityName(node,f);if(cityName)return{p:node.p,c:cityName,d:''};
     const r=regionNodeForFeature(f);if(r&&r.p===node.p)return{p:r.p,c:r.c||'',d:r.d||''};
-    if(f.level==='city')return{p:node.p,c:f.name,d:''};
-    if(['北京市','天津市','上海市','重庆市','香港特别行政区','澳门特别行政区'].includes(node.p))return{p:node.p,c:cityForDistrict(node.p,f.name),d:f.name};
+    if(CITY_DIRECT_REGIONS.has(node.p))return{p:node.p,c:cityForDistrict(node.p,f.name),d:f.name};
     return{p:node.p,c:f.name,d:f.name};
   }
   return{p:node.p,c:node.c,d:node.kind==='district'?node.d:f.name};
@@ -17,7 +25,7 @@ function locationFor(f,node=current()){
 function enter(f){
   if(S.loading)return;if(!f.name||f.id==='0'||f.id.includes('JD'))return;const v=current();
   if(v.loadError){delete v.loadError;renderView();return;}if(v.kind==='district'){toast(f.name+' 已是当前最细地图层级');return;}if(v.noChildren){toast('当前数据源没有该地区进一步细分边界');return;}
-  const l=locationFor(f,v);let kind=v.kind==='country'?'province':(provinceChildIsCity(v,f)||v.kind==='province'&&f.level==='city'?'city':'district');const noChildren=kind==='city'&&!f.n&&!CACHE[String(f.id)];
+  const l=locationFor(f,v),provinceCity=!!provinceChildCityName(v,f);let kind=v.kind==='country'?'province':(provinceCity||v.kind==='province'&&f.level==='city'&&!l.d?'city':'district');const noChildren=kind==='city'&&!f.n&&!CACHE[String(f.id)];
   S.stack.push({id:f.id,name:f.name,kind,...l,f,noChildren});renderView();
 }
 function localCityRows(p,c){return(UIX.get(keyOf(p,c))||[]).filter(allowed).map(u=>({...u,campuses:[],associations:[],branch:false})).sort(compareU);}
@@ -30,8 +38,8 @@ function schoolRows(p,c='',d=''){
   const rows=[...map.values()];return rows.sort((a,b)=>d?((b.campuses.length>0)-(a.campuses.length>0)||compareU(a,b)):compareU(a,b));
 }
 function best(f,node=current()){
-  const l=locationFor(f,node),isP=node.kind==='country';
-  if(provinceChildIsCity(node,f)||node.kind==='province'&&f.level==='city'&&!l.d){
+  const cityName=provinceChildCityName(node,f),l=cityName?{p:node.p,c:cityName,d:''}:locationFor(f,node),isP=node.kind==='country';
+  if(cityName){
     const rs=localCityRows(l.p,l.c),extra=cityAffiliatesFor(l.p,l.c),showExtra=$('includeBranch').checked&&hasCityAffiliates(extra);
     if(rs.length){const u=rs[0];return{u:u.u+(showExtra?'＋':''),rawU:u.u,uid:u.id,level:u.level,cityAffiliates:showExtra?extra:null,meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),showExtra?'＋ 悬浮查看异地办学':'本地主体高校'].filter(Boolean).join(' · '),count:rs.length,sample:false};}
     return{u:'',rawU:'',meta:showExtra?'本地主体高校尚未匹配 · ＋ 悬浮查看异地办学':'本地主体高校尚未匹配',count:0,cityAffiliates:showExtra?extra:null};
