@@ -6,5 +6,11 @@
     "verified": true,
     "verifiedAt": "2026-09-09",
     "status": "宁夏教育厅拟设立基本情况表明确办学所在地为宁夏回族自治区固原市原州区；仅核验县区归属，不虚构校园门牌或坐标"
+  },
+  "A52_4165014987_653101": {
+    "current": false,
+    "supersededAt": "2026-04-17",
+    "supersededSourceUrl": "https://www.xinjiang.gov.cn/xinjiang/tzgg/202604/3691350b13064945947d8f78933ccb3e.shtml",
+    "status": "历史县区关联已失效：新疆昆仑科技学院2026办学地址已在新设县级草湖市，旧喀什市关联仅保留审计，不参与当前地图候选或覆盖统计。"
   }
 }
