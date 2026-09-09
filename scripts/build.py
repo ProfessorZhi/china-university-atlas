@@ -46,11 +46,14 @@ def infer_exact_address_districts(campuses,regions):
         inferred+=1
     return inferred
 
-def normalized_address(value):
-    """Conservative comparison key: remove punctuation/spacing only, never rewrite place names."""
+def normalized_address(value,province='',city=''):
+    """Conservative same-city key: strip this row's province/city labels plus punctuation only."""
     text=str(value or '').strip()
     if not text:
         return ''
+    for label in (str(province or '').strip(),str(city or '').strip()):
+        if label:
+            text=text.replace(label,'')
     return re.sub(r'[\s,，。；;()（）\-—_/]+','',text)
 
 def inherit_exact_address_districts(campuses):
@@ -63,7 +66,7 @@ def inherit_exact_address_districts(campuses):
     donor_ids={}
     for record in campuses:
         d=record.get('d')
-        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address')))
+        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
         if not d or not key[2]:
             continue
         donors.setdefault(key,set()).add(d)
@@ -72,7 +75,7 @@ def inherit_exact_address_districts(campuses):
     for record in campuses:
         if record.get('d'):
             continue
-        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address')))
+        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
         if not key[2]:
             continue
         districts=donors.get(key,set())
