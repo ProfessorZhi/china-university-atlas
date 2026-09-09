@@ -15,8 +15,10 @@ jobs:
           python-version: '3.12'
       - name: Build and validate
         run: |
+          python scripts/generate_reports.py
           python scripts/build.py
           python scripts/validate.py
+          python scripts/generate_reports.py --check
           python scripts/build.py --check
           python scripts/build.py --zip
       - name: Publish GitHub Release
