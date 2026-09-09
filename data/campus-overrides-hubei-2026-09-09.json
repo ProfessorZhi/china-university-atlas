@@ -1,0 +1,82 @@
+{
+  "PROFILE1974_0": {
+    "d": "江夏区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://dqx.qcuwh.edu.cn/info/1025/2403.htm",
+    "districtEvidence": "武汉晴川学院2026级迎新指南直接将学校邮寄地址写为湖北省武汉市江夏区东湖新技术开发区中华科技产业园玉屏大道9号，与现有Campus地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1077_0": {
+    "d": "洪山区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://m.map.360.cn/?city=%E6%AD%A6%E6%B1%89&k=%E4%B8%9C%E6%B9%96%E6%96%B0%E6%8A%80%E6%9C%AF%E5%BC%80%E5%8F%91%E5%8C%BA%E6%96%87%E5%8D%8E%E5%9B%AD%E8%B7%AF8%E5%8F%B7&src=bendibao&t=map",
+    "districtEvidence": "文华学院官网2026仍使用东湖新技术开发区文华园路8号；当前地图门址结果将同一门牌及校内多个实体落为武汉市洪山区关东街道，故法定县区按洪山区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1056_0": {
+    "d": "西陵区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-1451%2CinfoId-7625195293.dhtml",
+    "districtEvidence": "经阳光高考审核发布的湖北三峡职业技术大学2026招生章程直接写明江北校区为湖北省宜昌市西陵区体育场路31号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1056_1": {
+    "d": "点军区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-1451%2CinfoId-7625195293.dhtml",
+    "districtEvidence": "经阳光高考审核发布的湖北三峡职业技术大学2026招生章程直接写明江南校区为湖北省宜昌市点军区点军大道56号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1951_0": {
+    "d": "洪山区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://dzbgs.hbliti.edu.cn/info/1015/1162.htm",
+    "districtEvidence": "湖北轻工职业技术学院章程明确法定住所地为湖北省武汉市洪山区石牌岭东二路5号，并说明主校区位于该址，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1980_0": {
+    "d": "武昌区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.whkjz.com/video_view.aspx?id=89&nid=15&typeid=12",
+    "districtEvidence": "武汉科技职业学院2026年8月官方声明明确称学院位于武汉市武昌区二环内徐家棚商圈，历年招生章程也多次将余家头铁机村特2号写作武昌区；但2026年5月招生录取声明又出现“洪山区和平街道铁机村特2号”口径。因学校官方材料存在冲突，本条按较新的武昌区口径记录且明确保持未核验状态，后续待武汉市法定门址或教育主管部门材料消歧。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1979_0": {
+    "d": "江夏区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.whinfo.cn/",
+    "districtEvidence": "武汉信息传播职业技术学院2026官网直接列学校地址为湖北省武汉市江夏区庙山开发区江夏大道33号；现有Campus“光谷东湖高新技术开发区庙山科技园”为同一江夏大道校区历史概括地址，法定县区为江夏区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1433_0": {
+    "d": "江夏区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B001B16BCO",
+    "districtEvidence": "高德当前武昌职业学院实体将中洲大道98号明确写为武汉市江夏区江夏经济开发区藏龙岛办事处中洲大道98号，与现有Campus地址完全对应。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2949_0": {
+    "d": "江夏区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sport.gov.cn/rlzx/n5631/c25350584/content.html",
+    "districtEvidence": "国家体育总局人力资源开发中心举办培训的官方通知直接将湖北体育职业学院写为武汉市江夏区东湖高新区高新大道333号，与学院当前官网地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3374_0": {
+    "d": "江夏区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xyh.hbyz.edu.cn/",
+    "districtEvidence": "湖北幼儿师范高等专科学校当前校友服务官网直接列汤逊湖校区为武汉市江夏区庙山开发区华泰路95号，与现有Campus一致；湖北省教育厅核准章程亦使用同一法定地址。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
