@@ -691,7 +691,8 @@
     "activeCityOnlyLocation": 0,
     "activeWithoutCampusRecords": 4,
     "districtEvidenceOnlySchools": 4,
-    "resolvedInactiveOrdinarySchools": 17,
-    "pendingNewHostCitySchools": 2
+    "campusRecordsOnlyCityLocation": 940,
+    "pendingNewBoundarySchools": 2,
+    "resolvedInactiveOrdinarySchools": 17
   }
 }
