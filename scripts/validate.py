@@ -4,7 +4,7 @@ import gzip,json,re,sys
 from build import ROOT,load_data,build
 
 def validate():
-    d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);aff=d.get('cityAffiliates',{});st=d['stats'];errors=[]
+    d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);aff=d.get('cityAffiliates',{});host=d.get('entityLocationOverrides',{});st=d['stats'];errors=[]
     check=lambda ok,msg:errors.append(msg) if not ok else None
     ids={r['id'] for r in u};names={r['u']:r for r in u};check(len(ids)==len(u),'duplicate university ids');check(len({r['id'] for r in c})==len(c),'duplicate campus ids')
     inactive=[r for r in u if r['level']!='成人' and r.get('rankingEligible') is False]
@@ -12,6 +12,14 @@ def validate():
         check(bool(r.get('entityStatus') and r.get('statusLabel') and r.get('statusEvidence')),'incomplete inactive status '+r['id'])
         check(str(r.get('statusSourceUrl','')).startswith(('https://','http://')),'invalid inactive source '+r['id'])
     regions={(n['p'],n['c'],n['d']) for n in d['regions'].values()};cities={(n['p'],n['c']) for n in d['regions'].values() if n['c'] and not n['d']};positioned=0
+    pending_hosts=0
+    for uid,h in host.items():
+        check(uid in ids,'orphan host override '+uid);p=h.get('p','');city=h.get('c','');url=str(h.get('sourceUrl',''));evidence=h.get('evidence','');status=h.get('boundaryStatus')
+        check(bool(p and city and evidence),'incomplete host override '+uid);check(url.startswith(('https://','http://')),'invalid host override source '+uid)
+        if (p,city) not in cities:
+            pending_hosts+=1;check(status=='pending-new-region','unmapped host city without pending-new-region '+uid+' '+p+'|'+city)
+        else:check(status in [None,'','mapped'],'mapped host city incorrectly marked '+uid)
+    check(st.get('pendingNewHostCitySchools')==pending_hosts,'wrong pending host city count')
     for r in c:
         check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','government','corroborated','profile','historical'],'missing provenance '+r['id'])
         check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid source URL '+r['id'])
@@ -50,6 +58,6 @@ def validate():
         if f.suffix in ['.gz','.png','.zip']:continue
         text=f.read_text(encoding='utf-8-sig',errors='replace');scanned+=1
         if f.name!='validate.py':check(not forbidden.search(text),'private path or credential pattern in '+str(f.relative_to(ROOT)))
-    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
+    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'pendingNewHostCitySchools':pending_hosts,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
     print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':sys.exit(0 if validate()['pass'] else 1)
