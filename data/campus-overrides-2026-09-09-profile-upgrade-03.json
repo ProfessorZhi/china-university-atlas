@@ -1,0 +1,62 @@
+{
+  "PROFILE3200_1": {
+    "d": "金堂县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.xnhkxy.cn/content_5948_973199049.html",
+    "verified": true,
+    "status": "2026招生章程确认的现用东区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.xnhkxy.cn/content_5948_973199049.html",
+    "districtEvidence": "四川西南航空职业学院2026年高职单招章程直接将东区办学地点写为“成都市金堂县白果街道杨溪大道999号”，与现有Campus地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3235_0": {
+    "d": "七星关区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.bijiemc.cn/xydt_1/1553.html",
+    "verified": true,
+    "status": "学校2026招生章程确认的现用主校区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.bijiemc.cn/xydt_1/1553.html",
+    "districtEvidence": "毕节医学高等专科学校2026年分类考试招生章程直接写明学校地址为“毕节市七星关区金海湖职教城文馨大道1号”，与现有主校区记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3277_0": {
+    "d": "朔城区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.tech.net.cn/upfiles/zlbg2023_new/xx/shanxi/shanxi%20%2836%29.pdf",
+    "verified": false,
+    "status": "职业教育质量年度报告确认同址法定区县；待学校官网地址页升级直证",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.tech.net.cn/upfiles/zlbg2023_new/xx/shanxi/shanxi%20%2836%29.pdf",
+    "districtEvidence": "朔州师范高等专科学校高等职业教育质量年度报告明确记载学校2010年整体迁入“山西省朔州市朔城区长宁东街85号”，与现有Campus地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3106_0": {
+    "d": "铁西区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.lngpi.edu.cn/",
+    "verified": true,
+    "status": "学校2026官网确认现用校址；法定区县由沈阳市政府部门规则闭环",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://fcj.shenyang.gov.cn/zwgkzdgz/fdzdgknr/zcjd/202112/t20211220_2243796.html",
+    "districtEvidence": "辽宁轨道交通职业学院官网2026仍列地址“沈阳经济技术开发区十三号路17甲5号”；沈阳市房产局房屋租赁登记备案规定明确由“铁西区（含沈阳经济技术开发区）”房产管理部门办理辖区业务，故最低法定行政区为铁西区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3204_0": {
+    "d": "双流区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.sceea.cn/GZDZ/Html/145140.html",
+    "verified": true,
+    "status": "四川省教育考试院2026招生章程确认的现用天府校区；法定区县由省级政府材料闭环",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://wsjkw.sc.gov.cn/scwsjkw/qtwj/2023/3/18/a2867d7fce4a4e918f556d9835c7a28b/files/%E5%9B%9B%E5%B7%9D%E7%9C%81%E7%88%B1%E5%9B%BD%E5%8D%AB%E7%94%9F%E8%BF%90%E5%8A%A8%E5%A7%94%E5%91%98%E4%BC%9A%E5%85%B3%E4%BA%8E%E5%91%BD%E5%90%8D2022%E5%B9%B4%E5%9B%9B%E5%B7%9D%E7%9C%81%E5%8D%AB%E7%94%9F%E5%8E%BF%E5%9F%8E%E3%80%81%E5%8D%AB%E7%94%9F%E4%B9%A1%E9%95%87%28%E8%A1%97%E9%81%93%29%E3%80%81%E5%8D%AB%E7%94%9F%E6%9D%91%28%E7%A4%BE%E5%8C%BA%29%E3%80%81%E5%8D%AB%E7%94%9F%E5%8D%95%E4%BD%8D%E5%92%8C%E6%97%A0%E7%83%9F%E5%8D%95%E4%BD%8D%E7%9A%84%E5%86%B3%E5%AE%9A%E5%B7%9D%E7%88%B1%E5%8D%AB%E5%8F%91%E3%80%942023%E3%80%953%E5%8F%B7.pdf",
+    "districtEvidence": "四川省教育考试院2026章程确认天府校区为“成都市天府新区正兴街道大安路818号”；四川省爱国卫生运动委员会文件在成都市分区清单中明确列“双流区：…正兴街道…（四川天府新区）”，故最低法定县级行政区为双流区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
