@@ -1,0 +1,50 @@
+{
+  "PROFILE1888_0": {
+    "d": "龙海区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jgxy.xmu.edu.cn/info/dnoko2gz.html",
+    "districtEvidence": "厦门大学嘉庚学院2026级新生入学官方问答直接将邮寄/通信地址写为“福建省漳州市龙海区漳州招商局经济技术开发区厦门大学漳州校区嘉庚学院”，与现有Campus一致，故法定县区为龙海区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1890_0": {
+    "d": "闽侯县",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--infoId-7649274193%2Cmethod-view%2CschId-1767.dhtml",
+    "districtEvidence": "经上级主管部门审核通过的福建师范大学协和学院2026年招生章程直接写明办学地址为“福州市闽侯上街大学城学府南路68号”，与现有Campus一致，法定县级单元为闽侯县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2606_0": {
+    "d": "闽侯县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B024F05ZL9",
+    "districtEvidence": "福建江夏学院2026官网和招生章程继续使用福州地区大学新校区溪源宫路2号；高德当前学校实体将同一门牌直接落为福州市闽侯县上街镇。学校官网公安备案号350121亦对应闽侯县行政代码，故法定县区按闽侯县记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1905_0": {
+    "d": "漳浦县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.shengyazhidao.com/smo/smoUniversityDetail?id=TIANJIAGAOXIAO001990",
+    "districtEvidence": "漳州科技职业学院现有Campus位于国道324线厦深高铁漳浦站旁；当前高校信息平台将学校通讯地址明确写为福建漳州市漳浦县盘陀镇，与漳浦站旁校址一致，故法定县区按漳浦县记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2422_0": {
+    "d": "晋江市",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-49446838%2CinfoId-7633107697.dhtml",
+    "districtEvidence": "经上级主管部门审核通过的泉州轻工职业学院2026年普通高考招生章程写明学校地址为福建省泉州市晋江博览大道，并明确学校位于泉州晋江市，故法定县级单元为晋江市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3259_0": {
+    "d": "闽侯县",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--infoId-7633533933%2Cmethod-view%2CschId-1814364262.dhtml",
+    "districtEvidence": "经上级主管部门审核通过的福州墨尔本理工职业学院2026年普通高考招生章程直接写明学校地址为“福建省福州市闽侯县上街镇联榕路9号”，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
