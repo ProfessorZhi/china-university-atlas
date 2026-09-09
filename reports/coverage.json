@@ -64,6 +64,7 @@
     "ordinarySchoolsWithLowestLegalLocationEvidence": 2935,
     "terminalCityBoundaries": 34,
     "activeSchoolsAtTerminalCityBoundary": 38,
+    "addressInferredCampusDistricts": 0,
     "rankingFactRecords": 27,
     "rankingFactSchools": 10,
     "admissionFactRecords": 0,
