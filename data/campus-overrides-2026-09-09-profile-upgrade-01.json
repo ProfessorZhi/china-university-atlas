@@ -1,0 +1,72 @@
+{
+  "PROFILE3668_1": {
+    "d": "祥符区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.kfvc.edu.cn/2024/0628/c386a1873/page.htm",
+    "verified": true,
+    "status": "学校官网确认的现用产融校区；法定县区由祥符区政府规划材料闭环核验",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.xiangfuqu.gov.cn/kfsxfqwz/tzggx/pc/content/content_1930791444834762752.html",
+    "districtEvidence": "开封职业学院官网确认产融校区位于开封市产城融合示范区和谐路1号；祥符区政府同片区控规明确产城融合示范区相关地块行政区划隶属开封市祥符区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3668_2": {
+    "d": "祥符区",
+    "verified": false,
+    "status": "第三方档案将产融校区地址括号内续行拆成独立记录；与PROFILE3668_1为同一物理校区，非第二个校区，待后续源数据去重",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.xiangfuqu.gov.cn/kfsxfqwz/tzggx/pc/content/content_1930791444834762752.html",
+    "districtEvidence": "该地址续行属于开封职业学院产融校区；祥符区政府规划明确产城融合示范区相关地块行政区划隶属祥符区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3643_1": {
+    "d": "新郑市",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.zzfec.edu.cn/xxywxq/309.html",
+    "verified": false,
+    "status": "学校2026官网确认太湖路校区；法定县级归属经校址、港区北站与同路口资料交叉核对为新郑市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/BV10729460",
+    "districtEvidence": "学校2026官网将太湖路校区定位为郑州市航空港太湖路港区北地铁站；港区北站公开地图记录位于郑州市新郑市，且新郑市国土空间规划亦将太湖路—华夏大道航空港北部片区纳入航空港代管范围表述。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3461_0": {
+    "d": "蜀山区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.artah.cn/kinduploadfile/file/20250303/20250303102658_45965.pdf",
+    "verified": false,
+    "status": "学院招生章程确认丹霞路校区；法定区县由同址地图记录交叉核对",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B02270IAQV",
+    "districtEvidence": "安徽艺术职业学院2025分类考试招生章程确认丹霞路校区地址为合肥市经开区大学城丹霞路8号；高德同名校区将该地址明确落为合肥市蜀山区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3461_1": {
+    "d": "包河区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ahggzyjy.com/jyxx/002002/002002002/20250612/443c696b-6aa4-4cab-bbac-ad9d55e5b42d.html",
+    "verified": true,
+    "status": "安徽公共资源交易政府采购信息确认的学院现址/校区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ahggzyjy.com/jyxx/002002/002002002/20250612/443c696b-6aa4-4cab-bbac-ad9d55e5b42d.html",
+    "districtEvidence": "安徽公共资源交易采购公告直接列采购人安徽艺术职业学院地址为合肥市包河区宣城路16号，与档案宣城路校区地址完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3115_0": {
+    "d": "瑶海区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ggzyjt.com/jyxx/002003/002003002/20260706/ca8cd9e7-54b1-47ab-89a0-fa20d3ff2faf.html",
+    "verified": true,
+    "status": "2026合肥公共资源交易采购信息直接确认学林路校区法定区县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ggzyjt.com/jyxx/002003/002003002/20260706/ca8cd9e7-54b1-47ab-89a0-fa20d3ff2faf.html",
+    "districtEvidence": "2026年合肥公共资源交易项目直接列合肥幼儿师范高等专科学校地址为合肥市瑶海区学林路1100号，与档案学林路校区地址完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
