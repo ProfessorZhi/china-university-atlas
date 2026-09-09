@@ -58,6 +58,7 @@ def validate():
         if f.suffix in ['.gz','.png','.zip']:continue
         text=f.read_text(encoding='utf-8-sig',errors='replace');scanned+=1
         if f.name!='validate.py':check(not forbidden.search(text),'private path or credential pattern in '+str(f.relative_to(ROOT)))
-    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'pendingNewHostCitySchools':pending_hosts,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
+    live_missing=[{'uid':r.get('uid'),'school':r.get('学校'),'province':r.get('省份'),'city':r.get('城市'),'level':r.get('层次')} for r in d.get('missingSchools',[])]
+    result={'pass':not errors,'errors':errors,'universities':len(u),'campuses':len(c),'districtAssociations':len(a),'cityAffiliateCities':len(aff),'cityAffiliateItems':affiliate_items,'activeOrdinarySchools':st.get('activeOrdinarySchools'),'inactiveOrdinarySchools':len(inactive),'activeMissingLocations':st.get('ordinarySchoolsWithoutLocations'),'activeMissingSchools':live_missing,'activeCityOnlyLocations':st.get('ordinarySchoolsOnlyCityLocation'),'pendingNewHostCitySchools':pending_hosts,'boundaryFiles':len(geometry),'scannedTextFiles':scanned,'noNetworkBuild':True}
     print(json.dumps(result,ensure_ascii=False,indent=2));return result
 if __name__=='__main__':sys.exit(0 if validate()['pass'] else 1)
