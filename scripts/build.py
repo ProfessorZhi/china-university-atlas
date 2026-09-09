@@ -33,9 +33,9 @@ def load_data():
 
 def build():
     data=load_data();version=(ROOT/'VERSION').read_text().strip();json_text=lambda value:json.dumps(value,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c');geometry=(ROOT/'data/boundaries.compact.json.gz').read_bytes();maps=json.loads(gzip.decompress(geometry));manifest={'complete':True,'maps':len(maps),'version':version,'preparedAt':'2026-09-09','source':'See data/sources.json','schoolDataComplete':'学校主体已嵌入；无地点、县区证据、精确校区和已停招/并转状态分层统计；排名、录取与财务采用版本化事实层；市级只按本地主体高校竞争；新设行政单元在边界升级前明确标记。'}
-    app=(ROOT/'src/app.js').read_text(encoding='utf-8');city=(ROOT/'src/city-layer.js').read_text(encoding='utf-8');status_layer=(ROOT/'src/status-layer.js').read_text(encoding='utf-8');marker='\nboot();'
+    app=(ROOT/'src/app.js').read_text(encoding='utf-8');city=(ROOT/'src/city-layer.js').read_text(encoding='utf-8');status_layer=(ROOT/'src/status-layer.js').read_text(encoding='utf-8');facts_layer=(ROOT/'src/facts-layer.js').read_text(encoding='utf-8');marker='\nboot();'
     if app.count(marker)!=1:raise ValueError('Expected one boot marker in src/app.js')
-    app=app.replace(marker,'\n'+city+'\n'+status_layer+marker);styles=(ROOT/'src/styles.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/city-layer.css').read_text(encoding='utf-8');values={'__STYLES__':styles,'__APP__':app,'__SCHOOL_DATA__':json_text(data),'__GEO_DATA__':base64.b64encode(geometry).decode(),'__MANIFEST__':json_text(manifest)};html=(ROOT/'src/index.template.html').read_text(encoding='utf-8')
+    app=app.replace(marker,'\n'+city+'\n'+status_layer+'\n'+facts_layer+marker);styles=(ROOT/'src/styles.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/city-layer.css').read_text(encoding='utf-8');values={'__STYLES__':styles,'__APP__':app,'__SCHOOL_DATA__':json_text(data),'__GEO_DATA__':base64.b64encode(geometry).decode(),'__MANIFEST__':json_text(manifest)};html=(ROOT/'src/index.template.html').read_text(encoding='utf-8')
     for marker,value in values.items():
         if html.count(marker)!=1:raise ValueError('Expected exactly one template marker: '+marker)
         html=html.replace(marker,value)
