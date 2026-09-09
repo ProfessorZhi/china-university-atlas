@@ -13,12 +13,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Generate derived institution tables
+        run: python scripts/generate_reports.py
       - name: Build offline HTML
         run: python scripts/build.py
       - name: Validate data and publication hygiene
         run: python scripts/validate.py
-      - name: Verify deterministic rebuild
-        run: python scripts/build.py --check
+      - name: Verify deterministic reports and rebuild
+        run: |
+          python scripts/generate_reports.py --check
+          python scripts/build.py --check
       - name: Offline browser and city-layer UI test
         run: |
           google-chrome --version
@@ -36,4 +40,5 @@ jobs:
             release-assets/*.zip
             release-assets/SHA256SUMS.txt
             reports/*.json
+            reports/*.csv
             docs/*city-layer.png
