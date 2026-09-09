@@ -19,7 +19,9 @@ def load_data():
         else:u.setdefault('rankingEligible',True)
     additions=[]
     for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):additions.extend(jsonl(path))
-    associations=jsonl(ROOT/'data/district-associations.jsonl');ao_path=ROOT/'data/district-association-overrides.json';ao=json.loads(ao_path.read_text(encoding='utf-8')) if ao_path.exists() else {}
+    association_additions=[]
+    for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):association_additions.extend(jsonl(path))
+    associations=jsonl(ROOT/'data/district-associations.jsonl')+association_additions;ao_path=ROOT/'data/district-association-overrides.json';ao=json.loads(ao_path.read_text(encoding='utf-8')) if ao_path.exists() else {}
     for record in associations:
         override=ao.get(record['id'])
         if override:record.update(override)
