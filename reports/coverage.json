@@ -9,9 +9,9 @@
     "positionedCampuses": 2799,
     "officialCampusAssociations": 77,
     "schoolsWithCampuses": 2952,
-    "districtsWithCampuses": 1206,
+    "districtsWithCampuses": 1230,
     "districtPolygons": 2840,
-    "districtsWithCandidates": 1211,
+    "districtsWithCandidates": 1235,
     "cityLabels": 344,
     "boundaryFiles": 363,
     "rawPOIRecords": 36694,
@@ -32,7 +32,7 @@
     "pointsAfterSimplification": 851820,
     "ordinarySchoolsWithLocations": 2935,
     "ordinarySchoolsWithoutLocations": 0,
-    "ordinarySchoolsOnlyCityLocation": 104,
+    "ordinarySchoolsOnlyCityLocation": 67,
     "profileRecordsFetched": 2896,
     "profileLocationRecords": 4864,
     "historicalLocationRecords": 1856,
@@ -44,7 +44,7 @@
     },
     "districtAssociationRecords": 36,
     "districtAssociationSchools": 36,
-    "ordinarySchoolsWithDistrictEvidence": 2836,
+    "ordinarySchoolsWithDistrictEvidence": 2873,
     "verifiedDistrictAssociationRecords": 4,
     "ordinarySchoolsWithAnyLocationEvidence": 2935,
     "ordinarySchoolsWithCampusRecords": 2931,
@@ -55,6 +55,8 @@
     "activeOrdinarySchools": 2935,
     "pendingNewHostCitySchools": 1,
     "corroboratedLocationRecords": 19,
+    "terminalCityBoundaries": 34,
+    "activeSchoolsAtTerminalCityBoundary": 38,
     "rankingFactRecords": 27,
     "rankingFactSchools": 10,
     "admissionFactRecords": 0,
@@ -300,8 +302,8 @@
       "missingSchools": 0,
       "campuses": 426,
       "districtAssociations": 3,
-      "districts": 80,
-      "allDistricts": 156,
+      "districts": 81,
+      "allDistricts": 157,
       "verifiedRecords": 3
     },
     {
@@ -315,8 +317,8 @@
       "missingSchools": 0,
       "campuses": 262,
       "districtAssociations": 0,
-      "districts": 45,
-      "allDistricts": 99,
+      "districts": 48,
+      "allDistricts": 103,
       "verifiedRecords": 2
     },
     {
@@ -345,8 +347,8 @@
       "missingSchools": 0,
       "campuses": 433,
       "districtAssociations": 1,
-      "districts": 66,
-      "allDistricts": 122,
+      "districts": 68,
+      "allDistricts": 124,
       "verifiedRecords": 12
     },
     {
@@ -375,8 +377,8 @@
       "missingSchools": 0,
       "campuses": 48,
       "districtAssociations": 0,
-      "districts": 7,
-      "allDistricts": 10,
+      "districts": 15,
+      "allDistricts": 26,
       "verifiedRecords": 1
     },
     {
@@ -480,8 +482,8 @@
       "missingSchools": 0,
       "campuses": 110,
       "districtAssociations": 0,
-      "districts": 24,
-      "allDistricts": 86,
+      "districts": 25,
+      "allDistricts": 87,
       "verifiedRecords": 0
     },
     {
@@ -525,8 +527,8 @@
       "missingSchools": 0,
       "campuses": 147,
       "districtAssociations": 1,
-      "districts": 32,
-      "allDistricts": 96,
+      "districts": 41,
+      "allDistricts": 106,
       "verifiedRecords": 4
     },
     {
@@ -577,7 +579,7 @@
   ],
   "gaps": {
     "activeMissingAnyLocationEvidence": 0,
-    "activeCityOnlyLocation": 104,
+    "activeCityOnlyLocation": 67,
     "activeWithoutCampusRecords": 4,
     "districtEvidenceOnlySchools": 4,
     "resolvedInactiveOrdinarySchools": 17,
