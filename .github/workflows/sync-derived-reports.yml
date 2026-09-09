@@ -29,7 +29,7 @@ jobs:
         run: python scripts/generate_reports.py
       - name: Commit derived snapshots when changed
         run: |
-          git add reports/university-master.csv reports/universities.csv reports/rankings.csv reports/admissions.csv reports/finance.csv reports/coverage.json reports/revision.json reports/province-coverage.csv reports/missing-schools.csv reports/city-only-schools.csv reports/campus-record-gaps.csv reports/district-evidence-only-schools.csv reports/inactive-schools.csv reports/pending-host-cities.csv reports/district-associations.csv reports/campuses.csv
+          git add reports/university-master.csv reports/universities.csv reports/rankings.csv reports/admissions.csv reports/finance.csv reports/coverage.json reports/revision.json reports/province-coverage.csv reports/missing-schools.csv reports/city-only-schools.csv reports/campus-record-gaps.csv reports/campus-location-gaps.csv reports/district-evidence-only-schools.csv reports/inactive-schools.csv reports/pending-host-cities.csv reports/district-associations.csv reports/campuses.csv
           if git diff --cached --quiet; then
             echo 'Derived reports already current.'
             exit 0
