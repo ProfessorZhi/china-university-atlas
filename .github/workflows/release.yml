@@ -18,6 +18,7 @@ jobs:
           python scripts/generate_reports.py
           python scripts/build.py
           python scripts/validate.py
+          python scripts/validate_facts.py
           python scripts/generate_reports.py --check
           python scripts/build.py --check
           python scripts/build.py --zip
