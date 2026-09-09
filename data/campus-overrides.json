@@ -35,7 +35,7 @@
     "d": "鹿泉区",
     "districtVerified": true,
     "districtSourceKind": "government",
-    "districtSourceUrl": "https://www.sjzlq.gov.cn/columns/10ccbcb0-fab6-4299-a0a9-c0db764c85d6/202606/22/ce5e6b63-24ac-4363-8182-ccaedb7535e5.html",
+    "districtSourceUrl": "https://www.sjzlq.gov.cn/columns/10ccbcb0-fab6-4299-a0a9-c0db764c85d6/202606/22/ce5e6b63-24ac-4363-8182-ccaedb7535e5e5.html",
     "districtEvidence": "石家庄市鹿泉区政府2026年医疗机构校验公示列石家庄幼儿师范高等专科学校医务室地址为石家庄市鹿泉区御园路88号，与现有学校地址一致。",
     "districtVerifiedAt": "2026-09-09"
   },
@@ -197,6 +197,94 @@
     "districtSourceKind": "official",
     "districtSourceUrl": "https://www.nsi-soft.com/nsi/fwzn",
     "districtEvidence": "沈阳北软信息职业技术学院官网服务指南直接写明“沈阳市沈北新区沈北路53号”，与现有沈北路53号记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE413_0": {
+    "d": "南关区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/cggg/202604/t20260417_9520998.html",
+    "districtEvidence": "吉林省公共资源交易公共服务平台2026年吉林体育学院采购公告直接写明采购人地址为“吉林省长春市南关区自由大路2476号”，与现有南岭校区地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE411_0": {
+    "d": "南关区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.city8.com/changchun/life/8h9s2q85hso7b3a318_address",
+    "districtEvidence": "吉林外国语大学官网当前地址为长春市净月大街3658号；公开门址地图将同一门牌明确落为“吉林省长春市南关区净月大街3658号”。因学校官网本身未写法定区县，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1419_1": {
+    "d": "南关区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://xxgk.jl.gov.cn/zcbm/fgw_97981/xxgkmlqy/202304/t20230410_8691339.html",
+    "districtEvidence": "学校招生章程与现有记录均明确净月北校区位于福祉街道潭西社区福祉大路1299号；吉林省民政厅行政区划批复明确“长春市南关区”调整福祉街道并列明福祉街道范围，故法定县级单元为南关区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1373_0": {
+    "d": "朝阳区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/zbgg/202403/t20240318_8883446.html",
+    "districtEvidence": "吉林动画学院2026年招生章程将高新校区细化到“飞跃街道三佳社区博识路168号”；吉林省公共资源交易平台明确飞跃街道办事处为“长春市朝阳区飞跃街道办事处”，故法定县区为朝阳区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3260_0": {
+    "d": "朝阳区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.zhaopin.com/jobdetail/CC511886280J40575170914.htm",
+    "districtEvidence": "长春健康职业学院官网当前地址为高新区锦河街155号；当前招聘地点将同一门牌明确标为“长春朝阳区锦河街155号”。因县区信息来自招聘平台而非学校/政府地址页，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2536_0": {
+    "d": "宾县",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hljkltc.edu.cn/info/1116/31691.htm",
+    "districtEvidence": "黑龙江工程学院昆仑旅游学院官网当前国际合作信息直接写明联系地址为“哈尔滨市宾县二龙山风景区”，学校发展历程亦明确2009年迁至宾县二龙山风景区，与现有G221公路297号记录对应。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2534_0": {
+    "d": "呼兰区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://sswt.hlj.gov.cn/sswt/c103658/202607/c00_31960641.shtml",
+    "districtEvidence": "黑龙江省商务厅2026年事业单位招聘面试通知直接将“哈尔滨广厦学院教学楼C”地址写为“呼兰区学院路1号”，与现有利民开发区学院路1号记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2530_0": {
+    "d": "呼兰区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B01C31731L",
+    "districtEvidence": "哈尔滨远东理工学院官网现有资料使用利民开发区学院路时代大街158号；高德当前学校实体将同一地址明确落为哈尔滨市呼兰区。县区待学校或政府精确地址页进一步直连复核。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1328_0": {
+    "d": "呼兰区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B01C302AB5",
+    "districtEvidence": "现有校址为哈尔滨市利民开发区师大南路1号；高德当前学校实体将同一门牌明确写作“哈尔滨市呼兰区师大南路1号”。因当前县区直证来自地图实体，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE737_0": {
+    "d": "呼兰区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://hljnkzy.edu.cn/info/2291/79891.htm",
+    "districtEvidence": "黑龙江农垦职业学院2026年公开招聘资格复审公告直接写明地址“哈尔滨市呼兰区利民开发区学院路660号”，与现有江北校区地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2193_0": {
+    "d": "呼兰区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.dxsbb.com/news/50769.html",
+    "districtEvidence": "黑龙江公安警官职业学院2026年招生章程公开文本写明办学地点“哈尔滨市呼兰利民开发区学院路333号”；黑龙江省政府/政务材料将利民开发区地址统一写作呼兰区利民开发区，故法定县区按呼兰区记录。因招生章程当前抓取页为转载，保留交叉核对等级。",
     "districtVerifiedAt": "2026-09-09"
   }
 }
