@@ -1,6 +1,6 @@
 """Deterministic offline HTML build. Python 3.10+; no network or dependencies."""
 from pathlib import Path
-import argparse,base64,gzip,hashlib,json,sys,zipfile
+import argparse,base64,gzip,hashlib,json,re,sys,zipfile
 from derived_v53 import refresh_derived as refresh_derived_v53
 from facts_v53 import attach_facts
 
@@ -33,7 +33,6 @@ def infer_exact_address_districts(campuses,regions):
         hits=[d for d in by_city.get((record.get('p',''),record.get('c','')),()) if d in address]
         if not hits:
             continue
-        # If one legal name is contained inside another, keep only the most specific textual hit.
         maximal=[d for d in hits if not any(d!=other and d in other for other in hits)]
         if len(maximal)!=1:
             continue
@@ -46,6 +45,49 @@ def infer_exact_address_districts(campuses,regions):
         record['districtVerified']=bool(record.get('verified'))
         inferred+=1
     return inferred
+
+def normalized_address(value):
+    """Conservative comparison key: remove punctuation/spacing only, never rewrite place names."""
+    text=str(value or '').strip()
+    if not text:
+        return ''
+    return re.sub(r'[\s,，。；;()（）\-—_/]+','',text)
+
+def inherit_exact_address_districts(campuses):
+    """Fill d from another record only for an exact same-city normalized address with one d.
+
+    Donors are snapshotted before inheritance, preventing inference chains. If the same address is
+    associated with more than one legal district, the address is deliberately left unresolved.
+    """
+    donors={}
+    donor_ids={}
+    for record in campuses:
+        d=record.get('d')
+        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address')))
+        if not d or not key[2]:
+            continue
+        donors.setdefault(key,set()).add(d)
+        donor_ids.setdefault((key,d),[]).append(record.get('id'))
+    inherited=0
+    for record in campuses:
+        if record.get('d'):
+            continue
+        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address')))
+        if not key[2]:
+            continue
+        districts=donors.get(key,set())
+        if len(districts)!=1:
+            continue
+        d=next(iter(districts))
+        record['d']=d
+        record['districtInferenceMethod']='exact-same-city-address-inheritance'
+        record['districtInferenceEvidence']=record.get('address')
+        record['districtSourceKind']='address-inherited'
+        record['districtSourceUrl']=record.get('sourceUrl')
+        record['districtVerified']=False
+        record['districtInheritedFrom']=sorted(x for x in donor_ids.get((key,d),[]) if x)
+        inherited+=1
+    return inherited
 
 def load_data():
     data=json.loads((ROOT/'data/metadata.json').read_text(encoding='utf-8'))
@@ -81,6 +123,7 @@ def load_data():
         if override:
             record.update(override)
     address_inferred=infer_exact_address_districts(campuses,regions)
+    exact_address_inherited=inherit_exact_address_districts(campuses)
     association_additions=[]
     for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):
         association_additions.extend(jsonl(path))
@@ -102,6 +145,7 @@ def load_data():
     data['sources']=sources
     data=refresh_derived_v53(data,(ROOT/'VERSION').read_text().strip())
     data['stats']['addressInferredCampusDistricts']=address_inferred
+    data['stats']['exactAddressInheritedCampusDistricts']=exact_address_inherited
     return attach_facts(data,ROOT)
 
 def build():
