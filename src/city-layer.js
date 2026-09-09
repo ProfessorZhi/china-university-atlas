@@ -2,7 +2,8 @@
 // Physical campuses remain visible at district level; city hover discloses two external tiers.
 const CITY_DIRECT_REGIONS=new Set(['北京市','天津市','上海市','重庆市','香港特别行政区','澳门特别行政区']);
 function regionNodeForFeature(f){return(D.regions||{})[String(f.id)]||null;}
-function cityAffiliatesFor(p,c){return(D.cityAffiliates||{})[keyOf(p,c)]||null;}
+function cityAffiliateKey(p,c){return p+'|'+c;}
+function cityAffiliatesFor(p,c){return(D.cityAffiliates||{})[cityAffiliateKey(p,c)]||null;}
 function hasCityAffiliates(a){return!!a&&((a.undergraduate||[]).length>0||(a.graduate||[]).length>0);}
 function cityAffiliateBundle(f,node=current()){return node.kind==='province'?cityAffiliatesFor(node.p,f.name):null;}
 function cityAffiliatesVisible(f,node=current()){return $('includeBranch').checked&&hasCityAffiliates(cityAffiliateBundle(f,node));}
