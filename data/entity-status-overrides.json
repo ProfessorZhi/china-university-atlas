@@ -1,0 +1,26 @@
+{
+  "4113013404": {
+    "status": "terminating",
+    "rankingEligible": false,
+    "effectiveFrom": "2020",
+    "label": "已停止招生 / 终止办学程序",
+    "sourceUrl": "https://www.thepaper.cn/newsDetail_forward_11090362",
+    "evidence": "教育部教发函〔2021〕16号：自2020年起停止招生，以终止办学、逐步回归举办高校方式实现转设。"
+  },
+  "4144013177": {
+    "status": "closed",
+    "rankingEligible": false,
+    "effectiveFrom": "2024",
+    "label": "已终止办学",
+    "sourceUrl": "https://news.bnu.edu.cn/zx/zhxw/109390.htm?dt_dapp=1",
+    "evidence": "北京师范大学依据教育部批复说明：珠海分校2021年停止招生，2024年终止办学。"
+  },
+  "4121013199": {
+    "status": "nonRecruiting",
+    "rankingEligible": false,
+    "effectiveFrom": "2015年前",
+    "label": "已停止招生",
+    "sourceUrl": "https://www.moe.gov.cn/jyb_xwfb/s5147/201506/t20150630_191703.html",
+    "evidence": "教育部2015年报道辽宁本科专业信息时明确将沈阳工业大学工程学院列为已经停止招生的独立学院。"
+  }
+}
