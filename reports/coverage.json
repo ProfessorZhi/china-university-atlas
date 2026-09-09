@@ -7,9 +7,9 @@
     "schoolEntities": 3196,
     "campusRecords": 6817,
     "positionedCampuses": 2799,
-    "officialCampusAssociations": 78,
+    "officialCampusAssociations": 82,
     "schoolsWithCampuses": 2952,
-    "districtsWithCampuses": 1234,
+    "districtsWithCampuses": 1235,
     "districtPolygons": 2840,
     "districtsWithCandidates": 1238,
     "cityLabels": 344,
@@ -32,11 +32,11 @@
     "pointsAfterSimplification": 851820,
     "ordinarySchoolsWithLocations": 2935,
     "ordinarySchoolsWithoutLocations": 0,
-    "ordinarySchoolsOnlyCityLocation": 7,
+    "ordinarySchoolsOnlyCityLocation": 2,
     "profileRecordsFetched": 2896,
     "profileLocationRecords": 4864,
     "historicalLocationRecords": 1856,
-    "officialLocationRecords": 78,
+    "officialLocationRecords": 82,
     "profileLocationHints": 44,
     "addressesToReview": 1130,
     "profileRejections": {
@@ -44,7 +44,7 @@
     },
     "districtAssociationRecords": 36,
     "districtAssociationSchools": 36,
-    "ordinarySchoolsWithDistrictEvidence": 2930,
+    "ordinarySchoolsWithDistrictEvidence": 2934,
     "verifiedDistrictAssociationRecords": 4,
     "ordinarySchoolsWithAnyLocationEvidence": 2935,
     "ordinarySchoolsWithCampusRecords": 2931,
@@ -439,7 +439,7 @@
       "districtAssociations": 0,
       "districts": 33,
       "allDistricts": 129,
-      "verifiedRecords": 0
+      "verifiedRecords": 2
     },
     {
       "province": "西藏自治区",
@@ -469,7 +469,7 @@
       "districtAssociations": 0,
       "districts": 36,
       "allDistricts": 107,
-      "verifiedRecords": 1
+      "verifiedRecords": 3
     },
     {
       "province": "甘肃省",
@@ -579,7 +579,7 @@
   ],
   "gaps": {
     "activeMissingAnyLocationEvidence": 0,
-    "activeCityOnlyLocation": 7,
+    "activeCityOnlyLocation": 2,
     "activeWithoutCampusRecords": 4,
     "districtEvidenceOnlySchools": 4,
     "resolvedInactiveOrdinarySchools": 17,
