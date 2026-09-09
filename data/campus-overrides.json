@@ -1,0 +1,66 @@
+{
+  "PROFILE626_0": {
+    "d": "长安区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsxx.hepec.edu.cn/col/1416209360033/2026/02/12/1770885578269.html",
+    "districtEvidence": "河北体育学院2026年招生简章明确通讯地址为河北省石家庄市长安区学府路82号，与现有PROFILE626_0地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE626_1": {
+    "d": "正定县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://sport.hebei.gov.cn/tongzhigonggao/2024/1031/26415.html",
+    "districtEvidence": "河北省体育局公开招标公告明确河北体育学院地址为河北省石家庄市正定县恒阳路61号，与正定新区校区现有地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1576_0": {
+    "d": "裕华区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hebmu.edu.cn/a/2026/07/08/42286375BD9C407785DE5DEB4D66E66D.html",
+    "districtEvidence": "河北医科大学2026年临床学院项目公告明确招标人为河北医科大学临床学院，地点为石家庄市裕华区建华南大街309号，与现有地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1585_0": {
+    "d": "海港区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://stc.ysu.edu.cn/nry.jsp?urltype=news.NewsContentUrl&wbnewsid=30396&wbtreeid=1013",
+    "districtEvidence": "燕山大学里仁学院官网公告直接列出售人地址为秦皇岛市海港区河北大街438号，与现有地址一致；学院官网2025年仍持续发布教学与就业信息。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2857_0": {
+    "d": "鹿泉区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sjzlq.gov.cn/columns/10ccbcb0-fab6-4299-a0a9-c0db764c85d6/202606/22/ce5e6b63-24ac-4363-8182-ccaedb7535e5.html",
+    "districtEvidence": "石家庄市鹿泉区政府2026年医疗机构校验公示列石家庄幼儿师范高等专科学校医务室地址为石家庄市鹿泉区御园路88号，与现有学校地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1586_0": {
+    "d": "邯山区",
+    "districtVerified": false,
+    "districtSourceKind": "profile-county",
+    "districtSourceUrl": "https://www.chinaschool.com.cn/i_region/i_3_hebei/a_47/a_47.html",
+    "districtEvidence": "公开高校档案将河北工程大学科信学院同一地址光明南大街199号明确标为邯郸市邯山区；当前学院官网域名仍在教育部主体记录中，县区待学校官网地址页进一步直连复核。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1581_0": {
+    "d": "黄骅市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://app.gaokaozhitongche.com/newsguide/h/lGQp7aZg",
+    "districtEvidence": "河北农业大学现代科技学院2025招生章程公开镜像明确校址为沧州市中捷产业园区渤海路1号；2026河北公共资源/土地公告使用“沧州渤海新区黄骅市”并将中捷产业园区列入其宗地范围，故县级映射为黄骅市；不改变学校主体home city。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2847_0": {
+    "d": "曹妃甸区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.hzgrys.net/collinfo/201.html",
+    "districtEvidence": "当前高校资料将华北理工大学冀唐学院校址明确写为河北省唐山市曹妃甸区唐山湾生态城渤海大道21号，与现有曹妃甸新城渤海大道21号记录一致；2024河北省普通高校咨询服务站亦使用该校址。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
