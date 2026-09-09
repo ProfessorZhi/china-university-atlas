@@ -7,7 +7,7 @@
     "schoolEntities": 3196,
     "campusRecords": 6817,
     "positionedCampuses": 2799,
-    "officialCampusAssociations": 112,
+    "officialCampusAssociations": 122,
     "schoolsWithCampuses": 2952,
     "districtsWithCampuses": 1235,
     "districtPolygons": 2840,
@@ -36,7 +36,7 @@
     "profileRecordsFetched": 2896,
     "profileLocationRecords": 4864,
     "historicalLocationRecords": 1856,
-    "officialLocationRecords": 112,
+    "officialLocationRecords": 122,
     "profileLocationHints": 44,
     "addressesToReview": 1130,
     "profileRejections": {
@@ -46,8 +46,8 @@
     "districtAssociationSchools": 35,
     "ordinarySchoolsWithDistrictEvidence": 2935,
     "verifiedDistrictAssociationRecords": 4,
-    "campusRecordsWithLowestLegalBoundary": 5912,
-    "campusRecordsOnlyCityLocation": 905,
+    "campusRecordsWithLowestLegalBoundary": 5922,
+    "campusRecordsOnlyCityLocation": 895,
     "campusRecordsPendingBoundary": 2,
     "ordinarySchoolsWithAnyLocationEvidence": 2935,
     "ordinarySchoolsWithCampusRecords": 2931,
@@ -246,12 +246,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 429,
-      "campusRecordsWithLowestLegalBoundary": 365,
-      "campusLocationGaps": 64,
+      "campusRecordsWithLowestLegalBoundary": 366,
+      "campusLocationGaps": 63,
       "districtAssociations": 1,
       "districts": 70,
       "allDistricts": 95,
-      "verifiedRecords": 10
+      "verifiedRecords": 11
     },
     {
       "province": "浙江省",
@@ -264,12 +264,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 286,
-      "campusRecordsWithLowestLegalBoundary": 249,
-      "campusLocationGaps": 37,
+      "campusRecordsWithLowestLegalBoundary": 252,
+      "campusLocationGaps": 34,
       "districtAssociations": 0,
       "districts": 62,
       "allDistricts": 90,
-      "verifiedRecords": 12
+      "verifiedRecords": 15
     },
     {
       "province": "安徽省",
@@ -300,12 +300,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 208,
-      "campusRecordsWithLowestLegalBoundary": 186,
-      "campusLocationGaps": 22,
+      "campusRecordsWithLowestLegalBoundary": 189,
+      "campusLocationGaps": 19,
       "districtAssociations": 0,
       "districts": 47,
       "allDistricts": 84,
-      "verifiedRecords": 2
+      "verifiedRecords": 5
     },
     {
       "province": "江西省",
@@ -336,12 +336,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 412,
-      "campusRecordsWithLowestLegalBoundary": 342,
-      "campusLocationGaps": 70,
+      "campusRecordsWithLowestLegalBoundary": 343,
+      "campusLocationGaps": 69,
       "districtAssociations": 5,
       "districts": 82,
       "allDistricts": 136,
-      "verifiedRecords": 6
+      "verifiedRecords": 7
     },
     {
       "province": "河南省",
@@ -354,12 +354,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 427,
-      "campusRecordsWithLowestLegalBoundary": 343,
-      "campusLocationGaps": 84,
+      "campusRecordsWithLowestLegalBoundary": 344,
+      "campusLocationGaps": 83,
       "districtAssociations": 3,
       "districts": 82,
       "allDistricts": 157,
-      "verifiedRecords": 19
+      "verifiedRecords": 20
     },
     {
       "province": "湖北省",
@@ -516,12 +516,12 @@
       "missingSchools": 0,
       "pendingBoundarySchools": 0,
       "campuses": 198,
-      "campusRecordsWithLowestLegalBoundary": 174,
-      "campusLocationGaps": 24,
+      "campusRecordsWithLowestLegalBoundary": 175,
+      "campusLocationGaps": 23,
       "districtAssociations": 0,
       "districts": 33,
       "allDistricts": 129,
-      "verifiedRecords": 4
+      "verifiedRecords": 5
     },
     {
       "province": "西藏自治区",
@@ -691,7 +691,7 @@
     "activeCityOnlyLocation": 0,
     "activeWithoutCampusRecords": 4,
     "districtEvidenceOnlySchools": 4,
-    "campusRecordsOnlyCityLocation": 905,
+    "campusRecordsOnlyCityLocation": 895,
     "pendingNewBoundarySchools": 2,
     "resolvedInactiveOrdinarySchools": 17
   }
