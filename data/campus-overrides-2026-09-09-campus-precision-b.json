@@ -1,0 +1,68 @@
+{
+  "PROFILE3274_0": {
+    "d": "曹妃甸区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.caofeidian.gov.cn/caofeidian/cfdwgjy/20250616/1211597345.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.caofeidian.gov.cn/caofeidian/cfdwgjy/20250616/1211597345.html",
+    "districtEvidence": "曹妃甸区人民政府公布的职业技能培训定点机构目录直接列曹妃甸职业技术学院地点为河北省唐山市曹妃甸区新城行知路25号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3282_0": {
+    "d": "闽侯县",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.minhou.gov.cn/xjwz/zwgk/zdlyxxgk/jdjc/yljg/202606/t20260615_5334332.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.minhou.gov.cn/xjwz/zwgk/zdlyxxgk/jdjc/yljg/202606/t20260615_5334332.htm",
+    "districtEvidence": "闽侯县人民政府2026年医疗机构许可汇总直接列闽江师范高等专科学校医务室地址为福州市闽侯县上街镇学府南路1号；福建省教育厅学校章程批复亦明确学校注册地为闽侯县上街镇大学城学府南路1号。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3239_0": {
+    "d": "茂南区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.gdpnc.edu.cn/2025/0515/c309a44196/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.gdpnc.edu.cn/2025/0515/c309a44196/page.htm",
+    "districtEvidence": "广东茂名幼儿师范专科学校官方招生章程直接列茂名校区为广东省茂名市茂南区西城西路6号；学校2026招生网站继续使用西城西路6号，故县区为茂南区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3321_0": {
+    "d": "官渡区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/zbgg/202312/t20231212_21252050.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/zbgg/202312/t20231212_21252050.htm",
+    "districtEvidence": "中国政府采购网昆明市政府采购项目直接将昆明铁道职业技术学院采购单位地址写为昆明市官渡区小石坝16号；2026采购公告继续使用经开区小石坝16号，故法定县区为官渡区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3256_0": {
+    "d": "颍州区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202604/t20260422_26439755.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202604/t20260422_26439755.htm",
+    "districtEvidence": "中国政府采购网2026年阜阳幼儿师范高等专科学校项目公告直接列采购单位地址为阜阳市颍州区清河西路259号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3352_0": {
+    "d": "南安市",
+    "sourceKind": "government",
+    "sourceUrl": "https://jyt.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/zcwj/202412/t20241204_6588097.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://jyt.fujian.gov.cn/xxgk/zfxxgkzl/zfxxgkml/zcwj/202412/t20241204_6588097.htm",
+    "districtEvidence": "福建省教育厅普通高校专升本报名工作通知的高校联系方式表直接列泉州工程职业技术学院为泉州南安市柳城街道江北大道学园中路；南安市政府2026年文件继续将该校列为本市高职院校，故法定县级单元为南安市。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
