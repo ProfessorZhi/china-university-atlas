@@ -33,7 +33,11 @@ def load_data():
         else:u.setdefault('rankingEligible',True)
     additions=[]
     for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):additions.extend(jsonl(path))
-    data['universities']=universities;data['campuses']=jsonl(ROOT/'data/campuses.jsonl')+additions;data['districtAssociations']=jsonl(ROOT/'data/district-associations.jsonl');data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'));data['entityLocationOverrides']=host
+    associations=jsonl(ROOT/'data/district-associations.jsonl');ao_path=ROOT/'data/district-association-overrides.json';ao=json.loads(ao_path.read_text(encoding='utf-8')) if ao_path.exists() else {}
+    for record in associations:
+        override=ao.get(record['id'])
+        if override:record.update(override)
+    data['universities']=universities;data['campuses']=jsonl(ROOT/'data/campuses.jsonl')+additions;data['districtAssociations']=associations;data['districtAssociationOverrides']=ao;data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'));data['entityLocationOverrides']=host
     for key in ['regions','sources']:data[key]=json.loads((ROOT/'data'/f'{key}.json').read_text(encoding='utf-8'))
     return refresh_derived(data)
 
