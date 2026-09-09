@@ -1,0 +1,88 @@
+{
+  "PROFILE3367_0": {
+    "d": "管城回族区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.zzcsjr.edu.cn/zs/info/1074/3065.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.zzcsjr.edu.cn/zs/info/1074/3065.htm",
+    "districtEvidence": "郑州财税金融职业学院2026年普通高招招生章程直接写明注册地址为郑州市管城回族区郑尉路18号，与现有Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3511_1": {
+    "d": "龙亭区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnwmxy.edu.cn/zsjy1/zsxx.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnwmxy.edu.cn/zsjy1/zsxx.htm",
+    "districtEvidence": "河南对外经济贸易职业学院招生就业官网当前页脚直接列开封校区为郑汴一体化示范区龙亭区职教园区十大街；2026年学院预算同时确认开封校区位于该职教园区十大街。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3579_0": {
+    "d": "洛龙区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ptzs.hactcm.edu.cn/info/2096/12436.htm",
+    "districtEvidence": "洛阳文化旅游职业学院2026招生章程与政府采购持续确认伊滨校区为玉泉街299号；河南中医药大学官方2021招生章程曾将同一精确门牌“洛阳市玉泉街299号”明确写作洛龙区。伊滨区为功能管理区，法定县级映射据同门牌官方历史记录交叉确认为洛龙区，因此不标为单页直证。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3510_2": {
+    "d": "金水区",
+    "sourceKind": "government",
+    "sourceUrl": "https://xinmi.zfcg.henan.gov.cn/cmsweb81e27e/nas/webfile2024/henan/rootfiles/2025/07/08/df04d4c68b0746a682f75eb0b901a5cf.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://xinmi.zfcg.henan.gov.cn/cmsweb81e27e/nas/webfile2024/henan/rootfiles/2025/07/08/df04d4c68b0746a682f75eb0b901a5cf.pdf",
+    "districtEvidence": "河南省政府采购文件明确河南女子职业学院东校区建设地点为郑州市金水区北环路东段10号；学校2026招生章程继续使用同一东校区门牌。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3364_0": {
+    "d": "驿城区",
+    "sourceKind": "government",
+    "sourceUrl": "https://gongyi.zfcg.henan.gov.cn/cmsweb81e27e/nas/webfile2024/zhumadian/rootfiles/2024/01/03/ae2ba6bbbe8c403a9309b5064524560c.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gongyi.zfcg.henan.gov.cn/cmsweb81e27e/nas/webfile2024/zhumadian/rootfiles/2024/01/03/ae2ba6bbbe8c403a9309b5064524560c.pdf",
+    "districtEvidence": "驻马店市政府采购文件直接写明驻马店幼儿师范高等专科学校地址为驻马店市驿城区盘龙山路2658号；学校2026招生章程继续使用盘龙校区同一门牌。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3361_0": {
+    "d": "瀍河回族区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "districtEvidence": "河南林业职业学院2026年普通考试招生章程直接写明中州校区为洛阳市瀍河回族区中州东路2号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3361_2": {
+    "d": "老城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "districtEvidence": "河南林业职业学院2026年普通考试招生章程直接写明黄梅校区为洛阳市老城区黄梅路19号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3361_3": {
+    "d": "洛龙区",
+    "address": "河南省洛阳市洛龙区卫国路11号",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "districtEvidence": "河南林业职业学院2026年普通考试招生章程将建春门校区现地址更新为洛阳市洛龙区卫国路11号；据此以当前官网地址覆盖第三方档案中的旧门牌“建春门大街与复兴路交叉口向东100米”。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
