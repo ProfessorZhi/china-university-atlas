@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-09",
+  "ranking": {
+    "file": "data/rankings.jsonl",
+    "primaryKey": "id",
+    "entityReference": "uid preferred; universityName allowed only during ingestion and must resolve uniquely at build/validation time",
+    "fields": {
+      "rankingId": "stable ranking series id, e.g. qs-wur / shanghairanking-bcur / the-wur / arwu",
+      "agency": "ranking organization",
+      "rankingName": "edition-specific ranking/table name",
+      "edition": "ranking edition, not necessarily publication calendar year",
+      "rank": "exact integer rank when available",
+      "rankDisplay": "published display including ties/ranges/category prefixes",
+      "rankLower": "lower bound for a published rank band",
+      "rankUpper": "upper bound for a published rank band",
+      "referenceRank": "cross-category/reference rank supplied by the ranking body; never infer it from a category rank",
+      "score": "published overall score if available",
+      "nationalRank": "published national/regional rank if available",
+      "category": "ranking category/table",
+      "sourceUrl": "specific official ranking page",
+      "publishedAt": "official publication date if known",
+      "retrievedAt": "snapshot retrieval date"
+    }
+  },
+  "admission": {
+    "file": "data/admissions.jsonl",
+    "primaryKey": "id",
+    "grain": "one university × admission year × source province × exam scheme/subject group × batch × optional major/program",
+    "fields": {
+      "uid": "university entity id",
+      "year": "admission year",
+      "sourceProvince": "生源省份/地区",
+      "examScheme": "e.g. 文科/理科, 历史/物理, 3+3, 3+1+2",
+      "subjectGroup": "科类/选科或院校专业组",
+      "batch": "actual admission batch for that province/year; 一本/二本仅作为历史事实，不作为学校固有属性",
+      "program": "optional major/program",
+      "minScore": "最低录取/投档分",
+      "minRank": "最低分对应位次 when officially published",
+      "controlLine": "省控线/特殊类型线 when relevant",
+      "planCount": "招生计划数 if published",
+      "admittedCount": "录取人数 if published",
+      "sourceUrl": "省级考试院/学校招生网等来源",
+      "sourceKind": "provincial-exam-authority / university-admissions / government / corroborated",
+      "retrievedAt": "snapshot date"
+    },
+    "rule": "录取分数线不能压成学校一个永久分值；跨省、跨年、跨选科比较必须先标准化为位次/分位数。"
+  },
+  "finance": {
+    "file": "data/finance.jsonl",
+    "primaryKey": "id",
+    "grain": "one university × fiscal year × statement type",
+    "fields": {
+      "uid": "university entity id",
+      "fiscalYear": "预算/决算年度",
+      "statementType": "budget / final-account / annual-report / audited-statement",
+      "currency": "CNY unless source states otherwise",
+      "totalBudget": "预算总额",
+      "totalRevenue": "决算收入",
+      "totalExpenditure": "决算支出",
+      "governmentAppropriation": "财政拨款",
+      "educationExpenditure": "教育相关支出 if published",
+      "researchExpenditure": "科研相关支出 if published",
+      "sourceUrl": "学校/主管部门官方公开预算决算",
+      "sourceKind": "university-official / ministry / provincial-government / audited-report",
+      "retrievedAt": "snapshot date"
+    },
+    "rule": "预算、决算、收入、支出不是同一个概念；不在不同口径之间直接排名。"
+  }
+}
