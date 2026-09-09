@@ -1,0 +1,62 @@
+{
+  "PROFILE2016_0": {
+    "d": "开福区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnjdzy.edu.cn/",
+    "verified": true,
+    "status": "学校2026官网直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnjdzy.edu.cn/",
+    "districtEvidence": "湖南机电职业技术学院官网当前页脚直接列地址“长沙市开福区万家丽北路一段359号”，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2003_0": {
+    "d": "长沙县",
+    "sourceKind": "government",
+    "sourceUrl": "https://rst.hunan.gov.cn/rst/xxgk/zpzl/sydwzp/202606/t20260629_34015559.html",
+    "verified": true,
+    "status": "湖南省人社厅2026招聘公告确认现用学校；湖南人事考试网直接确认法定县区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rst.hunan.gov.cn/rst/hnrsksw/c103103/2024gwy/202512/t20251203_33879714.html",
+    "districtEvidence": "湖南省人社厅2026年公开招聘公告确认湖南工程职业技术学院当前仍坐落于长沙市万家丽北路；湖南人事考试网考点信息将同一“万家丽北路水渡河100号”直接写为“湖南省长沙市长沙县”，故最低法定县区为长沙县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2015_0": {
+    "d": "长沙县",
+    "sourceKind": "government",
+    "sourceUrl": "https://jyt.hunan.gov.cn/jyt/sjyt/xxgk/2017zwgk/gxxx/202510/t20251022_33853371.html",
+    "verified": true,
+    "status": "湖南省教育厅2026艺术类统考通知直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://jyt.hunan.gov.cn/jyt/sjyt/xxgk/2017zwgk/gxxx/202510/t20251022_33853371.html",
+    "districtEvidence": "湖南省教育厅关于2026年普通高校招生艺术类专业全省统一考试的通知直接将湖南艺术职业学院考点写为“长沙市长沙县特立东路719号”，与现有Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1990_0": {
+    "d": "长沙县",
+    "sourceKind": "government",
+    "sourceUrl": "https://hunan.gov.cn/hnszf/c101474/202108/t20210827_20403914.html",
+    "verified": true,
+    "status": "湖南省政府页面确认南校区县区与同址；2026省人社厅确认南（星沙）校区仍在用",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://hunan.gov.cn/hnszf/c101474/202108/t20210827_20403914.html",
+    "districtEvidence": "湖南省政府门户网站将长沙师范学院徐特立纪念馆明确定位为“长沙县星沙街道特立路9号长沙师范学院南校区内”；湖南省人社厅2026教师招聘公告继续确认学校现有南（星沙）、北（安沙）两个校区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1990_1": {
+    "d": "长沙县",
+    "sourceKind": "government",
+    "sourceUrl": "https://rst.hunan.gov.cn/rst/xxgk/zpzl/sydwzp/202406/t20240625_33336752.html",
+    "verified": true,
+    "status": "湖南省人社厅招聘公告直接确认的北校区县区与校址；2026仍确认北校区在用",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rst.hunan.gov.cn/rst/xxgk/zpzl/sydwzp/202406/t20240625_33336752.html",
+    "districtEvidence": "湖南省人社厅2024长沙师范学院招聘公告将报名地点直接写为“长沙市长沙县安沙镇万花园路9号长沙师范学院第二校区”；2026教师招聘公告继续确认学校现有北（安沙）校区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
