@@ -1,0 +1,38 @@
+{
+  "PROFILE3068_1": {
+    "d": "中牟县",
+    "sourceKind": "government",
+    "sourceUrl": "https://hnsggzyjy.henan.gov.cn/jyxx/002002/002002003/20260703/e969793a-b0c5-4edc-97e4-452f9cab40ae.html",
+    "verified": true,
+    "status": "河南省公共资源交易中心2026项目直接确认的现用白沙校区地址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://hnsggzyjy.henan.gov.cn/jyxx/002002/002002003/20260703/e969793a-b0c5-4edc-97e4-452f9cab40ae.html",
+    "districtEvidence": "河南省公共资源交易中心2026年白沙校区物业服务项目直接将采购人地址写为“河南省郑州市中牟县豫兴街道刘集镇金龙路276号”，与现有白沙校区记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2952_0": {
+    "d": "金川区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202606/t20260612_26741360.htm",
+    "verified": true,
+    "status": "2026中国政府采购网项目直接确认的学校现址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202606/t20260612_26741360.htm",
+    "districtEvidence": "中国政府采购网2026年甘肃有色冶金职业技术学院智慧校园项目公告直接列采购单位地址为“甘肃省金昌市金川区天津路101号”，与现有Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3036_0": {
+    "d": "中原区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.zyrnvc.com/html/1009/2026-04-24/content-3583.html",
+    "verified": true,
+    "status": "学校2026单招考试通知确认的现用高新校区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.zyrnvc.com/html/1009/2026-04-24/content-3583.html",
+    "districtEvidence": "郑州黄河护理职业学院2026年高职单招考试通知确认考试地点为“高新校区（郑州市高新技术产业开发区西四环路200号）”，并在来校路线中明确要求地图导航选择“中原区西四环与化工路交汇处”，故最低法定区县确定为中原区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
