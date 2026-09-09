@@ -1,4 +1,4 @@
-name: Validate offline atlas
+name: Build and validate offline atlas
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -10,7 +10,22 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Build offline HTML
+        run: python scripts/build.py
       - name: Validate data and publication hygiene
         run: python scripts/validate.py
-      - name: Verify deterministic offline HTML
+      - name: Verify deterministic rebuild
         run: python scripts/build.py --check
+      - name: Build complete ZIP
+        run: python scripts/build.py --zip
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: china-university-atlas-${{ github.sha }}
+          if-no-files-found: error
+          path: |
+            dist/china-university-atlas.html
+            dist/SHA256SUMS.txt
+            release-assets/*.zip
+            release-assets/SHA256SUMS.txt
+            reports/*.json
