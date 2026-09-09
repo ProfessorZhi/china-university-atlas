@@ -20,13 +20,18 @@ def load_data():
         else:u.setdefault('rankingEligible',True)
     additions=[]
     for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):additions.extend(jsonl(path))
+    campuses=jsonl(ROOT/'data/campuses.jsonl')+additions
+    campus_override_path=ROOT/'data/campus-overrides.json';campus_overrides=json.loads(campus_override_path.read_text(encoding='utf-8')) if campus_override_path.exists() else {}
+    for record in campuses:
+        override=campus_overrides.get(record['id'])
+        if override:record.update(override)
     association_additions=[]
     for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):association_additions.extend(jsonl(path))
     associations=jsonl(ROOT/'data/district-associations.jsonl')+association_additions;ao_path=ROOT/'data/district-association-overrides.json';ao=json.loads(ao_path.read_text(encoding='utf-8')) if ao_path.exists() else {}
     for record in associations:
         override=ao.get(record['id'])
         if override:record.update(override)
-    data['universities']=universities;data['campuses']=jsonl(ROOT/'data/campuses.jsonl')+additions;data['districtAssociations']=associations;data['districtAssociationOverrides']=ao;data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'));data['entityLocationOverrides']=host
+    data['universities']=universities;data['campuses']=campuses;data['campusOverrides']=campus_overrides;data['districtAssociations']=associations;data['districtAssociationOverrides']=ao;data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'));data['entityLocationOverrides']=host
     for key in ['regions','sources']:data[key]=json.loads((ROOT/'data'/f'{key}.json').read_text(encoding='utf-8'))
     data=refresh_derived_v53(data,(ROOT/'VERSION').read_text().strip())
     return attach_facts(data,ROOT)
