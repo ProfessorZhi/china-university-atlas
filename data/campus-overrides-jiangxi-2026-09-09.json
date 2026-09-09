@@ -1,0 +1,83 @@
+{
+  "PROFILE870_0": {
+    "d": "临川区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B031A0NUKP",
+    "districtEvidence": "抚州医药学院2026年招生章程确认南校区仍为文昌大道2766号；高德当前南校区西南门将同一门牌直接落为抚州市临川区，2026年政府采购公开信息亦使用“临川区文昌大道2766号”口径。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE870_1": {
+    "d": "临川区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.ncufz.cn/sys-nd/130.html",
+    "districtEvidence": "抚州医学院原官方招生信息网直接列地址为江西省抚州市临川区东临路9号；抚州医药学院2026年招生章程继续将北校区列为东临路9号，因此法定县区为临川区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE927_0": {
+    "d": "新建区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B031704SPT",
+    "districtEvidence": "南昌经济技术开发区政府2024、2025、2026相关材料持续确认江西司法警官职业学院现址为长青路76号；高德当前学院北门将该地点落为南昌市新建区。新建区国土空间规划同时将经开区相关蛟桥街道、白水湖管理处等纳入新建区法定空间单元，故本地图按新建区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE931_0": {
+    "d": "新建区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B031703TP4",
+    "districtEvidence": "江西电力职业技术学院官网及2026招生章程继续确认办学地点为昌北经济开发区海棠南路666号；高德当前学校实体将同一门牌直接落为南昌市新建区，故法定县区按新建区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE948_0": {
+    "d": "章贡区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B031D00KBJ",
+    "districtEvidence": "江西应用技术职业学院官网和蓉江新区管委会2026材料均确认学校现址为蓉江新区文峰路9号；高德当前学校实体将同一门牌直接落为赣州市章贡区，因此功能区到法定县区按章贡区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE951_0": {
+    "d": "渝水区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.gaoxiaojob.com/company/detail/99541.html",
+    "districtEvidence": "赣西科技职业学院2025招生章程继续使用劳动北路919号；2026高校人才网学校招聘主页将单位地址直接写为“江西新余渝水区劳动北路919号”，故法定县区按渝水区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE951_1": {
+    "d": "渝水区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.gaoxiaojob.com/announcement/detail/403292.html",
+    "districtEvidence": "赣西科技职业学院2026年人才招聘公告将仙女湖校区地址直接写为“江西省新余市渝水区仙女湖大道3039号”；当前建设项目公开信息亦将该校区建设地点隶属区划列为新余市-渝水区，故法定县区按渝水区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3249_0": {
+    "d": "新建区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.gkxxw.com.cn/sys-nd/3620.html",
+    "districtEvidence": "江西水利职业学院当前招生资料持续使用南昌经开区北山路99号；公开招生章程直接将校址写为“江西省南昌市新建区北山路99号”，2026政府采购合同信息也以“南昌市新建区白水湖管理处国家经济开发区北山路99号”为采购人地址，故法定县区按新建区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3249_1": {
+    "c": "九江市",
+    "d": "永修县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B0KUHCEPQF",
+    "districtEvidence": "江西水利职业学院当前招生就业资料确认湖东校区位于赣江新区永修组团；2024启用仪式由永修县委、县政府领导参加并明确校地关系，高德当前校区实体进一步落为九江市永修县。该校区是跨南昌市的异地实体，因此Campus城市同步纠正为九江市、法定县区为永修县；学校主体home city仍保持南昌市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_JX_XY_01": {
+    "d": "渝水区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://shuidi.cn/company-e21ec0963edf4a38b1cb05de33a53701.html",
+    "districtEvidence": "新余职业技术学院2026单招简章确认学校地址为仙女湖区文教路806号；当前事业单位登记信息显示该校所属地区为江西省新余市渝水区且企业地址仍为仙女湖区文教路806号，因此仙女湖功能管理区在本地图法定县级口径按渝水区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
