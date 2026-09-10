@@ -1,0 +1,24 @@
+{
+  "PROFILE1692_0": {
+    "d": "古塔区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.lnpc.edu.cn/xsc/2025/0713/c654a40006/page.psp",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lnpc.edu.cn/xsc/2025/0713/c654a40006/page.psp",
+    "districtEvidence": "辽宁石化职业技术学院招生就业办公室公开的招生说明直接列古塔校区地址为辽宁省锦州市古塔区北京路二段四号；当前学校联系方式继续使用该门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1608_0": {
+    "d": "洮北区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/cggg/202606/t20260604_9645278.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/cggg/202606/t20260604_9645278.html",
+    "districtEvidence": "吉林省公共资源交易公共服务平台2026年白城医学高等专科学校采购公告直接列采购人地址为吉林省白城市洮北区棉纺路27号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
