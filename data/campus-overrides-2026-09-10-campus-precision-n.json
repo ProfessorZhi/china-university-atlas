@@ -1,0 +1,35 @@
+{
+  "PROFILE2241_0": {
+    "d": "渭城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sptc.sn.cn/html/show1.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sptc.sn.cn/html/show1.html",
+    "districtEvidence": "陕西邮电职业技术学院当前学校简介直接列联系地址为陕西省咸阳市渭城区文林路中段；2026校园招聘公告继续使用文林路中段校址，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2244_1": {
+    "d": "未央区",
+    "sourceKind": "government",
+    "sourceUrl": "https://cbip.xa.gov.cn/web_files/itl/file/2025/12/15/202512151019424757730.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://cbip.xa.gov.cn/web_files/itl/file/2025/12/15/202512151019424757730.pdf",
+    "districtEvidence": "西安市应急避难场所清单将西安职业技术学院列于未央区辛家庙街道，地址为未央区太元路99号，与现有辛家庙校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2253_0": {
+    "d": "新城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xauat-hqc.com/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xauat-hqc.com/",
+    "districtEvidence": "西安建筑科技大学华清学院当前官网直接列幸福校区地址为陕西省西安市新城区幸福南路109号；2026招生章程亦使用同一法定区县与门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
