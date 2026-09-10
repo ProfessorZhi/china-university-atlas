@@ -13,6 +13,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify tag matches VERSION
+        run: test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
       - name: Build and validate
         run: |
           python scripts/generate_reports.py
@@ -21,6 +26,8 @@ jobs:
           python scripts/validate_facts.py
           python scripts/generate_reports.py --check
           python scripts/build.py --check
+          google-chrome --version
+          node tests/browser.mjs
           python scripts/build.py --zip
       - name: Publish GitHub Release
         env:
