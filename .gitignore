@@ -18,3 +18,4 @@ transfer/
 .work/
 raw-private/
 release-assets/
+reports/offline-browser-test.json
