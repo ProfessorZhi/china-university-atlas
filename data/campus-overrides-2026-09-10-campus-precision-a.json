@@ -1,0 +1,46 @@
+{
+  "PROFILE3595_0": {
+    "d": "泸定县",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.sceea.cn/GZDZ/Html/147670.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sceea.cn/GZDZ/Html/147670.html",
+    "districtEvidence": "四川省教育考试院发布的甘孜职业学院2026年高职单招章程直接列办学地点为四川省甘孜藏族自治州泸定县燕子沟镇南磨大道1号，与现有海螺沟校本部Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2865_1": {
+    "d": "迎泽区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sxhvc.com/info/1010/1378.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sxhvc.com/info/1010/1378.htm",
+    "districtEvidence": "山西卫生健康职业学院官网明确写双东校区位于太原市迎泽区双塔寺街22号；学院2025招聘简介和2026采购公告继续确认双东校区仍在使用，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2864_0": {
+    "d": "盐湖区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.sxjyksfw.cn/news/dksx/20260331/n2026033165058618.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sxjyksfw.cn/news/dksx/20260331/n2026033165058618.html",
+    "districtEvidence": "山西省教育考试服务中心2026年对口升学职业技能考试通知直接列运城护理职业学院考点地址为运城市盐湖区复旦西街2155号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE3204_2": {
+    "d": "武侯区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.cdivtc.edu.cn/info/1017/18567.htm",
+    "verified": true,
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.cdwjrc.cn/go-a62.htm",
+    "districtEvidence": "成都工业职业技术学院官网2026年高新校区采购公告确认校区门牌为成都市高新区府城大道西段769号；成都市卫生健康人才交流中心公开考场地址将同一校区同一门牌明确写为成都市武侯区府城大道西段769号，因此记录法定区为武侯区，但保留districtVerified=false。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
