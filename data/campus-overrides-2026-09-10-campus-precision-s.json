@@ -1,0 +1,35 @@
+{
+  "PROFILE2094_0": {
+    "d": "市中区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sepc.edu.cn/upload/2/cms/content/jiaoyuxinwen/xiaoyuangonggao/uploadfiles/c38166723dcd40dfa22ad3dbb0d75479.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sepc.edu.cn/upload/2/cms/content/jiaoyuxinwen/xiaoyuangonggao/uploadfiles/c38166723dcd40dfa22ad3dbb0d75479.pdf",
+    "districtEvidence": "山东电力高等专科学校2026年章程修正案明确济南校区地址为山东省济南市市中区二环南路500号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2094_1": {
+    "d": "泰山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sepc.edu.cn/upload/2/cms/content/jiaoyuxinwen/xiaoyuangonggao/uploadfiles/c38166723dcd40dfa22ad3dbb0d75479.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sepc.edu.cn/upload/2/cms/content/jiaoyuxinwen/xiaoyuangonggao/uploadfiles/c38166723dcd40dfa22ad3dbb0d75479.pdf",
+    "districtEvidence": "山东电力高等专科学校2026年章程修正案明确泰安龙潭办学点地址为山东省泰安市泰山区龙潭路179号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2094_2": {
+    "d": "泰山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sepc.edu.cn/upload/2/cms/content/jiaoyuxinwen/xiaoyuangonggao/uploadfiles/c38166723dcd40dfa22ad3dbb0d75479.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sepc.edu.cn/upload/2/cms/content/jiaoyuxinwen/xiaoyuangonggao/uploadfiles/c38166723dcd40dfa22ad3dbb0d75479.pdf",
+    "districtEvidence": "山东电力高等专科学校2026年章程修正案明确泰安明堂办学点地址为山东省泰安市泰山区明堂路9号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
