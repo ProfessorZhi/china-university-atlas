@@ -1,0 +1,46 @@
+{
+  "PROFILE1940_0": {
+    "d": "新郑市",
+    "sourceKind": "government",
+    "sourceUrl": "https://hnsggzyjy.henan.gov.cn/jyxx/002002/002002001/20260708/ce7556d3-4188-4cf9-b5f9-3bd5913ded70.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://hnsggzyjy.henan.gov.cn/jyxx/002002/002002001/20260708/ce7556d3-4188-4cf9-b5f9-3bd5913ded70.html",
+    "districtEvidence": "河南省公共资源交易中心2026年采购公告直接列河南工业贸易职业学院地址为河南省新郑市龙湖镇祥云路76号，与现有龙湖校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1832_1": {
+    "d": "长丰县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahbvc.cn/info/1295/216391.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ahbvc.cn/info/1295/216391.htm",
+    "districtEvidence": "安徽工商职业学院2026年采购成交公告直接列采购人地址为合肥市长丰县金宁路北16号，并注明双凤经济开发区同一门牌，与现有双凤校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1845_0": {
+    "d": "铜官区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahip.cn/2026/0604/c107a18799/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ahip.cn/2026/0604/c107a18799/page.htm",
+    "districtEvidence": "安徽工业职业技术学院2026年物业服务采购公告直接列采购人地址为铜陵市铜官区长江西路274号，与现有天井湖校区Campus一致；学校当前首页仍列天井湖校区为长江西路274号。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1836_0": {
+    "d": "宜秀区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.aqvtc.edu.cn/2026/0625/c616a91511/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.aqvtc.edu.cn/gz/2023/0419/c3213a75247/pagem.htm",
+    "districtEvidence": "安庆职业技术学院2026年官网采购公告继续确认学校门牌为安庆市经开区天柱山东路99号；学校官网2023年同门牌采购公告直接写为安庆市宜秀区天柱山东路99号，因此将功能区地址映射到法定宜秀区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
