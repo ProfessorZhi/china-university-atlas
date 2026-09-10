@@ -1,0 +1,24 @@
+{
+  "PROFILE1669_1": {
+    "d": "太谷区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.sxcast.edu.cn/info/898.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.sxcast.edu.cn/info/898.html",
+    "districtEvidence": "山西应用科技学院2026年招生章程直接列南校区地址为山西省晋中市太谷区南寺街5号，与现有太谷校区Campus一致；同时修正历史资料沿用的旧称“太谷县”为现行法定区名。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1643_0": {
+    "d": "潞州区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sxjyksfw.cn/news/dksx/20260331/n2026033165058618.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sxjyksfw.cn/news/dksx/20260331/n2026033165058618.html",
+    "districtEvidence": "山西省2026年中职毕业生对口升学职业技能考试安排直接列长治职业技术学院北校区为长治市潞州区捉马东大街51号；山西大学继续教育教学点资料亦使用同一法定区县与门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
