@@ -1,0 +1,35 @@
+{
+  "PROFILE1937_0": {
+    "d": "二七区",
+    "sourceKind": "government",
+    "sourceUrl": "https://13789.gaokao.haedu.cn/policy/brochure/2026/0519/151975.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://13789.gaokao.haedu.cn/policy/brochure/2026/0519/151975.html",
+    "districtEvidence": "河南省阳光高考信息平台发布的河南交通职业技术学院2026年普通高职招生章程直接列航海校区为郑州市二七区航海中路165号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1931_0": {
+    "d": "湛河区",
+    "sourceKind": "government",
+    "sourceUrl": "https://13564.gaokao.haedu.cn/policy/brochure/2026/0511/151788.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://13564.gaokao.haedu.cn/policy/brochure/2026/0511/151788.html",
+    "districtEvidence": "河南省阳光高考信息平台发布的河南质量工程职业学院2026年招生章程直接列主校区为河南省平顶山市湛河区姚电大道中段23号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1835_0": {
+    "d": "金安区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.acdt.edu.cn/zs/bkzn.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.acdt.edu.cn/zs/bkzn.htm",
+    "districtEvidence": "安徽国防科技职业学院招生网当前页面直接列地址为安徽省六安市金安区梅山中路56号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
