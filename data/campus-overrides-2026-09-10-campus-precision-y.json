@@ -1,0 +1,35 @@
+{
+  "PROFILE2664_0": {
+    "d": "金安区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/xjgg/202608/t20260807_27093362.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://wjw.luan.gov.cn/public/6608371/10237454.html",
+    "districtEvidence": "2026年中国政府采购网询价公告列皖西卫生职业学院采购单位地址为六安市皋城中路406号；六安市卫生健康委员会公开材料直接列该校信箱为金安区皋城中路406号，与现有Campus门牌完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE3366_2": {
+    "d": "红旗区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zfcg.henan.gov.cn/cmsweb35rc67w/henan/cgxx/jggg/webinfo/2026/06/29/1976522.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://fengquan.gov.cn/article/15230",
+    "districtEvidence": "2026年河南省政府采购公告明确项目交货地点包含河南物流职业学院新乡校区（新乡市科隆大道114号）；新乡市凤泉区人民政府公开考点信息直接列河南物流职业学院新乡校区（原河南省工业科技学校）地址为新乡市红旗区科隆大道114号，与现有Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2914_0": {
+    "d": "淇滨区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hbqcxy.com/aboutus.html?con=3",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hbqcxy.com/aboutus.html?con=3",
+    "districtEvidence": "鹤壁汽车工程职业学院官网学院简介直接写明学院位于河南省鹤壁市淇滨区职教园区，并说明设有淇滨（北）和朝歌（南）两个校区；现有PROFILE记录即淇滨校区、地址为河南省鹤壁市职教园区，法定区县可直接绑定为淇滨区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
