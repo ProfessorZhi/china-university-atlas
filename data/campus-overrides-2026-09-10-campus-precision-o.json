@@ -1,0 +1,35 @@
+{
+  "PROFILE1847_0": {
+    "d": "蜀山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.slu.edu.cn/201/list20.psp",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.slu.edu.cn/201/list20.psp",
+    "districtEvidence": "安徽三联学院校方招标公告将一校区直接写为合肥市蜀山区合安路47号；2026年校方采购公告继续使用合安路47号作为项目地址，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1842_0": {
+    "d": "蜀山区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.ahhzc.cn/file/2093026f-48ce-4b15-80f1-816031e809ec.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.ahhzc.cn/file/2093026f-48ce-4b15-80f1-816031e809ec.pdf",
+    "districtEvidence": "安徽审计职业学院2026年招生线上宣传服务采购文件直接列采购人地址为合肥市蜀山区方兴大道509号；安徽公共资源交易项目页面亦使用同一法定区县和门牌，与现有方兴校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE943_0": {
+    "d": "新建区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.evc.jx.cn/info/2033/39803.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.evc.jx.cn/info/2033/39803.htm",
+    "districtEvidence": "江西省教育厅所属厅属院校2026年度统一招聘资格审查安排在江西工程职业学院官网公开，直接列江西机电职业技术学院下罗校区为南昌市新建区枫林大道168号；2026招生章程亦使用同一法定区县与门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
