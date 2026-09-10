@@ -1,0 +1,103 @@
+{
+  "PROFILE688_0": {
+    "d": "运河区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsb.hbwe.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.hbwe.edu.cn/",
+    "districtEvidence": "河北水利电力学院2026年招生信息网持续列招生咨询地址为沧州市运河区黄河西路49号；学校2026年招生章程也确认学院地址仍为黄河西路49号，与现有未命名办学地点PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE625_0": {
+    "d": "安次区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.lfnu.edu.cn/jiaoyxy/col/1716515966201/2026/05/07/1778125754235.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lfnu.edu.cn/gzyhq/col/1388039089518/2026/08/03/1785693079114.html",
+    "districtEvidence": "廊坊师范学院2026年普通专升本招生章程确认廊坊校区地址为爱民西道100号；校方2026年数字资源采购公告直接列采购人地址为廊坊市安次区爱民西道100号，据同校区同门牌确认法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE624_0": {
+    "d": "路北区",
+    "sourceKind": "official",
+    "sourceUrl": "https://bkzs.tstc.edu.cn/info/1041/1254.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjs.tstc.edu.cn/info/1009/1063.htm",
+    "districtEvidence": "唐山师范学院2026年普通本科招生章程确认大学道校区地址为建设北路156号；校方2026年全国硕士研究生招生考试网报公告直接将学校联系地址写为河北省唐山市路北区建设北路156号，据同门牌确认大学道校区法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE624_1": {
+    "d": "路北区",
+    "sourceKind": "official",
+    "sourceUrl": "https://bkzs.tstc.edu.cn/info/1041/1254.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jyx.tstc.edu.cn/",
+    "districtEvidence": "唐山师范学院2026年普通本科招生章程确认学院路校区地址为学院路41号；教育学院现行官网直接列地址为河北省唐山市路北区学院路41号，并持续发布2026年学院路校区教学活动，据同门牌确认法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE54_1": {
+    "d": "莲池区",
+    "sourceKind": "official",
+    "sourceUrl": "https://wxy.hbu.edu.cn/info/1049/3868.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://wxy.hbu.edu.cn/info/1049/3868.htm",
+    "districtEvidence": "河北大学文学院2026年硕士研究生复试录取实施细则直接列地址为河北省保定市莲池区七一东路2666号河北大学（七一路校区），与现有PROFILE校区名和门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE595_0": {
+    "d": "裕华区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsjyc.hebtu.edu.cn/zsw/a/2026/06/15/A7FA1C837A4F4FACB50D47C1F26B3A69.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hebtu.edu.cn/a/2026/06/08/651ED65612114CAFB6FB4566290F351B.html",
+    "districtEvidence": "河北师范大学2026年全日制普通本科招生章程确认裕华校区地址为南二环东路20号；校方2026年后勤项目公告直接列地点为裕华区南二环东路20号河北师范大学裕华校区，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE596_2": {
+    "d": "裕华区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hebmu.edu.cn/a/2026/07/09/CEA80410068340FCB0E1F761DA2D046C.html",
+    "districtEvidence": "河北医科大学官网2026年河北医科大学临床学院采购公告直接列临床学院地址为河北省石家庄市裕华区东岗路48号，与现有建华校区南院PROFILE门牌一致；因来源主体为临床学院而非明确命名建华校区南院，本条只升级法定区县，不提升named-campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE717_0": {
+    "d": "莲池区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zhaosheng.hevttc.edu.cn/info/1072/2693.htm",
+    "districtEvidence": "河北科技师范学院2026年河北省中等职业学校对口升学计算机类应试须知直接列河北软件职业技术学院考点地址为保定市莲池区东风东路999号，与现有校本部PROFILE门牌一致；本条仅据省内公办高校官方考试材料核实法定区县，不越权提升校本部状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE627_0": {
+    "d": "桃城区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.crs.jsj.edu.cn/aproval/detail/2994",
+    "districtEvidence": "教育部中外合作办学监管工作信息平台当前项目记录直接列衡水学院合作办学项目办学地址为河北省衡水市桃城区和平西路1088号，且招生起止年份覆盖至2026年，与现有校本部PROFILE门牌一致；本条只升级法定区县，不将单个合作项目地址等同于整个校本部状态核验。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE56_0": {
+    "d": "新华区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zhaosheng.hueb.edu.cn/info/1015/1342.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zhaosheng.hueb.edu.cn/info/1015/1342.htm",
+    "districtEvidence": "河北经贸大学2026年普通本科招生章程直接列学校地址为河北省石家庄市新华区学府路47号；2026级硕士研究生新生报到须知亦使用同一地址，与现有北校区PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
