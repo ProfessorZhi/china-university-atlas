@@ -1,0 +1,21 @@
+{
+  "PROFILE2552_0": {
+    "d": "贾汪区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ggzy.zwb.xz.gov.cn/jyxx/003001/003001001/20260817/74d8adc9-5031-4e19-877d-43b049b0995e.html",
+    "districtEvidence": "江苏师范大学科文学院2026年招生章程继续列潘安湖校区为徐州市潘安湖科教创新区学院路1号；徐州市公共资源交易中心2026年公告明确“潘安湖科教创新区核心范围”位于贾汪区。因学校章程本身未直接写贾汪区，按交叉核对等级映射最低法定县区为贾汪区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2517_0": {
+    "d": "章丘区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.jinan.gov.cn/api-gateway/jpaas-jpolicy-web-server/front/info/detail?iid=zcwj_694371354a4281a744c29e45",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jinan.gov.cn/api-gateway/jpaas-jpolicy-web-server/front/info/detail?iid=zcwj_694371354a4281a744c29e45",
+    "districtEvidence": "齐鲁理工学院当前官网持续列济南校区为济南市经十东路3028号；济南市章丘区2026年噪声敏感建筑物集中区域方案的ZQ-25边界直接以“齐鲁理工学院（济南校区）”为边界对象，章丘区人社局2026年亦在校举办毕业生双选会，故该Campus法定县区为章丘区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

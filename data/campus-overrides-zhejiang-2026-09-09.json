@@ -1,0 +1,42 @@
+{
+  "PROFILE2390_0": {
+    "d": "钱塘区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B023B13KG3",
+    "districtEvidence": "钱江学院官网仍保留历史地址“杭州市下沙高教园区学林街16号”；杭州师范大学当前官方页面已将同一学林街16号写为浙江省杭州市钱塘区，高德当前钱江学院行政楼也落为钱塘区。现有Campus历史文本中的“江干区”不覆盖，但按现行法定区划映射为钱塘区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2393_0": {
+    "d": "龙湾区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://wzut.edu.cn/",
+    "districtEvidence": "温州理工学院2026官网直接将滨海校区地址写为“温州龙湾经济技术开发区金海三道337号”，与现有Campus完全一致，故法定县区为龙湾区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2398_0": {
+    "d": "瓯海区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://sz.ouhai.gov.cn/art/2015/6/9/art_1229789210_58828888.html",
+    "districtEvidence": "温州商学院2026招生章程及官网继续使用“温州市茶山高教园区”地址；瓯海区政府概况明确瓯海区设有温州高教园区，学校当前地图实体也落在瓯海区茶山高教园区，因此法定县区为瓯海区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2400_0": {
+    "d": "金东区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://rsc.shufe-zj.edu.cn/info/1058/2472.htm",
+    "districtEvidence": "上海财经大学浙江学院2026年公开招聘高层次人才拟聘公示直接将通信地址写为“金华市金东区环城南路99号”，与现有Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1793_0": {
+    "d": "钱塘区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.zjyyc.com/jgsz",
+    "districtEvidence": "浙江育英职业技术学院当前官网直接写明地址为“杭州市钱塘区4号大街16号”，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

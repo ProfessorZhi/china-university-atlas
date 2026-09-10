@@ -1,0 +1,130 @@
+{
+  "PROFILE884_0": {
+    "d": "驿城区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://hnsggzyjy.henan.gov.cn/jyxx/002002/002002001/20260508/94de2953-eb61-4be0-8823-f0ee53d92a27.html",
+    "districtEvidence": "河南省公共资源交易中心2026年黄淮学院采购公告直接列采购人地址为河南省驻马店市驿城区开源大道76号，与现有校本部Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1530_0": {
+    "d": "建安区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rsj.xuchang.gov.cn/zxdt/002002/20260311/02ae2aed-72c7-4d84-b42c-e690f39cd024.html",
+    "districtEvidence": "许昌市人社局2026年考试考点信息直接将中原科技学院许昌校区写为许昌市建安区永昌东路266号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1530_1": {
+    "d": "中牟县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B0J0GZJ3H1",
+    "districtEvidence": "学校当前资料使用郑州校区郑开大道50号；高德当前同一学校实体将郑开大道50号落为郑州市中牟县。郑东新区为功能区，因此本地图法定县级单元按中牟县记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1941_0": {
+    "d": "原阳县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.nhmu.edu.cn/2022/0528/c3157a98378/page.htm",
+    "districtEvidence": "豫北医学院2026招生章程确认平原校区仍为新乡市平原示范区长江大道15号；学校官方记录显示“新乡市原阳县大学生征兵宣传暨国防教育进校园活动”直接在该平原校区举办，且原阳县人武部长期负责该校征兵工作，故功能区到法定县级单元按原阳县交叉核对。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1941_1": {
+    "d": "红旗区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.nhmu.edu.cn/2026/0429/c1230a131497/page.htm",
+    "districtEvidence": "豫北医学院2026年招生章程直接列红旗校区为新乡市红旗区向阳路688号，与现有Campus地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1114_0": {
+    "d": "新郑市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://map.baidu.com/mobile/webapp/search/search/qt%3Dnse%26ptx%3D12653155.91%26pty%3D4105630.20%26wd%3D%E6%B2%B3%E5%8D%97%E7%BB%8F%E8%B4%B8%E5%AD%A6%E9%99%A2%26name%3D%E9%83%91%E5%B7%9E%E7%AB%99-%E8%A5%BF%E8%BF%9B%E7%AB%99%E5%8F%A3%26c%3D218%26sc%3D218%26ec%3D218%26isSingle%3Dtrue%26nsetp%3D1%26sn%3D1%24%2442533d0ce1d579f982288a49%24%2412653155.91%2C4105630.20%24%24%E9%83%91%E5%B7%9E%E7%AB%99-%E8%A5%BF%E8%BF%9B%E7%AB%99%E5%8F%A3%24%24%26version%3D3%26wm%3D1/vt%3Dmap",
+    "districtEvidence": "郑州经贸学院公开联系方式持续使用南龙湖双湖大道2号；百度地图当前同一学校实体明确写为河南省郑州市新郑市双湖大道2号，因此法定县级单元按新郑市记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_HEN_SMx_01": {
+    "d": "灵宝市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B0FFMEF4L7",
+    "districtEvidence": "河南应用工程学院2026官方资料继续确认办学地点为三门峡市城乡一体化示范区学府路3号；高德同址历史学校实体将学府路3号明确落为三门峡市灵宝市，故法定县级单元按灵宝市记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1923_1": {
+    "d": "山阳区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B0187008B6",
+    "districtEvidence": "焦作大学2026招生章程确认北校区为工业路458号；高德当前同一学校实体将工业路458号明确落为焦作市山阳区，故法定县区按山阳区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1930_0": {
+    "d": "新郑市",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ha.jcy.gov.cn/jczc/tzgg/202605/t20260521_7736551.shtml",
+    "districtEvidence": "河南省人民检察院2026年公告将河南检察职业学院邮寄地址直接写为新郑市龙湖镇高校园区双湖大道1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1932_0": {
+    "d": "金水区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://liangyuan.zfcg.henan.gov.cn/henan/content?infoId=1585594",
+    "districtEvidence": "河南政府采购公开信息将郑州信息科技职业学院龙子湖北路36号明确写为郑州市金水区龙子湖北路36号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2447_0": {
+    "d": "驿城区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://zmdvtc.goworkla.cn/",
+    "districtEvidence": "驻马店职业技术学院就业创业信息网当前页脚直接列院校地址为河南省驻马店市驿城区置地大道517号，与现有南校区Campus一致；因该站为学校就业平台而非主站，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3368_0": {
+    "d": "灵宝市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B0FFI0OKM6",
+    "districtEvidence": "学校当前招生资料继续使用三门峡市职业教育园区学府路；高德当前学校实体将同一地址明确落为三门峡市灵宝市城乡一体化示范区，故法定县级单元按灵宝市记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3369_0": {
+    "d": "中牟县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B0FFHOW7KO",
+    "districtEvidence": "河南测绘职业学院当前招生资料使用郑东新区白沙园区工贸路30号；高德当前象湖校区实体将同一地址明确落为郑州市中牟县，故法定县级单元按中牟县记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3670_0": {
+    "d": "新郑市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B0JGYAWWBC",
+    "districtEvidence": "郑州软件职业技术学院官网当前地址为郑州航空港经济综合实验区南海大道36号；高德当前学校实体将同一门牌明确落为郑州市新郑市，故法定县级单元按新郑市记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3723_0": {
+    "d": "驿城区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://14861.gaokao.haedu.cn/policy/brochure/2024/0623/73774.html",
+    "districtEvidence": "河南省阳光高考信息平台备案的驻马店农业工程职业学院招生章程直接写明学校地址为河南省驻马店市驿城区盘龙山路2668号，与现有Campus一致；2025/2026章程继续使用同一门牌。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3722_0": {
+    "d": "原阳县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jxjyxy.hnxxgs.edu.cn/info/1022/2263.htm",
+    "districtEvidence": "河南新乡工商职业学院2026招生章程确认学校位于平原示范区科教城嵩山大道369号；学校官方活动持续与原阳县工商联、原阳县人武部等县级机关在校开展工作，故该功能区校址按法定县级单元原阳县记录。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

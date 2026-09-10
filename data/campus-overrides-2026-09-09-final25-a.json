@@ -1,0 +1,83 @@
+{
+  "PROFILE2966_0": {
+    "d": "莱芜区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.ys.sdufe.edu.cn/info/1018/1555.htm",
+    "districtEvidence": "山东财经大学燕山学院招生章程直接写明办学地址为山东省济南市莱芜区山财大街5号，与现有Campus地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2473_0": {
+    "d": "蒸湘区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjs.usc.edu.cn/info/1292/12765.htm",
+    "districtEvidence": "南华大学2026年硕士研究生考试须知明确红湘校区位于衡阳市蒸湘区常胜西路28号；船山学院官网确认办学地点为该红湘校区同址。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2031_0": {
+    "d": "长沙县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B02DB07O6Y",
+    "districtEvidence": "学院官网现址为长沙经济技术开发区盼盼路（泉塘）；当前地图实体将同一学校定位为长沙县泉塘街道盼盼路252号。经开区为功能区，法定县级单元按长沙县记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1085_0": {
+    "d": "市中区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lsnu.edu.cn/",
+    "districtEvidence": "乐山师范学院官网直接列学校地址为四川省乐山市市中区滨河路778号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3912_0": {
+    "c": "乐山市",
+    "d": "峨眉山市",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.scqec.edu.cn/info/1017/1301.htm",
+    "districtEvidence": "四川质量工程职业技术学院2026年招生章程直接写明学校地址为四川省峨眉山市光辉路919号；据此同时纠正旧Campus误写的城市字段“眉山市”为地级市“乐山市”，县级单元为峨眉山市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3404_0": {
+    "d": "安宁市",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://ynqfzyxy.cn/",
+    "districtEvidence": "云南轻纺职业学院官网当前联系地址为云南省昆明市安宁职业教育基地宁泊路54号，法定县级单元为安宁市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1916_0": {
+    "d": "城关区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://hrss.xizang.gov.cn/xwzx/tzgg/202601/t20260130_522011.html",
+    "districtEvidence": "西藏自治区人力资源和社会保障厅2026年公务员考录通知直接写明西藏警官高等专科学校地址为拉萨市城关区夺底路68号。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2563_0": {
+    "d": "长安区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://shaanxi.eol.cn/shxgd/202606/t20260605_2741308.shtml",
+    "districtEvidence": "西安科技大学高新学院2026年招生章程公开发布文本明确学院地址为西安市长安区子午大道中段39号；学校官网使用同一门牌，县区据此落长安区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2263_0": {
+    "d": "长安区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://job.xpu.edu.cn/detail/company?company_id=131610",
+    "districtEvidence": "西安工程大学就业信息中的用人单位档案直接列西安城市建设职业学院地址为陕西省西安市长安区东大温泉大道002号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1744_0": {
+    "d": "西乡塘区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202608/t20260828_27221096.htm",
+    "districtEvidence": "2026年中国政府采购网公告直接列广西农业职业技术大学采购单位地址为广西南宁市西乡塘区大学东路176号，与西校区现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

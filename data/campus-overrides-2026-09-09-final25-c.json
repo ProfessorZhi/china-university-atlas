@@ -1,0 +1,67 @@
+{
+  "PROFILE2523_0": {
+    "d": "西山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.dcc.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.dcc.edu.cn/",
+    "districtEvidence": "滇池学院官网当前直接列国家旅游度假区校区地址为云南省昆明市西山区滇池旅游度假区红塔东路2号，与现有海埂/度假区Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2523_1": {
+    "d": "嵩明县",
+    "sourceKind": "official",
+    "sourceUrl": "https://eia.dcc.edu.cn/about.htm?sub=contact",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://eia.dcc.edu.cn/about.htm?sub=contact",
+    "districtEvidence": "滇池学院电子信息与自动化学院官网当前直接写杨林校区为云南省昆明市嵩明县杨林镇文博路；学校主站亦持续列杨林校区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_XZ_RKZ_01": {
+    "d": "桑珠孜区",
+    "districtVerified": false,
+    "districtSourceKind": "profile-county",
+    "districtSourceUrl": "https://www.gaokao.cn/school/3808",
+    "districtEvidence": "学院2026政府采购地址持续为日喀则市经开区育才路1号；仓库既有District Association将学校归属桑珠孜区。本覆盖仅同步已有低精度县区归属到Campus，不提升门牌或坐标可信度。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2254_0": {
+    "c": "咸阳市",
+    "d": "秦都区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B038E02GCM",
+    "districtEvidence": "学院2026招生章程仍使用西咸新区沣西新城统一西路的管理口径；高德当前精确学校实体将校园落在咸阳市秦都区西咸新区沣西新城，并给出34.303261,108.724735。学院2025征兵工作亦按咸阳市秦都区组织。故物理Campus纠正为咸阳市秦都区，不改变University主体城市字段。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2264_0": {
+    "c": "咸阳市",
+    "d": "泾阳县",
+    "address": "陕西省西咸新区泾河新城先锋大街东七路16号",
+    "sourceKind": "government",
+    "sourceUrl": "https://snamr.shaanxi.gov.cn/zfxxgk/zfxxgkzl/zc/zcjd/202411/t20241106_3437978.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://sthjt.shaanxi.gov.cn/sy/gs/202010/P020241011602868887941.pdf",
+    "districtEvidence": "陕西省市场监管公开材料列学校地址为西咸新区泾河新城先锋大街东七路16号；陕西省生态环境公开报告明确泾河新城全部位于咸阳市泾阳县境内。因此物理Campus按咸阳市泾阳县记录，不改变University主体的城市归属口径。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3813_0": {
+    "c": "咸阳市",
+    "d": "渭城区",
+    "address": "陕西省西咸新区秦汉新城兰池大道369号",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.xixianxinqu.gov.cn/zwgk/fdzdgknr/zdjsxm/1764839470626582529.html",
+    "verified": true,
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.xixianxinqu.gov.cn/xwzx/xcdt/6497b958f8fd1c1a70341e97.html",
+    "districtEvidence": "西咸新区官方规划给出西安戏剧学院校园四至：秦宫六路以东、兰启路以南、秦宫八路以西、兰池大道以北，位于大秦文明园片区；同一西咸新区官方页面将大秦文明园兰池大道片区明确写为咸阳市渭城区。县区映射据此交叉确认，标为corroborated而非单页直证。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

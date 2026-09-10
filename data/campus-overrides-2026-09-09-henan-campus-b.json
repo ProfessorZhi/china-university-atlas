@@ -1,0 +1,80 @@
+{
+  "PROFILE2931_0": {
+    "d": "洛龙区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/dylygg/202609/t20260904_27266447.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/dylygg/202609/t20260904_27266447.htm",
+    "districtEvidence": "2026年中国政府采购网洛阳职业技术学院采购公示直接将采购人地址写为洛阳市洛龙区科技大道6号，与学校伊滨校区现用门牌一致；伊滨为功能管理区，法定县级单元按洛龙区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2676_0": {
+    "d": "新郑市",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsc.zzlgxy.net/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsc.zzlgxy.net/",
+    "districtEvidence": "郑州理工职业学院2026招生信息网当前通讯地址为郑州市新郑龙湖大学城南107国道西侧，已明确落到县级新郑市范围。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2673_0": {
+    "d": "沁阳市",
+    "sourceKind": "official",
+    "sourceUrl": "https://14300.gaokao.haedu.cn/policy/brochure/2026/0401/151400.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://14300.gaokao.haedu.cn/policy/brochure/2026/0401/151400.html",
+    "districtEvidence": "焦作工贸职业学院2026年单招章程直接列沁阳校区地址为河南省焦作沁阳市香港街1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2673_1": {
+    "d": "山阳区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jzcit.edu.cn/2025/1020/c57a22036/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jzcit.edu.cn/2025/1020/c57a22036/page.htm",
+    "districtEvidence": "焦作工贸职业学院2026届毕业生秋季双选会邀请函直接写学校山阳校区地址为河南省焦作市山阳区中原路南段1216号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2671_0": {
+    "d": "中原区",
+    "address": "河南省郑州市中原区郑上路548号",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsjy.hati.edu.cn/info/1061/1963.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsjy.hati.edu.cn/info/1061/1963.htm",
+    "districtEvidence": "河南应用技术职业学院2026年对口招生章程直接写郑州校区地址为郑州市中原区郑上路548号；据此将第三方档案“建设西路548号”升级为学校当前官方地址。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2671_1": {
+    "d": "龙亭区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsjy.hati.edu.cn/info/1061/1963.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsjy.hati.edu.cn/info/1061/1963.htm",
+    "districtEvidence": "河南应用技术职业学院2026年对口招生章程直接写开封校区南院位于开封市龙亭区东京大道与第九大街交会处，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2671_2": {
+    "d": "龙亭区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsjy.hati.edu.cn/info/1061/1963.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsjy.hati.edu.cn/info/1061/1963.htm",
+    "districtEvidence": "河南应用技术职业学院2026年对口招生章程直接写开封校区北院位于开封市龙亭区复兴大道与第七大街交会处，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

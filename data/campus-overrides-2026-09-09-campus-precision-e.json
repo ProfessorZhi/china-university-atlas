@@ -1,0 +1,92 @@
+{
+  "PROFILE2304_0": {
+    "d": "武清区",
+    "sourceKind": "government",
+    "sourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-642%2CinfoId-7622015816.dhtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-642%2CinfoId-7622015816.dhtml",
+    "districtEvidence": "教育部阳光高考上级主管部门审核通过的天津天狮学院2026招生章程列翠亨路校区为天津市武清开发区翠亨路128号，并明确学校坐落在武清区，故法定县区为武清区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2304_1": {
+    "d": "武清区",
+    "sourceKind": "government",
+    "sourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-642%2CinfoId-7622015816.dhtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-642%2CinfoId-7622015816.dhtml",
+    "districtEvidence": "教育部阳光高考审核通过的天津天狮学院2026招生章程列泉州路校区为天津市武清开发区泉州路11号，并明确学校坐落在武清区，故法定县区为武清区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2609_1": {
+    "d": "长清区",
+    "sourceKind": "official",
+    "sourceUrl": "https://nic.sdwu.edu.cn/index/gzdt/16.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://nic.sdwu.edu.cn/index/gzdt/16.htm",
+    "districtEvidence": "山东女子学院数智化工作办公室当前官网页脚直接列长清校区为济南市长清区大学科技园大学路2399号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2567_1": {
+    "d": "清镇市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.gzky.edu.cn/info/1013/15958.htm",
+    "districtEvidence": "贵州工业职业技术学院公开招聘公告及官网页脚持续列清镇校区为贵州清镇职教城将军石路3号。清镇职教城位于县级清镇市，故地图最低法定边界映射为清镇市；保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1895_0": {
+    "d": "石狮市",
+    "sourceKind": "government",
+    "sourceUrl": "https://12710.gaokao.haedu.cn/policy/brochure/2026/0623/154244.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://12710.gaokao.haedu.cn/policy/brochure/2026/0623/154244.html",
+    "districtEvidence": "河南省阳光高考信息平台发布的闽南理工学院2026招生章程明确宝盖校区地址为福建省泉州市石狮宝盖风景区，法定县级单元为石狮市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1895_1": {
+    "d": "石狮市",
+    "sourceKind": "government",
+    "sourceUrl": "https://12710.gaokao.haedu.cn/policy/brochure/2026/0623/154244.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://12710.gaokao.haedu.cn/policy/brochure/2026/0623/154244.html",
+    "districtEvidence": "河南省阳光高考信息平台发布的闽南理工学院2026招生章程明确蚶江校区地址为福建省泉州市石狮厝仔工业区，法定县级单元为石狮市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1884_0": {
+    "d": "福安市",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ndzy.cn/zsw/article/399/31181",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ndzy.cn/zsw/article/399/31181",
+    "districtEvidence": "宁德职业技术学院2026年普通高考招生章程直接列学校地址为福建省宁德市福安市福泰路232号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1869_1": {
+    "d": "平潭县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.fjpit.edu.cn/zs/2026/0331/c2094a129759/page.htm",
+    "districtEvidence": "福建信息职业技术学院2026招生章程确认平潭校区为平潭综合实验区麒麟大道西段1号；福建省政府行政区划文件仍保留平潭县法定建制并由平潭综合实验区管理，故最低法定县级边界映射为平潭县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2309_1": {
+    "d": "正定县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.hnzsks.com.cn/index/school/articledetail/id/80201/sid/563.html",
+    "districtEvidence": "2026招生章程公开页直接列石家庄人民医学高等专科学校北校区为河北省石家庄市正定县正定镇树林北路188号，与现有Campus一致；待学校官网或河北教育主管部门直链后可升级。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

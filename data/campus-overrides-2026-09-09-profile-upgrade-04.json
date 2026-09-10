@@ -1,0 +1,50 @@
+{
+  "PROFILE3061_0": {
+    "d": "西市区",
+    "sourceKind": "government",
+    "sourceUrl": "https://ggzy.ln.gov.cn/jyfb/yks/zfcg_162706/jzcg_162707/jggg_162716/202312/t20231221_4915253.html",
+    "verified": true,
+    "status": "辽宁省公共资源交易材料直接确认学校同址法定区县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rst.ln.gov.cn/rst/gdztzl/jnts/qsbtpxzcydjgs2025nbtpxlml/2025022615554632161/index.shtml",
+    "districtEvidence": "辽宁省人社厅2025职业培训政府补贴机构统计表直接列“营口理工学院，营口市西市区博文路46号”；辽宁省公共资源交易网采购公告亦使用“辽宁省营口市西市区博文路46号”，与现有Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3040_0": {
+    "d": "文峰区",
+    "sourceKind": "government",
+    "sourceUrl": "https://hnsggzyjy.henan.gov.cn/jyxx/002002/002002003/20260804/a801fde5-1b45-43ff-adad-4c215a38cf3d.html",
+    "verified": true,
+    "status": "2025-2026河南政府采购/公共资源交易持续确认的现用中华路校址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://zfcg.henan.gov.cn/cmsweb81e27e/henan/rootfiles/2025/11/07/7652473e1c5b4a9db73ed7913e422dfe.pdf",
+    "districtEvidence": "河南省政府采购合同与2026河南省公共资源交易公告均直接将河南护理职业学院地址写为“河南省安阳市文峰区中华路480号”，与现有中华路校区记录完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3097_0": {
+    "d": "碑林区",
+    "sourceKind": "government",
+    "sourceUrl": "https://snamr.shaanxi.gov.cn/zfxxgk/zfxxgkzl/zc/zcjd/202411/t20241106_3437978.html",
+    "verified": true,
+    "status": "陕西省市场监管局省属高校工作信息统计表直接确认文艺南路校区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://snamr.shaanxi.gov.cn/zfxxgk/zfxxgkzl/zc/zcjd/202411/t20241106_3437978.html",
+    "districtEvidence": "陕西省市场监督管理局公布的省级许可院校工作信息统计表直接列“陕西艺术职业学院 文艺南路校区：西安市碑林区文艺南路111号”，与现有Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2970_2": {
+    "d": "鼓楼区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.fjys.edu.cn/2026/0702/c108a101790/page.htm",
+    "verified": true,
+    "status": "学校2026招生与搬迁公告直接确认的现用白马校区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.fjys.edu.cn/2026/0702/c108a101790/page.htm",
+    "districtEvidence": "福建幼儿师范高等专科学校2026搬迁采购公告直接写“白马校区（鼓楼区白马北路勺园里49号）”；2026普通高考招生章程亦明确白马校区办学地址为福建省福州市鼓楼区白马北路勺园里49号。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

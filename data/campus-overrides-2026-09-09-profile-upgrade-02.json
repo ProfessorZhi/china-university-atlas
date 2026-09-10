@@ -1,0 +1,62 @@
+{
+  "PROFILE3186_1": {
+    "d": "旌阳区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.cnsnvc.edu.cn/info/1017/9466.htm",
+    "verified": true,
+    "status": "学校官网确认的现用德阳校区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.cnsnvc.edu.cn/info/1017/9466.htm",
+    "districtEvidence": "四川护理职业学院官网直接写明德阳校区为“德阳市旌阳区一环路东一段199号”；四川省教育考试院考点表亦将该校区所属县（市、区）列为旌阳区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3113_0": {
+    "d": "牡丹区",
+    "sourceKind": "government",
+    "sourceUrl": "https://edu.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=b7a3607088fb4f8e81c7bcc4c347b203.pdf",
+    "verified": true,
+    "status": "山东省教育厅备案材料直接确认的学校同址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://edu.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=b7a3607088fb4f8e81c7bcc4c347b203.pdf",
+    "districtEvidence": "山东省教育厅2025年高等学历继续教育校外教学点备案结果中，设点单位“菏泽职业学院”的地址直接列为“菏泽市牡丹区长城路999号”，与现有Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3192_0": {
+    "d": "天桥区",
+    "sourceKind": "government",
+    "sourceUrl": "https://edu.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=b7a3607088fb4f8e81c7bcc4c347b203.pdf",
+    "verified": true,
+    "status": "山东省教育厅备案材料直接确认的学校同址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://edu.shandong.gov.cn/module/download/downfile.jsp?classid=0&filename=b7a3607088fb4f8e81c7bcc4c347b203.pdf",
+    "districtEvidence": "山东省教育厅2025年备案结果中，设点单位“山东艺术设计职业学院”的地址直接列为“山东省济南市天桥区历山北路黄台山庄109号”，与现有黄台校区门牌一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3296_1": {
+    "d": "尖草坪区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.taiyuanyouzhuan.com/page.thtml?id=7901",
+    "verified": false,
+    "status": "学校官网确认现用兴华校区；法定区县由省级职业培训目录交叉核验",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://xxgk.jcgov.gov.cn/szfgzbm/jcsrlzyhshbzj/fdzdgknr_31246/fgwj_31256/202007/P020200727371427381668.pdf",
+    "districtEvidence": "太原幼儿师范高等专科学校官网当前列兴华校区地址为太原市兴华街67号；山西省职业技能提升培训机构目录将太原幼儿师范高等专科学校同一地址列在太原市尖草坪区，故最低法定区县确定为尖草坪区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3401_1": {
+    "d": "武侯区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://www.coopaa.com/notice-20545143.html",
+    "verified": false,
+    "status": "2025政府采购合同镜像仍使用一环路南三段16号；华西坝校区曾有搬迁/改造，保留交叉核验等级",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.coopaa.com/notice-20545143.html",
+    "districtEvidence": "2025年四川体育职业学院政府采购合同公告镜像将采购人地址写为“四川省成都市武侯区一环路南三段16号”，与档案华西坝校区地址一致；但该片区自2021年起有搬迁和改造，故只确认法定区县，不将其升级为完整现用校区官方直证。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

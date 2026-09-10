@@ -1,0 +1,73 @@
+{
+  "PROFILE1629_1": {
+    "d": "和林格尔县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.impc.edu.cn/info/1030/36021.htm",
+    "districtEvidence": "内蒙古警察学院2026年招生章程直接列和林格尔校区为和林格尔新区云谷片区金盛路与云港大道交汇处；和林格尔新区位于法定县级和林格尔县，故地图最低法定边界映射为和林格尔县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3328_0": {
+    "d": "农安县",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.ccnc.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.ccnc.edu.cn/",
+    "districtEvidence": "长春师范高等专科学校当前招生信息网页脚直接列学校地址为长春市农安经济开发区合隆镇长隆大街2015-1号，与现有Campus一致，法定县级单元为农安县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2100_0": {
+    "d": "长清区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sdlvtc.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sdlvtc.cn/",
+    "districtEvidence": "山东劳动职业技术学院当前官网明确将海棠路800号标为“长清校区”，地址为长清大学科技园区海棠路800号；学校2026校历及机构页面持续使用该地址，故法定县区为长清区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2101_0": {
+    "d": "莱芜区",
+    "sourceKind": "government",
+    "sourceUrl": "https://qsy.jinan.gov.cn/col/col9003/art/2026/art_b614ca18c8f540118342c8ec6e9d3c67.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://qsy.jinan.gov.cn/col/col9003/art/2026/art_b614ca18c8f540118342c8ec6e9d3c67.html",
+    "districtEvidence": "济南市事业单位公开页面发布的莱芜职业技术学院2026年招聘资格审查公告直接列地址为山东省济南市莱芜区山财大街1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1069_1": {
+    "d": "海门区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://zsb.jcet.edu.cn/info/1041/7852.htm",
+    "districtEvidence": "江苏工程职业技术学院2026年普通类招生章程直接列海门校区为南通市海门港新区发展大道1118号；南通市海门区政府持续将海门港新区作为海门区内功能区管理，故最低法定县级边界映射为海门区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2048_1": {
+    "d": "南海区",
+    "sourceKind": "government",
+    "sourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-620%2CinfoId-7657238098.dhtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-620%2CinfoId-7657238098.dhtml",
+    "districtEvidence": "教育部阳光高考显示广东轻工职业技术大学2026年招生章程已由上级主管部门审核通过，章程直接列南海校区南、北区均位于佛山市南海软件科技园，学校院校信息同时明确佛山南海校区，故法定县区为南海区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1670_0": {
+    "d": "榆次区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.huaao.sx.cn/?id=3652&lanmu=9&p=yuanxicont",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.huaao.sx.cn/?id=3652&lanmu=9&p=yuanxicont",
+    "districtEvidence": "山西华澳商贸职业学院2026年招生章程直接列学校地址为山西省晋中市榆次工业园区创业街838号，与现有Campus一致，最低法定县级边界为榆次区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

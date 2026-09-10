@@ -1,0 +1,22 @@
+{
+  "广东省|深圳市": {
+    "undergraduate": [
+      {"name":"哈尔滨工业大学（深圳）","parent":"哈尔滨工业大学","sourceUrl":"https://zsb.hitsz.edu.cn/bzs/zswz","evidence":"学校本科招生网明确设本科招生、招生专业与招生计划"},
+      {"name":"中山大学深圳校区","parent":"中山大学","sourceUrl":"https://shenzhen.sysu.edu.cn/node/206","evidence":"深圳校区2026年本科招生专业页面"},
+      {"name":"暨南大学深圳校区","parent":"暨南大学","sourceUrl":"https://sz.jnu.edu.cn/main.htm","evidence":"校区官网明确长期在深办学并设本科专业"}
+    ],
+    "graduate": [
+      {"name":"清华大学深圳国际研究生院","parent":"清华大学","sourceUrl":"https://www.sigs.tsinghua.edu.cn/","evidence":"官网以硕士、博士培养为核心"},
+      {"name":"北京大学深圳研究生院","parent":"北京大学","sourceUrl":"https://www.pkusz.edu.cn/","evidence":"官网明确为深圳研究生院并披露全日制研究生规模"}
+    ],
+    "note":"香港中文大学（深圳）等在深圳具有独立学校主体记录的高校按本地主体高校处理，不放入异地括号层。"
+  },
+  "江苏省|苏州市": {
+    "undergraduate": [
+      {"name":"南京大学苏州校区","parent":"南京大学","sourceUrl":"https://ic.nju.edu.cn/bkszs/list.htm","evidence":"南京大学苏州校区相关学院设本科生招生页面"},
+      {"name":"中国人民大学苏州校区","parent":"中国人民大学","sourceUrl":"https://sc.ruc.edu.cn/department/ifc/ifc_clipboard/index.htm","evidence":"苏州校区中法学院设多个本科专业并开展本科培养"}
+    ],
+    "graduate": [],
+    "note":"市级主标签仍由苏州市本地主体高校产生；异地校区只在悬浮信息中分层展示。"
+  }
+}

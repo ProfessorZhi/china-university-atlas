@@ -1,0 +1,50 @@
+{
+  "PROFILE2027_0": {
+    "d": "资阳区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202606/t20260618_26772590.htm",
+    "verified": true,
+    "status": "2026中国政府采购网直接确认的益阳职业技术学院校本部地址",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202606/t20260618_26772590.htm",
+    "districtEvidence": "中国政府采购网2026年学生宿舍床铺采购项目直接列采购单位益阳职业技术学院地址为“益阳市资阳区迎风桥镇新塘村”，与现有校本部Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1987_0": {
+    "d": "鹤城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnmu.edu.cn/info/1134/19904.htm",
+    "verified": true,
+    "status": "学校官方迎新报道确认锦溪校区持续使用；法定区县由怀化公共资源交易材料核验",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://ggzy.huaihua.gov.cn/ggzyjyzx/c116120/202504/33cb62638c414124bb2f0e51be7de3cb.shtml",
+    "districtEvidence": "湖南医药学院官方报道确认锦溪校区与金海校区均持续承担迎新和学生住宿；怀化市公共资源交易中心2025项目将学校地址直接写为“怀化市鹤城区锦溪南路492号”，与现有锦溪校区Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1987_1": {
+    "d": "鹤城区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.hechengqu.gov.cn/hechengqu/c115520/202604/868005acece34cb19f742df00c6185c0.shtml",
+    "verified": true,
+    "status": "鹤城区政府2026公务员笔试考点信息直接确认的现用金海校区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.hechengqu.gov.cn/hechengqu/c115520/202604/868005acece34cb19f742df00c6185c0.shtml",
+    "districtEvidence": "鹤城区人民政府2026年考试录用公务员笔试提示直接列“湖南医药学院（金海校区）考点，地址：湖南省怀化市鹤城区坨院路与迎丰东路交叉口西500米左右”，明确确认金海校区法定区县为鹤城区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1986_0": {
+    "d": "长沙县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnpolice.com/content/2026/48810.html",
+    "verified": true,
+    "status": "湖南警察学院2026招标公告直接确认的现用校址",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnpolice.com/content/2026/48810.html",
+    "districtEvidence": "湖南警察学院2026年招标公告采购人信息直接列地址“长沙市长沙县远大三路9号”，与现有Campus完全一致。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

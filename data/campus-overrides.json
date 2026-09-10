@@ -1,0 +1,290 @@
+{
+  "PROFILE626_0": {
+    "d": "长安区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsxx.hepec.edu.cn/col/1416209360033/2026/02/12/1770885578269.html",
+    "districtEvidence": "河北体育学院2026年招生简章明确通讯地址为河北省石家庄市长安区学府路82号，与现有PROFILE626_0地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE626_1": {
+    "d": "正定县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://sport.hebei.gov.cn/tongzhigonggao/2024/1031/26415.html",
+    "districtEvidence": "河北省体育局公开招标公告明确河北体育学院地址为河北省石家庄市正定县恒阳路61号，与正定新区校区现有地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1576_0": {
+    "d": "裕华区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hebmu.edu.cn/a/2026/07/08/42286375BD9C407785DE5DEB4D66E66D.html",
+    "districtEvidence": "河北医科大学2026年临床学院项目公告明确招标人为河北医科大学临床学院，地点为石家庄市裕华区建华南大街309号，与现有地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1585_0": {
+    "d": "海港区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://stc.ysu.edu.cn/nry.jsp?urltype=news.NewsContentUrl&wbnewsid=30396&wbtreeid=1013",
+    "districtEvidence": "燕山大学里仁学院官网公告直接列出售人地址为秦皇岛市海港区河北大街438号，与现有地址一致；学院官网2025年仍持续发布教学与就业信息。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2857_0": {
+    "d": "鹿泉区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sjzlq.gov.cn/columns/10ccbcb0-fab6-4299-a0a9-c0db764c85d6/202606/22/ce5e6b63-24ac-4363-8182-ccaedb7535e5e5.html",
+    "districtEvidence": "石家庄市鹿泉区政府2026年医疗机构校验公示列石家庄幼儿师范高等专科学校医务室地址为石家庄市鹿泉区御园路88号，与现有学校地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1586_0": {
+    "d": "邯山区",
+    "districtVerified": false,
+    "districtSourceKind": "profile-county",
+    "districtSourceUrl": "https://www.chinaschool.com.cn/i_region/i_3_hebei/a_47/a_47.html",
+    "districtEvidence": "公开高校档案将河北工程大学科信学院同一地址光明南大街199号明确标为邯郸市邯山区；当前学院官网域名仍在教育部主体记录中，县区待学校官网地址页进一步直连复核。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1581_0": {
+    "d": "黄骅市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://app.gaokaozhitongche.com/newsguide/h/lGQp7aZg",
+    "districtEvidence": "河北农业大学现代科技学院2025招生章程公开镜像明确校址为沧州市中捷产业园区渤海路1号；2026河北公共资源/土地公告使用“沧州渤海新区黄骅市”并将中捷产业园区列入其宗地范围，故县级映射为黄骅市；不改变学校主体home city。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2847_0": {
+    "d": "曹妃甸区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.hzgrys.net/collinfo/201.html",
+    "districtEvidence": "当前高校资料将华北理工大学冀唐学院校址明确写为河北省唐山市曹妃甸区唐山湾生态城渤海大道21号，与现有曹妃甸新城渤海大道21号记录一致；2024河北省普通高校咨询服务站亦使用该校址。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE689_0": {
+    "d": "双桥区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.sqq.gov.cn/col/col3912/index.html",
+    "districtEvidence": "现有地址为承德高新技术产业开发区学院路2号；双桥区政府区划沿革说明冯营子镇划归双桥区、后由高新区托管。结合承德市当前材料与地图地址核对，法定县级单元按双桥区记录；功能区与法定区县不混写。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3419_0": {
+    "d": "双桥区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cdkfq.gov.cn/col/col12698/index.html",
+    "districtEvidence": "学院南校区位于承德高新区；学校当前采购信息进一步定位到高新区冯营子镇，承德高新区政府信息公开专栏明确标示“承德市双桥区冯营子镇人民政府”，故法定县级单元为双桥区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3495_0": {
+    "d": "邯山区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://sce.cufe.edu.cn/xljy/jxd.htm",
+    "districtEvidence": "中央财经大学继续教育学院当前教学点信息将邯郸科技职业学院定位为“邯郸市冀南新区滏阳大道1号”；另有公开高校地址资料将同一职教城地址落到邯山区。因页面本身未直接写邯山区，保留为交叉核对结论。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3657_0": {
+    "d": "桃城区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.hsjkkjzyxy.edu.cn/newsinfo/8969058.html",
+    "districtEvidence": "学院2026年招生简章确认校址为衡水市滨湖新区红旗大街2199号；前身/同址公开资料将红旗大街2199号明确写作桃城区。现有档案门牌为2197号，与当前官网有2号差异，因此只确认县区，不升级现有地址精度。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_HEB_ZJK_01": {
+    "d": "桥东区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://he.huatu.com/2026/0602/1711789.html",
+    "districtEvidence": "现有北校区官方地址为张家口市经开区世纪路21号；2026招聘考点信息将同一“世纪路21号”明确写作张家口市桥东区。经开区为功能区，本地图县区层按桥东区记录；南校区继续单独待核。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1650_0": {
+    "d": "郊区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B0FFGDPJZO",
+    "districtEvidence": "现有地址为阳泉市开发区学院路1号；高德当前学校实体将同一地址明确落为“阳泉市郊区开发区学院路1号”。学校官网继续使用开发区地址，故法定县区按郊区记录但保持交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1648_0": {
+    "d": "小店区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.gx211.cn/news/20260623/n17822003251476.html",
+    "districtEvidence": "2026年招生章程公开文本明确学院地址为“山西省太原市小店区民航南路26号”，与现有民航南路26号记录一致；因当前抓取页为章程转载/公开窗口而非学院域名，标为交叉核对。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3278_0": {
+    "d": "郊区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.yqzyjsxy.cn/news/show-3699.html",
+    "districtEvidence": "阳泉职业技术学院2026年巡察整改通报在监督联系方式中直接写明通讯地址“阳泉市郊区漾泉大街9号阳泉职业技术学院党政办公室”，与现有地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1664_0": {
+    "d": "盐湖区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ycnxy.com/index.php?a=show&c=index&catid=455&id=6416&m=content",
+    "districtEvidence": "山西运城农业职业技术学院当前招聘/校务信息直接将红旗东街46号写为运城市盐湖区，和现有地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1633_0": {
+    "d": "赛罕区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://14048.gaokao.haedu.cn/policy/brochure/2026/0623/153559.html",
+    "districtEvidence": "内蒙古科技职业学院2026年招生章程明确校址为“呼和浩特市赛罕区机场高速南辅路44号”，与现有机场高速路44号记录对应。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2317_0": {
+    "d": "集宁区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.wmpta.org.cn/article/497-41.html",
+    "districtEvidence": "乌兰察布市人事考试中心考点地图直接标示“乌兰察布医学高等专科学校(集宁区满达东街12号)”。现有记录为集宁新区满达东街11号，门牌存在1号差异，因此只确认县区为集宁区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE215_0": {
+    "d": "铁西区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B00180K7FE",
+    "districtEvidence": "现有地址为沈阳经济技术开发区11号街；高德当前学校实体明确地址为“沈阳市铁西区十一号街11号”。开发区为功能区，法定县区按铁西区记录；待学校地址页直连复核后可升级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1702_0": {
+    "d": "太和区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ln.gov.cn/web/zwgkx/zfxxgk1/zc/xzgfxwj/szf/szfwj/2023010416180048830/index.shtml",
+    "districtEvidence": "学校当前官网确认北校区为锦州市滨海新区昆山路9号；辽宁省政府说明锦州太和区是相关海岸县级单元，并明确包含原锦州经济技术开发区、龙栖湾新区及后组建的滨海新区相关范围，故法定县级单元按太和区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1702_1": {
+    "d": "太和区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ln.gov.cn/web/zwgkx/zfxxgk1/zc/xzgfxwj/szf/szfwj/2023010416180048830/index.shtml",
+    "districtEvidence": "学校当前招生章程确认南校区位于锦州经济技术开发区西海路东段；辽宁省政府明确原锦州经济技术开发区在县级行政单元口径归入锦州太和区，因此本地图法定县区记为太和区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1674_0": {
+    "d": "铁岭县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B019A06G6M",
+    "districtEvidence": "现有地址为铁岭市凡河新区黑龙江路45号；高德学校实体将同一地址明确落为“铁岭市铁岭县黑龙江路45号”。凡河新区为功能区，本地图法定县区按铁岭县记录，待学校官网地址页直连复核。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2356_0": {
+    "d": "金州区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://rst.ln.gov.cn/rst/gdztzl/jnts/qsbtpxzcydjgs2025nbtpxlml/2025022616121215700/index.shtml",
+    "districtEvidence": "辽宁省人社厅大连市政府补贴培训定点机构目录直接列“大连装备制造职业技术学院—大连市金州区大魏家街道前石村和庆路20号”；学院招生章程亦使用金州区地址。现有档案为同街道旧地址，县区确认金州区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3063_0": {
+    "d": "沈北新区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nsi-soft.com/nsi/fwzn",
+    "districtEvidence": "沈阳北软信息职业技术学院官网服务指南直接写明“沈阳市沈北新区沈北路53号”，与现有沈北路53号记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE413_0": {
+    "d": "南关区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/cggg/202604/t20260417_9520998.html",
+    "districtEvidence": "吉林省公共资源交易公共服务平台2026年吉林体育学院采购公告直接写明采购人地址为“吉林省长春市南关区自由大路2476号”，与现有南岭校区地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE411_0": {
+    "d": "南关区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.city8.com/changchun/life/8h9s2q85hso7b3a318_address",
+    "districtEvidence": "吉林外国语大学官网当前地址为长春市净月大街3658号；公开门址地图将同一门牌明确落为“吉林省长春市南关区净月大街3658号”。因学校官网本身未写法定区县，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1419_1": {
+    "d": "南关区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://xxgk.jl.gov.cn/zcbm/fgw_97981/xxgkmlqy/202304/t20230410_8691339.html",
+    "districtEvidence": "学校招生章程与现有记录均明确净月北校区位于福祉街道潭西社区福祉大路1299号；吉林省民政厅行政区划批复明确“长春市南关区”调整福祉街道并列明福祉街道范围，故法定县级单元为南关区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1373_0": {
+    "d": "朝阳区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/zbgg/202403/t20240318_8883446.html",
+    "districtEvidence": "吉林动画学院2026年招生章程将高新校区细化到“飞跃街道三佳社区博识路168号”；吉林省公共资源交易平台明确飞跃街道办事处为“长春市朝阳区飞跃街道办事处”，故法定县区为朝阳区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3260_0": {
+    "d": "朝阳区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.zhaopin.com/jobdetail/CC511886280J40575170914.htm",
+    "districtEvidence": "长春健康职业学院官网当前地址为高新区锦河街155号；当前招聘地点将同一门牌明确标为“长春朝阳区锦河街155号”。因县区信息来自招聘平台而非学校/政府地址页，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2536_0": {
+    "d": "宾县",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hljkltc.edu.cn/info/1116/31691.htm",
+    "districtEvidence": "黑龙江工程学院昆仑旅游学院官网当前国际合作信息直接写明联系地址为“哈尔滨市宾县二龙山风景区”，学校发展历程亦明确2009年迁至宾县二龙山风景区，与现有G221公路297号记录对应。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2534_0": {
+    "d": "呼兰区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://sswt.hlj.gov.cn/sswt/c103658/202607/c00_31960641.shtml",
+    "districtEvidence": "黑龙江省商务厅2026年事业单位招聘面试通知直接将“哈尔滨广厦学院教学楼C”地址写为“呼兰区学院路1号”，与现有利民开发区学院路1号记录一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2530_0": {
+    "d": "呼兰区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.amap.com/place/B01C31731L",
+    "districtEvidence": "哈尔滨远东理工学院官网现有资料使用利民开发区学院路时代大街158号；高德当前学校实体将同一地址明确落为哈尔滨市呼兰区。县区待学校或政府精确地址页进一步直连复核。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1328_0": {
+    "d": "呼兰区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ditu.amap.com/place/B01C302AB5",
+    "districtEvidence": "现有校址为哈尔滨市利民开发区师大南路1号；高德当前学校实体将同一门牌明确写作“哈尔滨市呼兰区师大南路1号”。因当前县区直证来自地图实体，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE737_0": {
+    "d": "呼兰区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://hljnkzy.edu.cn/info/2291/79891.htm",
+    "districtEvidence": "黑龙江农垦职业学院2026年公开招聘资格复审公告直接写明地址“哈尔滨市呼兰区利民开发区学院路660号”，与现有江北校区地址一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2193_0": {
+    "d": "呼兰区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.dxsbb.com/news/50769.html",
+    "districtEvidence": "黑龙江公安警官职业学院2026年招生章程公开文本写明办学地点“哈尔滨市呼兰利民开发区学院路333号”；黑龙江省政府/政务材料将利民开发区地址统一写作呼兰区利民开发区，故法定县区按呼兰区记录。因招生章程当前抓取页为转载，保留交叉核对等级。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

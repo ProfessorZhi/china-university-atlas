@@ -1,0 +1,38 @@
+{
+  "policyVersion": "2026-09-09.1",
+  "principles": [
+    "学校主体只在唯一home city参加城市主榜；异地校区不抢城市主榜",
+    "本科候选优先，地区没有本科候选时专科/高职兜底",
+    "分类榜名次不直接与主榜名次比较；优先使用主榜参考排名",
+    "外部榜单缺失表示未覆盖，不表示零分或最差",
+    "自定义综合分必须保留版本、权重、覆盖率和原始分项"
+  ],
+  "mapWinner": {
+    "levelOrder": ["本科", "专科", "成人"],
+    "excludeRankingEligibleFalse": true,
+    "prestigeTagOrder": ["985", "211", "双一流"],
+    "rankingOrder": [
+      {"rankingId": "shanghairanking-bcur", "field": "referenceRankOrRank", "direction": "asc"},
+      {"rankingId": "shanghairanking-bcvcr", "field": "rank", "direction": "asc", "appliesTo": ["专科"]},
+      {"rankingId": "qs-wur", "field": "rankMidpoint", "direction": "asc", "tieBreakerOnly": true},
+      {"rankingId": "the-wur", "field": "rankMidpoint", "direction": "asc", "tieBreakerOnly": true},
+      {"rankingId": "arwu", "field": "rankMidpoint", "direction": "asc", "tieBreakerOnly": true}
+    ],
+    "legacyFallback": "universities.rank / rankLabel from the 2026 ShanghaiRanking snapshot until explicit normalized ranking coverage is complete",
+    "finalTieBreakers": ["publicBeforePrivate", "nameZh"]
+  },
+  "atlasComposite": {
+    "enabledForMapWinner": false,
+    "status": "experimental",
+    "scoreRange": [0, 100],
+    "minimumCoverageWeight": 0.45,
+    "components": [
+      {"rankingId": "shanghairanking-bcur", "weight": 0.40, "normalization": "within-covered-percentile"},
+      {"rankingId": "qs-wur", "weight": 0.20, "normalization": "within-covered-percentile"},
+      {"rankingId": "the-wur", "weight": 0.15, "normalization": "within-covered-percentile"},
+      {"rankingId": "arwu", "weight": 0.15, "normalization": "within-covered-percentile"},
+      {"metricId": "admission-competitiveness", "weight": 0.10, "normalization": "province-year-percentile", "status": "future-after-admissions-backfill"}
+    ],
+    "missingDataRule": "renormalize weights across observed components and expose coverageWeight; never impute a missing external ranking as worst rank"
+  }
+}

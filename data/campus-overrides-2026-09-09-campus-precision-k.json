@@ -1,0 +1,54 @@
+{
+  "PROFILE2604_0": {
+    "d": "柯城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zbcg.qzc.edu.cn/2026/0120/c575a81625/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zbcg.qzc.edu.cn/2026/0120/c575a81625/page.htm",
+    "districtEvidence": "衢州学院2026年招标采购公告直接列采购人地址为衢州市柯城区九华北大道78号，与现有Campus一致；学校当前官网继续使用九华北大道78号。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2553_0": {
+    "d": "邗江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.nytdc.edu.cn/2026/0107/c129a48471/pagem.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.nytdc.edu.cn/2026/0107/c129a48471/pagem.htm",
+    "districtEvidence": "南京邮电大学通达学院2026年专转本招生简章直接列办学地点为江苏省扬州市邗江区润扬南路33号；学院当前官网页脚同样直写邗江区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2538_0": {
+    "d": "邗江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.yzpc.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.yzpc.edu.cn/",
+    "districtEvidence": "扬州职业技术大学当前官网直接列学校地址为扬州市邗江区翠岗路255号；2026招生章程将该地址列为瘦西湖校区，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2507_0": {
+    "d": "德城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xxgk.dzvc.edu.cn/index.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.dzvc.edu.cn/index.htm",
+    "districtEvidence": "德州职业技术学院信息公开网当前直接列信息公开受理和监督地址均为山东省德州市德城区大学东路689号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE2510_0": {
+    "d": "薛城区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202607/t20260720_26970965.htm",
+    "districtEvidence": "中国政府采购网2026年项目公告直接列枣庄职业学院地址为枣庄市高新区祁连山路2169号；当前高德学校实体将同一门牌明确落到枣庄市薛城区。因政府公告只写功能区、不直接写薛城区，按交叉核对等级记录。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

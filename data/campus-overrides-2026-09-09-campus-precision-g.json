@@ -1,0 +1,65 @@
+{
+  "PROFILE2092_0": {
+    "d": "崇州市",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.sceea.cn/GZDZ/Html/140040.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.sceea.cn/GZDZ/Html/140040.html",
+    "districtEvidence": "四川省教育考试院发布的四川文化传媒职业学院2026年高职单招章程直接列成都校区为四川省成都市崇州市崇庆南路230号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1454_0": {
+    "d": "蓝田县",
+    "sourceKind": "official",
+    "sourceUrl": "https://sxitu.com/news-detail/1685.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://sxitu.com/news-detail/1685.html",
+    "districtEvidence": "陕西电子信息职业技术学院2026年公开招聘公告直接列学校地址为陕西省西安市蓝田县向阳19号；学校当前官网页脚持续使用蓝田向阳19号，故法定县区为蓝田县。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1157_0": {
+    "d": "江夏区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.wut.edu.cn/info/1069/359351.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.wut.edu.cn/info/1069/359351.htm",
+    "districtEvidence": "武昌理工学院2026年学生校责险项目邀标公告直接列招标办地址为武汉市江夏区江夏大道16号；同年多份校内招标公告持续使用该地址，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3212_0": {
+    "d": "平果市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.gx211.cn/news/20260123/n17691465385042.html",
+    "districtEvidence": "广西培贤国际职业学院2026年职教高考招生简章公开文本直接列办学地址为广西平果市马头镇大学东路12号，与现有旧档案“平果县大学城大学东路12号”为同址的新行政名称。因当前抓取页非学校官网直链，按交叉核对记录为平果市。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3215_1": {
+    "d": "和林格尔县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.imac.edu.cn/html-zs/zszcjzsjh/20260420/39886.shtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.imac.edu.cn/html-zs/zszcjzsjh/20260420/39886.shtml",
+    "districtEvidence": "内蒙古艺术学院2026年专升本招生章程直接列云谷校区为呼和浩特市和林格尔新区云谷大道，2026级新生入学须知继续使用该地址；和林格尔新区位于法定县级和林格尔县，故地图按和林格尔县下钻。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE3398_1": {
+    "d": "仁寿县",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ms.gov.cn/__local/B/55/AA/177025385E8E436C761250C89E8_FAEE1EEC_38CD7.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ms.gov.cn/__local/B/55/AA/177025385E8E436C761250C89E8_FAEE1EEC_38CD7.pdf",
+    "districtEvidence": "天府新区航空旅游职业学院当前官网持续列仁寿校区地址为四川省眉山市天府仁寿大道66号；眉山市人民政府2025年重点项目名单明确将“航空人才培养基地（天府新区航空旅游职业学院仁寿校区）”建设地址列为仁寿县，故法定县区为仁寿县。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "PROFILE1355_0": {
+    "d": "滨江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://tqzs.zime.edu.cn/danye/4.shtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://tqzs.zime.edu.cn/danye/4.shtml",
+    "districtEvidence": "浙江机电职业技术大学2026年高职提前招生章程直接列杭州市滨江校区地址为浙江省杭州市滨江区滨文路528号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1349_0": {
+    "d": "萧山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://rczp.zjjs.edu.cn/apply/getNotice.action?keycode=2c8419a9-45fc-424b-b81e-26abae83cd6d",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://rczp.zjjs.edu.cn/apply/getNotice.action?keycode=2c8419a9-45fc-424b-b81e-26abae83cd6d",
+    "districtEvidence": "浙江建设职业技术学院2026年公开招聘复试安排直接列萧山校区为浙江省杭州市萧山区学知路151号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1359_0": {
+    "d": "吴中区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.siit.edu.cn/2026/0513/c3289a111855/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.siit.edu.cn/2026/0513/c3289a111855/page.htm",
+    "districtEvidence": "苏州工业职业技术学院2026年全日制普通专科招生章程直接列学校地址为苏州市吴中区吴中大道国际教育园致能大道1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1604_0": {
+    "d": "九台区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.jlbtc.edu.cn/",
+    "districtEvidence": "吉林工商学院当前官网持续列地址为长春九台经济开发区卡伦湖大街1666号，公安备案号使用九台区行政代码220113；开发区所在最低法定县级单元按九台区记录。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1142_0": {
+    "d": "长清区",
+    "sourceKind": "official",
+    "sourceUrl": "https://jxjy.sdutcm.edu.cn/info/1091/2044.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jxjy.sdutcm.edu.cn/info/1091/2044.htm",
+    "districtEvidence": "山东中医药大学2026年高等学历继续教育招生预告直接列校本部联系地址为山东省济南市长清区大学路4655号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1476_0": {
+    "d": "合川区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15723292.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15723292.html",
+    "districtEvidence": "重庆市政府发布的重庆移通学院2026招生章程直接列合川校区办学地址为重庆市合川区假日大道1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1524_0": {
+    "d": "集宁区",
+    "sourceKind": "official",
+    "sourceUrl": "https://ulvc.edu.cn/info/1035/2541.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://ulvc.edu.cn/info/1035/2541.htm",
+    "districtEvidence": "乌兰察布职业学院2026年职业技能等级认定通知直接列协办单位地址为乌兰察布市集宁区满达东街曙光南路1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "PROFILE1541_0": {
+    "d": "昌吉市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jyt.xinjiang.gov.cn/edu/xzxk/202302/e73388882e634f2f9a3d034ed00766e8.shtml",
+    "districtEvidence": "新疆维吾尔自治区教育厅核准的学校章程列主校区为新疆昌吉高新技术产业开发区兴业大道8号、分校区为昌吉市延安北路342号；2026招生章程进一步明确学院位于昌吉市，故高新区主校区最低法定县级边界按昌吉市记录。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}

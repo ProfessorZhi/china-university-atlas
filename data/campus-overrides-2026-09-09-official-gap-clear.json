@@ -1,0 +1,26 @@
+{
+  "PROFILE121_1": {
+    "d": "洪山区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gis.cug.edu.cn/index.htm",
+    "districtEvidence": "中国地质大学（武汉）国家GIS工程技术研究中心官方页面直接将未来城校区同址写为“湖北省武汉市洪山区锦程街68号”，与学校未来城校区官方地址“东湖新技术开发区锦程街68号”一致，故最低法定县区确定为洪山区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "OFF5_ac95dd76830f": {
+    "d": "吴中区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://glxy.xzhmu.edu.cn/info/1075/2835.htm",
+    "districtEvidence": "中国人民大学苏州校区官网确认地址为苏州工业园区仁爱路158号；徐州医科大学管理学院2026招聘速递转载中国人民大学苏州校区招聘信息时将同一地址明确写为“江苏省苏州市吴中区仁爱路158号”。园区为功能区，因此仅按交叉核对等级映射到法定县区吴中区。",
+    "districtVerifiedAt": "2026-09-09"
+  },
+  "V53_HEB_ZJK_02": {
+    "d": "桥东区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.cih-index.com/landlist/land/pr130000-c130700-d130702-l3-s2-i100000-a300000-o1-pa1/",
+    "districtEvidence": "2026招生材料确认南校区位于张家口市经开区横二路南侧（张家口数字产教融合职教基地）；公开土地出让数据将“横二路南侧地块”明确归入张家口市桥东区。经开区为功能区，因此仅按交叉核对等级映射最低法定县区为桥东区。",
+    "districtVerifiedAt": "2026-09-09"
+  }
+}
