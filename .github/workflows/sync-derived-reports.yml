@@ -2,7 +2,7 @@ name: Sync derived university tables
 on:
   push:
     branches:
-      - v5.3-zero-known-gaps
+      - 'v5.*'
     paths:
       - 'data/**'
       - 'scripts/build.py'
