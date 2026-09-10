@@ -1,0 +1,106 @@
+{
+  "PROFILE833_0": {
+    "d": "牧野区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.htu.edu.cn/zs/lxwm_22808/list.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.htu.edu.cn/zs/lxwm_22808/list.htm",
+    "districtEvidence": "河南师范大学招生办公室现行联系我们页面直接列通讯地址为河南省新乡市牧野区建设东路46号；2026年招生就业处页面持续使用同一法定区县和门牌，与现有校本部PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE479_0": {
+    "d": "二七区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsxxw.zua.edu.cn/info/1035/2242.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsxxw.zua.edu.cn/info/1035/2242.htm",
+    "districtEvidence": "郑州航空工业管理学院2026年普通本科招生章程直接列大学路校区地址为河南省郑州市二七区大学中路2号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE219_0": {
+    "d": "旅顺口区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yjs.dmu.edu.cn/info/1017/9079.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjs.dmu.edu.cn/info/1017/9079.htm",
+    "districtEvidence": "大连医科大学2026年硕士研究生招生章程直接列研究生院招生办公室通讯地址为辽宁省大连市旅顺口区旅顺南路西段9号；2026年8月校方研究生院通知仍持续使用同一门牌，与现有未命名办学地点PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE542_0": {
+    "d": "泰山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zhaosheng.sdau.edu.cn/txdz/list.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zhaosheng.sdau.edu.cn/txdz/list.htm",
+    "districtEvidence": "山东农业大学本科招生信息网现行通讯地址页面直接列岱宗校区为山东省泰安市泰山区岱宗大街61号，学校主页亦持续列示同一校区和门牌，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE33_0": {
+    "d": "甘井子区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.dlmu.edu.cn/",
+    "districtEvidence": "大连海事大学现行官网直接列学校地址为辽宁省大连市甘井子区凌海路1号，与现有东山校区PROFILE门牌一致；因当前页面未直接点名东山校区，本条只升级法定区县，不据学校总地址提升named-campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE216_0": {
+    "d": "旅顺口区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gd.dlufl.edu.cn/info/1013/2933.htm",
+    "districtEvidence": "大连外国语大学2026年硕士研究生招生复试录取工作办法直接列线下复试地点为辽宁省大连市旅顺口区旅顺南路西段6号大连外国语大学，与现有旅顺校区PROFILE门牌一致；因该来源未直接使用旅顺校区名称，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE202_0": {
+    "d": "于洪区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.symc.edu.cn/info/1078/71291.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.symc.edu.cn/info/1078/71291.htm",
+    "districtEvidence": "沈阳医学院2026年本科招生章程直接列办学地点及校址为辽宁省沈阳市于洪区黄河北大街146号，与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE244_0": {
+    "d": "南湖区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yzw.zjxu.edu.cn/info/1212/1943.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yzw.zjxu.edu.cn/info/1212/1943.htm",
+    "districtEvidence": "嘉兴大学2026级硕士研究生新生入学须知直接列报到地点梁林校区为浙江省嘉兴市南湖区广穹路899号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE274_1": {
+    "d": "江阳区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsxxw.swmu.edu.cn/info/1161/9341.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsxxw.swmu.edu.cn/info/1161/9341.htm",
+    "districtEvidence": "西南医科大学2026年全日制普通本科招生章程直接列忠山校区位于四川省泸州市江阳区忠山路3段319号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE37_1": {
+    "d": "碑林区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsb.nwu.edu.cn/info/1050/3121.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.nwu.edu.cn/info/1050/3121.htm",
+    "districtEvidence": "西北大学2026年本科招生章程直接列太白校区为西安市碑林区太白北路229号，2026年校园开放日也在同一法定区县和门牌举办，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
