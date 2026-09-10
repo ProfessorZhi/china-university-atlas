@@ -1,0 +1,46 @@
+{
+  "PROFILE1038_1": {
+    "d": "永川区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15720268.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15720268.html",
+    "districtEvidence": "重庆市政府发布的重庆文理学院2026年本科招生章程明确学校地处重庆市永川区，并直接列星湖校区为永川区卫星湖文化旅游区，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1018_1": {
+    "d": "江津区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.cqjtu.edu.cn/contact",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.cqjtu.edu.cn/contact",
+    "districtEvidence": "重庆交通大学本科招生网当前联系方式直接列科学城校区为重庆市江津区双福街道福星大道1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1432_1": {
+    "d": "琼山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://linchuang.hnkjedu.cn/list/linchuang/lxwm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://linchuang.hnkjedu.cn/list/linchuang/lxwm",
+    "districtEvidence": "海南科技职业大学医药学院当前官网直接列云龙校区为海口市琼山区云定路118号；学校其他当前二级学院页面也列琼山区云龙镇云定路118号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1024_1": {
+    "d": "宜秀区",
+    "sourceKind": "official",
+    "sourceUrl": "https://jy.aqnu.edu.cn/info/1037/12293.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jy.aqnu.edu.cn/info/1037/12293.htm",
+    "districtEvidence": "安庆师范大学2026届毕业生春季招聘邀请函明确龙山校区位于安徽安庆市宜秀区集贤北路1318号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
