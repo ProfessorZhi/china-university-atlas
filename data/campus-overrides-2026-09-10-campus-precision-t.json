@@ -1,0 +1,24 @@
+{
+  "PROFILE2130_0": {
+    "d": "历下区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sdsfjy.edu.cn/info/1043/41641.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sdsfjy.edu.cn/info/1043/41641.htm",
+    "districtEvidence": "山东司法警官职业学院2026年公开招聘资格审查公告直接列济南校区地址为济南市历下区二环东路6997号；2026招生简章亦使用同一法定区县与门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2120_0": {
+    "d": "历下区",
+    "sourceKind": "government",
+    "sourceUrl": "http://www.jinan.gov.cn/art/2023/5/29/art_87131_4780285.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "http://www.jinan.gov.cn/art/2023/5/29/art_87131_4780285.html",
+    "districtEvidence": "济南市公共企事业单位信息公开资料直接列济南职业学院舜耕校区联系地址为济南市历下区舜耕路12号；与现有舜耕校区Campus完全一致。该市级政府来源优先于早期第三方资料中存在的区县冲突。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
