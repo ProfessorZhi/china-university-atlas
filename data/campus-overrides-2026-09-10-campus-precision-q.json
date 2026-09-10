@@ -1,0 +1,32 @@
+{
+  "PROFILE1837_1": {
+    "d": "蜀山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.artah.cn/index.php?a=show&c=index&catid=160&id=12062&m=content",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.artah.cn/index.php?a=show&c=index&catid=160&id=12062&m=content",
+    "districtEvidence": "安徽艺术职业学院校方采购公告直接列采购单位地址为合肥市蜀山区丹霞路8号；2026招生章程仍列丹霞路8号为丹霞路校区，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1839_0": {
+    "d": "长丰县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahiib.edu.cn/2023/0522/c1689a55390/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ahiib.edu.cn/2023/0522/c1689a55390/page.htm",
+    "districtEvidence": "安徽国际商务职业学院校方转载的政府采购竞价公告将送货地址直接写为安徽省合肥市长丰县双凤开发区安徽国际商务职业学院（魏武路001号）；当前学校官网仍使用双凤开发区魏武路001号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1845_1": {
+    "d": "铜官区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ggzyjyzx.tl.gov.cn/jyxx/003002/003002002/20260408/72fc11a6-5655-4cc3-af26-dcdcdc9aeb21.html",
+    "districtEvidence": "安徽工业职业技术学院当前官网将西湖校区地址列为铜陵市翠湖四路东段3999号；铜陵市公共资源交易中心2026年项目资料对同一物理门牌直接写为铜陵市铜官区翠湖四路东段3999号。仅据精确同址交叉核验升级法定区县。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
