@@ -1,0 +1,67 @@
+{
+  "PROFILE434_0": {
+    "d": "江夏区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202607/t20260728_27024457.htm",
+    "districtEvidence": "中国政府采购网2026年武汉工程大学设备采购公告直接列采购人地址为武汉市江夏区东湖新技术开发区光谷一路206号，与现有流芳校区PROFILE门牌一致；本条只升级法定区县，不据采购人通信地址单独提升named-campus当前状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1176_0": {
+    "d": "洪山区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zjt.hubei.gov.cn/zfxxgk/fdzdgknr/zkly/zcpd/202606/t20260624_5963607.shtml",
+    "districtEvidence": "湖北省住房和城乡建设厅2026年度建筑工程专业职务水平能力测试通知直接列武汉城市学院东湖校区为湖北省武汉市洪山区东湖生态旅游风景区黄家大湾1号，与现有校本部PROFILE门牌一致；因现有记录名称为校本部而来源称东湖校区，本条只核实法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1068_0": {
+    "d": "江夏区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hbea.edu.cn/html/2026-04/15822.shtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hbea.edu.cn/html/2026-04/15822.shtml",
+    "districtEvidence": "湖北省教育考试院2026年上半年高等教育自学考试毕业申请须知直接列湖北城市建设职业技术学院地址为武汉市江夏区藏龙大道28号，与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE810_0": {
+    "d": "孝南区",
+    "sourceKind": "official",
+    "sourceUrl": "https://sft.hubei.gov.cn/fbjd/tzgg/202609/t20260907_6008325.shtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://sft.hubei.gov.cn/fbjd/tzgg/202609/t20260907_6008325.shtml",
+    "districtEvidence": "湖北省司法厅2026年9月国家统一法律职业资格考试考点通知直接列湖北职业技术学院地址为孝感市孝南区玉泉路17号，与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1975_0": {
+    "d": "新洲区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.whxinzhou.gov.cn/xxgk_29/xxgkml/gysyjs/wsly/yljgml/202312/t20231207_2314624.shtml",
+    "districtEvidence": "湖北省教育考试院2026年自考毕业申请须知仍列武汉生物工程学院地址为武汉市长江新区汉施路1号；武汉市新洲区人民政府医疗机构目录将校内武汉生物工程学院医院地址直接写为武汉市新洲区阳逻开发区汉施路1号。据同校内地点和同门牌链条确认现有PROFILE法定区为新洲区，不据此提升完整campus状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE815_0": {
+    "d": "汉南区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.wbu.edu.cn/1349/list.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.caidian.gov.cn/zwgk/zwdt/gsgg/202208/t20220819_2026064.shtml",
+    "districtEvidence": "武汉商学院现行招生章程直接列后官湖校区地址为武汉市武汉经济技术开发区东风大道816号；武汉市蔡甸区人民政府公开的市场单元规划表将同一武汉商学院门牌明确写为武汉经济技术开发区（汉南区）东风大道816号，据此建立功能区到法定汉南区的显式映射。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE815_2": {
+    "d": "汉南区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.wbu.edu.cn/1349/list.htm",
+    "districtEvidence": "武汉商学院现行招生章程直接列马影河校区地址为武汉经济技术开发区（汉南区）东荆街育源路9号；校方2026年8月亦确认马影河校区于9月正式投入使用。现有PROFILE使用周家河、育文路、育源路的项目范围描述，故本条只升级法定区县，不静默改写地址或将两种地址表达视为完全等同。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
