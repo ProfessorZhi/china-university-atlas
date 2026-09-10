@@ -1,0 +1,35 @@
+{
+  "PROFILE1830_0": {
+    "d": "瑶海区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.cua.edu.cn/2026/0707/c2329a56016/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cua.edu.cn/2026/0707/c2329a56016/page.htm",
+    "districtEvidence": "安徽城市管理职业学院2026年转载安徽省政府采购网的结算审核服务公告，采购人信息直接列地址为合肥市瑶海区淮海大道300号；学校当前招生网仍列新站校区为淮海大道300号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1838_0": {
+    "d": "肥西县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.afc.edu.cn/info/1074/48264.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.afc.edu.cn/info/1074/48264.htm",
+    "districtEvidence": "安徽财贸职业学院2026-2027年建设工程造价咨询服务采购公告直接列采购人地址为合肥市肥西县翡翠路900号；学校当前官网仍将翡翠路900号列为翡翠校区，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1834_0": {
+    "d": "谯城区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://jxjy.ahtcm.edu.cn/info/1171/23375.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jxjy.ahtcm.edu.cn/info/1171/23375.htm",
+    "districtEvidence": "安徽中医药大学2026级继续教育新生入学安排将亳州职业技术学院教学点直接写为亳州市谯城区药都路1625号；亳州职业技术学院2026年招生章程继续使用药都路1625号作为办学地址，两份当前资料对同一学校同一门牌形成交叉核验。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
