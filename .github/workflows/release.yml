@@ -20,6 +20,7 @@ jobs:
         run: test "v$(cat VERSION)" = "${GITHUB_REF_NAME}"
       - name: Build and validate
         run: |
+          python scripts/validate_overrides.py
           python scripts/generate_reports.py
           python scripts/build.py
           python scripts/validate.py
