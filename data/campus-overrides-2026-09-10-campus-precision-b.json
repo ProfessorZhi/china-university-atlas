@@ -1,0 +1,68 @@
+{
+  "PROFILE2239_0": {
+    "d": "临渭区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsw.sxri.net/2026/0610/c1639a113032/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsw.sxri.net/2026/0610/c1639a113032/page.htm",
+    "districtEvidence": "陕西铁路工程职业技术学院2026年招生章程直接列临渭校区为陕西省渭南市临渭区站北街东段1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2232_0": {
+    "d": "渭城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsw.snpu.edu.cn/info/1093/6017.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsw.snpu.edu.cn/info/1093/6017.htm",
+    "districtEvidence": "陕西工业职业技术大学2026年招生章程直接列渭城校区为陕西省咸阳市渭城区文汇西路12号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2234_0": {
+    "d": "渭城区",
+    "sourceKind": "government",
+    "sourceUrl": "https://12510.gaokao.haedu.cn/policy/brochure/2026/0623/155539.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://12510.gaokao.haedu.cn/policy/brochure/2026/0623/155539.html",
+    "districtEvidence": "2026年招生章程公开页直接列陕西能源职业技术学院咸阳校区为咸阳市渭城区文林路29号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2222_0": {
+    "d": "滨湖区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.wxu.edu.cn/info/1311/3822.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.wxu.edu.cn/info/1311/3822.htm",
+    "districtEvidence": "无锡太湖学院2026年招生章程直接列学校地址为江苏省无锡市滨湖区钱荣路68号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2219_0": {
+    "d": "清江浦区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jscj.edu.cn/2025/0616/c73a80519/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jscj.edu.cn/2025/0616/c73a80519/page.htm",
+    "districtEvidence": "江苏财经职业技术学院学校官网项目公告直接列学校地址为淮安市清江浦区枚乘东路8号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2237_0": {
+    "d": "秦都区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.scy.cn/xygk/lxwm.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.scy.cn/xygk/lxwm.htm",
+    "districtEvidence": "陕西财经职业技术学院官网当前联系我们页直接列学院地址为陕西省咸阳市秦都区文林路1号，与现有Campus一致；2026招生章程继续使用文林路1号作为办学地点。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
