@@ -1,7 +1,7 @@
 ﻿province,schools,registrySchools,inactiveSchools,locatedSchools,campusLocatedSchools,districtEvidenceOnly,missingSchools,pendingBoundarySchools,campuses,campusRecordsWithLowestLegalBoundary,campusLocationGaps,campusLocationGapsVerified,campusLocationGapsProfile,districtAssociations,districts,allDistricts,verifiedRecords
 北京市,92,92,0,92,92,0,0,0,209,207,2,0,2,1,15,16,6
 天津市,57,57,0,57,57,0,0,0,126,119,7,0,7,0,16,16,3
-河北省,131,132,1,131,131,0,0,0,345,301,44,0,44,4,67,167,12
+河北省,131,132,1,131,131,0,0,0,345,311,34,0,34,4,67,167,19
 山西省,84,84,0,84,84,0,0,0,194,176,18,0,18,2,33,117,12
 内蒙古自治区,52,54,2,52,52,0,0,0,115,98,17,0,17,0,28,103,4
 辽宁省,111,115,4,111,111,0,0,0,237,213,24,0,24,2,49,100,9
