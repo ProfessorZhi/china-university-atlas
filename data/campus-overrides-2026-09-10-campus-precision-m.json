@@ -1,0 +1,35 @@
+{
+  "PROFILE2374_0": {
+    "d": "长洲区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.wzzy.edu.cn/info/1121/54531.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.wzzy.edu.cn/info/1121/54531.htm",
+    "districtEvidence": "梧州职业学院2026年9月采购公告直接列采购人地址为梧州长洲区三龙大道88号；学校2026年多份采购公告持续使用同一法定区县与门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE955_0": {
+    "d": "南昌县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jxjsxy.edu.cn/news-show-10392.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jxjsxy.edu.cn/news-show-10392.html",
+    "districtEvidence": "江西建设职业技术学院2025年度公开招聘资格审查公告直接列小蓝校区为南昌县小蓝经济开发区汇仁大道999号；南昌县消防救援局对同一学校同一门牌的监管记录独立佐证，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE955_1": {
+    "d": "红谷滩区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsw.jxjsxy.edu.cn/news-show-340.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsw.jxjsxy.edu.cn/news-show-340.html",
+    "districtEvidence": "江西建设职业技术学院2026年招生章程直接列红谷滩校区地址为江西省南昌市红谷滩区庐山南大道1659号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
