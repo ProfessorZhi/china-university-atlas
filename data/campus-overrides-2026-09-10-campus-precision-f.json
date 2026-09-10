@@ -1,0 +1,101 @@
+{
+  "PROFILE1026_0": {
+    "d": "下陆区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xy.hbpu.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xy.hbpu.edu.cn/",
+    "districtEvidence": "湖北理工学院校友会/教育基金会当前官网直接列联系地址为黄石下陆区桂林北路16号，与学校当前主站所列桂林北路16号及现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1046_0": {
+    "d": "西乡塘区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.gxufe.edu.cn/www/subWebSites/gsgl/index.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.gxufe.edu.cn/www/subWebSites/gsgl/index.html",
+    "districtEvidence": "广西财经学院商学院当前官网直接列相思湖校区地址为广西壮族自治区南宁市西乡塘区大学西路189号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1046_1": {
+    "d": "西乡塘区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202607/t20260706_26881160.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/jzxtpgg/202607/t20260706_26881160.htm",
+    "districtEvidence": "中国政府采购网2026年广西财经学院学生宿舍家具采购公告直接列采购单位地址为南宁市西乡塘区明秀西路100号，与现有明秀校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1034_0": {
+    "d": "青秀区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.gxtcmu.edu.cn/zs/zszc/content_87648",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.gxtcmu.edu.cn/zs/zszc/content_87648",
+    "districtEvidence": "广西中医药大学2026年普通本科、高职招生章程直接列仙葫校区为广西南宁市青秀区五合大道13号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1034_1": {
+    "d": "西乡塘区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.gxtcmu.edu.cn/zs/zszc/content_87648",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.gxtcmu.edu.cn/zs/zszc/content_87648",
+    "districtEvidence": "广西中医药大学2026年普通本科、高职招生章程直接列明秀校区为广西南宁市西乡塘区明秀东路179号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1051_0": {
+    "d": "海陵区",
+    "sourceKind": "government",
+    "sourceUrl": "https://nynct.jiangsu.gov.cn/col/col51436/index.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://nynct.jiangsu.gov.cn/col/col51436/index.html",
+    "districtEvidence": "江苏省农业农村厅直属单位页面直接列江苏农牧科技职业学院办公地址为泰州市海陵区凤凰东路8号，与现有凤凰路校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1047_0": {
+    "d": "丰满区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/dylylzgs/202602/t20260213_9421893.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/dylylzgs/202602/t20260213_9421893.html",
+    "districtEvidence": "吉林省公共资源交易公共服务平台2026年政府采购公告直接列吉林医药学院地址为吉林市丰满区吉林大街5号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1020_0": {
+    "d": "闽侯县",
+    "sourceKind": "official",
+    "sourceUrl": "https://wsjj.fjmu.edu.cn/index/index/message.html?cate=23&pid=2E25E0D0-8C00-4E91-BC7F-B8AB0D237B73&type=jj",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://wsjj.fjmu.edu.cn/index/index/message.html?cate=23&pid=2E25E0D0-8C00-4E91-BC7F-B8AB0D237B73&type=jj",
+    "districtEvidence": "福建医科大学校内采购平台历史公告直接列旗山校区送达地址为福州市闽侯县上街镇学府北路1号；学校2026年招标采购中心当前仍列旗山校区为同一学府北路1号，故法定县区与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1020_1": {
+    "d": "台江区",
+    "sourceKind": "government",
+    "sourceUrl": "https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/fpjyylsbjy/202608/t20260807_7197114.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://fgw.fujian.gov.cn/zfxxgkzl/zfxxgkml/fpjyylsbjy/202608/t20260807_7197114.htm",
+    "districtEvidence": "福建省发展和改革委员会2026年乌山校区学生公寓项目批复直接列项目建设地点为福州市台江区交通路88号福建医科大学乌山校区，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
