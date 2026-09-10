@@ -1,0 +1,101 @@
+{
+  "PROFILE1170_0": {
+    "d": "宿城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zb.squ.edu.cn/info/1069/2240.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zb.squ.edu.cn/info/1069/2240.htm",
+    "districtEvidence": "宿迁学院2026年招生章程直接列当前办学地址为江苏省宿迁市宿城区黄河南路399号，并提示新校区建成验收后地址才会另行变更；与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1388_0": {
+    "d": "虎丘区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.szhct.edu.cn/zsstatus/news/2026-05-20/682.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.szhct.edu.cn/cn/",
+    "districtEvidence": "苏州卫生职业技术学院2026年全日制普通专科招生简章确认石湖校区地址为苏州国际教育园北区科华路28号；学校现行官网直接列地址为苏州虎丘区科华路28号，据同门牌确认法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE170_0": {
+    "d": "京口区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ujs.edu.cn/info/1093/211052.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ujs.edu.cn/info/1093/211052.htm",
+    "districtEvidence": "江苏大学2026年公开招聘专任教师公告直接说明学校位于江苏省镇江市京口区学府路301号；学校多个现行院系页面也持续使用同一法定区县与门牌，与现有校本部PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE161_1": {
+    "d": "京口区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zbb.just.edu.cn/2026/0326/c6282a371640/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zbb.just.edu.cn/2026/0326/c6282a371640/page.htm",
+    "districtEvidence": "江苏科技大学2026年招标采购意向明确列出梦溪校区多个改造项目，校方招投标办公室同页直接列地址为江苏省镇江市京口区梦溪路2号，与现有梦溪校区PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE787_0": {
+    "d": "崇川区",
+    "sourceKind": "official",
+    "sourceUrl": "https://ztb.ntu.edu.cn/zbggfw/8099.chtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://ztb.ntu.edu.cn/zbggfw/8099.chtml",
+    "districtEvidence": "南通大学2026、2027年度啬园校区修缮项目监理服务中标公告明确项目覆盖啬园校区，并直接列采购人地址为江苏省南通市崇川区啬园路9号，与现有啬园校区PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE166_0": {
+    "d": "浦口区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.nuist.edu.cn/index.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://webs.nuist.edu.cn/_s72/6803/list.psp",
+    "districtEvidence": "南京信息工程大学现行官网说明主校区坐落于南京江北新区并列学校地址宁六路219号；学校2026硕士招生联系方式页面直接将同一门牌写为南京市浦口区宁六路219号，据同门牌确认现有校本部PROFILE的法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE162_1": {
+    "d": "鼓楼区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.njucm.edu.cn/2026/0402/c6822a166944/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://kjy.njucm.edu.cn/2271/list.htm",
+    "districtEvidence": "南京中医药大学2026年公开招聘公告当前列汉中门校区地址为南京市汉中路282号；校方科技园现行简介直接说明科技园位于南京市鼓楼区汉中路282号的南京中医药大学汉中门老校区内，据同校区同门牌确认法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1191_0": {
+    "d": "新吴区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.wxsc.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.wxstc.cn/info/1011/8710.htm",
+    "districtEvidence": "无锡科技职业学院现行官网截至2026年9月仍列学校地址为无锡市新锡路8号；校方建校20周年公告直接将同一门牌写为无锡市新吴区新锡路8号。据当前门牌与校方历史法定区县直证交叉确认，不依赖高新区名称作行政区推断。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1069_0": {
+    "d": "崇川区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jcet.edu.cn/info/1006/288383.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jcet.edu.cn/info/1006/288383.htm",
+    "districtEvidence": "江苏工程职业技术学院2026年9月崇川校区宿舍漏水维修项目公告明确项目地点为崇川校区青年中路87号，并在踏勘说明中直接写为南通市崇川区青年中路87号，与现有崇川校区PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
