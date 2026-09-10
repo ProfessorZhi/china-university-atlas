@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Validate override merge hygiene
+        run: python scripts/validate_overrides.py
       - name: Generate derived institution tables
         run: python scripts/generate_reports.py
       - name: Build offline HTML
