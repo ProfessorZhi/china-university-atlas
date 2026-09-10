@@ -94,13 +94,5 @@
     "districtSourceUrl": "https://ranks.amap.com/ranking/%E8%81%8C%E4%B8%9A%E9%99%A2%E6%A0%A1/%E8%99%8E%E4%B8%98%E5%8C%BA/%E7%99%BD%E9%A2%86",
     "districtEvidence": "学校2026年招生章程确认地址为苏州独墅湖科教创新区松涛街208号；高德当前区域实体将苏州工业园区服务外包职业学院松涛街208号列入虎丘区。因工业园区不是本项目法定县区边界，按虎丘区做低置信地理映射。",
     "districtVerifiedAt": "2026-09-09"
-  },
-  "PROFILE2857_0": {
-    "d": "鹿泉区",
-    "districtVerified": true,
-    "districtSourceKind": "government",
-    "districtSourceUrl": "https://www.sjzlq.gov.cn/columns/10ccbcb0-fab6-4299-a0a9-c0db764c85d6/202606/22/ce5e6b63-24ac-4363-8182-ccaedb7535e5.html",
-    "districtEvidence": "石家庄市鹿泉区政府2026年医疗机构校验公示列石家庄幼儿师范高等专科学校医务室地址为石家庄市鹿泉区御园路88号，与现有学校地址一致。",
-    "districtVerifiedAt": "2026-09-09"
   }
 }
