@@ -1,15 +1,4 @@
 {
-  "PROFILE2887_0": {
-    "d": "南昌县",
-    "sourceKind": "government",
-    "sourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/xzzfgsk/202603/7391311f19344283baa7094c541f66ec.shtml",
-    "verified": true,
-    "districtVerified": true,
-    "districtSourceKind": "government",
-    "districtSourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/xzzfgsk/202603/7391311f19344283baa7094c541f66ec.shtml",
-    "districtEvidence": "南昌县消防救援局2026年监督检查公开信息直接列江西服装学院地址为南昌县向塘镇丽湖中大道103号；学校当前官网仍列向塘开发区丽湖中大道103号，与现有Campus一致。",
-    "districtVerifiedAt": "2026-09-10"
-  },
   "PROFILE2415_0": {
     "d": "雨山区",
     "sourceKind": "official",
