@@ -11,6 +11,14 @@ def jsonl(path):
         return []
     return [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines() if line.strip()]
 
+def strict_json_object(items):
+    obj={}
+    for key,value in items:
+        if key in obj:
+            raise ValueError('duplicate JSON key: '+key)
+        obj[key]=value
+    return obj
+
 def infer_exact_address_districts(campuses,regions):
     """Derive d only when the existing address uniquely contains a same-city legal d name.
 
@@ -116,11 +124,20 @@ def load_data():
     for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):
         additions.extend(jsonl(path))
     campuses=jsonl(ROOT/'data/campuses.jsonl')+additions
-    campus_overrides={}
+    campus_overrides={};campus_override_sources={}
     campus_override_paths=[ROOT/'data/campus-overrides.json']+sorted((ROOT/'data').glob('campus-overrides-*.json'))
     for path in campus_override_paths:
-        if path.exists():
-            campus_overrides.update(json.loads(path.read_text(encoding='utf-8')))
+        if not path.exists():
+            continue
+        incoming=json.loads(path.read_text(encoding='utf-8'),object_pairs_hook=strict_json_object)
+        if not isinstance(incoming,dict):
+            raise ValueError('Campus override file must contain an object: '+str(path.relative_to(ROOT)))
+        for key in incoming:
+            prior=campus_override_sources.get(key)
+            if prior:
+                raise ValueError('Duplicate campus override key '+key+': '+str(prior)+' and '+str(path.relative_to(ROOT)))
+            campus_override_sources[key]=path.relative_to(ROOT)
+        campus_overrides.update(incoming)
     for record in campuses:
         override=campus_overrides.get(record['id'])
         if override:
