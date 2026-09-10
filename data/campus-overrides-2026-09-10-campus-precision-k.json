@@ -1,0 +1,35 @@
+{
+  "PROFILE2887_0": {
+    "d": "南昌县",
+    "sourceKind": "government",
+    "sourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/xzzfgsk/202603/7391311f19344283baa7094c541f66ec.shtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/xzzfgsk/202603/7391311f19344283baa7094c541f66ec.shtml",
+    "districtEvidence": "南昌县消防救援局2026年监督检查公开信息直接列江西服装学院地址为南昌县向塘镇丽湖中大道103号；学校当前官网仍列向塘开发区丽湖中大道103号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2311_0": {
+    "d": "鹿泉区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202503/20250326/2293367174.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202503/20250326/2293367174.html",
+    "districtEvidence": "教育部学信网转载河北省教育考试院体育单招专项测试安排，直接列石家庄理工职业学院鹿泉校区地址为石家庄市鹿泉区石柏南大街178号，与现有Campus一致。教育部中外合作办学监管平台亦使用同一法定区县和门牌。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2309_0": {
+    "d": "桥西区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gaokao.chsi.com.cn/news/file.do?attach=true&hist=false&id=2293295990&method=downFile",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/news/file.do?attach=true&hist=false&id=2293295990&method=downFile",
+    "districtEvidence": "教育部学信网公开的河北高校高考咨询服务站信息直接列石家庄人民医学高等专科学校地址为石家庄市桥西区红旗南大街汇丰西路18号；2026招生章程继续列该地址为南校区，与现有Campus的红旗大街汇丰路18号对应同一校区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
