@@ -1,0 +1,46 @@
+{
+  "PROFILE1506_0": {
+    "d": "丰泽区",
+    "sourceKind": "government",
+    "sourceUrl": "https://jyt.fujian.gov.cn/xxgk/zywj/202607/t20260703_7171063.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://jyt.fujian.gov.cn/xxgk/zywj/202607/t20260703_7171063.htm",
+    "districtEvidence": "福建省教育厅2026年对黎明职业大学章程修正案的批复直接确认丰泽校区为主校区，地址泉州市丰泽区通港西街298号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1505_0": {
+    "d": "东宝区",
+    "sourceKind": "government",
+    "sourceUrl": "https://www.crs.jsj.edu.cn/aproval/detail/4141",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.crs.jsj.edu.cn/aproval/detail/4141",
+    "districtEvidence": "教育部中外合作办学监管工作信息平台2026年项目备案直接列荆楚理工学院办学地址为湖北省荆门市东宝区象山大道33号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1502_0": {
+    "d": "卧龙区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zhaosheng.nymc.edu.cn/info/1056/2129.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zhaosheng.nymc.edu.cn/info/1056/2129.htm",
+    "districtEvidence": "南阳医学高等专科学校2026年对口专科招生章程直接列办学地点为河南省南阳市卧龙区雪枫西路1106号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1459_0": {
+    "d": "邗江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jhu.cn/show/52/5297/index.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jhu.cn/show/52/5297/index.html",
+    "districtEvidence": "江海职业技术学院2026年校方招标公告直接列采购人地址为扬州市邗江区扬子江南路5号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
