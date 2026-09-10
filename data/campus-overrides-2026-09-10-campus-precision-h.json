@@ -1,0 +1,46 @@
+{
+  "PROFILE1607_0": {
+    "d": "二道区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.ccmc.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.ccmc.edu.cn/",
+    "districtEvidence": "长春医学高等专科学校招生工作网当前页直接列学校地址为长春市二道区吉林大路6177号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1547_0": {
+    "d": "宛城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hnpi.edu.cn/2026/0630/c220a125780/page.psp",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hnpi.edu.cn/2026/0630/c220a125780/page.psp",
+    "districtEvidence": "河南工业职业技术大学2026年公开招聘资格审查公告直接列学校地点为河南省南阳市宛城区杜诗路1666号，与现有孔明校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE949_0": {
+    "d": "浔阳区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.jxvc.jx.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jxvc.jx.cn/",
+    "districtEvidence": "江西财经职业学院当前官网直接列浔阳校区地址为江西省九江市浔阳区青年路96号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE957_0": {
+    "d": "渝水区",
+    "sourceKind": "official",
+    "sourceUrl": "https://jwc.jxue.edu.cn/2024/0617/c99a28972/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jwc.jxue.edu.cn/2024/0617/c99a28972/page.htm",
+    "districtEvidence": "江西工程学院教务处校内页面直接列地址为江西省新余市渝水区天工南大道1688号；学校当前主站仍使用同一门牌，故与现有天工校区Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
