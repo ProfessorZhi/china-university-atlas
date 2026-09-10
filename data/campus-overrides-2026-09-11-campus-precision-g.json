@@ -1,0 +1,73 @@
+{
+  "PROFILE146_0": {
+    "d": "江宁区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.njit.edu.cn/xxgk/xxjj.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.njit.edu.cn/xxgk/xxjj.htm",
+    "districtEvidence": "南京工程学院学校简介数据更新至2026年7月，现行官网直接列地址为南京市江宁区弘景大道1号，与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE86_0": {
+    "d": "滨湖区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://renwen.jiangnan.edu.cn/info/1012/4846.htm",
+    "districtEvidence": "江南大学人文学院2026年9月6日推免预报名公告直接列联系地址为无锡市滨湖区蠡湖大道1800号，与现有蠡湖校区PROFILE门牌一致；本条只升级法定区县，不仅凭学院通信地址提升named-campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE154_0": {
+    "d": "亭湖区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yjsc.ycit.edu.cn/info/1157/9121.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjsc.ycit.edu.cn/info/1157/9121.htm",
+    "districtEvidence": "盐城工学院2026年硕士研究生招生章程直接列培养所在校区之一为希望大道校区（江苏省盐城市亭湖区希望大道中路1号），与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE154_1": {
+    "d": "亭湖区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yjsc.ycit.edu.cn/info/1157/9121.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjsc.ycit.edu.cn/info/1157/9121.htm",
+    "districtEvidence": "盐城工学院2026年硕士研究生招生章程直接列培养所在校区之一为建军东路校区（江苏省盐城市亭湖区建军东路211号），与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1143_0": {
+    "d": "海陵区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.nustti.edu.cn/2026/0428/c52a17043/pagem.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nustti.edu.cn/2026/0428/c52a17043/pagem.htm",
+    "districtEvidence": "南京理工大学泰州科技学院2026年4月电子数据库资源采购成交公告直接列采购人地址为泰州市海陵区梅兰东路8号；学校2026年现行主页持续列梅兰东路8号，与现有未命名办学地点PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1589_0": {
+    "d": "滨湖区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://hrss.wuxi.gov.cn/doc/2023/12/13/4133474.shtml",
+    "districtEvidence": "无锡市政府2026年全国硕士研究生招生考试考点信息仍列无锡商业职业技术学院地址为无锡市钱胡路809号；无锡市人力资源和社会保障局职业技能评价机构评估结果将同一学校同一门牌直接写为滨湖区钱胡路809号。据政府当前同门牌与政府法定区县材料交叉确认；因当前考点材料未命名九龙校区，本条只升级district precision。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE173_0": {
+    "d": "邗江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.yzu.edu.cn/info/1122/125439.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.yzu.edu.cn/info/1122/125439.htm",
+    "districtEvidence": "扬州大学2026年荷花池校区8号楼工程竞争性谈判公告明确项目位于荷花池校区，采购人地址直接列为扬州市邗江区大学南路88号，与现有荷花池校区PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
