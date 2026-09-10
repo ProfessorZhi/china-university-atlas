@@ -1,0 +1,32 @@
+{
+  "PROFILE1641_0": {
+    "d": "盐湖区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://ycrkb.com/detail/1552",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ycrkb.com/detail/1552",
+    "districtEvidence": "运城幼儿师范高等专科学校2026年公开招聘资格审查公告直接列地点为山西省运城市盐湖区裴相路855号；2026招生章程公开文本亦使用同一法定区县与门牌，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2323_0": {
+    "d": "朔城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sxjyksfw.cn/news/dksx/20260331/n2026033165058618.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sxjyksfw.cn/news/dksx/20260331/n2026033165058618.html",
+    "districtEvidence": "山西省2026年中等职业学校毕业生对口升学职业技能考试安排直接列朔州职业技术学院地址为朔州市朔城区张辽南路紫金街1号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1661_0": {
+    "d": "晋源区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://pilot.caac.gov.cn/servlet/FileUploadManagerServlet?UUID=1990bd1c-dafa-4c28-a02e-c9fbc1ad8ff3&method=noDownload",
+    "districtEvidence": "中国民航局考试点文件直接列山西省太原市晋源区晋祠路三段160号电力职业技术培训中心；2026年国家电网招聘考试公告将同一门牌明确标为国网山西技能培训中心（山西电力职业技术学院），据同址同机构链条确认现有Campus法定区为晋源区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
