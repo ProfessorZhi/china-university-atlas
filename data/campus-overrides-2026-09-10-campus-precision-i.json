@@ -1,0 +1,40 @@
+{
+  "PROFILE2859_0": {
+    "d": "桥西区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hebzyhj.edu.cn/?html_250=&id=3576",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hebzyhj.edu.cn/?html_250=&id=3576",
+    "districtEvidence": "河北资源环境职业技术学院2026年单独考试招生简章直接列石家庄市校区为河北省石家庄市桥西区中山西路901号，与现有Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2858_0": {
+    "d": "藁城区",
+    "sourceKind": "government",
+    "sourceUrl": "https://gc.gov.cn/atm/7/20240103144131381.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://gc.gov.cn/atm/7/20240103144131381.pdf",
+    "districtEvidence": "藁城区政府公开的食品监督抽检表直接列河北轨道运输职业技术学院地址为石家庄经济技术开发区赣江路9号，并由石家庄市藁城区市场监督管理局监管；2026年政府采购公告仍使用同一门牌，因此现有Campus法定县区确认为藁城区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2869_2": {
+    "d": "金牛区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://m.cnfin.com/cmjj-lb/zixun/20260625/4431597_1.html",
+    "districtEvidence": "成都师范学院2026招生章程继续列白果林校区为成都市一环路西三段百寿路4号；2026年新华财经报道明确该原白果林校区位于成都市金牛区西安路街道白果林社区百寿路4号院。仅升级法定区县，不据此判断当前招生使用状态。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE3899_1": {
+    "d": "海珠区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://gzzk.gz.gov.cn/gkck/gkckxx/gkzx/content/post_10515241.html",
+    "districtEvidence": "广州市招考办公开名单将广东省轻工业技师学院新港西路160号明确列在海珠区；广东制造职业技术学院2026年以该技师学院为基础设立，广州官方公开信息仍列新港校区在海珠区。仅升级现有新港Campus的行政归属，不声明其为2026夏季高考主招生校区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}
