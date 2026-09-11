@@ -1,0 +1,170 @@
+{
+ "PROFILE1044_0": {
+  "d": "官渡区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://yjs.kmu.edu.cn/",
+  "districtEvidence": "昆明学院研究生部当前官网页脚将校址直接写为“中国·昆明 官渡区经济技术开发区 浦新路2号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1127_0": {
+  "d": "碑林区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://xxgk.sxqzy.com/info/1024/1126.htm",
+  "districtEvidence": "陕西青年职业学院章程明确含光校区地址为“陕西省西安市碑林区含光北路155号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1148_0": {
+  "d": "中牟县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://jwc.ztbu.edu.cn/2024_02/28_16/content-53038.html",
+  "districtEvidence": "郑州工商学院教务处官方通知明确将郑州校区写为“郑州市中牟县前程大道169号”，与Campus门牌一致，故最低法定县区确定为中牟县。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1196_0": {
+  "d": "瑶海区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://yxy.ahtcm.edu.cn/",
+  "districtEvidence": "安徽中医药大学药学院现行官网页脚将少荃湖校区地址明确写为合肥市瑶海区龙子湖路350号。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1277_1": {
+  "d": "五华区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://jy.scu.edu.cn/index/index/employjobdetail.html?data=MDAwMDAwMDAwMJG6n3_Ed6imi4qQtLh4ZJmK0dSqsmHddricp9CWi5qikaeWacSdqLqGfaK2w4iil5C4zNbGiL-E",
+  "districtEvidence": "昆明医科大学海源学院当前招生官网确认高新校区门牌为海源北路389号；四川大学就业指导中心转载该校招聘信息时将同一地址明确写为“云南省昆明市五华区海源北路389号”，故按交叉核对等级落五华区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1279_0": {
+  "d": "历下区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zs.sdupsl.edu.cn/info/1005/8414.htm",
+  "districtEvidence": "山东政法学院2026年普通高等教育招生章程将通信地址明确写为“山东省济南市历下区解放东路63号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1383_0": {
+  "d": "未央区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://snamr.shaanxi.gov.cn/zfxxgk/zfxxgkzl/zc/zcjd/202411/t20241106_3437978.html",
+  "districtEvidence": "陕西省市场监督管理局公开高校地址表将陕西交通职业技术学院文景校区明确列为“未央区文景路19号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1383_1": {
+  "d": "莲湖区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://snamr.shaanxi.gov.cn/zfxxgk/zfxxgkzl/zc/zcjd/202411/t20241106_3437978.html",
+  "districtEvidence": "陕西省市场监督管理局公开高校地址表将陕西交通职业技术学院自强校区明确列为“莲湖区自强西路289号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1408_0": {
+  "d": "桥西区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://huihua.hebtu.edu.cn/wxb2016/index.php?id=17&list=0&mods=ccate&page=1",
+  "districtEvidence": "河北师范大学汇华学院官网当前页面页脚将联系地址明确写为“河北省石家庄市桥西区红旗大街469号”；同址河北师范大学红旗校区可由现有同省同市规范化完整地址 donor 规则自动继承。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE172_0": {
+  "d": "新建区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.xinxing.gov.cn/yfxxwsj/gkmlpt/content/2/2005/post_2005370.html",
+  "districtEvidence": "新兴县政府2026年江西专场招聘公告将宣讲地点直接写为“江西省南昌市新建区志敏大道1101号江西农业大学就业指导中心”，与Campus门牌一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE174_0": {
+  "d": "青山湖区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://nchdz.nc.gov.cn/ncgxq/zfxc/202604/76ee592c6e2642a08ad344b9da2b673e.shtml",
+  "districtEvidence": "南昌高新区管委会2026年3月监督抽查结果将江西师范大学瑶湖校区同址条目写为“江西省南昌市青山湖区…紫阳大道99号江西师范大学瑶湖校区”，故最低法定县区落青山湖区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE175_0": {
+  "d": "新建区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://kzxy.jxufe.edu.cn/",
+  "districtEvidence": "江西财经大学考文垂大学孔子学院现行官网将中国联系地址直接写为“江西省南昌市新建区双港东大街169号”，与蛟桥园Campus门牌一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1801_1": {
+  "d": "巢湖市",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.hfnu.edu.cn/info/1156/372053.htm",
+  "districtEvidence": "合肥师范学院当前官方采购公告直接将滨湖校区写为“巢湖市黄麓科教园区书香路”，与Campus完全一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1810_0": {
+  "d": "肥东县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202607/t20260718_26961938.htm",
+  "districtEvidence": "中国政府采购网2026年安徽水利水电职业技术学院项目公告将采购单位地址直接写为“合肥市肥东县合马路18号”，与Campus完全一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1823_0": {
+  "d": "瑶海区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202608/t20260801_27054353.htm",
+  "districtEvidence": "中国政府采购网2026年合肥职业技术学院采购公告将采购单位地址直接写为“合肥市瑶海区岱河路2号”，与汇心湖校区Campus完全一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1830_0": {
+  "d": "瑶海区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.cua.edu.cn/2026/0610/c598a55313/page.htm",
+  "districtEvidence": "安徽城市管理职业学院2026采购公告将采购人地址直接写为合肥市瑶海区淮海大道300号，与新站校区Campus完全一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1848_0": {
+  "d": "蜀山区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.axhu.edu.cn/contents/1192/260616.html",
+  "districtEvidence": "安徽新华学院2026年高性能工作站采购项目校方公告将项目地址直接写为“安徽省合肥市蜀山区望江西路555号安徽新华学院”，与Campus完全一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1920_1": {
+  "d": "中牟县",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://zfcg.henan.gov.cn/cmsweb35rc67w/pingdingshan/cgxx/jggg/webinfo/2026/06/1972873.htm",
+  "districtEvidence": "河南省政府采购网2026年结果公告把郑东新区郑开大道76号行知楼地址直接标注为“（中牟县）”；河南省专业技术人员公共服务平台同时确认河南财政金融学院通讯地址为郑东新区郑开大道76号。交叉核对后象湖校区最低法定县区为中牟县。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1937_0": {
+  "d": "二七区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://13789.gaokao.haedu.cn/policy/brochure/2026/0519/151975.html",
+  "districtEvidence": "河南省阳光高考信息平台发布的河南交通职业技术学院2026年招生章程明确将航海校区写为“郑州市二七区航海中路165号”，与Campus一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE1939_0": {
+  "d": "荥阳市",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://zhengzhou.zfcg.henan.gov.cn/cmsweb35rc67w/zhengzhou/cgxx/cggg/webinfo/2026/06/1968938.htm",
+  "districtEvidence": "郑州市政府采购2026年公告将郑州职业技术学院采购人地址明确写为“郑州市荥阳市郑上路81号”，与Campus郑上路081号一致，故最低法定县级单位确定为荥阳市。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2094_0": {
+  "d": "市中区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.sepc.edu.cn/html/dzwz/xxgkzn.html",
+  "districtEvidence": "山东电力高等专科学校信息公开指南将通讯地址明确写为“山东省济南市市中区二环南路500号”。",
+  "districtVerifiedAt": "2026-09-11"
+ }
+}
