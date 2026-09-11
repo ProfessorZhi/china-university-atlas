@@ -1,0 +1,78 @@
+{
+  "PROFILE298_0": {
+    "d": "浈江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sgu.edu.cn/index.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sgu.edu.cn/index.htm",
+    "districtEvidence": "韶关学院现行官网直接列学校地址为广东省韶关市浈江区大学路288号；学校2026年普通专升本招生简章亦持续使用浈江区大学路288号，与现有校本部PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE298_1": {
+    "d": "武江区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sgu.edu.cn/sygk/xxzc.htm",
+    "districtEvidence": "韶关学院学校章程直接列黄田坝校区位于韶关市武江区惠民北路64号，与现有PROFILE校区名和门牌完全一致。考虑章程页面并非2026年专门的当前校区运行公告，本条只升级法定区县，不据此额外提升named-campus当前状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE786_2": {
+    "d": "细河区",
+    "sourceKind": "official",
+    "sourceUrl": "https://chxy.lntu.edu.cn/info/1138/10384.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://chxy.lntu.edu.cn/info/1138/10384.htm",
+    "districtEvidence": "辽宁工程技术大学测绘与地理科学学院2026级新生入学指南直接写报到地点为辽宁省阜新市细河区玉龙路88号、阜新校区玉龙校园，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE54_2": {
+    "d": "莲池区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hbu.edu.cn/xydt1/2.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://zcgl.hbu.edu.cn/sfw_cms/e?aid=101672&cid=103399&page=cms.detail",
+    "districtEvidence": "河北大学现行官网持续列裕华路校区地址为河北省保定市裕华东路342号；学校资产管理处2025年12月拍卖公告将同一门牌明确写为保定市莲池区裕华东路342号，据同校区同门牌确认法定区为莲池区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1407_0": {
+    "d": "雨山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xxgk.mastc.edu.cn/info/1013/7348.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.mastc.edu.cn/info/1013/7348.htm",
+    "districtEvidence": "马鞍山职业技术学院2026年招生章程直接列办学地址为安徽省马鞍山市雨山区霍里山中路328号，与现有未命名办学地点PROFILE门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE687_0": {
+    "d": "广阳区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lf.gov.cn/UploadFiles/ztlm/2025/12/202512121655196430.pdf",
+    "districtEvidence": "廊坊市人民政府公开的中央生态环境保护督察整改表将北华航天工业学院校内点位明确归入廊坊市广阳区，并直接写点位位于廊坊市爱民东道133号北华航天工业学院院内，与现有廊坊校区PROFILE门牌一致。本条只升级district precision，不据政府督察点位材料提升named-campus状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE908_1": {
+    "d": "袁州区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ycvc.jx.cn/hlxy/info/1065/3668.htm",
+    "districtEvidence": "宜春职业技术学院官方招聘公告将中山西路399号直接写为宜春市袁州区中山西路399号；现有PROFILE的北校区使用完全相同门牌。由于该材料较早且当时称校本部，本条只升级法定区县，不据此判断北校区当前招生/办学状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1428_1": {
+    "d": "城区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lvliang.gov.cn/llxxgk/zfxxgk/xxgkml/zdlygk/jy_59171/rsgz_21549/202304/t20230420_1753055.html",
+    "districtEvidence": "山西省人社厅来源的晋城市公务员体检公告将晋城职业技术学院北门直接写为晋城市城区凤台东街1658号，与现有凤台校区PROFILE门牌一致；学院采购页面亦持续使用凤台东街1658号。本条只升级法定区县，不把北门点位材料等同于named-campus当前状态核验。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
