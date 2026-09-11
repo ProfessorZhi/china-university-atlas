@@ -1,0 +1,73 @@
+{
+  "PROFILE1124_0": {
+    "d": "西陵区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-1592%2CinfoId-7616018670.dhtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-1592%2CinfoId-7616018670.dhtml",
+    "districtEvidence": "经主管部门审核的三峡大学科技学院2026年招生章程直接列注册地址为湖北省宜昌市西陵区大学路18号，并列校本部地址为大学路18号，与现有校本部PROFILE门牌一致。章程同时说明2026级新生将到点军区新校区学习，因此本条只核实该既有校本部记录本身，不将其解释为2026级新生报到地点。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE789_0": {
+    "d": "船山区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.sceea.cn/GZDZ/Html/129700.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sceea.cn/Html/202511/Newsdetail_4486_2.html",
+    "districtEvidence": "四川省教育考试院发布的四川职业技术学院2026年高职单招章程直接列校本部为四川省遂宁市学府北路1号；四川省教育考试院2025年成人高校招生专业计划将同一校本部门牌明确写为四川省遂宁市船山区河东新区学府北路1号，据此确认现有校本部PROFILE位于船山区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1729_0": {
+    "d": "兴宾区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jyt.gxzf.gov.cn/zfxxgk/fdzdgknr/bmfw/jyjgcx/W020221018323821450536.pdf",
+    "districtEvidence": "广西壮族自治区教育厅公开的普通高校毕业生资源信息手册直接列广西科技师范学院主校区地址为广西来宾市兴宾区铁北大道966号，与现有来宾校区PROFILE门牌一致。该材料用于核实法定区县；因材料年份早于当前招生周期，本条不据此提升named-campus当前状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1820_0": {
+    "d": "龙子湖区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahdy.edu.cn/2026/0130/c19a44154/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ahdy.edu.cn/2026/0130/c19a44154/page.htm",
+    "districtEvidence": "安徽电子信息职业技术学院2026年公开招聘公告直接列学校地址为安徽省蚌埠市龙子湖区曹山路1000号；学校现行网站及2026届就业页面持续使用曹山路1000号，与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE3361_1": {
+    "d": "洛龙区",
+    "sourceKind": "official",
+    "sourceUrl": "https://hnfvc.edu.cn/zs/zszl/zszc1/content_23361",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://oss.rsj.xuchang.gov.cn/BigFileUpLoadStorage/temp/2021-05-25/ca2e97e0-d87a-47ac-94b9-33d254953f10/%E6%B2%B3%E5%8D%97%E5%85%A8%E6%B0%91%E6%8A%80%E8%83%BD%E6%8C%AF%E5%85%B4%E5%B7%A5%E7%A8%8B%E9%A2%86%E5%AF%BC%E5%B0%8F%E7%BB%84%E5%8A%9E%E5%85%AC%E5%AE%A4%E5%85%B3%E4%BA%8E%E5%85%AC%E5%B8%832021%E5%B9%B4%E7%AC%AC%E4%BA%8C%E6%89%B9%E8%A1%A5%E8%B4%B4%E6%80%A7%E8%81%8C%E4%B8%9A%E6%8A%80%E8%83%BD%E6%8F%90%E5%8D%87%E8%A1%8C%E5%8A%A8%E7%9B%AE%E5%BD%95%E6%B8%85%E5%8D%95%E9%80%9A%E7%9F%A5.pdf",
+    "districtEvidence": "河南林业职业学院2026年招生章程直接列三川校区为洛阳市洛常路168号；学院2026年三川校区招租公告又明确三川校区即原河南省洛阳经济学校。河南政府体系公开的技能提升目录将原河南省洛阳经济学校同一门牌明确写为洛阳市洛龙区洛常路168号。据当前校方承继说明、当前named-campus门牌和政府旧实体同门牌三者交叉确认法定区为洛龙区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1938_1": {
+    "d": "瀍河回族区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.chanhe.gov.cn/upload/default/20250821/eb922c57b74ea6a36a5dbf611b979628.pdf",
+    "districtEvidence": "河南省公共资源交易中心2026年校园设施设备更新项目将交货地点明确写为河南农业职业学院洛阳校区1号公寓，确认洛阳校区当前仍在使用；瀍河回族区政府2025年消防安全重点单位台账直接列河南农业职业学院洛阳分院地址为启明西路2号院，与现有洛阳校区PROFILE门牌一致。据当前校区存在证据与区政府同机构同门牌证据确认法定区为瀍河回族区；本条不据此提升named-campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1756_0": {
+    "d": "扶绥县",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.gxcvu.edu.cn/zsjy/zsxx/zszc/content_9791",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.gxcvu.edu.cn/zsjy/zsxx/zszc/content_9791",
+    "districtEvidence": "广西城市职业大学2026年普通高考招生章程直接列空港校区办学地址为广西扶绥县新宁镇同正大道655号，2026年职教高考及专升本招生材料亦持续使用同一校区与门牌，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
