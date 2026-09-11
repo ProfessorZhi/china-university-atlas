@@ -1,0 +1,170 @@
+{
+ "PROFILE2130_0": {
+  "d": "历下区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.sdsfjy.edu.cn/info/1043/41641.htm",
+  "districtEvidence": "山东司法警官职业学院2026年公开招聘资格审查公告明确燕山校区为“历下区二环东路6997号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2133_1": {
+  "d": "济阳区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://jnxxq.jinan.gov.cn/col122860/art/2026/art_122860_4790378.html",
+  "districtEvidence": "济南新旧动能转换起步区2026年官方住宿信息多次将山东英才学院北校区明确写为“济阳区崔寨街道山东英才学院北校区”，与Campus一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2159_1": {
+  "d": "五华区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202607/t20260703_26868200.htm",
+  "districtEvidence": "中国政府采购网2026年采购公告将昆明冶金高等专科学校采购单位地址明确写为“昆明市五华区学府路388号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2166_1": {
+  "d": "官渡区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://yjxy.cug.edu.cn/info/1026/3345.htm",
+  "districtEvidence": "中国地质大学（武汉）继续教育学院备案的云南国土资源职业学院校外教学点明确写“经开校区地处昆明市官渡区经济技术开发区经牛路2号”，与Campus完全一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2172_0": {
+  "d": "西山区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.ynsvu.edu.cn/zsjyc/info/1049/1673.htm",
+  "districtEvidence": "云南体育运动职业技术学院2026年春季招生、职教高考招生章程直接写学校地址“昆明市西山区体院路3号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2177_0": {
+  "d": "五华区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202508/t20250815_25175348.htm",
+  "districtEvidence": "中国政府采购网2025年8月云南开放大学采购公告「采购人信息」栏原文写采购单位地址为“云南省昆明市五华区学府路113号”，法定区五华区明确写出，门牌113号与本条 Campus 地址“学府路113号”完全一致。来源主体为另一法人，按门牌完全一致口径采信；不据此主张两校之间的法人关系。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2242_0": {
+  "d": "灞桥区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp-shaanxi.gov.cn/gpx-bid-file/ZF_JGBM_000003/zone/2025/1/12/project/gpx-template/8a69c9ee98b38fa601992cce8b071838.pdf?accessCode=a2a145b17dad3aa7e0c28fa247e38d01",
+  "districtEvidence": "陕西政府采购文件将西安铁路职业技术学院采购人地址直接写为“西安市灞桥区港务大道396号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2311_0": {
+  "d": "鹿泉区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://dkweb.hebeinu.edu.cn/dkweb/article/492",
+  "districtEvidence": "2026年河北省普通专升本官方考点信息页明确石家庄理工职业学院考点地址为“石家庄市鹿泉区石柏南大街178号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2401_2": {
+  "d": "慈溪市",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zsb.nbufe.edu.cn/st/zs_news.jsp?neId=155",
+  "districtEvidence": "宁波财经学院2026年三位一体招生章程由学校招生系统发布，明确杭州湾校区办学地点为“宁波市（慈溪）博华路77号”，与Campus地址一致，故最低法定县级单位确定为慈溪市；不据此前湾新区整体映射慈溪。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2426_0": {
+  "d": "南昌县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/zjjzwgz/202601/e1c58241bb7640cb9903776e6f6d6aed.shtml",
+  "districtEvidence": "南昌县人民政府2026年施工许可公开将蒋巷西大道266号项目地址明确写为“南昌市南昌县蒋巷西大道266号”，与江西传媒职业学院该Campus门牌一致。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2672_0": {
+  "d": "中牟县",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://tzpy.zepc.edu.cn/info/1190/5777.htm",
+  "districtEvidence": "河南省职业教育提质培优项目推进办公室2025年高职技能大赛承办学校表将河南艺术职业学院地址明确写为“郑州市中牟县豫兴街道郑开大道132号”；文化和旅游部培训通知同时确认培训地点为河南艺术职业学院郑开大道132号。交叉核对后落中牟县。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2859_0": {
+  "d": "桥西区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.hebzyhj.edu.cn/?html_250=&id=3576",
+  "districtEvidence": "河北资源环境职业技术学院2026年单独考试招生简章明确石家庄市校区地址为“河北省石家庄市桥西区中山西路901号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE342_2": {
+  "d": "五华区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://xxgk.kmust.edu.cn/info/1070/1147.htm",
+  "districtEvidence": "昆明理工大学章程明确莲华校区地址为“昆明市五华区一二一大街文昌路68号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE342_3": {
+  "d": "盘龙区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://xxgk.kmust.edu.cn/info/1070/1147.htm",
+  "districtEvidence": "昆明理工大学章程明确新迎校区地址为“昆明市盘龙区环城东路50号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE344_1": {
+  "d": "五华区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://grs.ynnu.edu.cn/info/1035/1510.htm",
+  "districtEvidence": "云南师范大学2026年研究生新生户籍通知明确迁往地址为“云南省昆明市五华区一二·一大街298号云南师范大学”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE351_2": {
+  "d": "鄠邑区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://xkxy.xauat.edu.cn/info/1223/6707.htm",
+  "districtEvidence": "西安建筑科技大学信息与控制工程学院当前官网页脚明确草堂校区地址为“陕西省西安市鄠邑区草堂镇草寺东路”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE360_1": {
+  "d": "五华区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zs.ynart.edu.cn/info/1008/4213.htm",
+  "districtEvidence": "云南艺术学院2026年本科招生章程明确麻园校区地址为“昆明市五华区科业路23号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE363_0": {
+  "d": "雁塔区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://jgy.xupt.edu.cn/",
+  "districtEvidence": "西安邮电大学经济与管理学院当前官网页脚直接写“陕西省西安市雁塔区长安南路563号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE36_1": {
+  "d": "碑林区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://qkzx.chd.edu.cn/",
+  "districtEvidence": "长安大学学术期刊管理中心当前官网地址直接写为“陕西省西安市碑林区南二环路中段长安大学南校区北院”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE376_0": {
+  "d": "长安区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://welcome.nwupl.edu.cn/",
+  "districtEvidence": "西北政法大学当前迎新官网将长安校区直接写为“西安市长安区西长安街558号”。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE376_1": {
+  "d": "雁塔区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://welcome.nwupl.edu.cn/",
+  "districtEvidence": "西北政法大学当前迎新官网将雁塔校区直接写为“西安市雁塔区长安南路300号”。",
+  "districtVerifiedAt": "2026-09-11"
+ }
+}
