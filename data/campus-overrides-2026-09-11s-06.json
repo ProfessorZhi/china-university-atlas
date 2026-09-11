@@ -1,0 +1,50 @@
+{
+ "PROFILE875_1": {
+  "d": "朝阳区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://peixun.cueb.edu.cn/gdpx/gjkcyxbxm/zyxx/jrxy/131010.htm",
+  "districtEvidence": "peixun.cueb.edu.cn 页面原文：“北京市朝阳区金台里2号 首都经济贸易大学红庙校区西北角14号楼203办公室”。该地址门牌、路名与本条 Campus 地址一致，故法定区为朝阳区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE878_0": {
+  "d": "文峰区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.aynu.edu.cn/info/1240/13814.htm",
+  "districtEvidence": "www.aynu.edu.cn 页面原文：“地址：河南省安阳市文峰区弦歌大道436号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为文峰区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE886_0": {
+  "d": "金水区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.zzpu.edu.cn/info/1094/16579.htm",
+  "districtEvidence": "www.zzpu.edu.cn 页面原文：“郑州警察学院农业路校区（郑州市金水区农业路31号）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为金水区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE888_0": {
+  "d": "安源区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260907_27276757.htm",
+  "districtEvidence": "www.ccgp.gov.cn 页面原文：“名称：萍乡学院 地址：萍乡市安源区萍安北大道211号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为安源区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE947_0": {
+  "d": "广信区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.srzy.cn/",
+  "districtEvidence": "www.srzy.cn 页面原文：“地址：江西省上饶市旭日北大道358号(广信区罗桥) 上饶职业技术学院信息中心 邮编：334109”。该地址门牌、路名与本条 Campus 地址一致，故法定区为广信区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE949_0": {
+  "d": "浔阳区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.jxvc.jx.cn/",
+  "districtEvidence": "www.jxvc.jx.cn 页面原文：“浔阳校区地址：江西省九江市浔阳区青年路96号 邮编：332000”。该地址门牌、路名与本条 Campus 地址一致，故法定区为浔阳区。",
+  "districtVerifiedAt": "2026-09-11"
+ }
+}
