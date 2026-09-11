@@ -1,9 +1,10 @@
-"""Generate deterministic V5.3 derived reports from the same data model used by the offline HTML."""
+﻿"""Generate deterministic V5.3 derived reports from the same data model used by the offline HTML."""
 import argparse,csv,io,json
 from build import ROOT,load_data
 
 UNIVERSITY_FIELDS=['id','u','p','c','d','regp','hostRaw','level','rankLabel','rank','tags','private','source','notes','profileId','officialWebsite','profileAddress','rankingEligible','entityStatus','statusLabel','statusEffectiveFrom','statusSourceUrl','statusEvidence','hostBoundaryStatus','hostOverrideSourceUrl','hostOverrideEvidence','hostOverrideNote','originalHost','preferredRank','latestRankings','admissionFactCount','latestAdmissionYear','financeFactCount','latestFinanceYear']
-CAMPUS_FIELDS=['id','uid','u','p','c','d','campus','level','rank','rankLabel','tags','address','sourceName','status','source','sourceUrl','verified','lng','lat','sourceKind','evidence','dataUrl','retrievedAt','locationMethod','coordinateStatus','verifiedAt','addressAliases','notes']
+CAMPUS_FIELDS=['id','uid','u','p','c','d','campus','level','rank','rankLabel','tags','address','sourceName','status','source','sourceUrl','verified','lng','lat','sourceKind','evidence','dataUrl','retrievedAt','locationMethod','coordinateStatus','verifiedAt','addressAliases','notes','districtInferenceMethod','districtInferenceEvidence','districtSourceKind','districtSourceUrl','districtVerified','districtInheritedFrom','districtZoneMappingId']
+ZONE_MAPPING_FIELDS=['id','p','c','d','matchTerms','sourceKind','sourceUrl','evidence','retrievedAt']
 ASSOCIATION_FIELDS=['id','uid','u','p','c','d','regionId','precision','source','sourceKind','sourceUrl','verified','retrievedAt','status','evidence','note']
 MISSING_FIELDS=['uid','学校','省份','城市','层次','档案编号','缺口']
 CITY_ONLY_FIELDS=['uid','学校','省份','城市','层次','缺口']
@@ -36,6 +37,7 @@ def revision_summary(d):
         'campusRecordsWithLowestLegalBoundary':st.get('campusRecordsWithLowestLegalBoundary'),'campusRecordsOnlyCityLocation':st.get('campusRecordsOnlyCityLocation'),
         'districtAssociationRecords':st.get('districtAssociationRecords'),'rankingFactRecords':st.get('rankingFactRecords'),'rankingFactSchools':st.get('rankingFactSchools'),
         'admissionFactRecords':st.get('admissionFactRecords'),'financeFactRecords':st.get('financeFactRecords'),
+        'zoneDistrictMappings':st.get('zoneDistrictMappings'),'zoneMappedCampusDistricts':st.get('zoneMappedCampusDistricts'),
         'cityAffiliateCities':len(d.get('cityAffiliates',{})),'cityAffiliateItems':sum(len(t.get(k,[])) for t in d.get('cityAffiliates',{}).values() for k in ('undergraduate','graduate')),
     }
 
@@ -90,7 +92,7 @@ def expected_reports():
     return {
         ROOT/'reports/university-master.csv':csv_bytes(master_rows(d),MASTER_FIELDS),ROOT/'reports/universities.csv':csv_bytes(d['universities'],UNIVERSITY_FIELDS),ROOT/'reports/campuses.csv':csv_bytes(d['campuses'],CAMPUS_FIELDS),
         ROOT/'reports/rankings.csv':csv_bytes(d.get('rankingFacts',[]),RANKING_FIELDS),ROOT/'reports/admissions.csv':csv_bytes(d.get('admissionFacts',[]),ADMISSION_FIELDS),ROOT/'reports/finance.csv':csv_bytes(d.get('financeFacts',[]),FINANCE_FIELDS),
-        ROOT/'reports/district-associations.csv':csv_bytes(d.get('districtAssociations',[]),ASSOCIATION_FIELDS),ROOT/'reports/missing-schools.csv':csv_bytes(d.get('missingSchools',[]),MISSING_FIELDS),
+        ROOT/'reports/zone-district-mappings.csv':csv_bytes(d.get('zoneDistrictMappings',[]),ZONE_MAPPING_FIELDS),ROOT/'reports/district-associations.csv':csv_bytes(d.get('districtAssociations',[]),ASSOCIATION_FIELDS),ROOT/'reports/missing-schools.csv':csv_bytes(d.get('missingSchools',[]),MISSING_FIELDS),
         ROOT/'reports/city-only-schools.csv':csv_bytes(d.get('cityOnlySchools',[]),CITY_ONLY_FIELDS),ROOT/'reports/campus-record-gaps.csv':csv_bytes(d.get('campusRecordGaps',[]),CAMPUS_GAP_FIELDS),
         ROOT/'reports/campus-location-gaps.csv':csv_bytes(d.get('campusLocationGaps',[]),CAMPUS_LOCATION_GAP_FIELDS),
         ROOT/'reports/district-evidence-only-schools.csv':csv_bytes(d.get('districtEvidenceOnlySchools',[]),DISTRICT_ONLY_FIELDS),ROOT/'reports/inactive-schools.csv':csv_bytes(d.get('inactiveSchools',[]),INACTIVE_FIELDS),
@@ -117,3 +119,7 @@ def sync(check=False):
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--check',action='store_true');args=p.parse_args();sync(args.check)
 if __name__=='__main__':main()
+
+
+
+

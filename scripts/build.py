@@ -3,6 +3,7 @@ from pathlib import Path
 import argparse,base64,gzip,hashlib,json,re,sys,zipfile
 from derived_v53 import refresh_derived as refresh_derived_v53
 from facts_v53 import attach_facts
+from zone_district import load_zone_mappings,infer_zone_districts
 
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -46,15 +47,29 @@ def infer_exact_address_districts(campuses,regions):
         inferred+=1
     return inferred
 
-def normalized_address(value,province='',city=''):
-    """Conservative same-city key: strip this row's province/city labels plus punctuation only."""
+def normalized_address(value,province='',city='',district=''):
+    """Conservative same-city key with an optional leading legal-district prefix removed."""
     text=str(value or '').strip()
     if not text:
         return ''
     for label in (str(province or '').strip(),str(city or '').strip()):
         if label:
             text=text.replace(label,'')
-    return re.sub(r'[\s,，。；;()（）\-—_/]+','',text)
+    text=re.sub(r'[\s,，。；;()（）\-—_/]+','',text)
+    special={'广西壮族自治区':'广西','内蒙古自治区':'内蒙古','新疆维吾尔自治区':'新疆','宁夏回族自治区':'宁夏','西藏自治区':'西藏'}
+    for label in (str(province or '').strip(),str(city or '').strip()):
+        alias=special.get(label,'') or (label[:-1] if len(label)>2 and label.endswith(('省','市')) else '')
+        if alias and text.startswith(alias):
+            text=text[len(alias):]
+    d=str(district or '').strip()
+    if d and text.startswith(d):
+        text=text[len(d):]
+    return text
+
+def specific_inherited_address_key(value):
+    """Reject zone-only labels; inheritance needs a road, street/town/village cue, or number."""
+    text=str(value or '')
+    return bool(text) and (bool(re.search(r'\d',text)) or any(x in text for x in ('路','街','道','巷','弄','号','村','镇','乡')))
 
 def inherit_exact_address_districts(campuses):
     """Fill d from another record only for an exact same-city normalized address with one d.
@@ -66,8 +81,8 @@ def inherit_exact_address_districts(campuses):
     donor_ids={}
     for record in campuses:
         d=record.get('d')
-        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
-        if not d or not key[2]:
+        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c'),record.get('d','')))
+        if not d or not specific_inherited_address_key(key[2]):
             continue
         donors.setdefault(key,set()).add(d)
         donor_ids.setdefault((key,d),[]).append(record.get('id'))
@@ -75,8 +90,8 @@ def inherit_exact_address_districts(campuses):
     for record in campuses:
         if record.get('d'):
             continue
-        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
-        if not key[2]:
+        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c'),record.get('d','')))
+        if not specific_inherited_address_key(key[2]):
             continue
         districts=donors.get(key,set())
         if len(districts)!=1:
@@ -125,7 +140,9 @@ def load_data():
         override=campus_overrides.get(record['id'])
         if override:
             record.update(override)
+    zone_mappings=load_zone_mappings(ROOT)
     address_inferred=infer_exact_address_districts(campuses,regions)
+    infer_zone_districts(campuses,zone_mappings)
     exact_address_inherited=inherit_exact_address_districts(campuses)
     association_additions=[]
     for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):
@@ -140,6 +157,7 @@ def load_data():
     data['universities']=universities
     data['campuses']=campuses
     data['campusOverrides']=campus_overrides
+    data['zoneDistrictMappings']=zone_mappings
     data['districtAssociations']=associations
     data['districtAssociationOverrides']=ao
     data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'))
@@ -149,6 +167,9 @@ def load_data():
     data=refresh_derived_v53(data,(ROOT/'VERSION').read_text().strip())
     data['stats']['addressInferredCampusDistricts']=address_inferred
     data['stats']['exactAddressInheritedCampusDistricts']=exact_address_inherited
+    data['stats']['zoneMappedCampusDistricts']=sum(r.get('districtInferenceMethod')=='government-zone-to-legal-district' for r in campuses)
+    data['stats']['zoneDistrictMappings']=len(zone_mappings)
+    data['stats']['locationCorrectedCampusRecords']=sum(bool(r.get('locationCorrectionMethod')) for r in campuses)
     return attach_facts(data,ROOT)
 
 def build():
@@ -174,3 +195,4 @@ def main():
                 name=path.name if path.parent==ROOT/'dist' else path.relative_to(ROOT).as_posix();item=zipfile.ZipInfo(name,(2026,9,9,0,0,0));item.compress_type=zipfile.ZIP_DEFLATED;item.external_attr=0o644<<16;archive.writestr(item,path.read_bytes(),compresslevel=9)
         sums=checksum+hashlib.sha256(target.read_bytes()).hexdigest()+'  '+target.name+'\n';(folder/'SHA256SUMS.txt').write_text(sums,encoding='ascii');print('PACKED',target.name,target.stat().st_size,'bytes')
 if __name__=='__main__':main()
+

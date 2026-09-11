@@ -1,0 +1,50 @@
+{
+  "PROFILE1939_0": {
+    "d": "荥阳市",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://zhengzhou.zfcg.henan.gov.cn/cmsweb35rc67w/zhengzhou/cgxx/cggg/webinfo/2026/06/1968938.htm",
+    "districtEvidence": "郑州市政府采购2026年公告将郑州职业技术学院采购人地址明确写为“郑州市荥阳市郑上路81号”，与Campus郑上路081号一致，故最低法定县级单位确定为荥阳市。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1937_0": {
+    "d": "二七区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://13789.gaokao.haedu.cn/policy/brochure/2026/0519/151975.html",
+    "districtEvidence": "河南省阳光高考信息平台发布的河南交通职业技术学院2026年招生章程明确将航海校区写为“郑州市二七区航海中路165号”，与Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1922_2": {
+    "d": "二七区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.hnzjgl.gov.cn/info/461",
+    "districtEvidence": "河南省专业技术人员公共服务平台省级继续教育基地表将郑州工程技术学院通讯地址明确写为“河南省郑州市二七区京广南路1号”，与航海校区Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1114_1": {
+    "d": "中原区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.hnzjgl.gov.cn/info/461",
+    "districtEvidence": "河南省专业技术人员公共服务平台将同一物理门牌“郑州市中原区中原中路41号”明确落在中原区；Campus地址门牌完全一致，因此最低法定县区为中原区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE479_0": {
+    "d": "二七区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsxxw.zua.edu.cn/info/1035/2242.htm",
+    "districtEvidence": "郑州航空工业管理学院2026年普通本科招生章程明确将大学路校区写为“河南省郑州市二七区大学中路2号”，与Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE469_0": {
+    "d": "管城回族区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hhstu.edu.cn/info/1054/23579.htm",
+    "districtEvidence": "黄河科技学院2026年校园开放日官方页面直接将南校区标为“河南省郑州市管城回族区紫荆山南路666号”，与Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

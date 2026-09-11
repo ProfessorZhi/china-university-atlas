@@ -1,0 +1,32 @@
+{
+  "PROFILE2865_1": {
+    "d": "迎泽区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://wjw.shanxi.gov.cn/tzgg/zcwj/202607/t20260721_10181235.shtml",
+    "districtEvidence": "山西省卫生健康委员会2026年文件将联系地址明确写为太原市迎泽区双塔寺街22号，与Campus门牌完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2840_1": {
+    "d": "小店区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://ncre.neea.edu.cn/xhtml1/report/1511/66-1.htm",
+    "districtEvidence": "中国教育考试网考点联系表将山西工商学院北格校区同一门牌明确写为山西省太原市小店区北格镇紫云路36号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2322_1": {
+    "d": "晋源区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sxemc.edu.cn/__local/1/09/7E/F5FFFF0C43DF1F15C03B053C998_165F89D5_814C8.pdf?e=.pdf",
+    "districtEvidence": "山西经贸职业学院新生报到须知直接将南校区写为太原市晋源区晋祠路三段629号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE282_0": {
+    "d": "迎泽区", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://gs.hhu.edu.cn/_upload/article/files/6c/b4/1630062c4cd299d1c46f726f0329/24972042-7e47-4c4a-9ff3-ba76b3ff62f6.pdf",
+    "districtEvidence": "河海大学研究生录取邮寄公开表将太原师范学院同一门牌明确写为山西省太原市迎泽区南内环街189号，按高校官方交叉核对等级落迎泽区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE275_0": {
+    "d": "小店区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.sxufe.edu.cn/__local/4/9C/6B/4E32A0F78BE7A44D44501661088_50038044_F98B7.pdf",
+    "districtEvidence": "山西财经大学章程直接写明坞城校区位于山西省太原市小店区坞城路140号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE275_1": {
+    "d": "迎泽区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.sxufe.edu.cn/__local/4/9C/6B/4E32A0F78BE7A44D44501661088_50038044_F98B7.pdf",
+    "districtEvidence": "山西财经大学章程直接写明迎泽校区位于山西省太原市迎泽区南内环街135号。", "districtVerifiedAt": "2026-09-10"
+  }
+}

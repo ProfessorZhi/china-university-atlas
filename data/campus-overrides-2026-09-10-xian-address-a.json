@@ -1,0 +1,57 @@
+{
+  "PROFILE376_0": {
+    "d": "长安区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://welcome.nwupl.edu.cn/",
+    "districtEvidence": "西北政法大学当前迎新官网将长安校区直接写为“西安市长安区西长安街558号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE376_1": {
+    "d": "雁塔区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://welcome.nwupl.edu.cn/",
+    "districtEvidence": "西北政法大学当前迎新官网将雁塔校区直接写为“西安市雁塔区长安南路300号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE363_0": {
+    "d": "雁塔区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://jgy.xupt.edu.cn/",
+    "districtEvidence": "西安邮电大学经济与管理学院当前官网页脚直接写“陕西省西安市雁塔区长安南路563号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE57_0": {
+    "d": "长安区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://sme.xidian.edu.cn/html/tzgg/2026/0324/3442.html",
+    "districtEvidence": "西安电子科技大学2026年研究生复试方案将长安校区直接写为“西安市长安区西沣路兴隆段266号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE57_1": {
+    "d": "雁塔区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://web.xidian.edu.cn/qinhaonan/index.html",
+    "districtEvidence": "西安电子科技大学当前个人主页系统将通信地址明确写为“西安市雁塔区太白南路2号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE37_1": {
+    "d": "碑林区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nwu.edu.cn/__local/9/AA/8F/C21CDB160BCF8281CBB2ADD2067_09F38E02_749A.pdf?e=.pdf",
+    "districtEvidence": "西北大学现行章程明确太白校区为“西安市碑林区太白北路229号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE37_2": {
+    "d": "莲湖区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nwu.edu.cn/__local/9/AA/8F/C21CDB160BCF8281CBB2ADD2067_09F38E02_749A.pdf?e=.pdf",
+    "districtEvidence": "西北大学现行章程明确桃园校区为“西安市莲湖区高新四路15号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE36_1": {
+    "d": "碑林区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://qkzx.chd.edu.cn/",
+    "districtEvidence": "长安大学学术期刊管理中心当前官网地址直接写为“陕西省西安市碑林区南二环路中段长安大学南校区北院”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE863_0": {
+    "d": "灞桥区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zb.xasyu.cn/web/?bm=1&newsid=2447&path=newsshow",
+    "districtEvidence": "西安思源学院2026年招生简章将招生办公室地址直接写为“陕西省西安市灞桥区水安路28号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2253_0": {
+    "d": "新城区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.xauat-hqc.edu.cn/",
+    "districtEvidence": "西安建筑科技大学华清学院当前官网页脚明确幸福校区地址为“陕西省西安市新城区幸福南路109号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2244_1": {
+    "d": "未央区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://cbip.xa.gov.cn/web_files/itl/file/2025/12/15/202512151019424757730.pdf",
+    "districtEvidence": "西安市政府公开应急避难场所表将西安职业技术学院明确列为未央区辛家庙街道、地址“未央区太元路99号”。", "districtVerifiedAt": "2026-09-10"
+  }
+}

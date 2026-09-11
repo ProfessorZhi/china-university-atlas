@@ -1,0 +1,17 @@
+{
+  "PROFILE1931_0": {
+    "d": "湛河区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsbgs.zlxy.edu.cn/info/1002/4951.htm",
+    "districtEvidence": "河南质量工程职业学院2026年单独招生报考指南明确考试地点为平顶山市湛河区姚电大道中段23号，与校本部Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE880_0": {
+    "d": "新华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://news.pdsu.edu.cn/",
+    "districtEvidence": "平顶山学院当前新闻网页脚明确学校地址为平顶山市新华区未来路南段，与湖滨校区Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE880_2": {
+    "d": "新华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://hlxy.pdsu.edu.cn/",
+    "districtEvidence": "平顶山学院护理学院当前官网明确地址为新华区崇文路中段，与崇文校区Campus一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

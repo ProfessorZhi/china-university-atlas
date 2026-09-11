@@ -11,13 +11,15 @@
   "districtEvidenceOnlySchools": 4,
   "pendingNewBoundarySchools": 2,
   "campusRecords": 6817,
-  "campusRecordsWithLowestLegalBoundary": 6089,
-  "campusRecordsOnlyCityLocation": 728,
+  "campusRecordsWithLowestLegalBoundary": 6318,
+  "campusRecordsOnlyCityLocation": 499,
   "districtAssociationRecords": 35,
   "rankingFactRecords": 27,
   "rankingFactSchools": 10,
   "admissionFactRecords": 0,
   "financeFactRecords": 0,
+  "zoneDistrictMappings": 54,
+  "zoneMappedCampusDistricts": 141,
   "cityAffiliateCities": 2,
   "cityAffiliateItems": 7
 }

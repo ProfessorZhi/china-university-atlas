@@ -2,8 +2,15 @@
 import fs from 'node:fs';import path from 'node:path';import os from 'node:os';import {spawn,execFileSync} from 'node:child_process';import {pathToFileURL,fileURLToPath} from 'node:url';
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),profile=fs.mkdtempSync(path.join(os.tmpdir(),'university-atlas-test-'));
 const errors=[],network=[],wait=ms=>new Promise(r=>setTimeout(r,ms));let proc,ws;
+function findChrome(){
+ if(process.env.CHROME_BIN)return process.env.CHROME_BIN;
+ const names=process.platform==='win32'?['chrome.exe','msedge.exe']:['google-chrome','chromium','chromium-browser'];
+ for(const name of names){try{const cmd=process.platform==='win32'?'where.exe':'which',out=execFileSync(cmd,[name],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim().split(/\r?\n/)[0];if(out&&fs.existsSync(out))return out;}catch{}}
+ if(process.platform==='win32'){for(const file of [path.join(process.env.PROGRAMFILES||'C:/Program Files','Google/Chrome/Application/chrome.exe'),path.join(process.env['PROGRAMFILES(X86)']||'C:/Program Files (x86)','Google/Chrome/Application/chrome.exe'),path.join(process.env.LOCALAPPDATA||'','Google/Chrome/Application/chrome.exe'),path.join(process.env['PROGRAMFILES(X86)']||'C:/Program Files (x86)','Microsoft/Edge/Application/msedge.exe')])if(file&&fs.existsSync(file))return file;}
+ throw Error('Chrome/Chromium executable not found; set CHROME_BIN');
+}
 async function main(){
- const chrome=process.env.CHROME_BIN||execFileSync('which',['google-chrome'],{encoding:'utf8'}).trim();
+ const chrome=findChrome();
  proc=spawn(chrome,['--headless','--disable-gpu','--disable-background-networking','--no-first-run','--no-default-browser-check','--remote-debugging-port=0','--user-data-dir='+profile,'about:blank'],{stdio:'ignore'});
  const portFile=path.join(profile,'DevToolsActivePort');for(let i=0;i<300&&!fs.existsSync(portFile);i++)await wait(100);if(!fs.existsSync(portFile))throw Error('Chrome DevTools startup failed');
  const port=fs.readFileSync(portFile,'utf8').split('\n')[0],tabs=await(await fetch('http://127.0.0.1:'+port+'/json/list')).json(),tab=tabs.find(t=>t.type==='page');
@@ -25,4 +32,4 @@ async function main(){
  for(const [name,id,width,height]of [['national-desktop.png','100000',1440,1000],['guangdong-city-layer.png','440000',1440,1000],['jiangsu-city-layer.png','320000',1440,1000],['hangzhou-desktop.png','330100',1440,1000],['linyi-hedong-evidence.png','371312',1440,1000],['national-mobile.png','100000',390,844]]){await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:width<500});await evaluate(`document.getElementById('includeBranch').checked=true;__atlas.navigateID('${id}')`);await wait(400);const shot=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(ROOT,'docs',name),Buffer.from(shot.data,'base64'));}
  await send('Browser.close').catch(()=>{});ws.close();if(!result.pass)throw Error('Offline test failed');
 }
-main().catch(e=>{console.error(e.message);process.exitCode=1;}).finally(()=>{if(ws)ws.close();if(proc)proc.kill();setTimeout(()=>fs.rmSync(profile,{recursive:true,force:true}),500);});
+main().catch(e=>{console.error(e.message);process.exitCode=1;}).finally(()=>{if(ws)ws.close();if(proc)proc.kill();setTimeout(()=>{try{fs.rmSync(profile,{recursive:true,force:true,maxRetries:10,retryDelay:100});}catch{}},500);});

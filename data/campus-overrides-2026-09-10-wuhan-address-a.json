@@ -1,0 +1,26 @@
+{
+  "PROFILE1068_0": {
+    "d": "江夏区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.hbea.edu.cn/html/2026-08/16093.shtml",
+    "districtEvidence": "湖北省教育考试院2026年成人高考报名点名单将湖北城市建设职业技术学院地址明确写为湖北省武汉市江夏区藏龙大道28号，与Campus完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE815_0": {
+    "d": "蔡甸区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jwc.wbu.edu.cn/_upload/article/files/ce/34/1de30e3f4dc9967319e06661129b/9885fbe6-c88c-4d1c-b1b6-00ccd4579cba.pdf",
+    "districtEvidence": "武汉商学院校内公开文件将通讯地址明确写为武汉市蔡甸区东风大道816号，与后官湖校区Campus门牌完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE815_2": {
+    "d": "汉南区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.wbu.edu.cn/1349/list.htm",
+    "districtEvidence": "武汉商学院招生章程直接写明马影河校区地址为武汉经济技术开发区（汉南区）东荆街育源路9号；当前Campus为同一马影河校区育源路片区，最低法定区落汉南区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "PROFILE2090_0": {
+    "p": "四川省",
+    "c": "眉山市",
+    "d": "仁寿县",
+    "locationCorrectionMethod": "official-campus-city-correction",
+    "locationCorrectionFrom": "四川省|成都市",
+    "locationCorrectionSourceUrl": "https://www.scstc.cn/qian/dy/ck_xq/cat/TnpVPQ%3D%3D",
+    "locationCorrectionEvidence": "四川科技职业学院当前官网确认天府校区地址为天府新区视高经济开发区花海大道大学路1号；眉山市当前公共数据将眉山天府新区管理机构地址明确写为“眉山市仁寿县视高街道”，故Campus物理城市纠正为眉山市、最低法定县区为仁寿县，学校主体城市不变。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://data.ms.gov.cn/portal/catalog_detail?categoryCodeId=04c00647cc4149f6899074c7b05425c7&id=f44184397e3346739d38238fcf1eb1f2&orgId=ecf90c4aaa0143219ce7ae5729b0932f&resourceSource=0&serviceType=0%2C1%2C3%2C4",
+    "districtEvidence": "眉山市公共数据开放网2026年更新的眉山天府新区数据目录将提供单位地址明确写为“眉山市仁寿县视高街道中建大道二段8号”，确认视高片区最低法定县区为仁寿县。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2090_1": {
+    "p": "四川省",
+    "c": "眉山市",
+    "d": "仁寿县",
+    "locationCorrectionMethod": "official-campus-city-correction",
+    "locationCorrectionFrom": "四川省|成都市",
+    "locationCorrectionSourceUrl": "https://www.scstc.cn/qian/dy/ck_xq/cat/TnpVPQ%3D%3D",
+    "locationCorrectionEvidence": "四川科技职业学院当前官网列环天府新区天府大道陵州大学城1号为学校第二校区，学校当前院系页面进一步直接称其为“仁寿校区”；故Campus物理城市纠正为眉山市、最低法定县区为仁寿县，学校主体城市不变。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.scstc.cn/qian/dy/ck_xq/cat/TnpVPQ%3D%3D",
+    "districtEvidence": "四川科技职业学院当前站点/院系站将环天府新区天府大道陵州大学城1号校区明确标识为仁寿校区，结合眉山市现行仁寿县视高片区行政口径，最低法定县区为仁寿县。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

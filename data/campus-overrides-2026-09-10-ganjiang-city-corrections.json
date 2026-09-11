@@ -1,0 +1,20 @@
+{
+  "PROFILE2433_0": {
+    "p": "江西省",
+    "c": "九江市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "江西省|南昌市",
+    "locationCorrectionSourceUrl": "https://www.gongqing.gov.cn/wsjkwyh/fdzdgknr_187293/zdly/shgysy/ggws/202601/t20260114_7147957.html",
+    "locationCorrectionEvidence": "共青城市2026年卫生监督公示将南昌航空大学科技学院共青校区内学术交流中心明确写为“江西省九江市共青城市……南昌航空大学科技学院共青校区”，故Campus物理城市从南昌市纠正为九江市；地址中的法定县级市“共青城市”随后由exact-legal-name规则下钻。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  },
+  "PROFILE943_2": {
+    "p": "江西省",
+    "c": "九江市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "江西省|南昌市",
+    "locationCorrectionSourceUrl": "https://www.ndrc.gov.cn/xxgk/zcfb/tz/201607/W020190905517082444851.pdf",
+    "locationCorrectionEvidence": "国家发展改革委《江西赣江新区总体方案》明确永修组团以永修县城、永修云山经济开发区为主体；九江市政府公开资料亦将永修县政府与赣江新区永修组团行政职责并列，故该赣新校区物理城市从南昌市纠正为九江市，学校主体城市不变。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  }
+}

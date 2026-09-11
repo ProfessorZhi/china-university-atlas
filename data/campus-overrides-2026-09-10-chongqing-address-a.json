@@ -1,0 +1,22 @@
+{
+  "PROFILE2080_0": {
+    "d": "沙坪坝区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.cqc.edu.cn/2026/0615/c1566a92875/page.htm",
+    "districtEvidence": "重庆城市管理职业大学2026年统一高考招生章程明确大学城校区地址为重庆市沙坪坝区虎溪大学城南二路151号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1038_1": {
+    "d": "永川区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cq.gov.cn/zwgk/zfxxgkml/zdlyxxgk/jy1/jyzt/gz2026nqggk/zsjz/202606/t20260602_15720268.html",
+    "districtEvidence": "重庆市人民政府公开的重庆文理学院2026招生章程明确星湖校区位于永川区卫星湖文化旅游区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1018_1": {
+    "d": "江津区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.cqjtu.edu.cn/",
+    "districtEvidence": "重庆交通大学本科招生网当前页明确科学城校区地址为重庆市江津区双福街道福星大道1号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE180_0": {
+    "d": "渝北区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.swupl.edu.cn/pub/fzghyxkjsc/docs/2022-11/74fb2c3fdcc54f9e8dcf43245ab0d046.pdf",
+    "districtEvidence": "西南政法大学章程明确学校办学地点及住所地之一为重庆市渝北区宝圣大道301号，与两江校区Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

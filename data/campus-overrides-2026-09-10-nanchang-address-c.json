@@ -1,0 +1,42 @@
+{
+  "PROFILE955_1": {
+    "d": "红谷滩区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jxjs.etledu.com/",
+    "districtEvidence": "江西省建设工程学校官网将地址明确写为“南昌市红谷滩区庐山南大道1659号”；该校与江西建设职业技术学院红谷滩校区Campus为同址办学点。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE955_3": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jczx.jxjsxy.edu.cn/news-show-128.html",
+    "districtEvidence": "江西建设职业技术学院直属校办企业2026年页面将经开场所地址直接写为“南昌市新建区黄家湖西路1588号”，与经开校区Campus门牌完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE943_0": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.evc.jx.cn/info/2033/39803.htm",
+    "districtEvidence": "江西工程职业学院2026年统一招聘资格审查公告将考点江西机电职业技术学院下罗校区明确写为“南昌市新建区枫林大道168号”，与Campus一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE940_0": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/cjgg/202311/t20231109_21040337.htm",
+    "districtEvidence": "中国政府采购网采购公告将江西旅游商贸职业学院采购单位地址明确写为“南昌市新建区经济技术开发区丁香路1号”，与Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE175_0": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://kzxy.jxufe.edu.cn/",
+    "districtEvidence": "江西财经大学考文垂大学孔子学院现行官网将中国联系地址直接写为“江西省南昌市新建区双港东大街169号”，与蛟桥园Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

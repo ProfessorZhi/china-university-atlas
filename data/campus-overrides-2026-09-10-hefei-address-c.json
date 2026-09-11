@@ -1,0 +1,17 @@
+{
+  "PROFILE1810_0": {
+    "d": "肥东县", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202607/t20260718_26961938.htm",
+    "districtEvidence": "中国政府采购网2026年安徽水利水电职业技术学院项目公告将采购单位地址直接写为“合肥市肥东县合马路18号”，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1801_1": {
+    "d": "巢湖市", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hfnu.edu.cn/info/1156/372053.htm",
+    "districtEvidence": "合肥师范学院当前官方采购公告直接将滨湖校区写为“巢湖市黄麓科教园区书香路”，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1838_0": {
+    "d": "肥西县", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.afc.edu.cn/info/1074/48757.htm",
+    "districtEvidence": "安徽财贸职业学院2026年翡翠校区采购询价公告将采购人地址直接写为“合肥市肥西县翡翠路900号”，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

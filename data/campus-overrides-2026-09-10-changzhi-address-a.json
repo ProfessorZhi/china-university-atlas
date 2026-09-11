@@ -1,0 +1,22 @@
+{
+  "PROFILE1257_0": {
+    "d": "潞州区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.czc.edu.cn/info/1006/4427.htm",
+    "districtEvidence": "长治学院2026年招生章程明确北校区地址为山西省长治市潞州区保宁门东街73号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1257_1": {
+    "d": "潞州区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.czc.edu.cn/info/1006/4427.htm",
+    "districtEvidence": "长治学院2026年招生章程明确南校区地址为山西省长治市潞州区东环路中段96号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE279_0": {
+    "d": "潞州区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.changzhi.gov.cn/ztzl/cjwmwz/shfs/202604/t20260421_3159306.shtml",
+    "districtEvidence": "长治市人民政府2026年长治医学院专题页明确校本部位于山西省长治市潞州区解放东街161号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE279_1": {
+    "d": "上党区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.changzhi.gov.cn/ztzl/cjwmwz/shfs/202604/t20260421_3159306.shtml",
+    "districtEvidence": "长治市人民政府2026年长治医学院专题页明确五龙校区位于山西省长治市上党区英雄南路1688号。", "districtVerifiedAt": "2026-09-10"
+  }
+}

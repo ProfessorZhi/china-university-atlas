@@ -1,0 +1,11 @@
+{
+  "PROFILE1106_1": {
+    "p": "湖北省",
+    "c": "鄂州市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "湖北省|武汉市",
+    "locationCorrectionSourceUrl": "https://gdkfq.ezhou.gov.cn/zjkfq/kfqjj/201912/t20191209_310257.html",
+    "locationCorrectionEvidence": "葛店经开区2026年概况将长江职业学院列为区内高校，葛店经开区官网主办单位为鄂州葛店经济技术开发区管理委员会，故武汉新城校区物理城市从武汉市纠正为鄂州市；学校主体城市不变。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  }
+}

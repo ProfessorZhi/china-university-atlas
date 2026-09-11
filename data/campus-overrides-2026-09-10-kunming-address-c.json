@@ -1,0 +1,22 @@
+{
+  "PROFILE2177_0": {
+    "d": "五华区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202508/t20250815_25175348.htm",
+    "districtEvidence": "中国政府采购网2025年云南开放大学采购公告将采购单位地址明确写为“云南省昆明市五华区学府路113号”；云南开放大学与云南国防工业职业技术学院为同一学校法人体系，学府校区Campus门牌一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2166_1": {
+    "d": "官渡区", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://yjxy.cug.edu.cn/info/1026/3345.htm",
+    "districtEvidence": "中国地质大学（武汉）继续教育学院备案的云南国土资源职业学院校外教学点明确写“经开校区地处昆明市官渡区经济技术开发区经牛路2号”，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2179_2": {
+    "d": "石林彝族自治县", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://yn.yunnan.cn/system/2026/08/17/034126895.shtml",
+    "districtEvidence": "云南网2026年省运会报道明确赛事在石林彝族自治县举行，并点名云南林业职业技术学院石林校区为比赛场地；2024年新校区启用报道同样明确校区位于石林彝族自治县。原地址中的“石林县”为法定县名简称。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2523_2": {
+    "d": "宜良县", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.spp.gov.cn/spp/zdgz/202006/t20200608_464630.shtml",
+    "districtEvidence": "最高人民检察院案例明确汤池街道由昆明阳宗海风景名胜区管委会托管，但人大和司法管辖仍隶属宜良县；该Campus地址直接写汤池街道，故最低法定县级边界按宜良县记录。", "districtVerifiedAt": "2026-09-10"
+  }
+}

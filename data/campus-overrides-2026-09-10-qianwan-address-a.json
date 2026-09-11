@@ -1,0 +1,18 @@
+{
+  "PROFILE2401_2": {
+    "d": "慈溪市",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.nbufe.edu.cn/st/zs_news.jsp?neId=155",
+    "districtEvidence": "宁波财经学院2026年三位一体招生章程由学校招生系统发布，明确杭州湾校区办学地点为“宁波市（慈溪）博华路77号”，与Campus地址一致，故最低法定县级单位确定为慈溪市；不据此前湾新区整体映射慈溪。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1189_2": {
+    "d": "慈溪市",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jxxy.nbut.edu.cn/info/1159/3261.htm",
+    "districtEvidence": "宁波工程学院官方杭州湾汽车学院页面将前湾校区地址持续写作“宁波杭州湾新区滨海二路769号”；浙江省商务厅资料说明杭州湾新区由原浙江慈溪经济开发区演变，宁波市人社公共查询又将同一杭州湾新区滨海二路上的慈溪技师学院标注所在区域为“慈溪”。因此仅对该769号Campus交叉核对到慈溪市，不泛化整个前湾新区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

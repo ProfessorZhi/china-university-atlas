@@ -1,0 +1,38 @@
+{
+  "PROFILE2407_1": {
+    "p": "安徽省",
+    "c": "淮南市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "安徽省|合肥市",
+    "locationCorrectionSourceUrl": "https://www.shouxian.gov.cn/ztbd/ztzl/xqyq/zsyz/yqjj/index.html",
+    "locationCorrectionEvidence": "合肥经济学院现行招生资料确认新桥校区位于新桥国际产业园；寿县经开区管委会2026年园区简介确认该园为安徽寿县经济开发区南部新桥片区，故Campus物理城市从合肥市纠正为淮南市，学校主体归属不随之改变。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1833_1": {
+    "p": "安徽省",
+    "c": "淮南市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "安徽省|合肥市",
+    "locationCorrectionSourceUrl": "https://www.shouxian.gov.cn/public/118322767/1260782503.html",
+    "locationCorrectionEvidence": "寿县人民政府2025年批后公开明确安徽中澳科技职业学院新桥校区规划由寿县人民政府批准，咨询单位含寿县经开区管委会与寿县自然资源和规划局；2026招生章程继续列新桥校区，故Campus物理城市纠正为淮南市。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1830_1": {
+    "p": "安徽省",
+    "c": "淮南市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "安徽省|合肥市",
+    "locationCorrectionSourceUrl": "https://zs.cua.edu.cn/2026/0313/c1973a53472/page.htm",
+    "locationCorrectionEvidence": "安徽城市管理职业学院2026年分类考试招生章程直接将新桥校区办学地址写为“淮南市寿县新桥国际产业园迎宾大道和共建路交口西南侧”。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1821_1": {
+    "p": "安徽省",
+    "c": "淮南市",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "安徽省|合肥市",
+    "locationCorrectionSourceUrl": "https://www.acvtc.edu.cn/zs/info/1315/7701.htm",
+    "locationCorrectionEvidence": "安徽交通职业技术学院2026年分类考试考场指南将招生办公室地址明确写为“寿县安徽新桥国际产业园寿州大道16号”；Campus物理城市据法定寿县归属纠正为淮南市。",
+    "locationCorrectionVerifiedAt": "2026-09-10"
+  }
+}

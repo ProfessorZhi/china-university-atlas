@@ -1,0 +1,29 @@
+{
+  "PROFILE2846_0": {
+    "p": "陕西省", "c": "咸阳市", "d": "秦都区",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "陕西省|西安市",
+    "locationCorrectionSourceUrl": "https://www.xixianxinqu.gov.cn/zwgk/fdzdgknr/zzjg/jzjg/dtjd/jj/1.html",
+    "locationCorrectionEvidence": "西咸新区钓台街道2026年官方简介明确陕西服装工程学院位于钓台辖区；钓台原属咸阳市秦都区，当前西咸政务服务仍将同文路派出所法定地址列为咸阳市秦都区。故Campus物理法定城市/县区按咸阳市秦都区记录，西咸新区仅保留为功能区地址语义。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true, "districtSourceKind": "government", "districtSourceUrl": "https://www.xixianxinqu.gov.cn/zwgk/fdzdgknr/zzjg/jzjg/dtjd/jj/1.html"
+  },
+  "PROFILE2255_0": {
+    "p": "陕西省", "c": "咸阳市", "d": "秦都区",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "陕西省|西安市",
+    "locationCorrectionSourceUrl": "https://www.xixianxinqu.gov.cn/zwgk/fdzdgknr/qtgk/2055190573159075841.html",
+    "locationCorrectionEvidence": "西咸新区2026年事故调查报告明确陕西国际商贸学院登记地址为“咸阳市秦都区统一西路35号”，并确认项目位于沣西新城统一路/同文路片区；故Campus法定城市纠正为咸阳市、县区为秦都区。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true, "districtSourceKind": "government", "districtSourceUrl": "https://www.xixianxinqu.gov.cn/zwgk/fdzdgknr/qtgk/2055190573159075841.html"
+  },
+  "PROFILE2258_0": {
+    "p": "陕西省", "c": "咸阳市", "d": "泾阳县",
+    "locationCorrectionMethod": "government-functional-zone-city-correction",
+    "locationCorrectionFrom": "陕西省|西安市",
+    "locationCorrectionSourceUrl": "https://sthjt.shaanxi.gov.cn/sy/gs/202010/P020241011602868887941.pdf",
+    "locationCorrectionEvidence": "陕西省生态环境部门公开资料明确西咸新区泾河新城全部位于咸阳市泾阳县法定县域；学院当前官网仍以“西安市西咸新区泾河新城陕旅大道”作为功能区/邮政口径，地图法定层级改按咸阳市泾阳县记录。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true, "districtSourceKind": "government", "districtSourceUrl": "https://sthjt.shaanxi.gov.cn/sy/gs/202010/P020241011602868887941.pdf"
+  }
+}

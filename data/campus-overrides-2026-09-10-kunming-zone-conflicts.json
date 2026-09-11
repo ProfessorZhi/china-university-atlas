@@ -1,0 +1,22 @@
+{
+  "PROFILE2528_0": {
+    "d": "嵩明县",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "云南政法系统明确嵩明职教新城位于昆明市嵩明县杨林镇；原第三方档案将该校长松园1号路Campus误标为盘龙区，现按政府法定属地纠正。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://www.yncaw.gov.cn/html/2025/pajs_0222/131133.html",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-YN-KUNMING-SONGMING-VOCATIONAL-CITY",
+    "locationMethod": "政府功能区法定属地纠错：嵩明职教新城归嵩明县"
+  },
+  "PROFILE2183_0": {
+    "d": "嵩明县",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "云南政法系统明确嵩明职教新城位于昆明市嵩明县杨林镇；同校其他杨林职教园区记录亦为嵩明县，原第三方档案富民县字段为脏数据。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://www.yncaw.gov.cn/html/2025/pajs_0222/131133.html",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-YN-KUNMING-SONGMING-VOCATIONAL-CITY",
+    "locationMethod": "政府功能区法定属地纠错：杨林职教园区归嵩明县"
+  }
+}

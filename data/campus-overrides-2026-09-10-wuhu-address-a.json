@@ -1,0 +1,32 @@
+{
+  "PROFILE1807_0": {
+    "d": "弋江区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://rlzyc.whit.edu.cn/info/1042/2405.htm",
+    "districtEvidence": "芜湖职业技术大学2026年度事业单位公开招聘资格复审公告明确文津校区地址为弋江区文津西路201号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1807_1": {
+    "d": "鸠江区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://jxjy.whit.edu.cn/info/1005/4343.htm",
+    "districtEvidence": "芜湖职业技术大学2026年第6批次电工职业技能等级认定公告明确银湖校区地址为鸠江区银湖北路62号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1807_2": {
+    "d": "弋江区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://lib.whit.edu.cn/",
+    "districtEvidence": "芜湖职业技术大学图书馆当前官网明确白马校区地址为安徽省芜湖市弋江区长江南路与白马山路交汇处，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE316_1": {
+    "d": "鸠江区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://zrzyhghj.wuhu.gov.cn/xwzx/tzgg/8814340.html",
+    "districtEvidence": "芜湖市自然资源和规划局现行中心城区规划口径明确使用“鸠江区（含江北产业集中区和经开区）”；安徽工程大学国际工程师学院Campus位于芜湖经济技术开发区赤铸山东路100号，故按法定区回落鸠江区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE314_0": {
+    "d": "镜湖区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://press.ahnu.edu.cn/gywm/cbsjj.htm",
+    "districtEvidence": "安徽师范大学出版社当前官网将赭山校区地址明确写为安徽省芜湖市镜湖区北京中路2号安徽师范大学赭山校区，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE314_1": {
+    "d": "鸠江区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ahjjjc.gov.cn/p/121918.html",
+    "districtEvidence": "安徽纪检监察网公开信息将安徽师范大学天门山校区地址明确写为芜湖市鸠江区九华北路171号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "PROFILE701_1": {
+    "d": "正定县", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.zd.gov.cn/columns/80935122-e50a-411a-b723-f92435f73ef0/202407/09/d3ec1dec-8953-4b91-9cb4-7876f80c41ea.html",
+    "districtEvidence": "正定县市场监管2024年联合随机抽查结果将石家庄职业技术学院南校区商户地址明确写为“河北省石家庄市正定县诸福屯街道天宁路226号石家庄职业技术学院南校区…”，与Campus门牌一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE628_0": {
+    "d": "裕华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://gzc.sjzc.edu.cn/columns/b2e6590b-5943-4841-84e0-975a55ac359d/202608/31/212416ca-ef1f-49d9-afc1-5a2aa0cdf9b8.html",
+    "districtEvidence": "石家庄学院2026年图书馆采购公告将采购人地址直接写为“河北省石家庄市裕华区珠峰大街288号”，与南校区Campus一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE628_1": {
+    "d": "裕华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://bwc.sjzc.edu.cn/col/1679640021146/2023/05/19/1684460729233.html",
+    "districtEvidence": "石家庄学院安全工作处新生落户须知明确户口迁往地址为“河北省石家庄市裕华区长江大道6号”；学校招生章程确认该门牌为北校区旧址（现裕华路258号），故该Campus历史门牌的最低法定区为裕华区。", "districtVerifiedAt": "2026-09-10"
+  }
+}

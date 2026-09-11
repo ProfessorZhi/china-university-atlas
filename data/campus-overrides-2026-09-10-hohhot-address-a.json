@@ -1,0 +1,37 @@
+{
+  "PROFILE1637_0": {
+    "d": "赛罕区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.nm.zsks.cn/ggw/sygg/yxlj/202407/t20240705_44955.html",
+    "districtEvidence": "内蒙古招生考试信息网院校链接页将内蒙古丰州职业学院校本部地址明确写为呼和浩特市赛罕区兴安南路59号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1636_0": {
+    "d": "赛罕区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nmbfxy.com/contents/32/2339.html",
+    "districtEvidence": "内蒙古北方职业技术学院2026年招生章程直接写明学校校址为内蒙古呼和浩特市赛罕区大学城。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1394_0": {
+    "d": "赛罕区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.imtcme.edu.cn/xygk/xywz.htm",
+    "districtEvidence": "内蒙古机电职业技术学院当前学院位置页明确地址为呼和浩特市赛罕区巴彦镇大学城/高职园区学府路1号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE519_1": {
+    "d": "和林格尔县", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjsc.imnu.edu.cn/info/1004/4638.htm",
+    "districtEvidence": "内蒙古师范大学2026年硕士研究生招生简章明确盛乐校区地址为内蒙古呼和浩特市和林格尔县盛乐经济园区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE525_0": {
+    "d": "土默特左旗", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-111%2CinfoId-7651381332.dhtml",
+    "districtEvidence": "阳光高考公开的内蒙古医科大学招生章程明确金山校区（主校区）位于呼和浩特市土默特左旗台阁牧镇海拉尔西街191号；当前Campus为同一金山校区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE508_2": {
+    "d": "土默特左旗", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.imut.edu.cn/info/1016/1715.htm",
+    "districtEvidence": "内蒙古工业大学2026级专升本新生档案通知将金川校区邮寄地址明确写为内蒙古呼和浩特市土默特左旗金川开发区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE529_1": {
+    "d": "新城区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.nm.zsks.cn/24ckwb/202412/t20241209_45409.html",
+    "districtEvidence": "内蒙古招生考试信息网成人高考教学点信息将内蒙古财经大学授课地点明确写为内蒙古呼和浩特市新城区海拉尔大街47号，与东校区Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

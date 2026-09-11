@@ -1,0 +1,42 @@
+{
+  "PROFILE902_0": {
+    "d": "中牟县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://pingdingshan.zfcg.henan.gov.cn/henan/content?channelCode=H600101&infoId=1933270",
+    "districtEvidence": "河南省政府采购网2026年公告将郑州电力高等专科学校地址明确写为“郑州市中牟县凤栖街296号”，与Campus门牌一致，故最低法定县区确定为中牟县。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1932_1": {
+    "d": "金水区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://public.jinshui.gov.cn/attachment/%E9%A3%9F%E5%93%81%E7%BB%8F%E8%90%A5%E8%AE%B8%E5%8F%AF%E8%AF%81%E6%B3%A8%E5%86%8C%E7%99%BB%E8%AE%B0%E8%A1%A8%EF%BC%882023%E5%B9%B412%E6%9C%881%E6%97%A5%EF%BC%89.pdf?I9hwao66oHpWO3ESGLEHEUQ6lrJoi8ATCEkDg9E9TqVZPHYn6TnGmGqNh1ok0sTyCZ-NCYfXtVp5-VUxTfEOzxnuDf3VNbQS=",
+    "districtEvidence": "金水区市场监督管理局食品经营登记表将河南开放大学黄河路124号明确登记为“河南省郑州市金水区黄河路124号”；该地址与郑州信息科技职业学院黄河路校区Campus一致，故最低法定县区确定为金水区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2672_0": {
+    "d": "中牟县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://tzpy.zepc.edu.cn/info/1190/5777.htm",
+    "districtEvidence": "河南省职业教育提质培优项目推进办公室2025年高职技能大赛承办学校表将河南艺术职业学院地址明确写为“郑州市中牟县豫兴街道郑开大道132号”；文化和旅游部培训通知同时确认培训地点为河南艺术职业学院郑开大道132号。交叉核对后落中牟县。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1920_1": {
+    "d": "中牟县",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://zfcg.henan.gov.cn/cmsweb35rc67w/pingdingshan/cgxx/jggg/webinfo/2026/06/1972873.htm",
+    "districtEvidence": "河南省政府采购网2026年结果公告把郑东新区郑开大道76号行知楼地址直接标注为“（中牟县）”；河南省专业技术人员公共服务平台同时确认河南财政金融学院通讯地址为郑东新区郑开大道76号。交叉核对后象湖校区最低法定县区为中牟县。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1148_0": {
+    "d": "中牟县",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jwc.ztbu.edu.cn/2024_02/28_16/content-53038.html",
+    "districtEvidence": "郑州工商学院教务处官方通知明确将郑州校区写为“郑州市中牟县前程大道169号”，与Campus门牌一致，故最低法定县区确定为中牟县。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

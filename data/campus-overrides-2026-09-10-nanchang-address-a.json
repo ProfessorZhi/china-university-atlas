@@ -1,0 +1,34 @@
+{
+  "PROFILE2430_0": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://edu.nc.gov.cn/ncjyj/twyc/202410/78dd1547f61e46e3ad148dd8fc343755/files/e817aa6d9a2a4641b991a535d1083882.pdf",
+    "districtEvidence": "南昌市教育局2024年抽测通知将广兰大道899号明确写为“南昌市新建区广兰大道899号”；南昌交通学院黄家湖校区现有Campus为同一完整门牌，故最低法定县区落新建区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE868_0": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://ncjk.nc.gov.cn/ncjkq/zfdt/202409/45ab8433671f48e58e687efa84656cb6.shtml",
+    "districtEvidence": "南昌经开区政府2024年监督抽查名单多次将南昌理工学院英雄大道901号写为“江西省南昌市新建区英雄大道901号”，与学校现行校址完全一致，故最低法定县区落新建区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE172_0": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.xinxing.gov.cn/yfxxwsj/gkmlpt/content/2/2005/post_2005370.html",
+    "districtEvidence": "新兴县政府2026年江西专场招聘公告将宣讲地点直接写为“江西省南昌市新建区志敏大道1101号江西农业大学就业指导中心”，与Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE174_0": {
+    "d": "青山湖区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://nchdz.nc.gov.cn/ncgxq/zfxc/202604/76ee592c6e2642a08ad344b9da2b673e.shtml",
+    "districtEvidence": "南昌高新区管委会2026年3月监督抽查结果将江西师范大学瑶湖校区同址条目写为“江西省南昌市青山湖区…紫阳大道99号江西师范大学瑶湖校区”，故最低法定县区落青山湖区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

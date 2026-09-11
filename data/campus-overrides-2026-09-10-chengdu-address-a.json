@@ -1,0 +1,34 @@
+{
+  "PROFILE1177_0": {
+    "d": "郫都区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.cdqg.edu.cn/info/1042/47295.htm",
+    "districtEvidence": "学校公开招聘公告明确犀浦校区单位地址为四川省成都市郫都区犀浦泰山南街186号，与Campus完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1131_0": {
+    "d": "郫都区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://edu.sc.gov.cn/scedu/c111529/2025/4/22/49dbbe400160475cb8517ca778cc87a5/files/%E7%94%B5%E5%AD%90%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6%E6%88%90%E9%83%BD%E5%AD%A6%E9%99%A2%E7%AB%A0%E7%A8%8B%E4%BF%AE%E6%AD%A3%E6%A1%88%E6%A0%B8%E5%87%86%E7%A8%BF.pdf",
+    "districtEvidence": "四川省教育厅核准章程确认成都校区完整地址为高新西区百叶路1号；当前地图公开地址将同一门牌落为成都市郫都区百叶路1号，按交叉核对等级记录郫都区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE769_2": {
+    "d": "金牛区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xwgk.cdtu.edu.cn/__local/A/44/FE/E7ED66A989CFCEF690542C46655_C2402DDC_5E41B.pdf?e=.pdf",
+    "districtEvidence": "成都工业学院章程明确花牌坊校区地址为成都市金牛区花牌坊街2号。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE231_0": {
+    "d": "武侯区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.neac.gov.cn/seac/mwjs/201402/1009154.shtml",
+    "districtEvidence": "国家民委当前学校信息页确认西南民族大学武侯校区地址为四川省成都市一环路南四段16号；公开同址信息明确该门牌法定区为武侯区，按中央主管部门地址与同址交叉核对落武侯区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

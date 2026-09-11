@@ -1,0 +1,27 @@
+{
+  "PROFILE2133_1": {
+    "d": "济阳区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://jnxxq.jinan.gov.cn/col122860/art/2026/art_122860_4790378.html",
+    "districtEvidence": "济南新旧动能转换起步区2026年官方住宿信息多次将山东英才学院北校区明确写为“济阳区崔寨街道山东英才学院北校区”，与Campus一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2133_0": {
+    "d": "历城区", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://eadwww.ujn.edu.cn/__local/6/8E/2C/841BAAB44AD47DEEB9CC4B4F2FA_A29EC541_283DF.pdf",
+    "districtEvidence": "济南大学官方发布的山东省大学英语四六级考点联系方式表将山东英才学院南校区明确写为“济南市历城区英才路2号”；与Campus完整门牌一致，按交叉核对等级落历城区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE547_3": {
+    "d": "历城区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://ggzy.qingdao.gov.cn/PortalQDManage/ShareResources/CorpAchievementInfo?keyValue=b6af07aa-ca07-49b6-8a11-f529e977e958",
+    "districtEvidence": "青岛市公共资源交易平台工程业绩信息将齐鲁工业大学彩石校区项目所属地区明确列为“山东省 济南市 历城区”，项目地址为“济南市历城区经十东路28789号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE534_2": {
+    "d": "历下区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://bfjlgs.sdjtu.edu.cn/info/1052/48095.htm",
+    "districtEvidence": "山东交通学院2025年东校区资产公开招募公告明确东校区南院坐落于“济南市历下区燕子山西路40号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE534_4": {
+    "d": "历城区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://bfjlgs.sdjtu.edu.cn/info/1052/48095.htm",
+    "districtEvidence": "山东交通学院2025年东校区资产公开招募公告明确东校区另一院落为“历城区桑园路52号院”。", "districtVerifiedAt": "2026-09-10"
+  }
+}

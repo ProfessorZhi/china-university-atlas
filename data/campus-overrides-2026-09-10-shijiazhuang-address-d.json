@@ -1,0 +1,17 @@
+{
+  "PROFILE2853_0": {
+    "d": "正定县", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sjzjjxy.com/newsinfo/7063553.html",
+    "districtEvidence": "石家庄经济职业学院官网开放日页面直接将正定校区地址写为“河北省石家庄市正定县常山西路47号”；与第三方Campus的北郊107国道/常山西路交叉口47号为同一校区门牌。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2309_0": {
+    "d": "桥西区", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/news/file.do?attach=true&hist=false&id=2293295990&method=downFile",
+    "districtEvidence": "教育部阳光高考公开的2024年河北省普通高校高考咨询服务站表将石家庄人民医学高等专科学校工作地址写为“石家庄市桥西区红旗南大街汇丰西路18号”；与当前Campus红旗大街/汇丰路18号一致，按交叉核对等级落桥西区。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE757_1": {
+    "d": "新华区", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.tech.net.cn/upfiles/zlbg2021/xx/hebei/hebei%20%2829%29.pdf",
+    "districtEvidence": "河北政法职业学院现行招生章程确认东院位于学府支路21号；学院质量年度报告明确校本部、北院、东院三个校区均位于石家庄市新华区，故东院最低法定县区落新华区。", "districtVerifiedAt": "2026-09-10"
+  }
+}

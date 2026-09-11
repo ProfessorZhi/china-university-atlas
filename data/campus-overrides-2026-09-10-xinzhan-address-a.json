@@ -1,0 +1,42 @@
+{
+  "PROFILE1850_0": {
+    "d": "瑶海区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.cda.edu.cn/zs/info/1008/2309.htm",
+    "districtEvidence": "合肥共达职业技术学院现行招生章程将学校地址明确写为安徽省合肥市瑶海区合肥新站高新技术产业开发区九顶山路68号。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1196_0": {
+    "d": "瑶海区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yxy.ahtcm.edu.cn/",
+    "districtEvidence": "安徽中医药大学药学院现行官网页脚将少荃湖校区地址明确写为合肥市瑶海区龙子湖路350号。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE72_3": {
+    "d": "瑶海区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://life.ahmu.edu.cn/",
+    "districtEvidence": "安徽医科大学生命科学学院现行官网将东校区地址明确写为安徽省合肥市瑶海区唐河路。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2407_0": {
+    "d": "瑶海区",
+    "districtVerified": false,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.aqvtc.edu.cn/_upload/article/files/2d/ef/258f7d704238a293cbcdb6ab6628/bf436f89-7d66-4860-953a-dffdd458fa53.pdf",
+    "districtEvidence": "高校官方公开毕业档案寄送表将合肥经济学院同一门牌明确写为安徽省合肥市瑶海区学府路1号；与当前Campus门牌一致，按交叉核对等级落瑶海区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1830_0": {
+    "d": "瑶海区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.cua.edu.cn/2026/0610/c598a55313/page.htm",
+    "districtEvidence": "安徽城市管理职业学院2026采购公告将采购人地址直接写为合肥市瑶海区淮海大道300号，与新站校区Campus完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

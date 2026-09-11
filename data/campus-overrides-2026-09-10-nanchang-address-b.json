@@ -1,0 +1,34 @@
+{
+  "PROFILE2426_0": {
+    "d": "南昌县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/zjjzwgz/202601/e1c58241bb7640cb9903776e6f6d6aed.shtml",
+    "districtEvidence": "南昌县人民政府2026年施工许可公开将蒋巷西大道266号项目地址明确写为“南昌市南昌县蒋巷西大道266号”，与江西传媒职业学院该Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE950_1": {
+    "d": "新建区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://ncjk.nc.gov.cn/ncjkq/zfdt/202408/a9c4893703d24c9a956c68b541d08076.shtml",
+    "districtEvidence": "南昌经开区政府2024年监督抽查结果直接将江西艺术职业学院方志敏大道校区写为“南昌市新建区方志敏大道1799号”，与Campus完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE869_0": {
+    "d": "青山湖区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://hr.jxut.edu.cn/info/1203/2624.htm",
+    "districtEvidence": "江西科技学院2026年专任教师招聘公告将学校通讯地址直接写为“江西省南昌市青山湖区紫阳大道115号江西科技学院人事处”，与Campus门牌一致。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE174_1": {
+    "d": "东湖区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://dhq.nc.gov.cn/dhqrmzf/gsgg/202509/eb5feb90124e4cd8ad7a9aed88612ad4.shtml",
+    "districtEvidence": "东湖区人民政府2025年医疗机构审批公示将江西师范大学医院地址列为“南昌市北京西路437号”；同校青山湖校区Campus门牌完全一致，故最低法定县区落东湖区。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

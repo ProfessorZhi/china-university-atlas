@@ -1,0 +1,32 @@
+{
+  "PROFILE2172_0": {
+    "d": "西山区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ynsvu.edu.cn/zsjyc/info/1049/1673.htm",
+    "districtEvidence": "云南体育运动职业技术学院2026年春季招生、职教高考招生章程直接写学校地址“昆明市西山区体院路3号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2169_0": {
+    "d": "五华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.ynavc.edu.cn/main/news/show/21135",
+    "districtEvidence": "云南农业职业技术学院2026年公开招聘资格复审公告直接将茭菱校区写为“云南省昆明市五华区茭菱路128号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE360_1": {
+    "d": "五华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.ynart.edu.cn/info/1008/4213.htm",
+    "districtEvidence": "云南艺术学院2026年本科招生章程明确麻园校区地址为“昆明市五华区科业路23号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE344_1": {
+    "d": "五华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://grs.ynnu.edu.cn/info/1035/1510.htm",
+    "districtEvidence": "云南师范大学2026年研究生新生户籍通知明确迁往地址为“云南省昆明市五华区一二·一大街298号云南师范大学”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE342_2": {
+    "d": "五华区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.kmust.edu.cn/info/1070/1147.htm",
+    "districtEvidence": "昆明理工大学章程明确莲华校区地址为“昆明市五华区一二一大街文昌路68号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE342_3": {
+    "d": "盘龙区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.kmust.edu.cn/info/1070/1147.htm",
+    "districtEvidence": "昆明理工大学章程明确新迎校区地址为“昆明市盘龙区环城东路50号”。", "districtVerifiedAt": "2026-09-10"
+  }
+}

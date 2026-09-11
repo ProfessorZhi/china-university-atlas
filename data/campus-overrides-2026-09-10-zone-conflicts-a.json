@@ -1,0 +1,38 @@
+{
+  "PROFILE2888_0": {
+    "d": "南昌县",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "南昌县人民政府2026年行政区划明确列出向塘镇（向塘开发区）为南昌县现辖乡镇/开发区。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://ncx.nc.gov.cn/ncxrmzf/xzqh/list_tt.shtml",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-JX-NANCHANG-XIANGTANG",
+    "locationMethod": "政府区划纠错：向塘开发区归属南昌县"
+  },
+  "PROFILE2537_0": {
+    "d": "呼兰区",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "哈尔滨市公共资源交易中心等政府公开项目将利民开发区项目法定地址明确写为呼兰区利民开发区；该区域虽由哈尔滨新区（松北区）托管，但最低法定区划仍按呼兰区记录。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://hrbggzy.harbin.gov.cn/zbgg/20250717/4e585111-5837-4632-9e9e-1f5f551bf19e.html",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-HLJ-HARBIN-LIMIN",
+    "locationMethod": "政府法定区划纠错：利民开发区按呼兰区记录，不以新区托管口径替代法定区划"
+  },
+  "PROFILE338_0": {
+    "d": "蜀山区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202607/t20260704_26873557.htm",
+    "districtEvidence": "合肥大学该校区原始第三方记录将经济技术开发区锦绣大道99号误标为巢湖市；中国政府采购网2026年采购公告明确将合肥大学采购单位地址写为“合肥市蜀山区锦绣大道99号”，故纠正最低法定县区为蜀山区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2361_0": {
+    "d": "皋兰县",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.lzxq.gov.cn/system/2024/08/08/031044586.shtml",
+    "districtEvidence": "第三方档案将兰州新区海河街6号误标为七里河区；兰州新区2026年现行概况明确当前实际托管皋兰县中川、秦川、上川、西岔4镇，故纠正最低法定县级单位为皋兰县。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "PROFILE171_0": {
+    "d": "浦口区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://jjc.njtech.edu.cn/", "districtEvidence": "南京工业大学基本建设处当前官网将江浦校区地址明确写为南京市浦口区浦珠南路30号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE162_1": {
+    "d": "鼓楼区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--infoId-7670799054%2Cmethod-view%2CschId-244.dhtml", "districtEvidence": "教育部阳光高考审核通过的南京中医药大学2026招生章程明确汉中门校区位于南京市鼓楼区汉中路282号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE160_1": {
+    "d": "鼓楼区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://bwc.njupt.edu.cn/", "districtEvidence": "南京邮电大学保卫处当前官网明确三牌楼校区地址为南京市鼓楼区新模范马路66号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE160_2": {
+    "d": "玄武区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://bwc.njupt.edu.cn/", "districtEvidence": "南京邮电大学保卫处当前官网明确锁金村校区地址为南京市玄武区龙蟠路177号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE146_0": {
+    "d": "江宁区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.njit.edu.cn/", "districtEvidence": "南京工程学院当前官网明确学校地址为南京市江宁区弘景大道1号。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE113_4": {
+    "d": "浦口区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://ai.njau.edu.cn/", "districtEvidence": "南京农业大学智慧农业学院当前官网明确滨江校区地址为江苏省南京市浦口区滨江大道666号。", "districtVerifiedAt": "2026-09-10"
+  }
+}

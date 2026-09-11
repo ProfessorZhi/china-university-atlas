@@ -1,0 +1,22 @@
+{
+  "PROFILE1889_0": {
+    "d": "马尾区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.ygu.edu.cn/info/1102/4087.htm",
+    "districtEvidence": "阳光学院招生网公布档案寄送地址为福州市马尾区登龙路99号，与校本部Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1021_1": {
+    "d": "鼓楼区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.fuzhou.gov.cn/zwgk/zdlyxxgk/aqsc/bnxx/202301/t20230111_4520002.htm",
+    "districtEvidence": "福州市人民政府人防避难场所统计表将福建中医药大学附属第二人民医院同一门牌明确写为福州市鼓楼区五四路282号，屏山校区Campus与该门牌一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1020_0": {
+    "d": "闽侯县", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://fyzb.fjmu.edu.cn/FYJJ/vm/proj_zbxmxx.do?SqlCode=tb.Word.JCB&flag=0&pi_id=24110048&pui_id=0",
+    "districtEvidence": "福建医科大学采购文件明确旗山校区地址为福建省福州市闽侯县上街镇学府北路1号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1020_1": {
+    "d": "台江区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://wsjj.fjmu.edu.cn/index/index/message.html?cate=23&pid=806571C2-2517-4346-A197-C1927C30D3B2&type=jj",
+    "districtEvidence": "福建医科大学医学实验室有限公司当前采购页面明确地址为福州市台江区交通路88号，与乌山校区Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

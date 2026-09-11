@@ -23,18 +23,59 @@
     "810000",
     "820000"
   ],
-  "fontBefore": 10.28,
-  "fontAfter": 13.38,
+  "fontBefore": 8.95,
+  "fontAfter": 11.64,
   "schoolEntities": 3196,
-  "campusRecords": 6773,
-  "districtAssociations": 33,
+  "campusRecords": 6817,
+  "districtAssociations": 35,
   "v52": {
-    "associationCount": 33,
+    "associationCount": 35,
     "linyiDistrict": true,
     "taiyuanExact": true,
     "fakeAssociationPrecision": false,
     "cqCorrect": true,
-    "scCorrect": true
+    "scCorrect": true,
+    "anhuiTourismDistrict": true
+  },
+  "v53": {
+    "shenzhen": {
+      "feature": {
+        "id": "440300",
+        "level": "city"
+      },
+      "node": {
+        "kind": "province",
+        "p": "广东省"
+      },
+      "main": "南方科技大学",
+      "labelOn": "南方科技大学＋",
+      "labelOff": "南方科技大学",
+      "localOnly": true,
+      "ug": [
+        "哈尔滨工业大学",
+        "中山大学",
+        "暨南大学"
+      ],
+      "grad": [
+        "清华大学",
+        "北京大学"
+      ],
+      "tierLabels": [
+        "本科校区 / 分校",
+        "研究生院 / 研究院"
+      ],
+      "bundleVisible": true
+    },
+    "suzhou": {
+      "main": "苏州大学",
+      "labelOn": "苏州大学＋",
+      "ug": [
+        "南京大学苏州校区",
+        "中国人民大学苏州校区"
+      ],
+      "hasNju": true,
+      "bundleVisible": true
+    }
   },
   "browserNetworkOffline": true,
   "httpRequests": [],

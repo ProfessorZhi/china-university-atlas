@@ -1,0 +1,12 @@
+{
+  "PROFILE2310_0": {
+    "d": "藁城区",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "藁城区人民政府明确石家庄经济技术开发区位于藁城区西部；原第三方档案将创业路23号误标为长安区，现按政府法定属地纠正。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://gc.gov.cn/columns/f53f8f66-591d-4e99-82c2-06e9444792b4/index.html",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-HE-SHIJIAZHUANG-ETDZ-GAOCHENG",
+    "locationMethod": "政府功能区法定属地纠错：石家庄经济技术开发区归藁城区"
+  }
+}

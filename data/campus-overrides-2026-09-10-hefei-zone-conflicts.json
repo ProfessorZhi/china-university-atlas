@@ -1,0 +1,20 @@
+{
+  "PROFILE3066_0": {
+    "d": "肥西县",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "肥西县政府公共资源交易资料明确紫蓬山旅游开发区及紫蓬山景区位于肥西县；原第三方档案瑶海区字段与法定属地冲突。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://www.fxggzy.cn/jyxx/003001/003001002/20260204/cb973258-7c8a-4f08-96eb-ea1ae7982b1d.html",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-AH-HEFEI-ZIPENGSHAN"
+  },
+  "PROFILE1855_0": {
+    "d": "肥西县",
+    "districtInferenceMethod": "government-zone-to-legal-district",
+    "districtInferenceEvidence": "安徽文达信息工程学院地址位于紫蓬山风景区森林大道；肥西县政府资料确认紫蓬山旅游开发区法定属地为肥西县，原第三方档案庐阳区字段为脏数据。",
+    "districtSourceKind": "zone-government",
+    "districtSourceUrl": "https://www.fxggzy.cn/jyxx/003001/003001002/20260204/cb973258-7c8a-4f08-96eb-ea1ae7982b1d.html",
+    "districtVerified": true,
+    "districtZoneMappingId": "ZONE-AH-HEFEI-ZIPENGSHAN"
+  }
+}

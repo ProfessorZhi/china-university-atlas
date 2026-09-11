@@ -1,0 +1,18 @@
+{
+  "PROFILE1975_0": {
+    "d": "新洲区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.whxinzhou.gov.cn/xxgk_29/xxgkml/gysyjs/wsly/yljgml/202312/t20231207_2314624.shtml",
+    "districtEvidence": "武汉市新洲区人民政府医疗机构目录将武汉生物工程学院医院地址明确写为武汉市新洲区阳逻开发区汉施路1号，与学校Campus同门牌，最低法定区确定为新洲区。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1176_0": {
+    "d": "洪山区",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.huadu.gov.cn/gzhdrs/gkmlpt/content/10/10767/post_10767625.html",
+    "districtEvidence": "广州市花都区2026年事业单位公开招聘笔试公告将武汉考点武汉城市学院（东湖校区）地址明确写为武汉市洪山区东湖生态旅游风景管理区黄家大湾1号，与Campus完全一致。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

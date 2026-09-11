@@ -1,0 +1,32 @@
+{
+  "PROFILE1557_1": {
+    "p": "湖北省",
+    "c": "黄冈市",
+    "d": "红安县",
+    "locationCorrectionMethod": "official-campus-city-correction",
+    "locationCorrectionFrom": "湖北省|武汉市",
+    "locationCorrectionSourceUrl": "https://zb.wids.edu.cn/",
+    "locationCorrectionEvidence": "武汉设计工程学院招生官网将红安教学基地明确列为“湖北省红安经济开发区红安大道特9号”；湖北省2026年公开材料明确使用“黄冈市红安县”并由红安县市场监管局与县高新技术产业园联合开展工作，故Campus物理城市纠正为黄冈市，最低法定县区为红安县；学校主体城市不变。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://zscqj.hubei.gov.cn/fbjd/szdt/202607/t20260724_5982989.shtml",
+    "districtEvidence": "湖北省知识产权局2026年材料明确署名“黄冈市红安县市场监督管理局（知识产权局）”，并在县高新技术产业园举办活动；结合学校官网红安教学基地地址，最低法定县区确定为红安县。",
+    "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1424_1": {
+    "p": "湖北省",
+    "c": "黄冈市",
+    "d": "红安县",
+    "locationCorrectionMethod": "official-campus-city-correction",
+    "locationCorrectionFrom": "湖北省|武汉市",
+    "locationCorrectionSourceUrl": "https://www.whicu.edu.cn/",
+    "locationCorrectionEvidence": "武汉商贸职业学院官网将红安校区明确列为“湖北省红安经济开发区金山大道18号”；湖北省2026年公开材料明确使用“黄冈市红安县”并由红安县市场监管局与县高新技术产业园联合开展工作，故Campus物理城市纠正为黄冈市，最低法定县区为红安县；学校主体城市不变。",
+    "locationCorrectionVerifiedAt": "2026-09-10",
+    "districtVerified": true,
+    "districtSourceKind": "government",
+    "districtSourceUrl": "https://zscqj.hubei.gov.cn/fbjd/szdt/202607/t20260724_5982989.shtml",
+    "districtEvidence": "湖北省知识产权局2026年材料明确署名“黄冈市红安县市场监督管理局（知识产权局）”，并在县高新技术产业园举办活动；结合学校官网红安校区地址，最低法定县区确定为红安县。",
+    "districtVerifiedAt": "2026-09-10"
+  }
+}

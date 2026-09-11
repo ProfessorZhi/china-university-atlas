@@ -1,0 +1,22 @@
+{
+  "PROFILE1044_0": {
+    "d": "官渡区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://yjs.kmu.edu.cn/",
+    "districtEvidence": "昆明学院研究生部当前官网页脚将校址直接写为“中国·昆明 官渡区经济技术开发区 浦新路2号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2170_0": {
+    "d": "官渡区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/gkxx/zc/ss/202406/20240625/2293299374.html",
+    "districtEvidence": "教育部阳光高考公开的云南司法警官职业学院招生工作通知将面试地点明确写为“昆明市官渡区大板桥金盾苑1号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2159_1": {
+    "d": "五华区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.ccgp.gov.cn/cggg/dfgg/gkzb/202607/t20260703_26868200.htm",
+    "districtEvidence": "中国政府采购网2026年采购公告将昆明冶金高等专科学校采购单位地址明确写为“昆明市五华区学府路388号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1277_1": {
+    "d": "五华区", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jy.scu.edu.cn/index/index/employjobdetail.html?data=MDAwMDAwMDAwMJG6n3_Ed6imi4qQtLh4ZJmK0dSqsmHddricp9CWi5qikaeWacSdqLqGfaK2w4iil5C4zNbGiL-E",
+    "districtEvidence": "昆明医科大学海源学院当前招生官网确认高新校区门牌为海源北路389号；四川大学就业指导中心转载该校招聘信息时将同一地址明确写为“云南省昆明市五华区海源北路389号”，故按交叉核对等级落五华区。", "districtVerifiedAt": "2026-09-10"
+  }
+}

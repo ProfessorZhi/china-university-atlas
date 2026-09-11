@@ -1,0 +1,12 @@
+{
+  "PROFILE1145_0": {
+    "d": "浦口区", "districtVerified": true, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://me.seu.edu.cn/_upload/article/files/56/e9/5efb61f64142907f57a1524eaacb/860eab2e-62ee-411b-b71b-435ebd961278.pdf",
+    "districtEvidence": "东南大学2026年江苏省大学生机械创新设计大赛文件将承办单位东南大学成贤学院单位地址明确写为南京市浦口区东大路6号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE113_2": {
+    "d": "溧水区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://www.moe.gov.cn/srcsite/A02/zfs_gdxxzc/201506/t20150630_191853.html",
+    "districtEvidence": "教育部高等学校章程核准书明确南京农业大学白马教学科研基地地址为江苏省南京市溧水区白马镇；南京市公共资源交易项目亦使用同一法定区口径。", "districtVerifiedAt": "2026-09-10"
+  }
+}

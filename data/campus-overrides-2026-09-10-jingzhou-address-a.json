@@ -1,0 +1,17 @@
+{
+  "PROFILE1972_0": {
+    "d": "荆州区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://wlxy.yangtzeu.edu.cn/",
+    "districtEvidence": "长江大学文理学院当前官网明确地址为湖北省荆州市荆州区学苑路33号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE811_0": {
+    "d": "荆州区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hbzyy.edu.cn/xyh/xxgk/xxjj.htm",
+    "districtEvidence": "湖北中医药高等专科学校校友会学校简介明确南区地址为湖北省荆州市荆州区学苑路87号，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE811_1": {
+    "d": "荆州区", "districtVerified": true, "districtSourceKind": "government",
+    "districtSourceUrl": "https://kjt.hubei.gov.cn/zfxxgk_GK2020/xxgkml/xkfw/xkjl/202601/t20260121_5860803.shtml",
+    "districtEvidence": "湖北省科技厅2026年实验动物行政许可决定书将湖北中医药高等专科学校设施地址明确写为荆州市荆州区人民路4号，与城中校区Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

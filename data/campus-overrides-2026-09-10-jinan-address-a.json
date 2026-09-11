@@ -1,0 +1,27 @@
+{
+  "PROFILE2130_0": {
+    "d": "历下区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sdsfjy.edu.cn/info/1043/41641.htm",
+    "districtEvidence": "山东司法警官职业学院2026年公开招聘资格审查公告明确燕山校区为“历下区二环东路6997号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2128_0": {
+    "d": "历城区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sduc.edu.cn/info/1201/13151.htm",
+    "districtEvidence": "山东城市建设职业学院采购公告将学校地址直接写为“济南市历城区旅游路4657号”，与Campus一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2094_0": {
+    "d": "市中区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.sepc.edu.cn/html/dzwz/xxgkzn.html",
+    "districtEvidence": "山东电力高等专科学校信息公开指南将通讯地址明确写为“山东省济南市市中区二环南路500号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE1279_0": {
+    "d": "历下区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.sdupsl.edu.cn/info/1005/8414.htm",
+    "districtEvidence": "山东政法学院2026年普通高等教育招生章程将通信地址明确写为“山东省济南市历下区解放东路63号”。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE534_0": {
+    "d": "长清区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsw.sdjtu.edu.cn/info/1005/6450.htm",
+    "districtEvidence": "山东交通学院2026年本科招生宣传工作手册明确长清校区地址为“济南市长清大学科技园海棠路5001号”；长清大学科技园为长清区法定范围，且校区名与门牌一致。", "districtVerifiedAt": "2026-09-10"
+  }
+}

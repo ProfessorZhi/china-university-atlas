@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 5,
+  "schemaVersion": 6,
   "format": "UTF-8; JSONL: one entity/fact per line",
   "universityPrimaryKey": "id",
   "campusPrimaryKey": "id",
@@ -7,6 +7,9 @@
   "districtAssociationPrimaryKey": "id",
   "districtAssociationForeignKey": "uid -> universities.id",
   "districtAssociationMeaning": "county/district evidence only; NOT a campus address or coordinate",
+  "zoneDistrictMappingFile": "data/zone-district-mappings.jsonl",
+  "zoneDistrictMappingMeaning": "government-backed functional-zone aliases may fill campus d only when province/city match and exactly one mapping term matches; mappings target the lowest legal county/district, not the functional-zone label",
+  "zoneDistrictMappingSourceKind": "government-district-mapping",
   "entityStatusFile": "data/entity-status-overrides.json",
   "entityStatusMeaning": "historical/legal school entities may remain searchable for audit while rankingEligible=false removes them from current province/city/district candidate ranking",
   "cityRankingMeaning": "a university entity competes only in its single host city; physical campuses in other cities do not replace that city's host-university label",
@@ -28,8 +31,17 @@
   "admissionBatchRule": "一本/二本/本科批 are province-and-year admission facts, not intrinsic school levels; school level remains undergraduate/vocational/adult as defined by registry data",
   "rankingRule": "category rank is not a national rank; use publisher-supplied reference rank for cross-category comparison when available; missing external rank is unknown, never zero/worst by imputation",
   "geography": "p/c/d = province/city/district; empty d = unresolved county, NOT city centre",
-  "campusSourceKinds": ["official", "government", "corroborated", "profile", "historical"],
-  "districtAssociationSourceKinds": ["profile-county", "government-district"],
+  "campusSourceKinds": [
+    "official",
+    "government",
+    "corroborated",
+    "profile",
+    "historical"
+  ],
+  "districtAssociationSourceKinds": [
+    "profile-county",
+    "government-district"
+  ],
   "coordinateSystem": "GCJ-02 for existing POI coordinates",
   "geometryEncoding": "gzip JSON; rows [adcode,name,center,level,childrenNum,encodedRings]; delta polyline integers / 1000"
 }

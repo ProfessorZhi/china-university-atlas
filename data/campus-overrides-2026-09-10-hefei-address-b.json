@@ -1,0 +1,12 @@
+{
+  "PROFILE1848_0": {
+    "d": "蜀山区", "districtVerified": true, "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.axhu.edu.cn/contents/1192/260616.html",
+    "districtEvidence": "安徽新华学院2026年高性能工作站采购项目校方公告将项目地址直接写为“安徽省合肥市蜀山区望江西路555号安徽新华学院”，与Campus完全一致。", "districtVerifiedAt": "2026-09-10"
+  },
+  "PROFILE2839_0": {
+    "d": "肥西县", "districtVerified": false, "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.aqvtc.edu.cn/_upload/article/files/2d/ef/258f7d704238a293cbcdb6ab6628/bf436f89-7d66-4860-953a-dffdd458fa53.pdf",
+    "districtEvidence": "安徽外国语学院当前招生官网确认校址为“安徽省合肥市繁华大道（西）2号”；安庆职业技术学院官方毕业档案寄送地址表将安徽外国语学院同一门牌明确写为“安徽省合肥市肥西县繁华大道(西)2号”，故按交叉核对等级落肥西县。", "districtVerifiedAt": "2026-09-10"
+  }
+}
