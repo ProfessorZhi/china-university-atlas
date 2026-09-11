@@ -1,0 +1,84 @@
+{
+  "PROFILE234_0": {
+    "d": "新市区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.xjmu.edu.cn/zsjy/bkszs.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.xjmu.edu.cn/zsjy/bkszs.htm",
+    "districtEvidence": "新疆医科大学2026年招生章程直接列新医路校区为新疆乌鲁木齐市新市区新医路393号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE469_0": {
+    "d": "管城回族区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.hhstu.edu.cn/info/1054/23579.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.hhstu.edu.cn/info/1054/23579.htm",
+    "districtEvidence": "黄河科技学院2026年春季校园开放日学校公告直接列活动地点为南校区郑州市紫荆山南路666号，并在同页将该校园地址明确写为河南省郑州市管城回族区紫荆山南路666号，与现有PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE534_2": {
+    "d": "历下区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://bfjlgs.sdjtu.edu.cn/info/1052/48095.htm",
+    "districtEvidence": "山东交通学院2025年东校区房产公开招募公告明确说明东校区由两个独立院落组成，其中一处坐落于济南市历下区燕子山西路40号，与现有东校区（南院）PROFILE门牌一致。来源未直接使用“南院”名称，因此本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE534_4": {
+    "d": "历城区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://bfjlgs.sdjtu.edu.cn/info/1052/48095.htm",
+    "districtEvidence": "山东交通学院2025年东校区房产公开招募公告明确说明东校区由两个独立院落组成，其中一处为历城区桑园路52号院，与现有东校区（北院）PROFILE门牌一致。来源未直接使用“北院”名称，因此本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE507_3": {
+    "d": "历下区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.qust.edu.cn/lxwm.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jnmhc.jinan.gov.cn/col22438/art/2025/art_22438_4823439.html",
+    "districtEvidence": "青岛科技大学本科招生信息网现行联系我们页面直接列济南校区为济南市文化东路80号；济南市卫生健康委员会2025年机构信息表将同一门牌明确写为济南市历下区文化东路80号。据当前校方named-campus门牌与政府同门牌法定区证据确认该PROFILE位于历下区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE340_0": {
+    "d": "铜官区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsb.tlu.edu.cn/2026/0309/c1750a125702/page.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://ggzyjyzx.tl.gov.cn/jyxx/003002/003002002/20260717/425ac033-612b-4073-be0a-5c3a9cb63bb7.html",
+    "districtEvidence": "铜陵学院2026年招生章程直接列翠湖校区地址为铜陵市翠湖四路1335号；铜陵市公共资源交易中心2026年采购公告将采购人铜陵学院同一门牌明确写为铜官区翠湖四路1335号，据此确认现有翠湖校区PROFILE位于铜官区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1180_0": {
+    "d": "埇桥区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahszu.edu.cn/zs/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://fagaiwei.ahsz.gov.cn/fgzx/zhzx/tzgg/195768511.html",
+    "districtEvidence": "宿州学院招生网现行页面持续列教育园区校区地址为安徽省宿州市学府大道1769号；宿州市发展和改革委员会2025年项目成交公告将供应商宿州学院地址直接写为安徽省宿州市埇桥区学府大道1769号，据同校同门牌确认法定区为埇桥区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1180_1": {
+    "d": "埇桥区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahszu.edu.cn/zs/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://rsj.ahsz.gov.cn/xwzx/tzgg/195657421.html",
+    "districtEvidence": "宿州学院招生网现行页面持续列汴河路校区地址为安徽省宿州市汴河中路49号；宿州市人力资源和社会保障局2025年职业培训机构名录在埇桥区条目中直接列宿州市汴河路49号宿州学院院内，据同门牌确认现有汴河路校区PROFILE位于埇桥区。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
