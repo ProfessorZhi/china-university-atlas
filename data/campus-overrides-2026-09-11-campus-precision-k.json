@@ -1,0 +1,103 @@
+{
+  "PROFILE1259_1": {
+    "d": "八步区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsb.hzxy.edu.cn/info/1061/8441.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsb.hzxy.edu.cn/info/1061/8441.htm",
+    "districtEvidence": "贺州学院2026年普通高等教育专升本招生简章直接列东校区地址为广西壮族自治区贺州市八步区西约街169号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1374_1": {
+    "d": "西乡塘区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xxgk.gxau.edu.cn/gksx/zsksxx/content_317061",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.gxau.edu.cn/gksx/zsksxx/content_317061",
+    "districtEvidence": "广西艺术学院2026级硕士研究生新生入学须知直接列相思湖校区地址为广西南宁市西乡塘区罗文大道8号，与现有PROFILE门牌一致；现有地址字符串中的“乡塘区”不作为法定区依据，本次仅以官方材料补标准法定区西乡塘区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE853_0": {
+    "d": "宛城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yx.nyist.edu.cn/nylgxyyxw/jtzn/index.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yx.nyist.edu.cn/nylgxyyxw/jtzn/index.html",
+    "districtEvidence": "南阳理工学院现行迎新网交通指南直接列学校地址为南阳市宛城区长江路80号，与现有未命名办学地点PROFILE门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1336_0": {
+    "d": "东港区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gotorzu.rzpt.cn/lxwm.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gotorzu.rzpt.cn/lxwm.htm",
+    "districtEvidence": "日照职业技术大学招生信息网现行联系我们页面直接列卧龙山校区地址为山东省日照市东港区烟台北路16号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1251_0": {
+    "d": "万秀区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xgc.gxuwz.edu.cn/xszz/zzdt/2.htm",
+    "districtEvidence": "梧州学院学生工作部现行页面直接列部门地址为梧州市万秀区富民三路82号，与现有学校办学地点PROFILE门牌一致；因该页面是校内部门地址而非专门的campus状态页面，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1769_1": {
+    "d": "长兴县",
+    "sourceKind": "official",
+    "sourceUrl": "https://cxxq.zjvtit.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://cxxq.zjvtit.edu.cn/",
+    "districtEvidence": "浙江交通职业技术学院长兴校区现行官网直接列地址为湖州市长兴县林城镇新林北路39号，2026年校区通知持续更新，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE480_0": {
+    "d": "城关区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.xbmu.edu.cn/xxgk/xxzhang_c.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.xbmu.edu.cn/jxjy/",
+    "districtEvidence": "西北民族大学章程明确学校设西北新村校区并将学校住所写为甘肃省兰州市城关区西北新村1号；学校继续教育学院2026年仍持续使用同一法定区县和门牌，与现有西北新村校区PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE68_0": {
+    "d": "田家庵区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.aust.edu.cn/xxgk/xxzc.htm",
+    "districtEvidence": "安徽理工大学现行学校章程直接将学校法人注册地址写为安徽省淮南市田家庵区泰丰大街168号，学校信息公开网当前页亦持续使用同一法定区县和门牌；因来源未直接使用现有PROFILE的“校本部”名称，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE314_1": {
+    "d": "鸠江区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahnu.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://xxgk.ahnu.edu.cn/info/1067/7601.htm",
+    "districtEvidence": "安徽师范大学现行官网持续列天门山校区地址为芜湖市九华北路171号；省委巡视安徽师范大学公开信息将同一校区和门牌明确写为芜湖市鸠江区九华北路171号，据同校区同门牌确认法定区为鸠江区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE194_1": {
+    "d": "浔阳区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.jju.edu.cn/info/1224/85962.htm",
+    "districtEvidence": "九江学院官方2023年专升本入学须知多次将浔东校区办公地点直接写为九江市浔阳区浔阳东路320号，与现有PROFILE校区名和门牌一致；考虑来源年份较早，本条只升级法定区县，不据此提升当前named-campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
