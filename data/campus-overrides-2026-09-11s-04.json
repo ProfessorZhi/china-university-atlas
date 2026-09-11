@@ -1,0 +1,170 @@
+{
+ "PROFILE2404_1": {
+  "d": "肥西县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.hsxy.edu.cn/xygk/xqfb.htm",
+  "districtEvidence": "www.hsxy.edu.cn 页面原文：“紫蓬校区地址：安徽省合肥市肥西县紫蓬山森林大道”。该地址路名与本条 Campus 地址一致，故法定区为肥西县。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2407_0": {
+  "d": "瑶海区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://www.hfue.edu.cn/jxgc/col819/index",
+  "districtEvidence": "www.hfue.edu.cn 页面原文：“安徽省合肥市瑶海区学府路1号合肥经济学院高教基地校区敬业楼5楼”。该地址门牌、路名与本条 Campus 地址一致，故法定区为瑶海区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2438_0": {
+  "d": "红谷滩区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.nncat.edu.cn/news-4860-show.shtml",
+  "districtEvidence": "www.nncat.edu.cn 页面原文：“九龙湖校区位于江西省南昌市红谷滩区明月山大道1599号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为红谷滩区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2460_0": {
+  "d": "孝南区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://czb.hbeu.edu.cn/info/1012/20622.htm",
+  "districtEvidence": "czb.hbeu.edu.cn 页面原文：“招标人：湖北工程学院新技术学院 ；地 址：湖北省孝感市孝南区学院路１５８号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为孝南区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2477_0": {
+  "d": "岳塘区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://hnieyy.hnie.edu.cn/",
+  "districtEvidence": "hnieyy.hnie.edu.cn 页面原文：“学校地址：湖南湘潭市岳塘区书院路17号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为岳塘区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2500_0": {
+  "d": "涪城区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.sca.edu.cn/",
+  "districtEvidence": "www.sca.edu.cn 页面原文：“绵阳校区：四川省绵阳市涪城区机场东路83号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为涪城区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2532_1": {
+  "d": "双城区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.hibu.edu.cn/info/1036/9439.htm",
+  "districtEvidence": "www.hibu.edu.cn 页面原文：“哈尔滨市双城区周家街道崇文路9号黑龙江工商学院哈南校区一食堂一层西侧门厅”。该地址门牌、路名与本条 Campus 地址一致，故法定区为双城区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2664_0": {
+  "d": "金安区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.wahvc.edu.cn/info/1725/9926.htm",
+  "districtEvidence": "www.wahvc.edu.cn 页面原文：“采购人地址：安徽省六安市金安区皋城中路”。该地址路名与本条 Campus 地址一致，故法定区为金安区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE283_0": {
+  "d": "金平区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zs.stu.edu.cn/",
+  "districtEvidence": "zs.stu.edu.cn 页面原文：“广东省汕头市金平区大学路243号汕头大学行政中心223招生办公室”。该地址门牌、路名与本条 Campus 地址一致，故法定区为金平区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2864_0": {
+  "d": "盐湖区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.ychlxy.com/xygk/xueyuanjianjie/",
+  "districtEvidence": "www.ychlxy.com 页面原文：“学院位于山西省运城市盐湖区复旦西街”。该地址路名与本条 Campus 地址一致，故法定区为盐湖区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE2887_0": {
+  "d": "南昌县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://jjc.jift.edu.cn/bmgk/lxwm.htm",
+  "districtEvidence": "jjc.jift.edu.cn 页面原文：“通信地址：南昌市南昌县向塘镇丽湖中大道103号江西服装学院基建处”。该地址门牌、路名与本条 Campus 地址一致，故法定区为南昌县。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE298_0": {
+  "d": "浈江区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.sgu.edu.cn/",
+  "districtEvidence": "www.sgu.edu.cn 页面原文：“中国.广东省.韶关市浈江区大学路288号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为浈江区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE336_1": {
+  "d": "宝塔区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.yau.edu.cn/info/1484/366547.htm",
+  "districtEvidence": "www.yau.edu.cn 页面原文：“地址：延安市宝塔区公学北路1号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为宝塔区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE33_0": {
+  "d": "甘井子区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.dlmu.edu.cn/",
+  "districtEvidence": "www.dlmu.edu.cn 页面原文：“地址：辽宁省大连市甘井子区凌海路1号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为甘井子区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE370_1": {
+  "d": "城西区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.qhnu.edu.cn/info/1039/20420.htm",
+  "districtEvidence": "www.qhnu.edu.cn 页面原文：“青海师范大学城西校区（青海省西宁市城西区五四西路38号）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为城西区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE381_1": {
+  "d": "宽城区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.ccut.edu.cn/zsjyw/info/1098/1433.htm",
+  "districtEvidence": "www.ccut.edu.cn 页面原文：“北湖校区（长春市宽城区北远达大街3000号）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为宽城区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE3899_1": {
+  "d": "海珠区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.qggj.com/",
+  "districtEvidence": "www.qggj.com 页面原文：“新港校区:广州市海珠区新港西路160号【邮编:510300】”。该地址门牌、路名与本条 Campus 地址一致，故法定区为海珠区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE477_0": {
+  "d": "闽侯县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.mju.edu.cn/",
+  "districtEvidence": "www.mju.edu.cn 页面原文：“福建省福州市闽侯县上街镇溪源宫路200号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为闽侯县。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE502_1": {
+  "d": "甘州区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://yxy.hxu.edu.cn/",
+  "districtEvidence": "yxy.hxu.edu.cn 页面原文：“通讯地址：甘肃张掖市甘州区丹霞东路24号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为甘州区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE507_0": {
+  "d": "崂山区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://xbzr.qust.edu.cn/",
+  "districtEvidence": "xbzr.qust.edu.cn 页面原文：“地址：山东省青岛市崂山区松岭路99号图书馆楼5040 邮编：266061”。该地址门牌、路名与本条 Campus 地址一致，故法定区为崂山区。",
+  "districtVerifiedAt": "2026-09-11"
+ },
+ "PROFILE507_1": {
+  "d": "市北区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://cl.qust.edu.cn/",
+  "districtEvidence": "cl.qust.edu.cn 页面原文：“地址:青岛市市北区郑州路53号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为市北区。",
+  "districtVerifiedAt": "2026-09-11"
+ }
+}
