@@ -1,0 +1,62 @@
+{
+  "PROFILE183_1": {
+    "d": "浮梁县",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.jcu.edu.cn/info/1010/2302.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://rsc.jcu.edu.cn/info/1002/3089.htm",
+    "districtEvidence": "景德镇陶瓷大学2026年本科招生章程直接列湘湖校区地址为江西省景德镇市湘湖路99号；学校2026年公开招聘现场资格审查通知明确写景德镇陶瓷大学湘湖校区位于江西省景德镇市浮梁县湘湖镇，据当前named-campus门牌与同校区法定县证据确认该PROFILE位于浮梁县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE863_0": {
+    "d": "灞桥区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.xasyu.cn/web/syzc/?bm=8&newsid=75&path=newsshow",
+    "districtEvidence": "西安思源学院2026年知识产权代理采购中标公告将采购项目联系人地址直接写为西安市灞桥区水安路28号；学校现行官网持续列学校地址为西安市东郊水安路28号，与现有校本部PROFILE门牌一致。因当前页面未直接以“校本部”名称描述该地址，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1196_0": {
+    "d": "瑶海区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yxy.ahtcm.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yxy.ahtcm.edu.cn/",
+    "districtEvidence": "安徽中医药大学药学院现行官网直接列地址为合肥市瑶海区龙子湖路350号（少荃湖校区）安徽中医药大学B5楼，与现有少荃湖校区PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE529_1": {
+    "d": "新城区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nm.zsks.cn/24ckwb/202412/t20241209_45409.html",
+    "districtEvidence": "内蒙古招生考试信息网成人高考志愿信息将内蒙古财经大学继续教育学院直属站授课地点明确写为内蒙古呼和浩特市新城区海拉尔大街47号，与现有东校区PROFILE门牌一致；因该来源未直接使用“东校区”名称，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1927_0": {
+    "d": "川汇区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.zkvtc.edu.cn/info/1006/2974.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://wsjkw.zhoukou.gov.cn/sitesources/wsjkwyh/page_pc/xwdt/tzgg/article3162944d4a8f4ad5b5ad9dfd4d22adc3.html",
+    "districtEvidence": "周口职业技术学院2026年单独考试招生章程直接列开元校区地址为河南省周口市开元大道1号；周口市卫生健康委员会公共场所卫生量化分级公示表将周口职业技术学院同一门牌写为河南省周口市川汇区开发区开元大道1号，据此确认现有开元校区PROFILE位于川汇区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1779_2": {
+    "d": "越城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://12871.gaokao.haedu.cn/brochure.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://12871.gaokao.haedu.cn/brochure.html",
+    "districtEvidence": "河南省阳光高考信息平台收录的浙江工业职业技术学院2026年普通高校招生章程直接列镜湖校区为浙江省绍兴市越城区站前大道2685号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
