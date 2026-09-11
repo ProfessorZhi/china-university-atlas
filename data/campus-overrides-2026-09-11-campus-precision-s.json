@@ -1,0 +1,51 @@
+{
+  "PROFILE61_3": {
+    "d": "黄岛区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yz.ouc.edu.cn/main.htm?s=103",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yz.ouc.edu.cn/main.htm?s=103",
+    "districtEvidence": "中国海洋大学2026级研究生新生报到须知直接列西海岸校区报到地点为山东省青岛市黄岛区三沙路1299号；工程学院2026年硕士复试安排也直接写中国海洋大学西海岸校区（西区）为青岛市黄岛区三沙路1299号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE68_1": {
+    "d": "长丰县",
+    "sourceKind": "official",
+    "sourceUrl": "https://ggwsxy.aust.edu.cn/info/1060/3002.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://qichexy.aust.edu.cn/tzgg.htm",
+    "districtEvidence": "安徽理工大学2026年全日制普通本科招生章程直接列合肥校区地址为安徽省合肥市双凤开发区凤霞路15号；学校新能源与智能网联汽车学院现行官网将同一合肥办学点地址明确写为安徽省合肥市长丰县凤霞路15号。据当前校方named-campus门牌与同校同门牌法定县证据确认该PROFILE位于长丰县，不以“双凤开发区”名称自行折算法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE280_0": {
+    "d": "忻府区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.xztu.edu.cn/info/1006/1159.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.xztu.edu.cn/info/1006/1159.htm",
+    "districtEvidence": "忻州师范学院2026级新生入学指南直接列报到地点为山西省忻州市顿奇东街1号，并在同页档案邮寄地址明确写山西省忻州市忻府区顿奇东街1号；学校教务部2026年通知亦持续使用同一法定区县和门牌，与现有校本部PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE2334_1": {
+    "d": "白塔区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lnjzxy.edu.cn/content/ZZXSNBMR09044NXOPC",
+    "districtEvidence": "辽宁建筑职业学院现行校区分布页面持续列南校区地址为辽宁省辽阳市南郊街11号；学校2026年建筑艺术学院现代产业学院建设方案征集公告将提交地址明确写为辽宁省辽阳市白塔区八一街11号、辽宁建筑职业学院南校区3号教学楼，直接确认当前named-campus位于白塔区。因两个校方页面使用南校区不同入口/街道地址，本条只升级法定区县，不修改原PROFILE门牌，也不据此提升campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE173_4": {
+    "d": "邗江区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://yzdxzp.yzu.edu.cn/index/company/fairs_list.html?page=8",
+    "districtEvidence": "扬州大学2025年本科招生章程持续列江阳路南校区地址为扬州市江阳中路131号；学校2026年采购日程仍有“扬州大学江阳路南校区体育场地翻新工程”，确认该校区持续使用；扬州大学就业平台此前将江阳路南校区美术与设计学院活动地点直接写为扬州市邗江区江阳中路131号。据当前校区持续存在、现行门牌与校方同门牌法定区证据确认该PROFILE位于邗江区。本条只升级district precision，不将较早区县材料单独作为当前campus状态证明。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
