@@ -1,0 +1,75 @@
+{
+  "PROFILE2519_0": {
+    "d": "东昌府区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://zsb.lcudcc.edu.cn/info/1189/2883.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.lcudcc.edu.cn/info/1070/4762.htm",
+    "districtEvidence": "聊城大学东昌学院2026年招生材料继续使用山东省聊城市北外环路266号作为学校地址；学校资产管理处招租公告将同一门牌直接写为聊城市东昌府区北外环路266号聊城大学东昌学院，据当前学校地址与校方同门牌法定区证据确认现有PROFILE位于东昌府区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE529_0": {
+    "d": "回民区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-115%2CinfoId-7666170415.dhtml",
+    "districtEvidence": "经主管部门审核并在教育部阳光高考平台发布的内蒙古财经大学2026年招生章程列学校校址为呼和浩特市北二环路185号，并将招生办公室通讯地址明确写为内蒙古呼和浩特市回民区北二环路185号。与现有西校区PROFILE门牌一致；因章程未直接使用“西校区”名称，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE2177_0": {
+    "d": "五华区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://jyxb.ynnu.edu.cn/info/1117/3158.htm",
+    "districtEvidence": "云南师范大学教育学部持续维护的用人单位数据库直接列“云南开放大学（云南国防工业职业技术学院）”地址为云南省昆明市五华区学府路113号，与现有云南国防工业职业技术学院学府校区PROFILE门牌一致。该来源为另一省属高校的官方就业数据库而非校方自身地点页，因此仅作为法定区县交叉证据，不提升named-campus当前状态。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE2464_1": {
+    "d": "芙蓉区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://rst.hunan.gov.cn/rst/hnrsksw/c103094/202512/t20251203_33861639.html",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://amr.hunan.gov.cn/amr/zwx/xxgkmlx/tzggx/202304/t20230424_29322288.html",
+    "districtEvidence": "湖南人事考试网2025年集中公开招聘考试考点提示直接列“湖南生物机电职业技术学院（马坡岭）—长沙市远大二路247号”，确认现有马坡岭校区门牌仍在使用；湖南省市场监督管理局地方标准征求意见材料将湖南生物机电职业技术学院同一门牌明确写为长沙市芙蓉区远大二路247号，据同机构同门牌确认法定区为芙蓉区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1383_0": {
+    "d": "未央区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://snamr.shaanxi.gov.cn/info/1467/27497.htm",
+    "districtEvidence": "陕西省市场监督管理局公开的学校相关信息直接列陕西交通职业技术学院文景校区为西安市未央区文景路19号，与现有PROFILE校区名和门牌完全一致。考虑该材料并非2026年当前校区运行公告，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1383_1": {
+    "d": "莲湖区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://snamr.shaanxi.gov.cn/info/1467/27497.htm",
+    "districtEvidence": "陕西省市场监督管理局公开的学校相关信息直接列陕西交通职业技术学院自强校区为西安市莲湖区自强西路289号，与现有PROFILE校区名和门牌完全一致。考虑该材料并非2026年当前校区运行公告，本条只升级法定区县。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE412_0": {
+    "d": "南关区",
+    "sourceKind": "corroborated",
+    "sourceUrl": "https://newggxy.jlufe.edu.cn/info/1090/3538.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://cgyztb.jlufe.edu.cn/info/1002/2218.htm",
+    "districtEvidence": "吉林财经大学公共管理学院2026年招生专业页面继续使用吉林省长春市净月大街3699号作为学校通讯地址；学校招标采购中心采购公告将采购人地址明确写为吉林省长春市南关区净月大街3699号，据当前学校同门牌与校方采购法定区证据确认现有未命名办学地点位于南关区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE174_1": {
+    "d": "东湖区",
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jxnusp.jxnu.edu.cn/2823/list.htm",
+    "districtEvidence": "江西师范大学校内现行青山湖校区页面直接列青山湖校区地址为江西省南昌市北京西路437号，同页校内单位地址明确写为江西省南昌市东湖区北京西路437号，据同一校址门牌确认法定区为东湖区。现有PROFILE名称附带“（科学技术学院）”历史/语义信息，本条仅升级district precision，不据此修改或提升named-campus状态。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
