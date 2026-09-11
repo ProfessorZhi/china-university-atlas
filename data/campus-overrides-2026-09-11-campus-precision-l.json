@@ -1,0 +1,106 @@
+{
+  "PROFILE125_1": {
+    "d": "闵行区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xygl.sjtu.edu.cn/info/1016/2364.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.guoji.sjtu.edu.cn/",
+    "districtEvidence": "上海交通大学校园管理办公室2026年春季校门开放安排直接点名七宝校区并列七莘路2678号；学校终身教育学院国际教育创新中心现行页面将七宝校区同一门牌明确写为上海市闵行区七莘路2678号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE125_4": {
+    "d": "黄浦区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gk.sjtu.edu.cn/Data/List/bxdd",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://ga.sjtu.edu.cn/zsgl/zsmlgl/zsml_bslxfscx.aspx",
+    "districtEvidence": "上海交通大学信息公开网现行办学地点页面直接列黄浦校区地址为上海市重庆南路227号；学校研究生招生院系联系方式将同一门牌明确写为上海市黄浦区重庆南路227号，据同址校内机构链条确认现有黄浦校区法定区为黄浦区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE252_0": {
+    "d": "余杭区",
+    "sourceKind": "official",
+    "sourceUrl": "https://cgzx.hznu.edu.cn/J-pb-purchase/base/oneDayevalRoomsRecords.jsf?day=2026-07-09",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://cgzx.hznu.edu.cn/J-pb-purchase/base/oneDayevalRoomsRecords.jsf?day=2026-07-09",
+    "districtEvidence": "杭州师范大学采购网2026年7月开标记录直接列杭州市余杭区仓前街道余杭塘路2318号杭师大仓前校区，学校2026年招生考试通知亦持续使用余杭塘路2318号仓前校区，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE65_0": {
+    "d": "德城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.dzu.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.dzu.edu.cn/",
+    "districtEvidence": "德州学院现行官网直接列学校地址为山东省德州市德城区大学西路566号，2026年普通高等教育招生章程亦使用同一法定区县与门牌，与现有未命名办学地点PROFILE一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE533_2": {
+    "d": "西乡塘区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.glut.edu.cn/xxgk/xyjg/ajxq.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.glut.edu.cn/info/1008/2307.htm",
+    "districtEvidence": "桂林理工大学现行校园页面直接列南宁安吉校区地址为南宁市安吉大道15号；学校章程明确南宁分校注册地址为南宁市西乡塘区安吉大道15号，并说明南宁分校设安吉、空港校区，据同校区同门牌确认法定区为西乡塘区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE387_1": {
+    "d": "二道区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-168%2CinfoId-7624278165.dhtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-168%2CinfoId-7624278165.dhtml",
+    "districtEvidence": "经主管部门审核并在教育部阳光高考平台发布的长春师范大学2026年招生章程直接列乐群校区为吉林省长春市二道区荣光街道同兴社区吉林大路3291号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1021_1": {
+    "d": "鼓楼区",
+    "sourceKind": "official",
+    "sourceUrl": "https://gaokao.chsi.com.cn/zsgs/zhangcheng/listVerifedZszc--method-view%2CschId-306%2CinfoId-7652013607.dhtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.fuzhou.gov.cn/zwgk/zdlyxxgk/aqsc/bnxx/202301/t20230111_4520002.htm",
+    "districtEvidence": "经主管部门审核的福建中医药大学2026年普通高考招生章程直接列屏山校区为福州市五四路282号；福州市政府人防避难场所统计将同一门牌五四路282号明确列在鼓楼区，并对应福建中医药大学附属第二人民医院，据精确门牌归属确认现有屏山校区法定区为鼓楼区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE135_2": {
+    "d": "长宁区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://zwgk.shcn.gov.cn/xxgk/zdxzjc-2021/2022/268/63476.html",
+    "districtEvidence": "东华大学资产管理处2026年8月仍直接称新华路365弄6号为“东华大学新华路365弄6号园区”；上海市长宁区政府城市更新行动计划明确列“东华大学新华路园区改造提升”位于新华路365弄6号，据同一园区同门牌确认法定区为长宁区。因现有PROFILE名称为“新华路校区”而当前学校材料主要称“新华路园区”，本条只升级district precision。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE143_4": {
+    "d": "香洲区",
+    "sourceKind": "official",
+    "sourceUrl": "https://grd.bitzh.edu.cn/zsgz/ssyjs/f7e14d0ddad34785a808c45e9dad8296.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://grd.bitzh.edu.cn/zsgz/ssyjs/f7e14d0ddad34785a808c45e9dad8296.htm",
+    "districtEvidence": "北京理工大学（珠海）2026级研究生新生户口迁移通知直接写“原则上迁至珠海校区”，迁入地址为广东省珠海市香洲区金凤路6号17栋；页面同时列珠海校区地址为唐家湾金凤路6号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE255_0": {
+    "d": "越城区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://zs.usx.edu.cn/info/1031/6767.htm",
+    "districtEvidence": "绍兴大学现行智慧物业服务页面持续列学校地址为绍兴市环城西路508号；更名前学校官方2025年普通高校招生章程将校本部同一门牌明确写为绍兴市越城区环城西路508号。据同一学校承继、同一校本部门牌确认法定区为越城区；本条只升级district precision，不以更名前材料单独提升当前named-campus状态。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
