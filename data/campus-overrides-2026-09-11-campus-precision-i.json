@@ -1,0 +1,101 @@
+{
+  "PROFILE363_0": {
+    "d": "雁塔区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.xiyou.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://snamr.shaanxi.gov.cn/zfxxgk/zfxxgkzl/zc/zcjd/202411/t20241106_3437978.html",
+    "districtEvidence": "西安邮电大学现行官网持续列雁塔校区地址为西安市长安南路563号；陕西省市场监督管理局公开材料将同一校区直接列为西安市雁塔区长安南路563号，据同校区同门牌链条确认现有PROFILE法定区为雁塔区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE283_0": {
+    "d": "金平区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.stu.edu.cn/zxfw/lxfs.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://info.stu.edu.cn/info/1259/1531.htm",
+    "districtEvidence": "汕头大学本科招生网现行联系方式列桑浦山校区为广东省汕头市大学路243号；学校信息公开网教育收费公示直接将桑浦山校区写为金平区大学路243号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE283_1": {
+    "d": "澄海区",
+    "sourceKind": "official",
+    "sourceUrl": "https://stuecc.stu.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://stuecc.stu.edu.cn/",
+    "districtEvidence": "汕头大学东海岸校区现行官网直接列校区地址为广东省汕头市澄海区翠峰路5号，并持续发布2026年校区运行通知，与现有东海岸校区PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE314_0": {
+    "d": "镜湖区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.ahnu.edu.cn/info/1323/186370.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://whsggzy.wuhu.gov.cn/whggzyjy/005/005020/005020001/20260629/ae911593-4246-4d03-b051-60817b0f0f56.html",
+    "districtEvidence": "安徽师范大学2026级普通本科新生入学须知直接列赭山校区为芜湖市北京中路2号；芜湖市公共资源交易中心2026年赭山校区食堂项目将项目地点明确写为芜湖市镜湖区北京中路2号，据同校区同门牌确认法定区为镜湖区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE519_0": {
+    "d": "赛罕区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.imnu.edu.cn/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.imnu.edu.cn/",
+    "districtEvidence": "内蒙古师范大学现行官网直接列赛罕校区地址为内蒙古呼和浩特市赛罕区昭乌达路81号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE360_1": {
+    "d": "五华区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zs.ynart.edu.cn/info/1008/4213.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zs.ynart.edu.cn/info/1008/4213.htm",
+    "districtEvidence": "云南艺术学院2026年本科招生章程直接列麻园校区地址为昆明市五华区科业路23号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE344_1": {
+    "d": "五华区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsc.ynnu.edu.cn/info/1003/2153.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://zsc.ynnu.edu.cn/info/1003/2153.htm",
+    "districtEvidence": "云南师范大学2026年全日制普通本科招生章程直接列一二·一西南联大校区地址为云南省昆明市五华区一二·一大街298号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE370_1": {
+    "d": "城西区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.qhnu.edu.cn/xqw2026/",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.qhnu.edu.cn/xqw2026/",
+    "districtEvidence": "青海师范大学建校70周年官方专题现行联系我们直接列城西校区为西宁市城西区五四西路38号，与现有PROFILE校区名和门牌完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE251_1": {
+    "d": "鹿城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xyw.wmu.edu.cn/info/1014/7056.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.wmu.edu.cn/xqzl/xxzc.htm",
+    "districtEvidence": "温州医科大学2025年普通高校招生章程直接列学院路校区为温州市学院西路82号；学校章程将学校法定住所明确写为浙江省温州市鹿城区学院西路82号，学校现行校园位置及2025年末通知仍持续使用学院路校区，据同门牌链条确认法定区为鹿城区。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
