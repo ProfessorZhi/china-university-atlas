@@ -1,0 +1,65 @@
+{
+  "PROFILE534_0": {
+    "d": "长清区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xxgk.sdjtu.edu.cn/info/1015/8770.htm",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xxgk.sdjtu.edu.cn/info/1015/8770.htm",
+    "districtEvidence": "山东交通学院2026年公开招聘笔试通知直接列笔试地点为山东交通学院长清校区（济南市长清区海棠路5001号）；2026年普通高等教育招生章程持续列长清校区门牌为海棠路5001号，与现有PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE547_3": {
+    "d": "历城区",
+    "sourceKind": "official",
+    "sourceUrl": "https://zsb.qlu.edu.cn/article/1193",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://jnggzy.jinan.gov.cn/jnggzyztb/front/showPreparationNotice.do?iid=13AED661D888A828618F76B2C4104EE0&isnew=1&xuanxiang=5",
+    "districtEvidence": "齐鲁工业大学2026年普通高等教育招生章程直接列彩石校区为济南市经十东路28789号；济南公共资源交易中心2026年彩石校区建设项目进一步将建设地点明确写为历城区经十东路28789号、齐鲁工业大学（山东省科学院）彩石校区内，据此直接确认法定区县为历城区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE231_0": {
+    "d": "武侯区",
+    "sourceKind": "official",
+    "sourceUrl": "https://xmsyxy.swun.edu.cn/__local/0/12/84/2147D3B742388FB4D34CFEE19D1_804CA62D_3166D.pdf",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://xmsyxy.swun.edu.cn/__local/0/12/84/2147D3B742388FB4D34CFEE19D1_804CA62D_3166D.pdf",
+    "districtEvidence": "西南民族大学畜牧兽医学院2026年博士研究生综合考核通知直接将报到和考核地点写为四川省成都市武侯区一环路南四段16号西南民族大学武侯校区；中央政府采购2026年项目亦持续将学校该门牌写为成都市武侯区一环路南四段16号，与现有武侯校区PROFILE完全一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1767_0": {
+    "d": "北仑区",
+    "sourceKind": "official",
+    "sourceUrl": "https://yzhaosheng.nbpu.edu.cn/a/2026521/1036.shtml",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.nbpu.edu.cn/2026/0311/c744a4571454/page.htm",
+    "districtEvidence": "宁波职业技术大学2026年普通高校招生章程直接列本部校区为浙江省宁波经济技术开发区庐山东路388号；学校2026年公开招聘公告将同一门牌明确写为宁波市北仑区庐山东路388号，据此确认现有本部校区PROFILE的法定区县为北仑区。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1787_0": {
+    "d": "鄞州区",
+    "sourceKind": "official",
+    "sourceUrl": "https://www.crs.jsj.edu.cn/aproval/localdetail/3777",
+    "verified": true,
+    "districtVerified": true,
+    "districtSourceKind": "official",
+    "districtSourceUrl": "https://www.crs.jsj.edu.cn/aproval/localdetail/3777",
+    "districtEvidence": "教育部中外合作办学监管工作信息平台所列宁波卫生职业技术学院2026—2029年招生项目直接将办学地址写为浙江省宁波市鄞州区学府路51号；学校2026年公开招聘考试通知亦持续使用宁波市鄞州区学府路51号，与现有未命名办学地点PROFILE门牌一致。",
+    "districtVerifiedAt": "2026-09-11"
+  },
+  "PROFILE1637_0": {
+    "d": "赛罕区",
+    "districtVerified": true,
+    "districtSourceKind": "corroborated",
+    "districtSourceUrl": "https://www.nm.zsks.cn/ggw/sygg/yxlj/202407/t20240705_44955.html",
+    "districtEvidence": "内蒙古招生考试信息网院校信息页面将内蒙古丰州职业学院学院地址明确列为呼和浩特市赛罕区兴安南路59号（校本部）；同一考试机构2026年高职单招计划持续列内蒙古丰州职业学院（青城分院）兴安南路校区招生，说明该办学点仍在使用。因现行招生材料使用“兴安南路校区”而现有PROFILE名为“校本部”，本条只升级法定区县，不合并校区标签或提升named-campus完整状态。",
+    "districtVerifiedAt": "2026-09-11"
+  }
+}
