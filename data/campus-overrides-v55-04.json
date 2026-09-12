@@ -1,0 +1,154 @@
+{
+ "PROFILE550_1": {
+  "d": "岱岳区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.taggzyjy.com.cn/jydt/002007/002007007/20250530/7c532081-7d35-4177-a01e-d0f86d3d0b54.html",
+  "districtEvidence": "www.taggzyjy.com.cn 页面原文：“本项目 位于山东省泰安市岱岳区凤天路 789号泰山学院南校区内”。该地址门牌、路名与本条 Campus 地址一致，故法定区为岱岳区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE570_1": {
+  "d": "房山区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zsb.btbu.edu.cn/zszc/zszc/index.htm",
+  "districtEvidence": "zsb.btbu.edu.cn 页面原文：“学校总占地面积 83万平方米，分为良乡主校区和阜成路校区。 良乡主校区位于北京市房山区 荷园南路 1号院 ，阜成路校区位于北京市海淀区阜成路 11（33）号 。”。该页面在同一句中写明该校区名称与其所属法定区，故法定区为房山区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE601_0": {
+  "d": "桥东区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp-hebei.gov.cn/province/cggg/zbgg/202606/t20260603_2375845.html",
+  "districtEvidence": "www.ccgp-hebei.gov.cn 页面原文：“采购人地址 ：河北省张家口市桥东区钻石南路11号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为桥东区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE602_0": {
+  "d": "丛台区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp-hebei.gov.cn/province/cggg/gzgg/202412/t20241212_2118645.html",
+  "districtEvidence": "www.ccgp-hebei.gov.cn 页面原文：“采购人地址 ：河北省邯郸市丛台区太极路19号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为丛台区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE613_1": {
+  "d": "天河区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.gdgm.edu.cn/jsjx/",
+  "districtEvidence": "www.gdgm.edu.cn 页面原文：“地址：广州市天河区广州大道北1098号”。本条 Campus 地址无路名，仅以门牌为锚：该来源地址与本条 Campus 地址的门牌号一致，且同一句中出现该法定区，故法定区为天河区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE61_3": {
+  "d": "黄岛区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.xihaian.gov.cn/zwgk/bmgk/wsjk/gkml/zdgz/yljg/202209/t20220902_6337416.shtml",
+  "districtEvidence": "www.xihaian.gov.cn 页面原文：“1 执业登记 中国海洋大学 中国海洋大学西海岸校区医务室 于志刚 （张英） 内科（呼吸内科专业、消化内科专业、心血管内科专业）；禁止输液 医务室 青岛市黄岛区古镇口军民融合创新示范区三沙路1299号 0 滨海街道”。该地址门牌、路名与本条 Campus 地址一致，故法定区为黄岛区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE624_0": {
+  "d": "路北区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://tssfj.tangshan.gov.cn/tssfj/sfj2tzgg/20230912/1559566.html",
+  "districtEvidence": "tssfj.tangshan.gov.cn 页面原文：“1. 唐山师范学院考点（路北区建设北路156号唐山师范学院大学道校区北院信息楼）。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为路北区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE625_0": {
+  "d": "安次区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.lfnu.edu.cn/bgs/",
+  "districtEvidence": "www.lfnu.edu.cn 页面原文：“地址：河北省廊坊市安次区爱民西道100号 邮政编码：065000”。该地址门牌、路名与本条 Campus 地址一致，故法定区为安次区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE728_1": {
+  "d": "灵寿县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.lingshou.gov.cn/columns/212b4c3e-2671-42b3-803b-2e6480f11117/202607/03/db00c460-6bcd-4951-9e47-891f12b60c75.html",
+  "districtEvidence": "www.lingshou.gov.cn 页面原文：“河北省石家庄市灵寿县经济开发区东区人民东路石家庄科技信息职业学院底商103号”。该地址路名与本条 Campus 地址一致，故法定区为灵寿县。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE729_0": {
+  "d": "裕华区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp-hebei.gov.cn/province/cggg/htgg/202507/t20250728_2230951.html",
+  "districtEvidence": "www.ccgp-hebei.gov.cn 页面原文：“地址：石家庄市裕华区槐安东路339号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为裕华区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE730_0": {
+  "d": "广阳区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202607/t20260703_26866778.htm",
+  "districtEvidence": "www.ccgp.gov.cn 页面原文：“廊坊市广阳区东方大学城2期白居易道”。本条 Campus 地址无路名，以地址中一段连续 ≥6 字的地名（而非功能区通名）为锚：该段地址逐字出现在来源原文中，故法定区为广阳区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE763_1": {
+  "d": "呼兰区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "http://www.hxzzxx.com/",
+  "districtEvidence": "www.hxzzxx.com 页面原文：“学校地址 黑龙江省哈尔滨市呼兰区利民开发区学院路950号”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为呼兰区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE789_0": {
+  "d": "船山区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202411/t20241107_23553923.htm",
+  "districtEvidence": "www.ccgp.gov.cn 页面原文：“地址：遂宁市船山区学府北路1号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为船山区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE855_0": {
+  "d": "津南区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.tjjn.gov.cn/xwzx/tzgg/202201/t20220127_5791518.html",
+  "districtEvidence": "www.tjjn.gov.cn 页面原文：“天津市天津市市辖区津南区海河教育园区雅观路23号院内校园商业街中超市用房”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为津南区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE861_1": {
+  "d": "科尔沁区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.tongliao.gov.cn/zwgk/zfxxgk/fdzdgknr/qtfdgkxx/szfw/202505/t20250506_943286.html",
+  "districtEvidence": "www.tongliao.gov.cn 页面原文：“二、原网点：工商银行（通辽经济技术开发区支行） 新网点：中国银行（通辽经济技术开发区支行） 新地址：科尔沁区保康路1号，凯旋城小区附近”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为科尔沁区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE878_1": {
+  "d": "文峰区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://rjxy.aynu.edu.cn/index.htm",
+  "districtEvidence": "rjxy.aynu.edu.cn 页面原文：“地址：安阳市文峰区文明大道265号教学楼”。该地址门牌、路名与本条 Campus 地址一致，故法定区为文峰区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE908_1": {
+  "d": "袁州区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://ggzy.jiangxi.gov.cn/web/jyxx/002006/002006002/20210715/80c7a3c7-6b34-4162-ba6c-1d47012f1707.html",
+  "districtEvidence": "ggzy.jiangxi.gov.cn 页面原文：“名称： 宜春职业技术学院 地址： 袁州区中山西路399号 联系方式： 13970529858”。该地址门牌、路名与本条 Campus 地址一致，故法定区为袁州区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE955_0": {
+  "d": "南昌县",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.nc.gov.cn/ncszf/zdxmjs1/202503/24325c0e6b09498d9467f2a91b23db69.shtml",
+  "districtEvidence": "www.nc.gov.cn 页面原文：“江西省南昌市南昌县汇仁大道999号”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为南昌县。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE968_1": {
+  "d": "鼎湖区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.zhaoqing.gov.cn/zqrsj/gkmlpt/content/3/3265/post_3265602.html",
+  "districtEvidence": "www.zhaoqing.gov.cn 页面原文：“肇庆市鼎湖区丰乐路12号肇庆医学院新区校区行政楼405办公室”。该地址门牌、路名与本条 Campus 地址一致，故法定区为鼎湖区。",
+  "districtVerifiedAt": "2026-09-12"
+ }
+}

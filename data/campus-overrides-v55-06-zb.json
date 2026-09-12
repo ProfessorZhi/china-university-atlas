@@ -1,0 +1,58 @@
+{
+ "PROFILE2178_1": {
+  "d": "嵩明县",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://sthjj.km.gov.cn/c/2016-06-14/3950709.shtml",
+  "districtEvidence": "sthjj.km.gov.cn 页面原文：“建设地点：昆明市嵩明县杨林嵩明职教基地文苑路”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为嵩明县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2219_0": {
+  "d": "清江浦区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://czj.huaian.gov.cn/wsbs/kjsxtz/content/17460288/1746525664965Vh6Nh1FV.html",
+  "districtEvidence": "czj.huaian.gov.cn 页面原文：“江苏财经职业技术学院（淮安市清江浦区高教园区枚乘东路8号）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为清江浦区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1710_2": {
+  "d": "皋兰县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://gjsw.lzpuvt.edu.cn/",
+  "districtEvidence": "gjsw.lzpuvt.edu.cn 页面原文：“地址：甘肃省兰州市皋兰县贺兰山大道北段1169号兰州石化职业技术大学新区校区综合办公楼3楼 邮编：730060”。该地址门牌、路名与本条 Campus 地址一致，故法定区为皋兰县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1245_0": {
+  "d": "黄岛区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://ybj.qingdao.gov.cn/ybyw_117/tzgg_117/202203/t20220309_4575279.shtml",
+  "districtEvidence": "ybj.qingdao.gov.cn 页面原文：“6 2021年4月12日 青岛滨海学院医学院附属医院（青岛滨海学院校医院） 医疗机构（个人账户、门诊统筹、门诊慢特病、住院） 青岛市黄岛区嘉陵江西路425号院内 终止医保住院业务 申请终止医保住院业务”。该地址门牌、路名与本条 Campus 地址一致，故法定区为黄岛区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE3289_0": {
+  "d": "皋兰县",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.ghx.gov.cn/ghx/zwgk/bmxzxx/bm/ghxwsjkj/fdzdgknr/ylws/art/2025/art_62c0e653bcf14be2b0a6c94f8a340ae1.html",
+  "districtEvidence": "www.ghx.gov.cn 页面原文：“兰州市皋兰县九龙江街1666号”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为皋兰县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE3292_0": {
+  "d": "皋兰县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.gsei.com.cn/html/1656/2023-04-07/content-422434.html",
+  "districtEvidence": "www.gsei.com.cn 页面原文：“甘肃省兰州市皋兰县西岔镇海河街766号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为皋兰县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE404_0": {
+  "d": "南关区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.jl.gov.cn/ggzy/zfcg/zbgg/202510/t20251028_9342971.html",
+  "districtEvidence": "www.jl.gov.cn 页面原文：“长春市南关区净月国家高新技术产业开发区博硕路1035号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为南关区。",
+  "districtVerifiedAt": "2026-09-13"
+ }
+}
