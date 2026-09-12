@@ -1,0 +1,314 @@
+{
+ "PROFILE237_0": {
+  "d": "新市区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.xjufe.edu.cn/jwc/",
+  "districtEvidence": "www.xjufe.edu.cn 页面原文：“地址：乌鲁木齐市新市区北京中路449号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为新市区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2430_0": {
+  "d": "新建区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://edu.nc.gov.cn/ncjyj/twyc/202511/a39f71329d2c479b915b60c324a3a31f/files/关于印发2025年南昌市中小学生《国家学生体质健康标准》抽测工作方案的通知.pdf",
+  "districtEvidence": "edu.nc.gov.cn 页面原文：“南昌市新建区广兰大道 899 号”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为新建区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2464_1": {
+  "d": "芙蓉区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://dfs.hnbemc.edu.cn//2026/06/10/20260610080541738ybt2n6.pdf",
+  "districtEvidence": "dfs.hnbemc.edu.cn 页面原文：“湖南省长沙市芙蓉区远大二路 247 号（马坡岭校区）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为芙蓉区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2497_1": {
+  "d": "翠屏区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://sjxq.yibin.gov.cn/zwgk/jgsz/xxjdzx/202301/t20230105_1809516.html",
+  "districtEvidence": "sjxq.yibin.gov.cn 页面原文：“五、办公地址：四川省宜宾市翠屏区双城街道大学城路三段222号（邮政编码：644000）”。该地址路名与本条 Campus 地址一致，故法定区为翠屏区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2518_1": {
+  "d": "寒亭区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.hanting.gov.cn/98/988a1af457790bc0b701790d768c740016/2087824616688062464.html",
+  "districtEvidence": "www.hanting.gov.cn 页面原文：“名称：潍坊理工学院医务室地址：潍坊市寒亭区民主街7777号（潍坊理工学院蔡元培街与爱因斯坦路口南侧50米一楼房屋）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为寒亭区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2519_0": {
+  "d": "东昌府区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.lcudcc.edu.cn/info/1070/4762.htm",
+  "districtEvidence": "www.lcudcc.edu.cn 页面原文：“地址：聊城市东昌府区北外环路266号聊城大学东昌学院办公楼B201室”。该地址门牌、路名与本条 Campus 地址一致，故法定区为东昌府区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE251_1": {
+  "d": "鹿城区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zhaosheng.wmu.edu.cn/info/3159/16931.htm",
+  "districtEvidence": "zhaosheng.wmu.edu.cn 页面原文：“第九条 办学地点：茶山校区位于温州市茶山高教园区，学院路校区位于温州市鹿城区学院西路82号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为鹿城区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2628_0": {
+  "d": "武鸣区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.gxeea.cn/view/content_1168_31131.htm",
+  "districtEvidence": "www.gxeea.cn 页面原文：“23|450107|南宁理工学院南宁校区|接收校外考生|24、65、66、67|南宁市武鸣区东盟经济开发区发展大道16号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为武鸣区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE275_0": {
+  "d": "小店区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://zhaosheng.sxufe.edu.cn/info/1008/7186.htm",
+  "districtEvidence": "zhaosheng.sxufe.edu.cn 页面原文：“学校地址： 太原市小店区坞城路 140号 邮政编码：030006”。该地址门牌、路名与本条 Campus 地址一致，故法定区为小店区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE279_0": {
+  "d": "潞州区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://xxgk.czmc.edu.cn/info/1050/32952.htm",
+  "districtEvidence": "xxgk.czmc.edu.cn 页面原文：“报到地点：长治医学院北校区正门（山西省长治市潞州区解放东街161号）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为潞州区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE279_1": {
+  "d": "上党区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://sx2gov2open2doc.uos.sxzfcg.zcygov.cn/1071PO/bidding/6cdf6ca4-e959-46ac-a5e7-fa2e80cf6777.docx",
+  "districtEvidence": "sx2gov2open2doc.uos.sxzfcg.zcygov.cn 页面原文：“（二）服务地点：长治医学院五龙校区（山西省长治市上党区英雄南路1688号）。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为上党区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE282_3": {
+  "d": "迎泽区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://fszx.tynu.edu.cn/",
+  "districtEvidence": "fszx.tynu.edu.cn 页面原文：“地址：山西省太原市迎泽区侯家巷9号”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为迎泽区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE283_1": {
+  "d": "澄海区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zs.stu.edu.cn/info/1008/4207.htm",
+  "districtEvidence": "zs.stu.edu.cn 页面原文：“十二、报到地点：汕头大学东海岸校区；地址：汕头市澄海区翠峰路5号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为澄海区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2840_0": {
+  "d": "小店区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.tyxd.gov.cn/bmdt222222222222222222222222222222222222/20240604/30132039.html",
+  "districtEvidence": "www.tyxd.gov.cn 页面原文：“拟设医疗机构的执业地点：太原市小店区坞城南路山西工商学院龙城校区5号公寓东侧一层”。该地址路名与本条 Campus 地址一致，故法定区为小店区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2840_1": {
+  "d": "小店区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.tyxd.gov.cn/bmdt222222222222222222222222222222222222/20240604/30132039.html",
+  "districtEvidence": "www.tyxd.gov.cn 页面原文：“2.拟设医疗机构的执业地点：太原市小店区坞城南路山西工商学院龙城校区5号公寓东侧一层/太原市小店区北格镇紫云路36号山西工商学院北格校区后勤办公室一层北侧”。该地址门牌、路名与本条 Campus 地址一致，故法定区为小店区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2865_1": {
+  "d": "迎泽区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.thepaper.cn/newsDetail_forward_2241355",
+  "districtEvidence": "www.thepaper.cn 页面原文：“学院现有双东、文津两个校区。其中，双东校区位于太原市迎泽区双塔寺街22号，文津校区位于晋中市高校新校园区文津街100号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为迎泽区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE2914_0": {
+  "d": "淇滨区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://www.hbqcxy.com/aboutus.html?con=1",
+  "districtEvidence": "www.hbqcxy.com 页面原文：“学院位于河南省鹤壁市淇滨区职教园区，有淇滨(北)和朝歌(南)两个校区。”。本条 Campus 地址无路名，以地址中一段连续 ≥6 字的地名（而非功能区通名）为锚：该段地址逐字出现在来源原文中，故法定区为淇滨区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE298_1": {
+  "d": "武江区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.sgu.edu.cn/sygk/xxzc.htm",
+  "districtEvidence": "www.sgu.edu.cn 页面原文：“第四条 学校住所地址为广东省韶关市浈江区大学路288号，设有韶乐园、韩家山、黄田坝等校区，韶乐园（主校区）位于韶关市浈江区大学路288号，韩家山校区位于韶关市浈江区大学路26号，黄田坝校区位于韶关市武江区惠民北路64号，医学院本科教育校区位于韶关市武江区新华南路108号，医学院专科教育校区位于韶关市浈江区十里亭前进路48号，医学院中职教育校区位于韶关市武江区沐阳东路7号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为武江区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE314_0": {
+  "d": "镜湖区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://m.ahjjjc.gov.cn/p/121918.html",
+  "districtEvidence": "m.ahjjjc.gov.cn 页面原文：“同时，在芜湖市鸠江区九华北路171号安徽师范大学天门山校区综合楼南门东侧、镜湖区北京中路2号赭山校区综合楼东门北侧、弋江区九华南路189号花津校区文典楼北门东侧、九华南路1005号芜湖海螺国际会议中心主楼大门南侧分别设置联系信箱。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为镜湖区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE314_1": {
+  "d": "鸠江区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://m.ahjjjc.gov.cn/p/121918.html",
+  "districtEvidence": "m.ahjjjc.gov.cn 页面原文：“同时，在芜湖市鸠江区九华北路171号安徽师范大学天门山校区综合楼南门东侧、镜湖区北京中路2号赭山校区综合楼东门北侧、弋江区九华南路189号花津校区文典楼北门东侧、九华南路1005号芜湖海螺国际会议中心主楼大门南侧分别设置联系信箱。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为鸠江区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE3154_0": {
+  "d": "皋兰县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ghx.gov.cn/ghx/zwgk/bmxzxx/bm/ghxwsjkj/fdzdgknr/ylws/art/2025/art_62c0e653bcf14be2b0a6c94f8a340ae1.html",
+  "districtEvidence": "www.ghx.gov.cn 页面原文：“省直 兰州新区 甘肃卫生职业学院 （新区校区） 兰州市皋兰县九龙江街1666号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为皋兰县。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE323_1": {
+  "d": "松江区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://isfl.ecupl.edu.cn/",
+  "districtEvidence": "isfl.ecupl.edu.cn 页面原文：“地址：上海市松江区龙源路555号华东政法大学明实楼国际金融法律学院”。该地址门牌、路名与本条 Campus 地址一致，故法定区为松江区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE330_1": {
+  "d": "雁塔区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://www.collegian-health.xjtu.edu.cn/info/1042/1172.htm",
+  "districtEvidence": "www.collegian-health.xjtu.edu.cn 页面原文：“西安交通大学医院（医学校区）位于雁塔区朱雀大街 205 号，是一所科室设备精良，技术精湛的现代化综合性医院。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为雁塔区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE342_1": {
+  "d": "嵩明县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.kmsm.gov.cn/c/2025-05-14/7007121.shtml",
+  "districtEvidence": "www.kmsm.gov.cn 页面原文：“诊所地址：云南省昆明市嵩明县杨林经济技术开发区空港大道2号俊发空港城3号地块10栋9号10号商铺”。该地址路名与本条 Campus 地址一致，故法定区为嵩明县。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE3595_0": {
+  "d": "泸定县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.sceea.cn/GZDZ/Html/147670.html",
+  "districtEvidence": "www.sceea.cn 页面原文：“第五条 办学地点：四川省甘孜藏族自治州泸定县燕子沟镇南磨大道 1号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为泸定县。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE374_1": {
+  "d": "丰满区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.bhdxsffy.cn/",
+  "districtEvidence": "www.bhdxsffy.cn 页面原文：“地址：吉林省吉林市丰满区吉林大街22号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为丰满区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE377_1": {
+  "d": "朝阳区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://gongkai.ccu.edu.cn/info/1015/2459.htm",
+  "districtEvidence": "gongkai.ccu.edu.cn 页面原文：“学校西校区地址：吉林省长春市朝阳区卫星路8326号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为朝阳区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE383_1": {
+  "d": "雁塔区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.yanta.gov.cn/xxgk/zdxxgk/jyjxly/jydd/1947590513107959810.html",
+  "districtEvidence": "www.yanta.gov.cn 页面原文：“西安新希望职业高中 西安市雁塔区白沙路南段2号”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为雁塔区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE387_1": {
+  "d": "二道区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zhaosheng.ccsfu.edu.cn/info/1168/129240.htm",
+  "districtEvidence": "zhaosheng.ccsfu.edu.cn 页面原文：“长春师范大学乐群校区: 吉林省长春市二道区荣光街道同兴社区吉林大路3291号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为二道区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE390_2": {
+  "d": "朝阳区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://wx.cust.edu.cn/xyxw/190e4b84ef81456ab822c9b8283236c5.htm",
+  "districtEvidence": "wx.cust.edu.cn 页面原文：“比赛地点:吉林师范大学长春校区（长春市朝阳区卓越大街399号），如有变动另行通知。”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为朝阳区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE395_0": {
+  "d": "南关区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "http://www.jingyue.gov.cn/hd/zxtsbd_43424/202212/t20221228_3100640.html",
+  "districtEvidence": "www.jingyue.gov.cn 页面原文：“南关区新城大街5088号，吉林建筑大学，属于哪个街道，请相关部门告知， 要求反馈。”。这是**地址级交叉佐证**（挂钩层级：该地址门牌、路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为南关区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE400_2": {
+  "d": "昌邑区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "http://xxgk.jlscy.gov.cn/gzbm/szf/xbgkml/202009/t20200916_876569.html",
+  "districtEvidence": "xxgk.jlscy.gov.cn 页面原文：“55.吉林航空维修有限责任公司（昌邑区双吉街20号）”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为昌邑区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE410_0": {
+  "d": "洮北区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zsb.bcnu.edu.cn/info/1033/1410.htm",
+  "districtEvidence": "zsb.bcnu.edu.cn 页面原文：“通讯地址：吉林省白城市洮北区中兴西大路57号（邮编137000）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为洮北区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE480_0": {
+  "d": "城关区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.xbmu.edu.cn/xxgk/xxzhang_c.htm",
+  "districtEvidence": "www.xbmu.edu.cn 页面原文：“学校设有西北新村校区、榆中校区和附属医院。学校住所地为甘肃省兰州市城关区西北新村1号，榆中校区地址为甘肃省榆中县夏官营镇。”。本条 Campus 地址无路名，以地址中一段连续 ≥6 字的地名（而非功能区通名）为锚：该段地址逐字出现在来源原文中，故法定区为城关区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE493_0": {
+  "d": "魏都区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zcglc.xcu.edu.cn/info/1056/4669.htm",
+  "districtEvidence": "zcglc.xcu.edu.cn 页面原文：“采购人信息 名称：许昌学院 地址：许昌市魏都区八一路 88号 联系人：杨老师”。该地址门牌、路名与本条 Campus 地址一致，故法定区为魏都区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE507_4": {
+  "d": "黄岛区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://qdlx.qust.edu.cn/info/1092/1143.htm",
+  "districtEvidence": "qdlx.qust.edu.cn 页面原文：“地点为青岛科技大学中德国际合作区（中德校区），山东省青岛市西海岸新区（黄岛区）团结路 3698 号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为黄岛区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE515_1": {
+  "d": "云岩区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.gmc.edu.cn/info/1062/21546.htm",
+  "districtEvidence": "www.gmc.edu.cn 页面原文：“招租人名称：贵州医科大学资产经营有限公司 地址：贵阳市云岩区北京路9号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为云岩区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE525_0": {
+  "d": "土默特左旗",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.tmtzq.gov.cn/zwgk/zfxxgk/fdzdgknr/ghjh/202503/t20250329_1872004.html",
+  "districtEvidence": "www.tmtzq.gov.cn 页面原文：“内蒙古医科大学建设的内蒙古医科大学金山校区学生公寓与校医院项目，位于土默特左旗金山开发区金山大道北，博奥路西，新建项目。”。该页面在同一句中写明该校区名称与其所属法定区，故法定区为土默特左旗。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE533_2": {
+  "d": "西乡塘区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.xxtq.gov.cn/yw/tzgg/t1453180.html",
+  "districtEvidence": "www.xxtq.gov.cn 页面原文：“广西壮族自治区南宁市西乡塘区安吉大道15号桂林理工大学南宁分校安吉校区7号铺面（门店内）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为西乡塘区。",
+  "districtVerifiedAt": "2026-09-12"
+ }
+}
