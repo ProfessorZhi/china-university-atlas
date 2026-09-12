@@ -1,8 +1,23 @@
 """Validate the committed data, sources, offline contract and publication hygiene."""
 from pathlib import Path
 import gzip,json,re,sys
+from urllib.parse import urlparse
 from build import ROOT,load_data,build,normalized_address
 from derived_v53 import terminal_city_boundaries
+
+# A district may not rest on a commercial map pin.  Two red lines say so:
+# determining a district from a map POI is forbidden outright, and a Level-3
+# `corroborated` district requires a government or official corroborating
+# source — a map vendor's geocoder is neither.  Enforced here so the rule is a
+# machine gate rather than a convention a future batch can quietly drop.
+# Substring match on the host: an entry must cover the vendor's subdomains
+# (map.360.cn catches m.map.360.cn) without catching a government host.
+MAP_SOURCE_HOSTS=('amap.com','gaode.com','map.baidu.com','map.qq.com','map.360.cn','maps.google','city8.com','mapbar.com','openstreetmap.org')
+
+def map_source_host(url):
+    """Return the forbidden map host in `url`, or '' if the URL is admissible."""
+    host=urlparse(str(url or '')).netloc.lower()
+    return next((m for m in MAP_SOURCE_HOSTS if m in host),'')
 
 def validate():
     d=load_data();u=d['universities'];c=d['campuses'];a=d.get('districtAssociations',[]);aff=d.get('cityAffiliates',{});host=d.get('entityLocationOverrides',{});st=d['stats'];errors=[]
@@ -29,7 +44,10 @@ def validate():
     for r in c:
         check(r['uid'] in ids,'orphan campus '+r['id']);check(r.get('sourceKind') in ['official','government','corroborated','profile','historical'],'missing provenance '+r['id'])
         check(str(r.get('sourceUrl','')).startswith(('https://','http://')),'invalid source URL '+r['id'])
-        if r.get('d'):check((r['p'],r['c'],r['d']) in regions,'unmapped county '+r['id'])
+        if r.get('d'):
+            check((r['p'],r['c'],r['d']) in regions,'unmapped county '+r['id'])
+            bad=map_source_host(r.get('districtSourceUrl'))
+            check(not bad,'district rests on commercial map source '+r['id']+' via '+bad)
         method=r.get('districtInferenceMethod')
         if method=='exact-legal-name-in-address':
             direct_inferred+=1
