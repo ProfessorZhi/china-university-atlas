@@ -13,6 +13,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Unit tests for derived-district inference
+        run: python tests/test_build.py
       - name: Generate derived institution tables
         run: python scripts/generate_reports.py
       - name: Build offline HTML
