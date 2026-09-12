@@ -1,0 +1,298 @@
+{
+ "PROFILE1026_0": {
+  "d": "下陆区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://jyh.huangshi.gov.cn/pub/rsksy/zxgg/202301/t20230103_978539.htm",
+  "districtEvidence": "jyh.huangshi.gov.cn 页面原文：“湖北理工学院( 黄石市下陆区桂林北路 16 号 )”。该地址门牌、路名与本条 Campus 地址一致，故法定区为下陆区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE125_1": {
+  "d": "闵行区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.thepaper.cn/newsDetail_forward_14687909",
+  "districtEvidence": "www.thepaper.cn 页面原文：“2、培训地点：上海市闵行区七莘路2678号，上海交通大学农业与生物学院”。该地址门牌、路名与本条 Campus 地址一致，故法定区为闵行区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1356_0": {
+  "d": "江夏区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/jzxcs/202609/t20260910_27305703.htm",
+  "districtEvidence": "www.ccgp.gov.cn 页面原文：“采购单位地址：武汉市江夏区东湖新技术开发区高新二路129号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为江夏区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1631_1": {
+  "d": "白云鄂博矿区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "http://www.byeb.gov.cn/zwgk/fdzdgknr/zdlyxxgk/bdcdj/202510/t20251031_892617.html",
+  "districtEvidence": "www.byeb.gov.cn 页面原文：“白云鄂博矿区应急管理局办公楼 白云鄂博矿区通阳道23号”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为白云鄂博矿区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1669_1": {
+  "d": "太谷区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "http://www.taigu.gov.cn/zwgk/bmxxgkml/zfzcbm/8zjj/fdzdgknrzjj/zcwjzjj/tzgg8zjj/content_21731",
+  "districtEvidence": "www.taigu.gov.cn 页面原文：“国保太谷区南寺街10号”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为太谷区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1735_0": {
+  "d": "西乡塘区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://gxt.gxzf.gov.cn/xxgk/dwjj/lxfs/t9271670.shtml",
+  "districtEvidence": "gxt.gxzf.gov.cn 页面原文：“广西南宁市西乡塘区大学东路101号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为西乡塘区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1756_0": {
+  "d": "扶绥县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.chongzuo.gov.cn/xxgk/shgysyjslygk_1/jyly/jygzqk/t21254243.shtml",
+  "districtEvidence": "www.chongzuo.gov.cn 页面原文：“（二）地址：崇左市扶绥县新宁镇同正大道655号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为扶绥县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1769_0": {
+  "d": "余杭区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://www.zjvtit.edu.cn/info/1049/21023.htm",
+  "districtEvidence": "www.zjvtit.edu.cn 页面原文：“1.采购人名称：浙江交通职业技术学院 地址：杭州市余杭区古墩路1516号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为余杭区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1512_1": {
+  "d": "新郑市",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://public.xinzheng.gov.cn/D49Y/4471735.jhtml",
+  "districtEvidence": "public.xinzheng.gov.cn 页面原文：“新村镇107国道两侧、南水北调干渠污水管网建设工程，实施地点位于新郑市新村镇。”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为新郑市。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE154_1": {
+  "d": "亭湖区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zbxx.ycit.edu.cn/info/1003/9951.htm",
+  "districtEvidence": "zbxx.ycit.edu.cn 页面原文：“三、 建设地点：江苏省盐城市亭湖区建军东路211号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为亭湖区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1547_0": {
+  "d": "宛城区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://bec.neea.edu.cn/xhtml1/folder/1512/382-1.htm",
+  "districtEvidence": "bec.neea.edu.cn 页面原文：“河南省南阳市宛城区 杜诗路1666号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为宛城区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1524_1": {
+  "d": "察哈尔右翼前旗",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp-neimenggu.gov.cn/gpcms/rest/web/v2/info/getInfoById?id=91307e01-a752-474e-8fb9-3839573f089b",
+  "districtEvidence": "www.ccgp-neimenggu.gov.cn 页面原文：“察哈尔右翼前旗教育体育局察右前旗平地泉中学宿舍楼、教辅用房及配套附属工程建设项目”。本条 Campus 地址无路名，以地址中一段连续 ≥6 字的地名（而非功能区通名）为锚：该段地址逐字出现在来源原文中，故法定区为察哈尔右翼前旗。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1786_0": {
+  "d": "越城区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://sxbh.sx.gov.cn/api-gateway/jpaas-web-server/front/document/file-download?fileUrl=/cms_files/jcms1/web2925/site/attach/0/926ae3ecc77a4c8c933628f5a70160d4.docx",
+  "districtEvidence": "sxbh.sx.gov.cn 页面原文：“浙江邮电职业技术学院迁建工程三期，位于绍兴市越城区，东至马欢路，南至开元东路，西至新城大道，北至七六丘北塘河。”。该地址路名与本条 Campus 地址一致，故法定区为越城区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2118_0": {
+  "d": "桓台县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.ccgp.gov.cn/cggg/dfgg/zbgg/202609/t20260908_27292254.htm",
+  "districtEvidence": "www.ccgp.gov.cn 页面原文：“采购人信息 名 称：山东工业职业学院 地 址：山东省淄博市桓台县张北路69号 联系方式：0533-8407990”。该地址门牌、路名与本条 Campus 地址一致，故法定区为桓台县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1944_0": {
+  "d": "中牟县",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://jyt.henan.gov.cn/2024/06-28/3014672.html",
+  "districtEvidence": "jyt.henan.gov.cn 页面原文：“办学地点：河南省中牟县商都大街东段1933号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为中牟县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE1944_1": {
+  "d": "祥符区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "http://jyt.henan.gov.cn/2025/08-20/3203753.html",
+  "districtEvidence": "jyt.henan.gov.cn 页面原文：“第九条办学地点：河南省郑州市中牟新区商都大街东段1933号，河南省开封市祥符区开港大道电力路1号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为祥符区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2140_1": {
+  "d": "陵城区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://jjjskfq.dezhou.gov.cn/n25300384/n25301039/n25301066/c93585072/content.html",
+  "districtEvidence": "jjjskfq.dezhou.gov.cn 页面原文：“地块12：四至范围马颊河路以南，马颊河岔河以西，涉及的农村集体经济组织：陵城区安德街道李鸣岗村。”。该地址路名与本条 Campus 地址一致，故法定区为陵城区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2216_1": {
+  "d": "惠山区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://jsggzy.jszwfw.gov.cn/jyxx/003002/003002001/20201207/e23db5ec-9589-4843-a106-63ff4839e000.html",
+  "districtEvidence": "jsggzy.jszwfw.gov.cn 页面原文：“本招标项目 文良路（钱藕路 ~ 钱洛路）大修工程 已由 无锡市惠山区行政审批局 以 惠行审投 [ 2019] 037 号文 批准建设，施工图 设计已由 无锡市惠山区交通运输局 以 惠交计 [20 20 ] 13 号文 （批文名称及编号）批准，项目业主为 无锡市藕塘职教园区开发建设有限公司”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为惠山区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2245_0": {
+  "d": "商州区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://jyt.shaanxi.gov.cn/gk/zc/gfxwj_20255/gfxwj_20254/201608/t20160813_3414083.html",
+  "districtEvidence": "jyt.shaanxi.gov.cn 页面原文：“第二条 学院法定注册地址：陕西省商洛市商州区商鞅大道西段丹南新区。”。该地址路名与本条 Campus 地址一致，故法定区为商州区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2853_0": {
+  "d": "正定县",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "http://www.zd.gov.cn/columns/80935122-e50a-411a-b723-f92435f73ef0/202606/01/f3a24b57-52ef-4646-ab56-51542e347e89.html",
+  "districtEvidence": "www.zd.gov.cn 页面原文：“正定县常山西路47号”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为正定县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2858_0": {
+  "d": "藁城区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.gc.gov.cn/columns/c743ea76-94ba-4fcf-a250-7f799589cd0d/202312/11/6cd38ecd-c381-4a5c-8ad9-4327309d4995.html",
+  "districtEvidence": "www.gc.gov.cn 页面原文：“石家庄市藁城区良村经济技术开发区赣江路8号”。该地址路名与本条 Campus 地址一致，故法定区为藁城区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE2858_2": {
+  "d": "藁城区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.gc.gov.cn/columns/f03389e2-e06e-43d8-b491-99457c71ac4b/202306/16/bf968fda-3894-4021-b72b-b955070de2d1.html",
+  "districtEvidence": "www.gc.gov.cn 页面原文：“石家庄市藁城区珠江实验学校 石家庄市藁城区开发区阿里山大街15号”。该地址路名与本条 Campus 地址一致，故法定区为藁城区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE286_4": {
+  "d": "惠来县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.huilai.gov.cn/xwdt/bmdt/content/post_586276.html",
+  "districtEvidence": "www.huilai.gov.cn 页面原文：“广东省惠来县神泉镇大学路广东工业大学揭阳校区”。该地址路名与本条 Campus 地址一致，故法定区为惠来县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE469_0": {
+  "d": "管城回族区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://public.guancheng.gov.cn/02MA/1428206.jhtml",
+  "districtEvidence": "public.guancheng.gov.cn 页面原文：“黄河科技学院附属医院，地址：管城回族区紫荆山南路666号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为管城回族区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE3361_1": {
+  "d": "洛龙区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://zfcg.henan.gov.cn/henan/content?infoId=1622266&channelCode=H600101",
+  "districtEvidence": "zfcg.henan.gov.cn 页面原文：“5.2建设地点：洛阳市洛龙区洛常路168号；”。该地址门牌、路名与本条 Campus 地址一致，故法定区为洛龙区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE3366_2": {
+  "d": "红旗区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zfcg.henan.gov.cn/henan/content?infoId=1977055&channelCode=H601401",
+  "districtEvidence": "zfcg.henan.gov.cn 页面原文：“新乡校区（新乡市红旗区科隆大道114号）”。该地址门牌、路名与本条 Campus 地址一致，故法定区为红旗区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE369_2": {
+  "d": "金台区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://www.jintai.gov.cn/col10250/col10253/col10280/202602/t20260211_1247293.html",
+  "districtEvidence": "www.jintai.gov.cn 页面原文：“宝鸡市金台区人民政府关于印发宝鸡市金台区2026年国民经济和社会发展计划的通知 …… （四）聚力新区跨越，以更硬举措打造活力新城 …… 强化人气集聚提升发展活力。紧扣“三城”定位，强化“人气”要素保障，持续推进宝鸡文理学院蟠龙校区建设，支持陕西机电职业技术学院提级升本，年内学院学生宿舍楼、公共实训基地投入使用，中北学院图书馆建成开放。加快龙翔大道、安苑路等人口集中区域环境提升改造，推进医疗、商业等公共服务设施建设。”。该地址路名与本条 Campus 地址一致，故法定区为金台区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE867_0": {
+  "d": "南昌县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "http://jyt.jiangxi.gov.cn/jxjyw/jxgdyx/content/content_1853696088768966656.html",
+  "districtEvidence": "jyt.jiangxi.gov.cn 页面原文：“学校拥有南昌瑶湖和彭桥两个校区，分别位于南昌市青山湖区北京东路59号、南昌县天祥大道289号，占地面积130.44万平方米”。该地址门牌、路名与本条 Campus 地址一致，故法定区为南昌县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE914_0": {
+  "d": "临川区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://ggzy.jiangxi.gov.cn/jyxx/002006/002006004/20250826/2344eeca-be0e-49e7-b26a-9ee71877870d.html",
+  "districtEvidence": "ggzy.jiangxi.gov.cn 页面原文：“1.采购人信息 名 称：抚州职业技术学院 地 址：江西省抚州市临川区东临路276号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为临川区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE926_0": {
+  "d": "南昌县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://ggzy.jiangxi.gov.cn/jyxx/002006/002006004/20251128/15f05ce9-e1ce-4414-9845-75ea5ef9dd38.html",
+  "districtEvidence": "ggzy.jiangxi.gov.cn 页面原文：“1.采购人信息名称：江西外语外贸职业学院地址：南昌市南昌县昌东镇天祥大道291号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为南昌县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE942_0": {
+  "d": "青山湖区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://ggzy.jiangxi.gov.cn/jyxx/002006/002006004/20231127/001876f7-f718-4d39-9381-e55d7c0eb59a.html",
+  "districtEvidence": "ggzy.jiangxi.gov.cn 页面原文：“1.采购人信息名称：江西青年职业学院地址：江西省南昌市青山湖区志敏大道1458号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为青山湖区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE946_0": {
+  "d": "南昌县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://ggzy.jiangxi.gov.cn/jyxx/002006/002006006/20230821/51050c15-7596-4fb6-87f7-b2d57fc041d3.html",
+  "districtEvidence": "ggzy.jiangxi.gov.cn 页面原文：“江西省南昌市南昌县紫阳大道318号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为南昌县。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE990_1": {
+  "d": "云安区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.yunan.gov.cn/yfyazrzy/gkmlpt/content/1/1725/post_1725191.html",
+  "districtEvidence": "www.yunan.gov.cn 页面原文：“坐落在云浮市云安区西江新城云祥大道23号云浮印象·中式大院一期19幢1单元十六层1603号房不动产权的权利人李承强已去世”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为云安区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE627_0": {
+  "d": "桃城区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zhaosheng.hsnc.edu.cn/info/1023/1149.htm",
+  "districtEvidence": "zhaosheng.hsnc.edu.cn 页面原文：“5.学校地址：河北省衡水市桃城区和平西路1088号。”。该地址门牌、路名与本条 Campus 地址一致，故法定区为桃城区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE72_2": {
+  "d": "蜀山区",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://mp.weixin.qq.com/s?src=11&timestamp=1789232457&ver=6962&signature=nl8cfUe5wF1siOZGrIPOBk*vDhDNKCwJ4BX6u4ivwPZgPxvaDbi46okx1AmlSMoe5R1-CJvFdAYNnirSdQoySmfK9KVu9iPSNfeadg8xqZgCtUzY920JajPvrBjdNQjV&new=1",
+  "districtEvidence": "mp.weixin.qq.com 页面原文：“翡翠路校区：安徽省合肥市蜀山区翡翠路15号”。该地址门牌、路名与本条 Campus 地址一致，故法定区为蜀山区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE730_1": {
+  "d": "安次区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.ccgp-hebei.gov.cn/lf/lf_ac/cggg/htggAAAA/202607/t20260701_2389359.html",
+  "districtEvidence": "www.ccgp-hebei.gov.cn 页面原文：“地址：廊坊市安次区爱民西道175号”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为安次区。",
+  "districtVerifiedAt": "2026-09-13"
+ },
+ "PROFILE769_3": {
+  "d": "翠屏区",
+  "districtVerified": false,
+  "districtSourceKind": "corroborated",
+  "districtSourceUrl": "https://www.ccgp-sichuan.gov.cn/maincms-web/article?type=notice&id=99579979-6e4d-4b70-9866-21c062d5e8be&planId=8a69cf559f7ccf51019f7e9e97c14b84",
+  "districtEvidence": "www.ccgp-sichuan.gov.cn 页面原文：“采购人(甲方)：宜宾市翠屏区人民政府双城街道办事处 地址：宜宾市翠屏区大学路三段222号”。这是**地址级交叉佐证**（挂钩层级：该地址路名与本条 Campus 地址一致）：该来源描述的对象未必是本校，本条不据此升级为 verified；据以推定的法定区为翠屏区。",
+  "districtVerifiedAt": "2026-09-13"
+ }
+}
