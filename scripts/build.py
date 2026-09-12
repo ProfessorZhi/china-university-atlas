@@ -11,7 +11,21 @@ def jsonl(path):
         return []
     return [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines() if line.strip()]
 
-def infer_exact_address_districts(campuses,regions):
+def pinned_district_ids(campus_overrides,campuses):
+    """Ids whose override names ``d`` at all, with an empty value.
+
+    The override layer says "this record has no district" by writing ``d:""``
+    -- that is a decision, not a gap.  Both inference passes below read a falsy
+    ``d`` as "unknown", so without this set an explicit rollback is silently
+    refilled from a donor at the same address and the record reappears in the
+    built dataset as resolved.  Only the override layer may pin; a record that
+    simply lacks the key stays eligible for inference.
+    """
+    known={r['id'] for r in campuses}
+    return {i for i,o in campus_overrides.items()
+            if i in known and isinstance(o,dict) and 'd' in o and not o['d']}
+
+def infer_exact_address_districts(campuses,regions,pinned=frozenset()):
     """Derive d only when the existing address uniquely contains a same-city legal d name.
 
     This intentionally does not translate development zones, new areas, subdistricts or POI names
@@ -25,7 +39,7 @@ def infer_exact_address_districts(campuses,regions):
             by_city.setdefault((node.get('p',''),node.get('c','')),set()).add(d)
     inferred=0
     for record in campuses:
-        if record.get('d'):
+        if record.get('d') or record.get('id') in pinned:
             continue
         address=str(record.get('address') or '')
         if not address:
@@ -56,11 +70,13 @@ def normalized_address(value,province='',city=''):
             text=text.replace(label,'')
     return re.sub(r'[\s,，。；;()（）\-—_/]+','',text)
 
-def inherit_exact_address_districts(campuses):
+def inherit_exact_address_districts(campuses,pinned=frozenset()):
     """Fill d from another record only for an exact same-city normalized address with one d.
 
     Donors are snapshotted before inheritance, preventing inference chains. If the same address is
     associated with more than one legal district, the address is deliberately left unresolved.
+    Records pinned by an explicit empty ``d`` in an override are never filled; they cannot act as
+    donors either, since the pin leaves them with no ``d`` to donate.
     """
     donors={}
     donor_ids={}
@@ -73,7 +89,7 @@ def inherit_exact_address_districts(campuses):
         donor_ids.setdefault((key,d),[]).append(record.get('id'))
     inherited=0
     for record in campuses:
-        if record.get('d'):
+        if record.get('d') or record.get('id') in pinned:
             continue
         key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
         if not key[2]:
@@ -125,8 +141,9 @@ def load_data():
         override=campus_overrides.get(record['id'])
         if override:
             record.update(override)
-    address_inferred=infer_exact_address_districts(campuses,regions)
-    exact_address_inherited=inherit_exact_address_districts(campuses)
+    pinned=pinned_district_ids(campus_overrides,campuses)
+    address_inferred=infer_exact_address_districts(campuses,regions,pinned)
+    exact_address_inherited=inherit_exact_address_districts(campuses,pinned)
     association_additions=[]
     for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):
         association_additions.extend(jsonl(path))
