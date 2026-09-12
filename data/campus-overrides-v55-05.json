@@ -1,0 +1,27 @@
+{
+ "PROFILE815_0": {
+  "d": "蔡甸区",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.ccgp-hubei.gov.cn/news/201907/news_b9b00dd9d31f4334a7f4842222d31e6e.html",
+  "districtEvidence": "www.ccgp-hubei.gov.cn 页面原文：“采购人 武汉商学院 采购人地址 武汉市蔡甸区东风大道816号 联系人 兰彦芳”。该地址门牌、路名与本条 Campus 地址一致，故法定区为蔡甸区。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE508_2": {
+  "d": "土默特左旗",
+  "districtVerified": true,
+  "districtSourceKind": "official",
+  "districtSourceUrl": "https://zsb.imut.edu.cn/info/1016/1715.htm",
+  "districtEvidence": "zsb.imut.edu.cn 页面原文：“邮寄地址：内蒙古呼和浩特市土默特左旗金川开发区内蒙古工业大学金川校区能源与动力工程学院就业指导中心”。该页面在同一句中写明该校区名称与其所属法定区，故法定区为土默特左旗。",
+  "districtVerifiedAt": "2026-09-12"
+ },
+ "PROFILE1830_1": {
+  "d": "寿县",
+  "districtVerified": true,
+  "districtSourceKind": "government",
+  "districtSourceUrl": "https://www.shouxian.gov.cn/ztbd/ztzl/xqyq/yqgz/tpxww/8149932.html",
+  "districtEvidence": "www.shouxian.gov.cn 页面原文：“学院新桥校区项目位于安徽省寿县新桥国际产业园迎宾大道与共建路西南侧”。该地址路名与本条 Campus 地址一致，故法定区为寿县。",
+  "districtVerifiedAt": "2026-09-12",
+  "c": "淮南市"
+ }
+}
