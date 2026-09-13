@@ -1,8 +1,6 @@
 name: Build and validate offline atlas
-# V5.6: plain CI is fully offline and read-only. It builds, validates, audits, drives the browser
-# and packages - it never fetches ranking data and never writes to a branch. Refreshing the
-# official snapshot is a separate manual workflow (sync-ranking-facts.yml) so that only one
-# workflow ever pushes derived reports.
+# V5.7: plain CI is fully offline and read-only. It builds, validates, audits, profiles the
+# standalone bundle, drives the browser and packages; ranking refresh remains a separate manual flow.
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -23,6 +21,8 @@ jobs:
         run: python scripts/generate_reports.py
       - name: Build offline HTML
         run: python scripts/build.py
+      - name: Profile standalone offline bundle
+        run: python scripts/profile_offline_bundle.py
       - name: Generate best-university coverage audit
         run: node scripts/generate_best_university_coverage.mjs
       - name: Validate data, facts and publication hygiene
