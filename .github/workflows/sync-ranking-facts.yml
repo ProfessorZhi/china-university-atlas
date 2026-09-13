@@ -1,10 +1,14 @@
-name: Sync 2026 ShanghaiRanking facts
+name: Refresh official 2026 ShanghaiRanking snapshot
+# V5.6 §16. This is the only workflow that touches the network, and it is manual. It runs the
+# data-update flow end to end: official API -> identity validation -> snapshot -> reports ->
+# winner audit -> commit -> push. Plain CI (ci.yml) stays offline and read-only, so exactly one
+# workflow ever writes to a branch and there is no race between two overlapping writers.
 on:
   workflow_dispatch:
 permissions:
   contents: write
 jobs:
-  sync:
+  refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,27 +21,40 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Fetch official 2026 ranking snapshot
+      - name: Fetch the official 2026 snapshot (the only networked step)
         run: python scripts/fetch_shanghairanking_2026.py
-      - name: Rebuild and audit winners
+      - name: Validate identity mapping before anything is written
+        # Every official row must resolve to a registry school, every rename in
+        # data/ranking-name-aliases-2026.json must cite an official document for a surviving
+        # school identifier, and no school may hold two facts on the same list. Nothing is
+        # guessed and nothing is inferred from a fuzzy name match.
+        run: python scripts/validate_facts.py
+      - name: Regenerate reports and re-audit every winner
         run: |
           python scripts/generate_reports.py
           python scripts/build.py
           node scripts/generate_best_university_coverage.mjs
+      - name: Re-validate and prove the build is deterministic offline
+        run: |
           python tests/test_build.py
           python scripts/validate.py
           python scripts/validate_facts.py
           python scripts/generate_reports.py --check
           python scripts/build.py --check
           node scripts/generate_best_university_coverage.mjs --check
-      - name: Commit normalized facts and derived audits
+      - name: Audit and map must agree on every best-university winner
         run: |
-          git add data/rankings-shanghairanking-2026.jsonl reports/*.csv reports/*.json
+          google-chrome --version
+          node tests/best-university-parity.mjs
+      - name: Commit the snapshot and the derived audits
+        run: |
+          git add data/rankings-shanghairanking-2026.jsonl data/rankings.jsonl
+          git add reports/*.csv reports/*.json
           if git diff --cached --quiet; then
             echo 'Ranking facts already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'data(v5.6): sync official 2026 ShanghaiRanking facts [skip derived-sync]'
+          git commit -m 'data(v5.6): refresh official 2026 ShanghaiRanking snapshot and re-audit winners'
           git push origin HEAD:${GITHUB_REF_NAME}

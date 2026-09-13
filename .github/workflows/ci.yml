@@ -1,4 +1,8 @@
 name: Build and validate offline atlas
+# V5.6: plain CI is fully offline and read-only. It builds, validates, audits, drives the browser
+# and packages - it never fetches ranking data and never writes to a branch. Refreshing the
+# official snapshot is a separate manual workflow (sync-ranking-facts.yml) so that only one
+# workflow ever pushes derived reports.
 on: [push, pull_request, workflow_dispatch]
 permissions:
   contents: read
@@ -34,6 +38,10 @@ jobs:
         run: |
           google-chrome --version
           node tests/browser.mjs
+      - name: Audit and map must agree on every best-university winner
+        run: |
+          google-chrome --version
+          node tests/best-university-parity.mjs
       - name: Build complete ZIP
         run: python scripts/build.py --zip
       - name: Upload preview artifact
