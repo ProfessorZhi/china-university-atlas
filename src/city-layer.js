@@ -41,17 +41,49 @@ function schoolRows(p,c='',d=''){
   for(const a of ar){const u=UM.get(a.uid);if(!u)continue;if(!map.has(u.id))map.set(u.id,{...u,campuses:[],associations:[],branch:false});map.get(u.id).associations.push(a);}
   const rows=[...map.values()];return rows.sort((a,b)=>d?((b.campuses.length>0)-(a.campuses.length>0)||compareU(a,b)):compareU(a,b));
 }
+// V5.6: who is "best" is decided once, in src/winner-core.js, and reported by
+// scripts/generate_best_university_coverage.mjs from the same function. The map never
+// invents a winner: an unresolved unit shows 暂无可比最佳高校 and lists its candidates.
+function winnerFields(d,rs,extra){
+  const u=d.winner;
+  return {
+    u:u?u.u:'',rawU:u?u.u:(rs.length?'暂无可比最佳高校':''),uid:u?u.id:'',level:u?u.level:'',winner:u,
+    status:d.status,basis:d.decisionBasis,detail:d.decisionDetail,
+    unresolvedReason:d.unresolvedReason,candidates:(d.topEntries||[]).map(x=>WinnerCore.unwrap(x).u),
+    sample:false,count:rs.length,...(extra||{})
+  };
+}
+// Chips say *why* a school is the current winner. A policy basis is labelled as policy so
+// the map never presents 公办优先 / 本科>专科 as if ranking evidence had decided it.
+function bestChip(b){
+  if(!b||!b.u)return b&&b.status==='unresolved_incomparable'?'<span class="chip chip-unresolved">暂无可比最佳高校</span>':'';
+  if(b.basis==='public_before_private'||b.basis==='level_order'||b.basis==='campus_precedence'||b.basis==='single_ranked_candidate')return '<span class="chip chip-policy">按项目政策</span>';
+  if(b.basis==='single_candidate')return '<span class="chip">唯一候选</span>';
+  return '';
+}
 function best(f,node=current()){
   const cityName=provinceChildCityName(node,f),l=cityName?{p:node.p,c:cityName,d:''}:locationFor(f,node),isP=node.kind==='country';
   if(cityName){
-    const rs=localCityRows(l.p,l.c),extra=cityAffiliatesFor(l.p,l.c);
-    if(rs.length){const u=rs[0];return{u:u.u,rawU:u.u,uid:u.id,level:u.level,cityAffiliates:extra,meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),hasCityAffiliates(extra)?'有异地办学 · 悬浮查看':'本地主体高校'].filter(Boolean).join(' · '),count:rs.length,sample:false};}
-    return{u:'',rawU:'',meta:hasCityAffiliates(extra)?'本地主体高校尚未匹配 · 有异地办学信息':'本地主体高校尚未匹配',count:0,cityAffiliates:extra};
+    const rs=localCityRows(l.p,l.c),extra=cityAffiliatesFor(l.p,l.c),d=WinnerCore.decideWinner(rs,{});
+    if(d.winner){const u=d.winner;return winnerFields(d,rs,{cityAffiliates:extra,meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),hasCityAffiliates(extra)?'有异地办学 · 悬浮查看':'本地主体高校'].filter(Boolean).join(' · ')});}
+    return winnerFields(d,rs,{cityAffiliates:extra,meta:unresolvedMeta(d,rs,hasCityAffiliates(extra)?'本地主体高校尚未匹配 · 有异地办学信息':'本地主体高校尚未匹配')});
   }
-  let rs;if(isP)rs=(UIX.get(keyOf(f.name))||[]).filter(allowed).slice().sort(compareU);else rs=schoolRows(l.p,l.c,(node.kind==='city'&&node.noChildren)?'':l.d);
-  if(rs.length){const exact=l.d?rs.filter(x=>x.campuses?.length):rs,pool=exact.length?exact:rs,u=pool[0],cp=u.campuses?.[0],a=u.associations?.[0];return{u:u.u,rawU:u.u,uid:u.id,level:u.level,meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),cp?quality(cp):a?'县区归属依据 · 非精确校区地址':'名录所在地'].filter(Boolean).join(' · '),sample:!!cp,campus:cp,count:rs.length,uncertain:!!a||!!cp&&!cp.verified};}
-  if(isP&&D.provinceBest[f.name])return{u:D.provinceBest[f.name],rawU:D.provinceBest[f.name],meta:'沿用参考标签；港澳台名录尚未系统纳入',count:0,sample:false};
-  return{u:'',rawU:'',meta:l.d?'尚无校区或县区归属证据；不代表当地没有高校':'当前口径未匹配本地主体高校；不代表当地没有高校',count:0,sample:false};
+  let rs,opts={};
+  if(isP)rs=(UIX.get(keyOf(f.name))||[]).filter(allowed).slice().sort(compareU);
+  else{
+    rs=schoolRows(l.p,l.c,(node.kind==='city'&&node.noChildren)?'':l.d);
+    if(l.d){const exact=rs.filter(x=>x.campuses?.length);if(exact.length&&exact.length<rs.length){rs=exact;opts.campusPreferred=true;}}
+  }
+  const d=WinnerCore.decideWinner(rs,opts);
+  if(d.winner){const u=d.winner,cp=u.campuses?.[0],a=u.associations?.[0];return winnerFields(d,rs,{meta:[u.level,u.level==='专科'?'专科补位':'',rawRank(u),cp?quality(cp):a?'县区归属依据 · 非精确校区地址':'名录所在地'].filter(Boolean).join(' · '),sample:!!cp,campus:cp,uncertain:!!a||!!cp&&!cp.verified});}
+  if(rs.length)return winnerFields(d,rs,{meta:unresolvedMeta(d,rs)});
+  if(isP&&D.provinceBest[f.name])return{u:D.provinceBest[f.name],rawU:D.provinceBest[f.name],meta:'沿用参考标签；港澳台名录尚未系统纳入',count:0,sample:false,status:'reference_only'};
+  return{u:'',rawU:'',meta:l.d?'尚无校区或县区归属证据；不代表当地没有高校':'当前口径未匹配本地主体高校；不代表当地没有高校',count:0,sample:false,status:'no_candidate'};
+}
+function unresolvedMeta(d,rs,fallback){
+  if(!rs||!rs.length)return fallback||'暂无可比最佳高校';
+  const names=(d.candidates||[]).slice(0,3).join('、'),more=(d.candidates||[]).length>3?' 等':'';
+  return ['暂无可比最佳高校',`候选 ${rs.length} 所`,names?('并列候选：'+names+more):'',d.detail].filter(Boolean).join(' · ');
 }
 function affiliateLines(a){const lines=[];if(a?.undergraduate?.length)lines.push({label:'本科校区 / 分校',items:a.undergraduate});if(a?.graduate?.length)lines.push({label:'研究生院 / 研究院',items:a.graduate});return lines;}
 function showTip(e,f){

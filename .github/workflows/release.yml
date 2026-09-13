@@ -28,6 +28,7 @@ jobs:
           python scripts/build.py --check
           google-chrome --version
           node tests/browser.mjs
+          node tests/best-university-parity.mjs
           python scripts/build.py --zip
       - name: Publish GitHub Release
         env:

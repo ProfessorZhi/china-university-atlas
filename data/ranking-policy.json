@@ -1,9 +1,12 @@
 {
-  "policyVersion": "2026-09-09.1",
+  "policyVersion": "2026-09-13.1",
   "principles": [
-    "学校主体只在唯一home city参加城市主榜；异地校区不抢城市主榜",
-    "本科候选优先，地区没有本科候选时专科/高职兜底",
-    "分类榜名次不直接与主榜名次比较；优先使用主榜参考排名",
+    "学校主体只在唯一home city参加城市主榜；异地校区、研究院、研究生院不抢城市主榜",
+    "县区层以实际办学地点为准；只有在没有校区候选时，才采用县区归属依据候选",
+    "本科候选优先，地区没有本科候选时专科/高职兜底（项目层次政策，不是排名证据）",
+    "同一 comparisonGroup 内的官方名次可以比较；不同榜单体系的名次不互相比较，也不用内部旧名次或中文名排序替代",
+    "开放区间（500+ / 100+ / 80+ / 20+）不当作精确名次，区间之间以及区间与落入该区间的名次之间都不排序",
+    "无法比较的行政单元保持 unresolved_incomparable，不产生赢家，也不回退到名称排序",
     "外部榜单缺失表示未覆盖，不表示零分或最差",
     "自定义综合分必须保留版本、权重、覆盖率和原始分项"
   ],
@@ -11,15 +14,21 @@
     "levelOrder": ["本科", "专科", "成人"],
     "excludeRankingEligibleFalse": true,
     "prestigeTagOrder": ["985", "211", "双一流"],
-    "rankingOrder": [
-      {"rankingId": "shanghairanking-bcur", "field": "referenceRankOrRank", "direction": "asc"},
-      {"rankingId": "shanghairanking-bcvcr", "field": "rank", "direction": "asc", "appliesTo": ["专科"]},
-      {"rankingId": "qs-wur", "field": "rankMidpoint", "direction": "asc", "tieBreakerOnly": true},
-      {"rankingId": "the-wur", "field": "rankMidpoint", "direction": "asc", "tieBreakerOnly": true},
-      {"rankingId": "arwu", "field": "rankMidpoint", "direction": "asc", "tieBreakerOnly": true}
+    "comparison": "src/winner-core.js owns this decision; the page and the coverage audit both call it and tests/best-university-parity.mjs asserts they agree",
+    "basisOrder": [
+      {"basis": "comparable_ranking", "strength": "strong", "rule": "one comparison group, and its champion is unbeaten: an open band only loses to an exact position that lies outside the interval"},
+      {"basis": "level_order", "strength": "policy", "rule": "本科 > 专科 > 成人"},
+      {"basis": "prestige_tag", "strength": "strong", "rule": "985 > 211 > 双一流, an official state designation"},
+      {"basis": "campus_precedence", "strength": "policy", "rule": "district candidates with an actual campus outrank association-only candidates"},
+      {"basis": "public_before_private", "strength": "policy", "rule": "public before private at equal level and prestige; must be shown as project policy, never as ranking evidence"},
+      {"basis": "single_candidate", "strength": "policy", "rule": "the unit has exactly one candidate under this definition"}
     ],
-    "legacyFallback": "universities.rank / rankLabel from the 2026 ShanghaiRanking snapshot until explicit normalized ranking coverage is complete",
-    "finalTieBreakers": ["publicBeforePrivate", "nameZh"]
+    "unresolvedReasons": [
+      "unresolved_incomparable_no_ranking", "unresolved_incomparable_cross_system",
+      "unresolved_incomparable_band", "unresolved_incomparable_equal_rank"
+    ],
+    "legacyFallback": "none. universities.rank is the 0-based index of the old mixed 总榜 page, not a published rank: it is neither a winner nor an ordering key. rankLabel survives only as a display hint on a school that no official list covers, and such a school is reported as needing ranking backfill.",
+    "nameOrdering": "Chinese-name order is used only to keep a candidate list and the generated reports deterministic. It is never used to choose a best university."
   },
   "atlasComposite": {
     "enabledForMapWinner": false,

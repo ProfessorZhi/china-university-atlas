@@ -1,25 +1,90 @@
 {
-  "updatedAt": "2026-09-09",
+  "updatedAt": "2026-09-13",
   "sources": [
     {
       "agency": "ShanghaiRanking",
       "rankingId": "shanghairanking-bcur",
-      "name": "软科中国大学排名",
+      "name": "软科中国大学排名（主榜 / 八个分类榜）",
       "latestEdition": "2026",
       "publishedAt": "2026-04-15",
-      "scope": "中国本科高校；含主榜、单科性分类榜、民办及合作办学榜",
+      "scope": "普通本科高校；主榜 590 所 + 合作办学 9 + 医药 60 + 财经 54 + 语言 15 + 民族 14 + 政法 34 + 体育 15 + 中医药 25 = 总榜 816 所",
       "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/2026",
       "methodologyUrl": "https://www.shanghairanking.cn/methodology/bcur/2026",
-      "notes": "分类榜名次不得冒充全国名次；跨类型比较优先使用主榜或主榜参考排名。2026最终排名对象1086所。"
+      "comparisonGroup": "shanghairanking-bcur",
+      "scaleField": "rankOverall",
+      "notes": "分类榜的 ranking 只是分类内名次；同一标尺内比较必须使用官方 rankOverall，其官方列名是「主榜参考排名」（该单科性高校按主榜指标体系计分后落在主榜的位次），不是「总榜位次」。rankOverall 非数字时唯一取值是字符串 \"500+\"（110 行），是开放区间，不得倒推成精确名次。"
     },
     {
       "agency": "ShanghaiRanking",
-      "rankingId": "shanghairanking-bcvcr",
-      "name": "软科中国高职院校排名",
+      "rankingId": "shanghairanking-bcur-private",
+      "name": "软科中国民办高校排名",
       "latestEdition": "2026",
-      "scope": "高职高专及职业本科",
-      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026",
-      "notes": "2025年起职业大学和职业技术大学不再纳入软科中国大学排名，转入高职院校排名体系。"
+      "publishedAt": "2026-04-15",
+      "scope": "民办本科高校；主榜 173 + 财经 37 + 语言 10 = 220 所",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/2026",
+      "comparisonGroup": "shanghairanking-bcur-private",
+      "scaleField": "rankOverall",
+      "notes": "与公办的软科中国大学排名是两条独立标尺（816 与 220 零重叠），官方列名「民办主榜参考排名」只在民办体系内可比，禁止跨体系比裸名次。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcur-art-list",
+      "name": "软科中国艺术类高校名单",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-15",
+      "scope": "艺术类高校名录",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/202630",
+      "comparisonGroup": "shanghairanking-bcur-art-list",
+      "notes": "该表只有名单，没有名次与分数，只能作为名录证据，不能作为比较依据。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcvcr-public-vocational",
+      "name": "软科中国高职专科院校排名（总榜）",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-15",
+      "scope": "公办高职专科 971 所（官方名带「总榜」但不含民办，民办在 633）",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026623",
+      "methodologyUrl": "https://www.shanghairanking.cn/methodology/bcvcr/2026",
+      "comparisonGroup": "shanghairanking-bcvcr-public-vocational",
+      "scaleField": "rankOverall",
+      "notes": "ranking 是分类排名（九个分类各有自己的 1 号，且有 112+/230+ 等分类区间串），rankOverall 官方列名「全国参考排名」才是本榜位次（1..500 精确 + 500+ 区间）。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcvcr-private-vocational",
+      "name": "软科民办高职专科院校排名",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-15",
+      "scope": "民办与中外合作办学高职专科 307 所",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026633",
+      "comparisonGroup": "shanghairanking-bcvcr-private-vocational",
+      "scaleField": "ranking",
+      "notes": "rankOverall 全空、页面无「全国参考排名」列，只以 ranking 为本表尺度（1..100 + 100+）。与公办高职总榜没有共同标尺，跨体系不得比裸名次；公办优先只能是显式 policy，不能冒充排名证据。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcvcr-public-vocational-undergraduate",
+      "name": "软科中国职业本科大学排名",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-15",
+      "scope": "公办职业本科 96 所（官方名不含「公办」）",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026749",
+      "comparisonGroup": "shanghairanking-bcvcr-public-vocational-undergraduate",
+      "scaleField": "ranking",
+      "notes": "职业本科自 2025 年起被移出 BCUR（官方明文），现与普通本科分属两套体系，名次不可直接比较。本表 rankOverall 全空、无跨表参考列，只以 ranking 为尺度（1..80 + 80+）。"
+    },
+    {
+      "agency": "ShanghaiRanking",
+      "rankingId": "shanghairanking-bcvcr-private-vocational-undergraduate",
+      "name": "软科民办职业本科大学排名",
+      "latestEdition": "2026",
+      "publishedAt": "2026-04-15",
+      "scope": "民办职业本科 27 所",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026750",
+      "comparisonGroup": "shanghairanking-bcvcr-private-vocational-undergraduate",
+      "scaleField": "ranking",
+      "notes": "与职业本科公办榜各自独立编号（两表都有自己的 1 号）且零重叠，官方未给跨表参考值，彼此不可比。尺度为 ranking（1..20 + 20+）。"
     },
     {
       "agency": "QS",
