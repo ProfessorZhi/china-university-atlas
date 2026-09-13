@@ -28,7 +28,9 @@ def _rank_label(r):
         ref=r.get('referenceRank');cat=r.get('category','')
         if ref and cat and cat not in ['综合','主榜']:return f'{edition}软科{cat} {disp} · 主榜参考 {ref}'
         return f'{edition}软科 {disp}'.strip()
-    if rid=='shanghairanking-bcvcr':return f'{edition}软科高职 {disp}'.strip()
+    if rid=='shanghairanking-bcvcr':
+        ref=r.get('referenceRank');cat=r.get('category','')
+        return (f'{edition}软科高职{cat} {disp} · 总榜参考 {ref}' if ref else f'{edition}软科高职{cat} {disp}').strip()
     if rid=='qs-wur':return f'QS {edition} {disp}'.strip()
     if rid=='the-wur':return f'THE {edition} {disp}'.strip()
     if rid=='arwu':return f'ARWU {edition} {disp}'.strip()
@@ -39,7 +41,9 @@ def _latest(rows):
 
 def attach_facts(data,root):
     sources=_json(root/'data/ranking-sources.json',{'sources':[]});policy=_json(root/'data/ranking-policy.json',{})
-    ranking_rows=_jsonl(root/'data/rankings.jsonl');admission_rows=_jsonl(root/'data/admissions.jsonl');finance_rows=_jsonl(root/'data/finance.jsonl')
+    ranking_rows=[]
+    for path in sorted((root/'data').glob('rankings*.jsonl')):ranking_rows.extend(_jsonl(path))
+    admission_rows=_jsonl(root/'data/admissions.jsonl');finance_rows=_jsonl(root/'data/finance.jsonl')
     by_id={u['id']:u for u in data['universities']};by_name=defaultdict(list)
     for u in data['universities']:by_name[u['u']].append(u)
     unresolved=[]
@@ -82,7 +86,7 @@ def attach_facts(data,root):
             u['preferredRank']={'rankingId':preferred['rankingId'],'edition':preferred.get('edition'),'sortValue':sort_value,'label':preferred.get('displayLabel'),'sourceUrl':preferred.get('sourceUrl')}
         elif u.get('rankLabel'):
             label=str(u.get('rankLabel',''));kind='主榜' if label.isdigit() else '分类标签'
-            u['preferredRank']={'rankingId':'legacy-shanghairanking-bcur','edition':LEGACY_SOFT_EDITION,'sortValue':float(u['rank']) if isinstance(u.get('rank'),(int,float)) else 999999,'label':f'{LEGACY_SOFT_EDITION}软科{kind} {label}','sourceUrl':'https://www.shanghairanking.cn/rankings/bcur/2026','legacy':True}
+            u['preferredRank']={'rankingId':'legacy-shanghairanking-bcur','edition':LEGACY_SOFT_EDITION,'sortValue':float(u['rank']) if isinstance(u.get('rank'),(int,float)) else 999999,'label':f'{LEGACY_SOFT_EDITION}软科{kind} {label} · 旧总榜序列','sourceUrl':'https://www.shanghairanking.cn/rankings/bcur/202610','legacy':True}
         else:u['preferredRank']=None
         tags=set(u.get('tags') or []);prestige=len(prestige_order)
         for i,t in enumerate(prestige_order):
