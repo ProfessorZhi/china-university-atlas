@@ -27,8 +27,9 @@ def csv_bytes(rows,fields):
 def revision_summary(d):
     st=d['stats']
     return {
-        'version':d.get('revision',{}).get('version'),'date':d.get('revision',{}).get('date'),'previousVersion':'5.2.0',
-        'scope':'V5.3 以学校主体归属、实际办学地点、最低法定行政边界证据和停招/并转状态分层；城市主榜仅本地主体高校参与；排名、录取与财务采用版本化事实层。',
+        'version':d.get('revision',{}).get('version'),'date':d.get('revision',{}).get('date'),'previousVersion':'5.3.0',
+        'scope':'V5.6 把「最佳高校」判定收敛到 src/winner-core.js 单点出结果，页面与覆盖审计调用同一函数；接入软科 2026 全部官方榜单，不同榜单体系之间不比较裸名次，开放区间不伪精确；无法比较的行政单元保持 unresolved_incomparable 且不产出赢家，名称排序只用于让候选列表可复现，绝不用于选赢家。',
+        'bestUniversityAudit':'reports/best-university-coverage.json（由 node scripts/generate_best_university_coverage.mjs 在 build 之后生成；本文件先于 build 产出，故不内联其计数以免形成构建环）',
         'activeOrdinarySchools':st.get('activeOrdinarySchools'),'resolvedInactiveOrdinarySchools':st.get('resolvedInactiveOrdinarySchools'),
         'activeMissingAnyLocationEvidence':st.get('ordinarySchoolsWithoutAnyLocationEvidence'),'activeCityOnlyLocation':st.get('ordinarySchoolsOnlyCityLocation'),
         'activeWithoutCampusRecords':st.get('ordinarySchoolsWithoutCampusRecords'),'districtEvidenceOnlySchools':st.get('ordinarySchoolsDistrictEvidenceOnly'),

@@ -11,12 +11,13 @@
     {"rankingName":"淮阴工学院","currentName":"淮安大学","uid":"4132011049","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431455.html","evidence":"教育部教发函〔2026〕32号同意淮阴工学院更名为淮安大学，学校标识码4132011049，同时撤销原建制。"},
     {"rankingName":"榆林学院","currentName":"榆林大学","uid":"4161011395","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431447.html","evidence":"教育部教发函〔2026〕41号同意榆林学院更名为榆林大学，学校标识码4161011395，同时撤销原建制。"},
     {"rankingName":"安徽科技学院","currentName":"安徽科技工程大学","uid":"4134010879","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431452.html","evidence":"教育部教发函〔2026〕36号同意安徽科技学院更名为安徽科技工程大学，学校标识码4134010879，同时撤销原建制。"},
-    {"rankingName":"重庆三峡学院","currentName":"重庆三峡科技大学","uid":"4150010643","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431440.html","evidence":"教育部教发函〔2026〕40号同意重庆三峡学院更名为重庆三峡科技大学，学校标识码4150010643，同时撤销原建制。"}
+    {"rankingName":"重庆三峡学院","currentName":"重庆三峡科技大学","uid":"4150010643","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431440.html","evidence":"教育部教发函〔2026〕40号同意重庆三峡学院更名为重庆三峡科技大学，学校标识码4150010643，同时撤销原建制。"},
+    {"rankingName":"赤峰学院","currentName":"赤峰大学","uid":"4115010138","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431457.html","evidence":"教育部教发函〔2026〕31号同意赤峰学院更名为赤峰大学，学校标识码4115010138，同时撤销原建制。"}
   ],
   "explicitlyNotMapped": [
-    {"rankingName":"防灾科技学院","reason":"2026年与华北科技学院共同作为基础设置应急管理大学；旧校单独排名不得直接继承给新法人。","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431495.html"},
-    {"rankingName":"华北科技学院","reason":"2026年与防灾科技学院共同作为基础设置应急管理大学；旧校单独排名不得直接继承给新法人。","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431495.html"},
-    {"rankingName":"内蒙古科技大学包头医学院","reason":"软科单列的校内学院/办学单元，不自动映射为教育部独立高校主体。"},
-    {"rankingName":"内蒙古科技大学包头师范学院","reason":"软科单列的校内学院/办学单元，不自动映射为教育部独立高校主体。"}
+    {"rankingName":"防灾科技学院","reason":"教育部教发函〔2026〕20号同意以华北科技学院、防灾科技学院为基础设置应急管理大学（学校标识码4113011104）并撤销两校建制；属法人合并设立新主体，旧校单独排名不得继承。","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431495.html"},
+    {"rankingName":"华北科技学院","reason":"教育部教发函〔2026〕20号同意以华北科技学院、防灾科技学院为基础设置应急管理大学（学校标识码4113011104）并撤销两校建制；属法人合并设立新主体，旧校单独排名不得继承。","sourceUrl":"https://www.moe.gov.cn/srcsite/A03/s181/202603/t20260319_1431495.html"},
+    {"rankingName":"内蒙古科技大学包头医学院","reason":"软科单列的校内学院/办学单元；教育部《全国高等学校名单（截至2026年6月17日）》未单列、无独立学校标识码，不是独立法人高校主体，不得承接排名。","sourceUrl":"https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/A03/202606/t20260618_1441074.html"},
+    {"rankingName":"内蒙古科技大学包头师范学院","reason":"软科单列的校内学院/办学单元；教育部《全国高等学校名单（截至2026年6月17日）》未单列、无独立学校标识码，不是独立法人高校主体，不得承接排名。","sourceUrl":"https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/A03/202606/t20260618_1441074.html"}
   ]
 }

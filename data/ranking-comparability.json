@@ -1,0 +1,126 @@
+{
+  "version": "2026-09-13.1",
+  "purpose": "Declare which ShanghaiRanking 2026 list each ranking fact came from, which field is the scale value inside that list family, and which families are mutually incomparable. Ranks from different comparison groups are never compared as bare numbers.",
+  "edition": "2026",
+  "agency": "ShanghaiRanking",
+  "scaleRule": {
+    "note": "A list that carries a numeric rankOverall for any row has rankOverall as its family scale and `ranking` only as the in-category position (verified: 14/21/22/745/623 all show rankOverall != ranking). In such a list a non-numeric rankOverall means band-only and must never fall back to the category number. A list with no rankOverall at all (民办主榜 15、民办高职 633、职业本科 749/750) publishes only `ranking`, and that number is the family scale.",
+    "officialColumnNames": "rankOverall 的官方列名不是「总榜位次」，而是「主榜参考排名」（14/21-26/745）与「民办主榜参考排名」（16/17）；11/10/15 没有这一列；623 的对应列叫「全国参考排名」。",
+    "bandMeans": "Open interval published by the agency (e.g. 500+ / 100+ / 80+ / 20+). Values are strings in the API and the page renders them literally; a band has a floor and no position, so entries inside one are never ordered against each other.",
+    "crossLevel": "职业本科（registry level 本科）现由 BCVCR 的 749/750 收录，普通本科由 BCUR 收录，两者已是两套体系（BCUR 2026 方法页：「2025年起软科中国大学排名不再纳入职业大学和职业技术大学」），名次不可直接比较。",
+    "acrossGroups": "incomparable"
+  },
+  "groups": [
+    {
+      "group": "shanghairanking-bcur",
+      "label": "软科中国大学排名（官方列名「主榜参考排名」尺度）",
+      "level": "本科",
+      "scale": ["rankOverall", "ranking"],
+      "bandLabel": "500+",
+      "lists": [
+        {"listKey": "bcur-main", "listTypeId": 11, "listName": "中国大学排名（主榜）"},
+        {"listKey": "bcur-cooperation", "listTypeId": 14, "listName": "中国合作办学大学排名"},
+        {"listKey": "bcur-medicine", "listTypeId": 21, "listName": "中国医药类大学排名"},
+        {"listKey": "bcur-finance", "listTypeId": 22, "listName": "中国财经类大学排名"},
+        {"listKey": "bcur-language", "listTypeId": 23, "listName": "中国语言类大学排名"},
+        {"listKey": "bcur-ethnic", "listTypeId": 24, "listName": "中国民族类大学排名"},
+        {"listKey": "bcur-politics-law", "listTypeId": 25, "listName": "中国政法类大学排名"},
+        {"listKey": "bcur-sports", "listTypeId": 26, "listName": "中国体育类大学排名"},
+        {"listKey": "bcur-traditional-chinese-medicine", "listTypeId": 745, "listName": "中国中医药大学排名"}
+      ],
+      "officialColumnName": "主榜参考排名",
+      "evidence": "官方榜单目录 API /api/pub/v1/bcur/type 给出上述 nameCn。type 10 中国大学排名（总榜）共 816 行 = 主榜 590 + 上述八个分类榜 226（集合双向差集验证：并集 816、两向差为空、无重名）。分类榜行的 rankOverall 官方列名就是「主榜参考排名」——即该单科性高校按主榜指标体系计分后落在主榜的位次，因此主榜行（rankOverall === ranking，590/590 全等）与分类榜行共享同一尺度。rankOverall 非数字时唯一取值是字符串 \"500+\"，共 110 行，是开放区间而非精确名次。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/2026"
+    },
+    {
+      "group": "shanghairanking-bcur-private",
+      "label": "软科中国民办高校排名（官方列名「民办主榜参考排名」尺度）",
+      "level": "本科",
+      "scale": ["rankOverall", "ranking"],
+      "bandLabel": "100+",
+      "lists": [
+        {"listKey": "bcur-private-main", "listTypeId": 15, "listName": "中国民办高校排名（主榜）"},
+        {"listKey": "bcur-private-finance", "listTypeId": 16, "listName": "中国民办财经类高校排名"},
+        {"listKey": "bcur-private-language", "listTypeId": 17, "listName": "中国民办语言类高校排名"}
+      ],
+      "officialColumnName": "民办主榜参考排名",
+      "evidence": "type 15 民办主榜 173 行（ranking 1..100 精确 + 100+ 区间），16 财经 37 行、17 语言 10 行；15+16+17 = 220 行与 type -15 民办总榜 220 行集合完全恒等。type 16/17 的 rankOverall 官方列名「民办主榜参考排名」，与该行处于民办主榜序列的位次逐条吻合（宁波财经 4、长春财经 6、福州外语外贸 8、上海杉达 14，仅并列行 ±1），故 16/17 的 rankOverall 与 15 的 ranking 是同一把民办主榜尺子。民办榜与公办 BCUR 是两条独立标尺：T10（816）与 -15（220）零重叠。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/2026"
+    },
+    {
+      "group": "shanghairanking-bcur-art-list",
+      "label": "软科中国艺术类高校名单（名单，不排名）",
+      "level": "本科",
+      "scale": [],
+      "bandLabel": "",
+      "listingOnly": true,
+      "lists": [
+        {"listKey": "bcur-art-list", "listTypeId": 30, "listName": "中国艺术类高校名单"}
+      ],
+      "evidence": "官方名为「中国艺术类高校名单」（名单，不是排名）。type 30 共 50 行，ranking 与 rankOverall 均为空、score 为 null、univCategory 为空串，页面列头只有「学校名称 / 硕士点 / 博士点 / 国家一流本科专业 / 本科毕业生就业率 / 本科毕业生深造率」，没有「排名」列，因此不构成名次，仅可作为名录证据。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcur/202630"
+    },
+    {
+      "group": "shanghairanking-bcvcr-public-vocational",
+      "label": "软科中国高职专科院校排名（总榜，971 所公办）",
+      "level": "专科",
+      "scale": ["rankOverall", "ranking"],
+      "bandLabel": "500+",
+      "lists": [
+        {"listKey": "bcvcr-vocational-total", "listTypeId": 623, "listName": "中国高职专科院校排名（总榜）"}
+      ],
+      "officialColumnName": "全国参考排名",
+      "evidence": "type 623 共 971 行，官方名带「（总榜）」但只含公办 971 所（2026 方法页原文：「高职专科院校中，公办院校971所、民办与中外合作办学院校307所」，971+307=1278 即高职专科全集，民办在 type 633 且两表零重叠）。623 的 ranking 是分类排名（综合/理工/师范/农林/医药/财经/政法/体育/文艺 九个分类各有自己的 1 号，且有 112+/230+/28+ 等九个分类区间串），rankOverall 官方列名「全国参考排名」才是本榜位次（1..500 精确 + 500+ 区间，非数字值只有 500+）。type 624-632 是该表的九个分类切片（9 表行数 226+371+90+86+83+49+19+13+34=971，逐行 ranking/rankOverall 零不一致），故不重复入库。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026623"
+    },
+    {
+      "group": "shanghairanking-bcvcr-private-vocational",
+      "label": "软科民办高职专科院校排名（307 所）",
+      "level": "专科",
+      "scale": ["ranking"],
+      "bandLabel": "100+",
+      "lists": [
+        {"listKey": "bcvcr-private-vocational", "listTypeId": 633, "listName": "民办高职专科院校排名"}
+      ],
+      "evidence": "type 633 共 307 行（ranking 1..100 精确 + 100+ 区间），rankOverall 全空、页面无「全国参考排名」列，故只以 ranking 为本表尺度；与 type 623 的 971 行零重叠。2026 方法页：「1401所高职院校根据学校性质和学校类型被分别纳入到其中一个对应的排名中」，每校只进一张榜。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026633"
+    },
+    {
+      "group": "shanghairanking-bcvcr-public-vocational-undergraduate",
+      "label": "软科中国职业本科大学排名（96 所公办；官方名不含「公办」）",
+      "level": "本科",
+      "scale": ["ranking"],
+      "bandLabel": "80+",
+      "lists": [
+        {"listKey": "bcvcr-public-vocational-undergraduate", "listTypeId": 749, "listName": "中国职业本科大学排名"}
+      ],
+      "evidence": "type 749 共 96 行（ranking 1..80 精确 + 80+ 区间），rankOverall 全空、页面只有「排名 | 学校名称 | 总分」三列，官方未给任何跨表参考值；与 623/633/750 零重叠。职业本科属高职（BCVCR）体系：BCUR 2026 方法页明文「2025年起软科中国大学排名不再纳入职业大学和职业技术大学，职业本科院校将被纳入软科中国高职院校排名」，且 16 张 bcur 榜全文检索 深圳职业技术大学/金华职业技术大学 等命中 0 次，故 749/750 与 BCUR 主榜名次不在同一标尺上。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026749"
+    },
+    {
+      "group": "shanghairanking-bcvcr-private-vocational-undergraduate",
+      "label": "软科民办职业本科大学排名（27 所）",
+      "level": "本科",
+      "scale": ["ranking"],
+      "bandLabel": "20+",
+      "lists": [
+        {"listKey": "bcvcr-private-vocational-undergraduate", "listTypeId": 750, "listName": "民办职业本科大学排名"}
+      ],
+      "evidence": "type 750 共 27 行（ranking 1..20 精确 + 20+ 区间），rankOverall 全空；与 749 各自独立编号（两表都有自己的 1 号）、零重叠，官方未给跨表参考值，故彼此不可比。96+27=123 恰为 2026 方法页「职业本科大学123所、公办96所、民办27所」。",
+      "sourceUrl": "https://www.shanghairanking.cn/rankings/bcvcr/2026750"
+    }
+  ],
+  "excludedLists": [
+    {"listTypeId": 10, "listName": "软科中国大学排名（总榜）", "reason": "与 11 + 14 + 21-26 + 745 的并集完全相同（816 = 590 + 226），重复入库会为同一学校制造两条同年同榜事实。"},
+    {"listTypeId": 624, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 625, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 626, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 627, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 628, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 629, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 630, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 631, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": 632, "reason": "623 的按分类拆表，重复。"},
+    {"listTypeId": -15, "listName": "民办总榜", "reason": "15+16+17 的合并呈现，且自身 rankOverall 为空、混用 民财N/民语N 令牌；入库会制造第三条同年同榜事实。"}
+  ]
+}
