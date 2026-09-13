@@ -488,8 +488,15 @@ function regionColors(fs){
  for(const i of order){const used=new Set([...graph[i]].map(j=>result[j]).filter(k=>k>=0));let choice=i%palette.length;for(let k=0;k<palette.length;k++){const c=(i+k)%palette.length;if(!used.has(c)){choice=c;break;}}result[i]=choice;}
  return result.map(i=>palette[i]);
 }
-function drawMap(reset=false){const rect=$('map').getBoundingClientRect();S.w=rect.width;S.h=rect.height;$('map').setAttribute('viewBox',`0 0 ${S.w} ${S.h}`);$('clipRect').setAttribute('width',S.w);$('clipRect').setAttribute('height',S.h);if(reset){S.z=1;S.x=S.y=0;}const nation=current().kind==='country',projected=[];let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;for(const f of S.geo){const rings=f.rings.map(r=>r.map(project));projected.push(rings);f.rings.forEach((r,ri)=>r.forEach((p,pi)=>{if(nation&&(p[1]<18||!f.name))return;const q=rings[ri][pi];xmin=Math.min(xmin,q[0]);xmax=Math.max(xmax,q[0]);ymin=Math.min(ymin,q[1]);ymax=Math.max(ymax,q[1]);}));}if(!Number.isFinite(xmin))return;const top=118,bottom=48,left=nation?30:38,right=nation?72:48,scale=Math.min((S.w-left-right)/Math.max(xmax-xmin,.00001),(S.h-top-bottom)/Math.max(ymax-ymin,.00001)),tx=left+(S.w-left-right-(xmax-xmin)*scale)/2-xmin*scale,ty=top+(S.h-top-bottom-(ymax-ymin)*scale)/2-ymin*scale;S.projection={scale,tx,ty};S.base=[];const colors=regionColors(S.geo);$('shapes').innerHTML='';S.geo.forEach((f,i)=>{const rings=projected[i].map(r=>r.map(p=>[p[0]*scale+tx,p[1]*scale+ty]));const path=rings.map(r=>'M'+r.map(p=>p.map(x=>x.toFixed(2)).join(',')).join('L')+'Z').join('');const st=S.geo.length===1?MAP_STYLE.single:(MAP_STYLE.stroke[f.name?f.level:'']||MAP_STYLE.stroke.district);
-const el=E('path',{d:path,fill:colors[i],stroke:st[0],'stroke-width':st[1],'fill-rule':'evenodd','vector-effect':'non-scaling-stroke',class:'region','data-i':i,'data-id':f.id,tabindex:f.name?'0':'-1',role:f.name?'button':'presentation','aria-label':f.name?f.name+'，'+(best(f).rawU||best(f).u||'高校数据待补'):'南海诸岛边界'});if(!f.name){el.setAttribute('fill',MAP_STYLE.island);el.style.pointerEvents='none';}if(nation&&!f.name)el.style.display='none';$('shapes').append(el);let cp=project(labelPoint(f));let area=rings.reduce((s,r)=>s+polygonArea(r),0);S.base.push({f,cp:[cp[0]*scale+tx,cp[1]*scale+ty],area,rings,el});});drawInset(nation);applyTransform();}
+/* One latitude floor for the national view, shared by the fit and by the draw. It used to be a bare
+   18 inside the fit loop only: the fit excluded the South China Sea and the draw kept it, so the SCS
+   rings were painted outside the fitted region and cut by the frame edge - 海南's ring data reached
+   y=913 on a 726px frame, 164 points inside the visible bottom strip and 558 below it. Fit and draw
+   now read the same constant, and a ring is drawn iff it has any point at or north of it, so every
+   drawn coordinate is provably inside the fitted box (the inset carries the SCS instead). */
+const NATION_MIN_LAT=18;
+function drawMap(reset=false){const rect=$('map').getBoundingClientRect();S.w=rect.width;S.h=rect.height;$('map').setAttribute('viewBox',`0 0 ${S.w} ${S.h}`);$('clipRect').setAttribute('width',S.w);$('clipRect').setAttribute('height',S.h);if(reset){S.z=1;S.x=S.y=0;}const nation=current().kind==='country',projected=[],keepMask=[];let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;for(const f of S.geo){const rings=f.rings.map(r=>r.map(project));projected.push(rings);keepMask.push(f.rings.map(r=>!nation||r.some(p=>p[1]>=NATION_MIN_LAT)));f.rings.forEach((r,ri)=>r.forEach((p,pi)=>{if(nation&&(p[1]<NATION_MIN_LAT||!f.name))return;const q=rings[ri][pi];xmin=Math.min(xmin,q[0]);xmax=Math.max(xmax,q[0]);ymin=Math.min(ymin,q[1]);ymax=Math.max(ymax,q[1]);}));}if(!Number.isFinite(xmin))return;const top=118,bottom=48,left=nation?30:38,right=nation?72:48,scale=Math.min((S.w-left-right)/Math.max(xmax-xmin,.00001),(S.h-top-bottom)/Math.max(ymax-ymin,.00001)),tx=left+(S.w-left-right-(xmax-xmin)*scale)/2-xmin*scale,ty=top+(S.h-top-bottom-(ymax-ymin)*scale)/2-ymin*scale;S.projection={scale,tx,ty};S.base=[];const colors=regionColors(S.geo);$('shapes').innerHTML='';S.geo.forEach((f,i)=>{const keep=keepMask[i],rings=projected[i].map((r,ri)=>keep[ri]?r.map(p=>[p[0]*scale+tx,p[1]*scale+ty]):null).filter(Boolean);const path=rings.map(r=>'M'+r.map(p=>p.map(x=>x.toFixed(2)).join(',')).join('L')+'Z').join('');const st=S.geo.length===1?MAP_STYLE.single:(MAP_STYLE.stroke[f.name?f.level:'']||MAP_STYLE.stroke.district);
+const el=E('path',{d:path,fill:colors[i],stroke:st[0],'stroke-width':st[1],'fill-rule':'evenodd','vector-effect':'non-scaling-stroke',class:'region','data-i':i,'data-id':f.id,tabindex:f.name?'0':'-1',role:f.name?'button':'presentation','aria-label':f.name?f.name+'，'+(best(f).rawU||best(f).u||'高校数据待补'):'南海诸岛边界'});if(!f.name){el.setAttribute('fill',MAP_STYLE.island);el.style.pointerEvents='none';}if(nation&&!f.name)el.style.display='none';$('shapes').append(el);const drawn=keep.every(Boolean)?f:{rings:f.rings.filter((r,ri)=>keep[ri]),cp:f.cp};let cp=project(labelPoint(drawn));let area=rings.reduce((s,r)=>s+polygonArea(r),0);S.base.push({f,cp:[cp[0]*scale+tx,cp[1]*scale+ty],area,rings,el});});drawInset(nation);applyTransform();}
 /* A proper cartographic inset: the same projection as the main map, one uniform scale so nothing is
    stretched, the caption inside the frame, and each feature drawn in the fill it already has on the
    map - an inset that invents its own colours is a second legend the reader has to reconcile. */
@@ -1325,60 +1332,82 @@ const LABEL_TYPO={region:{color:MAP_STYLE.label.region,weight:500,ratio:.86},uni
 const LABEL_LH=1.22,LABEL_PAD=4,LABEL_PADY=2,LABEL_EDGE=6,LABEL_GAP=4,MIN_LABEL_FONT=9.6;
 const LEVEL_RANK={province:0,city:1,district:2};
 const CJK_RE=/[⺀-鿿　-〿＀-￯㐀-䶿]/;
-/* Break opportunities: one per CJK character, otherwise after a space, middle dot or hyphen.
-   Latin words stay whole so a name never splits mid-word. */
+/* Structural words in an institution name. A line break inside one of these reads as a typo, not as
+   a line break, and the previous version of this wrapper produced exactly that: it balanced the
+   target width to (total/n)*1.04 and then filled greedily, so 浙江工商大学杭州商学院 got a target of
+   5.72 glyphs - narrower than its own first word (浙江工商大学, 6 glyphs) - and 大学 was cut in half.
+   Longest match wins, so 职业技术学院 beats 技术学院 beats 学院. The list is deliberately limited to
+   school-name morphology; administrative terms are left to the plain per-character rule. */
+const PROTECTED_WORDS=['职业技术大学','职业技术学院','职业技术学校','职业大学','职业学院','技术学院','技术大学','师范大学','理工大学','科技大学','工业大学','农业大学','医科大学','财经大学','交通大学','民族大学','外国语大学','外国语学院','政法大学','传媒大学','艺术学院','体育学院','商学院','管理学院','医学院','师范学院','大学','学院','学校'];
+/* Break opportunities: one per CJK character, except that a protected word is one atomic token and
+   may never be cut. Latin runs stay whole so a name never splits mid-word. */
 function textTokens(s){
   const out=[];let buf='';
-  for(const ch of s){
-    if(CJK_RE.test(ch)){if(buf){out.push(buf);buf='';}out.push(ch);}
-    else if(ch===' '||ch==='　'||ch==='·'||ch==='-'||ch==='/'){buf+=ch;out.push(buf);buf='';}
+  const flush=()=>{if(buf){out.push(buf);buf='';}};
+  for(let i=0;i<s.length;){
+    let hit=null;
+    if(CJK_RE.test(s[i]))for(const w of PROTECTED_WORDS)if(s.startsWith(w,i)){hit=w;break;}
+    if(hit){flush();out.push(hit);i+=hit.length;continue;}
+    const ch=s[i];i++;
+    if(CJK_RE.test(ch)){flush();out.push(ch);}
+    else if(ch===' '||ch==='　'||ch==='·'||ch==='-'||ch==='/'){buf+=ch;flush();}
     else buf+=ch;
   }
-  if(buf)out.push(buf);
+  flush();
   return out;
 }
-/* Wrap to a measured width. Line count is minimised first, then the target width is rebalanced and a
-   trailing single character is never left orphaned on its own line.
-   KNOWN LIMIT, measured not assumed: an earlier version of this comment claimed the target rebalance
-   makes 浙江工商大学杭州商学院 break 6+6 instead of 9+3. It does not, and it cannot. The line count is
-   forced by the width the placer can give the label, which for that name is about five glyphs; at a
-   five-glyph budget the twelve-glyph name has no clean three-way split, because the only word
-   boundaries are after 浙江工商大学 and after 杭州商. The measured result is 浙江工商大 / 学杭州商 /
-   学院, i.e. 大学 split across lines - same for 杭州科技职业技术学院, 电子科技大学中山学院 and
-   上海中侨职业技术大学. tests/visual-layout.mjs publishes the count as wordBreakCount so it stays
-   visible; neither the width nor the font can be raised without breaking the overlap guarantees, so
-   this is carried as a known defect rather than papered over. */
-function wrapText(s,maxWidth,fs,weight){
-  const clean=String(s||'').trim();if(!clean||maxWidth<=0)return[];
-  const total=textWidth(clean,fs,weight);if(total<=maxWidth)return[clean];
-  const n=Math.max(2,Math.ceil(total/maxWidth)),target=Math.min(maxWidth,(total/n)*1.04);
-  const lines=[];let cur='';
-  const flush=()=>{const t=cur.trim();if(t)lines.push(t);cur='';};
-  for(const raw of textTokens(clean)){
-    let tok=raw;
-    while(tok.length>1&&textWidth(tok,fs,weight)>target){
-      const ratio=target/textWidth(tok,fs,weight);
-      let cut=Math.max(1,Math.min(tok.length-1,Math.floor(tok.length*ratio)));
-      while(cut>1&&textWidth(tok.slice(0,cut),fs,weight)>target)cut--;
-      flush();lines.push(tok.slice(0,cut));tok=tok.slice(cut);
+/* Minimum-raggedness line breaking over atomic tokens, so a protected word is never cut and the cut
+   points are token boundaries by construction. For each line count k, smallest first, the cheapest
+   arrangement of exactly k lines is found; the cost is the sum of squared deviation from the balanced
+   target, which is what keeps 内蒙古自治区 at 3+3 rather than 5+1 and makes a single hanging glyph
+   expensive without a special case. The first k that fits is the answer, so line count is minimised
+   first and the balance only decides among layouts that already use that many lines. */
+function breakTokens(tokens,fs,weight,maxWidth,m){
+  const n=tokens.length,W=tokens.map(t=>m(t,fs,weight));
+  const pre=[0];for(let i=0;i<n;i++)pre.push(pre[i]+W[i]);
+  /* The table is rebuilt per k and the target is that k's target for every line in the pass. It has to
+     be: a table carried over from the k-1 pass holds costs accumulated against the *previous* target,
+     and mixing the two makes a 7-glyph first line look cheaper than the 6-glyph one that actually
+     balances - which is how 浙江工商大学杭州商学院 came out as 浙江工商大学杭 / 州商学院. */
+  for(let k=1;k<=n;k++){
+    const target=Math.min(maxWidth,(pre[n]/k)*1.04);
+    const best=[];for(let q=0;q<=k;q++)best.push(new Array(n+1).fill(null));
+    best[0][0]={cost:0,parts:[]};
+    for(let q=1;q<=k;q++)for(let i=0;i<n;i++){
+      const cur=best[q-1][i];if(!cur)continue;
+      for(let j=i+1;j<=n;j++){
+        const w=pre[j]-pre[i];if(w>maxWidth)break;
+        const c=cur.cost+(target-w)*(target-w),ex=best[q][j];
+        if(!ex||c<ex.cost)best[q][j]={cost:c,parts:cur.parts.concat([tokens.slice(i,j).join('')])};
+      }
     }
-    if(cur&&textWidth(cur+tok,fs,weight)>target)flush();
-    cur+=tok;
+    if(best[k][n])return best[k][n].parts;
   }
-  flush();
-  const chars=t=>[...t].length;
-  /* A single hanging character on the last line reads as a mistake, so one glyph is pulled down from
-     the line above. This repair runs before 禁则 on purpose: it can create a new forbidden break of
-     its own (the glyph it moves may be an opening mark), and 禁则 has to have the last word. */
-  if(lines.length>1&&chars(lines[lines.length-1])===1&&chars(lines[lines.length-2])>2){
-    const prev=[...lines[lines.length-2]];
-    lines[lines.length-2]=prev.slice(0,-1).join('');
-    lines[lines.length-1]=prev.slice(-1).join('')+lines[lines.length-1];
+  return[];
+}
+/* Wrap to a measured width. The measure is a parameter so the line breaker can be tested with a
+   synthetic metric - on a machine with no CJK font every real measurement is a tofu box, and a guard
+   that only holds for one machine's fonts is not a guard. */
+function wrapText(s,maxWidth,fs,weight,m=textWidth){
+  const clean=String(s||'').trim();if(!clean||maxWidth<=0)return[];
+  if(m(clean,fs,weight)<=maxWidth)return[clean];
+  let tokens=textTokens(clean),lines=breakTokens(tokens,fs,weight,maxWidth,m);
+  if(!lines.length){
+    /* Unwrappable: one atomic token is wider than the whole budget. Cutting it would split exactly
+       the word this function exists to protect, so the caller is told to drop the name and the unit
+       degrades to its region name - §24's trade, and the better one. A long Latin run is the other
+       case: it has no lemma to protect, so it is broken down to characters and retried, which is
+       what the previous version did for everything. */
+    let wi=0;for(let i=1;i<tokens.length;i++)if(m(tokens[i],fs,weight)>m(tokens[wi],fs,weight))wi=i;
+    if(PROTECTED_WORDS.includes(tokens[wi]))return[];
+    tokens=tokens.slice(0,wi).concat([...tokens[wi]],tokens.slice(wi+1));
+    lines=breakTokens(tokens,fs,weight,maxWidth,m);
+    if(!lines.length)return[];
   }
-  /* 禁则 (kinsoku). Chinese breaks freely between Han characters, which is why the tokenizer emits one
-     token per character - but a line must not *open* with a closing mark and must not *close* with an
-     opening one. The tokenizer already separates the marks, so the repair is to move the offending
-     mark across the break; the previous line grows by one glyph, which is the trade 禁则 asks for.
+  /* 禁则 (kinsoku). Chinese breaks freely between Han characters, but a line must not *open* with a
+     closing mark and must not *close* with an opening one. The repair is to move the offending mark
+     across the break; the previous line grows by one glyph, which is the trade 禁则 asks for. It can
+     only move punctuation, and no protected word contains punctuation, so it cannot re-split a word.
      Without this, 香港中文大学（深圳） could break after （ and open the next line with ）. */
   const OPEN_MARKS=[...'（「『【《〈“‘'],CLOSE_MARKS=[...'，。、；：！？）」』】》〉”’…'];
   for(let i=1;i<lines.length;i++){

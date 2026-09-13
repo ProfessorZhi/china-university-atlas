@@ -13,6 +13,12 @@ import fs from 'node:fs';import path from 'node:path';import os from 'node:os';i
 const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..'),shotDir=path.join(ROOT,'reports','visual');
 const profile=fs.mkdtempSync(path.join(os.tmpdir(),'university-atlas-visual-'));
 const errors=[],network=[],wait=ms=>new Promise(r=>setTimeout(r,ms));let proc,ws;
+/* The test's own list of Chinese name components that must never be broken across a line. It is
+ * deliberately NOT read from PROTECTED_WORDS in the page: a test that imports the implementation's
+ * own list cannot catch the list being shortened, which is exactly how 浙江工商大学杭州商学院 started
+ * being split. Both checks that use it - the rendered one in MEASURE and the synthetic one in
+ * WRAP_GUARD - are driven by this single literal. */
+const BOUND_WORDS="['职业技术大学','职业技术学院','职业技术学校','职业大学','职业学院','技术学院','技术大学','师范大学','理工大学','科技大学','工业大学','农业大学','医科大学','财经大学','交通大学','民族大学','外国语大学','外国语学院','政法大学','传媒大学','艺术学院','体育学院','商学院','管理学院','医学院','师范学院','大学','学院','学校']";
 /* The acceptance matrix.  `id` is a region id from the embedded geometry, `label` names the route. */
 const MATRIX=[
   {w:1440,h:900,mobile:false,id:'100000',label:'全国',slug:'nation'},
@@ -68,6 +74,23 @@ const MEASURE=`(() => {
   const TOL=1.5;
   const clipped=labels.filter(x=>x.l<mapRect.left-TOL||x.t<mapRect.top-TOL||x.r>mapRect.right+TOL||x.b>mapRect.bottom+TOL)
     .map(x=>({text:x.text,out:[Math.round(mapRect.left-x.l),Math.round(mapRect.top-x.t),Math.round(x.r-mapRect.right),Math.round(x.b-mapRect.bottom)].join(',')}));
+  /* The fitted box and the drawn geometry have to be the same box. The national fit has always
+   * excluded everything south of 18N so the frame is not spent on the South China Sea - but the draw
+   * kept painting those rings, so 海南省 ran 164 points past the bottom edge and the frame cut them
+   * (a 南海诸岛 inset carries that information instead). No label check can see this: every label was
+   * inside the frame, the *geometry* was not. Measured on the rendered rects, which ignore the SVG
+   * clip, so anything the frame is cutting shows up here. display:none paths are skipped - they are
+   * not drawn, so nothing can cut them. */
+  const geoOutside=[];let geoPaths=0;
+  const shapesRoot=document.getElementById('shapes');
+  if(shapesRoot)for(const p of shapesRoot.querySelectorAll('path')){
+    if(getComputedStyle(p).display==='none'||!p.getClientRects().length)continue;
+    const r=p.getBoundingClientRect();if(!r.width&&!r.height)continue;geoPaths++;
+    const o={l:mapRect.left-r.left,t:mapRect.top-r.top,r:r.right-mapRect.right,b:r.bottom-mapRect.bottom};
+    if(o.l>TOL||o.t>TOL||o.r>TOL||o.b>TOL)
+      geoOutside.push({id:p.getAttribute('data-id'),name:(p.getAttribute('aria-label')||'').split('，')[0],
+        out:[Math.round(o.l),Math.round(o.t),Math.round(o.r),Math.round(o.b)].join(',')});
+  }
   const collisions=[];for(const x of labels)for(const u of ui){const a=inter(x,u,-2);if(a>0)collisions.push({text:x.text,ui:u.sel,area:Math.round(a)});}
   const tiny=labels.filter(x=>x.fs.some(f=>f<9)).map(x=>x.text);
   /* Campus pins are the only clickable thing drawn under the labels. A label box over a pin does not
@@ -78,10 +101,14 @@ const MEASURE=`(() => {
   const pinsCovered=[];
   for(const p of pinHits){const r=p.getBoundingClientRect(),cx=(r.left+r.right)/2,cy=(r.top+r.bottom)/2;
     for(const x of labels)if(cx>=x.l&&cx<=x.r&&cy>=x.t&&cy<=x.b){pinsCovered.push(Math.round(cx)+','+Math.round(cy));break;}}
-  /* The halo must stay proportional to the glyph.  The old fixed 2.2-2.8px outline was wider than
-   * the stroke of 9px type; this flags any return to a fixed, oversized outline. */
-  const halo=labels.filter(x=>x.stroke.some((s,i)=>s>Math.max(2,x.fs[i]*0.16)))
-    .map(x=>({text:x.text,stroke:x.stroke,fs:x.fs}));
+  /* The halo must stay proportional to the glyph. city-layer.js caps it at min(2, max(1, fs*.11)), so
+   * it can never exceed 2px and never exceeds 11% of the glyph. The check that used to sit here asked
+   * "stroke &gt; max(2, fs*.16)", which no label could ever satisfy - 2 is already the ceiling - so it
+   * published a permanent 0 and would not have noticed the cap being raised to a fat fixed outline.
+   * This compares against the cap itself, which is the thing the comment was promising. */
+  const haloCap=fs=>Math.min(2,Math.max(1,fs*0.11));
+  const halo=labels.filter(x=>x.stroke.some((s,i)=>s>haloCap(x.fs[i])+0.02))
+    .map(x=>({text:x.text,stroke:x.stroke,fs:x.fs,cap:x.fs.map(f=>+haloCap(f).toFixed(2))}));
   /* Geographic honesty: a label may not sit inside a region other than the one it names unless a
    * leader line ties it back to its own anchor.  Measured on the live geometry, in map space.
    *
@@ -141,12 +168,14 @@ const MEASURE=`(() => {
     if(k.w<1||k.op<0.9||(k.minContrast!==null&&k.minContrast<3))
       leaderIllegible.push({text:x.text,w:k.w,op:k.op,minContrast:k.minContrast===null?null:Number(k.minContrast.toFixed(2))});
   }
-  /* A KNOWN, CONFIRMED, UNFIXED defect, published rather than hidden. Chinese has no spaces, so a
-   * greedy fill can break a school name inside a word: 浙江工商大学杭州商学院 renders as
-   * 浙江工商大 / 学杭州商 / 学院. The reason it is carried rather than fixed is on the wrapText
-   * docstring in city-layer.js - at the width these labels can be given there is no clean alternative
-   * split. It is counted here so it cannot quietly grow: this is a floor to watch, not a pass mark. */
-  const BOUND_WORDS=['职业技术大学','职业技术学院','技术学院','职业学院','师范学院','医学院','商学院','管理学院','理工大学','科技大学','师范大学','工业大学','农业大学','医科大学','财经大学','交通大学','民族大学','外国语大学','政法大学','传媒大学','艺术学院','体育学院','大学','学院','学校'];
+  /* The breaker's work read back off the screen: a school name that renders with a component cut
+   * across two lines. Chinese has no spaces, so a greedy fill used to produce 浙江工商大 / 学杭州商 /
+   * 学院; the breaker now keeps these components whole, which is what the wrapGuard below asserts
+   * without consulting a font at all. This count is kept because it is the one number that comes from
+   * real rendered glyphs - but it is font-dependent (CI's Ubuntu image has no CJK face, so it measures
+   * .notdef and its number there can only go down), which is why it is published for corroboration
+   * and the synthetic wrapGuard, not this, is the gate. */
+  const BOUND_WORDS=${BOUND_WORDS};
   const wordBreak=[];
   for(const g of groups){
     const ts=[...g.querySelectorAll('text')];if(ts.length<2)continue;
@@ -196,6 +225,18 @@ const MEASURE=`(() => {
       if(r.width<44||r.height<44)smallTargets.push({t:(el.textContent||'').trim().slice(0,10)||el.className,w:Math.round(r.width),h:Math.round(r.height)});
     }
   }
+  /* src/styles.css carries --canvas as a literal whose comment says it "mirrors MAP_STYLE.canvas in
+   * src/app.js; the two must move together". A comment does not keep two values in step, and the map
+   * card's background is exactly the kind of thing that drifts without anyone noticing. This reads the
+   * authored declaration out of the stylesheet (not the computed value, which an inline override would
+   * mask) and compares it to the constant the map paints with. */
+  let canvasVar=null,canvasDrift=null;
+  if(typeof MAP_STYLE!=='undefined')try{
+    for(const sh of document.styleSheets)for(const rule of sh.cssRules||[]){
+      const v=rule.style&&rule.style.getPropertyValue('--canvas');
+      if(v){canvasVar=v.trim();if(canvasVar!==MAP_STYLE.canvas)canvasDrift={css:canvasVar,js:MAP_STYLE.canvas};}
+    }
+  }catch(e){canvasDrift={css:'unreadable',js:e.message};}
   const mapShare=+(mapRect.height/window.innerHeight*100).toFixed(1);
   const stats=typeof S!=='undefined'&&S.labelStats?S.labelStats:null;
   /* The placer keeps its own account of what it did in S.labelStats, and this test used to publish
@@ -240,18 +281,79 @@ const MEASURE=`(() => {
     leaderMeasured:leaderMeasured,leaderWorstContrast:leaderWorst===null?null:Number(leaderWorst.toFixed(2)),
     wordBreakCount:wordBreak.length,wordBreakSample:wordBreak.slice(0,6),
     clippedCount:clipped.length,clipped:clipped.slice(0,12),
+    geoPaths,geoOutsideCount:geoOutside.length,geoOutside:geoOutside.slice(0,8),
+    canvasVar,canvasDrift,
     uiCollisionCount:collisions.length,collisions:collisions.slice(0,12),
     pinCount:pinHits.length,pinsCoveredCount:pinsCovered.length,pinsCovered:pinsCovered.slice(0,12),
     adjacentPairs:adjPairs,adjacentSameFillCount:adjSame,adjacentSameFillSample:adjSample,insetVsUi,
     paletteLength:typeof palette!=='undefined'?palette.length:null,
     tinyFontLabels:tiny.length,tinyFontSample:tiny.slice(0,8),
-    heavyHaloLabels:halo.length,heavyHaloSample:halo.slice(0,8),
+    haloOverCapCount:halo.length,haloOverCapSample:halo.slice(0,8),
     /* Vertical only, and named for it: this is scrollHeight minus innerHeight. The horizontal axis is
        measured by the clipped-label and UI-collision checks instead, and it is 0 on every route. */
     pageOverflow:Math.max(0,Math.round(document.documentElement.scrollHeight-window.innerHeight)),
     domNodes:document.getElementsByTagName('*').length,
     labelTexts:labels.map(x=>x.text)
   };
+})()`;
+/* Chinese has no spaces, so the line breaker is the only thing between a school name and an arbitrary
+ * character split - and the wordBreakCount check above reads the split off *rendered* glyphs, which
+ * makes it a poor gate. CI's Ubuntu image ships no CJK font, the fallback face is .notdef, and the
+ * same wrapText scores a different (and easily smaller) number there than on Windows. This guard
+ * drives wrapText with a synthetic metric instead - em units, one full-width glyph 1em, one Latin
+ * .5em - so it measures the breaker rather than the font, and asserts the two properties that hold
+ * whatever the font happens to be:
+ *   - the lines rejoin to exactly the input, and no line exceeds its budget;
+ *   - no line boundary falls inside a word Chinese reads as one unit, checked against BOUND_WORDS -
+ *     the test's own list, not the engine's - so shortening the engine's list cannot weaken this.
+ * A name that cannot be wrapped without splitting is required to come back empty, which is the
+ * engine's documented degradation: the caller then prints the administrative name alone. The cases
+ * below pin the exact split for names the engine has to get right; the corpus sweep then runs the
+ * same two invariants over every school and region name the page carries, at all three real budgets. */
+const WRAP_GUARD=`(() => {
+  const out={cases:[],failures:[],corpusChecked:0,corpusFailures:0,corpusSample:[],unavailable:false};
+  if(typeof wrapText!=='function'||typeof textTokens!=='function'){out.unavailable=true;return out;}
+  const WORDS=${BOUND_WORDS};
+  const synth=s=>{let n=0;for(const ch of [...s])n+=CJK_RE.test(ch)?1:0.5;return n;};
+  const splitWord=(a,b)=>{for(const w of WORDS)for(let k=1;k<w.length;k++)if(a.endsWith(w.slice(0,k))&&b.startsWith(w.slice(k)))return w;return null;};
+  const audit=(name,budget,expect)=>{
+    const lines=wrapText(name,budget,12,650,synth),why=[];
+    if(lines.length){
+      if(lines.join('')!==name)why.push('rejoin="'+lines.join('')+'"');
+      for(let i=1;i<lines.length;i++){const w=splitWord(lines[i-1],lines[i]);if(w)why.push('splits '+w+' at line '+i);}
+      if(lines.some(l=>synth(l)>budget+1e-6))why.push('line over budget');
+    } else if(expect&&expect.length)why.push('degraded to nothing');
+    if(expect&&lines.join('/')!==expect)why.push('expected "'+expect+'"');
+    return {name,budget,got:lines.join('/'),why};
+  };
+  /* Budgets are the engine's own: nameMax is 5.4 on the national view and 7 elsewhere, uniMax 7.2
+     national and 9.2 elsewhere. Only the 9.2 and 7.2 rows are school-name budgets; 5.4 is the
+     administrative-name budget, and is exercised here because it is the tightest box the breaker
+     ever sees. */
+  const CASES=[
+    ['浙江工商大学杭州商学院',9.2,'浙江工商大学/杭州商学院'],
+    ['北京师范大学珠海分校',9.2,'北京师范大学/珠海分校'],
+    ['电子科技大学中山学院',9.2,'电子科技大学/中山学院'],
+    ['中国科学技术大学',7.2,'中国科学/技术大学'],
+    ['上海中侨职业技术大学',7.2,'上海中侨/职业技术大学'],
+    ['内蒙古自治区',5.4,'内蒙古/自治区'],
+    ['哈尔滨工业大学',7.2,'哈尔滨工业大学'],
+    ['职业技术学院',5.4,''],
+    ['浙江工商大学杭州商学院',5.4,''],
+    ['北京大学',5.4,'北京大学']
+  ];
+  for(const [n,b,e] of CASES){const r=audit(n,b,e);
+    out.cases.push({name:r.name,budget:r.budget,got:r.got,expect:e||null});
+    if(r.why.length)out.failures.push({name:r.name,budget:r.budget,got:r.got,why:r.why.join('; ')});}
+  const names=[];
+  if(typeof D!=='undefined'&&D)for(const u of D.universities||[])if(u.u)names.push(u.u);
+  if(typeof S!=='undefined'&&S&&S.base)for(const b of S.base)if(b.f&&b.f.name)names.push(b.f.name);
+  const seen=new Set();
+  for(const n of names){if(seen.has(n))continue;seen.add(n);
+    for(const b of [7.2,5.4,9.2]){out.corpusChecked++;
+      const r=audit(n,b,null);
+      if(r.why.length){out.corpusFailures++;if(out.corpusSample.length<10)out.corpusSample.push({name:n,budget:b,got:r.got,why:r.why.join('; ')});}}}
+  return out;
 })()`;
 async function main(){
  const chrome=process.env.CHROME_BIN||execFileSync('which',['google-chrome'],{encoding:'utf8'}).trim();
@@ -267,6 +369,7 @@ async function main(){
  await send('Page.navigate',{url:pathToFileURL(path.join(ROOT,'dist/china-university-atlas.html')).href});
  let ready=false;for(let i=0;i<300;i++){await wait(100);if(await evaluate('!!window.__atlas')){ready=true;break;}}if(!ready)throw Error('Atlas did not boot');
  const bootMs=await evaluate('Math.round(performance.now())');
+ const wrapGuard=await evaluate(WRAP_GUARD);
  let cur=null,shots=0;const records=[];const problems=[];
  if(process.env.SHOTS!=='0')fs.mkdirSync(shotDir,{recursive:true});
  for(const m of MATRIX){
@@ -294,11 +397,12 @@ async function main(){
     wordBreakCount:g.wordBreakCount,wordBreakSample:g.wordBreakSample,
     labelOverlapCount:g.overlapCount,mislabelCount:g.mislabelCount,clippedLabelCount:g.clippedCount,labelUiCollisionCount:g.uiCollisionCount,
     adjacentPairs:g.adjacentPairs,adjacentSameFillCount:g.adjacentSameFillCount,paletteLength:g.paletteLength,insetVsUi:g.insetVsUi,
-    tinyFontLabels:g.tinyFontLabels,heavyHaloLabels:g.heavyHaloLabels,unavoidableSpillCount:g.unavoidableSpillCount,
+    tinyFontLabels:g.tinyFontLabels,haloOverCapCount:g.haloOverCapCount,unavoidableSpillCount:g.unavoidableSpillCount,
+    geoPaths:g.geoPaths,geoOutsideCount:g.geoOutsideCount,geoOutside:g.geoOutside,canvasVar:g.canvasVar,canvasDrift:g.canvasDrift,
     coarse:g.coarse,mapShare:g.mapShare,smallTargetCount:g.smallTargetCount,smallTargets:g.smallTargets,
     domNodes:g.domNodes,mapView:g.view,
     overlaps:g.overlaps,mislabelled:g.mislabelled,clipped:g.clipped,collisions:g.collisions,
-    tinyFontSample:g.tinyFontSample,heavyHaloSample:g.heavyHaloSample,labelTexts:g.labelTexts,httpRequests:[],runtimeErrors:[]};
+    tinyFontSample:g.tinyFontSample,haloOverCapSample:g.haloOverCapSample,labelTexts:g.labelTexts,httpRequests:[],runtimeErrors:[]};
   records.push(rec);
   for(const k of ['labelOverlapCount','clippedLabelCount','labelUiCollisionCount','mislabelCount','tinyFontLabels'])
    if(rec[k])problems.push({route:m.label,viewport:key,kind:k,count:rec[k],
@@ -313,6 +417,10 @@ async function main(){
   if(!m.mobile&&m.w>=1440&&rec.domSilentCount)problems.push({route:m.label,viewport:key,kind:'silentOnAnswer',count:rec.domSilentCount,detail:rec.domSilentNames});
   if(rec.adjacentSameFillCount)problems.push({route:m.label,viewport:key,kind:'adjacentSameFillCount',count:rec.adjacentSameFillCount,detail:rec.adjacentSameFillSample});
   if(rec.insetVsUi)problems.push({route:m.label,viewport:key,kind:'insetVsUi',count:1,detail:[rec.insetVsUi]});
+  /* Not viewport-gated: geometry outside the fitted box is cut by the frame at every width. geoPaths
+     is published next to the count so a 0 cannot be the result of measuring nothing. */
+  if(rec.geoOutsideCount)problems.push({route:m.label,viewport:key,kind:'geoOutsideCount',count:rec.geoOutsideCount,detail:rec.geoOutside});
+  if(rec.haloOverCapCount)problems.push({route:m.label,viewport:key,kind:'haloOverCapCount',count:rec.haloOverCapCount,detail:rec.haloOverCapSample});
   if(rec.pinsCoveredCount)problems.push({route:m.label,viewport:key,kind:'pinsCoveredCount',count:rec.pinsCoveredCount,detail:rec.pinsCovered});
   /* Not viewport-gated. A leader that cannot be followed is a defect at every width, because the
      mislabel exemption above is granted on the assumption that the reader can follow it. */
@@ -323,10 +431,19 @@ async function main(){
    * overflow is only a defect on the desktop layout, where the shell is meant to fit the window. */
   if(!m.mobile&&rec.pageOverflow>0)problems.push({route:m.label,viewport:key,kind:'pageOverflow',count:rec.pageOverflow,detail:[]});
  }
+ /* Route-independent checks, reported once rather than once per screenshot. */
+ if(records[0]&&records[0].canvasDrift)problems.push({route:'(stylesheet)',viewport:'-',kind:'canvasVarDrift',count:1,detail:[records[0].canvasDrift]});
+ if(wrapGuard.unavailable)problems.push({route:'(breaker)',viewport:'-',kind:'wrapGuardUnavailable',count:1,detail:[]});
+ if(wrapGuard.failures.length)problems.push({route:'(breaker)',viewport:'-',kind:'wrapGuardCases',count:wrapGuard.failures.length,detail:wrapGuard.failures});
+ if(wrapGuard.corpusFailures)problems.push({route:'(breaker)',viewport:'-',kind:'wrapGuardCorpus',count:wrapGuard.corpusFailures,detail:wrapGuard.corpusSample});
  const sum=k=>records.reduce((s,r)=>s+r[k],0);
  const result={pass:problems.length===0&&!network.length&&!errors.length,screenshots:shots,routes:records.length,
   labelOverlapCount:sum('labelOverlapCount'),clippedLabelCount:sum('clippedLabelCount'),labelUiCollisionCount:sum('labelUiCollisionCount'),
-  mislabelCount:sum('mislabelCount'),tinyFontLabels:sum('tinyFontLabels'),heavyHaloLabels:sum('heavyHaloLabels'),
+  mislabelCount:sum('mislabelCount'),tinyFontLabels:sum('tinyFontLabels'),haloOverCapCount:sum('haloOverCapCount'),
+  geoOutsideCount:sum('geoOutsideCount'),geoPaths:sum('geoPaths'),
+  canvasVar:records[0]?.canvasVar??null,canvasDrift:records[0]?.canvasDrift??null,
+  wrapGuard:{cases:wrapGuard.cases,failures:wrapGuard.failures,corpusChecked:wrapGuard.corpusChecked,
+    corpusFailures:wrapGuard.corpusFailures,corpusSample:wrapGuard.corpusSample,unavailable:wrapGuard.unavailable},
   labelsPlaced:sum('visibleLabels'),labelsNameOnly:sum('domNameOnlyCount'),
   /* DOM truth, then the placer's own account of the same map. When these two diverge the engine is
      describing a map that is not on the screen. */
