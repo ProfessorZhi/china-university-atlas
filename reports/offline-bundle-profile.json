@@ -1,17 +1,19 @@
 {
   "version": "5.6.0",
+  "maxHtmlBytes": 5000000,
   "schoolDataBytes": 14705604,
   "schoolDataGzipBytes": 1217659,
   "schoolDataEmbeddedBytes": 1623548,
   "geoGzipBytes": 1467501,
   "geoBase64Bytes": 1956668,
-  "javascriptBytes": 93326,
-  "cssBytes": 11229,
-  "templateBytes": 5988,
+  "javascriptBytes": 95874,
+  "cssBytes": 18458,
+  "templateBytes": 6993,
   "schoolEntities": 3196,
   "campusRecords": 6820,
   "rankingFacts": 2502,
-  "htmlBytes": 3691081,
-  "knownPayloadBytes": 3684771,
-  "otherHtmlBytes": 6310
+  "htmlBytes": 3701864,
+  "knownPayloadBytes": 3694548,
+  "otherHtmlBytes": 7316,
+  "withinBudget": true
 }
