@@ -1,8 +1,6 @@
 name: Refresh official 2026 ShanghaiRanking snapshot
-# V5.6 §16. This is the only workflow that touches the network, and it is manual. It runs the
-# data-update flow end to end: official API -> identity validation -> snapshot -> reports ->
-# winner audit -> commit -> push. Plain CI (ci.yml) stays offline and read-only, so exactly one
-# workflow ever writes to a branch and there is no race between two overlapping writers.
+# V5.7 branch temporarily uses this already-registered manual writer to apply the source migration.
+# Plain CI stays offline/read-only; this workflow remains the only branch writer.
 on:
   workflow_dispatch:
 permissions:
@@ -21,20 +19,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Fetch the official 2026 snapshot (the only networked step)
+      - name: Apply V5.7 compressed standalone-payload source migration
+        run: python scripts/apply_v57_compression_patch.py
+      - name: Fetch the official 2026 snapshot
         run: python scripts/fetch_shanghairanking_2026.py
-      - name: Validate identity mapping before anything is written
-        # Every official row must resolve to a registry school, every rename in
-        # data/ranking-name-aliases-2026.json must cite an official document for a surviving
-        # school identifier, and no school may hold two facts on the same list. Nothing is
-        # guessed and nothing is inferred from a fuzzy name match.
+      - name: Validate identity mapping
         run: python scripts/validate_facts.py
-      - name: Regenerate reports and re-audit every winner
+      - name: Regenerate reports, build, profile and re-audit every winner
         run: |
           python scripts/generate_reports.py
           python scripts/build.py
+          python scripts/profile_offline_bundle.py
           node scripts/generate_best_university_coverage.mjs
-      - name: Re-validate and prove the build is deterministic offline
+      - name: Re-validate and prove deterministic offline output
         run: |
           python tests/test_build.py
           python scripts/validate.py
@@ -42,19 +39,20 @@ jobs:
           python scripts/generate_reports.py --check
           python scripts/build.py --check
           node scripts/generate_best_university_coverage.mjs --check
-      - name: Audit and map must agree on every best-university winner
-        run: |
           google-chrome --version
+          node tests/browser.mjs
           node tests/best-university-parity.mjs
-      - name: Commit the snapshot and the derived audits
+      - name: Commit V5.7 compressed payload and derived audits
         run: |
+          git add scripts/build.py scripts/generate_best_university_coverage.mjs scripts/profile_offline_bundle.py
+          git add src/app.js src/index.template.html
           git add data/rankings-shanghairanking-2026.jsonl data/rankings.jsonl
-          git add reports/*.csv reports/*.json
+          git add reports/*.csv reports/*.json dist/china-university-atlas.html dist/SHA256SUMS.txt
           if git diff --cached --quiet; then
-            echo 'Ranking facts already current.'
+            echo 'V5.7 payload already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'data(v5.6): refresh official 2026 ShanghaiRanking snapshot and re-audit winners'
+          git commit -m 'feat(v5.7): compress standalone school payload without data loss'
           git push origin HEAD:${GITHUB_REF_NAME}
