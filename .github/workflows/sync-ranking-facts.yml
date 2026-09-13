@@ -44,7 +44,8 @@ jobs:
         run: |
           git add scripts/build.py scripts/generate_best_university_coverage.mjs scripts/profile_offline_bundle.py
           git add src/app.js src/index.template.html
-          git add reports/*.csv reports/*.json dist/china-university-atlas.html dist/SHA256SUMS.txt
+          git add reports/*.csv reports/coverage.json reports/revision.json reports/best-university-coverage.json reports/offline-bundle-profile.json
+          git add dist/china-university-atlas.html dist/SHA256SUMS.txt
           if git diff --cached --quiet; then
             echo 'V5.7 payload already current.'
             exit 0
