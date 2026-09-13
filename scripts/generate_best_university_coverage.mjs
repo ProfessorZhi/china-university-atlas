@@ -24,13 +24,15 @@ const associations = (D.districtAssociations || []).filter(r => UM.has(r.uid));
 const key = (...xs) => xs.join('|');
 const byProvince = new Map();
 const byCity = new Map();
-const byDistrict = new Map();
 const pushMap = (m, k, v) => { if (!m.has(k)) m.set(k, []); m.get(k).push(v); };
 for (const u of active) {
   pushMap(byProvince, u.p || '', u);
   pushMap(byCity, key(u.p || '', u.c || ''), u);
 }
 
+function unwrap(entry) {
+  return entry && typeof entry.u === 'object' ? entry.u : entry;
+}
 function priority(u) {
   const x = u?.mapPriority;
   if (Array.isArray(x) && x.length) return x;
@@ -64,9 +66,7 @@ function decision(winner, runner, poolMeta = {}) {
   const a = priority(winner), b = priority(runner);
   if ((a[0] ?? 999999) !== (b[0] ?? 999999)) return ['level_order', 'policy'];
   if ((a[1] ?? 999999) !== (b[1] ?? 999999)) return ['prestige_tag', 'strong'];
-  if ((a[2] ?? 999999) !== (b[2] ?? 999999)) {
-    return rankKind(winner) === 'normalized' ? ['normalized_ranking', 'strong'] : ['legacy_ranking', 'legacy'];
-  }
+  if ((a[2] ?? 999999) !== (b[2] ?? 999999)) return rankKind(winner) === 'normalized' ? ['normalized_ranking', 'strong'] : ['legacy_ranking', 'legacy'];
   if ((a[3] ?? 999999) !== (b[3] ?? 999999)) return ['public_before_private', 'weak'];
   return ['name_zh_fallback', 'weak'];
 }
@@ -84,7 +84,7 @@ function describeDecision(kind, w, r) {
 }
 
 function districtCandidates(p, c, d) {
-  const k = key(p, c, d), map = new Map();
+  const map = new Map();
   const ensure = uid => {
     if (!UM.has(uid)) return null;
     if (!map.has(uid)) map.set(uid, { u: UM.get(uid), hasCampus: false, hasAssociation: false, entityExact: false, campusRows: [], associationRows: [] });
@@ -107,10 +107,10 @@ function locationBasis(scope, entry) {
 }
 function locationEvidence(entry) {
   if (!entry?.hasCampus) return entry?.hasAssociation ? 'association' : 'entity';
-  const rows = entry.campusRows || [];
-  if (rows.some(r => r.verified)) return 'verified_campus';
-  if (rows.some(r => ['official', 'government'].includes(r.sourceKind))) return 'official_unverified_campus';
-  if (rows.some(r => r.sourceKind === 'corroborated')) return 'corroborated_campus';
+  const rr = entry.campusRows || [];
+  if (rr.some(r => r.verified)) return 'verified_campus';
+  if (rr.some(r => ['official', 'government'].includes(r.sourceKind))) return 'official_unverified_campus';
+  if (rr.some(r => r.sourceKind === 'corroborated')) return 'corroborated_campus';
   return 'profile_or_other_campus';
 }
 function rankingFields(u) {
@@ -124,10 +124,10 @@ function rankingFields(u) {
 
 const rows = [];
 function addRow(scope, p, c, d, entries, options = {}) {
-  const candidates = entries.map(x => x.u || x).filter(Boolean);
-  const sortedEntries = entries.slice().sort((a, b) => compareU(a.u || a, b.u || b));
+  const candidates = entries.map(unwrap).filter(Boolean);
+  const sortedEntries = entries.slice().sort((a, b) => compareU(unwrap(a), unwrap(b)));
   const winnerEntry = sortedEntries[0] || null, runnerEntry = sortedEntries[1] || null;
-  const winner = winnerEntry?.u || winnerEntry || null, runner = runnerEntry?.u || runnerEntry || null;
+  const winner = unwrap(winnerEntry), runner = unwrap(runnerEntry);
   let kind = '', strength = '', detail = '', status = 'no_candidate';
   if (winner) {
     [kind, strength] = decision(winner, runner, { candidateCount: options.candidateCount ?? entries.length, poolCount: entries.length });
@@ -186,8 +186,7 @@ const csv = '\uFEFF' + [fields.join(','), ...rows.map(r => fields.map(f => csvCe
 
 const byScope = {};
 for (const scope of Object.keys(scopeOrder)) {
-  const rr = rows.filter(r => r.scope_level === scope);
-  const cand = rr.filter(r => r.candidate_count > 0);
+  const rr = rows.filter(r => r.scope_level === scope), cand = rr.filter(r => r.candidate_count > 0);
   byScope[scope] = {
     totalUnits: rr.length, candidateUnits: cand.length, noCandidateUnits: rr.length - cand.length,
     strong: cand.filter(r => r.evidence_strength === 'strong').length,
@@ -202,7 +201,7 @@ for (const r of rows.filter(r => r.needs_ranking_backfill === 'yes')) {
   for (const [uid, name, role] of [[r.winner_uid, r.winner, 'winner'], [r.runner_up_uid, r.runner_up, 'runner_up']]) {
     if (!uid) continue;
     if (!backfillImpact.has(uid)) backfillImpact.set(uid, { uid, university: name, affectedUnits: 0, winnerUnits: 0, runnerUpUnits: 0, scopes: new Set() });
-    const x = backfillImpact.get(uid); x.affectedUnits++; x[role === 'winner' ? 'winnerUnits' : 'runnerUpUnits']++; x.scopes.add(r.scope_level);
+    const x = backfillImpact.get(uid); x.affectedUnits++; x[role === 'winner' ? 'winnerUnits' : 'runner_up' ? 'runnerUpUnits' : 'runnerUpUnits']++; x.scopes.add(r.scope_level);
   }
 }
 const rankingBackfillPriority = [...backfillImpact.values()].map(x => ({ ...x, scopes: [...x.scopes].sort() })).sort((a, b) => b.affectedUnits - a.affectedUnits || collator.compare(a.university, b.university));
