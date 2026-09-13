@@ -1,6 +1,6 @@
 name: Refresh official 2026 ShanghaiRanking snapshot
-# V5.7 branch temporarily uses this already-registered manual writer to apply the source migration.
-# Plain CI stays offline/read-only; this workflow remains the only branch writer.
+# V5.7 integration temporarily reuses this registered manual writer for a source-only migration.
+# It intentionally does NOT refresh ranking facts: the V5.6 official snapshot is frozen and already validated.
 on:
   workflow_dispatch:
 permissions:
@@ -21,9 +21,7 @@ jobs:
           node-version: '22'
       - name: Apply V5.7 compressed standalone-payload source migration
         run: python scripts/apply_v57_compression_patch.py
-      - name: Fetch the official 2026 snapshot
-        run: python scripts/fetch_shanghairanking_2026.py
-      - name: Validate identity mapping
+      - name: Validate frozen ranking facts before rebuild
         run: python scripts/validate_facts.py
       - name: Regenerate reports, build, profile and re-audit every winner
         run: |
@@ -46,7 +44,6 @@ jobs:
         run: |
           git add scripts/build.py scripts/generate_best_university_coverage.mjs scripts/profile_offline_bundle.py
           git add src/app.js src/index.template.html
-          git add data/rankings-shanghairanking-2026.jsonl data/rankings.jsonl
           git add reports/*.csv reports/*.json dist/china-university-atlas.html dist/SHA256SUMS.txt
           if git diff --cached --quiet; then
             echo 'V5.7 payload already current.'
