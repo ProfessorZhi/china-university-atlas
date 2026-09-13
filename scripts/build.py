@@ -174,7 +174,7 @@ def build():
     if app.count(marker)!=1:raise ValueError('Expected one boot marker in src/app.js')
     # winner-core must land before city-layer: the page's best() delegates to WinnerCore.decideWinner
     # so the map and reports/best-university-coverage.csv can never pick different winners.
-    app=app.replace(marker,'\n'+winner_core+'\n'+city+'\n'+status_layer+'\n'+facts_layer+marker);styles=(ROOT/'src/styles.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/city-layer.css').read_text(encoding='utf-8');values={'__STYLES__':styles,'__APP__':app,'__SCHOOL_DATA__':json_text(data),'__GEO_DATA__':base64.b64encode(geometry).decode(),'__MANIFEST__':json_text(manifest)};html=(ROOT/'src/index.template.html').read_text(encoding='utf-8')
+    app=app.replace(marker,'\n'+winner_core+'\n'+city+'\n'+status_layer+'\n'+facts_layer+marker);styles=(ROOT/'src/styles.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/city-layer.css').read_text(encoding='utf-8');values={'__STYLES__':styles,'__APP__':app,'__SCHOOL_DATA__':base64.b64encode(gzip.compress(json_text(data).encode('utf-8'),compresslevel=9,mtime=0)).decode(),'__GEO_DATA__':base64.b64encode(geometry).decode(),'__MANIFEST__':json_text(manifest)};html=(ROOT/'src/index.template.html').read_text(encoding='utf-8')
     for marker,value in values.items():
         if html.count(marker)!=1:raise ValueError('Expected exactly one template marker: '+marker)
         html=html.replace(marker,value)

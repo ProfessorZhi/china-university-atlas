@@ -12,6 +12,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import zlib from 'node:zlib';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
@@ -29,9 +30,11 @@ const collator = new Intl.Collator('zh-CN');
 
 function readSchoolData() {
   const html = fs.readFileSync(DIST, 'utf8');
-  const m = html.match(/<script[^>]+id=["']schoolData["'][^>]*>([\s\S]*?)<\/script>/i);
-  if (!m) throw new Error('schoolData JSON not found in dist/china-university-atlas.html');
-  return JSON.parse(m[1]);
+  const m = html.match(/<script([^>]*\bid=["']schoolData["'][^>]*)>([\s\S]*?)<\/script>/i);
+  if (!m) throw new Error('schoolData payload not found in dist/china-university-atlas.html');
+  const attrs = m[1], raw = m[2].trim();
+  if (/data-encoding=["']gzip["']/i.test(attrs)) return JSON.parse(zlib.gunzipSync(Buffer.from(raw, 'base64')).toString('utf8'));
+  return JSON.parse(raw);
 }
 
 const D = readSchoolData();

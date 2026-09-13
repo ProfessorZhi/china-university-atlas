@@ -7,7 +7,7 @@
 <footer class="statusbar"><span id="cacheStatus">正在打开内嵌全国地图…</span><span>边界依源数据快照展示 · 非测绘 / 导航用图</span></footer>
 <dialog id="dataDialog"><button class="close" data-close="dataDialog">×</button><h2>数据与选取规则</h2><div class="datafacts"><div><b id="factGeo"></b>边界文件</div><div><b id="factCity"></b>普通高校</div><div><b id="factCampus"></b>校区/办学地点</div></div><p><b>全部运行数据已嵌入本文件。</b>无需第一次联网、不用下载底图、不请求服务器。台湾仅省级轮廓；不设普通县区的城市保留真实本级轮廓。</p><p><b>市级规则：</b>主标签只在学校名录中登记于该城市的主体高校之间产生。异地高校不再因为在当地设校区而抢走城市主标签。若存在重要异地办学，悬浮信息分成两层：①有本科招生/本科培养的异地校区或分校；②主要承担硕博培养的研究生院、研究院或研究生培养基地。香港中文大学（深圳）这类在深圳具有独立学校主体条目的高校按本地主体处理，不进入异地括号层。</p><p><b>县区规则：</b>继续按具体校园物理位置展示；只有县区归属线索、没有校园门牌时使用独立的低精度 association 层，不造坐标。地图标签会先根据校名长度自动缩字号，再尝试避让，最后才隐藏；放大后字号和可见标签会恢复。</p><p>“最佳”只是当前资料中的参考候选：本科优先，其次专科；同层次再参考学校标签与排名来源。分类榜不冒充统一全国总排名，各年招生层次、迁址与办学状态仍须核验。成人高校默认关闭。</p><div id="sourceList"></div></dialog>
 <dialog id="coverageDialog"><button class="close" data-close="coverageDialog">×</button><h2>数据覆盖 · 数量与缺口分开看</h2><div id="coverageMeta"></div><table id="coverageTable"></table></dialog><dialog id="schoolDialog"><button class="close" data-close="schoolDialog">×</button><h2 id="schoolTitle"></h2><div id="schoolBody"></div></dialog>
-<script id="schoolData" type="application/json">__SCHOOL_DATA__</script>
+<script id="schoolData" type="application/json" data-encoding="gzip">__SCHOOL_DATA__</script>
 <script id="geoData" type="application/json" data-encoding="gzip">__GEO_DATA__</script>
 <script id="manifest" type="application/json">__MANIFEST__</script>
 <script>__APP__</script></body></html>
