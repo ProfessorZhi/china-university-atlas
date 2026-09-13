@@ -1,0 +1,43 @@
+name: Sync 2026 ShanghaiRanking facts
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Fetch official 2026 ranking snapshot
+        run: python scripts/fetch_shanghairanking_2026.py
+      - name: Rebuild and audit winners
+        run: |
+          python scripts/generate_reports.py
+          python scripts/build.py
+          node scripts/generate_best_university_coverage.mjs
+          python tests/test_build.py
+          python scripts/validate.py
+          python scripts/validate_facts.py
+          python scripts/generate_reports.py --check
+          python scripts/build.py --check
+          node scripts/generate_best_university_coverage.mjs --check
+      - name: Commit normalized facts and derived audits
+        run: |
+          git add data/rankings-shanghairanking-2026.jsonl reports/*.csv reports/*.json
+          if git diff --cached --quiet; then
+            echo 'Ranking facts already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'data(v5.6): sync official 2026 ShanghaiRanking facts [skip derived-sync]'
+          git push origin HEAD:${GITHUB_REF_NAME}
