@@ -37,6 +37,11 @@ body{background:linear-gradient(180deg,#f4f7f8 0,#edf2f4 100%);min-width:300px}
 dialog{overscroll-behavior:contain}.searchresults{overscroll-behavior:contain}.searchitem{min-height:48px}
 button,.item,.schoolcard summary{-webkit-tap-highlight-color:transparent}
 
+.bootsplash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;background:linear-gradient(145deg,#edf5f7f2,#f9fbfcf5);backdrop-filter:blur(12px)}
+.bootsplash-card{display:flex;align-items:center;gap:15px;max-width:430px;padding:20px 22px;border:1px solid #d6e4e9;border-radius:16px;background:#fffffff2;box-shadow:0 18px 60px #17384620;color:#294b59}
+.bootsplash-mark{display:grid;place-items:center;flex:0 0 48px;height:48px;border-radius:13px;background:#2e6175;color:#fff;font-size:25px;font-weight:900;box-shadow:0 7px 20px #28576a25}
+.bootsplash strong{display:block;font-size:17px}.bootsplash p{margin:4px 0 2px;font-size:12px;color:#4e7584}.bootsplash small{font-size:10px;color:#7c959f;line-height:1.5}.bootsplash.error .bootsplash-mark{background:#a65c4c}.bootsplash.error p{color:#944f42}.bootsplash[hidden]{display:none!important}
+
 @media(max-width:1050px) and (min-width:761px){
   .shell{grid-template-columns:minmax(0,1fr) 300px}.controls{padding-inline:10px}.controls label{font-size:10px;padding-inline:5px}
   .mapcontrols{right:10px}.legend{left:10px}
@@ -55,7 +60,7 @@ button,.item,.schoolcard summary{-webkit-tap-highlight-color:transparent}
   .controls label:last-child{padding-right:10px}.controls input[type=range]{width:62px}
   .list{padding:3px 7px 9px}.item{min-height:66px;padding:11px 8px}.footnote{font-size:9px;line-height:1.6;padding:9px 12px}.schoolcard{margin:7px 6px}
   dialog{width:calc(100% - 18px);padding:20px 17px;border-radius:13px;max-height:90dvh}dialog h2{font-size:19px}.datafacts{gap:6px}.datafacts div{padding:9px}.datafacts b{font-size:18px}
-  .statusbar{padding:0 10px 7px;font-size:9px}
+  .statusbar{padding:0 10px 7px;font-size:9px}.bootsplash{padding:14px}.bootsplash-card{width:min(100%,390px);padding:17px}.bootsplash-mark{flex-basis:44px;height:44px}
 }
 
 @media(max-width:430px){
