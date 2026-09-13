@@ -1,6 +1,6 @@
 name: Refresh official 2026 ShanghaiRanking snapshot
-# V5.7 integration temporarily reuses this registered manual writer for source migrations.
-# No ranking refresh occurs here; production ranking-refresh behavior is restored before merge.
+# Temporary V5.7 finalizer on this branch: frozen data, fully offline rebuild, then commit the
+# 5.7.0 deterministic HTML/profile. Production ranking-refresh behavior is restored before merge.
 on:
   workflow_dispatch:
 permissions:
@@ -19,17 +19,15 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Apply V5.7 standalone shell build migration
-        run: python scripts/apply_v57_build_patch.py
       - name: Validate frozen ranking facts before rebuild
         run: python scripts/validate_facts.py
-      - name: Regenerate reports, build, profile and re-audit every winner
+      - name: Regenerate V5.7 reports, standalone HTML and audit
         run: |
           python scripts/generate_reports.py
           python scripts/build.py
           python scripts/profile_offline_bundle.py
           node scripts/generate_best_university_coverage.mjs
-      - name: Re-validate and prove deterministic offline output
+      - name: Full offline verification
         run: |
           python tests/test_build.py
           python scripts/validate.py
@@ -40,17 +38,15 @@ jobs:
           google-chrome --version
           node tests/browser.mjs
           node tests/best-university-parity.mjs
-      - name: Commit V5.7 standalone shell and derived audits
+      - name: Commit V5.7.0 generated artifacts
         run: |
-          git add scripts/build.py scripts/profile_offline_bundle.py
-          git add src/v57-ui.js src/index.template.html src/city-layer.css
           git add reports/*.csv reports/coverage.json reports/revision.json reports/best-university-coverage.json reports/offline-bundle-profile.json
           git add dist/china-university-atlas.html dist/SHA256SUMS.txt
           if git diff --cached --quiet; then
-            echo 'V5.7 shell already current.'
+            echo 'V5.7.0 generated artifacts already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'feat(v5.7): standalone offline shell and startup UX'
+          git commit -m 'build(v5.7): freeze standalone offline 5.7.0 artifacts'
           git push origin HEAD:${GITHUB_REF_NAME}
