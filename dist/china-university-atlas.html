@@ -520,7 +520,23 @@ function drawInset(show){
      still able to raise it. 47+6+13 = 66 on a phone; 47+11+14 = 72 on the desktop. */
   const legendEl=document.querySelector('.legend');
   const legendH=legendEl&&legendEl.getClientRects().length?legendEl.getBoundingClientRect().height:0;
-  const x=small?7:S.w-w-72,y=S.h-h-Math.max(small?66:72,legendH+18);
+  let x=small?7:S.w-w-72,y=S.h-h-Math.max(small?66:72,legendH+18);
+  /* The inset and the zoom controls both live in the bottom-right corner, and nothing above separated
+     them but a literal 72 in the line that placed the inset. Measured on this machine that left a 4px
+     gap - fine, by luck - and CI, which runs Ubuntu with no CJK font and therefore measures every
+     string differently, narrowed it below zero and failed the run. A clearance that only holds for one
+     machine's font metrics is not a clearance, so the controls are measured like the legend is. */
+  const ctrlEl=document.querySelector('.mapcontrols');
+  if(ctrlEl&&ctrlEl.getClientRects().length){
+    const mapBox=$('map').getBoundingClientRect(),ctrlBox=ctrlEl.getBoundingClientRect();
+    const ctrlL=ctrlBox.left-mapBox.left,ctrlT=ctrlBox.top-mapBox.top,GAP=10;
+    const clearOfControls=Math.round(ctrlL-GAP-w-4);
+    /* Preferred: keep the corner, step left far enough to clear the column. */
+    if(clearOfControls>=(small?7:14))x=Math.min(x,clearOfControls);
+    /* If the column is wide enough that stepping left would leave the canvas, go above it instead of
+       through it. Both alternatives are still inside the map head band, so neither can hit the title. */
+    else y=Math.min(y,Math.round(ctrlT-GAP-h-4));
+  }
   const k=Math.min((w-pad*2)/(xhi-xlo),(h-capH-pad*2)/(yhi-ylo));
 
   const ox=x+pad+((w-pad*2)-(xhi-xlo)*k)/2,oy=y+capH+pad+((h-capH-pad*2)-(yhi-ylo)*k)/2;
