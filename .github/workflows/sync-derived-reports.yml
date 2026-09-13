@@ -29,13 +29,22 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Refresh official 2026 ranking snapshot when importer exists
+        run: |
+          if [ -f scripts/fetch_shanghairanking_2026.py ]; then
+            python scripts/fetch_shanghairanking_2026.py
+          fi
       - name: Regenerate repository tables
         run: |
           python scripts/generate_reports.py
           python scripts/build.py
           node scripts/generate_best_university_coverage.mjs
+          python scripts/validate_facts.py
       - name: Commit derived snapshots when changed
         run: |
+          if [ -f data/rankings-shanghairanking-2026.jsonl ]; then
+            git add data/rankings-shanghairanking-2026.jsonl
+          fi
           git add reports/university-master.csv reports/universities.csv reports/rankings.csv reports/admissions.csv reports/finance.csv reports/coverage.json reports/revision.json reports/province-coverage.csv reports/missing-schools.csv reports/city-only-schools.csv reports/campus-record-gaps.csv reports/campus-location-gaps.csv reports/district-evidence-only-schools.csv reports/inactive-schools.csv reports/pending-host-cities.csv reports/district-associations.csv reports/campuses.csv reports/best-university-coverage.csv reports/best-university-coverage.json
           if git diff --cached --quiet; then
             echo 'Derived reports already current.'
@@ -43,5 +52,5 @@ jobs:
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'data: sync derived university tables [skip derived-sync]'
+          git commit -m 'data(v5.6): sync ranking facts and derived winner audit [skip derived-sync]'
           git push origin HEAD:${GITHUB_REF_NAME}
