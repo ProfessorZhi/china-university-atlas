@@ -9,6 +9,7 @@ on:
       - 'scripts/derived_v53.py'
       - 'scripts/facts_v53.py'
       - 'scripts/generate_reports.py'
+      - 'scripts/generate_best_university_coverage.mjs'
       - '.github/workflows/sync-derived-reports.yml'
   workflow_dispatch:
 permissions:
@@ -25,11 +26,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Regenerate repository tables
-        run: python scripts/generate_reports.py
+        run: |
+          python scripts/generate_reports.py
+          python scripts/build.py
+          node scripts/generate_best_university_coverage.mjs
       - name: Commit derived snapshots when changed
         run: |
-          git add reports/university-master.csv reports/universities.csv reports/rankings.csv reports/admissions.csv reports/finance.csv reports/coverage.json reports/revision.json reports/province-coverage.csv reports/missing-schools.csv reports/city-only-schools.csv reports/campus-record-gaps.csv reports/campus-location-gaps.csv reports/district-evidence-only-schools.csv reports/inactive-schools.csv reports/pending-host-cities.csv reports/district-associations.csv reports/campuses.csv
+          git add reports/university-master.csv reports/universities.csv reports/rankings.csv reports/admissions.csv reports/finance.csv reports/coverage.json reports/revision.json reports/province-coverage.csv reports/missing-schools.csv reports/city-only-schools.csv reports/campus-record-gaps.csv reports/campus-location-gaps.csv reports/district-evidence-only-schools.csv reports/inactive-schools.csv reports/pending-host-cities.csv reports/district-associations.csv reports/campuses.csv reports/best-university-coverage.csv reports/best-university-coverage.json
           if git diff --cached --quiet; then
             echo 'Derived reports already current.'
             exit 0
