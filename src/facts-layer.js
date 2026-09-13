@@ -10,10 +10,10 @@ compareU=function(a,b){
   for(let i=0;i<n;i++){const xv=x[i]??999999,yv=y[i]??999999;if(xv!==yv)return xv-yv;}
   return String(a?.u||'').localeCompare(String(b?.u||''),'zh-CN');
 };
-rawRank=function(u){return u?.preferredRank?.label||'暂无可比排名快照：仅作候选展示';};
+rawRank=function(u){return u?.preferredRank?.label||'暂无官方榜单可比名次：仅作候选展示';};
 function rankingFactsHTML(u){
   const latest=u?.latestRankings||{},rows=Object.values(latest).filter(Boolean);
-  if(!rows.length)return '<div class="factnote">暂无标准化外部榜单记录；地图仍可使用教育部层次、政策标签及迁移中的2026软科快照作为排序兜底。</div>';
+  if(!rows.length)return '<div class="factnote">暂无标准化外部榜单记录；候选顺序只按教育部层次、国家政策标签与公办优先规则排列，迁移前的旧总榜快照不作为排名依据。</div>';
   rows.sort((a,b)=>String(a.rankingId).localeCompare(String(b.rankingId)));
   return '<div class="facttable">'+rows.map(r=>{
     const rank=r.rankDisplay||r.rank||'',ref=r.referenceRank?` · 主榜参考 ${esc(r.referenceRank)}`:'',score=Number.isFinite(Number(r.score))?` · 分数 ${esc(r.score)}`:'';
