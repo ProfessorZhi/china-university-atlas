@@ -1,6 +1,6 @@
-name: Refresh official 2026 ShanghaiRanking snapshot
-# Temporary V5.7 finalizer on this branch: frozen data, fully offline rebuild, then commit the
-# 5.7.0 deterministic HTML/profile. Production ranking-refresh behavior is restored before merge.
+name: Refresh official ShanghaiRanking snapshot
+# Production data-refresh workflow. Plain CI stays fully offline and read-only; this manual
+# workflow is the only path that fetches official ranking data and writes refreshed facts/reports.
 on:
   workflow_dispatch:
 permissions:
@@ -19,9 +19,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Validate frozen ranking facts before rebuild
+      - name: Fetch the official ShanghaiRanking snapshot
+        run: python scripts/fetch_shanghairanking_2026.py
+      - name: Validate identity mapping
         run: python scripts/validate_facts.py
-      - name: Regenerate V5.7 reports, standalone HTML and audit
+      - name: Regenerate reports, standalone HTML and Best University audit
         run: |
           python scripts/generate_reports.py
           python scripts/build.py
@@ -38,15 +40,17 @@ jobs:
           google-chrome --version
           node tests/browser.mjs
           node tests/best-university-parity.mjs
-      - name: Commit V5.7.0 generated artifacts
+      - name: Commit refreshed facts and deterministic products
         run: |
-          git add reports/*.csv reports/coverage.json reports/revision.json reports/best-university-coverage.json reports/offline-bundle-profile.json
+          git add data/rankings-shanghairanking-2026.jsonl data/rankings.jsonl
+          git add -u reports
+          git add reports/offline-bundle-profile.json
           git add dist/china-university-atlas.html dist/SHA256SUMS.txt
           if git diff --cached --quiet; then
-            echo 'V5.7.0 generated artifacts already current.'
+            echo 'Ranking facts already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git commit -m 'build(v5.7): freeze standalone offline 5.7.0 artifacts'
+          git commit -m 'data: refresh official ShanghaiRanking snapshot and derived products'
           git push origin HEAD:${GITHUB_REF_NAME}
