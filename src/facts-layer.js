@@ -20,7 +20,14 @@ function rankingFactsHTML(u){
     return `<p><b>${esc(r.agency||'榜单')}</b> · ${esc(r.rankingName||r.rankingId)} ${esc(r.edition||'')}：${esc(rank)}${ref}${score}${r.sourceUrl?` <a href="${esc(r.sourceUrl)}" target="_blank" rel="noopener noreferrer">来源 ↗</a>`:''}</p>`;
   }).join('')+'</div>';
 }
-universityHTML=function(u){
-  const base=universityHTMLFactsBase(u),ad=u?.admissionFactCount||0,fin=u?.financeFactCount||0;
-  return base+`<details class="institutionfacts"><summary>排名 / 招生 / 财务数据</summary><p><b>地图当前排序参考：</b>${esc(rawRank(u))}</p>${rankingFactsHTML(u)}<p>录取事实：${ad} 条${u?.latestAdmissionYear?' · 最新 '+esc(u.latestAdmissionYear):''}；财务事实：${fin} 条${u?.latestFinanceYear?' · 最新 '+esc(u.latestFinanceYear):''}。</p><p class="factnote">录取线按年份、省份、选科/科类、批次和专业保存；预算与决算分口径保存。缺失不按零分处理。</p></details>`;
-};
+/* The facts block is a <details> of its own, so it cannot live inside the sidebar card's <summary>:
+   HTML forbids a nested details there, and a click on it would toggle the whole card instead of
+   opening the block. It is therefore published separately and the card places it beside its summary,
+   while the dialog (which has no summary around it) keeps the combined form. */
+function factsBlockHTML(u){
+  const ad=u?.admissionFactCount||0,fin=u?.financeFactCount||0;
+  return `<details class="institutionfacts"><summary>排名 / 招生 / 财务数据</summary><p><b>地图当前排序参考：</b>${esc(rawRank(u))}</p>${rankingFactsHTML(u)}<p>录取事实：${ad} 条${u?.latestAdmissionYear?' · 最新 '+esc(u.latestAdmissionYear):''}；财务事实：${fin} 条${u?.latestFinanceYear?' · 最新 '+esc(u.latestFinanceYear):''}。</p><p class="factnote">录取线按年份、省份、选科/科类、批次和专业保存；预算与决算分口径保存。缺失不按零分处理。</p></details>`;
+}
+/* The school header without the facts block - what the sidebar card may legally put in a <summary>. */
+function schoolHeadHTML(u){return universityHTMLFactsBase(u);}
+universityHTML=function(u){return schoolHeadHTML(u)+factsBlockHTML(u);};

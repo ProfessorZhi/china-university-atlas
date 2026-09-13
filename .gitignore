@@ -20,3 +20,7 @@ raw-private/
 release-assets/
 reports/offline-browser-test.json
 reports/best-university-parity.json
+# V5.8: screenshots and the geometry report are CI evidence, not source. The workflow uploads them
+# as artifacts; nothing here is ever committed.
+reports/visual/
+reports/visual-layout.json

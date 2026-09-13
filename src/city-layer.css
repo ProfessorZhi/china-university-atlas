@@ -1,73 +1,43 @@
-.citymain{font-size:14px;font-weight:800;color:#ffe0ae;margin:3px 0 1px}.tipmeta{opacity:.72;font-size:10px}.citytiers{margin-top:8px;padding-top:7px;border-top:1px solid #ffffff30;display:grid;gap:7px}.citytiers div{line-height:1.55}.citytiers em{display:block;color:#a9dbe8;font-size:10px;font-style:normal;font-weight:750;letter-spacing:.4px}.citytiers span{display:block;color:#fff;font-size:11px}.tooltip{max-width:min(430px,82vw)}.statusnote{margin-top:8px;padding:8px 10px;border-left:3px solid #c98a55;background:#fff6ea;color:#76502f;font-size:10px;line-height:1.65;border-radius:4px}.statusnote a{color:#8a5b32}@media(max-width:760px){.tooltip{max-width:88vw;font-size:11px}.citymain{font-size:13px}.citytiers span{font-size:10px}}
-/* V5.6: a unit whose leading candidates are not on a comparable scale has no winner, and the
- * sidebar says so instead of printing a school name. A winner that was picked by project policy
- * (公办优先 / 本科>专科 / 校区优先 / 唯一候选) is labelled as policy rather than as evidence. */
-.chip-policy{background:#fdf0dd;color:#8f6127}
-.chip-unresolved{background:#edf1f3;color:#77878f;border:1px dashed #c2ced6}
-.item .runi.unresolveduni{color:#77878f;font-size:12px;font-weight:400}
+/* City / district layer.  V5.8: the chrome rules that used to be duplicated here as an
+ * override stack now live in src/styles.css on the shared tokens, so this file only owns
+ * what is genuinely specific to a city or district view: the hover tooltip tiers, the
+ * winner-state chips and the boot splash. */
 
-/* V5.7 frontend polish: the atlas stays a single file, but should feel like a focused app rather
- * than a debug dashboard.  These are override-only rules so the data/decision code is untouched. */
-body{background:linear-gradient(180deg,#f4f7f8 0,#edf2f4 100%);min-width:300px}
-.header{box-shadow:0 1px 0 #fff inset,0 5px 18px #1738460a;position:relative;z-index:20}
-.brand{min-width:0}.brand>div:last-child{min-width:0}.header h1{font-weight:820}.header small{line-height:1.45}
-.modebadge{border:1px solid #b9ddcf;background:#effaf5!important;color:#24735e!important;font-weight:700;box-shadow:0 2px 10px #1738460a}
-.mapcard,.side{box-shadow:0 8px 28px #1738460c}
-.mapcard{isolation:isolate}.maphead{inset:16px 18px auto}.maptitles h2{line-height:1.18;text-wrap:balance}.maptitles p{line-height:1.55}
-.mapcontrols{padding:6px;background:#ffffffd9;border:1px solid #d3e1e6;border-radius:12px;box-shadow:0 8px 24px #1738461c;backdrop-filter:blur(10px)}
-.mapcontrols button{width:42px;height:40px;border-radius:9px;box-shadow:none;background:#fff;border-color:#d7e3e8;transition:transform .12s ease,background .12s ease,border-color .12s ease}
-.mapcontrols button:hover{background:#edf6f8;border-color:#b9d1db;transform:translateY(-1px)}
-.mapcontrols button:active{transform:translateY(0)}
-.mapcontrols button:disabled{transform:none;background:#f3f6f7}
-.mapcontrols #zoomIn,.mapcontrols #zoomOut{font-weight:800;font-size:21px}
-.mapcontrols #backBtn{background:#f7fafb}
-.mapcontrols #fullBtn{background:#f7fafb}
-.legend{padding:5px 8px;border-radius:7px;background:#e9f3f6b8;backdrop-filter:blur(4px);width:max-content;max-width:calc(100% - 32px);right:auto}
-.sidehead{padding:18px 18px 13px;background:linear-gradient(180deg,#fff,#fbfdfe)}
-.sidehead h3{font-weight:820;line-height:1.25}.sidecount{display:inline-flex;align-items:center;min-height:23px;padding:4px 8px;border-radius:999px;background:#eef5f7;color:#587786;font-weight:650}
-.controls{padding:10px 14px;gap:7px 8px;background:#f7fafb}
-.controls label{min-height:30px;padding:4px 7px;border:1px solid #e1e9ed;border-radius:7px;background:#fff;white-space:nowrap;transition:border-color .12s,background .12s}
-.controls label:hover{border-color:#c6d8df;background:#fbfeff}.controls input[type=checkbox]{width:15px;height:15px}
-.list{padding:4px 9px 12px;scrollbar-width:thin;scrollbar-color:#b9cad2 transparent}
-.item{min-height:64px;padding:12px 10px;border-radius:9px;border-bottom:1px solid #edf1f3;transition:background .12s,box-shadow .12s,transform .12s}
-.item:hover{background:#f4fafc;box-shadow:0 2px 10px #1738460a;transform:translateY(-1px)}.item:focus-visible{outline:3px solid #8ab9d0;outline-offset:-2px}
-.item .runi{line-height:1.35}.item .arrow{font-size:18px;transition:transform .12s}.item:hover .arrow{transform:translateX(2px)}
-.schoolcard{overflow:hidden}.schoolcard summary{min-height:48px}.schoolcard[open]{box-shadow:0 4px 14px #1738460c}
-.footnote{padding:11px 15px}.statusbar{padding-top:1px}
-dialog{overscroll-behavior:contain}.searchresults{overscroll-behavior:contain}.searchitem{min-height:48px}
-button,.item,.schoolcard summary{-webkit-tap-highlight-color:transparent}
+/* --- hover tooltip: region, winner, then the two affiliate tiers -------- */
+.citymain{font-size:var(--fs-5);font-weight:var(--fw-semi);color:#fff;margin:4px 0 2px;line-height:1.35}
+.tipmeta{opacity:.78;font-size:var(--fs-2)}
+.citytiers{margin-top:9px;padding-top:8px;border-top:1px solid #ffffff2e;display:grid;gap:7px}
+.citytiers div{line-height:1.55}
+.citytiers em{display:block;color:#b9dbe6;font-size:var(--fs-1);font-style:normal;font-weight:var(--fw-semi);letter-spacing:.3px}
+.citytiers span{display:block;color:#fff;font-size:var(--fs-2)}
+.statusnote{margin-top:8px;padding:8px 10px;border-left:2px solid #d8c39c;background:#fdf9f2;color:var(--caution);font-size:var(--fs-1);line-height:1.7;border-radius:var(--r-xs)}
+.statusnote a{color:var(--caution)}
 
-.bootsplash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:24px;background:linear-gradient(145deg,#edf5f7f2,#f9fbfcf5);backdrop-filter:blur(12px)}
-.bootsplash-card{display:flex;align-items:center;gap:15px;max-width:430px;padding:20px 22px;border:1px solid #d6e4e9;border-radius:16px;background:#fffffff2;box-shadow:0 18px 60px #17384620;color:#294b59}
-.bootsplash-mark{display:grid;place-items:center;flex:0 0 48px;height:48px;border-radius:13px;background:#2e6175;color:#fff;font-size:25px;font-weight:900;box-shadow:0 7px 20px #28576a25}
-.bootsplash strong{display:block;font-size:17px}.bootsplash p{margin:4px 0 2px;font-size:12px;color:#4e7584}.bootsplash small{font-size:10px;color:#7c959f;line-height:1.5}.bootsplash.error .bootsplash-mark{background:#a65c4c}.bootsplash.error p{color:#944f42}.bootsplash[hidden]{display:none!important}
+/* --- winner state, in two restrained tones ------------------------------ */
+/* A winner picked by project policy says so, so the map never presents
+   public-before-private / level order / campus precedence as ranking evidence. */
+.chip-policy{background:var(--caution-soft);color:var(--caution)}
+/* An unresolved unit has no winner.  It stays legible - it is a real answer, not an
+   empty state - so it uses the secondary ink rather than a grey that fades away. */
+.chip-unresolved{background:var(--surface-2);color:var(--ink-2);border:1px dashed var(--border-strong)}
+.item .runi.unresolveduni{color:var(--ink-2);font-size:var(--fs-2);font-weight:var(--fw-medium)}
 
-@media(max-width:1050px) and (min-width:761px){
-  .shell{grid-template-columns:minmax(0,1fr) 300px}.controls{padding-inline:10px}.controls label{font-size:10px;padding-inline:5px}
-  .mapcontrols{right:10px}.legend{left:10px}
-}
+/* --- boot splash ------------------------------------------------------- */
+.bootsplash{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;padding:var(--sp-6);background:#f5f8f7f2;backdrop-filter:blur(10px)}
+.bootsplash-card{display:flex;align-items:center;gap:var(--sp-4);max-width:430px;padding:var(--sp-5);border:1px solid var(--border);border-radius:var(--r-xl);background:#fffffff2;box-shadow:0 18px 60px #1738461f;color:var(--ink)}
+.bootsplash-mark{display:grid;place-items:center;flex:0 0 46px;height:46px;border-radius:var(--r-md);background:var(--accent-2);color:#fff;font-size:23px;font-weight:var(--fw-bold)}
+.bootsplash strong{display:block;font-size:var(--fs-5);font-weight:var(--fw-semi)}
+.bootsplash p{margin:4px 0 2px;font-size:var(--fs-3);color:var(--ink-2)}
+.bootsplash small{font-size:var(--fs-1);color:var(--muted);line-height:1.5}
+.bootsplash.error .bootsplash-mark{background:var(--caution)}
+.bootsplash.error p{color:var(--caution)}
+.bootsplash[hidden]{display:none!important}
 
 @media(max-width:760px){
-  body{background:#edf3f5}.header{padding:11px 12px 10px}.brand{gap:8px}.eyebrow{font-size:9px;letter-spacing:1.45px;margin-bottom:2px}.header h1{font-size:20px}.header small{margin-top:3px;white-space:normal}
-  .actions{margin-top:9px;gap:6px}.actions>button{min-height:40px;padding:8px 10px}.searchwrap input{min-height:42px;border-radius:10px;background:#f4f7f8}
-  .shell{margin:6px;gap:7px}.mapcard{height:62dvh;min-height:390px;border-radius:11px}.side{height:min(46dvh,520px);min-height:330px;border-radius:11px}
-  .maphead{inset:10px 10px auto;gap:7px}.maptitles h2{font-size:18px;margin-top:7px;max-width:72vw}.maptitles p{font-size:10px;max-width:68vw;margin-top:4px}.modebadge{font-size:8px;padding:5px 6px;max-width:29vw;overflow:hidden;text-overflow:ellipsis}
-  .mapcontrols{left:auto;right:8px;bottom:36px;padding:4px;gap:4px;max-width:calc(100% - 16px);overflow-x:auto;justify-content:flex-end;border-radius:10px}
-  .mapcontrols button{flex:0 0 42px;width:42px;height:42px;font-size:17px}.mapcontrols .tiny{font-size:10px}
-  .legend{left:8px;bottom:7px;padding:3px 6px;font-size:8px;max-width:calc(100% - 16px)}.legend #zoomInfo{display:none}
-  .sidehead{padding:13px 14px 10px}.sidehead h3{font-size:17px;margin-bottom:4px}.sidehead p{line-height:1.5}.sidecount{margin-top:7px}
-  .controls{padding:8px 9px;gap:5px;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}.controls::-webkit-scrollbar{display:none}.controls label{flex:0 0 auto;min-height:36px;padding:6px 8px;font-size:10px}
-  .controls label:last-child{padding-right:10px}.controls input[type=range]{width:62px}
-  .list{padding:3px 7px 9px}.item{min-height:66px;padding:11px 8px}.footnote{font-size:9px;line-height:1.6;padding:9px 12px}.schoolcard{margin:7px 6px}
-  dialog{width:calc(100% - 18px);padding:20px 17px;border-radius:13px;max-height:90dvh}dialog h2{font-size:19px}.datafacts{gap:6px}.datafacts div{padding:9px}.datafacts b{font-size:18px}
-  .statusbar{padding:0 10px 7px;font-size:9px}.bootsplash{padding:14px}.bootsplash-card{width:min(100%,390px);padding:17px}.bootsplash-mark{flex-basis:44px;height:44px}
+  .tooltip{max-width:88vw;font-size:var(--fs-2)}
+  .citymain{font-size:var(--fs-4)}
+  .citytiers span{font-size:var(--fs-1)}
+  .bootsplash{padding:14px}
+  .bootsplash-card{width:min(100%,390px);padding:var(--sp-4)}
+  .bootsplash-mark{flex-basis:42px;height:42px}
 }
-
-@media(max-width:430px){
-  .header small{max-width:94vw}.actions>button{font-size:10px;padding-inline:8px}.mapcard{height:60dvh;min-height:360px}.side{height:44dvh;min-height:310px}
-  .maptitles h2{font-size:16px;max-width:68vw}.maptitles p{display:none}.modebadge{max-width:31vw}.legend .swatches{max-width:72vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .mapcontrols #svgBtn,.mapcontrols #pngBtn{display:none}.mapcontrols{bottom:31px}.mapcontrols button{flex-basis:44px;width:44px;height:44px}
-  .sidehead p{font-size:10px}.item .ordinal{display:none}.item{gap:6px}.item .runi{font-size:13px}.item .rmeta{font-size:9px}
-}
-
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.item:hover,.mapcontrols button:hover{transform:none}}

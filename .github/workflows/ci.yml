@@ -42,6 +42,21 @@ jobs:
         run: |
           google-chrome --version
           node tests/best-university-parity.mjs
+      - name: Visual layout geometry and screenshot matrix
+        run: |
+          google-chrome --version
+          node tests/visual-layout.mjs
+      # Screenshots are evidence, not source: they are an artifact of the run and never committed.
+      - name: Upload visual screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: china-university-atlas-visual-${{ github.sha }}
+          if-no-files-found: warn
+          path: |
+            reports/visual-layout.json
+            reports/visual/v5.8-visual-audit.json
+            reports/visual/*.png
       - name: Build complete ZIP
         run: python scripts/build.py --zip
       - name: Upload preview artifact
