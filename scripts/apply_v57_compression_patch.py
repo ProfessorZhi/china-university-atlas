@@ -36,7 +36,7 @@ def main():
         text=text.replace("import path from 'node:path';", "import path from 'node:path';\nimport zlib from 'node:zlib';",1)
     pattern=re.compile(r"function readSchoolData\(\) \{.*?\n\}\n",re.S)
     repl="""function readSchoolData() {\n  const html = fs.readFileSync(DIST, 'utf8');\n  const m = html.match(/<script([^>]*\\bid=[\"']schoolData[\"'][^>]*)>([\\s\\S]*?)<\\/script>/i);\n  if (!m) throw new Error('schoolData payload not found in dist/china-university-atlas.html');\n  const attrs = m[1], raw = m[2].trim();\n  if (/data-encoding=[\"']gzip[\"']/i.test(attrs)) return JSON.parse(zlib.gunzipSync(Buffer.from(raw, 'base64')).toString('utf8'));\n  return JSON.parse(raw);\n}\n"""
-    text2,n=pattern.subn(repl,text,count=1)
+    text2,n=pattern.subn(lambda _m: repl,text,count=1)
     if n!=1: raise SystemExit('could not replace readSchoolData()')
     p.write_text(text2,encoding='utf-8');print('patched',p.relative_to(ROOT))
 
