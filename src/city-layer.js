@@ -55,9 +55,21 @@ function winnerFields(d,rs,extra){
 }
 // Chips say *why* a school is the current winner. A policy basis is labelled as policy so
 // the map never presents 公办优先 / 本科>专科 as if ranking evidence had decided it.
+/* Four different situations all end in the same sentence, and they are not the same statement: a
+   unit whose leading candidates carry no official position at all is a different case from one whose
+   candidates sit on two separately published scales. The school line under the name already prints
+   暂无可比最佳高校, so the chip next to the name carries the *class* of the block instead of echoing
+   the verdict. The chip's own text is free to change; its class is not - the parity gate reads
+   chip-unresolved as the machine-readable mark that the map withheld a winner. */
+const UNRESOLVED_CHIP={
+  unresolved_incomparable_no_ranking:'无榜单名次',
+  unresolved_incomparable_cross_system:'榜单不可比',
+  unresolved_incomparable_band:'区间内并列',
+  unresolved_incomparable_equal_rank:'名次相同'
+};
 function bestChip(b){
-  if(!b||!b.u)return b&&b.status==='unresolved_incomparable'?'<span class="chip chip-unresolved">暂无可比最佳高校</span>':'';
-  if(b.basis==='public_before_private'||b.basis==='level_order'||b.basis==='campus_precedence'||b.basis==='single_ranked_candidate')return '<span class="chip chip-policy">按项目政策</span>';
+  if(!b||!b.u)return b&&b.status==='unresolved_incomparable'?`<span class="chip chip-unresolved">${esc(UNRESOLVED_CHIP[b.unresolvedReason]||'暂无可比')}</span>`:'';
+  if(b.basis==='public_before_private'||b.basis==='level_order'||b.basis==='campus_precedence'||b.basis==='single_ranked_candidate')return '<span class="chip chip-policy">按项目规则</span>';
   if(b.basis==='single_candidate')return '<span class="chip">唯一候选</span>';
   return '';
 }
@@ -80,10 +92,40 @@ function best(f,node=current()){
   if(isP&&D.provinceBest[f.name])return{u:D.provinceBest[f.name],rawU:D.provinceBest[f.name],meta:'沿用参考标签；港澳台名录尚未系统纳入',count:0,sample:false,status:'reference_only'};
   return{u:'',rawU:'',meta:l.d?'尚无校区或县区归属证据；不代表当地没有高校':'当前口径未匹配本地主体高校；不代表当地没有高校',count:0,sample:false,status:'no_candidate'};
 }
+/* The row already prints 暂无可比最佳高校 twice - once in the chip, once as the school line - so
+   this line carries only what those two cannot: how many candidates were in play and, from
+   winner-core's own wording, why none of them could be separated. Reading d.candidates/d.detail here
+   was reading fields decideWinner() never returns (it publishes topEntries/decisionDetail), so the
+   reason never reached the UI and the line repeated the chip instead. */
+/* winner-core names a comparison scale by the identifier its source publishes, and its own
+   groupLabel() only rewrites the two source prefixes - the tail survives into the sidebar, so a row
+   could read 软科 bcvcr-public-vocational-undergraduate. The table and the gloss live here, in the
+   display layer, because that identifier is the audit's stable key: renaming it upstream would break
+   the report-to-map join the parity gate checks, and the map is only ever a reader of it.
+   The gloss is deliberately structural (公办·职业本科) rather than a claimed 榜名, so it restates what
+   the identifier is made of instead of asserting a published title this project cannot cite. */
+const GROUP_WORDS={bcur:'普通本科主榜',bcvcr:'高职院校榜',public:'公办',private:'民办',
+  vocational:'职业',undergraduate:'本科',total:'总榜',art:'艺术',list:'榜'};
+function humanGroup(s){
+  return String(s??'').replace(/[A-Za-z][A-Za-z-]*[A-Za-z]/g,token=>{
+    const parts=token.split('-').filter(Boolean);
+    /* bcur / bcvcr name a whole scale on their own, so they are read as one word rather than joined
+       to the qualifiers that follow. */
+    if(parts.length===1)return GROUP_WORDS[parts[0].toLowerCase()]||parts[0];
+    if(parts[0].toLowerCase()==='bcvcr')parts.shift();
+    else if(parts[0].toLowerCase()==='bcur')parts[0]=GROUP_WORDS.bcur;
+    /* 榜 / 总榜 read as suffixes, so they attach to the word they qualify instead of standing alone
+       as 艺术·榜. */
+    const out=[];
+    for(const w of parts){const t=GROUP_WORDS[w.toLowerCase()]||w;
+      if((t==='榜'||t==='总榜')&&out.length)out[out.length-1]+=t;else out.push(t);}
+    return out.join('·');
+  });
+}
 function unresolvedMeta(d,rs,fallback){
   if(!rs||!rs.length)return fallback||'暂无可比最佳高校';
-  const names=(d.candidates||[]).slice(0,3).join('、'),more=(d.candidates||[]).length>3?' 等':'';
-  return ['暂无可比最佳高校',`候选 ${rs.length} 所`,names?('并列候选：'+names+more):'',d.detail].filter(Boolean).join(' · ');
+  const detail=humanGroup((d&&d.decisionDetail)||'');
+  return [`候选 ${rs.length} 所`,detail].filter(Boolean).join(' · ');
 }
 function affiliateLines(a){const lines=[];if(a?.undergraduate?.length)lines.push({label:'本科校区 / 分校',items:a.undergraduate});if(a?.graduate?.length)lines.push({label:'研究生院 / 研究院',items:a.graduate});return lines;}
 function showTip(e,f){
@@ -92,16 +134,315 @@ function showTip(e,f){
   if(tiers.length)html+='<div class="citytiers">'+tiers.map(tier=>`<div><em>${esc(tier.label)}</em><span>（${tier.items.map(x=>esc(x.name)).join('、')}）</span></div>`).join('')+'</div>';
   t.innerHTML=html;t.style.display='block';const r=$('map').getBoundingClientRect();t.style.left=Math.max(5,Math.min(r.width-t.offsetWidth-8,e.clientX-r.left+15))+'px';t.style.top=Math.max(7,Math.min(r.height-t.offsetHeight-8,e.clientY-r.top+15))+'px';highlight(f.id);
 }
-function drawLabels(){
-  const g=$('labelLayer');g.innerHTML='';const nation=current().kind==='country',baseFont=Math.max(8,Math.min(24,(nation?11.3:12.7)*Number($('fontSize').value)/100*Math.pow(S.z,.38))),avoid=$('avoid').checked,accepted=[];
-  if(nation&&S.insetBox)accepted.push(S.insetBox);const controlRect=document.querySelector('.mapcontrols').getBoundingClientRect(),mapRect=$('map').getBoundingClientRect();accepted.push({l:controlRect.left-mapRect.left-3,r:controlRect.right-mapRect.left+3,t:controlRect.top-mapRect.top-3,b:controlRect.bottom-mapRect.top+3});
-  const offsets=[[0,0],[0,-14],[0,14],[-21,0],[21,0],[0,-28],[0,28],[-38,-19],[38,-19],[-38,19],[38,19],[-58,0],[58,0]];
-  const items=S.base.filter(b=>b.f.name).map(b=>({...b,best:best(b.f)})).sort((a,b)=>Number(!!b.best.u)-Number(!!a.best.u)||b.area-a.area);let shown=0,nameOnly=0;S.labels=[];
-  function place(x,y,lines,font,limitOffsets=offsets){const width=Math.max(...lines.map(l=>textWidth(l.t,l.fs,l.w)))+7,height=lines.length*font*1.2+4;for(const[dx,dy]of limitOffsets){const box={l:x+dx-width/2,r:x+dx+width/2,t:y+dy-height/2,b:y+dy+height/2};if(box.l<2||box.r>S.w-2||box.t<108||box.b>S.h-34)continue;if(!avoid||!accepted.some(a=>!(box.r+1<a.l||box.l-1>a.r||box.b+1<a.t||box.t-1>a.b)))return{...box,dx,dy,font,lines,height};}return null;}
-  for(const b of items){const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;if(x<-100||y<-100||x>S.w+100||y>S.h+100)continue;const displayU=cityDisplayUniversity(b.f,b.best),longest=Math.max(b.f.name.length,displayU.length),start=longest>=13?.68:longest>=10?.76:longest>=8?.87:1,factors=[start,start*.9,start*.8,start*.7,start*.6,.52];let selected=null;
-    for(const factor of factors){const font=Math.max(6.6,baseFont*factor),names=wrap(nation?short(b.f.name):b.f.name,11),us=$('showUni').checked&&displayU?wrap(displayU,nation?8:10):[],lines=names.map(t=>({t,fs:font*.91,c:'#274b5a',w:650})).concat(us.map(t=>({t,fs:font,c:'#c62d28',w:800})));selected=place(x,y,lines,font,S.z>1.6?offsets.slice(0,7):offsets);if(selected)break;}
-    if(!selected){const font=Math.max(6.4,baseFont*.5),names=wrap(nation?short(b.f.name):b.f.name,10),lines=names.map(t=>({t,fs:font,c:'#315867',w:700}));selected=place(x,y,lines,font,offsets);if(selected){selected.nameOnly=true;nameOnly++;}}
-    if(!selected)continue;accepted.push(selected);S.labels.push(selected);shown++;if(Math.abs(selected.dx)+Math.abs(selected.dy)>20){g.append(E('line',{x1:x,y1:y,x2:x+selected.dx,y2:y+selected.dy,stroke:'#648896','stroke-width':.6,opacity:.7}));g.append(E('circle',{cx:x,cy:y,r:1.6,fill:'#648896'}));}const group=E('g',{'data-label-id':b.f.id,'data-name-only':selected.nameOnly?'1':'0'});selected.lines.forEach((l,i)=>group.append(E('text',{x:x+selected.dx,y:y+selected.dy-selected.height/2+selected.font*1.02+i*selected.font*1.2,'text-anchor':'middle','font-size':l.fs.toFixed(2),'font-weight':l.w,'font-family':'"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif',fill:l.c,stroke:'#ffffff','stroke-width':Math.max(1.8,selected.font*.22),'stroke-linejoin':'round','paint-order':'stroke fill'},l.t)));g.append(group);
+/* ===========================================================================
+   V5.8 label engine.
+   Two typographic layers, one label group per region:
+     L1 行政区名   - smaller, medium weight, desaturated blue-grey, no emphasis
+     L2 最佳高校名 - full size, bold, the single accent colour
+   The group is placed as one unit, so a region can never be separated from its
+   university name, and no two groups may touch.  Placement order is explicit:
+
+     level   province 0  >  city 1  >  district 2  >  unnamed 9
+     then    a unit with a winner outranks one without
+     then    larger area first
+
+   A label that will not fit is degraded, never shrunk into illegibility:
+     full group  ->  region name only  ->  hidden.
+   =========================================================================== */
+const LABEL_TYPO={region:{color:MAP_STYLE.label.region,weight:500,ratio:.86},uni:{color:MAP_STYLE.label.uni,weight:700,ratio:1}};
+/* LABEL_GAP is a visual clearance, and it is deliberately not tuned down to 3 to buy room: the
+   placement is a greedy packer, so shrinking the gap only reshuffles which unit wins the last free
+   rectangle - 3px cost 山东 its 山东大学 at 1440 without placing a single extra label on a phone. */
+const LABEL_LH=1.22,LABEL_PAD=4,LABEL_PADY=2,LABEL_EDGE=6,LABEL_GAP=4,MIN_LABEL_FONT=9.6;
+const LEVEL_RANK={province:0,city:1,district:2};
+const CJK_RE=/[⺀-鿿　-〿＀-￯㐀-䶿]/;
+/* Break opportunities: one per CJK character, otherwise after a space, middle dot or hyphen.
+   Latin words stay whole so a name never splits mid-word. */
+function textTokens(s){
+  const out=[];let buf='';
+  for(const ch of s){
+    if(CJK_RE.test(ch)){if(buf){out.push(buf);buf='';}out.push(ch);}
+    else if(ch===' '||ch==='　'||ch==='·'||ch==='-'||ch==='/'){buf+=ch;out.push(buf);buf='';}
+    else buf+=ch;
   }
-  if(current().kind==='district')drawCampusPins(g);S.labelCount=shown;S.nameOnlyLabelCount=nameOnly;
+  if(buf)out.push(buf);
+  return out;
 }
+/* Wrap to a measured width. Line count is minimised first, then the target width is rebalanced and a
+   trailing single character is never left orphaned on its own line.
+   KNOWN LIMIT, measured not assumed: an earlier version of this comment claimed the target rebalance
+   makes 浙江工商大学杭州商学院 break 6+6 instead of 9+3. It does not, and it cannot. The line count is
+   forced by the width the placer can give the label, which for that name is about five glyphs; at a
+   five-glyph budget the twelve-glyph name has no clean three-way split, because the only word
+   boundaries are after 浙江工商大学 and after 杭州商. The measured result is 浙江工商大 / 学杭州商 /
+   学院, i.e. 大学 split across lines - same for 杭州科技职业技术学院, 电子科技大学中山学院 and
+   上海中侨职业技术大学. tests/visual-layout.mjs publishes the count as wordBreakCount so it stays
+   visible; neither the width nor the font can be raised without breaking the overlap guarantees, so
+   this is carried as a known defect rather than papered over. */
+function wrapText(s,maxWidth,fs,weight){
+  const clean=String(s||'').trim();if(!clean||maxWidth<=0)return[];
+  const total=textWidth(clean,fs,weight);if(total<=maxWidth)return[clean];
+  const n=Math.max(2,Math.ceil(total/maxWidth)),target=Math.min(maxWidth,(total/n)*1.04);
+  const lines=[];let cur='';
+  const flush=()=>{const t=cur.trim();if(t)lines.push(t);cur='';};
+  for(const raw of textTokens(clean)){
+    let tok=raw;
+    while(tok.length>1&&textWidth(tok,fs,weight)>target){
+      const ratio=target/textWidth(tok,fs,weight);
+      let cut=Math.max(1,Math.min(tok.length-1,Math.floor(tok.length*ratio)));
+      while(cut>1&&textWidth(tok.slice(0,cut),fs,weight)>target)cut--;
+      flush();lines.push(tok.slice(0,cut));tok=tok.slice(cut);
+    }
+    if(cur&&textWidth(cur+tok,fs,weight)>target)flush();
+    cur+=tok;
+  }
+  flush();
+  const chars=t=>[...t].length;
+  /* A single hanging character on the last line reads as a mistake, so one glyph is pulled down from
+     the line above. This repair runs before 禁则 on purpose: it can create a new forbidden break of
+     its own (the glyph it moves may be an opening mark), and 禁则 has to have the last word. */
+  if(lines.length>1&&chars(lines[lines.length-1])===1&&chars(lines[lines.length-2])>2){
+    const prev=[...lines[lines.length-2]];
+    lines[lines.length-2]=prev.slice(0,-1).join('');
+    lines[lines.length-1]=prev.slice(-1).join('')+lines[lines.length-1];
+  }
+  /* 禁则 (kinsoku). Chinese breaks freely between Han characters, which is why the tokenizer emits one
+     token per character - but a line must not *open* with a closing mark and must not *close* with an
+     opening one. The tokenizer already separates the marks, so the repair is to move the offending
+     mark across the break; the previous line grows by one glyph, which is the trade 禁则 asks for.
+     Without this, 香港中文大学（深圳） could break after （ and open the next line with ）. */
+  const OPEN_MARKS=[...'（「『【《〈“‘'],CLOSE_MARKS=[...'，。、；：！？）」』】》〉”’…'];
+  for(let i=1;i<lines.length;i++){
+    const a=[...lines[i-1]],b=[...lines[i]];
+    while(b.length>1&&CLOSE_MARKS.includes(b[0]))a.push(b.shift());
+    while(a.length>1&&OPEN_MARKS.includes(a[a.length-1]))b.unshift(a.pop());
+    lines[i-1]=a.join('');lines[i]=b.join('');
+  }
+  return lines;
+}
+/* The chrome that a label must never sit under: the map heading, the control stack, the legend,
+   the mode badge and the inset.  Measured from the live DOM, so it follows the responsive layout
+   instead of guessing pixel constants. */
+function labelExclusions(){
+  const mapRect=$('map').getBoundingClientRect(),out=[];
+  for(const sel of ['.maphead','.mapcontrols','.legend','.modebadge']){
+    for(const el of document.querySelectorAll(sel)){
+      if(!el.getClientRects().length)continue;const r=el.getBoundingClientRect();
+      out.push({l:r.left-mapRect.left-4,r:r.right-mapRect.left+4,t:r.top-mapRect.top-4,b:r.bottom-mapRect.top+4});
+    }
+  }
+  if(S.insetBox)out.push(S.insetBox);
+  return out;
+}
+/* -3..3 steps, not -2..2: on a phone the two steps were not enough to reach the open water beside
+   a cramped province, so the name was dropped instead of moved.  The search stays cheap because the
+   ordering is computed once and the caller breaks out at the first tier-1 hit. */
+function labelOffsets(w,h){
+  const sx=w/2+7,sy=h+5,out=[];
+  for(const ky of[0,-1,1,-2,2,-3,3])for(const kx of[0,-1,1,-2,2,-3,3])out.push([kx*sx,ky*sy]);
+  out.sort((a,b)=>(a[0]*a[0]*1.15+a[1]*a[1])-(b[0]*b[0]*1.15+b[1]*b[1]));
+  return out;
+}
+function ringBox(r){let lo=[Infinity,Infinity],hi=[-Infinity,-Infinity];for(const p of r){if(p[0]<lo[0])lo[0]=p[0];if(p[1]<lo[1])lo[1]=p[1];if(p[0]>hi[0])hi[0]=p[0];if(p[1]>hi[1])hi[1]=p[1];}return[lo,hi];}
+function drawLabels(){
+  const g=$('labelLayer');g.innerHTML='';
+  const node=current(),nation=node.kind==='country',showUni=$('showUni').checked,avoid=$('avoid').checked;
+  const all=S.base.filter(b=>b.f.name).map(b=>{
+    const rbox=b.rings.map(ringBox);let lo=[Infinity,Infinity],hi=[-Infinity,-Infinity];
+    for(const bx of rbox){if(bx[0][0]<lo[0])lo[0]=bx[0][0];if(bx[0][1]<lo[1])lo[1]=bx[0][1];if(bx[1][0]>hi[0])hi[0]=bx[1][0];if(bx[1][1]>hi[1])hi[1]=bx[1][1];}
+    return{...b,best:best(b.f),rbox,bbox:[lo,hi]};
+  });
+  /* Placement order is not the same as display order.  The labels that are hardest to fit are
+     placed first - a province name that cannot be placed leaves a hole in the map, while a large
+     province whose label is nudged 20px is still perfectly readable.  So: level first (a province
+     name always outranks a district name), then smallest area first, then shortest name. */
+  const items=all.slice().sort((a,b)=>(LEVEL_RANK[a.f.level]??8)-(LEVEL_RANK[b.f.level]??8)||a.area-b.area||a.f.name.length-b.f.name.length);
+  /* The units that go into stage 1, smallest area first.  That is the order pass 1 has always used
+     and it is also the one that packs best: a small unit has nowhere else to go, while a large one
+     can still be labelled after its neighbours because it has room inside itself.  Ordering this
+     list by size descending - what the old upgrade pass did - answered "which university" for 新疆
+     and 西藏 while staying silent on 北京 and 上海.  Ordering it by the winner's prestige instead
+     (985 before 211 before the rest) was tried and reverted: it groups the units into tiers and
+     re-creates the same greedy-packing failure inside each tier, costing 河南 its 郑州大学 at 1440. */
+  const upgrades=all.filter(b=>b.best.u).sort((a,b)=>a.area-b.area);
+  const density=items.length<=3?1.26:items.length<=8?1.11:1;
+  /* Type size has to answer to the drawing area as well as to the zoom.  Without the viewport term
+     the same 12.8px glyph is ~1.1% of the map width at 1073px and ~3.4% at 376px, so on a phone
+     every label is three times its proper size relative to the country - the western provinces fill
+     the screen and 广东, 浙江, 山东 and 安徽 fall off it entirely.  The factor is clamped so the
+     desktop answer is untouched and the phone only gives up as much type as it must. */
+  const vp=Math.min(1,Math.max(.86,S.w/1073));
+  const base=Math.max(11.2,Math.min(26,(nation?12.8:13.6)*Number($('fontSize').value)/100*Math.pow(S.z,.34)*density*vp));
+  const nameMax=nation?5.4:7,uniMax=nation?7.2:9.2;
+  const ui=labelExclusions(),accepted=ui.slice(),placed=new Map();
+  let hidden=0,minPlaced=Infinity;
+
+  /* Geographic honesty.  A label is placed inside the region it names whenever that is possible.
+     If the region is too small to hold its own name (北京, 香港 and 澳门 are a few pixels across on
+     a national map) the label moves to open ground beside it - the sea or the area outside the
+     country.  Only if neither exists may it be pushed into a neighbouring region, and then the
+     displacement is capped by the region's own size and a leader line ties it back to the anchor,
+     so a reader can still see which name belongs to which shape. */
+  function inside(item,mx,my){
+    for(let i=0;i<item.rings.length;i++){const bx=item.rbox[i];
+      if(mx<bx[0][0]||mx>bx[1][0]||my<bx[0][1]||my>bx[1][1])continue;
+      if(inRing([mx,my],item.rings[i]))return true;}
+    return false;
+  }
+  function inForeign(self,mx,my){
+    for(const it of all){if(it===self)continue;const bb=it.bbox;
+      if(mx<bb[0][0]||mx>bb[1][0]||my<bb[0][1]||my>bb[1][1])continue;
+      if(inside(it,mx,my))return it;}
+    return null;
+  }
+  function build(b,scale,withUni){
+    const fsR=Math.max(MIN_LABEL_FONT,base*scale*LABEL_TYPO.region.ratio),fsU=Math.max(MIN_LABEL_FONT+0.8,base*scale);
+    const lines=wrapText(nation?short(b.f.name):b.f.name,fsR*nameMax,fsR,LABEL_TYPO.region.weight)
+      .map(t=>({t,fs:fsR,weight:LABEL_TYPO.region.weight,color:LABEL_TYPO.region.color,role:'region'}));
+    const nameCount=lines.length;
+    if(withUni&&showUni&&b.best.u){
+      for(const t of wrapText(b.best.u,fsU*uniMax,fsU,LABEL_TYPO.uni.weight))
+        lines.push({t,fs:fsU,weight:LABEL_TYPO.uni.weight,color:LABEL_TYPO.uni.color,role:'uni'});
+    }
+    if(!lines.length)return null;
+    const width=Math.max(...lines.map(l=>textWidth(l.t,l.fs,l.weight)))+LABEL_PAD*2;
+    const height=lines.reduce((s,l)=>s+l.fs*LABEL_LH,0)+LABEL_PADY*2;
+    return{lines,nameCount,width,height};
+  }
+  function fits(box,skip){
+    if(box.l<LABEL_EDGE||box.t<LABEL_EDGE||box.r>S.w-LABEL_EDGE||box.b>S.h-LABEL_EDGE)return false;
+    if(!avoid)return true;
+    for(let i=0;i<accepted.length;i++){if(i===skip)continue;const a=accepted[i];
+      if(!(box.r+LABEL_GAP<a.l||box.l-LABEL_GAP>a.r||box.b+LABEL_GAP<a.t||box.t-LABEL_GAP>a.b))return false;}
+    return true;
+  }
+  /* Returns {box,tier,dx,dy}: tier 1 = inside its own region, 2 = open ground, 3 = displaced into
+     a neighbour (a leader line is then mandatory).  The best tier wins; ties go to the nearest. */
+  function place(b,x,y,label,skip){
+    const cap=Math.max(32,Math.min(.9*Math.sqrt(Math.max(b.area,1))*S.z,110));
+    let best=null;
+    for(const[dx,dy]of labelOffsets(label.width,label.height)){
+      const dist=Math.hypot(dx,dy);
+      const cx=x+dx,cy=y+dy,box={l:cx-label.width/2,r:cx+label.width/2,t:cy-label.height/2,b:cy+label.height/2};
+      if(!fits(box,skip))continue;
+      const mx=(cx-S.x)/S.z,my=(cy-S.y)/S.z;
+      let tier=inside(b,mx,my)?1:(inForeign(b,mx,my)?3:2);
+      if(tier===3){
+        if(dist>cap)continue;
+        if(best&&best.tier<3)continue;
+        if(best&&best.tier===3&&best.dist<=dist)continue;
+      }else{
+        if(best&&best.tier<=tier&&best.dist<=dist)continue;
+      }
+      best={box,tier,dx,dy,dist};
+      if(tier===1&&dist<=1)break;
+    }
+    return best;
+  }
+  const onScreen=b=>{const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;return !(x<-120||y<-120||x>S.w+120||y>S.h+120);};
+  /* Two stages, and the order inside a stage is the whole algorithm:
+       stage 1  every unit with a university to show, smallest area first -> the full two-line
+                group, so its box is measured and placed at its final size;
+       stage 2  everything still unplaced - units with no winner, plus any unit whose two-line
+                group would not fit anywhere - -> the administrative name alone.
+     The previous design placed 34 small name boxes first and then tried to grow 33 of them in an
+     already-crowded field, which meant a unit received its answer only if a neighbour happened to
+     leave a gap beside it: 湖北 lost 武汉大学 at 1440 while 西藏 kept 西藏大学, and the set of
+     units that lost depended on how many pixels the window had.  Sizing the box before the space
+     is spent removes that failure mode, and a unit that still cannot fit two lines keeps its name
+     instead of vanishing from the map. */
+  function stage(list,withUni){
+    for(const b of list){
+      if(placed.has(b.f.id)||!onScreen(b))continue;
+      const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;
+      for(const scale of[1,.93,.86,.79]){
+        const label=build(b,scale,withUni);
+        if(!label)break;
+        if(withUni&&label.lines.length<=label.nameCount)break;
+        const hit=place(b,x,y,label,-1);
+        if(!hit)continue;
+        accepted.push(hit.box);
+        placed.set(b.f.id,{b,label,box:hit.box,tier:hit.tier,dx:hit.dx,dy:hit.dy,slot:accepted.length-1,onlyName:!withUni});
+        break;
+      }
+    }
+  }
+  stage(upgrades,true);
+  stage(items,false);
+  for(const b of items)if(onScreen(b)&&!placed.has(b.f.id))hidden++;
+  let shown=0,nameOnly=0,uniLines=0,leaders=0,displaced=0;
+  S.labels=[];
+  for(const rec of placed.values()){
+    const b=rec.b,label=rec.label,box=rec.box;shown++;
+    if(rec.onlyName)nameOnly++;
+    minPlaced=Math.min(minPlaced,...label.lines.map(l=>l.fs));
+    const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;
+    const cx=(box.l+box.r)/2,cy=box.t+LABEL_PADY+label.lines.reduce((s,l)=>s+l.fs*LABEL_LH,0)/2;
+    const dist=Math.hypot(cx-x,cy-y);
+    // A leader line is mandatory whenever the label is not sitting on its own anchor: either it
+    // was displaced far enough that the eye needs help, or it could not be placed inside its own
+    // region at all.  Without one, a reader would assign the name to the wrong shape.
+    const needLeader=rec.tier===3||dist>Math.max(12,label.height*.55);
+    const group=E('g',{'data-label-id':b.f.id,'data-label-level':b.f.level||'island','data-name-only':rec.onlyName?'1':'0','data-place-tier':String(rec.tier||1)});
+    if(needLeader){
+      /* Full opacity, 1px, and vector-effect so zoom cannot thin it back into a smudge. The .6px/50%
+         original was below the point where a line reads as a line, and the mislabel exemption below
+         leans on it being followed by the eye. */
+      group.append(E('line',{class:'leader',x1:x.toFixed(2),y1:y.toFixed(2),x2:cx.toFixed(2),y2:cy.toFixed(2),stroke:MAP_STYLE.label.leader,'stroke-width':1,'opacity':1,'vector-effect':'non-scaling-stroke'}));
+      group.append(E('circle',{class:'leader',cx:x.toFixed(2),cy:y.toFixed(2),r:1.8,fill:MAP_STYLE.label.leader,opacity:1}));
+      leaders++;if(rec.tier===3)displaced++;
+    }
+    let top=box.t+LABEL_PADY;
+    for(const l of label.lines){
+      const lh=l.fs*LABEL_LH;
+      // The halo is proportional to the glyph, never a fixed width: a white outline fatter than
+      // the stroke it protects fills the counters of small Chinese characters and turns the map
+      // background white.  0.11em, capped at 2px, keeps small labels crisp.
+      group.append(E('text',{x:cx.toFixed(2),y:(top+lh*.82).toFixed(2),'text-anchor':'middle','font-size':l.fs.toFixed(2),'font-weight':l.weight,'font-family':FONT_STACK,fill:l.color,stroke:MAP_STYLE.label.halo,'stroke-width':Math.min(2,Math.max(1,l.fs*.11)).toFixed(2),'stroke-linejoin':'round','paint-order':'stroke fill','data-role':l.role},l.t));
+      top+=lh;
+      if(l.role==='uni')uniLines++;
+    }
+    g.append(group);
+    S.labels.push({l:box.l,t:box.t,r:box.r,b:box.b,id:b.f.id,level:b.f.level,nameOnly:rec.onlyName,anchor:[x,y],tier:rec.tier||1,leader:needLeader});
+  }
+  /* The campus pins are the only map layer whose meaning is carried entirely by a fill colour, and
+     nothing on screen said what the two colours were. The key lives in the legend and is shown only
+     when the layer is: a key for a layer with nothing in it is worse than no key, and the pins exist
+     only at the district level. */
+  const pins=current().kind==='district'?drawCampusPins(g):0;
+  const pinKey=document.querySelector('.legendpins');
+  if(pinKey)pinKey.hidden=!pins;
+  S.labelCount=shown;S.nameOnlyLabelCount=nameOnly;
+  S.labelStats={shown,hidden,nameOnly,uniLabels:uniLines,leaders,displaced,candidates:items.length,
+    minFont:Number.isFinite(minPlaced)?Number(minPlaced.toFixed(2)):null,uiExclusions:ui.length};
+}
+
+/* ===========================================================================
+   V5.8 touch tooltip.
+   The tooltip carries the two-tier 异地办学 detail that no other surface shows, and it was wired to
+   pointermove only - a phone has no hover, so the information was simply unreachable there. A long
+   press (450ms without moving) opens it instead, and the tap that follows is swallowed so the reader
+   can look at the tooltip without also navigating into the region. The pointerup listener runs in the
+   capture phase, so it clears tapFeature before app.js's own bubble-phase endPointer() reads it.
+   =========================================================================== */
+const TIP_PRESS_MS=450;
+let tipTimer=null,tipShown=false;
+function featureUnder(e){
+  const el=e.target&&e.target.closest?e.target.closest('[data-i]'):null;
+  return el&&S.geo?S.geo[Number(el.dataset.i)]:null;
+}
+$('map').addEventListener('pointerdown',e=>{
+  if(e.pointerType==='mouse'||e.button!==0)return;
+  const f=featureUnder(e);
+  if(!f)return;
+  clearTimeout(tipTimer);
+  tipTimer=setTimeout(()=>{tipTimer=null;tipShown=true;showTip(e,f);},TIP_PRESS_MS);
+});
+$('map').addEventListener('pointermove',()=>{if(tipTimer){clearTimeout(tipTimer);tipTimer=null;}});
+$('map').addEventListener('pointercancel',()=>{clearTimeout(tipTimer);tipTimer=null;tipShown=false;},{capture:true});
+$('map').addEventListener('pointerup',()=>{
+  clearTimeout(tipTimer);tipTimer=null;
+  if(!tipShown)return;
+  tipShown=false;
+  tapFeature=null;
+},{capture:true});

@@ -1,6 +1,353 @@
+/* ==========================================================================
+   V5.8 design tokens.  Every colour, radius, shadow, space step and type step
+   used by the atlas is declared here once.  Feature layers (city-layer.css) and
+   the SVG label renderer (city-layer.js) read the same names, so the map and the
+   chrome cannot drift apart again.
+   ========================================================================== */
+:root{
+  /* --- type ------------------------------------------------------------ */
+  --font-sans:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",Arial,sans-serif;
+  --fs-1:10px; --fs-2:11px; --fs-3:12px; --fs-4:13px; --fs-5:15px; --fs-6:19px; --fs-7:23px;
+  --lh-tight:1.25; --lh-body:1.6;
+  --fw-normal:400; --fw-medium:500; --fw-semi:600; --fw-bold:700;
 
-:root{--ink:#183d50;--muted:#708593;--red:#d33832;--line:#dce6eb;--ocean:#dceef3;--font:"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",system-ui,sans-serif}*{box-sizing:border-box}body{margin:0;background:#eef3f5;color:var(--ink);font-family:var(--font);font-size:14px}button,input{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:8px;color:var(--ink);background:white;padding:9px 12px}button:hover{background:#f0f6f8}button:disabled{cursor:default;opacity:.55}button:focus-visible,input:focus-visible{outline:3px solid #8ab9d0;outline-offset:2px}.accent{background:var(--red);color:white;border-color:var(--red)}.accent:hover{background:#bd2924}.header{padding:18px 24px 15px;background:white;border-bottom:1px solid var(--line);display:flex;gap:24px;align-items:center;justify-content:space-between}.brand{display:flex;gap:12px;align-items:center}.logo{width:40px;height:40px;border-radius:10px;background:#d33832;color:white;display:grid;place-items:center;font-size:25px}.eyebrow{font-size:10px;letter-spacing:2px;color:#71828d;margin-bottom:4px}.header h1{margin:0;font-size:25px;letter-spacing:1px;color:#253d4b}.header small{display:block;color:var(--muted);font-size:11px;margin-top:6px}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.searchwrap{position:relative}.searchwrap input{width:240px;padding:11px 34px 11px 12px;background:#f6f8fa;border:1px solid var(--line);border-radius:8px;outline:0}.searchclear{position:absolute;right:5px;top:5px;border:0;background:transparent;font-size:18px;padding:2px 7px}.searchresults{display:none;position:absolute;right:0;top:48px;width:370px;max-height:480px;overflow:auto;z-index:40;background:white;border:1px solid var(--line);border-radius:10px;box-shadow:0 15px 40px #13354930}.searchitem{padding:12px 14px;border-bottom:1px solid #edf1f3;cursor:pointer}.searchitem:hover{background:#edf6fa}.searchitem small{line-height:1.5}.shell{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:14px;margin:14px;min-height:640px}.mapcard{position:relative;background:var(--ocean);border:1px solid #cadce4;border-radius:12px;overflow:hidden;height:calc(100dvh - 136px);min-height:600px}.maphead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:absolute;inset:15px 18px auto;z-index:4;pointer-events:none}.maptitles{pointer-events:auto}.breadcrumb{font-size:12px;color:#527282;display:flex;flex-wrap:wrap;gap:4px;align-items:center}.breadcrumb button{font-size:12px;background:#ffffffd9;border:0;padding:5px 8px;border-radius:5px}.breadcrumb b{padding:5px 2px}.maptitles h2{margin:10px 0 0;font-size:23px;font-weight:800;letter-spacing:.7px}.maptitles p{font-size:11px;color:#597788;margin:6px 0 0}.modebadge{background:#ffffffdc;padding:7px 10px;border-radius:5px;font-size:11px;white-space:nowrap;color:#527181}#map{width:100%;height:100%;display:block;touch-action:none;cursor:grab}#map.drag{cursor:grabbing}.region{cursor:pointer;transition:fill .12s}.region:hover,.region.hover{fill:#ffe09b!important;stroke:#6c8794;stroke-width:1.5!important}.labels{pointer-events:none}.mapcontrols{position:absolute;right:15px;bottom:52px;z-index:5;display:flex;flex-direction:column;gap:6px}.mapcontrols button{width:38px;height:36px;padding:4px;font-size:20px;box-shadow:0 2px 6px #27445510}.mapcontrols .tiny{font-size:11px}.legend{position:absolute;bottom:13px;left:16px;right:16px;color:#597384;font-size:10px;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;pointer-events:none}.swatches i{display:inline-block;width:12px;height:9px;margin-right:2px;border:1px solid #59738430}.maptoast{display:none;position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);z-index:7;background:#ffffffec;border:1px solid var(--line);padding:16px 20px;border-radius:10px;max-width:75%;font-size:13px;line-height:1.7;text-align:center;box-shadow:0 12px 32px #183d5020;pointer-events:none}.tooltip{display:none;position:absolute;pointer-events:none;background:#173846ee;color:white;line-height:1.65;padding:11px 13px;border-radius:8px;font-size:12px;z-index:15;max-width:310px;box-shadow:0 8px 30px #17384630}.tooltip strong{color:#ffd7a1}.side{border-radius:12px;border:1px solid var(--line);background:#fff;display:flex;flex-direction:column;height:calc(100dvh - 136px);min-height:600px;overflow:hidden}.sidehead{padding:20px 18px 14px;border-bottom:1px solid var(--line)}.sidehead h3{font-size:19px;margin:0 0 7px}.sidehead p{font-size:11px;line-height:1.7;margin:0;color:var(--muted)}.sidecount{font-size:10px;color:#708593;margin-top:10px}.controls{padding:12px 18px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:11px;border-bottom:1px solid var(--line);background:#fafcfd}.controls label{display:flex;align-items:center;gap:4px}.controls input[type=checkbox]{accent-color:var(--red)}.controls input[type=range]{width:70px;accent-color:#789cab}.list{flex:1;overflow:auto;padding:0 10px 10px}.item{border:0;border-bottom:1px solid #e8eef1;padding:13px 9px;display:flex;width:100%;gap:10px;text-align:left;align-items:center;border-radius:0;line-height:1.5}.item .ordinal{font-size:10px;color:#a5b3bd;min-width:17px;align-self:flex-start;margin-top:3px}.item .rname{font-size:11px;color:#6a8090;display:flex;gap:6px;align-items:center}.item .runi{color:#c3322c;font-size:14px;font-weight:750;margin-top:3px}.item .runi.emptyuni{color:#8a9ba5;font-size:12px;font-weight:400}.item .rmeta{color:#83949e;font-size:10px;margin-top:3px}.item .arrow{margin-left:auto;color:#91a4af}.chip{display:inline-block;background:#eef4f6;font-size:9px;padding:1px 5px;border-radius:4px;color:#678491}.footnote{padding:12px 17px;border-top:1px solid var(--line);background:#fafcfd;color:#768b96;font-size:10px;line-height:1.8}.footnote b{color:#a76832}.empty{padding:25px 15px;text-align:center;color:#7a8e9b;font-size:12px;line-height:1.9}.callout{background:#fff7e9;color:#98622d;font-size:11px;line-height:1.8;padding:13px;margin:12px 3px;border-radius:7px}.statusbar{padding:0 18px 10px;color:#81939e;font-size:10px;display:flex;justify-content:space-between;gap:8px}.fullscreen .shell{display:block;margin:0}.fullscreen .mapcard{height:100dvh;border-radius:0;border:0}.fullscreen .side,.fullscreen .header,.fullscreen .statusbar{display:none}dialog{border:1px solid var(--line);border-radius:15px;max-width:650px;width:calc(100% - 32px);padding:27px;color:var(--ink);box-shadow:0 20px 90px #16364840}dialog::backdrop{background:#17384766;backdrop-filter:blur(3px)}dialog h2{margin:0 0 10px;font-size:22px}dialog p,dialog li{font-size:13px;line-height:1.9;color:#587181}dialog a{color:#316a90}dialog .close{float:right;border:0;padding:0 4px;font-size:24px}.packactions{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}.progress{height:8px;border-radius:5px;background:#e9eff3;margin:18px 0 9px;overflow:hidden}.progress div{height:100%;background:#458f9f;width:0%;transition:width .2s}.packmeta{font-size:12px;line-height:1.8;color:#718896}.packerrors{max-height:130px;overflow:auto;color:#a6652f;font-size:11px;line-height:1.8;margin-top:8px}.datafacts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.datafacts div{background:#f4f8fa;padding:13px;border-radius:8px;font-size:11px}.datafacts b{display:block;font-size:23px;margin-bottom:4px;color:#315e77}@media(max-width:1050px){.shell{grid-template-columns:minmax(0,1fr) 285px;margin:10px;gap:10px}.header{padding:14px 16px;gap:10px}.header h1{font-size:22px}.searchwrap input{width:195px}.actions button{padding:9px;font-size:12px}.logo{display:none}}@media(max-width:760px){.header{display:block}.actions{margin-top:12px}.searchwrap{flex:1}.searchwrap input{width:100%}.searchresults{left:0;right:auto;width:min(360px,90vw)}.shell{grid-template-columns:1fr;margin:8px;gap:10px}.mapcard{height:65dvh;min-height:500px}.side{height:480px;min-height:0}.maphead{inset:12px 12px auto}.maptitles h2{font-size:19px}.maptitles p{max-width:240px}.modebadge{font-size:9px;padding:6px}.mapcontrols{right:10px}.legend{font-size:9px;left:10px;gap:4px}.statusbar{display:block;line-height:1.8}.header small{font-size:10px}}
-@media(max-width:760px){.mapcontrols{flex-direction:row;left:10px;right:10px;bottom:36px;justify-content:flex-end;gap:5px}.mapcontrols button{width:34px;height:31px;font-size:17px}.mapcontrols .tiny{font-size:10px}.legend{bottom:10px}.maptitles p{max-width:310px}.maphead .modebadge{padding:4px 6px;font-size:9px}.header .actions button{font-size:11px}.searchwrap input{font-size:12px}}
+  /* --- ink (text) ------------------------------------------------------- */
+  --ink:#1b3a4b;        /* primary copy */
+  --ink-2:#41626f;      /* secondary copy */
+  --muted:#6f8792;      /* tertiary copy, still AA on white */
+  --faint:#93a6ae;      /* ordinals, disabled */
 
-.schoolcard{margin:10px 12px;border:1px solid #dce6eb;border-radius:10px;background:#fff}.schoolcard summary{padding:14px;cursor:pointer;list-style:none}.schoolcard summary:hover{background:#f5fafb}.campusrow{padding:12px 15px;border-top:1px solid #e4edef;font-size:12px;line-height:1.6}.campusrow p{margin:4px 0;color:#667f8e}.campusrow a,#sourceList a{color:#287e9a}.quality{display:inline-block;font-size:10px;font-weight:500;color:#986221;background:#fff3df;border-radius:4px;padding:2px 5px;margin:3px 0 3px 5px}.quality.verified{color:#19785e;background:#e5f5ec}.schoolmore{margin:0 12px 12px;font-size:11px}.searchitem{text-align:left;width:100%;border:0;border-radius:0}.controls{flex-wrap:wrap;gap:9px}.controls label{font-size:11px}#coverageDialog{width:760px}#coverageTable{width:100%;border-collapse:collapse;margin-top:16px;font-size:12px}#coverageTable th,#coverageTable td{text-align:left;border-bottom:1px solid #e5ecef;padding:8px}#coverageTable th{background:#edf5f7;position:sticky;top:0}#schoolBody>.runi{font-size:23px}dialog{max-height:86vh;overflow:auto}.side .list{min-height:180px} .modebadge{background:#e3f4ed!important;color:#247759!important}
-.quality.profile{background:#eaf1ff;color:#38668a}.datafacts b{font-size:22px}#coverageDialog{max-width:790px}.quality.association{background:#f0eaff;color:#69539a}.quality.corroborated{background:#fff0df;color:#9a5e27}.associationrow{background:#fbf9ff;border-left:3px solid #b7a5db}
+  /* --- surfaces --------------------------------------------------------- */
+  --surface:#ffffff;
+  --surface-2:#f7fafb;  /* side panel blocks */
+  --surface-3:#eff2f1;  /* page background */
+  /* The map background is water, so it is a tone of its own rather than the page colour: the land
+     fills sit above it in lightness, which is the cartographic convention and keeps the country
+     from reading as a hole punched in a bright page. */
+  /* Mirrors MAP_STYLE.canvas in src/app.js, which draws the map itself; the two must move together. */
+  --canvas:#a5bdc6;
+  /* A step deeper than the water it encloses, so the card reads as a frame instead of a light rim. */
+  --canvas-edge:#8aa6b1;
+
+  /* --- borders ---------------------------------------------------------- */
+  --border:#dde7ea;
+  --border-strong:#c6d6dc;
+
+  /* --- accent (one), secondary (one), caution (one) --------------------- */
+  --accent:#a82b21;         /* the single accent, and it belongs to the map: the university name */
+  --accent-2:#2f6b7f;       /* the single secondary: navigation, links, verified */
+  --accent-2-soft:#eef5f7;
+  --caution:#8a6535;        /* the single caution tone: unverified / approximate */
+  --caution-soft:#fbf4e9;
+
+  /* --- map -------------------------------------------------------------- */
+  --map-label-region:#45636f;   /* L1 administrative name */
+  --map-label-uni:var(--accent);/* L2 best-university name */
+  --map-halo:#ffffff;
+  --map-leader:#5f7d89;
+  /* Hover is a darker neutral, not a seventh colour: a warm or saturated highlight competes with
+     the fills and reads as a value on the map instead of as "the thing under the cursor". It has to
+     be darker than --canvas, or the cursor makes the shape it is over vanish. */
+  --map-hover:#7f9aa6;
+  --map-hover-stroke:#5f7d89;
+  /* The inset's water and land tones live only in MAP_STYLE (insetWater / insetLand) because the
+     inset is drawn by JS into the SVG and nothing in CSS ever styles it. A token here would be a
+     second copy of a number no stylesheet reads. */
+
+  /* --- radius / shadow / space ----------------------------------------- */
+  --r-xs:4px; --r-sm:6px; --r-md:9px; --r-lg:12px; --r-xl:16px; --r-pill:999px;
+  --sh-1:0 1px 2px #1738460f;
+  --sh-2:0 8px 24px #17384614;
+  --sp-1:4px; --sp-2:6px; --sp-3:9px; --sp-4:13px; --sp-5:18px; --sp-6:24px;
+}
+
+*{box-sizing:border-box}
+/* No -webkit-font-smoothing:antialiased.  It only fires on macOS, where it renders CJK text a
+   little thinner; at 10-13px that costs legibility rather than buying polish. */
+body{margin:0;background:var(--surface-3);color:var(--ink);font-family:var(--font-sans);font-size:14px}
+button,input{font:inherit}
+button{cursor:pointer;border:1px solid var(--border);border-radius:var(--r-sm);color:var(--ink);background:var(--surface);padding:8px 12px;transition:background .12s,border-color .12s}
+button:hover{background:var(--surface-2);border-color:var(--border-strong)}
+button:disabled{cursor:default;opacity:.5}
+button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outline-offset:2px}
+/* A filled accent button lived here and sat next to the sidebar's own 数据说明. It was the loudest
+   thing in the header and the only red at the top of the page, so it competed with the red
+   university names on the map for the same job. Both header actions are now plain buttons. */
+
+/* --- header: a title bar, not a second product ------------------------- */
+.header{padding:12px var(--sp-6) 11px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-5);align-items:center;justify-content:space-between;box-shadow:var(--sh-1);position:relative;z-index:20}
+.brand{display:flex;gap:10px;align-items:center;min-width:0}
+.brand>div:last-child{min-width:0}
+.logo{flex:0 0 34px;width:34px;height:34px;border-radius:var(--r-md);background:var(--accent);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:var(--fw-bold)}
+.eyebrow{font-size:var(--fs-1);letter-spacing:1.6px;color:var(--faint);margin-bottom:1px;font-weight:var(--fw-medium)}
+.header h1{margin:0;font-size:var(--fs-6);font-weight:var(--fw-semi);letter-spacing:.2px;color:var(--ink);line-height:1.25}
+.header small{display:block;color:var(--muted);font-size:var(--fs-2);margin-top:2px;line-height:1.4}
+.actions{display:flex;gap:var(--sp-2);align-items:center;flex-wrap:wrap}
+.searchwrap{position:relative}
+.searchwrap input{width:230px;padding:9px 32px 9px 11px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);outline:0;font-size:var(--fs-3)}
+.searchwrap input::placeholder{color:var(--faint)}
+.searchclear{position:absolute;right:4px;top:4px;border:0;background:transparent;font-size:17px;padding:2px 6px;color:var(--faint)}
+.searchresults{display:none;position:absolute;right:0;top:42px;width:370px;max-height:480px;overflow:auto;overscroll-behavior:contain;z-index:40;background:var(--surface);border:1px solid var(--border);border-radius:var(--r-md);box-shadow:var(--sh-2)}
+.searchitem{padding:11px var(--sp-4);border-bottom:1px solid var(--surface-3);cursor:pointer;min-height:46px;text-align:left;width:100%;border:0;border-radius:0;background:transparent}
+.searchitem:hover{background:var(--accent-2-soft)}
+.searchitem small{line-height:var(--lh-body);color:var(--muted)}
+
+/* --- shell ------------------------------------------------------------- */
+.shell{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:var(--sp-4);margin:var(--sp-4);min-height:0}
+.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;height:calc(100dvh - 172px);min-height:420px}
+
+/* --- map overlay chrome ------------------------------------------------ */
+.maphead{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3);position:absolute;inset:14px 16px auto;z-index:4;pointer-events:none}
+.maptitles{pointer-events:auto;min-width:0}
+.breadcrumb{font-size:var(--fs-2);color:var(--muted);display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.breadcrumb button{font-size:var(--fs-2);background:#ffffffd9;border:0;padding:4px 7px;border-radius:var(--r-xs);color:var(--accent-2)}
+.breadcrumb b{padding:4px 2px;color:var(--ink-2);font-weight:var(--fw-semi)}
+.maptitles h2{margin:8px 0 0;font-size:var(--fs-7);font-weight:var(--fw-semi);letter-spacing:.2px;line-height:var(--lh-tight);text-wrap:balance;color:var(--ink)}
+.maptitles p{font-size:var(--fs-2);color:var(--muted);margin:5px 0 0;line-height:1.5}
+.modebadge{background:#ffffffd9;padding:5px 9px;border-radius:var(--r-pill);font-size:var(--fs-1);white-space:nowrap;color:var(--accent-2);border:1px solid var(--accent-2-soft);font-weight:var(--fw-medium)}
+
+#map{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+#map.drag{cursor:grabbing}
+.region{cursor:pointer;transition:fill .12s ease,stroke .12s ease}
+.region:hover,.region.hover{fill:var(--map-hover)!important;stroke:var(--map-hover-stroke);stroke-width:1.3!important}
+.region:focus-visible{outline:none;stroke:var(--accent-2);stroke-width:1.6!important}
+.labels{pointer-events:none}
+.leader{pointer-events:none}
+#measureLayer{visibility:hidden;pointer-events:none}
+
+.mapcontrols{position:absolute;right:14px;bottom:46px;z-index:5;display:flex;flex-direction:column;gap:5px;padding:5px;background:#ffffffd9;border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-2);backdrop-filter:blur(8px)}
+.mapcontrols button{width:38px;height:36px;padding:4px;font-size:var(--fs-6);font-weight:var(--fw-normal);border-radius:var(--r-sm);box-shadow:none;background:var(--surface);border-color:var(--border);display:grid;place-items:center}
+.mapcontrols button:hover{background:var(--accent-2-soft);border-color:var(--border-strong)}
+.mapcontrols .tiny{font-size:var(--fs-2)}
+.mapcontrols #zoomIn,.mapcontrols #zoomOut{font-size:19px}
+.mapcontrols button:disabled{background:var(--surface-2)}
+
+.legend{position:absolute;bottom:11px;left:14px;right:14px;color:var(--muted);font-size:var(--fs-1);display:flex;gap:var(--sp-3);flex-wrap:wrap;justify-content:space-between;align-items:center;pointer-events:none;padding:4px 8px;border-radius:var(--r-sm);background:#f5f8f7c9;backdrop-filter:blur(4px);width:max-content;max-width:calc(100% - 28px);right:auto}
+.swatches{display:inline-flex;align-items:center;gap:3px}
+.swatches i{display:inline-block;width:11px;height:8px;border-radius:2px;border:1px solid #59738428}
+.legend #zoomInfo{color:var(--faint)}
+/* The keys take a row of their own instead of being appended to the swatch sentence: sharing a row
+   pushed them past the legend's max-width and the disclaimer was the part that got cut. The row is
+   the wrapping unit, so the two keys share one line when there is width for it. */
+/* The key that explains the map's two text tiers now comes first, in secondary ink rather than
+   tertiary. Read on the rendered page, the one fact a first-time reader needs - the red name is the
+   best university, the small grey name is the administrative area - was the smallest and quietest
+   thing on screen, and a reader sent looking for it found the swatch disclaimer instead and
+   concluded the red meant a warning. `order` rather than moving it in the DOM: the row is inserted
+   after #zoomInfo for the layout reason documented in v57-ui.js and that has not changed. */
+.legendrow{flex:1 1 100%;order:-1;display:inline-flex;flex-wrap:wrap;align-items:center;gap:var(--sp-3)}
+.legendkey{flex:0 0 auto;display:inline-flex;align-items:center;gap:3px;color:var(--ink-2)}
+.legendkey b{font-weight:var(--fw-bold)}
+.legendkey .k-region{color:var(--map-label-region)}
+.legendkey .k-uni{color:var(--map-label-uni)}
+.legendpins{flex:0 0 auto;display:inline-flex;align-items:center;gap:4px;color:var(--muted)}
+/* An explicit rule: the class sets display:inline-flex, which would otherwise beat the browser's
+   own [hidden]{display:none} and leave the key on screen for a layer that is not drawn. */
+.legendpins[hidden]{display:none}
+.legendpins i{display:inline-block;width:9px;height:9px;border-radius:50%;border:1px solid var(--surface)}
+.legendpins .kp-verified{background:var(--accent-2)}
+.legendpins .kp-caution{background:var(--caution)}
+
+.maptoast{display:none;position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);z-index:7;background:#fffffff0;border:1px solid var(--border);padding:14px var(--sp-5);border-radius:var(--r-md);max-width:75%;font-size:var(--fs-3);line-height:1.7;text-align:center;box-shadow:var(--sh-2);pointer-events:none;color:var(--ink-2)}
+.tooltip{display:none;position:absolute;pointer-events:none;background:#1b3a4bf2;color:#fff;line-height:1.6;padding:11px var(--sp-4);border-radius:var(--r-md);font-size:var(--fs-3);z-index:15;max-width:min(360px,80vw);box-shadow:var(--sh-2)}
+.tooltip strong{color:#fff;font-size:var(--fs-4);font-weight:var(--fw-semi)}
+.tooltip .tipmeta{opacity:.78}
+
+/* --- side panel: a place list ------------------------------------------ */
+.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;height:calc(100dvh - 172px);min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
+.sidehead{padding:var(--sp-5) var(--sp-5) var(--sp-4);border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff,var(--surface-2))}
+.sidehead h3{font-size:var(--fs-5);margin:0 0 5px;font-weight:var(--fw-semi);line-height:var(--lh-tight)}
+.sidehead p{font-size:var(--fs-2);line-height:1.55;margin:0;color:var(--muted)}
+.sidecount{display:inline-flex;align-items:center;min-height:22px;padding:3px 8px;border-radius:var(--r-pill);background:var(--accent-2-soft);color:var(--accent-2);font-weight:var(--fw-medium);font-size:var(--fs-1);margin-top:8px}
+.controls{padding:var(--sp-3) var(--sp-3);display:flex;gap:5px 7px;flex-wrap:wrap;align-items:center;font-size:var(--fs-2);border-bottom:1px solid var(--border);background:var(--surface-2)}
+.controls label{display:flex;align-items:center;gap:4px;font-size:var(--fs-2);min-height:28px;padding:3px 7px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface);white-space:nowrap;color:var(--ink-2);cursor:pointer;transition:border-color .12s,background .12s}
+.controls label:hover{border-color:var(--border-strong);background:#fbfeff}
+.controls input[type=checkbox]{width:14px;height:14px;accent-color:var(--accent-2)}
+.controls input[type=range]{width:66px;accent-color:var(--accent-2)}
+/* The five filter checkboxes are secondary: they change what the *data* includes, not what the map
+   looks like. On a mouse they can all sit on the row. On a phone they cannot - see the max-width:760px
+   block, where they fold into a disclosure and stop pushing the region list off the first screen.
+   `display:contents` is what keeps the desktop byte-identical: the wrapper stops generating a box, so
+   its five labels stay direct flex items of .controls exactly as before this wrapper existed. */
+.controls .filteradv{display:contents}
+.controls .advtoggle{position:absolute;width:0;height:0;margin:0;padding:0;border:0;opacity:0;pointer-events:none}
+.controls .advlabel{display:none}
+.controls .advclose{display:none}
+.controls .advtoggle:checked~.advlabel .advopen{display:none}
+.controls .advtoggle:checked~.advlabel .advclose{display:inline}
+.controls .advtoggle:focus-visible~.advlabel{outline:2px solid var(--accent-2);outline-offset:2px}
+
+.list{flex:1;overflow:auto;padding:var(--sp-1) 8px var(--sp-4);scrollbar-width:thin;scrollbar-color:#c3d2d8 transparent;min-height:120px}
+.item{border:0;border-bottom:1px solid var(--surface-3);padding:11px 9px;display:flex;width:100%;gap:var(--sp-3);text-align:left;align-items:flex-start;border-radius:var(--r-sm);line-height:1.45;background:transparent;min-height:62px;transition:background .12s}
+.item:hover{background:var(--surface-2)}
+.item:focus-visible{outline:2px solid var(--accent-2);outline-offset:-2px}
+.item .ordinal{font-size:var(--fs-1);color:var(--faint);min-width:16px;align-self:flex-start;margin-top:2px;font-variant-numeric:tabular-nums}
+.item>div{min-width:0;flex:1}
+.item .rname{font-size:var(--fs-4);color:var(--ink);font-weight:var(--fw-semi);display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.item .runi{color:var(--accent);font-size:var(--fs-3);font-weight:var(--fw-semi);margin-top:4px;line-height:1.35}
+.item .runi.emptyuni,.item .runi.unresolveduni{color:var(--muted);font-size:var(--fs-2);font-weight:var(--fw-normal)}
+.item .rmeta{color:var(--muted);font-size:var(--fs-1);margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.item .arrow{margin-left:auto;color:var(--faint);font-size:var(--fs-5);align-self:center}
+.chip{display:inline-block;background:var(--accent-2-soft);font-size:var(--fs-1);padding:1px 6px;border-radius:var(--r-xs);color:var(--accent-2);font-weight:var(--fw-medium)}
+.footnote{padding:var(--sp-4) var(--sp-5);border-top:1px solid var(--border);background:var(--surface-2);color:var(--muted);font-size:var(--fs-1);line-height:1.75}
+.footnote b{color:var(--ink-2)}
+.empty{padding:var(--sp-6) var(--sp-4);text-align:center;color:var(--muted);font-size:var(--fs-3);line-height:1.8}
+.callout{background:var(--accent-2-soft);color:var(--ink-2);font-size:var(--fs-2);line-height:1.75;padding:var(--sp-4);margin:11px 3px;border-radius:var(--r-sm)}
+.statusbar{padding:0 var(--sp-5) 8px;color:var(--faint);font-size:var(--fs-1);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+
+/* --- fullscreen -------------------------------------------------------- */
+.fullscreen .shell{display:block;margin:0}
+.fullscreen .mapcard{height:100dvh;border-radius:0;border:0}
+.fullscreen .side,.fullscreen .header,.fullscreen .statusbar{display:none}
+
+/* --- dialogs ----------------------------------------------------------- */
+dialog{border:1px solid var(--border);border-radius:var(--r-xl);max-width:650px;width:calc(100% - 32px);padding:var(--sp-6);color:var(--ink);box-shadow:0 20px 90px #16364840;max-height:86vh;overflow:auto;overscroll-behavior:contain;background:var(--surface)}
+dialog::backdrop{background:#17384759;backdrop-filter:blur(3px)}
+dialog h2{margin:0 0 10px;font-size:var(--fs-7);font-weight:var(--fw-semi)}
+dialog p,dialog li{font-size:var(--fs-4);line-height:1.85;color:var(--ink-2)}
+dialog a{color:var(--accent-2)}
+dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--faint);background:transparent}
+.packactions{display:flex;gap:8px;margin-top:var(--sp-5);flex-wrap:wrap}
+.progress{height:7px;border-radius:var(--r-xs);background:var(--surface-3);margin:var(--sp-5) 0 9px;overflow:hidden}
+.progress div{height:100%;background:var(--accent-2);width:0%;transition:width .2s}
+.packmeta{font-size:var(--fs-3);line-height:1.8;color:var(--muted)}
+.packerrors{max-height:130px;overflow:auto;color:var(--caution);font-size:var(--fs-2);line-height:1.8;margin-top:8px}
+.datafacts{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:var(--sp-5) 0}
+.datafacts div{background:var(--surface-2);padding:var(--sp-4);border-radius:var(--r-sm);font-size:var(--fs-2);color:var(--muted)}
+.datafacts b{display:block;font-size:var(--fs-7);margin-bottom:3px;color:var(--ink);font-weight:var(--fw-semi)}
+#sourceList{margin-top:var(--sp-4)}
+#sourceList a,#coverageTable a{color:var(--accent-2)}
+#coverageDialog{max-width:790px}
+#coverageTable{width:100%;border-collapse:collapse;margin-top:var(--sp-5);font-size:var(--fs-3)}
+#coverageTable th,#coverageTable td{text-align:left;border-bottom:1px solid var(--border);padding:7px 8px}
+#coverageTable th{background:var(--accent-2-soft);position:sticky;top:0;font-weight:var(--fw-semi)}
+#schoolBody>.runi{font-size:var(--fs-7);color:var(--accent);font-weight:var(--fw-semi)}
+
+/* --- school cards (district level) ------------------------------------- */
+.schoolcard{margin:9px 10px;border:1px solid var(--border);border-radius:var(--r-md);background:var(--surface);overflow:hidden}
+.schoolcard summary{padding:var(--sp-4);cursor:pointer;list-style:none;min-height:46px}
+.schoolcard summary:hover{background:var(--surface-2)}
+.schoolcard[open]{box-shadow:var(--sh-1)}
+.schoolcard .rname{font-size:var(--fs-2);color:var(--muted);display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+.schoolcard .runi{font-size:var(--fs-5);font-weight:var(--fw-semi);color:var(--ink);margin:3px 0 2px}
+.schoolcard .rmeta{font-size:var(--fs-1);color:var(--muted);line-height:1.55}
+.campusrow{padding:11px var(--sp-4);border-top:1px solid var(--surface-3);font-size:var(--fs-2);line-height:1.6}
+.campusrow strong{font-size:var(--fs-3);color:var(--ink)}
+.campusrow p{margin:4px 0;color:var(--muted)}
+.campusrow a{color:var(--accent-2)}
+.schoolmore{margin:0 10px 11px;font-size:var(--fs-2)}
+.quality{display:inline-block;font-size:var(--fs-1);font-weight:var(--fw-medium);color:var(--caution);background:var(--caution-soft);border-radius:var(--r-xs);padding:1px 5px;margin:3px 0 3px 5px}
+.quality.verified{color:var(--accent-2);background:var(--accent-2-soft)}
+.quality.profile,.quality.association,.quality.corroborated{color:var(--caution);background:var(--caution-soft)}
+.quality.association{border:1px dashed #d9c8a8}
+.associationrow{background:#fdfaf4;border-left:2px solid #dcc9a6;padding:10px var(--sp-4)}
+
+@media(max-width:1050px) and (min-width:761px){
+  .shell{grid-template-columns:minmax(0,1fr) 300px;margin:10px;gap:10px}
+  .header{padding:11px var(--sp-5);gap:10px}
+  .brand{gap:8px}
+  .header h1{font-size:var(--fs-5)}
+  .searchwrap input{width:190px}
+  .actions button{padding:8px 10px;font-size:var(--fs-2)}
+  .logo{display:none}
+  .controls label{font-size:var(--fs-1);padding-inline:5px}
+  .mapcontrols{right:10px}
+  .legend{left:10px}
+}
+@media(max-width:760px){
+  body{background:var(--surface-3)}
+  /* The header is chrome, not content: on a phone it kept a 34px mark, a two-line brand and a
+     subtitle while the map - the actual subject - lost 14% of the viewport to it. The eyebrow and
+     the subtitle are dropped at this width, so the map starts higher up the first screen. */
+  .header{display:block;padding:6px 11px 5px}
+  .header .eyebrow,.header small{display:none}
+  .header h1{font-size:var(--fs-5)}
+  .logo{flex-basis:28px;width:28px;height:28px;font-size:15px}
+  .actions{margin-top:6px}
+  .searchwrap{flex:1}
+  .searchwrap input{width:100%;min-height:44px;font-size:var(--fs-3)}
+  .searchresults{left:0;right:auto;width:min(360px,92vw)}
+  .actions>button{min-height:44px;font-size:var(--fs-2)}
+  .shell{grid-template-columns:1fr;margin:6px;gap:7px}
+  .mapcard{height:62dvh;min-height:340px;border-radius:var(--r-md)}
+  .side{height:min(46dvh,520px);min-height:320px;border-radius:var(--r-md)}
+  .maphead{inset:9px 10px auto;gap:7px}
+  .maptitles h2{font-size:var(--fs-5);margin-top:6px;max-width:70vw}
+  .maptitles p{font-size:var(--fs-1);max-width:66vw;margin-top:3px}
+  .modebadge{font-size:var(--fs-1);padding:4px 7px;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
+  /* bottom clears the legend, which now runs the full width of the card on a phone and is 47px tall
+     once its key row wraps. At 28px the control panel overlapped it by 56x25 - measured at both 390
+     and 430 - so the zoom column sat on the legend's disclaimer text. */
+  .mapcontrols{left:auto;right:7px;bottom:62px;padding:4px;gap:4px;max-width:calc(100% - 14px);overflow-x:auto;justify-content:flex-end;border-radius:var(--r-md)}
+  .mapcontrols button{flex:0 0 40px;width:40px;height:40px;font-size:var(--fs-5)}
+  .mapcontrols .tiny{font-size:var(--fs-1)}
+  /* 8px CJK is not text, it is texture: at that size the legend's own disclaimer was unreadable on
+     the device most likely to show it. It wraps to two rows instead, and the swatch line no longer
+     clips (see the max-width:430px block). */
+  .legend{left:7px;bottom:6px;padding:3px 6px;font-size:10px;max-width:calc(100% - 14px)}
+  .legend #zoomInfo{display:none}
+  .sidehead{padding:var(--sp-4) var(--sp-4) 10px}
+  .sidehead h3{font-size:var(--fs-5);margin-bottom:4px}
+  /* A hidden-scrollbar horizontal scroller cut the last filter chip at the screen edge with nothing
+     to say it scrolled, so a filter that existed looked exactly like one that did not. Wrapping put
+     every control on screen but measured 157px - four rows, not the two an earlier version of this
+     comment claimed - and that is what pushed the region list to y=912 on a 932px phone, i.e. below
+     the fold entirely. The five data filters now fold into a disclosure: collapsed is one row, so the
+     list shows above the fold and reads as scrollable. The label-size slider stays out of the fold -
+     it acts on the map itself, which is what a phone reader is looking at. */
+  .controls{padding:7px 9px;gap:5px;flex-wrap:wrap}
+  .controls label{flex:0 0 auto;min-height:34px;padding:5px 8px;font-size:var(--fs-1)}
+  .controls input[type=range]{width:58px}
+  .controls .advlabel{display:flex}
+  .controls .filteradv{display:none}
+  .controls .advtoggle:checked~.filteradv{display:contents}
+  .list{padding:3px 6px 9px}
+  .item{min-height:64px;padding:10px 8px}
+  .footnote{font-size:var(--fs-1);line-height:1.6;padding:9px 12px}
+  .schoolcard{margin:7px 5px}
+  dialog{width:calc(100% - 18px);padding:var(--sp-5) var(--sp-4);border-radius:var(--r-md);max-height:90dvh}
+  dialog h2{font-size:var(--fs-6)}
+  .datafacts{gap:6px}
+  .datafacts div{padding:9px}
+  .datafacts b{font-size:var(--fs-6)}
+  .statusbar{display:block;padding:0 10px 7px;font-size:var(--fs-1);line-height:1.7}
+}
+@media(max-width:430px){
+  .mapcard{height:60dvh;min-height:320px}
+  .side{height:44dvh;min-height:300px}
+  .maptitles h2{font-size:var(--fs-4);max-width:66vw}
+  .maptitles p{display:none}
+  .modebadge{max-width:32vw}
+  /* The 70vw cap plus nowrap turned the disclaimer into an ellipsis on the narrowest phones - it cut
+     exactly the clause ("不表示排名或层级") that stops the fills from reading as a ranking. The
+     legend is bottom-anchored and wraps upward, so it can simply be allowed to take the row. */
+  .legend .swatches{max-width:100%;flex-wrap:wrap}
+  /* No bottom override here any more: the <=760px value already clears the legend, and the 28px
+     this block used to set was the direct cause of the legend/controls overlap at 390 and 430. */
+  .mapcontrols button{flex-basis:42px;width:42px;height:42px}
+  .sidehead p{font-size:var(--fs-1)}
+  .item .ordinal{display:none}
+  .item{gap:6px}
+  .item .rname{font-size:var(--fs-3)}
+  .item .runi{font-size:var(--fs-3)}
+  .item .rmeta{font-size:var(--fs-1)}
+}
+/* Touch.  A finger is not a cursor: every control the map and the list expose gets a 44px short
+   side whenever the pointer is coarse, at any viewport width, so the desktop sizes above stay
+   compact on a mouse. */
+@media(hover:none),(pointer:coarse){
+  .mapcontrols{padding:5px}
+  .mapcontrols button{flex:0 0 44px;width:44px;height:44px}
+  .mapcontrols .tiny{font-size:var(--fs-2)}
+  .controls label{min-height:44px;padding:8px 10px;font-size:var(--fs-2)}
+  .controls input[type=range]{width:76px}
+  .actions>button{min-height:44px}
+  .searchwrap input{min-height:44px}
+  .searchclear{right:0;top:0;width:44px;height:44px;display:grid;place-items:center;font-size:19px}
+  .item{padding:12px 10px}
+  .schoolcard summary{min-height:48px}
+  .schoolmore,.footnote button{min-height:44px}
+  dialog .close{width:44px;height:44px;display:grid;place-items:center;padding:0;font-size:22px;margin:-6px -6px 0 0}
+  .legend{padding:5px 8px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}.item:hover,.mapcontrols button:hover{transform:none}}
