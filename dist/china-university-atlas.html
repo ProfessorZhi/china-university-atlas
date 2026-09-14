@@ -27,9 +27,13 @@
      fills sit above it in lightness, which is the cartographic convention and keeps the country
      from reading as a hole punched in a bright page. */
   /* Mirrors MAP_STYLE.canvas in src/app.js, which draws the map itself; the two must move together. */
-  --canvas:#a5bdc6;
+  /* The sea has to be blue, not grey-blue: #a5bdc6 sat at C*8, so the water read as a desaturated
+     haze and the land - which is the same material, one step lighter - never separated from it.
+     #74a9cc is C*25 at L*67: unmistakably water, still a calm atlas blue rather than a saturated
+     one, and 19.6 dE00 off the closest fill instead of the old near-invisible margin. */
+  --canvas:#74a9cc;
   /* A step deeper than the water it encloses, so the card reads as a frame instead of a light rim. */
-  --canvas-edge:#8aa6b1;
+  --canvas-edge:#5d93b9;
 
   /* --- borders ---------------------------------------------------------- */
   --border:#dde7ea;
@@ -43,15 +47,21 @@
   --caution-soft:#fbf4e9;
 
   /* --- map -------------------------------------------------------------- */
-  --map-label-region:#45636f;   /* L1 administrative name */
+  /* L1 administrative name. The spec for this layer is "deep grey or black, smaller, medium weight,
+     secondary information", and the tone now follows the words rather than the map: #45636f was a
+     slate blue from the same family as the old sea, which is why the administrative name and the
+     university name read as two shades of one thing instead of as two different jobs. */
+  --map-label-region:#26333b;   /* L1 administrative name */
   --map-label-uni:var(--accent);/* L2 best-university name */
   --map-halo:#ffffff;
-  --map-leader:#5f7d89;
+  --map-leader:#4a6b78;
   /* Hover is a darker neutral, not a seventh colour: a warm or saturated highlight competes with
      the fills and reads as a value on the map instead of as "the thing under the cursor". It has to
-     be darker than --canvas, or the cursor makes the shape it is over vanish. */
-  --map-hover:#7f9aa6;
-  --map-hover-stroke:#5f7d89;
+     be darker than --canvas, or the cursor makes the shape it is over vanish - and when the sea
+     moved from L*75 to L*67 the old #7f9aa6 became the same lightness as the water it sits in, so
+     the hover stopped reading as a state at all. */
+  --map-hover:#54707f;
+  --map-hover-stroke:#3f5c6b;
   /* The inset's water and land tones live only in MAP_STYLE (insetWater / insetLand) because the
      inset is drawn by JS into the SVG and nothing in CSS ever styles it. A token here would be a
      second copy of a number no stylesheet reads. */
@@ -61,6 +71,15 @@
   --sh-1:0 1px 2px #1738460f;
   --sh-2:0 8px 24px #17384614;
   --sp-1:4px; --sp-2:6px; --sp-3:9px; --sp-4:13px; --sp-5:18px; --sp-6:24px;
+
+  /* --- page height budget ----------------------------------------------- */
+  /* The map card and the side panel are both "everything that is left", so their height is the
+     viewport minus the chrome above and below them. That subtraction used to be a literal 172px
+     against chrome that actually measured 128px, so 44px of every desktop viewport was dead space
+     under the status bar - and because the map is height-fitted, that dead space was 44px of land
+     that was not drawn. The number below is the measured chrome: header 53 + shell margins 24 +
+     status bar 24, with 2px of slack for a rounding difference between browsers. */
+  --shell-h:calc(100dvh - 103px);
 }
 
 *{box-sizing:border-box}
@@ -77,13 +96,17 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
    university names on the map for the same job. Both header actions are now plain buttons. */
 
 /* --- header: a title bar, not a second product ------------------------- */
-.header{padding:12px var(--sp-6) 11px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-5);align-items:center;justify-content:space-between;box-shadow:var(--sh-1);position:relative;z-index:20}
-.brand{display:flex;gap:10px;align-items:center;min-width:0}
-.brand>div:last-child{min-width:0}
-.logo{flex:0 0 34px;width:34px;height:34px;border-radius:var(--r-md);background:var(--accent);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:var(--fw-bold)}
-.eyebrow{font-size:var(--fs-1);letter-spacing:1.6px;color:var(--faint);margin-bottom:1px;font-weight:var(--fw-medium)}
-.header h1{margin:0;font-size:var(--fs-6);font-weight:var(--fw-semi);letter-spacing:.2px;color:var(--ink);line-height:1.25}
-.header small{display:block;color:var(--muted);font-size:var(--fs-2);margin-top:2px;line-height:1.4}
+/* 80px of chrome over a map that lost 14% of its drawing height to it. The title, the product line
+   and the range note were three stacked lines of type saying one thing; they are one line now, and
+   the header is 53px. Nothing was removed - the range note is still here, set as a quiet suffix on
+   the title's baseline rather than as a paragraph under it. */
+.header{padding:9px var(--sp-5);background:var(--surface);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-4);align-items:center;justify-content:space-between;box-shadow:var(--sh-1);position:relative;z-index:20}
+.brand{display:flex;gap:9px;align-items:baseline;min-width:0}
+.logo{flex:0 0 28px;width:28px;height:28px;border-radius:var(--r-sm);background:var(--accent);color:#fff;display:grid;place-items:center;font-size:16px;font-weight:var(--fw-bold);align-self:center}
+.eyebrow{font-size:var(--fs-1);letter-spacing:1.5px;color:var(--faint);font-weight:var(--fw-medium);white-space:nowrap}
+.header h1{margin:0;font-size:17px;font-weight:var(--fw-semi);letter-spacing:.2px;color:var(--ink);line-height:1.25;white-space:nowrap}
+.header small{color:var(--muted);font-size:var(--fs-2);line-height:1.3;padding-left:9px;border-left:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.actions>button{padding:7px 11px}
 .actions{display:flex;gap:var(--sp-2);align-items:center;flex-wrap:wrap}
 .searchwrap{position:relative}
 .searchwrap input{width:230px;padding:9px 32px 9px 11px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);outline:0;font-size:var(--fs-3)}
@@ -95,17 +118,23 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .searchitem small{line-height:var(--lh-body);color:var(--muted)}
 
 /* --- shell ------------------------------------------------------------- */
-.shell{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:var(--sp-4);margin:var(--sp-4);min-height:0}
-.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;height:calc(100dvh - 172px);min-height:420px}
+/* The map is the page. The side column is a margin note beside it, not a second column of equal
+   weight: 326px of a 1280-1920 shell was a fifth of the product spent on the index, and every pixel
+   of it came straight off a map that is height-fitted and therefore cannot grow the other way. */
+.shell{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:11px;margin:11px;min-height:0}
+.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;height:var(--shell-h);min-height:420px}
 
 /* --- map overlay chrome ------------------------------------------------ */
-.maphead{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3);position:absolute;inset:14px 16px auto;z-index:4;pointer-events:none}
+/* The head is a caption on the map, not a panel above it: it moved from 81px to 51px and the
+   geometry fit that used to reserve 118px for it now reserves 60, which is 58px of extra land. */
+.maphead{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3);position:absolute;inset:11px 13px auto;z-index:4;pointer-events:none}
 .maptitles{pointer-events:auto;min-width:0}
-.breadcrumb{font-size:var(--fs-2);color:var(--muted);display:flex;flex-wrap:wrap;gap:3px;align-items:center}
-.breadcrumb button{font-size:var(--fs-2);background:#ffffffd9;border:0;padding:4px 7px;border-radius:var(--r-xs);color:var(--accent-2)}
-.breadcrumb b{padding:4px 2px;color:var(--ink-2);font-weight:var(--fw-semi)}
-.maptitles h2{margin:8px 0 0;font-size:var(--fs-7);font-weight:var(--fw-semi);letter-spacing:.2px;line-height:var(--lh-tight);text-wrap:balance;color:var(--ink)}
-.maptitles p{font-size:var(--fs-2);color:var(--muted);margin:5px 0 0;line-height:1.5}
+.breadcrumb{font-size:var(--fs-1);color:var(--muted);display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.breadcrumb button{font-size:var(--fs-1);background:#ffffffd9;border:0;padding:3px 6px;border-radius:var(--r-xs);color:var(--accent-2)}
+.breadcrumb b{padding:3px 2px;color:var(--ink);font-weight:var(--fw-semi)}
+.titlerow{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-top:3px}
+.maptitles h2{margin:0;font-size:17px;font-weight:var(--fw-semi);letter-spacing:.2px;line-height:1.25;color:var(--ink);white-space:nowrap}
+.maptitles p{font-size:var(--fs-2);color:var(--ink-2);margin:0;line-height:1.4}
 .modebadge{background:#ffffffd9;padding:5px 9px;border-radius:var(--r-pill);font-size:var(--fs-1);white-space:nowrap;color:var(--accent-2);border:1px solid var(--accent-2-soft);font-weight:var(--fw-medium)}
 
 #map{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
@@ -117,14 +146,20 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .leader{pointer-events:none}
 #measureLayer{visibility:hidden;pointer-events:none}
 
-.mapcontrols{position:absolute;right:14px;bottom:46px;z-index:5;display:flex;flex-direction:column;gap:5px;padding:5px;background:#ffffffd9;border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-2);backdrop-filter:blur(8px)}
-.mapcontrols button{width:38px;height:36px;padding:4px;font-size:var(--fs-6);font-weight:var(--fw-normal);border-radius:var(--r-sm);box-shadow:none;background:var(--surface);border-color:var(--border);display:grid;place-items:center}
-.mapcontrols button:hover{background:var(--accent-2-soft);border-color:var(--border-strong)}
-.mapcontrols .tiny{font-size:var(--fs-2)}
-.mapcontrols #zoomIn,.mapcontrols #zoomOut{font-size:19px}
-.mapcontrols button:disabled{background:var(--surface-2)}
+/* Five 38x36 buttons in a bordered, shadowed, blurred panel is a toolbar - the single heaviest piece
+   of chrome over the map, and it sat on 212px of the map's right edge. It is a light floating rail
+   now: 30px targets, no panel edge, no shadow, no inner button borders. 174px instead of 212, and
+   the map's own colour shows through it. The `bottom` offset is the legend's height plus its own
+   offset plus a gap - the two share the bottom of the card and the legend wraps to two rows, so a
+   constant that only clears a one-row legend is what put the buttons on top of it at 768x1024. */
+.mapcontrols{position:absolute;right:11px;bottom:62px;z-index:5;display:flex;flex-direction:column;gap:2px;padding:3px;background:#ffffffd0;border-radius:var(--r-md);box-shadow:0 1px 5px #1738461f;backdrop-filter:blur(6px)}
+.mapcontrols button{width:30px;height:30px;padding:2px;font-size:var(--fs-5);font-weight:var(--fw-normal);border-radius:var(--r-xs);box-shadow:none;background:transparent;border:0;display:grid;place-items:center;color:var(--ink-2)}
+.mapcontrols button:hover{background:var(--accent-2-soft);color:var(--accent-2)}
+.mapcontrols .tiny{font-size:var(--fs-1)}
+.mapcontrols #zoomIn,.mapcontrols #zoomOut{font-size:17px}
+.mapcontrols button:disabled{background:transparent;color:var(--faint)}
 
-.legend{position:absolute;bottom:11px;left:14px;right:14px;color:var(--muted);font-size:var(--fs-1);display:flex;gap:var(--sp-3);flex-wrap:wrap;justify-content:space-between;align-items:center;pointer-events:none;padding:4px 8px;border-radius:var(--r-sm);background:#f5f8f7c9;backdrop-filter:blur(4px);width:max-content;max-width:calc(100% - 28px);right:auto}
+.legend{position:absolute;bottom:10px;left:12px;color:var(--muted);font-size:var(--fs-1);display:flex;gap:var(--sp-2) var(--sp-3);flex-wrap:wrap;justify-content:space-between;align-items:center;pointer-events:none;padding:3px 7px;border-radius:var(--r-sm);background:#f5f8f7d9;backdrop-filter:blur(4px);width:max-content;max-width:calc(100% - 24px)}
 .swatches{display:inline-flex;align-items:center;gap:3px}
 .swatches i{display:inline-block;width:11px;height:8px;border-radius:2px;border:1px solid #59738428}
 .legend #zoomInfo{color:var(--faint)}
@@ -156,14 +191,20 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .tooltip .tipmeta{opacity:.78}
 
 /* --- side panel: a place list ------------------------------------------ */
-.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;height:calc(100dvh - 172px);min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
-.sidehead{padding:var(--sp-5) var(--sp-5) var(--sp-4);border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff,var(--surface-2))}
-.sidehead h3{font-size:var(--fs-5);margin:0 0 5px;font-weight:var(--fw-semi);line-height:var(--lh-tight)}
-.sidehead p{font-size:var(--fs-2);line-height:1.55;margin:0;color:var(--muted)}
-.sidecount{display:inline-flex;align-items:center;min-height:22px;padding:3px 8px;border-radius:var(--r-pill);background:var(--accent-2-soft);color:var(--accent-2);font-weight:var(--fw-medium);font-size:var(--fs-1);margin-top:8px}
-.controls{padding:var(--sp-3) var(--sp-3);display:flex;gap:5px 7px;flex-wrap:wrap;align-items:center;font-size:var(--fs-2);border-bottom:1px solid var(--border);background:var(--surface-2)}
-.controls label{display:flex;align-items:center;gap:4px;font-size:var(--fs-2);min-height:28px;padding:3px 7px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface);white-space:nowrap;color:var(--ink-2);cursor:pointer;transition:border-color .12s,background .12s}
-.controls label:hover{border-color:var(--border-strong);background:#fbfeff}
+.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;height:var(--shell-h);min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
+/* The head was 103px of a 728px panel - a gradient plate, a two-line description and a chip. It is
+   the panel's title, so it is now set like one: no plate, tighter leading, and the description
+   dropped from 11px to 10px because it explains the list rather than competing with it. */
+.sidehead{padding:var(--sp-4) var(--sp-4) 10px;border-bottom:1px solid var(--border)}
+.sidehead h3{font-size:var(--fs-5);margin:0 0 3px;font-weight:var(--fw-semi);line-height:var(--lh-tight)}
+.sidehead p{font-size:var(--fs-1);line-height:1.5;margin:0;color:var(--muted)}
+.sidecount{display:inline-flex;align-items:center;min-height:18px;padding:2px 7px;border-radius:var(--r-pill);background:var(--accent-2-soft);color:var(--accent-2);font-weight:var(--fw-medium);font-size:var(--fs-1);margin-top:5px}
+/* The filter row is a text row, not a rack of chips: five bordered boxes with their own background
+   read as a control console bolted to the top of a reading list. Same five inputs, same order, no
+   boxes - the label is the target and the row is 66px shorter, which goes to the list underneath. */
+.controls{padding:7px var(--sp-4) 8px;display:flex;gap:3px 5px;flex-wrap:wrap;align-items:center;font-size:var(--fs-2);border-bottom:1px solid var(--border)}
+.controls label{display:flex;align-items:center;gap:4px;font-size:var(--fs-2);min-height:24px;padding:2px 6px;border:0;border-radius:var(--r-xs);background:transparent;white-space:nowrap;color:var(--muted);cursor:pointer;transition:background .12s,color .12s}
+.controls label:hover{background:var(--surface-2);color:var(--ink-2)}
 .controls input[type=checkbox]{width:14px;height:14px;accent-color:var(--accent-2)}
 .controls input[type=range]{width:66px;accent-color:var(--accent-2)}
 /* The five filter checkboxes are secondary: they change what the *data* includes, not what the map
@@ -191,7 +232,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .item .rmeta{color:var(--muted);font-size:var(--fs-1);margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .item .arrow{margin-left:auto;color:var(--faint);font-size:var(--fs-5);align-self:center}
 .chip{display:inline-block;background:var(--accent-2-soft);font-size:var(--fs-1);padding:1px 6px;border-radius:var(--r-xs);color:var(--accent-2);font-weight:var(--fw-medium)}
-.footnote{padding:var(--sp-4) var(--sp-5);border-top:1px solid var(--border);background:var(--surface-2);color:var(--muted);font-size:var(--fs-1);line-height:1.75}
+.footnote{padding:10px var(--sp-4);border-top:1px solid var(--border);background:var(--surface-2);color:var(--muted);font-size:var(--fs-1);line-height:1.6}
 .footnote b{color:var(--ink-2)}
 .empty{padding:var(--sp-6) var(--sp-4);text-align:center;color:var(--muted);font-size:var(--fs-3);line-height:1.8}
 .callout{background:var(--accent-2-soft);color:var(--ink-2);font-size:var(--fs-2);line-height:1.75;padding:var(--sp-4);margin:11px 3px;border-radius:var(--r-sm)}
@@ -245,14 +286,18 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
 .associationrow{background:#fdfaf4;border-left:2px solid #dcc9a6;padding:10px var(--sp-4)}
 
 @media(max-width:1050px) and (min-width:761px){
-  .shell{grid-template-columns:minmax(0,1fr) 300px;margin:10px;gap:10px}
-  .header{padding:11px var(--sp-5);gap:10px}
+  :root{--shell-h:calc(100dvh - 95px)}
+  /* 300px of a 768px screen left the map 438px wide, and at that width the map is bound by its
+     width, not its height: the side column was taking the land off the map one pixel per pixel. */
+  .shell{grid-template-columns:minmax(0,1fr) 262px;margin:10px;gap:10px}
+  .header{padding:8px var(--sp-4);gap:10px}
   .brand{gap:8px}
   .header h1{font-size:var(--fs-5)}
-  .searchwrap input{width:190px}
-  .actions button{padding:8px 10px;font-size:var(--fs-2)}
+  .header .eyebrow{display:none}
+  .searchwrap input{width:170px}
+  .actions button{padding:7px 9px;font-size:var(--fs-2)}
   .logo{display:none}
-  .controls label{font-size:var(--fs-1);padding-inline:5px}
+  .controls label{font-size:var(--fs-1);padding-inline:4px}
   .mapcontrols{right:10px}
   .legend{left:10px}
 }
@@ -271,16 +316,18 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
   .searchresults{left:0;right:auto;width:min(360px,92vw)}
   .actions>button{min-height:44px;font-size:var(--fs-2)}
   .shell{grid-template-columns:1fr;margin:6px;gap:7px}
-  .mapcard{height:62dvh;min-height:340px;border-radius:var(--r-md)}
+  .mapcard{height:64dvh;min-height:340px;border-radius:var(--r-md)}
   .side{height:min(46dvh,520px);min-height:320px;border-radius:var(--r-md)}
   .maphead{inset:9px 10px auto;gap:7px}
-  .maptitles h2{font-size:var(--fs-5);margin-top:6px;max-width:70vw}
-  .maptitles p{font-size:var(--fs-1);max-width:66vw;margin-top:3px}
+  .maptitles h2{font-size:var(--fs-5);max-width:70vw}
+  .titlerow{margin-top:2px;gap:6px}
+  .maptitles p{font-size:var(--fs-1);max-width:66vw}
   .modebadge{font-size:var(--fs-1);padding:4px 7px;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
-  /* bottom clears the legend, which now runs the full width of the card on a phone and is 47px tall
-     once its key row wraps. At 28px the control panel overlapped it by 56x25 - measured at both 390
-     and 430 - so the zoom column sat on the legend's disclaimer text. */
-  .mapcontrols{left:auto;right:7px;bottom:62px;padding:4px;gap:4px;max-width:calc(100% - 14px);overflow-x:auto;justify-content:flex-end;border-radius:var(--r-md)}
+  /* A vertical rail of five 40px buttons is 248px tall - 27% of a phone viewport, the heaviest
+     non-map element on the screen, floating over the map's right edge. The phone has a long bottom
+     edge and no right edge to spare, so the rail lies down: 52px instead of 248, still above the
+     legend, still out of the inset's way (the inset moves to the left at this width). */
+  .mapcontrols{left:auto;right:7px;bottom:59px;flex-direction:row;padding:4px;gap:4px;max-width:calc(100% - 14px);justify-content:flex-end;border-radius:var(--r-md)}
   .mapcontrols button{flex:0 0 40px;width:40px;height:40px;font-size:var(--fs-5)}
   .mapcontrols .tiny{font-size:var(--fs-1)}
   /* 8px CJK is not text, it is texture: at that size the legend's own disclaimer was unreadable on
@@ -303,9 +350,11 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
   .controls .advlabel{display:flex}
   .controls .filteradv{display:none}
   .controls .advtoggle:checked~.filteradv{display:contents}
-  .list{padding:3px 6px 9px}
+  /* 120px was a floor the panel could not pay for: side head + filter row + footnote already came to
+     250 of a 371px panel, so the list's floor pushed the footnote's last line out of the box. */
+  .list{padding:3px 6px 9px;min-height:104px}
   .item{min-height:64px;padding:10px 8px}
-  .footnote{font-size:var(--fs-1);line-height:1.6;padding:9px 12px}
+  .footnote{font-size:var(--fs-1);line-height:1.55;padding:8px 11px}
   .schoolcard{margin:7px 5px}
   dialog{width:calc(100% - 18px);padding:var(--sp-5) var(--sp-4);border-radius:var(--r-md);max-height:90dvh}
   dialog h2{font-size:var(--fs-6)}
@@ -315,9 +364,10 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
   .statusbar{display:block;padding:0 10px 7px;font-size:var(--fs-1);line-height:1.7}
 }
 @media(max-width:430px){
-  .mapcard{height:60dvh;min-height:320px}
+  /* The map is the page on a phone too, and the place list is what the reader scrolls to. */
+  .mapcard{height:66dvh;min-height:340px}
   .side{height:44dvh;min-height:300px}
-  .maptitles h2{font-size:var(--fs-4);max-width:66vw}
+  .maptitles h2{font-size:var(--fs-5);max-width:66vw}
   .maptitles p{display:none}
   .modebadge{max-width:32vw}
   /* The 70vw cap plus nowrap turned the disclaimer into an ellipsis on the narrowest phones - it cut
@@ -399,8 +449,8 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
 }
 </style></head><body>
 <div id="bootSplash" class="bootsplash" role="status" aria-live="polite"><div class="bootsplash-card"><div class="bootsplash-mark">山</div><div><strong>全国高校地图</strong><p id="bootSplashText">正在打开单文件离线版…</p><small>全部地图与高校数据均在此 HTML 内，不需要联网。</small></div></div></div>
-<header class="header"><div class="brand"><div class="logo">山</div><div><div class="eyebrow">CHINA · UNIVERSITY ATLAS</div><h1>全国高校地图</h1><small>真实行政区轮廓 · 全国 → 省 → 市 → 区县</small></div></div><div class="actions"><div class="searchwrap"><input id="search" aria-label="搜索省、市、县区或大学" placeholder="搜索省、市、县区或大学" title="按 / 可直接跳到搜索框" autocomplete="off"><button id="clearSearch" class="searchclear" title="清空搜索" aria-label="清空搜索">×</button><div id="searchresults" class="searchresults"></div></div><button id="dataBtn">数据说明</button><button id="packBtn">覆盖统计</button></div></header>
-<main class="shell"><section class="mapcard" aria-label="地图区域"><div class="maphead"><div class="maptitles"><nav class="breadcrumb" id="crumb" aria-label="当前地图层级"></nav><h2 id="mapTitle">各省最佳高校 · 参考</h2><p id="mapSubtitle">点击色块进入省份，滚轮缩放，拖动平移</p></div><span class="modebadge" id="modeBadge">单文件离线</span></div><svg id="map" xmlns="http://www.w3.org/2000/svg" aria-label="中国高校地图" role="img"><defs><clipPath id="mapClip"><rect id="clipRect"/></clipPath></defs><g clip-path="url(#mapClip)"><g id="shapes"></g><g id="labelLayer" class="labels"></g></g><g id="measureLayer" aria-hidden="true"></g><g id="inset"></g></svg><div class="mapcontrols" role="group" aria-label="地图操作"><button id="zoomIn" title="放大" aria-label="放大地图">＋</button><button id="zoomOut" title="缩小" aria-label="缩小地图">−</button><button id="fitBtn" class="tiny" title="恢复地图范围" aria-label="恢复地图范围">适应</button><button id="backBtn" class="tiny" title="返回上一级" aria-label="返回上一级">返回</button><button id="fullBtn" class="tiny" title="切换全屏布局" aria-label="切换全屏布局">全屏</button></div><div class="legend"><span class="swatches" id="legendSwatches">色块仅区分相邻行政区，不表示排名</span><span id="zoomInfo">100%</span></div><div id="mapToast" class="maptoast"></div><div id="tooltip" class="tooltip"></div></section>
+<header class="header"><div class="brand"><div class="logo">山</div><h1>全国高校地图</h1><span class="eyebrow">CHINA · UNIVERSITY ATLAS</span><small>真实行政区轮廓 · 全国 → 省 → 市 → 区县</small></div><div class="actions"><div class="searchwrap"><input id="search" aria-label="搜索省、市、县区或大学" placeholder="搜索省、市、县区或大学" title="按 / 可直接跳到搜索框" autocomplete="off"><button id="clearSearch" class="searchclear" title="清空搜索" aria-label="清空搜索">×</button><div id="searchresults" class="searchresults"></div></div><button id="dataBtn">数据说明</button><button id="packBtn">覆盖统计</button></div></header>
+<main class="shell"><section class="mapcard" aria-label="地图区域"><div class="maphead"><div class="maptitles"><nav class="breadcrumb" id="crumb" aria-label="当前地图层级"></nav><div class="titlerow"><h2 id="mapTitle">各省最佳高校 · 参考</h2><p id="mapSubtitle">点击色块进入省份，滚轮缩放，拖动平移</p></div></div><span class="modebadge" id="modeBadge">单文件离线</span></div><svg id="map" xmlns="http://www.w3.org/2000/svg" aria-label="中国高校地图" role="img"><defs><clipPath id="mapClip"><rect id="clipRect"/></clipPath></defs><g clip-path="url(#mapClip)"><g id="edgeLayer"></g><g id="shapes"></g><g id="labelLayer" class="labels"></g></g><g id="measureLayer" aria-hidden="true"></g><g id="inset"></g></svg><div class="mapcontrols" role="group" aria-label="地图操作"><button id="zoomIn" title="放大" aria-label="放大地图">＋</button><button id="zoomOut" title="缩小" aria-label="缩小地图">−</button><button id="fitBtn" class="tiny" title="恢复地图范围" aria-label="恢复地图范围">适应</button><button id="backBtn" class="tiny" title="返回上一级" aria-label="返回上一级">返回</button><button id="fullBtn" class="tiny" title="切换全屏布局" aria-label="切换全屏布局">全屏</button></div><div class="legend"><span class="swatches" id="legendSwatches">色块仅区分相邻行政区，不表示排名</span><span id="zoomInfo">100%</span></div><div id="mapToast" class="maptoast"></div><div id="tooltip" class="tooltip"></div></section>
 <aside class="side" aria-label="地区与高校列表"><div class="sidehead"><h3 id="sideTitle">全国 · 省级</h3><p id="sideDesc">点击行政区查看下一级；市级主标签只由本地主体高校竞争。</p><div id="sideCount" class="sidecount"></div></div><div class="controls" role="group" aria-label="显示与筛选"><input id="advFilters" type="checkbox" class="advtoggle" aria-label="展开或收起更多筛选"><label for="advFilters" class="advlabel"><span class="advopen">更多筛选</span><span class="advclose">收起筛选</span></label><span class="filteradv"><label><input id="includeBranch" type="checkbox" checked> 显示异地办学信息</label><label><input id="includeAdult" type="checkbox"> 含成人高校</label><label><input id="onlyOfficial" type="checkbox"> 只看有权威依据的地点</label><label><input id="showUni" type="checkbox" checked> 大学名称</label><label><input id="avoid" type="checkbox" checked> 标签自动避让</label></span><label>地图标签字号 <input id="fontSize" type="range" min="75" max="135" value="100" aria-label="地图标签字号"></label></div><div id="list" class="list"></div><div class="footnote"><b>一个学校主体只归一个主城市。</b>异地本科校区与研究生院不抢市级主标签；有分层信息时校名旁显示“＋”，悬浮查看两层。县区层仍按真实办学地点展示。<button id="exportData" style="margin-top:8px">导出当前地区数据</button></div></aside></main>
 <footer class="statusbar"><span id="cacheStatus">单文件离线 · 正在解压内嵌数据…</span><span>边界依源数据快照展示 · 不作测绘或导航依据</span></footer>
 <dialog id="dataDialog"><button class="close" data-close="dataDialog" aria-label="关闭数据说明">×</button><h2>数据与选取规则</h2><div class="datafacts"><div><b id="factGeo"></b>边界文件</div><div><b id="factCity"></b>普通高校</div><div><b id="factCampus"></b>校区/办学地点</div></div><p><b>全部运行数据已嵌入本文件。</b>无需第一次联网、不用下载底图、不请求服务器。台湾仅省级轮廓；不设普通县区的城市保留真实本级轮廓。</p><p><b>市级规则：</b>主标签只在学校名录中登记于该城市的主体高校之间产生。异地高校不再因为在当地设校区而抢走城市主标签。若存在重要异地办学，悬浮信息分成两层：①有本科招生/本科培养的异地校区或分校；②主要承担硕博培养的研究生院、研究院或研究生培养基地。香港中文大学（深圳）这类在深圳具有独立学校主体条目的高校按本地主体处理，不进入异地括号层。</p><p><b>县区规则：</b>继续按具体校园物理位置展示；只有县区归属线索、没有校园门牌时，单独记为“县区归属依据”，不造坐标。地图标签会先根据校名长度自动缩字号，再尝试避让，最后才隐藏；放大后字号和可见标签会恢复。</p><p>“最佳”只是当前资料中的参考候选：本科优先，其次专科；同层次再参考学校标签与排名来源。分类榜不冒充统一全国总排名，各年招生层次、迁址与办学状态仍须核验。成人高校默认关闭。</p><div class="packactions"><button id="svgBtn" title="导出当前地图 SVG" aria-label="导出当前地图 SVG">导出当前地图 SVG</button><button id="pngBtn" title="导出当前地图 PNG" aria-label="导出当前地图 PNG">导出当前地图 PNG</button></div><div id="sourceList"></div></dialog>
@@ -415,43 +465,64 @@ const $=id=>document.getElementById(id);async function readEmbeddedJson(id){cons
 /* V5.8 map tokens.  These mirror the :root block in src/styles.css: one font stack, one
  * low-saturation land family, one boundary hierarchy, one accent for the university name. */
 const FONT_STACK='-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",Arial,sans-serif';
-/* One family of six low-chroma fills, all at L*90 with C*13, hues spaced 60 degrees apart. Six is
-   the shortest palette that still lets the map's own greedy colouring give every adjacent pair a
-   different fill - with five, one pair always collides on real boundaries. The family sits in a
-   single narrow lightness/chroma band, so the map reads as one tinted surface rather than a
-   rainbow of values that suggests a ranking, while neighbouring units stay separable: the closest
-   adjacent pair is dE00 9.79 (was 6.16 as a saturated rainbow and 5.71 in the first draft of this
-   family, which traded too much separation for calm). */
-const palette=['#cde6fa','#ebdef5','#fddade','#f4dfcb','#d9e7d0','#c4eae7'];
+/* One family of six fills, C*15-18, L*82-92, hues at least 45 degrees apart. Six is the shortest
+   palette that lets the map's own greedy colouring give every adjacent pair a different fill - with
+   five, one pair always collides on real boundaries.
+   The family is one narrow band in chroma and a wider one in lightness, so the map reads as one
+   tinted surface rather than as a rainbow of values that suggests a ranking. What changed from the
+   previous family (a flat L*90, C*13) is that the band is no longer *flat*: every fill sat at
+   exactly the same lightness and nearly the same chroma, so the closest pair measured dE00 11.3 -
+   under the point where two neighbouring provinces separate at a glance - and the map read as "all
+   about equally pale", which is the one thing a fill palette must not be. Chroma is 18 instead of
+   13 and lightness now spans ten points instead of zero, which puts the worst pair at 14.9.
+   The colours were chosen by search, not by eye: candidates across the whole band, scored with
+   CIEDE2000, maximising the minimum pairwise distance. It has to be the *pairwise* minimum and not
+   a pleasing sequence, because the greedy assignment is free to put any two entries next to each
+   other - the only palette that is provably safe is one where every pair is far apart. */
+const palette=['#f2e7cb','#fcd5eb','#b9eff7','#ecc3b3','#b7d3b8','#cccff2'];
 const MAP_STYLE={
   /* The canvas is water, and it is deliberately darker than the land: land above sea level is the
      cartographic convention, and it keeps the country from reading as a hole in a bright page. */
   /* Every tone below is a measured contrast ratio against the six fills, not a taste call.
      The old water #c7dade sat at 1.12:1 against the fills, so sea and land were the same material
      and the country read as a hole in a bright page rather than as a figure on water. */
-  canvas:'#a5bdc6',        /* 1.52 vs the fills (was 1.12), 1.74 vs the page -- water is now a material */
-  hover:'#7f9aa6',         /* 1.51 darker than the new water, 2.30 against the fills */
+  /* Mirrors --canvas in src/styles.css. #a5bdc6 was C*8 - a grey-blue haze, not water, and the land
+     (the same material one step lighter) never separated from it. #74a9cc is C*25 at L*67: clearly
+     blue, still a calm atlas blue, and 19.6 dE00 off the closest fill. */
+  canvas:'#74a9cc',
+  /* Mirrors --map-hover. It has to be darker than the water or the cursor makes the shape it is
+     over vanish, and the old #7f9aa6 was the same lightness as the new sea. */
+  hover:'#54707f',
   /* The island tone is the one value that did not move when the sea moved, and it is the value whose
      whole job is separation from the sea: #7f97a3 measured 2.12 against the old #c7dade and only 1.56
      against the new one, so every unnamed land feature quietly lost a third of its figure-ground.
      #5a7480 restores it to 2.52 and stays clear of both boundary strokes, so an island cannot be
      misread as a border. */
-  hoverStroke:'#5f7d89',island:'#5a7480',single:['#2f6b7f',1.5],
+  hoverStroke:'#3f5c6b',island:'#5a7480',single:['#3c5a68',1.4],
   /* The inset is a panel, so it gets its own water instead of borrowing the main sea: filling it
-     with the same tone drew a frame around nothing. #8aa6b1 is a step deeper than the sea (1.31)
-     and its land sits 2.29 above it, so the islands are the lightest thing in the frame. */
-  insetWater:'#8aa6b1',insetLand:'#eef3f1',
+     with the same tone drew a frame around nothing. It is a step deeper than the sea, and its land
+     sits well above it, so the islands are the lightest thing in the frame. */
+  insetWater:'#5f95b8',insetLand:'#eef3f1',
   /* Boundary tone follows the unit being drawn, not a decorative scale; non-scaling-stroke keeps
-     the hierarchy stable when the map is zoomed. The old ladder (.95/.8/.65 of #6f8b96/#7895a5/
-     #8ba0aa) measured 2.80/2.45/2.11 against the fills -- all three below the point where a hairline
-     reads as a boundary. Raising the tones without raising the widths is what buys the legibility;
-     the widths step 1.0/0.9/0.8 so the level is still readable in black and white. */
-  stroke:{province:['#5f7c88',1],city:['#647f8b',.9],district:['#6a8490',.8],'':['#6a8490',.7]},
+     the hierarchy stable when the map is zoomed. The ladder is one level of a three-part hierarchy:
+     the current level's own outer contour is drawn strongest (see drawEdges), these are the internal
+     boundaries between the units being displayed, and the unnamed/finer cases are weakest. The
+     widths spread 0.95/0.8/0.55 instead of the old 1.0/0.9/0.8 - three lines that differ by a tenth
+     of a pixel are three lines of the same weight, which is what "all the lines look alike" is.
+
+     The `'':['#6a8490',.55]` entry is the unnamed case and it is deliberately the faintest: those
+     features are island groups and reefs, and at the old .7 they were drawn as confidently as a
+     province. */
+  edge:'#3c5a68',
+  stroke:{province:['#54737f',.95],city:['#5d7c88',.8],district:['#68838e',.7],'':['#6a8490',.55]},
   /* A leader line is the price of putting a label off its own shape; the placement test exempts any
      label that has one, so the line has to be actually visible or the exemption is unearned. At
      .6px and 50% opacity #5f7d89 blended down to 1.73 against the fills and 1.46 against the water -
-     a grey smudge, not a leader. Solid at 1px and #4a6b78 it measures 4.44 and 2.92. */
-  label:{region:'#45636f',uni:'#a82b21',halo:'#ffffff',leader:'#4a6b78',
+     a grey smudge, not a leader. Solid at 1px and #3d5c68 it measures 4.45 against the least
+     favourable fill, which matters because the fills got lighter when the palette was re-cut: the
+     previous #4a6b78 still cleared the test's 3:1 floor on them, but only by .55, and this line is
+     an exemption the reader has to be able to follow, not a formality. */
+  label:{region:'#26333b',uni:'#a82b21',halo:'#ffffff',leader:'#3d5c68',
   /* The inset caption cannot use label.region any more. label.region is tuned against the land fills
      (4.98:1); on the inset's own water it measures 2.50:1, and the audit's darker alternative
      #274b5a only reaches 3.65:1 there - both under the 4.5:1 floor for small text, because that
@@ -495,8 +566,36 @@ function regionColors(fs){
    now read the same constant, and a ring is drawn iff it has any point at or north of it, so every
    drawn coordinate is provably inside the fitted box (the inset carries the SCS instead). */
 const NATION_MIN_LAT=18;
-function drawMap(reset=false){const rect=$('map').getBoundingClientRect();S.w=rect.width;S.h=rect.height;$('map').setAttribute('viewBox',`0 0 ${S.w} ${S.h}`);$('clipRect').setAttribute('width',S.w);$('clipRect').setAttribute('height',S.h);if(reset){S.z=1;S.x=S.y=0;}const nation=current().kind==='country',projected=[],keepMask=[];let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;for(const f of S.geo){const rings=f.rings.map(r=>r.map(project));projected.push(rings);keepMask.push(f.rings.map(r=>!nation||r.some(p=>p[1]>=NATION_MIN_LAT)));f.rings.forEach((r,ri)=>r.forEach((p,pi)=>{if(nation&&(p[1]<NATION_MIN_LAT||!f.name))return;const q=rings[ri][pi];xmin=Math.min(xmin,q[0]);xmax=Math.max(xmax,q[0]);ymin=Math.min(ymin,q[1]);ymax=Math.max(ymax,q[1]);}));}if(!Number.isFinite(xmin))return;const top=118,bottom=48,left=nation?30:38,right=nation?72:48,scale=Math.min((S.w-left-right)/Math.max(xmax-xmin,.00001),(S.h-top-bottom)/Math.max(ymax-ymin,.00001)),tx=left+(S.w-left-right-(xmax-xmin)*scale)/2-xmin*scale,ty=top+(S.h-top-bottom-(ymax-ymin)*scale)/2-ymin*scale;S.projection={scale,tx,ty};S.base=[];const colors=regionColors(S.geo);$('shapes').innerHTML='';S.geo.forEach((f,i)=>{const keep=keepMask[i],rings=projected[i].map((r,ri)=>keep[ri]?r.map(p=>[p[0]*scale+tx,p[1]*scale+ty]):null).filter(Boolean);const path=rings.map(r=>'M'+r.map(p=>p.map(x=>x.toFixed(2)).join(',')).join('L')+'Z').join('');const st=S.geo.length===1?MAP_STYLE.single:(MAP_STYLE.stroke[f.name?f.level:'']||MAP_STYLE.stroke.district);
-const el=E('path',{d:path,fill:colors[i],stroke:st[0],'stroke-width':st[1],'fill-rule':'evenodd','vector-effect':'non-scaling-stroke',class:'region','data-i':i,'data-id':f.id,tabindex:f.name?'0':'-1',role:f.name?'button':'presentation','aria-label':f.name?f.name+'，'+(best(f).rawU||best(f).u||'高校数据待补'):'南海诸岛边界'});if(!f.name){el.setAttribute('fill',MAP_STYLE.island);el.style.pointerEvents='none';}if(nation&&!f.name)el.style.display='none';$('shapes').append(el);const drawn=keep.every(Boolean)?f:{rings:f.rings.filter((r,ri)=>keep[ri]),cp:f.cp};let cp=project(labelPoint(drawn));let area=rings.reduce((s,r)=>s+polygonArea(r),0);S.base.push({f,cp:[cp[0]*scale+tx,cp[1]*scale+ty],area,rings,el});});drawInset(nation);applyTransform();}
+function drawMap(reset=false){const rect=$('map').getBoundingClientRect();S.w=rect.width;S.h=rect.height;$('map').setAttribute('viewBox',`0 0 ${S.w} ${S.h}`);$('clipRect').setAttribute('width',S.w);$('clipRect').setAttribute('height',S.h);if(reset){S.z=1;S.x=S.y=0;}const nation=current().kind==='country',projected=[],keepMask=[];let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;for(const f of S.geo){const rings=f.rings.map(r=>r.map(project));projected.push(rings);keepMask.push(f.rings.map(r=>!nation||r.some(p=>p[1]>=NATION_MIN_LAT)));f.rings.forEach((r,ri)=>r.forEach((p,pi)=>{if(nation&&(p[1]<NATION_MIN_LAT||!f.name))return;const q=rings[ri][pi];xmin=Math.min(xmin,q[0]);xmax=Math.max(xmax,q[0]);ymin=Math.min(ymin,q[1]);ymax=Math.max(ymax,q[1]);}));}/* The fit reserves the chrome the map is drawn under, and every pixel it reserves is a pixel of
+   land that is not drawn. It reserved 118 above and 48 below a head that measures 53 and a legend
+   that measures 38, on 726px of height: 46px of the map was being spent on nothing. 60 and 54 are
+   the measured head and legend plus a clearance. The right margin is 72 only where the South China
+   Sea inset lives - on every other route the inset is not drawn at all and the number was a reserve
+   against nothing, so it is 40 (the zoom rail) everywhere else, and the level routes got 16px of
+   width back each side on top of that. */
+if(!Number.isFinite(xmin))return;const top=60,bottom=54,left=nation?26:22,right=nation?72:40,scale=Math.min((S.w-left-right)/Math.max(xmax-xmin,.00001),(S.h-top-bottom)/Math.max(ymax-ymin,.00001)),tx=left+(S.w-left-right-(xmax-xmin)*scale)/2-xmin*scale,ty=top+(S.h-top-bottom-(ymax-ymin)*scale)/2-ymin*scale;S.projection={scale,tx,ty};S.base=[];const colors=regionColors(S.geo);$('shapes').innerHTML='';S.geo.forEach((f,i)=>{const keep=keepMask[i],rings=projected[i].map((r,ri)=>keep[ri]?r.map(p=>[p[0]*scale+tx,p[1]*scale+ty]):null).filter(Boolean);const path=rings.map(r=>'M'+r.map(p=>p.map(x=>x.toFixed(2)).join(',')).join('L')+'Z').join('');const st=S.geo.length===1?MAP_STYLE.single:(MAP_STYLE.stroke[f.name?f.level:'']||MAP_STYLE.stroke.district);
+const el=E('path',{d:path,fill:colors[i],stroke:st[0],'stroke-width':st[1],'fill-rule':'evenodd','vector-effect':'non-scaling-stroke',class:'region','data-i':i,'data-id':f.id,tabindex:f.name?'0':'-1',role:f.name?'button':'presentation','aria-label':f.name?f.name+'，'+(best(f).rawU||best(f).u||'高校数据待补'):'南海诸岛边界'});if(!f.name){el.setAttribute('fill',MAP_STYLE.island);el.style.pointerEvents='none';}if(nation&&!f.name)el.style.display='none';$('shapes').append(el);const drawn=keep.every(Boolean)?f:{rings:f.rings.filter((r,ri)=>keep[ri]),cp:f.cp};let cp=project(labelPoint(drawn));let area=rings.reduce((s,r)=>s+polygonArea(r),0);S.base.push({f,cp:[cp[0]*scale+tx,cp[1]*scale+ty],area,rings,el});});drawEdges(nation,scale,tx,ty);drawInset(nation);applyTransform();}
+/* The level's own outer contour, drawn under the fills. Three weights, not one: the units being
+   displayed get the internal boundary tone, and the outline of the level they sit inside gets this
+   one - 2.3px of dark band around the whole figure, which is what makes the map read as a shape
+   with an edge instead of as a patchwork of equal hairlines.
+   It has to be drawn *under* #shapes and wider than it looks: the fills are opaque and cover the
+   inner half of the stroke, so 4.6px of stroke leaves 2.3px showing outside the boundary, and every
+   internal segment of the same path - the concatenated rings share one stroke - is covered whole by
+   the fills on either side of it.
+   The national view has no parent feature to outline, because the country is not in the data as a
+   polygon, only its provinces are. Its silhouette is therefore the union of the named features as
+   one evenodd path: unnamed features are left out because nothing paints over them, so their share
+   of the stroke would stay on the map as dark specks in the sea. */
+function drawEdges(nation,scale,tx,ty){
+  const g=$('edgeLayer');g.innerHTML='';let rings;
+  if(nation)rings=S.base.filter(b=>b.f.name).flatMap(b=>b.rings);
+  else{const par=current().f;if(!par)return;
+    rings=par.rings.map(r=>r.map(p=>{const q=project(p);return[q[0]*scale+tx,q[1]*scale+ty];}));}
+  if(!rings.length)return;
+  const d=rings.map(r=>'M'+r.map(p=>p[0].toFixed(2)+','+p[1].toFixed(2)).join('L')+'Z').join('');
+  g.append(E('path',{d,fill:MAP_STYLE.edge,stroke:MAP_STYLE.edge,'stroke-width':4.6,'stroke-linejoin':'round','fill-rule':'evenodd','vector-effect':'non-scaling-stroke','pointer-events':'none'}));
+}
 /* A proper cartographic inset: the same projection as the main map, one uniform scale so nothing is
    stretched, the caption inside the frame, and each feature drawn in the fill it already has on the
    map - an inset that invents its own colours is a second legend the reader has to reconcile. */
@@ -511,7 +610,7 @@ function drawInset(show){
   /* Size the frame to the content instead of fixing a box and letterboxing it: the window is taller
      than it is wide, so a fixed wide box left dead space either side of the islands. */
   let innerW=small?44:80,h=Math.round(innerW*(yhi-ylo)/(xhi-xlo))+capH+pad*2,w=innerW+pad*2;
-  const maxH=S.h-118-92;
+  const maxH=S.h-152;
   if(h>maxH){h=Math.round(maxH);innerW=Math.max(30,(h-capH-pad*2)*(xhi-xlo)/(yhi-ylo));w=innerW+pad*2;}
   /* On a phone the zoom controls own the right edge, so the inset moves to the left and sits just
      above the legend instead of underneath the buttons. */
@@ -566,7 +665,7 @@ function drawInset(show){
    g.append(E('path',{d:path,fill:f.name?(own?own.el.getAttribute('fill'):palette[0]):MAP_STYLE.insetLand,stroke:MAP_STYLE.stroke.district[0],'stroke-width':.6,'fill-rule':'evenodd'}));}
   S.insetBox={l:x-4,t:y-4,r:x+w+4,b:y+h+4};
 }
-function applyTransform(){$('shapes').setAttribute('transform',`translate(${S.x} ${S.y}) scale(${S.z})`);cancelAnimationFrame(drawFrame);drawFrame=requestAnimationFrame(drawLabels);$('zoomInfo').textContent=Math.round(S.z*100)+'%';}
+function applyTransform(){const t=`translate(${S.x} ${S.y}) scale(${S.z})`;$('shapes').setAttribute('transform',t);$('edgeLayer').setAttribute('transform',t);cancelAnimationFrame(drawFrame);drawFrame=requestAnimationFrame(drawLabels);$('zoomInfo').textContent=Math.round(S.z*100)+'%';}
 const measure=document.createElement('canvas').getContext('2d');
 const widthCache=new Map();let widthFallbackLogged=false;
 /* Real text width, not length x a constant.  A constant character width is wrong for
@@ -1514,59 +1613,168 @@ function drawLabels(){
       if(!(box.r+LABEL_GAP<a.l||box.l-LABEL_GAP>a.r||box.b+LABEL_GAP<a.t||box.t-LABEL_GAP>a.b))return false;}
     return true;
   }
+  /* How much of the box hangs outside the unit's own outline: the four corners, sampled. This is the
+     rank the in-place search sorts on, ahead of distance from the anchor, and it is what makes the
+     difference between a name printed on its province and a name printed across the border. The
+     nearest free centre is not the best one when the box is wider than the slack around the anchor:
+     江苏's box centred on 江苏's centroid still reaches into 山东, and taking that centre is how 山东
+     ends up with no room left for its own label. Preferring the centre that spills least costs four
+     point-in-polygon tests per candidate and is the difference between "the centre is inside" and
+     "the label is inside", which is the property the map is judged on. */
+  function spillOf(b,cx,cy,label){
+    let n=0;
+    for(const[px,py]of[[-1,-1],[1,-1],[-1,1],[1,1]])
+      if(!inside(b,(cx+px*label.width/2-S.x)/S.z,(cy+py*label.height/2-S.y)/S.z))n++;
+    return n;
+  }
+  /* Every point of a grid over the unit's own bounding box that falls inside the unit's outline,
+     in screen coordinates. Bounded at 16x16 so a province the size of 新疆 cannot make this the
+     expensive part of a paint; the pitch is a third of the smaller side of the label, floored at 5px,
+     so a unit that is only a little larger than its label still gets several distinct candidates. */
+  function insideCentres(b,label){
+    const W=b.bbox[1][0]-b.bbox[0][0],H=b.bbox[1][1]-b.bbox[0][1];
+    if(!(W>0)||!(H>0))return [];
+    const step=Math.max(4,Math.min(10,Math.min(label.width,label.height)/4));
+    const nx=Math.max(1,Math.min(26,Math.ceil(W/step))),ny=Math.max(1,Math.min(26,Math.ceil(H/step)));
+    const out=[];
+    for(let i=0;i<=nx;i++)for(let j=0;j<=ny;j++){
+      const mx=b.bbox[0][0]+W*i/nx,my=b.bbox[0][1]+H*j/ny;
+      if(inside(b,mx,my))out.push([mx*S.z+S.x,my*S.z+S.y]);}
+    return out;
+  }
   /* Returns {box,tier,dx,dy}: tier 1 = inside its own region, 2 = open ground, 3 = displaced into
-     a neighbour (a leader line is then mandatory).  The best tier wins; ties go to the nearest. */
-  function place(b,x,y,label,skip){
-    const cap=Math.max(32,Math.min(.9*Math.sqrt(Math.max(b.area,1))*S.z,110));
+     a neighbour (a leader line is then mandatory).  The best tier wins; ties go to the nearest.
+     Two searches, in the order the placement priority puts them. First the fine grid of centres
+     inside the unit's own outline, nearest to the anchor first: if the name can be printed on the
+     shape it names, that is the answer and nothing else is worth looking at. Only if no in-place
+     centre fits does the coarse ladder run, and that ladder is deliberately coarse - its pitch is
+     half a label plus a gap, which is the right pitch for searching the space *around* a shape and
+     the wrong one for searching the space inside it. Using it for both was why 浙江 (60x60 holding a
+     52x30 box) was sent to the sea: after the anchor point was blocked the ladder's next idea was
+     33px away, more than half the province, and outside it. */
+  function place(b,x,y,label,skip,maxTier){
+    /* How far off its own shape a label may be pushed.  An escape inside the leash reads as "printed
+       beside the region": the line is short enough that the eye never loses which shape it belongs
+       to, which is the case §五 keeps leaders for (small regions, and dense ones like the central
+       districts of 上海).  Beyond it the label is no longer annotating a shape - it is a name in a
+       ring around the country.
+       Three bounds, smallest wins:
+         the label's own width  - a wide two-line group visibly belongs to a wider neighbourhood;
+         58px                   - beyond that a leader stops reading as a callout on any viewport;
+         S.w*.055               - "beside" is a fraction of the map, not a number of pixels. At 1440
+                                  this is 62px and never binds; at 390 it is 20px, which is what
+                                  stops a phone growing a nineteen-line ring around the country.
+       The region's own size deliberately does not appear here.  Scaling the leash by area sounded
+       right - a big province can afford a longer callout - but the radius a reader can follow is a
+       property of the line on the screen, not of the polygon it points at.  Using area also shrank
+       the leash for exactly the small dense districts §五 keeps leaders for, and cost 石景山区 its
+       winner on the 北京 map.
+       The last-resort passes lift the leash entirely, so a unit with no room anywhere still gets a
+       far leader rather than disappearing - the leash decides the order labels are tried in, never
+       whether a region is labelled at all. */
+    const cap=maxTier===Infinity?Infinity:Math.max(18,Math.min(label.width*.8,58,S.w*.055));
     let best=null;
-    for(const[dx,dy]of labelOffsets(label.width,label.height)){
-      const dist=Math.hypot(dx,dy);
-      const cx=x+dx,cy=y+dy,box={l:cx-label.width/2,r:cx+label.width/2,t:cy-label.height/2,b:cy+label.height/2};
-      if(!fits(box,skip))continue;
+    const grade=(cx,cy)=>{
+      const box={l:cx-label.width/2,r:cx+label.width/2,t:cy-label.height/2,b:cy+label.height/2};
+      if(!fits(box,skip))return null;
       const mx=(cx-S.x)/S.z,my=(cy-S.y)/S.z;
-      let tier=inside(b,mx,my)?1:(inForeign(b,mx,my)?3:2);
-      if(tier===3){
-        if(dist>cap)continue;
-        if(best&&best.tier<3)continue;
-        if(best&&best.tier===3&&best.dist<=dist)continue;
-      }else{
-        if(best&&best.tier<=tier&&best.dist<=dist)continue;
-      }
-      best={box,tier,dx,dy,dist};
-      if(tier===1&&dist<=1)break;
+      return{box,tier:inside(b,mx,my)?1:(inForeign(b,mx,my)?3:2),dist:Math.hypot(cx-x,cy-y)};
+    };
+    const keep=hit=>{
+      if(!hit)return false;
+      /* maxTier is the placement priority enforced across passes rather than inside one call.  Tier 1
+         is the label on its own shape, 2 is open ground beside it (the sea, or across a national
+         border) and 3 is inside a neighbour.  The early passes set maxTier=1 so that a unit which
+         cannot hold its two-line group on its own shape is left for the name-only pass instead of
+         taking the nearest escape; only the last-resort passes lower the bar.  Without this, "the box
+         does not fit inside" and "the box goes to sea" were two ways of saying the same thing, and on
+         a phone that put nineteen of twenty-eight nationwide labels in a ring around the country. */
+      if(hit.tier>maxTier)return false;
+      if(hit.tier>1&&hit.dist>cap)return false;
+      if(hit.tier===3){
+        if(best&&best.tier<3)return false;
+        if(best&&best.tier===3&&best.dist<=hit.dist)return false;
+      }else if(best&&best.tier<=hit.tier&&best.dist<=hit.dist)return false;
+      best=hit;return true;
+    };
+    let inBest=null;
+    for(const[cx,cy]of insideCentres(b,label)){
+      const hit=grade(cx,cy);
+      if(!hit||hit.tier!==1)continue;
+      hit.spill=spillOf(b,cx,cy,label);
+      /* Lexicographic: least spill first, then nearest the anchor. It cannot prefer a smaller spill
+         at the cost of a worse tier - every candidate here is already tier 1 - and it cannot prefer
+         a near centre over a clean one, which is the point. */
+      if(!inBest||hit.spill<inBest.spill||(hit.spill===inBest.spill&&hit.dist<inBest.dist))inBest=hit;
+      if(inBest.spill===0&&inBest.dist<=1.5)break;
+    }
+    if(inBest)return inBest;
+    for(const[dx,dy]of labelOffsets(label.width,label.height)){
+      const cx=x+dx,cy=y+dy,hit=grade(cx,cy);
+      if(!keep(hit))continue;
+      if(hit.tier===1&&hit.dist<=1)break;
     }
     return best;
   }
   const onScreen=b=>{const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;return !(x<-120||y<-120||x>S.w+120||y>S.h+120);};
-  /* Two stages, and the order inside a stage is the whole algorithm:
-       stage 1  every unit with a university to show, smallest area first -> the full two-line
-                group, so its box is measured and placed at its final size;
-       stage 2  everything still unplaced - units with no winner, plus any unit whose two-line
-                group would not fit anywhere - -> the administrative name alone.
-     The previous design placed 34 small name boxes first and then tried to grow 33 of them in an
-     already-crowded field, which meant a unit received its answer only if a neighbour happened to
-     leave a gap beside it: 湖北 lost 武汉大学 at 1440 while 西藏 kept 西藏大学, and the set of
-     units that lost depended on how many pixels the window had.  Sizing the box before the space
-     is spent removes that failure mode, and a unit that still cannot fit two lines keeps its name
-     instead of vanishing from the map. */
-  function stage(list,withUni){
+  /* One pass = one rung of the placement ladder, applied to every unit that is still unplaced, in
+     smallest-area-first order. Sizing the box before the space is spent is what keeps the packing
+     order-independent: the previous design placed 34 small name boxes first and then tried to grow
+     33 of them in an already-crowded field, so a unit received its answer only if a neighbour
+     happened to leave a gap beside it - 湖北 lost 武汉大学 at 1440 while 西藏 kept 西藏大学, and
+     which units lost depended on how many pixels the window had. A unit that still cannot fit two
+     lines keeps its administrative name instead of vanishing from the map. */
+  function stage(list,withUni,maxTier){
     for(const b of list){
       if(placed.has(b.f.id)||!onScreen(b))continue;
       const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;
+      let pick=null;
+      /* The scale ladder is searched for the best *tier*, not for the first hit. The old loop broke on
+         the first scale that returned anything, which meant a unit that could only reach the sea at
+         full size was sent to the sea even when it would have fitted inside its own region one rung
+         down - and inside is the one property the placement is for. Ties keep the larger scale, so
+         this can only ever trade size for being on the right shape, never the reverse.
+         `pick` is a {label,hit} pair, so the comparison has to read pick.hit.tier: written as
+         `hit.tier < pick.tier` the right-hand side is undefined, every comparison is false, and the
+         ladder degenerates into exactly the break-on-first-hit loop the paragraph above says it
+         replaced. It shipped that way - 辽宁, 山西, 黑龙江 and 东莞 were sent off their own regions
+         with a leader while one rung down placed them cleanly inside. */
       for(const scale of[1,.93,.86,.79]){
         const label=build(b,scale,withUni);
         if(!label)break;
         if(withUni&&label.lines.length<=label.nameCount)break;
-        const hit=place(b,x,y,label,-1);
-        if(!hit)continue;
-        accepted.push(hit.box);
-        placed.set(b.f.id,{b,label,box:hit.box,tier:hit.tier,dx:hit.dx,dy:hit.dy,slot:accepted.length-1,onlyName:!withUni});
-        break;
+        const hit=place(b,x,y,label,-1,maxTier);
+        if(hit&&(!pick||hit.tier<pick.hit.tier))pick={label,hit};
+        if(pick&&pick.hit.tier===1)break;
       }
+      if(!pick)continue;
+      accepted.push(pick.hit.box);
+      placed.set(b.f.id,{b,label:pick.label,box:pick.hit.box,tier:pick.hit.tier,dx:pick.hit.dx,dy:pick.hit.dy,slot:accepted.length-1,onlyName:!withUni});
     }
   }
-  stage(upgrades,true);
-  stage(items,false);
+  /* Six passes, and their order is the placement priority written out as control flow:
+       in place  >  beside it, within the leash  >  name alone  >  anywhere.
+     The scale ladder inside a pass already covers "at a smaller size".  The first three rungs are
+     the ones that matter: a label printed on its own shape beats one printed beside it, and a short
+     leader from a district too small to hold its own name is a better answer than dropping the
+     university - §五 keeps leaders for exactly that case.  What the ladder is for is the fourth
+     rung, "anywhere": it used to be reachable in one step, so on a phone a unit that could reach a
+     neighbour or the sea took a leader at full size even when its own administrative name would have
+     sat cleanly inside its own shape.  That is where the nineteen-label ring around the country
+     came from.  Now a far escape is only available after every unit has been offered a place inside
+     itself, name-only if that is all that fits.
+     Within a pass the order is smallest area first: a small unit has nowhere else to go, while a
+     large one can still be labelled after its neighbours since it has room inside itself. Ordering
+     by size descending - which is what an "upgrade the winners by prestige" pass amounts to -
+     answered "which university" for 新疆 and 西藏 while staying silent on 北京 and 上海.
+     Each pass sees only the units the previous ones could not place, so this can only ever move a
+     label down the priority list, never up, and no unit can take a second slot. */
+  stage(upgrades,true,1);
+  stage(upgrades,true,3);
+  stage(items,false,1);
+  stage(items,false,3);
+  stage(upgrades,true,Infinity);
+  stage(items,false,Infinity);
   for(const b of items)if(onScreen(b)&&!placed.has(b.f.id))hidden++;
   let shown=0,nameOnly=0,uniLines=0,leaders=0,displaced=0;
   S.labels=[];
@@ -1577,10 +1785,18 @@ function drawLabels(){
     const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;
     const cx=(box.l+box.r)/2,cy=box.t+LABEL_PADY+label.lines.reduce((s,l)=>s+l.fs*LABEL_LH,0)/2;
     const dist=Math.hypot(cx-x,cy-y);
-    // A leader line is mandatory whenever the label is not sitting on its own anchor: either it
-    // was displaced far enough that the eye needs help, or it could not be placed inside its own
-    // region at all.  Without one, a reader would assign the name to the wrong shape.
-    const needLeader=rec.tier===3||dist>Math.max(12,label.height*.55);
+    /* A leader line exists to connect a name to a shape it is not sitting on, so it is drawn exactly
+       when the label is not on its own shape: tier 2 (open water or outside the country) and tier 3
+       (inside a neighbour) get one, tier 1 does not.
+       The old rule also fired on tier 1 whenever the box centre had drifted more than max(12, h*.55)
+       from the region's own anchor point, which is most of them: a large province whose label is
+       nudged aside by its neighbour's box is still unmistakably inside that province, and the nudged
+       labels were the majority of the 20 nationwide leader lines. A line from a name to the middle of
+       the region it is already printed on carries no information and, at 20 of 34 labels, it was the
+       map's most prominent graphic element - a wiring diagram drawn over a map. `dist` is still
+       computed because it is the honest measure of how far the label had to move, and it is what a
+       future tie-break between two equally-placed candidates should use. */
+    const needLeader=rec.tier!==1;
     const group=E('g',{'data-label-id':b.f.id,'data-label-level':b.f.level||'island','data-name-only':rec.onlyName?'1':'0','data-place-tier':String(rec.tier||1)});
     if(needLeader){
       /* Full opacity, 1px, and vector-effect so zoom cannot thin it back into a smudge. The .6px/50%

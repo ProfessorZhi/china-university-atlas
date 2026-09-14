@@ -29,6 +29,10 @@ const MATRIX=[
   {w:1440,h:900,mobile:false,id:'440300',label:'深圳市',slug:'shenzhen'},
   {w:1440,h:900,mobile:false,id:'110000',label:'北京市',slug:'beijing'},
   {w:1440,h:900,mobile:false,id:'310000',label:'上海市',slug:'shanghai'},
+  /* The four provinces the redesign is judged on. 江苏 and 四川 were not in the matrix before, so the
+     province-level numbers the target is stated against had no measurement behind them there. */
+  {w:1440,h:900,mobile:false,id:'320000',label:'江苏省',slug:'jiangsu'},
+  {w:1440,h:900,mobile:false,id:'510000',label:'四川省',slug:'sichuan'},
   {w:1280,h:800,mobile:false,id:'100000',label:'全国',slug:'nation'},
   {w:1280,h:800,mobile:false,id:'440000',label:'广东省',slug:'guangdong'},
   {w:430,h:932,mobile:true,id:'100000',label:'全国',slug:'nation'},
@@ -36,6 +40,19 @@ const MATRIX=[
   {w:430,h:932,mobile:true,id:'440300',label:'深圳市',slug:'shenzhen'},
   {w:390,h:844,mobile:true,id:'100000',label:'全国',slug:'nation'}
 ];
+/* The level a route belongs to, read off the region id rather than off the route label: the internal
+ * placement rate and the leader-line count are both reported per level, and the levels are the only
+ * grouping in which those numbers are comparable - a district map has a handful of large units and a
+ * nationwide map has 34 units of wildly different size sitting next to each other. */
+const LEVELS=['nation','province','city','district'];
+const levelOf=id=>{const s=String(id);if(s==='100000')return 'nation';
+  if(s.endsWith('0000'))return 'province';if(s.endsWith('00'))return 'city';return 'district';};
+/* Adjacent fills closer than this are the failure the palette exists to prevent. 12 is not a
+ * perceptual constant: it is the floor the redesign commits to, chosen so that it is a real step up
+ * from the V5.8 palette's worst adjacent pair (measured 9.79) rather than a number that merely
+ * restates it. Anything below it is listed with both region names and the distance, so the failure
+ * can be looked at rather than counted. */
+const MIN_ADJ_DE=12;
 /* Everything below runs inside the page.  It measures the *rendered* geometry (getBoundingClientRect
  * on the real label groups, so stroke and paint-order are included) and compares it against the
  * visible map rectangle and the UI chrome that must never be covered by a label. */
@@ -150,9 +167,43 @@ const MEASURE=`(() => {
         if(mx<o.lo[0]||mx>o.hi[0]||my<o.lo[1]||my>o.hi[1])continue;
         if(!o.rings.some(r=>inRing([mx,my],r)))continue;
         if(x.leader)break;
-        mislabelled.push({text:x.text,inside:o.name,unavoidable:own.area<labelArea});
+        /* The exemption is "the name cannot be contained at all", and area alone is a poor proof of
+           that: a region can have twice the label's area and still be too narrow or too shallow to
+           hold it. So the test is containment - the box must fit inside the unit's own bounding box
+           in both axes - which is necessary even when it is not sufficient. */
+        const boxW=x.r-x.l,boxH=x.b-x.t,ownW=own.hi[0]-own.lo[0],ownH=own.hi[1]-own.lo[1];
+        const fitsNowhere=own.area<labelArea||boxW>ownW||boxH>ownH;
+        mislabelled.push({text:x.text,inside:o.name,unavoidable:fitsNowhere,
+          box:[Number(boxW.toFixed(1)),Number(boxH.toFixed(1))],own:[Number(ownW.toFixed(1)),Number(ownH.toFixed(1))]});
         break;
       }
+    }
+  }
+  /* How much of the labelling is done the way an atlas does it: the name sitting on the thing it
+   * names, rather than strung back to it.  Two counts because they measure different promises.
+   * centerInside is the promise the placement engine actually makes (tier 1 puts the box centre in
+   * the unit's own polygon) and is what the internal-placement-rate target is stated against.
+   * fullyInside additionally requires the box's four corners to be inside, which a two-line label
+   * cannot satisfy in a unit smaller than itself - so it is reported, not gated, and the gap between
+   * the two numbers is exactly the "label is centred right but overflows into the neighbour" case. */
+  let centerInside=0,fullyInside=0,labelGroups=0,outsideSample=[];
+  if(typeof S!=='undefined'&&S.base&&S.z){
+    const inRing2=(pt,r)=>{let yes=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>pt[1])!==(b[1]>pt[1])&&pt[0]<(b[0]-a[0])*(pt[1]-a[1])/(b[1]-a[1])+a[0])yes=!yes;}return yes;};
+    const boxOf=new Map();
+    for(const b of S.base){if(!b.f.name)continue;let lo=[Infinity,Infinity],hi=[-Infinity,-Infinity];
+      for(const r of b.rings)for(const p of r){if(p[0]<lo[0])lo[0]=p[0];if(p[1]<lo[1])lo[1]=p[1];if(p[0]>hi[0])hi[0]=p[0];if(p[1]>hi[1])hi[1]=p[1];}
+      boxOf.set(Number(b.f.id),{name:b.f.name,rings:b.rings,lo,hi});}
+    for(const x of labels){
+      const own=boxOf.get(Number(x.id));if(!own)continue;
+      labelGroups++;
+      const x0=(x.l-mapRect.left-(S.x||0))/S.z,x1=(x.r-mapRect.left-(S.x||0))/S.z;
+      const y0=(x.t-mapRect.top-(S.y||0))/S.z,y1=(x.b-mapRect.top-(S.y||0))/S.z;
+      const pts=[[(x0+x1)/2,(y0+y1)/2],[x0,y0],[x1,y0],[x0,y1],[x1,y1]];
+      const ins=p=>own.rings.some(r=>inRing2(p,r));
+      if(ins(pts[0]))centerInside++;
+      if(pts.every(ins))fullyInside++;
+      else if(outsideSample.length<8)outsideSample.push({text:x.text,leader:!!x.leader,
+        center:ins(pts[0])?'in':'out',corners:pts.slice(1).filter(ins).length+'/4'});
     }
   }
   /* A leader line buys its label an exemption from the mislabel test above, so the leader itself has
@@ -193,7 +244,32 @@ const MEASURE=`(() => {
    * legend's promise ("colour only separates adjacent units") is false. Adjacency is the same
    * shared-vertex test the colouring itself uses, recomputed here from the rendered geometry, so this
    * fails the moment the palette is too short for the data rather than a moment later in review. */
-  let adjSame=0,adjPairs=0,adjSample=[];
+  /* CIEDE2000 over the rendered fills. Adjacency is the shared-vertex test the colouring itself uses,
+     so this measures the colours that are actually on screen next to each other rather than the
+     palette in the abstract: a palette can be perfectly spaced and still put two of its closest
+     members side by side if the assignment ignores distance. */
+  const srgb2lab=hex=>{const v=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255).map(c=>c<=0.04045?c/12.92:Math.pow((c+0.055)/1.055,2.4));
+    const X=(v[0]*0.4124+v[1]*0.3576+v[2]*0.1805)/0.95047,Y=v[0]*0.2126+v[1]*0.7152+v[2]*0.0722,Z=(v[0]*0.0193+v[1]*0.1192+v[2]*0.9505)/1.08883;
+    const f=t=>t>0.008856?Math.cbrt(t):7.787*t+16/116,fx=f(X),fy=f(Y),fz=f(Z);
+    return[116*fy-16,500*(fx-fy),200*(fy-fz)];};
+  const de00=(A,B)=>{const L1=A[0],a1=A[1],b1=A[2],L2=B[0],a2=B[1],b2=B[2];
+    const C1=Math.hypot(a1,b1),C2=Math.hypot(a2,b2),Cb=(C1+C2)/2;
+    const G=0.5*(1-Math.sqrt(Math.pow(Cb,7)/(Math.pow(Cb,7)+Math.pow(25,7))));
+    const ap1=(1+G)*a1,ap2=(1+G)*a2,Cp1=Math.hypot(ap1,b1),Cp2=Math.hypot(ap2,b2);
+    const hp=(x,y)=>{if(x===0&&y===0)return 0;const h=Math.atan2(y,x)*180/Math.PI;return h<0?h+360:h;};
+    const h1=hp(ap1,b1),h2=hp(ap2,b2),dL=L2-L1,dC=Cp2-Cp1;
+    let dh=0;if(Cp1*Cp2!==0){dh=h2-h1;if(dh>180)dh-=360;else if(dh<-180)dh+=360;}
+    const dH=2*Math.sqrt(Cp1*Cp2)*Math.sin(dh*Math.PI/360),Lb=(L1+L2)/2,Cpb=(Cp1+Cp2)/2;
+    let hb=0;if(Cp1*Cp2!==0){hb=(h1+h2)/2;if(Math.abs(h1-h2)>180)hb+=h1+h2<360?180:-180;}
+    const T=1-0.17*Math.cos((hb-30)*Math.PI/180)+0.24*Math.cos(2*hb*Math.PI/180)+0.32*Math.cos((3*hb+6)*Math.PI/180)-0.20*Math.cos((4*hb-63)*Math.PI/180);
+    const dTh=30*Math.exp(-Math.pow((hb-275)/25,2)),Rc=2*Math.sqrt(Math.pow(Cpb,7)/(Math.pow(Cpb,7)+Math.pow(25,7)));
+    const Sl=1+0.015*Math.pow(Lb-50,2)/Math.sqrt(20+Math.pow(Lb-50,2)),Sc=1+0.045*Cpb,Sh=1+0.015*Cpb*T;
+    const Rt=-Math.sin(2*dTh*Math.PI/180)*Rc;
+    return Math.sqrt(Math.pow(dL/Sl,2)+Math.pow(dC/Sc,2)+Math.pow(dH/Sh,2)+Rt*(dC/Sc)*(dH/Sh));};
+  const labCache=new Map();
+  const labOf=hex=>{if(!labCache.has(hex))labCache.set(hex,srgb2lab(hex));return labCache.get(hex);};
+  let adjSame=0,adjPairs=0,adjSample=[],minAdjAdjDE=null,closeColourPairCount=0;
+  const closePairs=[];
   if(typeof S!=='undefined'&&S.base){
     const named=S.base.filter(b=>b.f.name&&b.el),grp=named.map(()=>new Set()),owner=new Map();
     named.forEach((b,i)=>{for(const r of b.rings)for(const p of r){const key=Math.round(p[0]*1000)+','+Math.round(p[1]*1000);
@@ -202,8 +278,25 @@ const MEASURE=`(() => {
       owner.get(key).add(i);}});
     for(let i=0;i<named.length;i++)for(const j of grp[i]){if(j<i)continue;adjPairs++;
       const a=named[i].el.getAttribute('fill'),b=named[j].el.getAttribute('fill');
-      if(a&&b&&a===b){adjSame++;if(adjSample.length<6)adjSample.push(named[i].f.name+' = '+named[j].f.name);}}
+      if(a&&b&&a===b){adjSame++;if(adjSample.length<6)adjSample.push(named[i].f.name+' = '+named[j].f.name);}
+      if(a&&b&&/^#[0-9a-f]{6}$/i.test(a)&&/^#[0-9a-f]{6}$/i.test(b)){
+        const d=de00(labOf(a.toLowerCase()),labOf(b.toLowerCase()));
+        if(minAdjAdjDE===null||d<minAdjAdjDE)minAdjAdjDE=d;
+        if(d<12){closeColourPairCount++;
+          if(closePairs.length<8)closePairs.push({a:named[i].f.name,b:named[j].f.name,dE:Number(d.toFixed(2))});}
+      }}
   }
+  /* The land box: how much of the map card the drawn country actually occupies. The card can be tall
+     and the country still small inside it, which is the difference between "a big map" and "a big
+     empty panel with a map in it" - so both are measured. Path rects ignore the SVG clip, and paths
+     outside the fitted box are a separate assertion (geoOutsideCount), so this is the same
+     measurement one level out. */
+  let landBox=null;
+  if(shapesRoot){let lo=[Infinity,Infinity],hi=[-Infinity,-Infinity];
+    for(const p of shapesRoot.querySelectorAll('path')){if(getComputedStyle(p).display==='none')continue;
+      const r=p.getBoundingClientRect(),w=r.width,h=r.height;if(!w&&!h)continue;
+      lo[0]=Math.min(lo[0],r.left);lo[1]=Math.min(lo[1],r.top);hi[0]=Math.max(hi[0],r.right);hi[1]=Math.max(hi[1],r.bottom);}
+    if(Number.isFinite(lo[0]))landBox={w:hi[0]-lo[0],h:hi[1]-lo[1],l:lo[0]-mapRect.left,t:lo[1]-mapRect.top};}
   /* The inset is chrome as well: it must not sit under the zoom controls or the legend, which is
    * exactly where a corner-anchored box ends up once the controls grow to a touch size. */
   let insetVsUi=null;
@@ -285,7 +378,13 @@ const MEASURE=`(() => {
     canvasVar,canvasDrift,
     uiCollisionCount:collisions.length,collisions:collisions.slice(0,12),
     pinCount:pinHits.length,pinsCoveredCount:pinsCovered.length,pinsCovered:pinsCovered.slice(0,12),
+    labelGroups,centerInsideCount:centerInside,fullyInsideCount:fullyInside,outsideSample:outsideSample,
     adjacentPairs:adjPairs,adjacentSameFillCount:adjSame,adjacentSameFillSample:adjSample,insetVsUi,
+    minAdjacentDE00:minAdjAdjDE===null?null:Number(minAdjAdjDE.toFixed(2)),closeColourPairs:closePairs,
+    closeColourPairCount:closeColourPairCount,
+    landBox:landBox?{w:Math.round(landBox.w),h:Math.round(landBox.h),l:Math.round(landBox.l),t:Math.round(landBox.t)}:null,
+    landShareH:landBox?+(landBox.h/mapRect.height*100).toFixed(1):null,
+    landShareW:landBox?+(landBox.w/mapRect.width*100).toFixed(1):null,
     paletteLength:typeof palette!=='undefined'?palette.length:null,
     tinyFontLabels:tiny.length,tinyFontSample:tiny.slice(0,8),
     haloOverCapCount:halo.length,haloOverCapSample:halo.slice(0,8),
@@ -397,6 +496,10 @@ async function main(){
     wordBreakCount:g.wordBreakCount,wordBreakSample:g.wordBreakSample,
     labelOverlapCount:g.overlapCount,mislabelCount:g.mislabelCount,clippedLabelCount:g.clippedCount,labelUiCollisionCount:g.uiCollisionCount,
     adjacentPairs:g.adjacentPairs,adjacentSameFillCount:g.adjacentSameFillCount,paletteLength:g.paletteLength,insetVsUi:g.insetVsUi,
+    level:levelOf(m.id),labelGroups:g.labelGroups,centerInsideCount:g.centerInsideCount,fullyInsideCount:g.fullyInsideCount,
+    outsideSample:g.outsideSample,minAdjacentDE00:g.minAdjacentDE00,closeColourPairs:g.closeColourPairs,
+    closeColourPairCount:(g.closeColourPairs||[]).length,
+    landBox:g.landBox,landShareH:g.landShareH,landShareW:g.landShareW,
     tinyFontLabels:g.tinyFontLabels,haloOverCapCount:g.haloOverCapCount,unavoidableSpillCount:g.unavoidableSpillCount,
     geoPaths:g.geoPaths,geoOutsideCount:g.geoOutsideCount,geoOutside:g.geoOutside,canvasVar:g.canvasVar,canvasDrift:g.canvasDrift,
     coarse:g.coarse,mapShare:g.mapShare,smallTargetCount:g.smallTargetCount,smallTargets:g.smallTargets,
@@ -416,6 +519,10 @@ async function main(){
    * two-line labels. */
   if(!m.mobile&&m.w>=1440&&rec.domSilentCount)problems.push({route:m.label,viewport:key,kind:'silentOnAnswer',count:rec.domSilentCount,detail:rec.domSilentNames});
   if(rec.adjacentSameFillCount)problems.push({route:m.label,viewport:key,kind:'adjacentSameFillCount',count:rec.adjacentSameFillCount,detail:rec.adjacentSameFillSample});
+  /* Same colour is the degenerate case of the same problem; this is the graded version of it, so a
+     palette that avoids literal repeats but still puts two near-identical tints side by side fails
+     here. Both region names and the distance are carried, because "which two" is the whole finding. */
+  if(rec.closeColourPairCount)problems.push({route:m.label,viewport:key,kind:'adjacentColourTooClose',count:rec.closeColourPairCount,detail:rec.closeColourPairs,minDE:MIN_ADJ_DE});
   if(rec.insetVsUi)problems.push({route:m.label,viewport:key,kind:'insetVsUi',count:1,detail:[rec.insetVsUi]});
   /* Not viewport-gated: geometry outside the fitted box is cut by the frame at every width. geoPaths
      is published next to the count so a 0 cannot be the result of measuring nothing. */
@@ -452,6 +559,29 @@ async function main(){
   unavoidableSpillCount:sum('unavoidableSpillCount'),
   adjacentPairs:sum('adjacentPairs'),adjacentSameFillCount:sum('adjacentSameFillCount'),
   paletteLength:records[0]?.paletteLength??null,
+  /* Per level, because the two numbers the redesign is judged on are stated per level: "inside the
+     unit" is a different problem at 34 units of very unequal size than at a province's handful of
+     cities. Only the widest viewport per route counts here - the same map at 1280 or 430 would
+     otherwise be averaged in as a separate observation of the same layout. */
+  byLevel:LEVELS.reduce((o,lv)=>{const rs=records.filter(r=>r.level===lv&&r.viewport==='1440x900');
+    const lg=rs.reduce((s,r)=>s+r.labelGroups,0),ci=rs.reduce((s,r)=>s+r.centerInsideCount,0);
+    o[lv]={routes:rs.length,labelGroups:lg,centerInside:ci,fullyInside:rs.reduce((s,r)=>s+r.fullyInsideCount,0),
+      leaders:rs.reduce((s,r)=>s+r.leaderCountRendered,0),
+      internalRate:lg?Number((ci/lg).toFixed(4)):null};
+    return o;},{}),
+  /* The phone is where the leader-ring failure mode lived, and the byLevel block above cannot see
+     it: it is deliberately restricted to the widest desktop viewport. Same two numbers, per level,
+     over the coarse-pointer routes only, so the mobile layout is measured rather than assumed. */
+  byLevelMobile:LEVELS.reduce((o,lv)=>{const rs=records.filter(r=>r.level===lv&&r.coarse);
+    const lg=rs.reduce((s,r)=>s+r.labelGroups,0),ci=rs.reduce((s,r)=>s+r.centerInsideCount,0);
+    o[lv]={routes:rs.length,labelGroups:lg,centerInside:ci,fullyInside:rs.reduce((s,r)=>s+r.fullyInsideCount,0),
+      leaders:rs.reduce((s,r)=>s+r.leaderCountRendered,0),
+      internalRate:lg?Number((ci/lg).toFixed(4)):null};
+    return o;},{}),
+  minAdjacentDE00:Math.min(...records.map(r=>r.minAdjacentDE00??Infinity))===Infinity?null
+    :Math.min(...records.map(r=>r.minAdjacentDE00??Infinity)),
+  closeColourPairCount:sum('closeColourPairCount'),
+  desktopLandShareH:records.filter(r=>!r.mobile&&r.viewport==='1440x900').map(r=>({route:r.route,landShareH:r.landShareH,landShareW:r.landShareW,mapShare:r.mapShare})),
   smallTargetCount:sum('smallTargetCount'),pinCount:sum('pinCount'),pinsCoveredCount:sum('pinsCoveredCount'),
   leaderCountRendered:sum('leaderCountRendered'),leaderIllegibleCount:sum('leaderIllegibleCount'),
   leaderMeasured:sum('leaderMeasured'),wordBreakCount:sum('wordBreakCount'),
