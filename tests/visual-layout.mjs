@@ -341,11 +341,17 @@ const MEASURE=`(() => {
    * the engine's numbers were the only ones on the page. */
   const domIds=new Set(groups.map(g=>g.getAttribute('data-label-id')));
   const domNameOnly=groups.filter(g=>g.getAttribute('data-name-only')==='1');
-  const domSilent=[];
+  const domSilent=[],domSilentDetail=[];
   if(typeof S!=='undefined'&&S.base)for(const g of domNameOnly){
     const b=S.base.find(x=>String(x.f.id)===String(g.getAttribute('data-label-id')));
     if(!b||typeof best!=='function')continue;
-    const bb=best(b.f);if(bb&&bb.u)domSilent.push(b.f.name+'→'+bb.u);
+    const bb=best(b.f);if(!bb||!bb.u)continue;
+    domSilent.push(b.f.name+'→'+bb.u);
+    /* Where the fallback label ended up, because that is now the assertion. The engine has already
+       committed to "administrative name alone" by this point, and §四 allows that; what it does not
+       allow is for the degraded label to be worse *positioned* than the full one would have been. */
+    domSilentDetail.push({text:b.f.name+'→'+bb.u,tier:Number(g.getAttribute('data-place-tier')||1),
+      leader:!!g.querySelector('line.leader')});
   }
   /* Named units whose anchor is inside the drawn map and which got no label group at all. */
   const domMissing=[];
@@ -360,6 +366,7 @@ const MEASURE=`(() => {
     labels:labels.length,labelCount:typeof S!=='undefined'?S.labelCount:null,
     candidates:typeof S!=='undefined'&&S.base?S.base.filter(b=>b.f.name).length:null,
     domNameOnlyCount:domNameOnly.length,domSilentCount:domSilent.length,domSilentNames:domSilent.slice(0,12),
+    domSilentDetail:domSilentDetail.slice(0,12),
     domMissingCount:domMissing.length,domMissingNames:domMissing.slice(0,12),
     engineHidden:stats?stats.hidden:null,engineNameOnly:stats?stats.nameOnly:null,
     uniLabels:stats?stats.uniLabels:null,minLabelFont:stats?stats.minFont:null,
@@ -488,6 +495,7 @@ async function main(){
   if(process.env.SHOTS!=='0'){const shot=await send('Page.captureScreenshot',{format:'png'});fs.writeFileSync(path.join(shotDir,name),Buffer.from(shot.data,'base64'));shots++;}
   const rec={viewport:key,mobile:m.mobile,route:m.label,regionId:m.id,shot:process.env.SHOTS!=='0'?'reports/visual/'+name:null,
     visibleLabels:g.labels,domNameOnlyCount:g.domNameOnlyCount,domSilentCount:g.domSilentCount,domSilentNames:g.domSilentNames,
+    domSilentDetail:g.domSilentDetail,
     domMissingCount:g.domMissingCount,domMissingNames:g.domMissingNames,engineHidden:g.engineHidden,engineNameOnly:g.engineNameOnly,
     candidates:g.candidates,uniLabels:g.uniLabels,pinCount:g.pinCount,pinsCoveredCount:g.pinsCoveredCount,pinsCovered:g.pinsCovered,
     minLabelFont:g.minLabelFont,leaderCount:g.leaderCount,displacedTier3:g.displacedTier3,pageOverflow:g.pageOverflow,
@@ -510,14 +518,33 @@ async function main(){
   for(const k of ['labelOverlapCount','clippedLabelCount','labelUiCollisionCount','mislabelCount','tinyFontLabels'])
    if(rec[k])problems.push({route:m.label,viewport:key,kind:k,count:rec[k],
      detail:k==='labelOverlapCount'?rec.overlaps:k==='clippedLabelCount'?rec.clipped:k==='mislabelCount'?rec.mislabelled:k==='tinyFontSample'?rec.tinyFontSample:rec.collisions});
-  /* §24 lets a two-line label fall back to the administrative name alone when the box cannot be
-   * placed anywhere, which is a degradation the spec sanctions rather than a layout fault - so it is
-   * asserted only where the map demonstrably had room. At 1440 every route places every winner
-   * (measured 0 on all four desktop routes), so a non-zero count there is a placer regression, not a
-   * space limit. Below 1440 and on a phone the count and the affected regions are published in the
-   * report for review instead: a bare number cannot be reviewed, and 430px genuinely cannot hold 34
-   * two-line labels. */
-  if(!m.mobile&&m.w>=1440&&rec.domSilentCount)problems.push({route:m.label,viewport:key,kind:'silentOnAnswer',count:rec.domSilentCount,detail:rec.domSilentNames});
+  /* §四 says what to give up, in order: size first, then the winner's name, and only then a leader
+   * line out of the region. The redesign's placement ladder implements that order literally, which
+   * changed what a correct map looks like at 1440. A small dense unit whose two-line group has no
+   * free slot *near it* now prints its administrative name rather than taking a leader across half
+   * the map - 长宁区's nearest free slot on the 上海 map is 161px away, well outside the leash §五
+   * allows - and that is the spec's answer, not a placer regression. The old assertion here was
+   * "every winner is drawn at 1440", measured 0 on the pre-ladder engine, which is exactly the
+   * engine that would have drawn 长宁区's university 161px from 长宁区.
+   *
+   * So the assertion moved to the part of §四 that is checkable from the DOM and cannot be traded
+   * away: when a unit does fall back, its administrative name must still be sitting inside the
+   * region it names (tier 1), with no leader tying it to somewhere else. Mass degradation - the
+   * failure "just print names" would produce, which the tier test alone cannot catch because every
+   * one of those labels would also be tier 1 - is bounded separately, as a share of the route's
+   * units rather than a count, so it does not have to be re-tuned when a route is added. The
+   * measured value on every desktop route is 0, except 上海 at 1 of 16 (6.3%). */
+  if(!m.mobile&&m.w>=1440){
+    for(const d of rec.domSilentDetail)
+      if(d.tier!==1||d.leader)problems.push({route:m.label,viewport:key,kind:'degradedNameOnly',count:1,
+        detail:[`${d.text} tier=${d.tier} leader=${d.leader}`]});
+    const share=rec.candidates?rec.domSilentCount/rec.candidates:0;
+    if(share>0.1)problems.push({route:m.label,viewport:key,kind:'winnersDropped',count:rec.domSilentCount,
+      detail:[`${rec.domSilentCount} of ${rec.candidates} units fell back to the administrative name`]});
+  }
+  /* Below 1440 and on a phone the count and the affected regions are published in the report for
+   * review instead: a bare number cannot be reviewed, and 430px genuinely cannot hold 34 two-line
+   * labels. */
   if(rec.adjacentSameFillCount)problems.push({route:m.label,viewport:key,kind:'adjacentSameFillCount',count:rec.adjacentSameFillCount,detail:rec.adjacentSameFillSample});
   /* Same colour is the degenerate case of the same problem; this is the graded version of it, so a
      palette that avoids literal repeats but still puts two near-identical tints side by side fails

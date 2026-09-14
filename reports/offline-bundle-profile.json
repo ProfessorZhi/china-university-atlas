@@ -7,13 +7,13 @@
   "geoGzipBytes": 1467501,
   "geoBase64Bytes": 1956668,
   "javascriptBytes": 146937,
-  "cssBytes": 34296,
+  "cssBytes": 35654,
   "templateBytes": 7259,
   "schoolEntities": 3196,
   "campusRecords": 6820,
   "rankingFacts": 2502,
-  "htmlBytes": 3768444,
-  "knownPayloadBytes": 3761449,
+  "htmlBytes": 3769802,
+  "knownPayloadBytes": 3762807,
   "otherHtmlBytes": 6995,
   "withinBudget": true
 }

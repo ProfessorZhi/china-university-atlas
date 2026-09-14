@@ -73,13 +73,15 @@
   --sp-1:4px; --sp-2:6px; --sp-3:9px; --sp-4:13px; --sp-5:18px; --sp-6:24px;
 
   /* --- page height budget ----------------------------------------------- */
-  /* The map card and the side panel are both "everything that is left", so their height is the
-     viewport minus the chrome above and below them. That subtraction used to be a literal 172px
-     against chrome that actually measured 128px, so 44px of every desktop viewport was dead space
-     under the status bar - and because the map is height-fitted, that dead space was 44px of land
-     that was not drawn. The number below is the measured chrome: header 53 + shell margins 24 +
-     status bar 24, with 2px of slack for a rounding difference between browsers. */
-  --shell-h:calc(100dvh - 103px);
+  /* There is no --shell-h token any more, and that is the point.  The map card and the side panel
+     are both "everything that is left after the chrome", and for two rounds that leftover was
+     derived from a literal subtracted from 100dvh: first 172px against chrome that measured 128, so
+     44px of every desktop viewport sat empty under the status bar; then 103px against chrome that
+     measures 101 in Segoe UI, which is exactly right until the browser falls back to a font whose
+     line boxes are one pixel taller per row - then the page is 1px taller than the viewport on every
+     single route.  A number that has to be re-measured by hand every time a font changes is not a
+     budget, it is a guess.  The shell now takes the leftover with flexbox (see .shell), so the
+     browser measures the chrome and the map gets whatever is actually left, on any font stack. */
 }
 
 *{box-sizing:border-box}
@@ -122,7 +124,23 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
    weight: 326px of a 1280-1920 shell was a fifth of the product spent on the index, and every pixel
    of it came straight off a map that is height-fitted and therefore cannot grow the other way. */
 .shell{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:11px;margin:11px;min-height:0}
-.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;height:var(--shell-h);min-height:420px}
+/* The leftover height is taken, not computed.  On a desktop the page is a single column: the header
+   and the status bar keep their natural height and the shell is the flexible row between them, so the
+   map card and the panel are exactly as tall as the space that is genuinely left - measured by the
+   browser, on whatever font it actually resolved.  Both halves of this have to be definite rather than
+   content-derived, which is not obvious from how little code it is:
+     - the body's height, not its min-height: the panel's school list is `flex:1; overflow:auto`, and
+       against a merely minimum height the shell is content-sized, so the list stops being a scroll box
+       and lays all 3025px of schools out at once;
+     - the shell's single row, or a card whose children are absolutely or percentage-sized would
+       collapse to nothing.
+   Below 761px the page is a document again - the shell stacks two explicitly sized cards and the
+   reader scrolls - so this is desktop-only. */
+@media(min-width:761px){
+  body{display:flex;flex-direction:column;height:100dvh}
+  .shell{flex:1 1 auto;min-height:0;grid-template-rows:minmax(0,1fr)}
+}
+.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;min-height:420px}
 
 /* --- map overlay chrome ------------------------------------------------ */
 /* The head is a caption on the map, not a panel above it: it moved from 81px to 51px and the
@@ -191,7 +209,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .tooltip .tipmeta{opacity:.78}
 
 /* --- side panel: a place list ------------------------------------------ */
-.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;height:var(--shell-h);min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
+.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
 /* The head was 103px of a 728px panel - a gradient plate, a two-line description and a chip. It is
    the panel's title, so it is now set like one: no plate, tighter leading, and the description
    dropped from 11px to 10px because it explains the list rather than competing with it. */
@@ -286,7 +304,6 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
 .associationrow{background:#fdfaf4;border-left:2px solid #dcc9a6;padding:10px var(--sp-4)}
 
 @media(max-width:1050px) and (min-width:761px){
-  :root{--shell-h:calc(100dvh - 95px)}
   /* 300px of a 768px screen left the map 438px wide, and at that width the map is bound by its
      width, not its height: the side column was taking the land off the map one pixel per pixel. */
   .shell{grid-template-columns:minmax(0,1fr) 262px;margin:10px;gap:10px}

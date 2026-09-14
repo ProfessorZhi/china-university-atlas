@@ -34,6 +34,14 @@ jobs:
           python scripts/generate_reports.py --check
           python scripts/build.py --check
           node scripts/generate_best_university_coverage.mjs --check
+      # Every label in this atlas is Chinese, and the Ubuntu image ships no CJK font: each glyph fell
+      # back to .notdef, so the visual audit was measuring the geometry of a map nobody will ever see
+      # and reporting numbers that differed from the Windows readings for reasons that had nothing to
+      # do with the layout. The font stack in src/styles.css already asks for "Noto Sans CJK SC", so
+      # installing it makes CI measure the same product the reader gets - and makes the font-dependent
+      # counts comparable across platforms instead of CI-only.
+      - name: Install CJK fonts for the visual audit
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
       - name: Offline browser and city-layer UI test
         run: |
           google-chrome --version
