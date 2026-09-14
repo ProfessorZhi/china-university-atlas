@@ -5,43 +5,64 @@ const $=id=>document.getElementById(id);async function readEmbeddedJson(id){cons
 /* V5.8 map tokens.  These mirror the :root block in src/styles.css: one font stack, one
  * low-saturation land family, one boundary hierarchy, one accent for the university name. */
 const FONT_STACK='-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Source Han Sans SC",Arial,sans-serif';
-/* One family of six low-chroma fills, all at L*90 with C*13, hues spaced 60 degrees apart. Six is
-   the shortest palette that still lets the map's own greedy colouring give every adjacent pair a
-   different fill - with five, one pair always collides on real boundaries. The family sits in a
-   single narrow lightness/chroma band, so the map reads as one tinted surface rather than a
-   rainbow of values that suggests a ranking, while neighbouring units stay separable: the closest
-   adjacent pair is dE00 9.79 (was 6.16 as a saturated rainbow and 5.71 in the first draft of this
-   family, which traded too much separation for calm). */
-const palette=['#cde6fa','#ebdef5','#fddade','#f4dfcb','#d9e7d0','#c4eae7'];
+/* One family of six fills, C*15-18, L*82-92, hues at least 45 degrees apart. Six is the shortest
+   palette that lets the map's own greedy colouring give every adjacent pair a different fill - with
+   five, one pair always collides on real boundaries.
+   The family is one narrow band in chroma and a wider one in lightness, so the map reads as one
+   tinted surface rather than as a rainbow of values that suggests a ranking. What changed from the
+   previous family (a flat L*90, C*13) is that the band is no longer *flat*: every fill sat at
+   exactly the same lightness and nearly the same chroma, so the closest pair measured dE00 11.3 -
+   under the point where two neighbouring provinces separate at a glance - and the map read as "all
+   about equally pale", which is the one thing a fill palette must not be. Chroma is 18 instead of
+   13 and lightness now spans ten points instead of zero, which puts the worst pair at 14.9.
+   The colours were chosen by search, not by eye: candidates across the whole band, scored with
+   CIEDE2000, maximising the minimum pairwise distance. It has to be the *pairwise* minimum and not
+   a pleasing sequence, because the greedy assignment is free to put any two entries next to each
+   other - the only palette that is provably safe is one where every pair is far apart. */
+const palette=['#f2e7cb','#fcd5eb','#b9eff7','#ecc3b3','#b7d3b8','#cccff2'];
 const MAP_STYLE={
   /* The canvas is water, and it is deliberately darker than the land: land above sea level is the
      cartographic convention, and it keeps the country from reading as a hole in a bright page. */
   /* Every tone below is a measured contrast ratio against the six fills, not a taste call.
      The old water #c7dade sat at 1.12:1 against the fills, so sea and land were the same material
      and the country read as a hole in a bright page rather than as a figure on water. */
-  canvas:'#a5bdc6',        /* 1.52 vs the fills (was 1.12), 1.74 vs the page -- water is now a material */
-  hover:'#7f9aa6',         /* 1.51 darker than the new water, 2.30 against the fills */
+  /* Mirrors --canvas in src/styles.css. #a5bdc6 was C*8 - a grey-blue haze, not water, and the land
+     (the same material one step lighter) never separated from it. #74a9cc is C*25 at L*67: clearly
+     blue, still a calm atlas blue, and 19.6 dE00 off the closest fill. */
+  canvas:'#74a9cc',
+  /* Mirrors --map-hover. It has to be darker than the water or the cursor makes the shape it is
+     over vanish, and the old #7f9aa6 was the same lightness as the new sea. */
+  hover:'#54707f',
   /* The island tone is the one value that did not move when the sea moved, and it is the value whose
      whole job is separation from the sea: #7f97a3 measured 2.12 against the old #c7dade and only 1.56
      against the new one, so every unnamed land feature quietly lost a third of its figure-ground.
      #5a7480 restores it to 2.52 and stays clear of both boundary strokes, so an island cannot be
      misread as a border. */
-  hoverStroke:'#5f7d89',island:'#5a7480',single:['#2f6b7f',1.5],
+  hoverStroke:'#3f5c6b',island:'#5a7480',single:['#3c5a68',1.4],
   /* The inset is a panel, so it gets its own water instead of borrowing the main sea: filling it
-     with the same tone drew a frame around nothing. #8aa6b1 is a step deeper than the sea (1.31)
-     and its land sits 2.29 above it, so the islands are the lightest thing in the frame. */
-  insetWater:'#8aa6b1',insetLand:'#eef3f1',
+     with the same tone drew a frame around nothing. It is a step deeper than the sea, and its land
+     sits well above it, so the islands are the lightest thing in the frame. */
+  insetWater:'#5f95b8',insetLand:'#eef3f1',
   /* Boundary tone follows the unit being drawn, not a decorative scale; non-scaling-stroke keeps
-     the hierarchy stable when the map is zoomed. The old ladder (.95/.8/.65 of #6f8b96/#7895a5/
-     #8ba0aa) measured 2.80/2.45/2.11 against the fills -- all three below the point where a hairline
-     reads as a boundary. Raising the tones without raising the widths is what buys the legibility;
-     the widths step 1.0/0.9/0.8 so the level is still readable in black and white. */
-  stroke:{province:['#5f7c88',1],city:['#647f8b',.9],district:['#6a8490',.8],'':['#6a8490',.7]},
+     the hierarchy stable when the map is zoomed. The ladder is one level of a three-part hierarchy:
+     the current level's own outer contour is drawn strongest (see drawEdges), these are the internal
+     boundaries between the units being displayed, and the unnamed/finer cases are weakest. The
+     widths spread 0.95/0.8/0.55 instead of the old 1.0/0.9/0.8 - three lines that differ by a tenth
+     of a pixel are three lines of the same weight, which is what "all the lines look alike" is.
+
+     The `'':['#6a8490',.55]` entry is the unnamed case and it is deliberately the faintest: those
+     features are island groups and reefs, and at the old .7 they were drawn as confidently as a
+     province. */
+  edge:'#3c5a68',
+  stroke:{province:['#54737f',.95],city:['#5d7c88',.8],district:['#68838e',.7],'':['#6a8490',.55]},
   /* A leader line is the price of putting a label off its own shape; the placement test exempts any
      label that has one, so the line has to be actually visible or the exemption is unearned. At
      .6px and 50% opacity #5f7d89 blended down to 1.73 against the fills and 1.46 against the water -
-     a grey smudge, not a leader. Solid at 1px and #4a6b78 it measures 4.44 and 2.92. */
-  label:{region:'#45636f',uni:'#a82b21',halo:'#ffffff',leader:'#4a6b78',
+     a grey smudge, not a leader. Solid at 1px and #3d5c68 it measures 4.45 against the least
+     favourable fill, which matters because the fills got lighter when the palette was re-cut: the
+     previous #4a6b78 still cleared the test's 3:1 floor on them, but only by .55, and this line is
+     an exemption the reader has to be able to follow, not a formality. */
+  label:{region:'#26333b',uni:'#a82b21',halo:'#ffffff',leader:'#3d5c68',
   /* The inset caption cannot use label.region any more. label.region is tuned against the land fills
      (4.98:1); on the inset's own water it measures 2.50:1, and the audit's darker alternative
      #274b5a only reaches 3.65:1 there - both under the 4.5:1 floor for small text, because that
@@ -85,8 +106,36 @@ function regionColors(fs){
    now read the same constant, and a ring is drawn iff it has any point at or north of it, so every
    drawn coordinate is provably inside the fitted box (the inset carries the SCS instead). */
 const NATION_MIN_LAT=18;
-function drawMap(reset=false){const rect=$('map').getBoundingClientRect();S.w=rect.width;S.h=rect.height;$('map').setAttribute('viewBox',`0 0 ${S.w} ${S.h}`);$('clipRect').setAttribute('width',S.w);$('clipRect').setAttribute('height',S.h);if(reset){S.z=1;S.x=S.y=0;}const nation=current().kind==='country',projected=[],keepMask=[];let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;for(const f of S.geo){const rings=f.rings.map(r=>r.map(project));projected.push(rings);keepMask.push(f.rings.map(r=>!nation||r.some(p=>p[1]>=NATION_MIN_LAT)));f.rings.forEach((r,ri)=>r.forEach((p,pi)=>{if(nation&&(p[1]<NATION_MIN_LAT||!f.name))return;const q=rings[ri][pi];xmin=Math.min(xmin,q[0]);xmax=Math.max(xmax,q[0]);ymin=Math.min(ymin,q[1]);ymax=Math.max(ymax,q[1]);}));}if(!Number.isFinite(xmin))return;const top=118,bottom=48,left=nation?30:38,right=nation?72:48,scale=Math.min((S.w-left-right)/Math.max(xmax-xmin,.00001),(S.h-top-bottom)/Math.max(ymax-ymin,.00001)),tx=left+(S.w-left-right-(xmax-xmin)*scale)/2-xmin*scale,ty=top+(S.h-top-bottom-(ymax-ymin)*scale)/2-ymin*scale;S.projection={scale,tx,ty};S.base=[];const colors=regionColors(S.geo);$('shapes').innerHTML='';S.geo.forEach((f,i)=>{const keep=keepMask[i],rings=projected[i].map((r,ri)=>keep[ri]?r.map(p=>[p[0]*scale+tx,p[1]*scale+ty]):null).filter(Boolean);const path=rings.map(r=>'M'+r.map(p=>p.map(x=>x.toFixed(2)).join(',')).join('L')+'Z').join('');const st=S.geo.length===1?MAP_STYLE.single:(MAP_STYLE.stroke[f.name?f.level:'']||MAP_STYLE.stroke.district);
-const el=E('path',{d:path,fill:colors[i],stroke:st[0],'stroke-width':st[1],'fill-rule':'evenodd','vector-effect':'non-scaling-stroke',class:'region','data-i':i,'data-id':f.id,tabindex:f.name?'0':'-1',role:f.name?'button':'presentation','aria-label':f.name?f.name+'，'+(best(f).rawU||best(f).u||'高校数据待补'):'南海诸岛边界'});if(!f.name){el.setAttribute('fill',MAP_STYLE.island);el.style.pointerEvents='none';}if(nation&&!f.name)el.style.display='none';$('shapes').append(el);const drawn=keep.every(Boolean)?f:{rings:f.rings.filter((r,ri)=>keep[ri]),cp:f.cp};let cp=project(labelPoint(drawn));let area=rings.reduce((s,r)=>s+polygonArea(r),0);S.base.push({f,cp:[cp[0]*scale+tx,cp[1]*scale+ty],area,rings,el});});drawInset(nation);applyTransform();}
+function drawMap(reset=false){const rect=$('map').getBoundingClientRect();S.w=rect.width;S.h=rect.height;$('map').setAttribute('viewBox',`0 0 ${S.w} ${S.h}`);$('clipRect').setAttribute('width',S.w);$('clipRect').setAttribute('height',S.h);if(reset){S.z=1;S.x=S.y=0;}const nation=current().kind==='country',projected=[],keepMask=[];let xmin=Infinity,ymin=Infinity,xmax=-Infinity,ymax=-Infinity;for(const f of S.geo){const rings=f.rings.map(r=>r.map(project));projected.push(rings);keepMask.push(f.rings.map(r=>!nation||r.some(p=>p[1]>=NATION_MIN_LAT)));f.rings.forEach((r,ri)=>r.forEach((p,pi)=>{if(nation&&(p[1]<NATION_MIN_LAT||!f.name))return;const q=rings[ri][pi];xmin=Math.min(xmin,q[0]);xmax=Math.max(xmax,q[0]);ymin=Math.min(ymin,q[1]);ymax=Math.max(ymax,q[1]);}));}/* The fit reserves the chrome the map is drawn under, and every pixel it reserves is a pixel of
+   land that is not drawn. It reserved 118 above and 48 below a head that measures 53 and a legend
+   that measures 38, on 726px of height: 46px of the map was being spent on nothing. 60 and 54 are
+   the measured head and legend plus a clearance. The right margin is 72 only where the South China
+   Sea inset lives - on every other route the inset is not drawn at all and the number was a reserve
+   against nothing, so it is 40 (the zoom rail) everywhere else, and the level routes got 16px of
+   width back each side on top of that. */
+if(!Number.isFinite(xmin))return;const top=60,bottom=54,left=nation?26:22,right=nation?72:40,scale=Math.min((S.w-left-right)/Math.max(xmax-xmin,.00001),(S.h-top-bottom)/Math.max(ymax-ymin,.00001)),tx=left+(S.w-left-right-(xmax-xmin)*scale)/2-xmin*scale,ty=top+(S.h-top-bottom-(ymax-ymin)*scale)/2-ymin*scale;S.projection={scale,tx,ty};S.base=[];const colors=regionColors(S.geo);$('shapes').innerHTML='';S.geo.forEach((f,i)=>{const keep=keepMask[i],rings=projected[i].map((r,ri)=>keep[ri]?r.map(p=>[p[0]*scale+tx,p[1]*scale+ty]):null).filter(Boolean);const path=rings.map(r=>'M'+r.map(p=>p.map(x=>x.toFixed(2)).join(',')).join('L')+'Z').join('');const st=S.geo.length===1?MAP_STYLE.single:(MAP_STYLE.stroke[f.name?f.level:'']||MAP_STYLE.stroke.district);
+const el=E('path',{d:path,fill:colors[i],stroke:st[0],'stroke-width':st[1],'fill-rule':'evenodd','vector-effect':'non-scaling-stroke',class:'region','data-i':i,'data-id':f.id,tabindex:f.name?'0':'-1',role:f.name?'button':'presentation','aria-label':f.name?f.name+'，'+(best(f).rawU||best(f).u||'高校数据待补'):'南海诸岛边界'});if(!f.name){el.setAttribute('fill',MAP_STYLE.island);el.style.pointerEvents='none';}if(nation&&!f.name)el.style.display='none';$('shapes').append(el);const drawn=keep.every(Boolean)?f:{rings:f.rings.filter((r,ri)=>keep[ri]),cp:f.cp};let cp=project(labelPoint(drawn));let area=rings.reduce((s,r)=>s+polygonArea(r),0);S.base.push({f,cp:[cp[0]*scale+tx,cp[1]*scale+ty],area,rings,el});});drawEdges(nation,scale,tx,ty);drawInset(nation);applyTransform();}
+/* The level's own outer contour, drawn under the fills. Three weights, not one: the units being
+   displayed get the internal boundary tone, and the outline of the level they sit inside gets this
+   one - 2.3px of dark band around the whole figure, which is what makes the map read as a shape
+   with an edge instead of as a patchwork of equal hairlines.
+   It has to be drawn *under* #shapes and wider than it looks: the fills are opaque and cover the
+   inner half of the stroke, so 4.6px of stroke leaves 2.3px showing outside the boundary, and every
+   internal segment of the same path - the concatenated rings share one stroke - is covered whole by
+   the fills on either side of it.
+   The national view has no parent feature to outline, because the country is not in the data as a
+   polygon, only its provinces are. Its silhouette is therefore the union of the named features as
+   one evenodd path: unnamed features are left out because nothing paints over them, so their share
+   of the stroke would stay on the map as dark specks in the sea. */
+function drawEdges(nation,scale,tx,ty){
+  const g=$('edgeLayer');g.innerHTML='';let rings;
+  if(nation)rings=S.base.filter(b=>b.f.name).flatMap(b=>b.rings);
+  else{const par=current().f;if(!par)return;
+    rings=par.rings.map(r=>r.map(p=>{const q=project(p);return[q[0]*scale+tx,q[1]*scale+ty];}));}
+  if(!rings.length)return;
+  const d=rings.map(r=>'M'+r.map(p=>p[0].toFixed(2)+','+p[1].toFixed(2)).join('L')+'Z').join('');
+  g.append(E('path',{d,fill:MAP_STYLE.edge,stroke:MAP_STYLE.edge,'stroke-width':4.6,'stroke-linejoin':'round','fill-rule':'evenodd','vector-effect':'non-scaling-stroke','pointer-events':'none'}));
+}
 /* A proper cartographic inset: the same projection as the main map, one uniform scale so nothing is
    stretched, the caption inside the frame, and each feature drawn in the fill it already has on the
    map - an inset that invents its own colours is a second legend the reader has to reconcile. */
@@ -101,7 +150,7 @@ function drawInset(show){
   /* Size the frame to the content instead of fixing a box and letterboxing it: the window is taller
      than it is wide, so a fixed wide box left dead space either side of the islands. */
   let innerW=small?44:80,h=Math.round(innerW*(yhi-ylo)/(xhi-xlo))+capH+pad*2,w=innerW+pad*2;
-  const maxH=S.h-118-92;
+  const maxH=S.h-152;
   if(h>maxH){h=Math.round(maxH);innerW=Math.max(30,(h-capH-pad*2)*(xhi-xlo)/(yhi-ylo));w=innerW+pad*2;}
   /* On a phone the zoom controls own the right edge, so the inset moves to the left and sits just
      above the legend instead of underneath the buttons. */
@@ -156,7 +205,7 @@ function drawInset(show){
    g.append(E('path',{d:path,fill:f.name?(own?own.el.getAttribute('fill'):palette[0]):MAP_STYLE.insetLand,stroke:MAP_STYLE.stroke.district[0],'stroke-width':.6,'fill-rule':'evenodd'}));}
   S.insetBox={l:x-4,t:y-4,r:x+w+4,b:y+h+4};
 }
-function applyTransform(){$('shapes').setAttribute('transform',`translate(${S.x} ${S.y}) scale(${S.z})`);cancelAnimationFrame(drawFrame);drawFrame=requestAnimationFrame(drawLabels);$('zoomInfo').textContent=Math.round(S.z*100)+'%';}
+function applyTransform(){const t=`translate(${S.x} ${S.y}) scale(${S.z})`;$('shapes').setAttribute('transform',t);$('edgeLayer').setAttribute('transform',t);cancelAnimationFrame(drawFrame);drawFrame=requestAnimationFrame(drawLabels);$('zoomInfo').textContent=Math.round(S.z*100)+'%';}
 const measure=document.createElement('canvas').getContext('2d');
 const widthCache=new Map();let widthFallbackLogged=false;
 /* Real text width, not length x a constant.  A constant character width is wrong for

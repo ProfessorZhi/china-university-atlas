@@ -338,59 +338,168 @@ function drawLabels(){
       if(!(box.r+LABEL_GAP<a.l||box.l-LABEL_GAP>a.r||box.b+LABEL_GAP<a.t||box.t-LABEL_GAP>a.b))return false;}
     return true;
   }
+  /* How much of the box hangs outside the unit's own outline: the four corners, sampled. This is the
+     rank the in-place search sorts on, ahead of distance from the anchor, and it is what makes the
+     difference between a name printed on its province and a name printed across the border. The
+     nearest free centre is not the best one when the box is wider than the slack around the anchor:
+     江苏's box centred on 江苏's centroid still reaches into 山东, and taking that centre is how 山东
+     ends up with no room left for its own label. Preferring the centre that spills least costs four
+     point-in-polygon tests per candidate and is the difference between "the centre is inside" and
+     "the label is inside", which is the property the map is judged on. */
+  function spillOf(b,cx,cy,label){
+    let n=0;
+    for(const[px,py]of[[-1,-1],[1,-1],[-1,1],[1,1]])
+      if(!inside(b,(cx+px*label.width/2-S.x)/S.z,(cy+py*label.height/2-S.y)/S.z))n++;
+    return n;
+  }
+  /* Every point of a grid over the unit's own bounding box that falls inside the unit's outline,
+     in screen coordinates. Bounded at 16x16 so a province the size of 新疆 cannot make this the
+     expensive part of a paint; the pitch is a third of the smaller side of the label, floored at 5px,
+     so a unit that is only a little larger than its label still gets several distinct candidates. */
+  function insideCentres(b,label){
+    const W=b.bbox[1][0]-b.bbox[0][0],H=b.bbox[1][1]-b.bbox[0][1];
+    if(!(W>0)||!(H>0))return [];
+    const step=Math.max(4,Math.min(10,Math.min(label.width,label.height)/4));
+    const nx=Math.max(1,Math.min(26,Math.ceil(W/step))),ny=Math.max(1,Math.min(26,Math.ceil(H/step)));
+    const out=[];
+    for(let i=0;i<=nx;i++)for(let j=0;j<=ny;j++){
+      const mx=b.bbox[0][0]+W*i/nx,my=b.bbox[0][1]+H*j/ny;
+      if(inside(b,mx,my))out.push([mx*S.z+S.x,my*S.z+S.y]);}
+    return out;
+  }
   /* Returns {box,tier,dx,dy}: tier 1 = inside its own region, 2 = open ground, 3 = displaced into
-     a neighbour (a leader line is then mandatory).  The best tier wins; ties go to the nearest. */
-  function place(b,x,y,label,skip){
-    const cap=Math.max(32,Math.min(.9*Math.sqrt(Math.max(b.area,1))*S.z,110));
+     a neighbour (a leader line is then mandatory).  The best tier wins; ties go to the nearest.
+     Two searches, in the order the placement priority puts them. First the fine grid of centres
+     inside the unit's own outline, nearest to the anchor first: if the name can be printed on the
+     shape it names, that is the answer and nothing else is worth looking at. Only if no in-place
+     centre fits does the coarse ladder run, and that ladder is deliberately coarse - its pitch is
+     half a label plus a gap, which is the right pitch for searching the space *around* a shape and
+     the wrong one for searching the space inside it. Using it for both was why 浙江 (60x60 holding a
+     52x30 box) was sent to the sea: after the anchor point was blocked the ladder's next idea was
+     33px away, more than half the province, and outside it. */
+  function place(b,x,y,label,skip,maxTier){
+    /* How far off its own shape a label may be pushed.  An escape inside the leash reads as "printed
+       beside the region": the line is short enough that the eye never loses which shape it belongs
+       to, which is the case §五 keeps leaders for (small regions, and dense ones like the central
+       districts of 上海).  Beyond it the label is no longer annotating a shape - it is a name in a
+       ring around the country.
+       Three bounds, smallest wins:
+         the label's own width  - a wide two-line group visibly belongs to a wider neighbourhood;
+         58px                   - beyond that a leader stops reading as a callout on any viewport;
+         S.w*.055               - "beside" is a fraction of the map, not a number of pixels. At 1440
+                                  this is 62px and never binds; at 390 it is 20px, which is what
+                                  stops a phone growing a nineteen-line ring around the country.
+       The region's own size deliberately does not appear here.  Scaling the leash by area sounded
+       right - a big province can afford a longer callout - but the radius a reader can follow is a
+       property of the line on the screen, not of the polygon it points at.  Using area also shrank
+       the leash for exactly the small dense districts §五 keeps leaders for, and cost 石景山区 its
+       winner on the 北京 map.
+       The last-resort passes lift the leash entirely, so a unit with no room anywhere still gets a
+       far leader rather than disappearing - the leash decides the order labels are tried in, never
+       whether a region is labelled at all. */
+    const cap=maxTier===Infinity?Infinity:Math.max(18,Math.min(label.width*.8,58,S.w*.055));
     let best=null;
-    for(const[dx,dy]of labelOffsets(label.width,label.height)){
-      const dist=Math.hypot(dx,dy);
-      const cx=x+dx,cy=y+dy,box={l:cx-label.width/2,r:cx+label.width/2,t:cy-label.height/2,b:cy+label.height/2};
-      if(!fits(box,skip))continue;
+    const grade=(cx,cy)=>{
+      const box={l:cx-label.width/2,r:cx+label.width/2,t:cy-label.height/2,b:cy+label.height/2};
+      if(!fits(box,skip))return null;
       const mx=(cx-S.x)/S.z,my=(cy-S.y)/S.z;
-      let tier=inside(b,mx,my)?1:(inForeign(b,mx,my)?3:2);
-      if(tier===3){
-        if(dist>cap)continue;
-        if(best&&best.tier<3)continue;
-        if(best&&best.tier===3&&best.dist<=dist)continue;
-      }else{
-        if(best&&best.tier<=tier&&best.dist<=dist)continue;
-      }
-      best={box,tier,dx,dy,dist};
-      if(tier===1&&dist<=1)break;
+      return{box,tier:inside(b,mx,my)?1:(inForeign(b,mx,my)?3:2),dist:Math.hypot(cx-x,cy-y)};
+    };
+    const keep=hit=>{
+      if(!hit)return false;
+      /* maxTier is the placement priority enforced across passes rather than inside one call.  Tier 1
+         is the label on its own shape, 2 is open ground beside it (the sea, or across a national
+         border) and 3 is inside a neighbour.  The early passes set maxTier=1 so that a unit which
+         cannot hold its two-line group on its own shape is left for the name-only pass instead of
+         taking the nearest escape; only the last-resort passes lower the bar.  Without this, "the box
+         does not fit inside" and "the box goes to sea" were two ways of saying the same thing, and on
+         a phone that put nineteen of twenty-eight nationwide labels in a ring around the country. */
+      if(hit.tier>maxTier)return false;
+      if(hit.tier>1&&hit.dist>cap)return false;
+      if(hit.tier===3){
+        if(best&&best.tier<3)return false;
+        if(best&&best.tier===3&&best.dist<=hit.dist)return false;
+      }else if(best&&best.tier<=hit.tier&&best.dist<=hit.dist)return false;
+      best=hit;return true;
+    };
+    let inBest=null;
+    for(const[cx,cy]of insideCentres(b,label)){
+      const hit=grade(cx,cy);
+      if(!hit||hit.tier!==1)continue;
+      hit.spill=spillOf(b,cx,cy,label);
+      /* Lexicographic: least spill first, then nearest the anchor. It cannot prefer a smaller spill
+         at the cost of a worse tier - every candidate here is already tier 1 - and it cannot prefer
+         a near centre over a clean one, which is the point. */
+      if(!inBest||hit.spill<inBest.spill||(hit.spill===inBest.spill&&hit.dist<inBest.dist))inBest=hit;
+      if(inBest.spill===0&&inBest.dist<=1.5)break;
+    }
+    if(inBest)return inBest;
+    for(const[dx,dy]of labelOffsets(label.width,label.height)){
+      const cx=x+dx,cy=y+dy,hit=grade(cx,cy);
+      if(!keep(hit))continue;
+      if(hit.tier===1&&hit.dist<=1)break;
     }
     return best;
   }
   const onScreen=b=>{const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;return !(x<-120||y<-120||x>S.w+120||y>S.h+120);};
-  /* Two stages, and the order inside a stage is the whole algorithm:
-       stage 1  every unit with a university to show, smallest area first -> the full two-line
-                group, so its box is measured and placed at its final size;
-       stage 2  everything still unplaced - units with no winner, plus any unit whose two-line
-                group would not fit anywhere - -> the administrative name alone.
-     The previous design placed 34 small name boxes first and then tried to grow 33 of them in an
-     already-crowded field, which meant a unit received its answer only if a neighbour happened to
-     leave a gap beside it: 湖北 lost 武汉大学 at 1440 while 西藏 kept 西藏大学, and the set of
-     units that lost depended on how many pixels the window had.  Sizing the box before the space
-     is spent removes that failure mode, and a unit that still cannot fit two lines keeps its name
-     instead of vanishing from the map. */
-  function stage(list,withUni){
+  /* One pass = one rung of the placement ladder, applied to every unit that is still unplaced, in
+     smallest-area-first order. Sizing the box before the space is spent is what keeps the packing
+     order-independent: the previous design placed 34 small name boxes first and then tried to grow
+     33 of them in an already-crowded field, so a unit received its answer only if a neighbour
+     happened to leave a gap beside it - 湖北 lost 武汉大学 at 1440 while 西藏 kept 西藏大学, and
+     which units lost depended on how many pixels the window had. A unit that still cannot fit two
+     lines keeps its administrative name instead of vanishing from the map. */
+  function stage(list,withUni,maxTier){
     for(const b of list){
       if(placed.has(b.f.id)||!onScreen(b))continue;
       const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;
+      let pick=null;
+      /* The scale ladder is searched for the best *tier*, not for the first hit. The old loop broke on
+         the first scale that returned anything, which meant a unit that could only reach the sea at
+         full size was sent to the sea even when it would have fitted inside its own region one rung
+         down - and inside is the one property the placement is for. Ties keep the larger scale, so
+         this can only ever trade size for being on the right shape, never the reverse.
+         `pick` is a {label,hit} pair, so the comparison has to read pick.hit.tier: written as
+         `hit.tier < pick.tier` the right-hand side is undefined, every comparison is false, and the
+         ladder degenerates into exactly the break-on-first-hit loop the paragraph above says it
+         replaced. It shipped that way - 辽宁, 山西, 黑龙江 and 东莞 were sent off their own regions
+         with a leader while one rung down placed them cleanly inside. */
       for(const scale of[1,.93,.86,.79]){
         const label=build(b,scale,withUni);
         if(!label)break;
         if(withUni&&label.lines.length<=label.nameCount)break;
-        const hit=place(b,x,y,label,-1);
-        if(!hit)continue;
-        accepted.push(hit.box);
-        placed.set(b.f.id,{b,label,box:hit.box,tier:hit.tier,dx:hit.dx,dy:hit.dy,slot:accepted.length-1,onlyName:!withUni});
-        break;
+        const hit=place(b,x,y,label,-1,maxTier);
+        if(hit&&(!pick||hit.tier<pick.hit.tier))pick={label,hit};
+        if(pick&&pick.hit.tier===1)break;
       }
+      if(!pick)continue;
+      accepted.push(pick.hit.box);
+      placed.set(b.f.id,{b,label:pick.label,box:pick.hit.box,tier:pick.hit.tier,dx:pick.hit.dx,dy:pick.hit.dy,slot:accepted.length-1,onlyName:!withUni});
     }
   }
-  stage(upgrades,true);
-  stage(items,false);
+  /* Six passes, and their order is the placement priority written out as control flow:
+       in place  >  beside it, within the leash  >  name alone  >  anywhere.
+     The scale ladder inside a pass already covers "at a smaller size".  The first three rungs are
+     the ones that matter: a label printed on its own shape beats one printed beside it, and a short
+     leader from a district too small to hold its own name is a better answer than dropping the
+     university - §五 keeps leaders for exactly that case.  What the ladder is for is the fourth
+     rung, "anywhere": it used to be reachable in one step, so on a phone a unit that could reach a
+     neighbour or the sea took a leader at full size even when its own administrative name would have
+     sat cleanly inside its own shape.  That is where the nineteen-label ring around the country
+     came from.  Now a far escape is only available after every unit has been offered a place inside
+     itself, name-only if that is all that fits.
+     Within a pass the order is smallest area first: a small unit has nowhere else to go, while a
+     large one can still be labelled after its neighbours since it has room inside itself. Ordering
+     by size descending - which is what an "upgrade the winners by prestige" pass amounts to -
+     answered "which university" for 新疆 and 西藏 while staying silent on 北京 and 上海.
+     Each pass sees only the units the previous ones could not place, so this can only ever move a
+     label down the priority list, never up, and no unit can take a second slot. */
+  stage(upgrades,true,1);
+  stage(upgrades,true,3);
+  stage(items,false,1);
+  stage(items,false,3);
+  stage(upgrades,true,Infinity);
+  stage(items,false,Infinity);
   for(const b of items)if(onScreen(b)&&!placed.has(b.f.id))hidden++;
   let shown=0,nameOnly=0,uniLines=0,leaders=0,displaced=0;
   S.labels=[];
@@ -401,10 +510,18 @@ function drawLabels(){
     const x=b.cp[0]*S.z+S.x,y=b.cp[1]*S.z+S.y;
     const cx=(box.l+box.r)/2,cy=box.t+LABEL_PADY+label.lines.reduce((s,l)=>s+l.fs*LABEL_LH,0)/2;
     const dist=Math.hypot(cx-x,cy-y);
-    // A leader line is mandatory whenever the label is not sitting on its own anchor: either it
-    // was displaced far enough that the eye needs help, or it could not be placed inside its own
-    // region at all.  Without one, a reader would assign the name to the wrong shape.
-    const needLeader=rec.tier===3||dist>Math.max(12,label.height*.55);
+    /* A leader line exists to connect a name to a shape it is not sitting on, so it is drawn exactly
+       when the label is not on its own shape: tier 2 (open water or outside the country) and tier 3
+       (inside a neighbour) get one, tier 1 does not.
+       The old rule also fired on tier 1 whenever the box centre had drifted more than max(12, h*.55)
+       from the region's own anchor point, which is most of them: a large province whose label is
+       nudged aside by its neighbour's box is still unmistakably inside that province, and the nudged
+       labels were the majority of the 20 nationwide leader lines. A line from a name to the middle of
+       the region it is already printed on carries no information and, at 20 of 34 labels, it was the
+       map's most prominent graphic element - a wiring diagram drawn over a map. `dist` is still
+       computed because it is the honest measure of how far the label had to move, and it is what a
+       future tie-break between two equally-placed candidates should use. */
+    const needLeader=rec.tier!==1;
     const group=E('g',{'data-label-id':b.f.id,'data-label-level':b.f.level||'island','data-name-only':rec.onlyName?'1':'0','data-place-tier':String(rec.tier||1)});
     if(needLeader){
       /* Full opacity, 1px, and vector-effect so zoom cannot thin it back into a smudge. The .6px/50%

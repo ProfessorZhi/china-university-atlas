@@ -25,9 +25,13 @@
      fills sit above it in lightness, which is the cartographic convention and keeps the country
      from reading as a hole punched in a bright page. */
   /* Mirrors MAP_STYLE.canvas in src/app.js, which draws the map itself; the two must move together. */
-  --canvas:#a5bdc6;
+  /* The sea has to be blue, not grey-blue: #a5bdc6 sat at C*8, so the water read as a desaturated
+     haze and the land - which is the same material, one step lighter - never separated from it.
+     #74a9cc is C*25 at L*67: unmistakably water, still a calm atlas blue rather than a saturated
+     one, and 19.6 dE00 off the closest fill instead of the old near-invisible margin. */
+  --canvas:#74a9cc;
   /* A step deeper than the water it encloses, so the card reads as a frame instead of a light rim. */
-  --canvas-edge:#8aa6b1;
+  --canvas-edge:#5d93b9;
 
   /* --- borders ---------------------------------------------------------- */
   --border:#dde7ea;
@@ -41,15 +45,21 @@
   --caution-soft:#fbf4e9;
 
   /* --- map -------------------------------------------------------------- */
-  --map-label-region:#45636f;   /* L1 administrative name */
+  /* L1 administrative name. The spec for this layer is "deep grey or black, smaller, medium weight,
+     secondary information", and the tone now follows the words rather than the map: #45636f was a
+     slate blue from the same family as the old sea, which is why the administrative name and the
+     university name read as two shades of one thing instead of as two different jobs. */
+  --map-label-region:#26333b;   /* L1 administrative name */
   --map-label-uni:var(--accent);/* L2 best-university name */
   --map-halo:#ffffff;
-  --map-leader:#5f7d89;
+  --map-leader:#4a6b78;
   /* Hover is a darker neutral, not a seventh colour: a warm or saturated highlight competes with
      the fills and reads as a value on the map instead of as "the thing under the cursor". It has to
-     be darker than --canvas, or the cursor makes the shape it is over vanish. */
-  --map-hover:#7f9aa6;
-  --map-hover-stroke:#5f7d89;
+     be darker than --canvas, or the cursor makes the shape it is over vanish - and when the sea
+     moved from L*75 to L*67 the old #7f9aa6 became the same lightness as the water it sits in, so
+     the hover stopped reading as a state at all. */
+  --map-hover:#54707f;
+  --map-hover-stroke:#3f5c6b;
   /* The inset's water and land tones live only in MAP_STYLE (insetWater / insetLand) because the
      inset is drawn by JS into the SVG and nothing in CSS ever styles it. A token here would be a
      second copy of a number no stylesheet reads. */
@@ -59,6 +69,17 @@
   --sh-1:0 1px 2px #1738460f;
   --sh-2:0 8px 24px #17384614;
   --sp-1:4px; --sp-2:6px; --sp-3:9px; --sp-4:13px; --sp-5:18px; --sp-6:24px;
+
+  /* --- page height budget ----------------------------------------------- */
+  /* There is no --shell-h token any more, and that is the point.  The map card and the side panel
+     are both "everything that is left after the chrome", and for two rounds that leftover was
+     derived from a literal subtracted from 100dvh: first 172px against chrome that measured 128, so
+     44px of every desktop viewport sat empty under the status bar; then 103px against chrome that
+     measures 101 in Segoe UI, which is exactly right until the browser falls back to a font whose
+     line boxes are one pixel taller per row - then the page is 1px taller than the viewport on every
+     single route.  A number that has to be re-measured by hand every time a font changes is not a
+     budget, it is a guess.  The shell now takes the leftover with flexbox (see .shell), so the
+     browser measures the chrome and the map gets whatever is actually left, on any font stack. */
 }
 
 *{box-sizing:border-box}
@@ -75,13 +96,17 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
    university names on the map for the same job. Both header actions are now plain buttons. */
 
 /* --- header: a title bar, not a second product ------------------------- */
-.header{padding:12px var(--sp-6) 11px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-5);align-items:center;justify-content:space-between;box-shadow:var(--sh-1);position:relative;z-index:20}
-.brand{display:flex;gap:10px;align-items:center;min-width:0}
-.brand>div:last-child{min-width:0}
-.logo{flex:0 0 34px;width:34px;height:34px;border-radius:var(--r-md);background:var(--accent);color:#fff;display:grid;place-items:center;font-size:19px;font-weight:var(--fw-bold)}
-.eyebrow{font-size:var(--fs-1);letter-spacing:1.6px;color:var(--faint);margin-bottom:1px;font-weight:var(--fw-medium)}
-.header h1{margin:0;font-size:var(--fs-6);font-weight:var(--fw-semi);letter-spacing:.2px;color:var(--ink);line-height:1.25}
-.header small{display:block;color:var(--muted);font-size:var(--fs-2);margin-top:2px;line-height:1.4}
+/* 80px of chrome over a map that lost 14% of its drawing height to it. The title, the product line
+   and the range note were three stacked lines of type saying one thing; they are one line now, and
+   the header is 53px. Nothing was removed - the range note is still here, set as a quiet suffix on
+   the title's baseline rather than as a paragraph under it. */
+.header{padding:9px var(--sp-5);background:var(--surface);border-bottom:1px solid var(--border);display:flex;gap:var(--sp-4);align-items:center;justify-content:space-between;box-shadow:var(--sh-1);position:relative;z-index:20}
+.brand{display:flex;gap:9px;align-items:baseline;min-width:0}
+.logo{flex:0 0 28px;width:28px;height:28px;border-radius:var(--r-sm);background:var(--accent);color:#fff;display:grid;place-items:center;font-size:16px;font-weight:var(--fw-bold);align-self:center}
+.eyebrow{font-size:var(--fs-1);letter-spacing:1.5px;color:var(--faint);font-weight:var(--fw-medium);white-space:nowrap}
+.header h1{margin:0;font-size:17px;font-weight:var(--fw-semi);letter-spacing:.2px;color:var(--ink);line-height:1.25;white-space:nowrap}
+.header small{color:var(--muted);font-size:var(--fs-2);line-height:1.3;padding-left:9px;border-left:1px solid var(--border);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.actions>button{padding:7px 11px}
 .actions{display:flex;gap:var(--sp-2);align-items:center;flex-wrap:wrap}
 .searchwrap{position:relative}
 .searchwrap input{width:230px;padding:9px 32px 9px 11px;background:var(--surface-2);border:1px solid var(--border);border-radius:var(--r-sm);outline:0;font-size:var(--fs-3)}
@@ -93,17 +118,39 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .searchitem small{line-height:var(--lh-body);color:var(--muted)}
 
 /* --- shell ------------------------------------------------------------- */
-.shell{display:grid;grid-template-columns:minmax(0,1fr) 326px;gap:var(--sp-4);margin:var(--sp-4);min-height:0}
-.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;height:calc(100dvh - 172px);min-height:420px}
+/* The map is the page. The side column is a margin note beside it, not a second column of equal
+   weight: 326px of a 1280-1920 shell was a fifth of the product spent on the index, and every pixel
+   of it came straight off a map that is height-fitted and therefore cannot grow the other way. */
+.shell{display:grid;grid-template-columns:minmax(0,1fr) 292px;gap:11px;margin:11px;min-height:0}
+/* The leftover height is taken, not computed.  On a desktop the page is a single column: the header
+   and the status bar keep their natural height and the shell is the flexible row between them, so the
+   map card and the panel are exactly as tall as the space that is genuinely left - measured by the
+   browser, on whatever font it actually resolved.  Both halves of this have to be definite rather than
+   content-derived, which is not obvious from how little code it is:
+     - the body's height, not its min-height: the panel's school list is `flex:1; overflow:auto`, and
+       against a merely minimum height the shell is content-sized, so the list stops being a scroll box
+       and lays all 3025px of schools out at once;
+     - the shell's single row, or a card whose children are absolutely or percentage-sized would
+       collapse to nothing.
+   Below 761px the page is a document again - the shell stacks two explicitly sized cards and the
+   reader scrolls - so this is desktop-only. */
+@media(min-width:761px){
+  body{display:flex;flex-direction:column;height:100dvh}
+  .shell{flex:1 1 auto;min-height:0;grid-template-rows:minmax(0,1fr)}
+}
+.mapcard{position:relative;isolation:isolate;background:var(--canvas);border:1px solid var(--canvas-edge);border-radius:var(--r-lg);overflow:hidden;min-height:420px}
 
 /* --- map overlay chrome ------------------------------------------------ */
-.maphead{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3);position:absolute;inset:14px 16px auto;z-index:4;pointer-events:none}
+/* The head is a caption on the map, not a panel above it: it moved from 81px to 51px and the
+   geometry fit that used to reserve 118px for it now reserves 60, which is 58px of extra land. */
+.maphead{display:flex;justify-content:space-between;align-items:flex-start;gap:var(--sp-3);position:absolute;inset:11px 13px auto;z-index:4;pointer-events:none}
 .maptitles{pointer-events:auto;min-width:0}
-.breadcrumb{font-size:var(--fs-2);color:var(--muted);display:flex;flex-wrap:wrap;gap:3px;align-items:center}
-.breadcrumb button{font-size:var(--fs-2);background:#ffffffd9;border:0;padding:4px 7px;border-radius:var(--r-xs);color:var(--accent-2)}
-.breadcrumb b{padding:4px 2px;color:var(--ink-2);font-weight:var(--fw-semi)}
-.maptitles h2{margin:8px 0 0;font-size:var(--fs-7);font-weight:var(--fw-semi);letter-spacing:.2px;line-height:var(--lh-tight);text-wrap:balance;color:var(--ink)}
-.maptitles p{font-size:var(--fs-2);color:var(--muted);margin:5px 0 0;line-height:1.5}
+.breadcrumb{font-size:var(--fs-1);color:var(--muted);display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.breadcrumb button{font-size:var(--fs-1);background:#ffffffd9;border:0;padding:3px 6px;border-radius:var(--r-xs);color:var(--accent-2)}
+.breadcrumb b{padding:3px 2px;color:var(--ink);font-weight:var(--fw-semi)}
+.titlerow{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-top:3px}
+.maptitles h2{margin:0;font-size:17px;font-weight:var(--fw-semi);letter-spacing:.2px;line-height:1.25;color:var(--ink);white-space:nowrap}
+.maptitles p{font-size:var(--fs-2);color:var(--ink-2);margin:0;line-height:1.4}
 .modebadge{background:#ffffffd9;padding:5px 9px;border-radius:var(--r-pill);font-size:var(--fs-1);white-space:nowrap;color:var(--accent-2);border:1px solid var(--accent-2-soft);font-weight:var(--fw-medium)}
 
 #map{width:100%;height:100%;display:block;touch-action:none;cursor:grab}
@@ -115,14 +162,20 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .leader{pointer-events:none}
 #measureLayer{visibility:hidden;pointer-events:none}
 
-.mapcontrols{position:absolute;right:14px;bottom:46px;z-index:5;display:flex;flex-direction:column;gap:5px;padding:5px;background:#ffffffd9;border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--sh-2);backdrop-filter:blur(8px)}
-.mapcontrols button{width:38px;height:36px;padding:4px;font-size:var(--fs-6);font-weight:var(--fw-normal);border-radius:var(--r-sm);box-shadow:none;background:var(--surface);border-color:var(--border);display:grid;place-items:center}
-.mapcontrols button:hover{background:var(--accent-2-soft);border-color:var(--border-strong)}
-.mapcontrols .tiny{font-size:var(--fs-2)}
-.mapcontrols #zoomIn,.mapcontrols #zoomOut{font-size:19px}
-.mapcontrols button:disabled{background:var(--surface-2)}
+/* Five 38x36 buttons in a bordered, shadowed, blurred panel is a toolbar - the single heaviest piece
+   of chrome over the map, and it sat on 212px of the map's right edge. It is a light floating rail
+   now: 30px targets, no panel edge, no shadow, no inner button borders. 174px instead of 212, and
+   the map's own colour shows through it. The `bottom` offset is the legend's height plus its own
+   offset plus a gap - the two share the bottom of the card and the legend wraps to two rows, so a
+   constant that only clears a one-row legend is what put the buttons on top of it at 768x1024. */
+.mapcontrols{position:absolute;right:11px;bottom:62px;z-index:5;display:flex;flex-direction:column;gap:2px;padding:3px;background:#ffffffd0;border-radius:var(--r-md);box-shadow:0 1px 5px #1738461f;backdrop-filter:blur(6px)}
+.mapcontrols button{width:30px;height:30px;padding:2px;font-size:var(--fs-5);font-weight:var(--fw-normal);border-radius:var(--r-xs);box-shadow:none;background:transparent;border:0;display:grid;place-items:center;color:var(--ink-2)}
+.mapcontrols button:hover{background:var(--accent-2-soft);color:var(--accent-2)}
+.mapcontrols .tiny{font-size:var(--fs-1)}
+.mapcontrols #zoomIn,.mapcontrols #zoomOut{font-size:17px}
+.mapcontrols button:disabled{background:transparent;color:var(--faint)}
 
-.legend{position:absolute;bottom:11px;left:14px;right:14px;color:var(--muted);font-size:var(--fs-1);display:flex;gap:var(--sp-3);flex-wrap:wrap;justify-content:space-between;align-items:center;pointer-events:none;padding:4px 8px;border-radius:var(--r-sm);background:#f5f8f7c9;backdrop-filter:blur(4px);width:max-content;max-width:calc(100% - 28px);right:auto}
+.legend{position:absolute;bottom:10px;left:12px;color:var(--muted);font-size:var(--fs-1);display:flex;gap:var(--sp-2) var(--sp-3);flex-wrap:wrap;justify-content:space-between;align-items:center;pointer-events:none;padding:3px 7px;border-radius:var(--r-sm);background:#f5f8f7d9;backdrop-filter:blur(4px);width:max-content;max-width:calc(100% - 24px)}
 .swatches{display:inline-flex;align-items:center;gap:3px}
 .swatches i{display:inline-block;width:11px;height:8px;border-radius:2px;border:1px solid #59738428}
 .legend #zoomInfo{color:var(--faint)}
@@ -154,14 +207,20 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .tooltip .tipmeta{opacity:.78}
 
 /* --- side panel: a place list ------------------------------------------ */
-.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;height:calc(100dvh - 172px);min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
-.sidehead{padding:var(--sp-5) var(--sp-5) var(--sp-4);border-bottom:1px solid var(--border);background:linear-gradient(180deg,#fff,var(--surface-2))}
-.sidehead h3{font-size:var(--fs-5);margin:0 0 5px;font-weight:var(--fw-semi);line-height:var(--lh-tight)}
-.sidehead p{font-size:var(--fs-2);line-height:1.55;margin:0;color:var(--muted)}
-.sidecount{display:inline-flex;align-items:center;min-height:22px;padding:3px 8px;border-radius:var(--r-pill);background:var(--accent-2-soft);color:var(--accent-2);font-weight:var(--fw-medium);font-size:var(--fs-1);margin-top:8px}
-.controls{padding:var(--sp-3) var(--sp-3);display:flex;gap:5px 7px;flex-wrap:wrap;align-items:center;font-size:var(--fs-2);border-bottom:1px solid var(--border);background:var(--surface-2)}
-.controls label{display:flex;align-items:center;gap:4px;font-size:var(--fs-2);min-height:28px;padding:3px 7px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface);white-space:nowrap;color:var(--ink-2);cursor:pointer;transition:border-color .12s,background .12s}
-.controls label:hover{border-color:var(--border-strong);background:#fbfeff}
+.side{border-radius:var(--r-lg);border:1px solid var(--border);background:var(--surface);display:flex;flex-direction:column;min-height:420px;overflow:hidden;box-shadow:var(--sh-1)}
+/* The head was 103px of a 728px panel - a gradient plate, a two-line description and a chip. It is
+   the panel's title, so it is now set like one: no plate, tighter leading, and the description
+   dropped from 11px to 10px because it explains the list rather than competing with it. */
+.sidehead{padding:var(--sp-4) var(--sp-4) 10px;border-bottom:1px solid var(--border)}
+.sidehead h3{font-size:var(--fs-5);margin:0 0 3px;font-weight:var(--fw-semi);line-height:var(--lh-tight)}
+.sidehead p{font-size:var(--fs-1);line-height:1.5;margin:0;color:var(--muted)}
+.sidecount{display:inline-flex;align-items:center;min-height:18px;padding:2px 7px;border-radius:var(--r-pill);background:var(--accent-2-soft);color:var(--accent-2);font-weight:var(--fw-medium);font-size:var(--fs-1);margin-top:5px}
+/* The filter row is a text row, not a rack of chips: five bordered boxes with their own background
+   read as a control console bolted to the top of a reading list. Same five inputs, same order, no
+   boxes - the label is the target and the row is 66px shorter, which goes to the list underneath. */
+.controls{padding:7px var(--sp-4) 8px;display:flex;gap:3px 5px;flex-wrap:wrap;align-items:center;font-size:var(--fs-2);border-bottom:1px solid var(--border)}
+.controls label{display:flex;align-items:center;gap:4px;font-size:var(--fs-2);min-height:24px;padding:2px 6px;border:0;border-radius:var(--r-xs);background:transparent;white-space:nowrap;color:var(--muted);cursor:pointer;transition:background .12s,color .12s}
+.controls label:hover{background:var(--surface-2);color:var(--ink-2)}
 .controls input[type=checkbox]{width:14px;height:14px;accent-color:var(--accent-2)}
 .controls input[type=range]{width:66px;accent-color:var(--accent-2)}
 /* The five filter checkboxes are secondary: they change what the *data* includes, not what the map
@@ -189,7 +248,7 @@ button:focus-visible,input:focus-visible{outline:2px solid var(--accent-2);outli
 .item .rmeta{color:var(--muted);font-size:var(--fs-1);margin-top:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .item .arrow{margin-left:auto;color:var(--faint);font-size:var(--fs-5);align-self:center}
 .chip{display:inline-block;background:var(--accent-2-soft);font-size:var(--fs-1);padding:1px 6px;border-radius:var(--r-xs);color:var(--accent-2);font-weight:var(--fw-medium)}
-.footnote{padding:var(--sp-4) var(--sp-5);border-top:1px solid var(--border);background:var(--surface-2);color:var(--muted);font-size:var(--fs-1);line-height:1.75}
+.footnote{padding:10px var(--sp-4);border-top:1px solid var(--border);background:var(--surface-2);color:var(--muted);font-size:var(--fs-1);line-height:1.6}
 .footnote b{color:var(--ink-2)}
 .empty{padding:var(--sp-6) var(--sp-4);text-align:center;color:var(--muted);font-size:var(--fs-3);line-height:1.8}
 .callout{background:var(--accent-2-soft);color:var(--ink-2);font-size:var(--fs-2);line-height:1.75;padding:var(--sp-4);margin:11px 3px;border-radius:var(--r-sm)}
@@ -243,14 +302,17 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
 .associationrow{background:#fdfaf4;border-left:2px solid #dcc9a6;padding:10px var(--sp-4)}
 
 @media(max-width:1050px) and (min-width:761px){
-  .shell{grid-template-columns:minmax(0,1fr) 300px;margin:10px;gap:10px}
-  .header{padding:11px var(--sp-5);gap:10px}
+  /* 300px of a 768px screen left the map 438px wide, and at that width the map is bound by its
+     width, not its height: the side column was taking the land off the map one pixel per pixel. */
+  .shell{grid-template-columns:minmax(0,1fr) 262px;margin:10px;gap:10px}
+  .header{padding:8px var(--sp-4);gap:10px}
   .brand{gap:8px}
   .header h1{font-size:var(--fs-5)}
-  .searchwrap input{width:190px}
-  .actions button{padding:8px 10px;font-size:var(--fs-2)}
+  .header .eyebrow{display:none}
+  .searchwrap input{width:170px}
+  .actions button{padding:7px 9px;font-size:var(--fs-2)}
   .logo{display:none}
-  .controls label{font-size:var(--fs-1);padding-inline:5px}
+  .controls label{font-size:var(--fs-1);padding-inline:4px}
   .mapcontrols{right:10px}
   .legend{left:10px}
 }
@@ -269,16 +331,18 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
   .searchresults{left:0;right:auto;width:min(360px,92vw)}
   .actions>button{min-height:44px;font-size:var(--fs-2)}
   .shell{grid-template-columns:1fr;margin:6px;gap:7px}
-  .mapcard{height:62dvh;min-height:340px;border-radius:var(--r-md)}
+  .mapcard{height:64dvh;min-height:340px;border-radius:var(--r-md)}
   .side{height:min(46dvh,520px);min-height:320px;border-radius:var(--r-md)}
   .maphead{inset:9px 10px auto;gap:7px}
-  .maptitles h2{font-size:var(--fs-5);margin-top:6px;max-width:70vw}
-  .maptitles p{font-size:var(--fs-1);max-width:66vw;margin-top:3px}
+  .maptitles h2{font-size:var(--fs-5);max-width:70vw}
+  .titlerow{margin-top:2px;gap:6px}
+  .maptitles p{font-size:var(--fs-1);max-width:66vw}
   .modebadge{font-size:var(--fs-1);padding:4px 7px;max-width:34vw;overflow:hidden;text-overflow:ellipsis}
-  /* bottom clears the legend, which now runs the full width of the card on a phone and is 47px tall
-     once its key row wraps. At 28px the control panel overlapped it by 56x25 - measured at both 390
-     and 430 - so the zoom column sat on the legend's disclaimer text. */
-  .mapcontrols{left:auto;right:7px;bottom:62px;padding:4px;gap:4px;max-width:calc(100% - 14px);overflow-x:auto;justify-content:flex-end;border-radius:var(--r-md)}
+  /* A vertical rail of five 40px buttons is 248px tall - 27% of a phone viewport, the heaviest
+     non-map element on the screen, floating over the map's right edge. The phone has a long bottom
+     edge and no right edge to spare, so the rail lies down: 52px instead of 248, still above the
+     legend, still out of the inset's way (the inset moves to the left at this width). */
+  .mapcontrols{left:auto;right:7px;bottom:59px;flex-direction:row;padding:4px;gap:4px;max-width:calc(100% - 14px);justify-content:flex-end;border-radius:var(--r-md)}
   .mapcontrols button{flex:0 0 40px;width:40px;height:40px;font-size:var(--fs-5)}
   .mapcontrols .tiny{font-size:var(--fs-1)}
   /* 8px CJK is not text, it is texture: at that size the legend's own disclaimer was unreadable on
@@ -301,9 +365,11 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
   .controls .advlabel{display:flex}
   .controls .filteradv{display:none}
   .controls .advtoggle:checked~.filteradv{display:contents}
-  .list{padding:3px 6px 9px}
+  /* 120px was a floor the panel could not pay for: side head + filter row + footnote already came to
+     250 of a 371px panel, so the list's floor pushed the footnote's last line out of the box. */
+  .list{padding:3px 6px 9px;min-height:104px}
   .item{min-height:64px;padding:10px 8px}
-  .footnote{font-size:var(--fs-1);line-height:1.6;padding:9px 12px}
+  .footnote{font-size:var(--fs-1);line-height:1.55;padding:8px 11px}
   .schoolcard{margin:7px 5px}
   dialog{width:calc(100% - 18px);padding:var(--sp-5) var(--sp-4);border-radius:var(--r-md);max-height:90dvh}
   dialog h2{font-size:var(--fs-6)}
@@ -313,9 +379,10 @@ dialog .close{float:right;border:0;padding:0 4px;font-size:22px;color:var(--fain
   .statusbar{display:block;padding:0 10px 7px;font-size:var(--fs-1);line-height:1.7}
 }
 @media(max-width:430px){
-  .mapcard{height:60dvh;min-height:320px}
+  /* The map is the page on a phone too, and the place list is what the reader scrolls to. */
+  .mapcard{height:66dvh;min-height:340px}
   .side{height:44dvh;min-height:300px}
-  .maptitles h2{font-size:var(--fs-4);max-width:66vw}
+  .maptitles h2{font-size:var(--fs-5);max-width:66vw}
   .maptitles p{display:none}
   .modebadge{max-width:32vw}
   /* The 70vw cap plus nowrap turned the disclaimer into an ellipsis on the narrowest phones - it cut
