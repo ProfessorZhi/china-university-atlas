@@ -1,9 +1,9 @@
 {
-  "version": "5.8.0",
+  "version": "5.8.1",
   "maxHtmlBytes": 5000000,
   "schoolDataBytes": 14705604,
-  "schoolDataGzipBytes": 1217659,
-  "schoolDataEmbeddedBytes": 1623548,
+  "schoolDataGzipBytes": 1217658,
+  "schoolDataEmbeddedBytes": 1623544,
   "geoGzipBytes": 1467501,
   "geoBase64Bytes": 1956668,
   "javascriptBytes": 146937,
@@ -12,8 +12,8 @@
   "schoolEntities": 3196,
   "campusRecords": 6820,
   "rankingFacts": 2502,
-  "htmlBytes": 3769802,
-  "knownPayloadBytes": 3762807,
+  "htmlBytes": 3769798,
+  "knownPayloadBytes": 3762803,
   "otherHtmlBytes": 6995,
   "withinBudget": true
 }
