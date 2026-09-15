@@ -42,16 +42,30 @@ jobs:
           cp dist/china-university-atlas.html _site/index.html
           touch _site/.nojekyll
 
+      - name: Check whether GitHub Pages is enabled
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::GitHub Pages is not enabled for this repository; build passed and deployment is skipped. Once Pages is enabled with GitHub Actions as the source, future main pushes will deploy automatically."
+          fi
+
       - name: Configure GitHub Pages
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Upload Pages artifact
+        if: steps.pages.outputs.enabled == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
+        if: steps.pages.outputs.enabled == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
