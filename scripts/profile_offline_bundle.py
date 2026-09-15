@@ -14,7 +14,7 @@ def compact_json(value):
 
 def main():
     data=load_data();geometry=(ROOT/'data/boundaries.compact.json.gz').read_bytes()
-    app_parts=['app.js','winner-core.js','city-layer.js','status-layer.js','facts-layer.js','v57-ui.js']
+    app_parts=['app.js','winner-core.js','city-layer.js','status-layer.js','facts-layer.js','v57-ui.js','v59-final.js']
     css_parts=['styles.css','city-layer.css','v59-tuning.css']
     school=compact_json(data);school_gzip=gzip.compress(school.encode('utf-8'),compresslevel=9,mtime=0);school_embedded=base64.b64encode(school_gzip)
     profile={
