@@ -1,0 +1,67 @@
+name: V5.9 deterministic writeback
+on:
+  push:
+    branches: [v59-premium-atlas]
+permissions:
+  contents: write
+jobs:
+  writeback:
+    if: ${{ !contains(github.event.head_commit.message, '[v59-writeback]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v59-premium-atlas
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install CJK fonts
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Update README current-version note
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('README.md')
+          s=p.read_text(encoding='utf-8')
+          marker='## 当前版本与范围\n\n'
+          note='''**V5.9 是 Premium Atlas 前端升级。** 默认地图不再绘制跨区引导线：标签只在自己的行政区内出现，空间不足时先省略高校名，再隐藏标签；完整 winner、候选学校和证据仍可从“浏览”Drawer / 手机 bottom sheet 查看。桌面与手机都改为近全屏地图，Header、搜索、地图控件与图例改成轻量悬浮层，并新增动态比例尺和小型 hover 卡片。滚轮、拖动与双指缩放期间只更新几何 transform 和现有标签锚点，不执行完整文字排版；停止约 150ms 后只补一次 label layout。CI 的专用压力测试连续发送 48 个 wheel event，实测合并为 1 个动画帧，交互期间完整 layout **0 次**、停止后 **1 次**、字号比例 **1.000**、leader line **0**、HTTP **0**、runtime error **0**。仍保持单一 HTML、`file://` 双击运行与 5 MB 体积预算。详见 [V5.9 说明](docs/v5.9.md)。\n\n'''
+          if note not in s:
+              if marker not in s: raise SystemExit('README marker missing')
+              s=s.replace(marker,marker+note,1)
+              p.write_text(s,encoding='utf-8')
+          PY
+      - name: Regenerate deterministic products
+        run: |
+          python scripts/generate_reports.py
+          python scripts/build.py
+          python scripts/profile_offline_bundle.py
+          node scripts/generate_best_university_coverage.mjs
+      - name: Full V5.9 verification
+        run: |
+          python tests/test_build.py
+          python scripts/validate.py
+          python scripts/validate_facts.py
+          python scripts/generate_reports.py --check
+          python scripts/build.py --check
+          node scripts/generate_best_university_coverage.mjs --check
+          node tests/browser.mjs
+          node tests/best-university-parity.mjs
+          node tests/premium-atlas.mjs
+      - name: Commit README and generated products
+        run: |
+          git add README.md VERSION docs/v5.9.md
+          git add dist/china-university-atlas.html dist/SHA256SUMS.txt
+          git add reports/revision.json reports/offline-bundle-profile.json reports/premium-interaction.json
+          git add docs/national-desktop.png docs/national-mobile.png docs/guangdong-city-layer.png docs/jiangsu-city-layer.png docs/hangzhou-desktop.png docs/linyi-hedong-evidence.png
+          if git diff --cached --quiet; then
+            echo 'Nothing to write back.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m '[v59-writeback] build V5.9.0 deterministic products'
+          git push origin HEAD:v59-premium-atlas
