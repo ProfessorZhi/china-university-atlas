@@ -22,8 +22,9 @@
       "wheelEvents": 0,
       "wheelFrames": 0,
       "leadersRendered": 0,
-      "lastSettleMs": 125.1,
-      "lastReason": "transform"
+      "lastSettleMs": 307.4,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0
     },
     "leaders": 0,
     "font": 11.1,
@@ -40,8 +41,9 @@
       "wheelEvents": 48,
       "wheelFrames": 1,
       "leadersRendered": 0,
-      "lastSettleMs": 125.1,
-      "lastReason": "transform"
+      "lastSettleMs": 307.4,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.20000000001164153
     },
     "leaders": 0,
     "zooming": true
@@ -54,8 +56,9 @@
       "wheelEvents": 48,
       "wheelFrames": 1,
       "leadersRendered": 0,
-      "lastSettleMs": 54.8,
-      "lastReason": "transform"
+      "lastSettleMs": 90.4,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.20000000001164153
     },
     "leaders": 0,
     "font": 11.1,
