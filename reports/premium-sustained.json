@@ -1,0 +1,81 @@
+{
+  "pass": true,
+  "checks": {
+    "sustainedAcrossFrames": true,
+    "eventsDelivered": true,
+    "noLayoutDuringGesture": true,
+    "oneIdleLayout": true,
+    "labelsNotMovedIndividually": true,
+    "labelsSuspended": true,
+    "blurSuspended": true,
+    "zeroLeaders": true,
+    "transformWorkLight": true,
+    "offline": true,
+    "runtimeClean": true
+  },
+  "gestureMs": 3319.3,
+  "events": 72,
+  "frames": 36,
+  "layoutDuring": 0,
+  "layoutBeforeIdle": 1,
+  "layoutAfter": 1,
+  "maxTransformWorkMs": 0.4,
+  "before": {
+    "metrics": {
+      "version": "5.9.1",
+      "layoutCount": 1,
+      "fastTransformCount": 1,
+      "wheelEvents": 0,
+      "wheelFrames": 0,
+      "leadersRendered": 0,
+      "lastSettleMs": 278.2,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0
+    },
+    "layouts": 1,
+    "labels": 28
+  },
+  "during": {
+    "metrics": {
+      "version": "5.9.1",
+      "layoutCount": 1,
+      "fastTransformCount": 37,
+      "wheelEvents": 72,
+      "wheelFrames": 36,
+      "leadersRendered": 0,
+      "lastSettleMs": 278.2,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.39999999999417923
+    },
+    "layouts": 1,
+    "zooming": true,
+    "labelOpacity": "0",
+    "labelTransforms": 0,
+    "headerBlur": "none",
+    "leaders": 0
+  },
+  "preIdle": {
+    "layouts": 2,
+    "zooming": false
+  },
+  "after": {
+    "metrics": {
+      "version": "5.9.1",
+      "layoutCount": 2,
+      "fastTransformCount": 37,
+      "wheelEvents": 72,
+      "wheelFrames": 36,
+      "leadersRendered": 0,
+      "lastSettleMs": 270.6,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.39999999999417923
+    },
+    "layouts": 2,
+    "zooming": false,
+    "labels": 30,
+    "leaders": 0
+  },
+  "httpRequests": [],
+  "runtimeErrors": [],
+  "artifact": "dist/china-university-atlas.html"
+}

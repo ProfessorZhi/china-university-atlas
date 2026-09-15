@@ -6,9 +6,9 @@
  * province; city = school home city only, external branches never compete; district = actual
  * campus candidates first) and writes the per-unit evidence out.
  *
- * Statuses are the V5.6 set: resolved_strong / resolved_policy / unresolved_incomparable
- * (+ no_candidate and reference_only for units with nothing to decide). A unit whose leading
- * candidates cannot be compared stays unresolved - it never falls back to Chinese-name order.
+ * Candidate-bearing units must publish one winner. resolved_strong means directly comparable
+ * external evidence; resolved_policy means an explicit project policy (including cross-system or
+ * deterministic final fallback) was required. no_candidate / reference_only remain distinct.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -332,7 +332,7 @@ const summary = {
     city: 'school entity home city only; external branches, 研究院 and 研究生院 never compete for the city main board',
     district: 'actual campus candidates first; association-only candidates compete only when no campus candidate exists',
     defaultAdultExcluded: true,
-    incomparable: 'candidates that cannot be compared stay unresolved_incomparable; Chinese-name order is never used to pick a winner'
+    incomparable: 'every non-empty competition pool publishes one winner; cross-system, band-only and final deterministic fallbacks are explicit resolved_policy, not strong external ranking evidence'
   },
   byScope,
   kpi,
@@ -365,10 +365,8 @@ for (const r of rows) {
   } else if (hasWinner && r.location_basis !== 'entity_home') {
     bad(`${unit}: non-district winner must rest on its own home location`);
   }
-  if (r.status === WinnerCore.STATUS.INCOMPARABLE) {
-    if (hasWinner || r.decision_basis) bad(`${unit}: incomparable unit published a winner or a basis`);
-    if (!r.unresolved_reason) bad(`${unit}: incomparable unit published no unresolved reason`);
-  }
+  if (r.candidate_count > 0 && !hasWinner) bad(`${unit}: candidate-bearing unit published no winner`);
+  if (r.status === WinnerCore.STATUS.INCOMPARABLE) bad(`${unit}: V5.9.1 forbids unresolved candidate-bearing units`);
   if (RESOLVED.includes(r.status)) {
     if (!hasWinner) bad(`${unit}: resolved unit published no winner`);
     if (!r.decision_basis) bad(`${unit}: resolved unit published no decision basis`);

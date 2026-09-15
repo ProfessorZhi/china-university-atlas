@@ -7,7 +7,7 @@
     "city": "school entity home city only; external branches, 研究院 and 研究生院 never compete for the city main board",
     "district": "actual campus candidates first; association-only candidates compete only when no campus candidate exists",
     "defaultAdultExcluded": true,
-    "incomparable": "candidates that cannot be compared stay unresolved_incomparable; Chinese-name order is never used to pick a winner"
+    "incomparable": "every non-empty competition pool publishes one winner; cross-system, band-only and final deterministic fallbacks are explicit resolved_policy, not strong external ranking evidence"
   },
   "byScope": {
     "country": {
@@ -25,8 +25,8 @@
       "candidateUnits": 31,
       "noCandidateUnits": 3,
       "strong": 30,
-      "policy": 0,
-      "unresolvedIncomparable": 1,
+      "policy": 1,
+      "unresolvedIncomparable": 0,
       "winnerWithoutRanking": 0,
       "rankingBackfillUnits": 1
     },
@@ -35,62 +35,47 @@
       "candidateUnits": 346,
       "noCandidateUnits": 25,
       "strong": 71,
-      "policy": 240,
-      "unresolvedIncomparable": 35,
-      "winnerWithoutRanking": 24,
-      "rankingBackfillUnits": 106
+      "policy": 275,
+      "unresolvedIncomparable": 0,
+      "winnerWithoutRanking": 26,
+      "rankingBackfillUnits": 94
     },
     "district": {
       "totalUnits": 2840,
       "candidateUnits": 1220,
       "noCandidateUnits": 1620,
       "strong": 280,
-      "policy": 855,
-      "unresolvedIncomparable": 85,
-      "winnerWithoutRanking": 100,
-      "rankingBackfillUnits": 267
+      "policy": 940,
+      "unresolvedIncomparable": 0,
+      "winnerWithoutRanking": 106,
+      "rankingBackfillUnits": 229
     }
   },
   "kpi": {
     "candidateUnitsTotal": 1598,
     "resolvedStrongUnits": 382,
-    "resolvedPolicyUnits": 1095,
-    "unresolvedIncomparableUnits": 121,
+    "resolvedPolicyUnits": 1216,
+    "unresolvedIncomparableUnits": 0,
     "noCandidateUnits": 1648,
     "legacyWinnerUnits": 0,
     "nameFallbackWinnerUnits": 0,
     "unreviewedWinnerUnits": 0,
     "winnerStillOnLegacySnapshot": 0,
-    "needsRankingBackfillUnits": 374,
-    "winnerWithoutRankingUnits": 124
+    "needsRankingBackfillUnits": 324,
+    "winnerWithoutRankingUnits": 132
   },
   "decisionBasisCounts": {
     "comparable_ranking": 179,
+    "cross_group_scale_policy": 40,
+    "deterministic_fallback_policy": 33,
     "level_order": 379,
     "prestige_tag": 203,
-    "public_before_private": 202,
+    "public_before_private": 250,
     "single_candidate": 497,
     "single_ranked_candidate": 17
   },
-  "unresolvedReasonCounts": {
-    "unresolved_incomparable_band": 27,
-    "unresolved_incomparable_cross_system": 86,
-    "unresolved_incomparable_no_ranking": 8
-  },
+  "unresolvedReasonCounts": {},
   "rankingBackfillPriority": [
-    {
-      "uid": "4113016204",
-      "university": "河北工业职业技术大学",
-      "affectedUnits": 4,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 4,
-      "scopes": [
-        "city",
-        "district",
-        "province"
-      ]
-    },
     {
       "uid": "4132010289",
       "university": "江苏科技大学",
@@ -119,9 +104,9 @@
       "uid": "4133010343",
       "university": "温州医科大学",
       "affectedUnits": 4,
-      "winnerUnits": 1,
+      "winnerUnits": 4,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 3,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -131,21 +116,9 @@
       "uid": "4134010370",
       "university": "安徽师范大学",
       "affectedUnits": 3,
-      "winnerUnits": 0,
+      "winnerUnits": 3,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 3,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4162012836",
-      "university": "甘肃工业职业技术大学",
-      "affectedUnits": 3,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 3,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -176,16 +149,28 @@
       ]
     },
     {
-      "uid": "4113010089",
-      "university": "河北医科大学",
+      "uid": "4113016203",
+      "university": "河北科技工程职业技术大学",
       "affectedUnits": 3,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "winnerUnits": 2,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district",
         "province"
+      ]
+    },
+    {
+      "uid": "4113010094",
+      "university": "河北师范大学",
+      "affectedUnits": 3,
+      "winnerUnits": 1,
+      "runnerUpUnits": 2,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "city",
+        "district"
       ]
     },
     {
@@ -213,36 +198,12 @@
       ]
     },
     {
-      "uid": "4142012979",
-      "university": "湖北三峡职业技术大学",
-      "affectedUnits": 3,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4143013921",
-      "university": "湖南工艺美术职业大学",
-      "affectedUnits": 3,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 3,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4113010081",
       "university": "华北理工大学",
       "affectedUnits": 3,
-      "winnerUnits": 1,
+      "winnerUnits": 3,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -285,24 +246,24 @@
       ]
     },
     {
-      "uid": "4133010864",
-      "university": "温州职业技术大学",
+      "uid": "4135010399",
+      "university": "泉州师范学院",
       "affectedUnits": 3,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 3,
+      "winnerUnits": 1,
+      "runnerUpUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
       ]
     },
     {
-      "uid": "4165010995",
-      "university": "新疆农业职业技术大学",
+      "uid": "4133010351",
+      "university": "温州大学",
       "affectedUnits": 3,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 3,
+      "runnerUpUnits": 3,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -321,11 +282,11 @@
       ]
     },
     {
-      "uid": "4134010360",
-      "university": "安徽工业大学",
+      "uid": "4134010363",
+      "university": "安徽工程大学",
       "affectedUnits": 2,
-      "winnerUnits": 2,
-      "runnerUpUnits": 0,
+      "winnerUnits": 0,
+      "runnerUpUnits": 2,
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
@@ -333,24 +294,12 @@
       ]
     },
     {
-      "uid": "4134013613",
-      "university": "安徽信息工程学院",
+      "uid": "4134010360",
+      "university": "安徽工业大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4134012072",
-      "university": "安徽应用技术职业大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -399,53 +348,6 @@
       "winnerUnits": 0,
       "runnerUpUnits": 2,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4137012818",
-      "university": "滨州职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4113010105",
-      "university": "沧州师范学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4151013671",
-      "university": "成都文理学院",
-      "affectedUnits": 2,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4113010093",
-      "university": "承德医学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
       "scopes": [
         "city",
         "district"
@@ -502,9 +404,9 @@
       "uid": "4144011847",
       "university": "佛山大学",
       "affectedUnits": 2,
-      "winnerUnits": 1,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -528,18 +430,6 @@
       "winnerUnits": 2,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4162012835",
-      "university": "甘肃林业职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
       "scopes": [
         "city",
         "district"
@@ -570,23 +460,12 @@
       ]
     },
     {
-      "uid": "4144012960",
-      "university": "广东司法警官职业学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4145010594",
       "university": "广西科技大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -611,17 +490,6 @@
       "winnerUnits": 2,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4152013052",
-      "university": "贵州工业职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 1,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -653,20 +521,9 @@
       "uid": "4123010240",
       "university": "哈尔滨商业大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4123011635",
-      "university": "哈尔滨信息工程学院",
-      "affectedUnits": 2,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -696,17 +553,6 @@
       ]
     },
     {
-      "uid": "4133010336",
-      "university": "杭州电子科技大学",
-      "affectedUnits": 2,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4113010076",
       "university": "河北工程大学",
       "affectedUnits": 2,
@@ -719,26 +565,13 @@
       ]
     },
     {
-      "uid": "4113012796",
-      "university": "河北工程技术学院",
+      "uid": "4113011832",
+      "university": "河北经贸大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "winnerUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4113016203",
-      "university": "河北科技工程职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
         "district"
       ]
     },
@@ -755,59 +588,12 @@
       ]
     },
     {
-      "uid": "4113010094",
-      "university": "河北师范大学",
+      "uid": "4113010089",
+      "university": "河北医科大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 1,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4113016202",
-      "university": "河北石油职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4113010085",
-      "university": "河北水利电力学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4113013402",
-      "university": "河北外国语学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4141012794",
-      "university": "河南工业职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -888,9 +674,9 @@
       "uid": "4142010519",
       "university": "湖北文理学院",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -909,24 +695,12 @@
       ]
     },
     {
-      "uid": "4143011527",
-      "university": "湖南城市学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4143011535",
       "university": "湖南工业大学",
       "affectedUnits": 2,
-      "winnerUnits": 1,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -960,33 +734,9 @@
       "uid": "4135010385",
       "university": "华侨大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4142010514",
-      "university": "黄冈师范学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4142010955",
-      "university": "黄冈职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -1053,41 +803,6 @@
       ]
     },
     {
-      "uid": "4136013422",
-      "university": "江西外语外贸职业大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4136011785",
-      "university": "江西职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4133012061",
-      "university": "金华职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4136010408",
       "university": "景德镇陶瓷大学",
       "affectedUnits": 2,
@@ -1100,23 +815,22 @@
       ]
     },
     {
-      "uid": "4136011843",
-      "university": "九江学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4153010674",
       "university": "昆明理工大学",
       "affectedUnits": 2,
       "winnerUnits": 2,
       "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
+    },
+    {
+      "uid": "4162011807",
+      "university": "兰州工业学院",
+      "affectedUnits": 2,
+      "winnerUnits": 0,
+      "runnerUpUnits": 2,
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
@@ -1135,36 +849,12 @@
       ]
     },
     {
-      "uid": "4135011317",
-      "university": "黎明职业大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4153014015",
       "university": "丽江师范学院",
       "affectedUnits": 2,
       "winnerUnits": 2,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4121014287",
-      "university": "辽宁工程职业学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
       "scopes": [
         "city",
         "district"
@@ -1195,48 +885,12 @@
       ]
     },
     {
-      "uid": "4145013639",
-      "university": "柳州工学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4145012104",
-      "university": "柳州职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4137010451",
       "university": "鲁东大学",
       "affectedUnits": 2,
       "winnerUnits": 1,
       "runnerUpUnits": 1,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4114010812",
-      "university": "吕梁学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
       "scopes": [
         "city",
         "district"
@@ -1255,13 +909,14 @@
       ]
     },
     {
-      "uid": "4115010132",
-      "university": "内蒙古医科大学",
+      "uid": "4141011653",
+      "university": "南阳理工学院",
       "affectedUnits": 2,
       "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
+        "city",
         "district"
       ]
     },
@@ -1289,18 +944,6 @@
       ]
     },
     {
-      "uid": "4137010825",
-      "university": "齐鲁医药学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4137010435",
       "university": "青岛农业大学",
       "affectedUnits": 2,
@@ -1315,46 +958,10 @@
       "uid": "4137010446",
       "university": "曲阜师范大学",
       "affectedUnits": 2,
-      "winnerUnits": 1,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4135013766",
-      "university": "泉州信息工程学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4135012928",
-      "university": "泉州职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4137012062",
-      "university": "日照职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city",
         "district"
       ]
     },
@@ -1362,9 +969,9 @@
       "uid": "4142011075",
       "university": "三峡大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -1382,18 +989,6 @@
       ]
     },
     {
-      "uid": "4137010438",
-      "university": "山东第二医科大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4137010424",
       "university": "山东科技大学",
       "affectedUnits": 2,
@@ -1405,49 +1000,14 @@
       ]
     },
     {
-      "uid": "4137012819",
-      "university": "山东科技职业大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4137010433",
       "university": "山东理工大学",
       "affectedUnits": 2,
-      "winnerUnits": 1,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4137010440",
-      "university": "山东医药大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4114016201",
-      "university": "山西工程科技职业大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
         "district"
       ]
     },
@@ -1455,34 +1015,11 @@
       "uid": "4114010113",
       "university": "山西农业大学",
       "affectedUnits": 2,
-      "winnerUnits": 1,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4114014898",
-      "university": "山西医药学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4161010828",
-      "university": "陕西工业职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
         "district"
       ]
     },
@@ -1505,42 +1042,6 @@
       "winnerUnits": 0,
       "runnerUpUnits": 2,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4144010831",
-      "university": "顺德职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4151012763",
-      "university": "四川工程职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4151013816",
-      "university": "四川工业科技学院",
-      "affectedUnits": 2,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "city",
         "district"
@@ -1583,84 +1084,12 @@
       ]
     },
     {
-      "uid": "4113012787",
-      "university": "唐山工业职业技术大学",
+      "uid": "4113010099",
+      "university": "唐山师范学院",
       "affectedUnits": 2,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4162010739",
-      "university": "天水师范大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4121014290",
-      "university": "铁岭卫生职业学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4152010665",
-      "university": "铜仁学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4152013055",
-      "university": "铜仁职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4133013637",
-      "university": "温州商学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4134013617",
-      "university": "芜湖学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "runnerUpUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -1690,49 +1119,14 @@
       ]
     },
     {
-      "uid": "4142012354",
-      "university": "襄阳职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4165014897",
       "university": "新疆工业学院",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4165010765",
-      "university": "新疆和田学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4165010758",
-      "university": "新疆农业大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
         "district"
       ]
     },
@@ -1761,48 +1155,12 @@
       ]
     },
     {
-      "uid": "4113010104",
-      "university": "邢台学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4113010216",
-      "university": "燕山大学",
-      "affectedUnits": 2,
-      "winnerUnits": 1,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city",
-        "province"
-      ]
-    },
-    {
       "uid": "4132011117",
       "university": "扬州大学",
       "affectedUnits": 2,
-      "winnerUnits": 0,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4132011462",
-      "university": "扬州职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
         "district"
@@ -1868,37 +1226,13 @@
       ]
     },
     {
-      "uid": "4133010345",
-      "university": "浙江师范大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
       "uid": "4133010344",
       "university": "浙江中医药大学",
       "affectedUnits": 2,
-      "winnerUnits": 1,
+      "winnerUnits": 2,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4151010624",
-      "university": "中国民用航空飞行学院",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
-      "scopes": [
-        "city",
         "district"
       ]
     },
@@ -1909,18 +1243,6 @@
       "winnerUnits": 2,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4137013009",
-      "university": "淄博职业技术大学",
-      "affectedUnits": 2,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 2,
       "scopes": [
         "city",
         "district"
@@ -1947,17 +1269,6 @@
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "city",
-        "district"
-      ]
-    },
-    {
-      "uid": "4134012811",
-      "university": "安徽工贸职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
         "district"
       ]
     },
@@ -2006,23 +1317,12 @@
       ]
     },
     {
-      "uid": "4134010869",
-      "university": "安徽职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4134010369",
       "university": "安徽中医药大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2053,9 +1353,9 @@
       "uid": "4112013898",
       "university": "北京科技大学天津学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2072,39 +1372,6 @@
       ]
     },
     {
-      "uid": "4152014648",
-      "university": "毕节工业职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4152014499",
-      "university": "毕节医学高等专科学校",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4152014198",
-      "university": "毕节职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4121010167",
       "university": "渤海大学",
       "affectedUnits": 1,
@@ -2116,45 +1383,23 @@
       ]
     },
     {
-      "uid": "4165010997",
-      "university": "昌吉学院",
+      "uid": "4113010105",
+      "university": "沧州师范学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city"
       ]
     },
     {
-      "uid": "4132010292",
-      "university": "常州大学",
+      "uid": "4151011079",
+      "university": "成都大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4132012317",
-      "university": "常州信息职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4151012064",
-      "university": "成都航空职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2163,9 +1408,9 @@
       "uid": "4151014985",
       "university": "成都美术学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2182,45 +1427,12 @@
       ]
     },
     {
-      "uid": "4115014338",
-      "university": "赤峰工业职业技术学院",
+      "uid": "4151013671",
+      "university": "成都文理学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4115014699",
-      "university": "赤峰应用技术职业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4150012616",
-      "university": "重庆城市科技学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4150012609",
-      "university": "重庆电子科技职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2232,28 +1444,6 @@
       "winnerUnits": 0,
       "runnerUpUnits": 1,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4150012759",
-      "university": "重庆工程职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4150010618",
-      "university": "重庆交通大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -2284,9 +1474,9 @@
       "uid": "4150010642",
       "university": "重庆文理学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2328,9 +1518,9 @@
       "uid": "4121013203",
       "university": "大连工业大学艺术与信息工程学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2358,56 +1548,12 @@
       ]
     },
     {
-      "uid": "4123014017",
-      "university": "大庆医学高等专科学校",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4123012718",
-      "university": "大庆职业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4162011808",
       "university": "定西师范高等专科学校",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4162014823",
-      "university": "定西职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4122010188",
-      "university": "东北电力大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city"
       ]
@@ -2471,9 +1617,9 @@
       "uid": "4162011406",
       "university": "甘肃政法大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2512,34 +1658,12 @@
       ]
     },
     {
-      "uid": "4144012574",
-      "university": "广东东软学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
       "uid": "4144012959",
       "university": "广东工贸职业技术学院",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4144013721",
-      "university": "广东工商职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -2578,34 +1702,12 @@
       ]
     },
     {
-      "uid": "4144014556",
-      "university": "广东茂名健康职业学院",
+      "uid": "4144012960",
+      "university": "广东司法警官职业学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4144014587",
-      "university": "广东茂名幼儿师范专科学校",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4144014757",
-      "university": "广东汕头幼儿师范高等专科学校",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2617,17 +1719,6 @@
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4144014760",
-      "university": "广东云浮中医药职业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "city"
       ]
@@ -2655,34 +1746,12 @@
       ]
     },
     {
-      "uid": "4145011546",
-      "university": "广西科技师范学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4145010608",
       "university": "广西民族大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
       "runnerUpUnits": 1,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4145016205",
-      "university": "广西农业职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -2757,9 +1826,9 @@
       "uid": "4144012621",
       "university": "广州华商学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2798,17 +1867,6 @@
       ]
     },
     {
-      "uid": "4152016206",
-      "university": "贵阳康养职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4152014580",
       "university": "贵州电子科技职业学院",
       "affectedUnits": 1,
@@ -2820,12 +1878,12 @@
       ]
     },
     {
-      "uid": "4152014617",
-      "university": "贵州护理职业技术学院",
+      "uid": "4152013052",
+      "university": "贵州工业职业技术大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2837,17 +1895,6 @@
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4145011825",
-      "university": "桂林航天工业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -2875,17 +1922,6 @@
       ]
     },
     {
-      "uid": "4123012053",
-      "university": "哈尔滨建筑科技职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4123014108",
       "university": "哈尔滨科学技术职业学院",
       "affectedUnits": 1,
@@ -2900,42 +1936,20 @@
       "uid": "4123010231",
       "university": "哈尔滨师范大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
     },
     {
-      "uid": "4123013299",
-      "university": "哈尔滨石油学院",
+      "uid": "4123011635",
+      "university": "哈尔滨信息工程学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4123013301",
-      "university": "哈尔滨远东理工学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4123012911",
-      "university": "哈尔滨职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2952,12 +1966,12 @@
       ]
     },
     {
-      "uid": "4133012872",
-      "university": "杭州职业技术大学",
+      "uid": "4133010336",
+      "university": "杭州电子科技大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -2974,34 +1988,12 @@
       ]
     },
     {
-      "uid": "4134013616",
-      "university": "合肥经济学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4134014098",
       "university": "合肥师范学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
       "runnerUpUnits": 1,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4113010092",
-      "university": "河北北方学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -3032,22 +2024,22 @@
       "uid": "4113013594",
       "university": "河北地质大学华信学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4113011832",
-      "university": "河北经贸大学",
-      "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
+      ]
+    },
+    {
+      "uid": "4113016204",
+      "university": "河北工业职业技术大学",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "province"
       ]
     },
     {
@@ -3062,25 +2054,14 @@
       ]
     },
     {
-      "uid": "4113013391",
-      "university": "河北科技学院",
+      "uid": "4113010085",
+      "university": "河北水利电力学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4113013075",
-      "university": "河北美术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
+        "city"
       ]
     },
     {
@@ -3109,9 +2090,9 @@
       "uid": "4141010469",
       "university": "河南牧业经济学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3143,30 +2124,8 @@
       "university": "河南体育学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4123013298",
-      "university": "黑龙江财经学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4123013300",
-      "university": "黑龙江工商学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3183,12 +2142,12 @@
       ]
     },
     {
-      "uid": "4123012726",
-      "university": "黑龙江农业工程职业技术大学",
+      "uid": "4123010219",
+      "university": "黑龙江科技大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3224,6 +2183,17 @@
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "city"
+      ]
+    },
+    {
+      "uid": "4142012979",
+      "university": "湖北三峡职业技术大学",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
       ]
     },
     {
@@ -3296,9 +2266,9 @@
       "uid": "4143011534",
       "university": "湖南警察学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3315,34 +2285,12 @@
       ]
     },
     {
-      "uid": "4143013937",
-      "university": "湖南汽车工程职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
       "uid": "4143013045",
       "university": "湖南石油化工职业技术学院",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4143013836",
-      "university": "湖南信息学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -3359,12 +2307,23 @@
       ]
     },
     {
+      "uid": "4136010404",
+      "university": "华东交通大学",
+      "affectedUnits": 1,
+      "winnerUnits": 0,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
+    },
+    {
       "uid": "4143014663",
       "university": "怀化师范高等专科学校",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3381,17 +2340,6 @@
       ]
     },
     {
-      "uid": "4134012220",
-      "university": "淮南职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4122010204",
       "university": "吉林工程技术师范学院",
       "affectedUnits": 1,
@@ -3400,39 +2348,6 @@
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
-      ]
-    },
-    {
-      "uid": "4122012904",
-      "university": "吉林工程职业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4122011261",
-      "university": "吉林工商学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4122014052",
-      "university": "吉林铁道职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
       ]
     },
     {
@@ -3458,6 +2373,17 @@
       ]
     },
     {
+      "uid": "4137010443",
+      "university": "济宁医学院",
+      "affectedUnits": 1,
+      "winnerUnits": 0,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
+    },
+    {
       "uid": "4144013711",
       "university": "江门职业技术学院",
       "affectedUnits": 1,
@@ -3472,9 +2398,9 @@
       "uid": "4132014000",
       "university": "江苏城市职业学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3516,9 +2442,9 @@
       "uid": "4136010421",
       "university": "江西财经大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3535,17 +2461,6 @@
       ]
     },
     {
-      "uid": "4136010846",
-      "university": "江西科技学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4136013869",
       "university": "江西青年职业学院",
       "affectedUnits": 1,
@@ -3557,23 +2472,12 @@
       ]
     },
     {
-      "uid": "4136013776",
-      "university": "江西软件职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4136010414",
       "university": "江西师范大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3590,12 +2494,12 @@
       ]
     },
     {
-      "uid": "4136014657",
-      "university": "江西婺源茶业职业学院",
+      "uid": "4136011319",
+      "university": "江西水利电力大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3604,9 +2508,9 @@
       "uid": "4136013425",
       "university": "江西应用工程职业学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3645,17 +2549,6 @@
       ]
     },
     {
-      "uid": "4114013535",
-      "university": "晋中信息学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4114010121",
       "university": "晋中学院",
       "affectedUnits": 1,
@@ -3689,17 +2582,6 @@
       ]
     },
     {
-      "uid": "4136014403",
-      "university": "九江科技职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
       "uid": "4136014919",
       "university": "九江卫生健康职业学院",
       "affectedUnits": 1,
@@ -3711,12 +2593,23 @@
       ]
     },
     {
+      "uid": "4136011843",
+      "university": "九江学院",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "city"
+      ]
+    },
+    {
       "uid": "4165010763",
       "university": "喀什大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city"
       ]
@@ -3733,17 +2626,6 @@
       ]
     },
     {
-      "uid": "4153011557",
-      "university": "昆明冶金职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4132016406",
       "university": "昆山杜克大学",
       "affectedUnits": 1,
@@ -3755,45 +2637,12 @@
       ]
     },
     {
-      "uid": "4162011807",
-      "university": "兰州工业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 1,
-      "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4162010732",
-      "university": "兰州交通大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4162010731",
       "university": "兰州理工大学",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4162016209",
-      "university": "兰州石化职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -3816,28 +2665,6 @@
       "winnerUnits": 0,
       "runnerUpUnits": 1,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4121013215",
-      "university": "辽宁师范大学海华学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4121012592",
-      "university": "辽宁职业学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "city"
       ]
@@ -3876,17 +2703,6 @@
       ]
     },
     {
-      "uid": "4144012770",
-      "university": "罗定职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
       "uid": "4135010402",
       "university": "闽南师范大学",
       "affectedUnits": 1,
@@ -3909,45 +2725,12 @@
       ]
     },
     {
-      "uid": "4136014168",
-      "university": "南昌科技职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4136012795",
-      "university": "南昌理工学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4144012121",
-      "university": "南方医科大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4132013990",
       "university": "南京财经大学红山学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -3967,31 +2750,9 @@
       "uid": "4145010603",
       "university": "南宁师范大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4145011549",
-      "university": "南宁学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4141011653",
-      "university": "南阳理工学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4000,9 +2761,9 @@
       "uid": "4141010481",
       "university": "南阳师范学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city"
       ]
@@ -4019,30 +2780,19 @@
       ]
     },
     {
-      "uid": "4115010871",
-      "university": "内蒙古建筑职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4115013824",
-      "university": "内蒙古交通职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4115010135",
       "university": "内蒙古师范大学",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
+    },
+    {
+      "uid": "4115010132",
+      "university": "内蒙古医科大学",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
@@ -4055,9 +2805,9 @@
       "uid": "4121012063",
       "university": "盘锦职业技术学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "city"
       ]
@@ -4118,17 +2868,6 @@
       ]
     },
     {
-      "uid": "4152014497",
-      "university": "黔南民族幼儿师范高等专科学校",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4137014962",
       "university": "青岛健康科技职业学院",
       "affectedUnits": 1,
@@ -4184,23 +2923,23 @@
       ]
     },
     {
-      "uid": "4135010399",
-      "university": "泉州师范学院",
+      "uid": "4137012062",
+      "university": "日照职业技术大学",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
       "scopes": [
-        "district"
+        "city"
       ]
     },
     {
       "uid": "4142014258",
       "university": "三峡旅游职业技术学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4214,6 +2953,17 @@
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
+      ]
+    },
+    {
+      "uid": "4137010438",
+      "university": "山东第二医科大学",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "city"
       ]
     },
     {
@@ -4250,17 +3000,6 @@
       ]
     },
     {
-      "uid": "4137014439",
-      "university": "山东农业工程学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4137010445",
       "university": "山东师范大学",
       "affectedUnits": 1,
@@ -4272,12 +3011,12 @@
       ]
     },
     {
-      "uid": "4137013387",
-      "university": "山东外国语职业技术大学",
+      "uid": "4114010125",
+      "university": "山西财经大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4294,45 +3033,12 @@
       ]
     },
     {
-      "uid": "4114013696",
-      "university": "山西文化旅游职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4114010114",
       "university": "山西医科大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4114012779",
-      "university": "山西应用科技学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4161013123",
-      "university": "陕西国际商贸学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4352,42 +3058,20 @@
       "uid": "4161010708",
       "university": "陕西科技大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
     },
     {
-      "uid": "4144012954",
-      "university": "汕头职业技术学院",
+      "uid": "4161010716",
+      "university": "陕西中医药大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4136013870",
-      "university": "上饶职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4144012957",
-      "university": "深圳信息职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4415,6 +3099,17 @@
       ]
     },
     {
+      "uid": "4151013816",
+      "university": "四川工业科技学院",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
+    },
+    {
       "uid": "4151012637",
       "university": "四川化工职业技术学院",
       "affectedUnits": 1,
@@ -4429,31 +3124,9 @@
       "uid": "4151010636",
       "university": "四川师范大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4151010654",
-      "university": "四川音乐学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4122011044",
-      "university": "四平职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4465,50 +3138,6 @@
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4132013985",
-      "university": "苏州科技大学天平学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4132014293",
-      "university": "宿迁泽达职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4132013110",
-      "university": "宿迁职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4165014740",
-      "university": "塔城职业技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -4547,28 +3176,6 @@
       ]
     },
     {
-      "uid": "4113010099",
-      "university": "唐山师范学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 1,
-      "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4112014087",
-      "university": "天津财经大学珠江学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4112010057",
       "university": "天津科技大学",
       "affectedUnits": 1,
@@ -4602,41 +3209,8 @@
       ]
     },
     {
-      "uid": "4121010182",
-      "university": "铁岭师范高等专科学校",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4137012843",
-      "university": "潍坊科技学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4165011565",
-      "university": "乌鲁木齐职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4132012702",
-      "university": "无锡商业职业技术学院",
+      "uid": "4134010368",
+      "university": "皖南医科大学",
       "affectedUnits": 1,
       "winnerUnits": 0,
       "runnerUpUnits": 1,
@@ -4646,12 +3220,23 @@
       ]
     },
     {
-      "uid": "4134011061",
-      "university": "芜湖职业技术大学",
+      "uid": "4137011067",
+      "university": "潍坊学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "city"
+      ]
+    },
+    {
+      "uid": "4132012702",
+      "university": "无锡商业职业技术学院",
+      "affectedUnits": 1,
+      "winnerUnits": 0,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4674,17 +3259,6 @@
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4162013518",
-      "university": "武威职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -4723,17 +3297,6 @@
       ]
     },
     {
-      "uid": "4161013738",
-      "university": "西安汽车职业大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4161010705",
       "university": "西安石油大学",
       "affectedUnits": 1,
@@ -4748,9 +3311,9 @@
       "uid": "4161013121",
       "university": "西安思源学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4759,9 +3322,9 @@
       "uid": "4154010695",
       "university": "西藏民族大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4778,67 +3341,34 @@
       ]
     },
     {
-      "uid": "4144016407",
-      "university": "香港中文大学（深圳）",
+      "uid": "4161010722",
+      "university": "咸阳师范学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
     },
     {
-      "uid": "4165012514",
-      "university": "新疆工业职业技术大学",
+      "uid": "4165010994",
+      "university": "新疆工程学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
     },
     {
-      "uid": "4165013562",
-      "university": "新疆建设职业技术学院",
+      "uid": "4165010758",
+      "university": "新疆农业大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4165013926",
-      "university": "新疆交通职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4165012734",
-      "university": "新疆警察学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4165010760",
-      "university": "新疆医科大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4899,34 +3429,23 @@
       ]
     },
     {
-      "uid": "4113013895",
-      "university": "燕京理工学院",
+      "uid": "4113010216",
+      "university": "燕山大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
-        "province"
+        "city"
       ]
     },
     {
       "uid": "4153010689",
       "university": "云南财经大学",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4153012560",
-      "university": "云南经济管理学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -4991,8 +3510,8 @@
       "university": "湛江幼儿师范专科学校",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -5042,12 +3561,12 @@
       ]
     },
     {
-      "uid": "4122013161",
-      "university": "长春职业技术大学",
+      "uid": "4143013806",
+      "university": "长沙师范学院",
       "affectedUnits": 1,
       "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "runnerUpUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
       ]
@@ -5075,33 +3594,22 @@
       ]
     },
     {
-      "uid": "4133013029",
-      "university": "浙江广厦建设职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "city"
-      ]
-    },
-    {
-      "uid": "4133012861",
-      "university": "浙江机电职业技术大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
       "uid": "4133012036",
       "university": "浙江交通职业技术学院",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
+    },
+    {
+      "uid": "4133011483",
+      "university": "浙江警察学院",
+      "affectedUnits": 1,
+      "winnerUnits": 0,
+      "runnerUpUnits": 1,
       "unresolvedCandidateUnits": 0,
       "scopes": [
         "district"
@@ -5119,23 +3627,23 @@
       ]
     },
     {
+      "uid": "4133010345",
+      "university": "浙江师范大学",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "city"
+      ]
+    },
+    {
       "uid": "4141014062",
       "university": "郑州电力职业技术学院",
       "affectedUnits": 1,
       "winnerUnits": 1,
       "runnerUpUnits": 0,
       "unresolvedCandidateUnits": 0,
-      "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4141011068",
-      "university": "郑州工程技术学院",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
       "scopes": [
         "district"
       ]
@@ -5152,25 +3660,14 @@
       ]
     },
     {
-      "uid": "4141012949",
-      "university": "郑州师范学院",
+      "uid": "4151010624",
+      "university": "中国民用航空飞行学院",
       "affectedUnits": 1,
-      "winnerUnits": 0,
+      "winnerUnits": 1,
       "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
+      "unresolvedCandidateUnits": 0,
       "scopes": [
-        "district"
-      ]
-    },
-    {
-      "uid": "4114010110",
-      "university": "中北大学",
-      "affectedUnits": 1,
-      "winnerUnits": 0,
-      "runnerUpUnits": 0,
-      "unresolvedCandidateUnits": 1,
-      "scopes": [
-        "district"
+        "city"
       ]
     },
     {
@@ -5194,1100 +3691,29 @@
       "scopes": [
         "district"
       ]
+    },
+    {
+      "uid": "4137013009",
+      "university": "淄博职业技术大学",
+      "affectedUnits": 1,
+      "winnerUnits": 1,
+      "runnerUpUnits": 0,
+      "unresolvedCandidateUnits": 0,
+      "scopes": [
+        "district"
+      ]
     }
   ],
-  "unresolvedUnits": [
+  "unresolvedUnits": [],
+  "policyUnits": [
     {
       "scope": "province",
       "province": "河北省",
       "city": "",
       "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北工业职业技术大学|河北医科大学|燕京理工学院|燕山大学",
-      "candidateCount": 131
+      "winner": "河北工业职业技术大学",
+      "basis": "public_before_private"
     },
-    {
-      "scope": "city",
-      "province": "安徽省",
-      "city": "芜湖市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "安徽师范大学|安徽信息工程学院|安徽应用技术职业大学|芜湖学院",
-      "candidateCount": 11
-    },
-    {
-      "scope": "city",
-      "province": "福建省",
-      "city": "泉州市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "华侨大学|黎明职业大学|泉州信息工程学院|泉州职业技术大学",
-      "candidateCount": 18
-    },
-    {
-      "scope": "city",
-      "province": "甘肃省",
-      "city": "定西市",
-      "district": "",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "定西师范高等专科学校|定西职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "city",
-      "province": "甘肃省",
-      "city": "天水市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "甘肃工业职业技术大学|甘肃林业职业技术大学|天水师范大学",
-      "candidateCount": 3
-    },
-    {
-      "scope": "city",
-      "province": "广东省",
-      "city": "佛山市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "佛山大学|广东东软学院|顺德职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "city",
-      "province": "广东省",
-      "city": "云浮市",
-      "district": "",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "广东云浮中医药职业学院|罗定职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "city",
-      "province": "广西壮族自治区",
-      "city": "柳州市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "广西科技大学|柳州工学院|柳州职业技术大学",
-      "candidateCount": 7
-    },
-    {
-      "scope": "city",
-      "province": "贵州省",
-      "city": "铜仁市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "铜仁学院|铜仁职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "city",
-      "province": "河北省",
-      "city": "沧州市",
-      "district": "",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "沧州师范学院|河北水利电力学院",
-      "candidateCount": 9
-    },
-    {
-      "scope": "city",
-      "province": "河北省",
-      "city": "承德市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "承德医学院|河北石油职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "city",
-      "province": "河北省",
-      "city": "石家庄市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北工程技术学院|河北工业职业技术大学|河北外国语学院|河北医科大学",
-      "candidateCount": 48
-    },
-    {
-      "scope": "city",
-      "province": "河北省",
-      "city": "唐山市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "华北理工大学|唐山工业职业技术大学",
-      "candidateCount": 12
-    },
-    {
-      "scope": "city",
-      "province": "河北省",
-      "city": "邢台市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北科技工程职业技术大学|邢台学院",
-      "candidateCount": 6
-    },
-    {
-      "scope": "city",
-      "province": "河南省",
-      "city": "南阳市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河南工业职业技术大学|南阳师范学院",
-      "candidateCount": 9
-    },
-    {
-      "scope": "city",
-      "province": "湖北省",
-      "city": "黄冈市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "黄冈师范学院|黄冈职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "city",
-      "province": "湖北省",
-      "city": "襄阳市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖北文理学院|襄阳职业技术大学",
-      "candidateCount": 5
-    },
-    {
-      "scope": "city",
-      "province": "湖北省",
-      "city": "宜昌市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖北三峡职业技术大学|三峡大学",
-      "candidateCount": 7
-    },
-    {
-      "scope": "city",
-      "province": "湖南省",
-      "city": "益阳市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖南城市学院|湖南工艺美术职业大学",
-      "candidateCount": 5
-    },
-    {
-      "scope": "city",
-      "province": "湖南省",
-      "city": "株洲市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖南工业大学|湖南汽车工程职业大学",
-      "candidateCount": 10
-    },
-    {
-      "scope": "city",
-      "province": "吉林省",
-      "city": "吉林市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "东北电力大学|吉林铁道职业技术大学",
-      "candidateCount": 9
-    },
-    {
-      "scope": "city",
-      "province": "江苏省",
-      "city": "常州市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "常州大学|常州信息职业技术大学",
-      "candidateCount": 12
-    },
-    {
-      "scope": "city",
-      "province": "江苏省",
-      "city": "扬州市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "扬州大学|扬州职业技术大学",
-      "candidateCount": 9
-    },
-    {
-      "scope": "city",
-      "province": "江西省",
-      "city": "九江市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "江西职业技术大学|九江科技职业大学|九江学院",
-      "candidateCount": 9
-    },
-    {
-      "scope": "city",
-      "province": "辽宁省",
-      "city": "盘锦市",
-      "district": "",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "盘锦职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "city",
-      "province": "辽宁省",
-      "city": "铁岭市",
-      "district": "",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "辽宁工程职业学院|辽宁职业学院|铁岭师范高等专科学校|铁岭卫生职业学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "city",
-      "province": "山东省",
-      "city": "滨州市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "滨州职业技术大学|山东医药大学",
-      "candidateCount": 5
-    },
-    {
-      "scope": "city",
-      "province": "山东省",
-      "city": "潍坊市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "山东第二医科大学|山东科技职业大学|潍坊科技学院",
-      "candidateCount": 16
-    },
-    {
-      "scope": "city",
-      "province": "山东省",
-      "city": "淄博市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "齐鲁医药学院|山东理工大学|淄博职业技术大学",
-      "candidateCount": 8
-    },
-    {
-      "scope": "city",
-      "province": "山西省",
-      "city": "吕梁市",
-      "district": "",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "吕梁学院|山西医药学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "city",
-      "province": "四川省",
-      "city": "德阳市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "四川工程职业技术大学|四川工业科技学院|中国民用航空飞行学院",
-      "candidateCount": 10
-    },
-    {
-      "scope": "city",
-      "province": "新疆维吾尔自治区",
-      "city": "昌吉回族自治州",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "昌吉学院|新疆农业职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "city",
-      "province": "新疆维吾尔自治区",
-      "city": "和田地区",
-      "district": "",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "新疆工业学院|新疆和田学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "city",
-      "province": "新疆维吾尔自治区",
-      "city": "喀什地区",
-      "district": "",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "喀什大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "city",
-      "province": "浙江省",
-      "city": "金华市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "金华职业技术大学|浙江广厦建设职业技术大学|浙江师范大学",
-      "candidateCount": 8
-    },
-    {
-      "scope": "city",
-      "province": "浙江省",
-      "city": "温州市",
-      "district": "",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "温州商学院|温州医科大学|温州职业技术大学",
-      "candidateCount": 11
-    },
-    {
-      "scope": "district",
-      "province": "安徽省",
-      "city": "合肥市",
-      "district": "瑶海区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "安徽职业技术大学|安徽中医药大学|合肥经济学院",
-      "candidateCount": 14
-    },
-    {
-      "scope": "district",
-      "province": "安徽省",
-      "city": "淮南市",
-      "district": "谢家集区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "安徽工贸职业技术学院|淮南职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "安徽省",
-      "city": "芜湖市",
-      "district": "鸠江区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "安徽师范大学|芜湖学院|芜湖职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "安徽省",
-      "city": "芜湖市",
-      "district": "弋江区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "安徽师范大学|安徽信息工程学院|安徽应用技术职业大学",
-      "candidateCount": 7
-    },
-    {
-      "scope": "district",
-      "province": "重庆市",
-      "city": "重庆市",
-      "district": "江津区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "重庆工程职业技术大学|重庆交通大学",
-      "candidateCount": 7
-    },
-    {
-      "scope": "district",
-      "province": "重庆市",
-      "city": "重庆市",
-      "district": "永川区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "重庆城市科技学院|重庆电子科技职业大学|重庆文理学院",
-      "candidateCount": 10
-    },
-    {
-      "scope": "district",
-      "province": "福建省",
-      "city": "泉州市",
-      "district": "丰泽区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "华侨大学|黎明职业大学|泉州信息工程学院|泉州职业技术大学",
-      "candidateCount": 7
-    },
-    {
-      "scope": "district",
-      "province": "甘肃省",
-      "city": "兰州市",
-      "district": "皋兰县",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "甘肃政法大学|兰州石化职业技术大学",
-      "candidateCount": 9
-    },
-    {
-      "scope": "district",
-      "province": "甘肃省",
-      "city": "天水市",
-      "district": "麦积区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "甘肃工业职业技术大学|甘肃林业职业技术大学",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "甘肃省",
-      "city": "天水市",
-      "district": "秦州区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "甘肃工业职业技术大学|天水师范大学",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "甘肃省",
-      "city": "武威市",
-      "district": "凉州区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "兰州交通大学|武威职业技术大学",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "广东省",
-      "city": "佛山市",
-      "district": "顺德区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "南方医科大学|顺德职业技术大学",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "广东省",
-      "city": "茂名市",
-      "district": "高州市",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "广东茂名健康职业学院|广东茂名幼儿师范专科学校",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "广东省",
-      "city": "汕头市",
-      "district": "濠江区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "广东汕头幼儿师范高等专科学校|广东司法警官职业学院|汕头职业技术学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "广东省",
-      "city": "深圳市",
-      "district": "龙岗区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "深圳信息职业技术大学|香港中文大学（深圳）",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "广东省",
-      "city": "湛江市",
-      "district": "廉江市",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "广东司法警官职业学院|湛江幼儿师范专科学校",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "广东省",
-      "city": "肇庆市",
-      "district": "四会市",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "广东工商职业技术大学|广州华商学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "广西壮族自治区",
-      "city": "来宾市",
-      "district": "兴宾区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "广西科技师范学院|桂林航天工业学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "广西壮族自治区",
-      "city": "柳州市",
-      "district": "鱼峰区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "广西科技大学|柳州工学院|柳州职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "district",
-      "province": "广西壮族自治区",
-      "city": "南宁市",
-      "district": "兴宁区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "广西农业职业技术大学|南宁师范大学|南宁学院",
-      "candidateCount": 7
-    },
-    {
-      "scope": "district",
-      "province": "贵州省",
-      "city": "毕节市",
-      "district": "大方县",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "毕节工业职业技术学院|毕节医学高等专科学校|毕节职业技术学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "贵州省",
-      "city": "贵阳市",
-      "district": "观山湖区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "贵阳康养职业大学|贵州工业职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "贵州省",
-      "city": "黔南布依族苗族自治州",
-      "district": "贵定县",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "贵州护理职业技术学院|黔南民族幼儿师范高等专科学校",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "贵州省",
-      "city": "铜仁市",
-      "district": "碧江区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "铜仁学院|铜仁职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "沧州市",
-      "district": "运河区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "沧州师范学院|河北水利电力学院",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "承德市",
-      "district": "双桥区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "承德医学院|河北石油职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "石家庄市",
-      "district": "桥西区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北工程技术学院|河北工业职业技术大学|河北师范大学|河北外国语学院",
-      "candidateCount": 18
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "石家庄市",
-      "district": "新乐市",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "河北地质大学华信学院|河北美术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "唐山市",
-      "district": "曹妃甸区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北科技学院|华北理工大学|唐山工业职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "邢台市",
-      "district": "信都区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北科技工程职业技术大学|邢台学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "河北省",
-      "city": "张家口市",
-      "district": "宣化区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河北北方学院|河北工业职业技术大学",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "河南省",
-      "city": "南阳市",
-      "district": "宛城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "河南工业职业技术大学|南阳理工学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "河南省",
-      "city": "郑州市",
-      "district": "惠济区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "河南牧业经济学院|河南体育学院|郑州工程技术学院|郑州师范学院",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "黑龙江省",
-      "city": "大庆市",
-      "district": "萨尔图区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "大庆医学高等专科学校|大庆职业学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "黑龙江省",
-      "city": "哈尔滨市",
-      "district": "道里区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "哈尔滨商业大学|哈尔滨职业技术大学|黑龙江财经学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "黑龙江省",
-      "city": "哈尔滨市",
-      "district": "呼兰区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "哈尔滨建筑科技职业大学|哈尔滨师范大学|哈尔滨信息工程学院",
-      "candidateCount": 9
-    },
-    {
-      "scope": "district",
-      "province": "黑龙江省",
-      "city": "哈尔滨市",
-      "district": "松北区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "哈尔滨商业大学|哈尔滨石油学院|哈尔滨远东理工学院|黑龙江工商学院|黑龙江农业工程职业技术大学",
-      "candidateCount": 12
-    },
-    {
-      "scope": "district",
-      "province": "湖北省",
-      "city": "黄冈市",
-      "district": "黄州区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "黄冈师范学院|黄冈职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "湖北省",
-      "city": "襄阳市",
-      "district": "襄城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖北文理学院|襄阳职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "湖北省",
-      "city": "宜昌市",
-      "district": "西陵区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖北三峡职业技术大学|三峡大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "湖北省",
-      "city": "宜昌市",
-      "district": "夷陵区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "三峡旅游职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "湖南省",
-      "city": "怀化市",
-      "district": "中方县",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "怀化师范高等专科学校",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "湖南省",
-      "city": "益阳市",
-      "district": "赫山区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖南城市学院|湖南工艺美术职业大学",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "湖南省",
-      "city": "长沙市",
-      "district": "长沙县",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "湖南工艺美术职业大学|湖南警察学院|湖南信息学院",
-      "candidateCount": 18
-    },
-    {
-      "scope": "district",
-      "province": "吉林省",
-      "city": "四平市",
-      "district": "铁东区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "吉林工程职业学院|四平职业大学",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "吉林省",
-      "city": "长春市",
-      "district": "九台区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "吉林工商学院|长春职业技术大学",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "江苏省",
-      "city": "南京市",
-      "district": "高淳区",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "南京财经大学红山学院|苏州科技大学天平学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "江苏省",
-      "city": "宿迁市",
-      "district": "宿豫区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "江苏城市职业学院|宿迁泽达职业技术学院|宿迁职业技术学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "江苏省",
-      "city": "扬州市",
-      "district": "邗江区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "扬州大学|扬州职业技术大学",
-      "candidateCount": 9
-    },
-    {
-      "scope": "district",
-      "province": "江西省",
-      "city": "九江市",
-      "district": "濂溪区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "江西职业技术大学|九江学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "江西省",
-      "city": "南昌市",
-      "district": "南昌县",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "江西科技学院|江西师范大学|江西外语外贸职业大学|南昌科技职业大学",
-      "candidateCount": 17
-    },
-    {
-      "scope": "district",
-      "province": "江西省",
-      "city": "南昌市",
-      "district": "新建区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "江西财经大学|江西软件职业技术大学|江西外语外贸职业大学|南昌理工学院",
-      "candidateCount": 18
-    },
-    {
-      "scope": "district",
-      "province": "江西省",
-      "city": "萍乡市",
-      "district": "湘东区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "江西应用工程职业学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "江西省",
-      "city": "上饶市",
-      "district": "婺源县",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "江西婺源茶业职业学院|上饶职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "辽宁省",
-      "city": "大连市",
-      "district": "庄河市",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "大连工业大学艺术与信息工程学院|辽宁师范大学海华学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "辽宁省",
-      "city": "铁岭市",
-      "district": "铁岭县",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "辽宁工程职业学院|铁岭卫生职业学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "内蒙古自治区",
-      "city": "赤峰市",
-      "district": "松山区",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "赤峰工业职业技术学院|赤峰应用技术职业学院|内蒙古交通职业技术学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "内蒙古自治区",
-      "city": "呼和浩特市",
-      "district": "回民区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "内蒙古建筑职业技术大学|内蒙古医科大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "山东省",
-      "city": "滨州市",
-      "district": "滨城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "滨州职业技术大学|山东医药大学",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "山东省",
-      "city": "日照市",
-      "district": "东港区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "曲阜师范大学|日照职业技术大学|山东外国语职业技术大学",
-      "candidateCount": 8
-    },
-    {
-      "scope": "district",
-      "province": "山东省",
-      "city": "潍坊市",
-      "district": "潍城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "山东第二医科大学|山东科技职业大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "山东省",
-      "city": "淄博市",
-      "district": "周村区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "齐鲁医药学院|山东农业工程学院|淄博职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "山西省",
-      "city": "晋中市",
-      "district": "太谷区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "晋中信息学院|山西工程科技职业大学|山西农业大学|山西应用科技学院",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "山西省",
-      "city": "吕梁市",
-      "district": "汾阳市",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "吕梁学院|山西医药学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "山西省",
-      "city": "太原市",
-      "district": "尖草坪区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "山西工程科技职业大学|中北大学",
-      "candidateCount": 10
-    },
-    {
-      "scope": "district",
-      "province": "山西省",
-      "city": "太原市",
-      "district": "迎泽区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "山西文化旅游职业大学|山西医科大学",
-      "candidateCount": 10
-    },
-    {
-      "scope": "district",
-      "province": "陕西省",
-      "city": "西安市",
-      "district": "灞桥区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "西安汽车职业大学|西安思源学院",
-      "candidateCount": 6
-    },
-    {
-      "scope": "district",
-      "province": "陕西省",
-      "city": "咸阳市",
-      "district": "秦都区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "陕西工业职业技术大学|陕西国际商贸学院|陕西科技大学",
-      "candidateCount": 8
-    },
-    {
-      "scope": "district",
-      "province": "陕西省",
-      "city": "咸阳市",
-      "district": "渭城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "陕西工业职业技术大学|西藏民族大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "district",
-      "province": "四川省",
-      "city": "成都市",
-      "district": "龙泉驿区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "成都航空职业技术大学|成都文理学院|四川师范大学",
-      "candidateCount": 13
-    },
-    {
-      "scope": "district",
-      "province": "四川省",
-      "city": "德阳市",
-      "district": "旌阳区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "四川工程职业技术大学|中国民用航空飞行学院",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "四川省",
-      "city": "资阳市",
-      "district": "雁江区",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "成都美术学院|四川音乐学院",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "天津市",
-      "city": "天津市",
-      "district": "宝坻区",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "北京科技大学天津学院|天津财经大学珠江学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "新疆维吾尔自治区",
-      "city": "昌吉回族自治州",
-      "district": "昌吉市",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "新疆农业大学|新疆农业职业技术大学",
-      "candidateCount": 4
-    },
-    {
-      "scope": "district",
-      "province": "新疆维吾尔自治区",
-      "city": "和田地区",
-      "district": "和田县",
-      "reason": "unresolved_incomparable_no_ranking",
-      "candidates": "新疆工业学院|新疆和田学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "新疆维吾尔自治区",
-      "city": "塔城地区",
-      "district": "塔城市",
-      "reason": "unresolved_incomparable_band",
-      "candidates": "塔城职业技术学院|新疆建设职业技术学院",
-      "candidateCount": 2
-    },
-    {
-      "scope": "district",
-      "province": "新疆维吾尔自治区",
-      "city": "乌鲁木齐市",
-      "district": "米东区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "新疆工业职业技术大学|新疆交通职业技术大学|新疆警察学院",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "新疆维吾尔自治区",
-      "city": "乌鲁木齐市",
-      "district": "头屯河区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "乌鲁木齐职业大学|新疆农业大学",
-      "candidateCount": 5
-    },
-    {
-      "scope": "district",
-      "province": "新疆维吾尔自治区",
-      "city": "乌鲁木齐市",
-      "district": "新市区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "新疆农业职业技术大学|新疆医科大学",
-      "candidateCount": 9
-    },
-    {
-      "scope": "district",
-      "province": "云南省",
-      "city": "昆明市",
-      "district": "安宁市",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "昆明冶金职业大学|云南财经大学|云南经济管理学院",
-      "candidateCount": 11
-    },
-    {
-      "scope": "district",
-      "province": "浙江省",
-      "city": "杭州市",
-      "district": "滨江区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "浙江机电职业技术大学|浙江中医药大学",
-      "candidateCount": 7
-    },
-    {
-      "scope": "district",
-      "province": "浙江省",
-      "city": "杭州市",
-      "district": "钱塘区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "杭州电子科技大学|杭州职业技术大学",
-      "candidateCount": 14
-    },
-    {
-      "scope": "district",
-      "province": "浙江省",
-      "city": "金华市",
-      "district": "婺城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "金华职业技术大学|浙江师范大学",
-      "candidateCount": 3
-    },
-    {
-      "scope": "district",
-      "province": "浙江省",
-      "city": "温州市",
-      "district": "鹿城区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "温州医科大学|温州职业技术大学",
-      "candidateCount": 6
-    },
-    {
-      "scope": "district",
-      "province": "浙江省",
-      "city": "温州市",
-      "district": "瓯海区",
-      "reason": "unresolved_incomparable_cross_system",
-      "candidates": "温州商学院|温州医科大学|温州职业技术大学",
-      "candidateCount": 9
-    }
-  ],
-  "policyUnits": [
     {
       "scope": "city",
       "province": "安徽省",
@@ -6379,6 +3805,14 @@
     {
       "scope": "city",
       "province": "安徽省",
+      "city": "芜湖市",
+      "district": "",
+      "winner": "安徽师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "安徽省",
       "city": "宣城市",
       "district": "",
       "winner": "宣城职业技术学院",
@@ -6419,6 +3853,14 @@
     {
       "scope": "city",
       "province": "福建省",
+      "city": "泉州市",
+      "district": "",
+      "winner": "华侨大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "福建省",
       "city": "三明市",
       "district": "",
       "winner": "三明学院",
@@ -6439,6 +3881,14 @@
       "district": "",
       "winner": "白银矿冶职业技术学院",
       "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "甘肃省",
+      "city": "定西市",
+      "district": "",
+      "winner": "定西师范高等专科学校",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "city",
@@ -6507,6 +3957,14 @@
     {
       "scope": "city",
       "province": "甘肃省",
+      "city": "天水市",
+      "district": "",
+      "winner": "天水师范大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "甘肃省",
       "city": "武威市",
       "district": "",
       "winner": "武威职业技术大学",
@@ -6534,6 +3992,14 @@
       "city": "东莞市",
       "district": "",
       "winner": "东莞理工学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "广东省",
+      "city": "佛山市",
+      "district": "",
+      "winner": "佛山大学",
       "basis": "public_before_private"
     },
     {
@@ -6615,6 +4081,14 @@
       "district": "",
       "winner": "阳江职业技术学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "city",
+      "province": "广东省",
+      "city": "云浮市",
+      "district": "",
+      "winner": "广东云浮中医药职业学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "city",
@@ -6715,6 +4189,14 @@
     {
       "scope": "city",
       "province": "广西壮族自治区",
+      "city": "柳州市",
+      "district": "",
+      "winner": "广西科技大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "广西壮族自治区",
       "city": "钦州市",
       "district": "",
       "winner": "北部湾大学",
@@ -6783,6 +4265,14 @@
       "district": "",
       "winner": "兴义民族师范学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "city",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "district": "",
+      "winner": "铜仁学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "city",
@@ -6859,6 +4349,22 @@
     {
       "scope": "city",
       "province": "河北省",
+      "city": "沧州市",
+      "district": "",
+      "winner": "沧州师范学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "河北省",
+      "city": "承德市",
+      "district": "",
+      "winner": "承德医学院",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "河北省",
       "city": "衡水市",
       "district": "",
       "winner": "衡水学院",
@@ -6871,6 +4377,30 @@
       "district": "",
       "winner": "中国人民警察大学",
       "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "河北省",
+      "city": "石家庄市",
+      "district": "",
+      "winner": "河北医科大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "河北省",
+      "city": "唐山市",
+      "district": "",
+      "winner": "华北理工大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "河北省",
+      "city": "邢台市",
+      "district": "",
+      "winner": "河北科技工程职业技术大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "city",
@@ -6911,6 +4441,14 @@
       "district": "",
       "winner": "漯河食品工程职业大学",
       "basis": "level_order"
+    },
+    {
+      "scope": "city",
+      "province": "河南省",
+      "city": "南阳市",
+      "district": "",
+      "winner": "南阳师范学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "city",
@@ -7075,6 +4613,14 @@
     {
       "scope": "city",
       "province": "湖北省",
+      "city": "黄冈市",
+      "district": "",
+      "winner": "黄冈师范学院",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "湖北省",
       "city": "荆门市",
       "district": "",
       "winner": "荆楚理工学院",
@@ -7131,9 +4677,25 @@
     {
       "scope": "city",
       "province": "湖北省",
+      "city": "襄阳市",
+      "district": "",
+      "winner": "湖北文理学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "湖北省",
       "city": "孝感市",
       "district": "",
       "winner": "湖北工程学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "湖北省",
+      "city": "宜昌市",
+      "district": "",
+      "winner": "三峡大学",
       "basis": "public_before_private"
     },
     {
@@ -7187,6 +4749,14 @@
     {
       "scope": "city",
       "province": "湖南省",
+      "city": "益阳市",
+      "district": "",
+      "winner": "湖南城市学院",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "湖南省",
       "city": "永州市",
       "district": "",
       "winner": "湖南科技学院",
@@ -7210,6 +4780,14 @@
     },
     {
       "scope": "city",
+      "province": "湖南省",
+      "city": "株洲市",
+      "district": "",
+      "winner": "湖南工业大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
       "province": "吉林省",
       "city": "白城市",
       "district": "",
@@ -7223,6 +4801,14 @@
       "district": "",
       "winner": "长白山职业技术学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "city",
+      "province": "吉林省",
+      "city": "吉林市",
+      "district": "",
+      "winner": "东北电力大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "city",
@@ -7267,6 +4853,14 @@
     {
       "scope": "city",
       "province": "江苏省",
+      "city": "常州市",
+      "district": "",
+      "winner": "常州大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "江苏省",
       "city": "连云港市",
       "district": "",
       "winner": "江苏海洋大学",
@@ -7298,6 +4892,14 @@
     },
     {
       "scope": "city",
+      "province": "江苏省",
+      "city": "扬州市",
+      "district": "",
+      "winner": "扬州大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
       "province": "江西省",
       "city": "吉安市",
       "district": "",
@@ -7310,6 +4912,14 @@
       "city": "景德镇市",
       "district": "",
       "winner": "景德镇陶瓷大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "江西省",
+      "city": "九江市",
+      "district": "",
+      "winner": "九江学院",
       "basis": "public_before_private"
     },
     {
@@ -7399,6 +5009,22 @@
       "district": "",
       "winner": "锦州医科大学",
       "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "辽宁省",
+      "city": "盘锦市",
+      "district": "",
+      "winner": "盘锦职业技术学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "city",
+      "province": "辽宁省",
+      "city": "铁岭市",
+      "district": "",
+      "winner": "辽宁工程职业学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "city",
@@ -7539,6 +5165,14 @@
     {
       "scope": "city",
       "province": "山东省",
+      "city": "滨州市",
+      "district": "",
+      "winner": "山东医药大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "山东省",
       "city": "德州市",
       "district": "",
       "winner": "德州学院",
@@ -7603,6 +5237,14 @@
     {
       "scope": "city",
       "province": "山东省",
+      "city": "潍坊市",
+      "district": "",
+      "winner": "山东第二医科大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "山东省",
       "city": "烟台市",
       "district": "",
       "winner": "烟台大学",
@@ -7615,6 +5257,14 @@
       "district": "",
       "winner": "枣庄学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "city",
+      "province": "山东省",
+      "city": "淄博市",
+      "district": "",
+      "winner": "山东理工大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "city",
@@ -7647,6 +5297,14 @@
       "district": "",
       "winner": "山西电子科技学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "city",
+      "province": "山西省",
+      "city": "吕梁市",
+      "district": "",
+      "winner": "吕梁学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "city",
@@ -7767,6 +5425,14 @@
       "district": "",
       "winner": "四川文理学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "city",
+      "province": "四川省",
+      "city": "德阳市",
+      "district": "",
+      "winner": "中国民用航空飞行学院",
+      "basis": "public_before_private"
     },
     {
       "scope": "city",
@@ -7947,6 +5613,14 @@
     {
       "scope": "city",
       "province": "新疆维吾尔自治区",
+      "city": "昌吉回族自治州",
+      "district": "",
+      "winner": "新疆农业职业技术大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "city",
+      "province": "新疆维吾尔自治区",
       "city": "哈密市",
       "district": "",
       "winner": "新疆能源铁道职业技术大学",
@@ -7955,10 +5629,26 @@
     {
       "scope": "city",
       "province": "新疆维吾尔自治区",
+      "city": "和田地区",
+      "district": "",
+      "winner": "新疆工业学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "city",
+      "province": "新疆维吾尔自治区",
       "city": "胡杨河市",
       "district": "",
       "winner": "胡杨河职业技术学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "city",
+      "province": "新疆维吾尔自治区",
+      "city": "喀什地区",
+      "district": "",
+      "winner": "喀什大学",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "city",
@@ -8171,6 +5861,14 @@
     {
       "scope": "city",
       "province": "浙江省",
+      "city": "金华市",
+      "district": "",
+      "winner": "浙江师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "city",
+      "province": "浙江省",
       "city": "丽水市",
       "district": "",
       "winner": "丽水学院",
@@ -8199,6 +5897,14 @@
       "district": "",
       "winner": "台州学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "city",
+      "province": "浙江省",
+      "city": "温州市",
+      "district": "",
+      "winner": "温州医科大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "city",
@@ -8372,6 +6078,14 @@
       "scope": "district",
       "province": "安徽省",
       "city": "合肥市",
+      "district": "瑶海区",
+      "winner": "安徽中医药大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "安徽省",
+      "city": "合肥市",
       "district": "长丰县",
       "winner": "安徽理工大学",
       "basis": "public_before_private"
@@ -8423,6 +6137,14 @@
       "district": "寿县",
       "winner": "安徽第二医学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "安徽省",
+      "city": "淮南市",
+      "district": "谢家集区",
+      "winner": "安徽工贸职业技术学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -8532,6 +6254,14 @@
       "scope": "district",
       "province": "安徽省",
       "city": "芜湖市",
+      "district": "鸠江区",
+      "winner": "安徽师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "安徽省",
+      "city": "芜湖市",
       "district": "南陵县",
       "winner": "芜湖职业技术大学",
       "basis": "single_candidate"
@@ -8543,6 +6273,14 @@
       "district": "湾沚区",
       "winner": "安徽信息工程学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "安徽省",
+      "city": "芜湖市",
+      "district": "弋江区",
+      "winner": "安徽师范大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -8628,6 +6366,14 @@
       "scope": "district",
       "province": "重庆市",
       "city": "重庆市",
+      "district": "江津区",
+      "winner": "重庆交通大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "重庆市",
+      "city": "重庆市",
       "district": "九龙坡区",
       "winner": "重庆理工大学",
       "basis": "single_ranked_candidate"
@@ -8671,6 +6417,14 @@
       "district": "万州区",
       "winner": "重庆三峡科技大学",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "重庆市",
+      "city": "重庆市",
+      "district": "永川区",
+      "winner": "重庆文理学院",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -8884,6 +6638,14 @@
       "scope": "district",
       "province": "福建省",
       "city": "泉州市",
+      "district": "丰泽区",
+      "winner": "华侨大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "福建省",
+      "city": "泉州市",
       "district": "惠安县",
       "winner": "泉州华光职业学院",
       "basis": "single_candidate"
@@ -9052,6 +6814,14 @@
       "scope": "district",
       "province": "甘肃省",
       "city": "兰州市",
+      "district": "皋兰县",
+      "winner": "甘肃政法大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "甘肃省",
+      "city": "兰州市",
       "district": "七里河区",
       "winner": "兰州理工大学",
       "basis": "public_before_private"
@@ -9108,9 +6878,33 @@
       "scope": "district",
       "province": "甘肃省",
       "city": "天水市",
+      "district": "麦积区",
+      "winner": "甘肃工业职业技术大学",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "甘肃省",
+      "city": "天水市",
+      "district": "秦州区",
+      "winner": "天水师范大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "甘肃省",
+      "city": "天水市",
       "district": "清水县",
       "winner": "甘肃林业职业技术大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "甘肃省",
+      "city": "武威市",
+      "district": "凉州区",
+      "winner": "兰州交通大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -9159,6 +6953,14 @@
       "district": "三水区",
       "winner": "广东财经大学",
       "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "广东省",
+      "city": "佛山市",
+      "district": "顺德区",
+      "winner": "南方医科大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -9292,6 +7094,14 @@
       "scope": "district",
       "province": "广东省",
       "city": "茂名市",
+      "district": "高州市",
+      "winner": "广东茂名健康职业学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "广东省",
+      "city": "茂名市",
       "district": "茂南区",
       "winner": "广东石油化工学院",
       "basis": "level_order"
@@ -9343,6 +7153,14 @@
       "district": "澄海区",
       "winner": "汕头大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "广东省",
+      "city": "汕头市",
+      "district": "濠江区",
+      "winner": "广东汕头幼儿师范高等专科学校",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -9404,6 +7222,14 @@
       "scope": "district",
       "province": "广东省",
       "city": "深圳市",
+      "district": "龙岗区",
+      "winner": "香港中文大学（深圳）",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "广东省",
+      "city": "深圳市",
       "district": "坪山区",
       "winner": "深圳技术大学",
       "basis": "single_candidate"
@@ -9460,6 +7286,14 @@
       "scope": "district",
       "province": "广东省",
       "city": "湛江市",
+      "district": "廉江市",
+      "winner": "广东司法警官职业学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "广东省",
+      "city": "湛江市",
       "district": "麻章区",
       "winner": "广东海洋大学",
       "basis": "public_before_private"
@@ -9495,6 +7329,14 @@
       "district": "高要区",
       "winner": "广东理工学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "广东省",
+      "city": "肇庆市",
+      "district": "四会市",
+      "winner": "广州华商学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -9643,6 +7485,14 @@
     {
       "scope": "district",
       "province": "广西壮族自治区",
+      "city": "来宾市",
+      "district": "兴宾区",
+      "winner": "广西科技师范学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "广西壮族自治区",
       "city": "柳州市",
       "district": "城中区",
       "winner": "广西科技大学",
@@ -9663,6 +7513,14 @@
       "district": "鹿寨县",
       "winner": "柳州城市职业学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "广西壮族自治区",
+      "city": "柳州市",
+      "district": "鱼峰区",
+      "winner": "广西科技大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -9694,6 +7552,14 @@
       "city": "南宁市",
       "district": "武鸣区",
       "winner": "广西医科大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "广西壮族自治区",
+      "city": "南宁市",
+      "district": "兴宁区",
+      "winner": "南宁师范大学",
       "basis": "public_before_private"
     },
     {
@@ -9780,6 +7646,14 @@
       "scope": "district",
       "province": "贵州省",
       "city": "毕节市",
+      "district": "大方县",
+      "winner": "毕节工业职业技术学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "贵州省",
+      "city": "毕节市",
       "district": "七星关区",
       "winner": "贵州工程应用技术学院",
       "basis": "level_order"
@@ -9799,6 +7673,14 @@
       "district": "白云区",
       "winner": "贵州商学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "贵州省",
+      "city": "贵阳市",
+      "district": "观山湖区",
+      "winner": "贵阳康养职业大学",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -9875,6 +7757,14 @@
     {
       "scope": "district",
       "province": "贵州省",
+      "city": "黔南布依族苗族自治州",
+      "district": "贵定县",
+      "winner": "贵州护理职业技术学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "贵州省",
       "city": "黔西南布依族苗族自治州",
       "district": "安龙县",
       "winner": "兴义民族师范学院",
@@ -9887,6 +7777,14 @@
       "district": "兴义市",
       "winner": "兴义民族师范学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "贵州省",
+      "city": "铜仁市",
+      "district": "碧江区",
+      "winner": "铜仁学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -10047,6 +7945,22 @@
       "district": "任丘市",
       "winner": "渤海石油职业学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
+      "city": "沧州市",
+      "district": "运河区",
+      "winner": "沧州师范学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
+      "city": "承德市",
+      "district": "双桥区",
+      "winner": "承德医学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -10220,9 +8134,25 @@
       "scope": "district",
       "province": "河北省",
       "city": "石家庄市",
+      "district": "桥西区",
+      "winner": "河北师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
+      "city": "石家庄市",
       "district": "辛集市",
       "winner": "辛集应用技术职业学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
+      "city": "石家庄市",
+      "district": "新乐市",
+      "winner": "河北地质大学华信学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -10255,6 +8185,14 @@
       "district": "正定县",
       "winner": "河北体育学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
+      "city": "唐山市",
+      "district": "曹妃甸区",
+      "winner": "华北理工大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -10323,10 +8261,26 @@
     {
       "scope": "district",
       "province": "河北省",
+      "city": "邢台市",
+      "district": "信都区",
+      "winner": "河北科技工程职业技术大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
       "city": "张家口市",
       "district": "怀来县",
       "winner": "北京信息科技大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "河北省",
+      "city": "张家口市",
+      "district": "宣化区",
+      "winner": "河北北方学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -10503,6 +8457,14 @@
       "district": "方城县",
       "winner": "河南工业职业技术大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "河南省",
+      "city": "南阳市",
+      "district": "宛城区",
+      "winner": "南阳理工学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -10788,6 +8750,14 @@
       "scope": "district",
       "province": "河南省",
       "city": "郑州市",
+      "district": "惠济区",
+      "winner": "河南牧业经济学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "河南省",
+      "city": "郑州市",
       "district": "上街区",
       "winner": "郑州科技学院",
       "basis": "single_candidate"
@@ -10867,6 +8837,14 @@
     {
       "scope": "district",
       "province": "黑龙江省",
+      "city": "大庆市",
+      "district": "萨尔图区",
+      "winner": "大庆医学高等专科学校",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "黑龙江省",
       "city": "大兴安岭地区",
       "district": "加格达奇区",
       "winner": "大兴安岭职业学院",
@@ -10900,9 +8878,25 @@
       "scope": "district",
       "province": "黑龙江省",
       "city": "哈尔滨市",
+      "district": "道里区",
+      "winner": "哈尔滨商业大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "黑龙江省",
+      "city": "哈尔滨市",
       "district": "道外区",
       "winner": "黑龙江工程学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "黑龙江省",
+      "city": "哈尔滨市",
+      "district": "呼兰区",
+      "winner": "哈尔滨师范大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -10927,6 +8921,14 @@
       "district": "双城区",
       "winner": "黑龙江工商学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "黑龙江省",
+      "city": "哈尔滨市",
+      "district": "松北区",
+      "winner": "哈尔滨商业大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -11095,6 +9097,14 @@
       "district": "红安县",
       "winner": "武汉城市学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "湖北省",
+      "city": "黄冈市",
+      "district": "黄州区",
+      "winner": "黄冈师范学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -11300,6 +9310,14 @@
       "scope": "district",
       "province": "湖北省",
       "city": "襄阳市",
+      "district": "襄城区",
+      "winner": "湖北文理学院",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "湖北省",
+      "city": "襄阳市",
       "district": "襄州区",
       "winner": "襄阳科技职业学院",
       "basis": "single_candidate"
@@ -11327,6 +9345,22 @@
       "district": "点军区",
       "winner": "湖北三峡职业技术大学",
       "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "湖北省",
+      "city": "宜昌市",
+      "district": "西陵区",
+      "winner": "三峡大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "湖北省",
+      "city": "宜昌市",
+      "district": "夷陵区",
+      "winner": "三峡旅游职业技术学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -11427,6 +9461,14 @@
     {
       "scope": "district",
       "province": "湖南省",
+      "city": "怀化市",
+      "district": "中方县",
+      "winner": "怀化师范高等专科学校",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "湖南省",
       "city": "娄底市",
       "district": "冷水江市",
       "winner": "娄底幼儿师范高等专科学校",
@@ -11495,6 +9537,14 @@
       "district": "吉首市",
       "winner": "吉首大学",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "湖南省",
+      "city": "益阳市",
+      "district": "赫山区",
+      "winner": "湖南城市学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -11582,6 +9632,14 @@
       "city": "长沙市",
       "district": "望城区",
       "winner": "湖南工商大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "湖南省",
+      "city": "长沙市",
+      "district": "长沙县",
+      "winner": "湖南警察学院",
       "basis": "public_before_private"
     },
     {
@@ -11684,6 +9742,14 @@
       "scope": "district",
       "province": "吉林省",
       "city": "四平市",
+      "district": "铁东区",
+      "winner": "吉林工程职业学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "吉林省",
+      "city": "四平市",
       "district": "铁西区",
       "winner": "吉林师范大学",
       "basis": "public_before_private"
@@ -11751,6 +9817,14 @@
       "district": "公主岭市",
       "winner": "长春汽车职业技术大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "吉林省",
+      "city": "长春市",
+      "district": "九台区",
+      "winner": "长春职业技术大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -11847,6 +9921,14 @@
       "district": "连云区",
       "winner": "江苏海洋大学",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "江苏省",
+      "city": "南京市",
+      "district": "高淳区",
+      "winner": "南京财经大学红山学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -11951,6 +10033,14 @@
       "district": "宿城区",
       "winner": "宿迁学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "江苏省",
+      "city": "宿迁市",
+      "district": "宿豫区",
+      "winner": "江苏城市职业学院",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -12071,6 +10161,14 @@
       "district": "广陵区",
       "winner": "扬州大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "江苏省",
+      "city": "扬州市",
+      "district": "邗江区",
+      "winner": "扬州大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -12204,6 +10302,14 @@
       "scope": "district",
       "province": "江西省",
       "city": "九江市",
+      "district": "濂溪区",
+      "winner": "九江学院",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "江西省",
+      "city": "九江市",
       "district": "浔阳区",
       "winner": "九江学院",
       "basis": "level_order"
@@ -12228,9 +10334,25 @@
       "scope": "district",
       "province": "江西省",
       "city": "南昌市",
+      "district": "南昌县",
+      "winner": "江西师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "江西省",
+      "city": "南昌市",
       "district": "西湖区",
       "winner": "江西中医药大学",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "江西省",
+      "city": "南昌市",
+      "district": "新建区",
+      "winner": "江西财经大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -12239,6 +10361,14 @@
       "district": "安源区",
       "winner": "萍乡学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "江西省",
+      "city": "萍乡市",
+      "district": "湘东区",
+      "winner": "江西应用工程职业学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -12263,6 +10393,14 @@
       "district": "鄱阳县",
       "winner": "鄱阳职业学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "江西省",
+      "city": "上饶市",
+      "district": "婺源县",
+      "winner": "江西婺源茶业职业学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -12435,6 +10573,14 @@
     {
       "scope": "district",
       "province": "辽宁省",
+      "city": "大连市",
+      "district": "庄河市",
+      "winner": "大连工业大学艺术与信息工程学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "辽宁省",
       "city": "丹东市",
       "district": "元宝区",
       "winner": "辽东学院",
@@ -12588,6 +10734,14 @@
       "scope": "district",
       "province": "辽宁省",
       "city": "铁岭市",
+      "district": "铁岭县",
+      "winner": "辽宁工程职业学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "辽宁省",
+      "city": "铁岭市",
       "district": "银州区",
       "winner": "辽宁职业学院",
       "basis": "single_candidate"
@@ -12659,6 +10813,14 @@
     {
       "scope": "district",
       "province": "内蒙古自治区",
+      "city": "赤峰市",
+      "district": "松山区",
+      "winner": "赤峰工业职业技术学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "内蒙古自治区",
       "city": "鄂尔多斯市",
       "district": "东胜区",
       "winner": "鄂尔多斯应用技术学院",
@@ -12687,6 +10849,14 @@
       "district": "和林格尔县",
       "winner": "内蒙古师范大学",
       "basis": "single_ranked_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "内蒙古自治区",
+      "city": "呼和浩特市",
+      "district": "回民区",
+      "winner": "内蒙古医科大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -12895,6 +11065,14 @@
       "district": "湟源县",
       "winner": "青海农牧科技职业学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "山东省",
+      "city": "滨州市",
+      "district": "滨城区",
+      "winner": "山东医药大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -13164,6 +11342,14 @@
       "scope": "district",
       "province": "山东省",
       "city": "日照市",
+      "district": "东港区",
+      "winner": "曲阜师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "山东省",
+      "city": "日照市",
       "district": "五莲县",
       "winner": "日照科技职业学院",
       "basis": "single_candidate"
@@ -13263,6 +11449,14 @@
       "district": "寿光市",
       "winner": "潍坊科技学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "山东省",
+      "city": "潍坊市",
+      "district": "潍城区",
+      "winner": "山东第二医科大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -13388,6 +11582,14 @@
       "scope": "district",
       "province": "山东省",
       "city": "淄博市",
+      "district": "周村区",
+      "winner": "淄博职业技术大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "山东省",
+      "city": "淄博市",
       "district": "淄川区",
       "winner": "淄博师范高等专科学校",
       "basis": "single_candidate"
@@ -13435,10 +11637,26 @@
     {
       "scope": "district",
       "province": "山西省",
+      "city": "晋中市",
+      "district": "太谷区",
+      "winner": "山西农业大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "山西省",
       "city": "吕梁市",
       "district": "方山县",
       "winner": "吕梁师范高等专科学校",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "山西省",
+      "city": "吕梁市",
+      "district": "汾阳市",
+      "winner": "吕梁学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -13476,6 +11694,14 @@
       "scope": "district",
       "province": "山西省",
       "city": "太原市",
+      "district": "尖草坪区",
+      "winner": "中北大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "山西省",
+      "city": "太原市",
       "district": "晋源区",
       "winner": "太原科技大学",
       "basis": "public_before_private"
@@ -13487,6 +11713,14 @@
       "district": "清徐县",
       "winner": "山西警察学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "山西省",
+      "city": "太原市",
+      "district": "迎泽区",
+      "winner": "山西医科大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -13652,6 +11886,14 @@
       "scope": "district",
       "province": "陕西省",
       "city": "西安市",
+      "district": "灞桥区",
+      "winner": "西安思源学院",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "陕西省",
+      "city": "西安市",
       "district": "高陵区",
       "winner": "西安工商学院",
       "basis": "level_order"
@@ -13703,6 +11945,22 @@
       "district": "泾阳县",
       "winner": "西安理工大学高科学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "陕西省",
+      "city": "咸阳市",
+      "district": "秦都区",
+      "winner": "陕西科技大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "陕西省",
+      "city": "咸阳市",
+      "district": "渭城区",
+      "winner": "西藏民族大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -13852,6 +12110,14 @@
       "scope": "district",
       "province": "四川省",
       "city": "成都市",
+      "district": "龙泉驿区",
+      "winner": "四川师范大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "四川省",
+      "city": "成都市",
       "district": "彭州市",
       "winner": "西华大学",
       "basis": "level_order"
@@ -13911,6 +12177,14 @@
       "district": "广汉市",
       "winner": "中国民用航空飞行学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "四川省",
+      "city": "德阳市",
+      "district": "旌阳区",
+      "winner": "中国民用航空飞行学院",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -14235,6 +12509,14 @@
     {
       "scope": "district",
       "province": "四川省",
+      "city": "资阳市",
+      "district": "雁江区",
+      "winner": "成都美术学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "四川省",
       "city": "自贡市",
       "district": "大安区",
       "winner": "四川轻化工大学",
@@ -14255,6 +12537,14 @@
       "district": "自流井区",
       "winner": "四川轻化工大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "天津市",
+      "city": "天津市",
+      "district": "宝坻区",
+      "winner": "北京科技大学天津学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -14372,6 +12662,14 @@
       "scope": "district",
       "province": "新疆维吾尔自治区",
       "city": "昌吉回族自治州",
+      "district": "昌吉市",
+      "winner": "新疆农业大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "新疆维吾尔自治区",
+      "city": "昌吉回族自治州",
       "district": "阜康市",
       "winner": "阜康职业技术学院",
       "basis": "single_candidate"
@@ -14399,6 +12697,14 @@
       "district": "和田市",
       "winner": "和田职业技术学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "新疆维吾尔自治区",
+      "city": "和田地区",
+      "district": "和田县",
+      "winner": "新疆工业学院",
+      "basis": "deterministic_fallback_policy"
     },
     {
       "scope": "district",
@@ -14444,6 +12750,14 @@
       "scope": "district",
       "province": "新疆维吾尔自治区",
       "city": "塔城地区",
+      "district": "塔城市",
+      "winner": "塔城职业技术学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "新疆维吾尔自治区",
+      "city": "塔城地区",
       "district": "乌苏市",
       "winner": "塔城职业技术学院",
       "basis": "single_candidate"
@@ -14463,6 +12777,30 @@
       "district": "达坂城区",
       "winner": "新疆职业大学",
       "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "新疆维吾尔自治区",
+      "city": "乌鲁木齐市",
+      "district": "米东区",
+      "winner": "新疆警察学院",
+      "basis": "deterministic_fallback_policy"
+    },
+    {
+      "scope": "district",
+      "province": "新疆维吾尔自治区",
+      "city": "乌鲁木齐市",
+      "district": "头屯河区",
+      "winner": "新疆农业大学",
+      "basis": "cross_group_scale_policy"
+    },
+    {
+      "scope": "district",
+      "province": "新疆维吾尔自治区",
+      "city": "乌鲁木齐市",
+      "district": "新市区",
+      "winner": "新疆医科大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -14551,6 +12889,14 @@
       "district": "蒙自市",
       "winner": "红河学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "云南省",
+      "city": "昆明市",
+      "district": "安宁市",
+      "winner": "云南财经大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",
@@ -14700,6 +13046,14 @@
       "scope": "district",
       "province": "浙江省",
       "city": "杭州市",
+      "district": "滨江区",
+      "winner": "浙江中医药大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "浙江省",
+      "city": "杭州市",
       "district": "淳安县",
       "winner": "浙江旅游职业学院",
       "basis": "single_ranked_candidate"
@@ -14735,6 +13089,14 @@
       "district": "临平区",
       "winner": "浙江理工大学",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "浙江省",
+      "city": "杭州市",
+      "district": "钱塘区",
+      "winner": "杭州电子科技大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -14831,6 +13193,14 @@
       "district": "兰溪市",
       "winner": "浙江师范大学行知学院",
       "basis": "single_candidate"
+    },
+    {
+      "scope": "district",
+      "province": "浙江省",
+      "city": "金华市",
+      "district": "婺城区",
+      "winner": "浙江师范大学",
+      "basis": "cross_group_scale_policy"
     },
     {
       "scope": "district",
@@ -15007,6 +13377,22 @@
       "district": "龙湾区",
       "winner": "温州理工学院",
       "basis": "level_order"
+    },
+    {
+      "scope": "district",
+      "province": "浙江省",
+      "city": "温州市",
+      "district": "鹿城区",
+      "winner": "温州医科大学",
+      "basis": "public_before_private"
+    },
+    {
+      "scope": "district",
+      "province": "浙江省",
+      "city": "温州市",
+      "district": "瓯海区",
+      "winner": "温州医科大学",
+      "basis": "public_before_private"
     },
     {
       "scope": "district",

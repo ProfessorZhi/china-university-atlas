@@ -15,9 +15,9 @@
  * and the pre-ingestion 总榜 snapshot (``preferredRank.legacy``) is never used to
  * pick a winner - it is a display order and a backfill hint, nothing more.
  *
- * When those rules cannot separate the leading candidates the unit is left
- * ``unresolved_incomparable`` and no winner is invented: Chinese-name order is
- * allowed to order a candidate list, never to choose a best university.
+ * When official evidence cannot separate the leading candidates, the atlas now applies an
+ * explicit project fallback so every non-empty administrative unit still has one display winner.
+ * Cross-system and final stable fallbacks are always labelled policy, never strong ranking evidence.
  */
 (function (root, factory) {
   const api = factory();
@@ -61,7 +61,7 @@
    * The alternative (crossGroupBlocks=false) lets the group whose scale is decidable win and
    * records the other group's champion as an incomparable candidate. scripts/measure_winner_rules.mjs
    * reports both counts; the reports use this setting. */
-  const RULES = { crossGroupBlocks: true };
+  const RULES = { crossGroupBlocks: false };
 
   const UNRESOLVED = {
     NO_RANKING: 'unresolved_incomparable_no_ranking',
@@ -173,9 +173,12 @@
          * policy that removed the private candidates. */
         if (inner === 'comparable_ranking') return `${base}；公办候选之间再按同榜名次比较`;
         if (inner === 'single_ranked_candidate') return `${base}；公办候选里也只有 ${wn} 被官方榜单覆盖`;
+        if (inner === 'cross_group_scale_policy') return `${base}；公办候选跨榜时按项目榜单体系优先级选择主榜序列`;
+        if (inner === 'deterministic_fallback_policy') return `${base}；公办候选仍无法由可比榜单唯一分开，使用项目稳定兜底顺序`;
         return base;
       }
       case 'cross_group_scale_policy': return `${wn} 取自主榜序列；其余候选分属不同榜单体系，名次不可直接比较，按当前项目政策以主榜序列为先`;
+      case 'deterministic_fallback_policy': return `${wn} 由项目稳定兜底规则选出：在层次、重点标签、公办/民办与可比榜单仍无法唯一分开时，按榜单体系优先级、区间下界与稳定名称顺序决定展示 winner；该结论不是发布方跨榜排名`;
       case 'reference_fallback': return '无学校主体候选，仅沿用省级参考标签';
       default: return '';
     }
@@ -374,15 +377,27 @@
       const primary = primaryGroupChampion(decided);
       return { winner: primary.winner, top: primary.top, basis: ctx.basis || 'cross_group_scale_policy', strength: ctx.strength || 'policy', reason: '', unranked, crossGroup: true };
     }
-    return { winner: null, top: champs.flatMap(c => c.top), basis: '', strength: '', reason: undecided[0] ? undecided[0].reason : UNRESOLVED.NO_RANKING, unranked };
+    const fallbackPool = (policy && policy.top && policy.top.length) ? policy.top : (champs.length ? champs.flatMap(c=>c.top) : items);
+    const fallback = policyFallbackCandidate(fallbackPool);
+    return { winner: fallback, top: fallback ? [fallback] : [], basis: ctx.basis || 'deterministic_fallback_policy', strength: ctx.strength || 'policy', reason: '', unranked, crossGroup: new Set(fallbackPool.map(x=>x.rank.group).filter(Boolean)).size>1, fallback: true };
   }
 
   /* Ordering several group champions is exactly the cross-scale comparison this module refuses,
    * so the non-blocking mode falls back to the atlas's declared list order (普通本科 first,
    * then 民办本科, then the vocational tracks) and labels the result as policy. */
+  function groupPrecedenceIndex(g) { const i = GROUP_PRECEDENCE.indexOf(g); return i < 0 ? GROUP_PRECEDENCE.length : i; }
   function primaryGroupChampion(decided) {
-    const rank = g => { const i = GROUP_PRECEDENCE.indexOf(g); return i < 0 ? GROUP_PRECEDENCE.length : i; };
-    return decided.slice().sort((a, b) => rank(a.group) - rank(b.group) || COLLATOR.compare(a.group, b.group))[0];
+    return decided.slice().sort((a, b) => groupPrecedenceIndex(a.group) - groupPrecedenceIndex(b.group) || COLLATOR.compare(a.group, b.group))[0];
+  }
+  function policyFallbackCandidate(items) {
+    return items.slice().sort((a,b)=>{
+      const ag=groupPrecedenceIndex(a.rank.group),bg=groupPrecedenceIndex(b.rank.group);if(ag!==bg)return ag-bg;
+      const at=displayTier(a.rank),bt=displayTier(b.rank);if(at!==bt)return at-bt;
+      const av=a.rank.kind==='numeric'?a.rank.value:(a.rank.kind==='band'?(a.rank.floor??Infinity):Infinity);
+      const bv=b.rank.kind==='numeric'?b.rank.value:(b.rank.kind==='band'?(b.rank.floor??Infinity):Infinity);if(av!==bv)return av-bv;
+      if(!!a.u.private!==!!b.u.private)return a.u.private?1:-1;
+      return COLLATOR.compare(String(a.u.u||''),String(b.u.u||''));
+    })[0]||null;
   }
 
   /* Decide the winner of one administrative unit.

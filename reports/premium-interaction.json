@@ -16,14 +16,15 @@
   },
   "before": {
     "metrics": {
-      "version": "5.9.0",
+      "version": "5.9.1",
       "layoutCount": 1,
       "fastTransformCount": 1,
       "wheelEvents": 0,
       "wheelFrames": 0,
       "leadersRendered": 0,
-      "lastSettleMs": 125.1,
-      "lastReason": "transform"
+      "lastSettleMs": 278.2,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.10000000000582077
     },
     "leaders": 0,
     "font": 11.1,
@@ -34,28 +35,30 @@
   },
   "during": {
     "metrics": {
-      "version": "5.9.0",
+      "version": "5.9.1",
       "layoutCount": 1,
       "fastTransformCount": 2,
       "wheelEvents": 48,
       "wheelFrames": 1,
       "leadersRendered": 0,
-      "lastSettleMs": 125.1,
-      "lastReason": "transform"
+      "lastSettleMs": 278.2,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.10000000000582077
     },
     "leaders": 0,
     "zooming": true
   },
   "after": {
     "metrics": {
-      "version": "5.9.0",
+      "version": "5.9.1",
       "layoutCount": 2,
       "fastTransformCount": 2,
       "wheelEvents": 48,
       "wheelFrames": 1,
       "leadersRendered": 0,
-      "lastSettleMs": 54.8,
-      "lastReason": "transform"
+      "lastSettleMs": 90.6,
+      "lastReason": "transform",
+      "maxTransformWorkMs": 0.10000000000582077
     },
     "leaders": 0,
     "font": 11.1,
