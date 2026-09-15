@@ -7,7 +7,7 @@
     "city": "school entity home city only; external branches, 研究院 and 研究生院 never compete for the city main board",
     "district": "actual campus candidates first; association-only candidates compete only when no campus candidate exists",
     "defaultAdultExcluded": true,
-    "incomparable": "candidates that cannot be compared stay unresolved_incomparable; Chinese-name order is never used to pick a winner"
+    "incomparable": "every non-empty competition pool publishes one winner; cross-system, band-only and final deterministic fallbacks are explicit resolved_policy, not strong external ranking evidence"
   },
   "byScope": {
     "country": {
