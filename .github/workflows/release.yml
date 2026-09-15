@@ -58,6 +58,7 @@ jobs:
           node tests/browser.mjs
           node tests/best-university-parity.mjs
           if [[ -f tests/premium-atlas.mjs ]]; then node tests/premium-atlas.mjs; fi
+          if [[ -f tests/premium-atlas-sustained.mjs ]]; then node tests/premium-atlas-sustained.mjs; fi
           python scripts/build.py --zip
 
       - name: Publish GitHub Release
