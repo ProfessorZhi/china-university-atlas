@@ -14,6 +14,8 @@
 
 ## 当前版本与范围
 
+**V5.9.2 把连续缩放从“每帧重绘 SVG”改成“手势期间缩放一张本地位图”。** 静止后异步生成当前地图的 Canvas 快照；滚轮、触控板或拖动时真实 SVG 保持冻结，只对这张纹理做 `translate3d + scale`，比例尺只做 `scaleX`，停止约 165ms 后再一次性提交 SVG 与标签。新增 GPU-enabled 的真实多帧门禁：30 个 animation frame 中 SVG transform 保持不变，Canvas 连续缩放，首轮 CI 的 rAF p95 / max 都是 **16.8ms**，raster-path JS 最坏约 **0.1ms/frame**；0 HTTP、0 runtime error。详见 [V5.9.2 说明](docs/v5.9.2.md)。
+
 **V5.9.1 修复“有候选却像没有大学”和真实持续缩放卡顿。** 现在只要行政单元的 competition pool 非空，就必须发布 1 个 winner；跨榜、开放区间或无榜单名次时使用显式项目 policy，而不是继续留白，并且这些 winner 一律标为 `resolved_policy`，不冒充发布方可比排名。全国 1,598 个有候选单元现为 **382 strong + 1,216 policy + 0 unresolved**。例如淄博市 8 所候选现显示 **山东理工大学**，潍坊市 16 所候选显示 **山东第二医科大学**；两地原本就有本科和大专数据，旧空白来自 winner policy。缩放方面，active gesture 只更新两层地图几何，不再逐个搬标签或每帧刷新比例尺；标签在手势期间暂停，浮动玻璃模糊临时关闭，约 180ms idle 后只重排一次，并缓存 point-in-polygon 结果。详见 [V5.9.1 说明](docs/v5.9.1.md)。
 
 **V5.9 是 Premium Atlas 前端升级。** 默认地图不再绘制跨区引导线：标签只在自己的行政区内出现，空间不足时先省略高校名，再隐藏标签；完整 winner、候选学校和证据仍可从“浏览”Drawer / 手机 bottom sheet 查看。桌面与手机都改为近全屏地图，Header、搜索、地图控件与图例改成轻量悬浮层，并新增动态比例尺和小型 hover 卡片。滚轮、拖动与双指缩放期间只更新几何 transform 和现有标签锚点，不执行完整文字排版；停止约 150ms 后只补一次 label layout。CI 的专用压力测试连续发送 48 个 wheel event，实测合并为 1 个动画帧，交互期间完整 layout **0 次**、停止后 **1 次**、字号比例 **1.000**、leader line **0**、HTTP **0**、runtime error **0**。仍保持单一 HTML、`file://` 双击运行与 5 MB 体积预算。详见 [V5.9 说明](docs/v5.9.md)。

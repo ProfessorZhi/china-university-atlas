@@ -1,8 +1,13 @@
-/* V5.9.1 responsive + interaction tuning. Loaded after city-layer.css. */
-#shapes,#edgeLayer{will-change:transform}
-/* Active pan/zoom is deliberately sparse: the moving map stays visible, while labels wait for the
-   single idle layout. Removing backdrop blur only for the gesture avoids re-blurring moving SVG
-   pixels under every floating panel on each display frame. */
+/* V5.9.2 responsive + raster-gesture interaction tuning. Loaded after city-layer.css. */
+#shapes,#edgeLayer{will-change:auto}
+.premium-gesture-canvas{position:absolute;display:block;opacity:0;transform-origin:0 0;will-change:transform;z-index:1;pointer-events:none;contain:strict}
+.premium-raster-active .premium-gesture-canvas{opacity:1}
+.premium-raster-active #map{opacity:0!important;transition:none!important}
+.maphead,.mapcontrols,.legend,.modebadge,.premium-scale{position:absolute;z-index:4}
+.premium-scale-bar{transform-origin:left center;will-change:transform}
+/* Active pan/zoom is deliberately sparse: the moving map is one raster texture. Labels wait for the
+   single idle layout, while glass blur is suspended so the compositor never has to blur the moving
+   atlas underneath every floating panel on each display frame. */
 .premium-zooming #labelLayer{opacity:0!important;transition:none!important}
 .premium-zooming .header,.premium-zooming .mapcontrols,.premium-zooming .legend,.premium-zooming .modebadge{
   backdrop-filter:none!important;-webkit-backdrop-filter:none!important

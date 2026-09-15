@@ -1,0 +1,76 @@
+{
+  "pass": true,
+  "checks": {
+    "snapshotReady": true,
+    "rasterActive": true,
+    "svgFrozen": true,
+    "canvasMoved": true,
+    "svgHidden": true,
+    "scaleComposited": true,
+    "rasterFrames": true,
+    "noSvgFallback": true,
+    "oneIdleLayout": true,
+    "svgCommitted": true,
+    "rasterSettled": true,
+    "frameCadence": true,
+    "lightJs": true,
+    "offline": true,
+    "runtimeClean": true
+  },
+  "p95FrameIntervalMs": 16.9,
+  "maxFrameIntervalMs": 17.8,
+  "before": {
+    "shape": "translate(0 0) scale(1)",
+    "layout": 1,
+    "raster": {
+      "version": "5.9.2",
+      "snapshotReady": true,
+      "active": false,
+      "rasterFrames": 0,
+      "svgFallbackFrames": 1,
+      "snapshotBuildMs": 27,
+      "lastFrameMs": 0,
+      "maxFrameMs": 0
+    },
+    "canvas": true
+  },
+  "during": {
+    "active": true,
+    "shape": "translate(0 0) scale(1)",
+    "canvasTransform": "matrix(1.29823, 0, 0, 1.29823, -227.548, -134.202)",
+    "canvasOpacity": "1",
+    "mapOpacity": "0",
+    "scaleTransform": "matrix(1.29823, 0, 0, 1, 0, 0)",
+    "layout": 1,
+    "raster": {
+      "version": "5.9.2",
+      "snapshotReady": true,
+      "active": true,
+      "rasterFrames": 30,
+      "svgFallbackFrames": 1,
+      "snapshotBuildMs": 27,
+      "lastFrameMs": 0.09999999997671694,
+      "maxFrameMs": 0.2000000000698492
+    }
+  },
+  "after": {
+    "active": false,
+    "shape": "translate(-227.54770872590802 -134.20244944516207) scale(1.2982276654336937)",
+    "canvasOpacity": "0",
+    "mapOpacity": "1",
+    "layout": 2,
+    "raster": {
+      "version": "5.9.2",
+      "snapshotReady": false,
+      "active": false,
+      "rasterFrames": 30,
+      "svgFallbackFrames": 1,
+      "snapshotBuildMs": 27,
+      "lastFrameMs": 0.09999999997671694,
+      "maxFrameMs": 0.2000000000698492
+    }
+  },
+  "httpRequests": [],
+  "runtimeErrors": [],
+  "artifact": "dist/china-university-atlas.html"
+}
