@@ -44,18 +44,16 @@ jobs:
         run: |
           google-chrome --version
           node tests/best-university-parity.mjs
-      # V5.8's geometry audit remains useful evidence (screenshots, clipping, colour, overlap), but
-      # its old "show almost every winner label" policy is intentionally superseded in V5.9 by
-      # zero-leader progressive disclosure. Do not turn an expected policy delta into a red build.
       - name: Legacy V5.8 geometry audit (report only)
         continue-on-error: true
         run: |
           google-chrome --version
           node tests/visual-layout.mjs
-      - name: V5.9 premium interaction and zero-leader gate
+      - name: Premium interaction gates
         run: |
           google-chrome --version
           node tests/premium-atlas.mjs
+          node tests/premium-atlas-sustained.mjs
       - name: Upload visual screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -65,6 +63,7 @@ jobs:
           path: |
             reports/visual-layout.json
             reports/premium-interaction.json
+            reports/premium-sustained.json
             reports/visual/v5.8-visual-audit.json
             reports/visual/*.png
       - name: Build complete ZIP
