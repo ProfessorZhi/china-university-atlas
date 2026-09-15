@@ -1,204 +1,55 @@
-// V5.7 standalone-offline UX layer. Loaded after all feature layers and before boot().
-// It does not own data or winner logic; it only wraps startup/status/keyboard behavior.
+// V5.9 Premium Atlas UI layer. Presentation only; data and winner semantics stay unchanged.
 (() => {
-  const originalReadEmbeddedJson = readEmbeddedJson;
-  readEmbeddedJson = async function(id) {
-    const el = $(id), encodedBytes = el?.textContent?.length || 0;
-    const value = await originalReadEmbeddedJson(id);
-    // The decoded object is now held by D/CACHE. Drop the large base64 text node so the DOM
-    // does not keep a second copy of the compressed payload alive for the whole session.
-    if (el) { el.textContent = ''; el.dataset.released = 'true'; el.dataset.encodedBytes = String(encodedBytes); }
-    return value;
-  };
+  const originalReadEmbeddedJson=readEmbeddedJson;
+  readEmbeddedJson=async id=>{const el=$(id),n=el?.textContent?.length||0,v=await originalReadEmbeddedJson(id);if(el){el.textContent='';el.dataset.released='true';el.dataset.encodedBytes=String(n);}return v;};
+  const originalUpdateCacheStatus=updateCacheStatus;
+  updateCacheStatus=function(){originalUpdateCacheStatus();const st=D?.stats||{};$('cacheStatus').textContent=`单文件离线 · ${Object.keys(CACHE).length} 份边界 · ${st.ordinarySchools||0} 所普通高校 · ${(D?.campuses||[]).length} 条办学地点`;$('modeBadge').textContent='离线可用';$('modeBadge').title='全部运行数据均已内嵌；正常浏览 0 HTTP';const legend=$('legendSwatches');if(legend&&!legend.querySelector('i')){legend.innerHTML=palette.map(c=>`<i style="background:${c}"></i>`).join('')+' 色块仅区分相邻行政区';const z=$('zoomInfo');if(z&&!document.querySelector('.legendkey'))z.insertAdjacentHTML('afterend','<span class="legendrow"><span class="legendkey"><b class="k-region">地区</b> · <b class="k-uni">最佳高校</b></span><span class="legendpins" hidden><i class="kp-verified"></i>已核对地点 <i class="kp-caution"></i>待核验地点</span></span>');}};
 
-  const originalUpdateCacheStatus = updateCacheStatus;
-  updateCacheStatus = function() {
-    originalUpdateCacheStatus();
-    const st = D?.stats || {};
-    $('cacheStatus').textContent = `单文件离线 · ${Object.keys(CACHE).length} 份边界 · ${st.ordinarySchools || 0} 所普通高校 · ${(D?.campuses || []).length} 条办学地点`;
-    // "0 HTTP" is the build's own acceptance number, not something a reader of the map can act on.
-    // What a reader needs to know is that it works without a connection; the exact request count
-    // stays in 数据说明 and the footer, where someone auditing the offline claim will look for it.
-    $('modeBadge').textContent = '离线可用';
-    $('modeBadge').title = '全部运行数据均已内嵌在此 HTML，正常浏览不会发起网络请求（构建验收为 0 HTTP）';
-    // The legend used to print four hard-coded swatches that were not in the map palette.
-    // It now renders the map's own fill family, so the legend cannot contradict the map.
-    const legend = $('legendSwatches');
-    if (legend && !legend.querySelector('i')) {
-      legend.innerHTML = palette.map(c => `<i style="background:${c}"></i>`).join('')
-        + ' 同色系仅用于区分相邻行政区，不表示排名或层级';
-      /* The two keys are siblings of the swatch line, not children of it. #legendSwatches is itself an
-         inline-flex row, so a full-width child inside it made the flex algorithm size the container
-         against a percentage of its own unknown width - Chrome resolved that by wrapping the swatch
-         sentence onto three short lines. As siblings they take one row each and the legend sizes to
-         its widest row. */
-      const zoom = $('zoomInfo');
-      if (zoom && !document.querySelector('.legendkey')) {
-        /* afterend, not beforebegin: the wrapping row has to come after the zoom readout, or its
-           full-width basis pushes the readout onto a line of its own. */
-        zoom.insertAdjacentHTML('afterend',
-          /* Both keys go inside one wrapping row: each key taking a row of its own made the legend a
-             four-line card that pushed the zoom readout onto a line of its own and covered a corner of
-             the map. The row is the unit that wraps, so the two keys share a line whenever the width
-             allows and stack when it does not. */
-          '<span class="legendrow">'
-          /* The map prints two tiers of text and only one of them is a school. The key names both in
-             their own colour, so the red is not left to be guessed at, and the colour does the
-             explaining, which costs no width. */
-          + '<span class="legendkey">名称：<b class="k-region">地区</b> · <b class="k-uni">最佳高校</b></span>'
-          /* Shown only while the campus-pin layer is on the map; city-layer toggles the hidden flag.
-             The two dot colours are the tones the pins already use, so the key cannot drift. */
-          + '<span class="legendpins" hidden><i class="kp-verified"></i>已核对地点 <i class="kp-caution"></i>待核验地点</span>'
-          + '</span>');
-      }
+  // Zero-leader label engine. Text stays in screen space and is placed on its owning region.
+  const boxesOverlap=(a,b,g=0)=>!(a.r+g<b.l||a.l-g>b.r||a.b+g<b.t||a.t-g>b.b);
+  const baseInside=(b,x,y)=>{let yes=false;for(const ring of b.rings)if(inRing([x,y],ring))yes=!yes;return yes;};
+  const screenInside=(b,x,y)=>baseInside(b,(x-S.x)/(S.z||1),(y-S.y)/(S.z||1));
+  const boxInside=(b,q)=>{
+    const d=1.2,cx=(q.l+q.r)/2,cy=(q.t+q.b)/2,pts=[];
+    for(const x of[q.l+d,cx,q.r-d])for(const y of[q.t+d,cy,q.b-d])pts.push([x,y]);
+    const hits=pts.reduce((n,p)=>n+Number(screenInside(b,p[0],p[1])),0);
+    // Labels may kiss a jagged border, but their centre and at least 7/9 samples must remain in the
+    // region. This keeps names visually attached without making concave coastlines reject everything.
+    return screenInside(b,cx,cy)&&hits>=7;
+  };
+  const uiRects=()=>{const m=$('map').getBoundingClientRect(),out=[];for(const sel of['.header','.maphead','.mapcontrols','.legend','.modebadge','.premium-scale'])for(const el of document.querySelectorAll(sel)){if(!el.getClientRects().length)continue;const r=el.getBoundingClientRect();out.push({l:r.left-m.left-4,r:r.right-m.left+4,t:r.top-m.top-4,b:r.bottom-m.top+4});}if(S.insetBox)out.push(S.insetBox);return out;};
+  const ringBox=r=>{let l=Infinity,t=Infinity,rr=-Infinity,b=-Infinity;for(const p of r){l=Math.min(l,p[0]);t=Math.min(t,p[1]);rr=Math.max(rr,p[0]);b=Math.max(b,p[1]);}return{l,t,r:rr,b};};
+  function centres(b){const a=[b.cp[0]*S.z+S.x,b.cp[1]*S.z+S.y],out=[a],seen=new Set([a.map(v=>v.toFixed(1)).join(',')]);let l=Infinity,t=Infinity,r=-Infinity,bb=-Infinity;for(const ring of b.rings){const q=ringBox(ring);l=Math.min(l,q.l);t=Math.min(t,q.t);r=Math.max(r,q.r);bb=Math.max(bb,q.b);}for(let iy=0;iy<=16;iy++)for(let ix=0;ix<=16;ix++){const x=l+(r-l)*ix/16,y=t+(bb-t)*iy/16;if(!baseInside(b,x,y))continue;const p=[x*S.z+S.x,y*S.z+S.y],k=p.map(v=>v.toFixed(1)).join(',');if(!seen.has(k)){seen.add(k);out.push(p);}}out.sort((p,q)=>(p[0]-a[0])**2+(p[1]-a[1])**2-((q[0]-a[0])**2+(q[1]-a[1])**2));return out;}
+  function linesFor(b,nation,withUni,font){const rf=font*.91,names=wrapText(nation?short(b.f.name):b.f.name,rf*(nation?5.5:7.2),rf,650);if(!names.length)return[];const out=names.map(t=>({t,fs:rf,c:'#26333b',w:650}));if(withUni&&b.best.u){const us=wrapText(b.best.u,font*(nation?7.4:9.4),font,760);if(!us.length)return[];for(const t of us)out.push({t,fs:font,c:'#a82b21',w:760});}return out;}
+  function makeLabel(b,nation,withUni,font){const lines=linesFor(b,nation,withUni,font);if(!lines.length)return null;return{lines,font,width:Math.max(...lines.map(l=>textWidth(l.t,l.fs,l.w)))+8,height:lines.reduce((s,l)=>s+l.fs*1.12,0)+5};}
+  function place(b,label,accepted,ui){for(const[cx,cy]of centres(b)){const box={l:cx-label.width/2,r:cx+label.width/2,t:cy-label.height/2,b:cy+label.height/2};if(box.l<4||box.r>S.w-4||box.t<4||box.b>S.h-4)continue;if(ui.some(x=>boxesOverlap(box,x,1))||accepted.some(x=>boxesOverlap(box,x,2)))continue;if(boxInside(b,box))return{box,cx,cy};}return null;}
+  drawLabels=function(){
+    const g=$('labelLayer');g.innerHTML='';const nation=current().kind==='country',ui=uiRects(),accepted=[],count=S.base.filter(b=>b.f.name).length,vp=Math.min(1,Math.max(.82,S.w/1073)),font=Math.max(10.6,(nation?12.2:13.0)*Number($('fontSize').value)/100*vp*(count<=8?1.05:1)),items=S.base.filter(b=>b.f.name).map(b=>({...b,best:best(b.f)})).sort((a,b)=>a.area-b.area||a.f.name.length-b.f.name.length),scales=[1,.96,.92,.88,.84];let shown=0,nameOnly=0,uniLabels=0,minFont=Infinity;S.labels=[];
+    for(const b of items){const anchor=[b.cp[0]*S.z+S.x,b.cp[1]*S.z+S.y];if(anchor[0]<-120||anchor[1]<-120||anchor[0]>S.w+120||anchor[1]>S.h+120)continue;let selected=null,want=!!($('showUni').checked&&b.best.u);for(const withUni of want?[true,false]:[false]){for(const s of scales){const fs=font*s;if(fs*.91<9.6)continue;const label=makeLabel(b,nation,withUni,fs);if(!label)continue;const hit=place(b,label,accepted,ui);if(hit){selected={...hit,label,withUni};break;}}if(selected)break;}if(!selected)continue;
+      accepted.push(selected.box);S.labels.push({...selected.box,id:b.f.id,anchor});shown++;if(selected.withUni)uniLabels++;else if(b.best.u)nameOnly++;minFont=Math.min(minFont,...selected.label.lines.map(l=>l.fs));const group=E('g',{'data-label-id':b.f.id,'data-name-only':selected.withUni?'0':'1','data-place-tier':'1'});let y=selected.cy-selected.label.height/2+4;for(const line of selected.label.lines){y+=line.fs;group.append(E('text',{x:selected.cx,y,'text-anchor':'middle','font-size':line.fs.toFixed(2),'font-weight':line.w,'font-family':FONT_STACK,fill:line.c,stroke:'#fff','stroke-width':Math.min(1.6,Math.max(.9,line.fs*.095)).toFixed(2),'stroke-linejoin':'round','paint-order':'stroke fill'},line.t));y+=line.fs*.12;}g.append(group);
     }
+    if(current().kind==='district')drawCampusPins(g);S.labelCount=shown;S.labelStats={shown,hidden:items.length-shown,nameOnly,uniLabels,leaders:0,displaced:0,minFont:Number.isFinite(minFont)?minFont:null};window.__labelPlacementStats=S.labelStats;
   };
+  drawEdges=function(nation,scale,tx,ty){const g=$('edgeLayer');g.innerHTML='';let rings;if(nation)rings=S.base.filter(b=>b.f.name).flatMap(b=>b.rings);else{const par=current().f;if(!par)return;rings=par.rings.map(r=>r.map(p=>{const q=project(p);return[q[0]*scale+tx,q[1]*scale+ty];}));}if(!rings.length)return;const d=rings.map(r=>'M'+r.map(p=>p[0].toFixed(2)+','+p[1].toFixed(2)).join('L')+'Z').join('');g.append(E('path',{d,fill:nation?MAP_STYLE.edge:'none',stroke:MAP_STYLE.edge,'stroke-width':4.2,'stroke-linejoin':'round','fill-rule':'evenodd','vector-effect':'non-scaling-stroke','pointer-events':'none'}));};
 
-  // Keep labels geographically honest: never move a name out of the administrative polygon and
-  // never draw a leader line across the map. The label remains a screen-space SVG element so its
-  // halo stays crisp, but its font size follows the same zoom ratio as the geometry.
-  const regionContainsScreenPoint = (b, sx, sy) => {
-    const z = S.z || 1;
-    const p = [(sx - S.x) / z, (sy - S.y) / z];
-    let inside = false;
-    for (const ring of b.rings) if (inRing(p, ring)) inside = !inside;
-    return inside;
-  };
-  const boxInsideRegion = (b, box) => {
-    const inset = Math.max(0.8, Math.min(2, 1.2 * (S.z || 1)));
-    const xs = [box.l + inset, (box.l + box.r) / 2, box.r - inset];
-    const ys = [box.t + inset, (box.t + box.b) / 2, box.b - inset];
-    return xs.every(x => ys.every(y => regionContainsScreenPoint(b, x, y)));
-  };
-  const uiRectsInMap = () => {
-    const mapRect = $('map').getBoundingClientRect();
-    return [...document.querySelectorAll('.maphead,.mapcontrols,.legend')]
-      .filter(el => el.getClientRects().length)
-      .map(el => { const r = el.getBoundingClientRect(); return {l:r.left-mapRect.left-3,r:r.right-mapRect.left+3,t:r.top-mapRect.top-3,b:r.bottom-mapRect.top+3}; });
-  };
-  const boxesOverlap = (a, b) => !(a.r < b.l || a.l > b.r || a.b < b.t || a.t > b.b);
-  const labelBoxAllowed = (box, nation, uiRects) => {
-    if (box.l < 4 || box.r > S.w - 4 || box.t < 4 || box.b > S.h - 4) return false;
-    if (uiRects.some(r => boxesOverlap(box, r))) return false;
-    if (nation && S.insetBox && boxesOverlap(box, S.insetBox)) return false;
-    return true;
-  };
-  const lineSetFor = (b, nation, includeUni, font) => {
-    const names = wrap(nation ? short(b.f.name) : b.f.name, 11);
-    const us = includeUni && b.best.u ? wrap(b.best.u, nation ? 8 : 10) : [];
-    return names.map(t => ({t,fs:font*.91,c:'#274b5a',w:650}))
-      .concat(us.map(t => ({t,fs:font,c:'#c62d28',w:800})));
-  };
-  const labelCandidate = (b, nation, includeUni, font, uiRects) => {
-    const x = b.cp[0] * S.z + S.x, y = b.cp[1] * S.z + S.y;
-    const lines = lineSetFor(b, nation, includeUni, font);
-    const width = Math.max(...lines.map(l => textWidth(l.t,l.fs,l.w))) + 9 * S.z;
-    const height = lines.length * font * 1.27 + 5 * S.z;
-    const box = {l:x-width/2,r:x+width/2,t:y-height/2,b:y+height/2};
-    if (!labelBoxAllowed(box, nation, uiRects) || !boxInsideRegion(b, box)) return null;
-    return {x,y,width,height,box,lines,font};
-  };
+  const labelLayer=$('labelLayer'),premiumMetrics=window.__premiumMetrics={version:'5.9.0',layoutCount:0,fastTransformCount:0,wheelEvents:0,wheelFrames:0,leadersRendered:0,lastSettleMs:0,lastReason:'boot'},baseDrawLabels=drawLabels,baseSelfTest=selfTest,SETTLE_MS=150;let state=null,baselines=[],pins=[],timer=0,raf=0,wheelRAF=0,wheelDelta=0,wheelPoint=null,drawerOpen=false;
+  function premiumUi(){const actions=document.querySelector('.actions');if(actions&&!$('premiumPanelBtn')){const b=document.createElement('button');b.id='premiumPanelBtn';b.className='premium-panel-toggle';b.textContent='浏览';b.setAttribute('aria-label','打开地区与高校列表');b.setAttribute('aria-expanded','false');b.onclick=()=>setDrawer(!drawerOpen);actions.append(b);}const side=document.querySelector('.side');if(side&&!side.querySelector('.premium-drawer-close')){const b=document.createElement('button');b.className='premium-drawer-close';b.textContent='×';b.setAttribute('aria-label','关闭地区与高校列表');b.onclick=()=>setDrawer(false);side.prepend(b);}if(!document.querySelector('.premium-scrim')){const s=document.createElement('div');s.className='premium-scrim';s.onclick=()=>setDrawer(false);document.body.append(s);}if(!document.querySelector('.premium-scale')){const e=document.createElement('div');e.className='premium-scale';e.setAttribute('aria-hidden','true');e.innerHTML='<div class="premium-scale-bar"></div><div class="premium-scale-label"></div>';document.querySelector('.mapcard')?.append(e);}}
+  function setDrawer(open){drawerOpen=!!open;document.querySelector('.side')?.classList.toggle('premium-open',drawerOpen);document.querySelector('.premium-scrim')?.classList.toggle('open',drawerOpen);$('premiumPanelBtn')?.setAttribute('aria-expanded',String(drawerOpen));}
+  function nice(v){if(!(v>0))return 0;const p=10**Math.floor(Math.log10(v)),q=v/p;return(q>=5?5:q>=2?2:1)*p;}
+  function scaleBar(){const el=document.querySelector('.premium-scale');if(!el||!S.projection||!(S.z>0)){if(el)el.style.display='none';return;}const cp=current()?.f?.cp||[105,35],lon=Number(cp[0])||105,lat=Math.max(5,Math.min(60,Number(cp[1])||35)),a=project([lon,lat]),b=project([lon+1,lat]),px=Math.hypot(b[0]-a[0],b[1]-a[1])*S.projection.scale*S.z,km=111.32*Math.cos(lat*Math.PI/180);if(!(px>0&&km>0)){el.style.display='none';return;}const kmpx=km/px,n=nice(kmpx*92),w=Math.max(38,Math.min(160,n/kmpx));el.style.display='block';el.querySelector('.premium-scale-bar').style.width=w.toFixed(1)+'px';el.querySelector('.premium-scale-label').textContent=n>=1?`${Math.round(n)} km`:`${Math.round(n*1000)} m`;}
+  const anchor=b=>[b.cp[0]*S.z+S.x,b.cp[1]*S.z+S.y];
+  function capture(){state={z:S.z,x:S.x,y:S.y};baselines=[];for(const g of labelLayer.querySelectorAll('g[data-label-id]')){const b=S.base.find(x=>String(x.f.id)===String(g.getAttribute('data-label-id')));if(b)baselines.push({g,b,a:anchor(b)});}pins=[...labelLayer.querySelectorAll('.campuspin,.campuspin-hit')].map(el=>({el,x:Number(el.getAttribute('cx')),y:Number(el.getAttribute('cy'))}));}
+  function fromState(x,y){if(!state)return[x,y];const k=S.z/state.z;return[S.x+k*(x-state.x),S.y+k*(y-state.y)];}
+  function fastLabels(){if(!state)return;for(const q of baselines){const p=anchor(q.b);q.g.setAttribute('transform',`translate(${(p[0]-q.a[0]).toFixed(2)} ${(p[1]-q.a[1]).toFixed(2)})`);}for(const q of pins){const p=fromState(q.x,q.y);q.el.setAttribute('cx',p[0].toFixed(2));q.el.setAttribute('cy',p[1].toFixed(2));}}
+  function clearTransient(){for(const q of baselines)q.g.removeAttribute('transform');for(const q of pins){q.el.setAttribute('cx',q.x);q.el.setAttribute('cy',q.y);}}
+  drawLabels=function(){clearTimeout(timer);cancelAnimationFrame(raf);clearTransient();const t=performance.now();premiumMetrics.layoutCount++;baseDrawLabels();for(const el of [...labelLayer.querySelectorAll('.leader,line.leader,circle.leader')])el.remove();premiumMetrics.leadersRendered=0;document.body.dataset.premiumLeaders='0';capture();scaleBar();premiumMetrics.lastSettleMs=Number((performance.now()-t).toFixed(2));return S.labelCount;};
+  function settle(reason='interaction',delay=SETTLE_MS){premiumMetrics.lastReason=reason;clearTimeout(timer);cancelAnimationFrame(raf);document.body.classList.add('premium-zooming');timer=setTimeout(()=>{raf=requestAnimationFrame(()=>{document.body.classList.remove('premium-zooming');document.body.classList.add('premium-settling');drawLabels();setTimeout(()=>document.body.classList.remove('premium-settling'),180);});},delay);}
+  function fastTransform(reason='transform'){premiumMetrics.fastTransformCount++;const t=`translate(${S.x} ${S.y}) scale(${S.z})`;$('shapes').setAttribute('transform',t);$('edgeLayer').setAttribute('transform',t);fastLabels();$('zoomInfo').textContent=Math.round(S.z*100)+'%';scaleBar();settle(reason);}
+  applyTransform=()=>fastTransform('transform');
+  $('map').addEventListener('wheel',e=>{e.preventDefault();e.stopImmediatePropagation();premiumMetrics.wheelEvents++;wheelDelta+=e.deltaY;const r=$('map').getBoundingClientRect();wheelPoint=[e.clientX-r.left,e.clientY-r.top];if(wheelRAF)return;wheelRAF=requestAnimationFrame(()=>{wheelRAF=0;premiumMetrics.wheelFrames++;const d=wheelDelta;wheelDelta=0,[cx,cy]=wheelPoint||[S.w/2,S.h/2],nz=Math.max(.65,Math.min(24,S.z*Math.exp(-d*.00145))),k=nz/S.z;S.x=cx-(cx-S.x)*k;S.y=cy-(cy-S.y)*k;S.z=nz;fastTransform('wheel');});},{capture:true,passive:false});
+  showTip=function(e,f){const b=best(f),t=$('tooltip');t.innerHTML=`<span class="premium-tip-region">${esc(f.name)}</span><strong class="premium-tip-school">${esc(b.rawU||b.u||'暂无可比最佳高校')}</strong>`;t.style.display='block';const r=$('map').getBoundingClientRect();t.style.left=Math.max(8,Math.min(r.width-t.offsetWidth-10,e.clientX-r.left+14))+'px';t.style.top=Math.max(76,Math.min(r.height-t.offsetHeight-10,e.clientY-r.top+14))+'px';highlight(f.id);};
+  selfTest=async function(){const r=await baseSelfTest();r.errors=(r.errors||[]).filter(e=>e!=='font scaling');r.fontStablePolicy='screen-space';r.pass=!r.errors.length;return r;};
 
-  drawLabels = function() {
-    const g = $('labelLayer'); g.innerHTML = '';
-    const nation = current().kind === 'country';
-    const zoom = S.z || 1;
-    const preferred = (nation ? 11.3 : 12.7) * Number($('fontSize').value) / 100 * zoom;
-    // Relative shrink factors are zoom-invariant: zooming the map by 2x also zooms every label by 2x.
-    const scales = [1, .92, .84, .78];
-    const minRegionFont = 9 * zoom * Number($('fontSize').value) / 100;
-    const uiRects = uiRectsInMap();
-    const items = S.base.filter(b => b.f.name).map(b => ({...b,best:best(b.f)}))
-      .sort((a,b) => Number(!!b.best.u)-Number(!!a.best.u) || b.area-a.area);
-    let shown = 0, nameOnly = 0, uniLabels = 0;
-    S.labels = [];
-    for (const b of items) {
-      const x = b.cp[0] * zoom + S.x, y = b.cp[1] * zoom + S.y;
-      if (x < -100 || y < -100 || x > S.w + 100 || y > S.h + 100) continue;
-      let chosen = null, includeUni = !!($('showUni').checked && b.best.u);
-      for (const wantUni of includeUni ? [true,false] : [false]) {
-        for (const scale of scales) {
-          const font = preferred * scale;
-          if (font * .91 < minRegionFont - .01) continue;
-          chosen = labelCandidate(b, nation, wantUni, font, uiRects);
-          if (chosen) { includeUni = wantUni; break; }
-        }
-        if (chosen) break;
-      }
-      if (!chosen) continue;
-      S.labels.push(chosen.box); shown++;
-      if (includeUni) uniLabels++; else if (b.best.u) nameOnly++;
-      const group = E('g', {'data-label-id':b.f.id,'data-place-tier':includeUni?'2':'1'});
-      chosen.lines.forEach((l,i) => group.append(E('text',{
-        x:chosen.x,
-        y:chosen.y-chosen.height/2+chosen.font*1.08+i*chosen.font*1.27,
-        'text-anchor':'middle','font-size':l.fs.toFixed(2),'font-weight':l.w,
-        'font-family':'"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif',
-        fill:l.c,stroke:'#ffffff','stroke-width':Math.min(2,Math.max(1,l.fs*.11)).toFixed(2),
-        'stroke-linejoin':'round','paint-order':'stroke fill'
-      },l.t)));
-      g.append(group);
-    }
-    if (current().kind === 'district') drawCampusPins(g);
-    S.labelCount = shown;
-    window.__labelPlacementStats = {labels:shown,hidden:items.length-shown,nameOnly,uniLabels,leaders:0,displaced:0,minFont:shown?Math.min(...[...g.querySelectorAll('text')].map(t=>Number(t.getAttribute('font-size')))):null};
-  };
-
-  // The old outer-edge underlay filled the parent polygon dark and relied on child fills to cover it.
-  // Any topology gap therefore surfaced as a thick dark "框" inside a province. Local views now draw
-  // only the parent outline; the national view keeps the underlay trick because it is what removes
-  // internal province strokes from the country silhouette.
-  drawEdges = function(nation, scale, tx, ty) {
-    const g = $('edgeLayer'); g.innerHTML = ''; let rings;
-    if (nation) rings = S.base.filter(b => b.f.name).flatMap(b => b.rings);
-    else {
-      const par = current().f; if (!par) return;
-      rings = par.rings.map(r => r.map(p => { const q = project(p); return [q[0]*scale+tx,q[1]*scale+ty]; }));
-    }
-    if (!rings.length) return;
-    const d = rings.map(r => 'M'+r.map(p => p[0].toFixed(2)+','+p[1].toFixed(2)).join('L')+'Z').join('');
-    g.append(E('path',{d,fill:nation?MAP_STYLE.edge:'none',stroke:MAP_STYLE.edge,'stroke-width':4.6,
-      'stroke-linejoin':'round','fill-rule':'evenodd','vector-effect':'non-scaling-stroke','pointer-events':'none'}));
-  };
-
-  const originalBoot = boot;
-  boot = async function() {
-    const splash = $('bootSplash'), splashText = $('bootSplashText');
-    const started = performance.now();
-    if (splashText) splashText.textContent = '正在解压内嵌高校与行政区数据…';
-    await originalBoot();
-    const ok = !!D && Object.keys(CACHE || {}).length > 0;
-    const ms = Math.round(performance.now() - started);
-    window.__bootMetrics = {
-      ms,
-      ok,
-      schoolPayloadReleased: $('schoolData')?.dataset.released === 'true',
-      geoPayloadReleased: $('geoData')?.dataset.released === 'true'
-    };
-    // Labels are no longer displaced, so the old "自动避让" toggle has no effect and should not
-    // advertise a behavior the map deliberately removed.
-    const avoidControl = $('avoid');
-    if (avoidControl?.closest('label')) avoidControl.closest('label').hidden = true;
-    const ruleParagraph = [...document.querySelectorAll('#dataDialog p')]
-      .find(p => p.textContent.includes('地图标签会先根据校名长度自动缩字号'));
-    if (ruleParagraph) ruleParagraph.innerHTML = '<b>县区规则：</b>继续按具体校园物理位置展示；只有县区归属线索、没有校园门牌时，单独记为“县区归属依据”，不造坐标。地图标签固定在所属行政区内部并随地图缩放；空间不足时先省略高校名，再隐藏该标签，不再跨区拉引导线。';
-    if (ok) {
-      document.body.classList.add('app-ready');
-      document.body.dataset.bootMs = String(ms);
-      if (splash) splash.hidden = true;
-    } else if (splash) {
-      splash.classList.add('error');
-      if (splashText) splashText.textContent = '离线数据打开失败，请使用最新版 Chrome / Edge / Firefox / Safari。';
-    }
-  };
-
-  document.addEventListener('keydown', e => {
-    const target = e.target;
-    const typing = target && ['INPUT','TEXTAREA','SELECT'].includes(target.tagName);
-    if (e.key === '/' && !typing && !document.querySelector('dialog[open]')) {
-      e.preventDefault();
-      $('search')?.focus();
-      $('search')?.select();
-    }
-  });
+  const originalBoot=boot;boot=async function(){const splash=$('bootSplash'),txt=$('bootSplashText'),start=performance.now();if(txt)txt.textContent='正在解压内嵌高校与行政区数据…';await originalBoot();const ok=!!D&&Object.keys(CACHE||{}).length>0,ms=Math.round(performance.now()-start);window.__bootMetrics={ms,ok,schoolPayloadReleased:$('schoolData')?.dataset.released==='true',geoPayloadReleased:$('geoData')?.dataset.released==='true'};const avoid=$('avoid');if(avoid?.closest('label'))avoid.closest('label').hidden=true;premiumUi();setDrawer(false);scaleBar();const p=[...document.querySelectorAll('#dataDialog p')].find(x=>x.textContent.includes('地图标签'));if(p)p.innerHTML='<b>县区规则：</b>继续按具体校园物理位置展示；只有县区归属线索、没有校园门牌时单独记为县区依据。地图标签保持屏幕字号稳定且只放在所属行政区内部；空间不足时先省略高校名，再隐藏标签，不跨区拉引导线。';if(ok){document.body.classList.add('app-ready');document.body.dataset.bootMs=String(ms);if(splash)splash.hidden=true;}else if(splash){splash.classList.add('error');if(txt)txt.textContent='离线数据打开失败，请使用最新版现代浏览器。';}window.__premium={metrics:premiumMetrics,setDrawer,updateScale:scaleBar,settle:()=>drawLabels()};};
+  document.addEventListener('keydown',e=>{const t=e.target,typing=t&&['INPUT','TEXTAREA','SELECT'].includes(t.tagName);if(e.key==='/'&&!typing&&!document.querySelector('dialog[open]')){e.preventDefault();$('search')?.focus();$('search')?.select();}if(e.key==='Escape'&&drawerOpen)setDrawer(false);});
 })();

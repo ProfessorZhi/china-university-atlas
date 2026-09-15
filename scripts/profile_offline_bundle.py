@@ -14,8 +14,8 @@ def compact_json(value):
 
 def main():
     data=load_data();geometry=(ROOT/'data/boundaries.compact.json.gz').read_bytes()
-    app_parts=['app.js','winner-core.js','city-layer.js','status-layer.js','facts-layer.js','v57-ui.js']
-    css_parts=['styles.css','city-layer.css']
+    app_parts=['app.js','winner-core.js','city-layer.js','status-layer.js','facts-layer.js','v57-ui.js','v59-final.js']
+    css_parts=['styles.css','city-layer.css','v59-tuning.css']
     school=compact_json(data);school_gzip=gzip.compress(school.encode('utf-8'),compresslevel=9,mtime=0);school_embedded=base64.b64encode(school_gzip)
     profile={
       'version':(ROOT/'VERSION').read_text().strip(),
@@ -41,6 +41,6 @@ def main():
     OUT.write_text(json.dumps(profile,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(profile,ensure_ascii=False,indent=2))
     if profile.get('htmlBytes',0)>MAX_HTML_BYTES:
-        raise SystemExit(f"FAIL: standalone HTML {profile['htmlBytes']} bytes exceeds {MAX_HTML_BYTES}-byte V5.7 budget")
+        raise SystemExit(f"FAIL: standalone HTML {profile['htmlBytes']} bytes exceeds {MAX_HTML_BYTES}-byte budget")
 
 if __name__=='__main__': main()

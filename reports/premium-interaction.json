@@ -1,0 +1,71 @@
+{
+  "pass": true,
+  "checks": {
+    "zeroLeaderBefore": true,
+    "zeroLeaderDuring": true,
+    "zeroLeaderAfter": true,
+    "noLayoutDuringWheel": true,
+    "oneIdleLayout": true,
+    "wheelCoalesced": true,
+    "scalePresent": true,
+    "drawerDefaultClosed": true,
+    "drawerButton": true,
+    "fontStable": true,
+    "offline": true,
+    "runtimeClean": true
+  },
+  "before": {
+    "metrics": {
+      "version": "5.9.0",
+      "layoutCount": 1,
+      "fastTransformCount": 1,
+      "wheelEvents": 0,
+      "wheelFrames": 0,
+      "leadersRendered": 0,
+      "lastSettleMs": 125.1,
+      "lastReason": "transform"
+    },
+    "leaders": 0,
+    "font": 11.1,
+    "labelId": "650000",
+    "scale": "200 km",
+    "drawer": false,
+    "button": true
+  },
+  "during": {
+    "metrics": {
+      "version": "5.9.0",
+      "layoutCount": 1,
+      "fastTransformCount": 2,
+      "wheelEvents": 48,
+      "wheelFrames": 1,
+      "leadersRendered": 0,
+      "lastSettleMs": 125.1,
+      "lastReason": "transform"
+    },
+    "leaders": 0,
+    "zooming": true
+  },
+  "after": {
+    "metrics": {
+      "version": "5.9.0",
+      "layoutCount": 2,
+      "fastTransformCount": 2,
+      "wheelEvents": 48,
+      "wheelFrames": 1,
+      "leadersRendered": 0,
+      "lastSettleMs": 54.8,
+      "lastReason": "transform"
+    },
+    "leaders": 0,
+    "font": 11.1,
+    "scale": "200 km",
+    "zooming": false
+  },
+  "layoutDuring": 0,
+  "layoutAfter": 1,
+  "fontRatio": 1,
+  "httpRequests": [],
+  "runtimeErrors": [],
+  "artifact": "dist/china-university-atlas.html"
+}

@@ -12,176 +12,89 @@ def jsonl(path):
     return [json.loads(line) for line in path.read_text(encoding='utf-8').splitlines() if line.strip()]
 
 def pinned_district_ids(campus_overrides,campuses):
-    """Ids whose override names ``d`` at all, with an empty value.
-
-    The override layer says "this record has no district" by writing ``d:""``
-    -- that is a decision, not a gap.  Both inference passes below read a falsy
-    ``d`` as "unknown", so without this set an explicit rollback is silently
-    refilled from a donor at the same address and the record reappears in the
-    built dataset as resolved.  Only the override layer may pin; a record that
-    simply lacks the key stays eligible for inference.
-    """
     known={r['id'] for r in campuses}
-    return {i for i,o in campus_overrides.items()
-            if i in known and isinstance(o,dict) and 'd' in o and not o['d']}
+    return {i for i,o in campus_overrides.items() if i in known and isinstance(o,dict) and 'd' in o and not o['d']}
 
 def infer_exact_address_districts(campuses,regions,pinned=frozenset()):
-    """Derive d only when the existing address uniquely contains a same-city legal d name.
-
-    This intentionally does not translate development zones, new areas, subdistricts or POI names
-    into counties/districts. It only uses an exact legal boundary name already present verbatim in
-    the source address, so the transformation is deterministic and auditable.
-    """
     by_city={}
     for node in regions.values():
         d=node.get('d','')
-        if d:
-            by_city.setdefault((node.get('p',''),node.get('c','')),set()).add(d)
+        if d: by_city.setdefault((node.get('p',''),node.get('c','')),set()).add(d)
     inferred=0
     for record in campuses:
-        if record.get('d') or record.get('id') in pinned:
-            continue
+        if record.get('d') or record.get('id') in pinned: continue
         address=str(record.get('address') or '')
-        if not address:
-            continue
+        if not address: continue
         hits=[d for d in by_city.get((record.get('p',''),record.get('c','')),()) if d in address]
-        if not hits:
-            continue
+        if not hits: continue
         maximal=[d for d in hits if not any(d!=other and d in other for other in hits)]
-        if len(maximal)!=1:
-            continue
-        d=maximal[0]
-        record['d']=d
-        record['districtInferenceMethod']='exact-legal-name-in-address'
-        record['districtInferenceEvidence']=address
-        record['districtSourceKind']='address-exact'
-        record['districtSourceUrl']=record.get('sourceUrl')
-        record['districtVerified']=bool(record.get('verified'))
-        inferred+=1
+        if len(maximal)!=1: continue
+        d=maximal[0];record['d']=d;record['districtInferenceMethod']='exact-legal-name-in-address';record['districtInferenceEvidence']=address;record['districtSourceKind']='address-exact';record['districtSourceUrl']=record.get('sourceUrl');record['districtVerified']=bool(record.get('verified'));inferred+=1
     return inferred
 
 def normalized_address(value,province='',city=''):
-    """Conservative same-city key: strip this row's province/city labels plus punctuation only."""
     text=str(value or '').strip()
-    if not text:
-        return ''
+    if not text:return ''
     for label in (str(province or '').strip(),str(city or '').strip()):
-        if label:
-            text=text.replace(label,'')
+        if label:text=text.replace(label,'')
     return re.sub(r'[\s,，。；;()（）\-—_/]+','',text)
 
 def inherit_exact_address_districts(campuses,pinned=frozenset()):
-    """Fill d from another record only for an exact same-city normalized address with one d.
-
-    Donors are snapshotted before inheritance, preventing inference chains. If the same address is
-    associated with more than one legal district, the address is deliberately left unresolved.
-    Records pinned by an explicit empty ``d`` in an override are never filled; they cannot act as
-    donors either, since the pin leaves them with no ``d`` to donate.
-    """
-    donors={}
-    donor_ids={}
+    donors={};donor_ids={}
     for record in campuses:
-        d=record.get('d')
-        key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
-        if not d or not key[2]:
-            continue
-        donors.setdefault(key,set()).add(d)
-        donor_ids.setdefault((key,d),[]).append(record.get('id'))
+        d=record.get('d');key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
+        if not d or not key[2]:continue
+        donors.setdefault(key,set()).add(d);donor_ids.setdefault((key,d),[]).append(record.get('id'))
     inherited=0
     for record in campuses:
-        if record.get('d') or record.get('id') in pinned:
-            continue
+        if record.get('d') or record.get('id') in pinned:continue
         key=(record.get('p',''),record.get('c',''),normalized_address(record.get('address'),record.get('p'),record.get('c')))
-        if not key[2]:
-            continue
+        if not key[2]:continue
         districts=donors.get(key,set())
-        if len(districts)!=1:
-            continue
-        d=next(iter(districts))
-        record['d']=d
-        record['districtInferenceMethod']='exact-same-city-address-inheritance'
-        record['districtInferenceEvidence']=record.get('address')
-        record['districtSourceKind']='address-inherited'
-        record['districtSourceUrl']=record.get('sourceUrl')
-        record['districtVerified']=False
-        record['districtInheritedFrom']=sorted(x for x in donor_ids.get((key,d),[]) if x)
-        inherited+=1
+        if len(districts)!=1:continue
+        d=next(iter(districts));record['d']=d;record['districtInferenceMethod']='exact-same-city-address-inheritance';record['districtInferenceEvidence']=record.get('address');record['districtSourceKind']='address-inherited';record['districtSourceUrl']=record.get('sourceUrl');record['districtVerified']=False;record['districtInheritedFrom']=sorted(x for x in donor_ids.get((key,d),[]) if x);inherited+=1
     return inherited
 
 def load_data():
-    data=json.loads((ROOT/'data/metadata.json').read_text(encoding='utf-8'))
-    regions=json.loads((ROOT/'data/regions.json').read_text(encoding='utf-8'))
-    sources=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'))
-    universities=jsonl(ROOT/'data/universities.jsonl')
-    status_path=ROOT/'data/entity-status-overrides.json'
-    status=json.loads(status_path.read_text(encoding='utf-8')) if status_path.exists() else {}
-    host_path=ROOT/'data/entity-location-overrides.json'
-    host=json.loads(host_path.read_text(encoding='utf-8')) if host_path.exists() else {}
+    data=json.loads((ROOT/'data/metadata.json').read_text(encoding='utf-8'));regions=json.loads((ROOT/'data/regions.json').read_text(encoding='utf-8'));sources=json.loads((ROOT/'data/sources.json').read_text(encoding='utf-8'));universities=jsonl(ROOT/'data/universities.jsonl')
+    status_path=ROOT/'data/entity-status-overrides.json';status=json.loads(status_path.read_text(encoding='utf-8')) if status_path.exists() else {};host_path=ROOT/'data/entity-location-overrides.json';host=json.loads(host_path.read_text(encoding='utf-8')) if host_path.exists() else {}
     for u in universities:
         h=host.get(u['id'])
-        if h:
-            u['originalHost']={'p':u.get('p',''),'c':u.get('c',''),'d':u.get('d','')}
-            u['p']=h.get('p',u.get('p',''));u['c']=h.get('c',u.get('c',''));u['d']=h.get('d',u.get('d',''))
-            u['hostBoundaryStatus']=h.get('boundaryStatus');u['hostOverrideSourceUrl']=h.get('sourceUrl');u['hostOverrideEvidence']=h.get('evidence');u['hostOverrideNote']=h.get('note')
+        if h:u['originalHost']={'p':u.get('p',''),'c':u.get('c',''),'d':u.get('d','')};u['p']=h.get('p',u.get('p',''));u['c']=h.get('c',u.get('c',''));u['d']=h.get('d',u.get('d',''));u['hostBoundaryStatus']=h.get('boundaryStatus');u['hostOverrideSourceUrl']=h.get('sourceUrl');u['hostOverrideEvidence']=h.get('evidence');u['hostOverrideNote']=h.get('note')
         s=status.get(u['id'])
-        if s:
-            u.update(entityStatus=s.get('status'),rankingEligible=s.get('rankingEligible',True),statusEffectiveFrom=s.get('effectiveFrom'),statusLabel=s.get('label'),statusSourceUrl=s.get('sourceUrl'),statusEvidence=s.get('evidence'))
-        else:
-            u.setdefault('rankingEligible',True)
+        if s:u.update(entityStatus=s.get('status'),rankingEligible=s.get('rankingEligible',True),statusEffectiveFrom=s.get('effectiveFrom'),statusLabel=s.get('label'),statusSourceUrl=s.get('sourceUrl'),statusEvidence=s.get('evidence'))
+        else:u.setdefault('rankingEligible',True)
     additions=[]
-    for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):
-        additions.extend(jsonl(path))
-    campuses=jsonl(ROOT/'data/campuses.jsonl')+additions
-    campus_overrides={}
-    campus_override_paths=[ROOT/'data/campus-overrides.json']+sorted((ROOT/'data').glob('campus-overrides-*.json'))
+    for path in sorted((ROOT/'data').glob('campus-additions*.jsonl')):additions.extend(jsonl(path))
+    campuses=jsonl(ROOT/'data/campuses.jsonl')+additions;campus_overrides={};campus_override_paths=[ROOT/'data/campus-overrides.json']+sorted((ROOT/'data').glob('campus-overrides-*.json'))
     for path in campus_override_paths:
-        if path.exists():
-            campus_overrides.update(json.loads(path.read_text(encoding='utf-8')))
+        if path.exists():campus_overrides.update(json.loads(path.read_text(encoding='utf-8')))
     for record in campuses:
         override=campus_overrides.get(record['id'])
-        if override:
-            record.update(override)
-    pinned=pinned_district_ids(campus_overrides,campuses)
-    address_inferred=infer_exact_address_districts(campuses,regions,pinned)
-    exact_address_inherited=inherit_exact_address_districts(campuses,pinned)
+        if override:record.update(override)
+    pinned=pinned_district_ids(campus_overrides,campuses);address_inferred=infer_exact_address_districts(campuses,regions,pinned);exact_address_inherited=inherit_exact_address_districts(campuses,pinned)
     association_additions=[]
-    for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):
-        association_additions.extend(jsonl(path))
-    associations=jsonl(ROOT/'data/district-associations.jsonl')+association_additions
-    ao_path=ROOT/'data/district-association-overrides.json'
-    ao=json.loads(ao_path.read_text(encoding='utf-8')) if ao_path.exists() else {}
+    for path in sorted((ROOT/'data').glob('district-association-additions*.jsonl')):association_additions.extend(jsonl(path))
+    associations=jsonl(ROOT/'data/district-associations.jsonl')+association_additions;ao_path=ROOT/'data/district-association-overrides.json';ao=json.loads(ao_path.read_text(encoding='utf-8')) if ao_path.exists() else {}
     for record in associations:
         override=ao.get(record['id'])
-        if override:
-            record.update(override)
-    data['universities']=universities
-    data['campuses']=campuses
-    data['campusOverrides']=campus_overrides
-    data['districtAssociations']=associations
-    data['districtAssociationOverrides']=ao
-    data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'))
-    data['entityLocationOverrides']=host
-    data['regions']=regions
-    data['sources']=sources
-    data=refresh_derived_v53(data,(ROOT/'VERSION').read_text().strip())
-    data['stats']['addressInferredCampusDistricts']=address_inferred
-    data['stats']['exactAddressInheritedCampusDistricts']=exact_address_inherited
+        if override:record.update(override)
+    data['universities']=universities;data['campuses']=campuses;data['campusOverrides']=campus_overrides;data['districtAssociations']=associations;data['districtAssociationOverrides']=ao;data['cityAffiliates']=json.loads((ROOT/'data/city-affiliates.json').read_text(encoding='utf-8'));data['entityLocationOverrides']=host;data['regions']=regions;data['sources']=sources
+    data=refresh_derived_v53(data,(ROOT/'VERSION').read_text().strip());data['stats']['addressInferredCampusDistricts']=address_inferred;data['stats']['exactAddressInheritedCampusDistricts']=exact_address_inherited
     return attach_facts(data,ROOT)
 
 def deterministic_gzip(payload):
     raw=bytearray(gzip.compress(payload,compresslevel=9,mtime=0))
-    # Python 3.11/3.12 may expose zlib's platform OS byte when mtime=0.
-    # RFC 1952 permits 255 (unknown); normalizing it makes Windows/Linux builds byte-identical.
-    if len(raw)>9: raw[9]=255
+    if len(raw)>9:raw[9]=255
     return bytes(raw)
 
 def build():
     data=load_data();version=(ROOT/'VERSION').read_text().strip();json_text=lambda value:json.dumps(value,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c');geometry=(ROOT/'data/boundaries.compact.json.gz').read_bytes();maps=json.loads(gzip.decompress(geometry));manifest={'complete':True,'maps':len(maps),'version':version,'preparedAt':'2026-09-09','source':'See data/sources.json','schoolDataComplete':'学校主体已嵌入；无地点、县区证据、精确校区和已停招/并转状态分层统计；排名、录取与财务采用版本化事实层；市级只按本地主体高校竞争；新设行政单元在边界升级前明确标记。'}
-    app=(ROOT/'src/app.js').read_text(encoding='utf-8');winner_core=(ROOT/'src/winner-core.js').read_text(encoding='utf-8');city=(ROOT/'src/city-layer.js').read_text(encoding='utf-8');status_layer=(ROOT/'src/status-layer.js').read_text(encoding='utf-8');facts_layer=(ROOT/'src/facts-layer.js').read_text(encoding='utf-8');v57_ui=(ROOT/'src/v57-ui.js').read_text(encoding='utf-8');marker='\nboot();'
+    app=(ROOT/'src/app.js').read_text(encoding='utf-8');winner_core=(ROOT/'src/winner-core.js').read_text(encoding='utf-8');city=(ROOT/'src/city-layer.js').read_text(encoding='utf-8');status_layer=(ROOT/'src/status-layer.js').read_text(encoding='utf-8');facts_layer=(ROOT/'src/facts-layer.js').read_text(encoding='utf-8');v57_ui=(ROOT/'src/v57-ui.js').read_text(encoding='utf-8');v59_final=(ROOT/'src/v59-final.js').read_text(encoding='utf-8');marker='\nboot();'
     if app.count(marker)!=1:raise ValueError('Expected one boot marker in src/app.js')
-    # winner-core must land before city-layer: the page's best() delegates to WinnerCore.decideWinner
-    # so the map and reports/best-university-coverage.csv can never pick different winners.
-    app=app.replace(marker,'\n'+winner_core+'\n'+city+'\n'+status_layer+'\n'+facts_layer+'\n'+v57_ui+marker);styles=(ROOT/'src/styles.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/city-layer.css').read_text(encoding='utf-8');values={'__STYLES__':styles,'__APP__':app,'__SCHOOL_DATA__':base64.b64encode(deterministic_gzip(json_text(data).encode('utf-8'))).decode(),'__GEO_DATA__':base64.b64encode(geometry).decode(),'__MANIFEST__':json_text(manifest)};html=(ROOT/'src/index.template.html').read_text(encoding='utf-8')
+    app=app.replace(marker,'\n'+winner_core+'\n'+city+'\n'+status_layer+'\n'+facts_layer+'\n'+v57_ui+'\n'+v59_final+marker)
+    styles=(ROOT/'src/styles.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/city-layer.css').read_text(encoding='utf-8')+'\n'+(ROOT/'src/v59-tuning.css').read_text(encoding='utf-8')
+    values={'__STYLES__':styles,'__APP__':app,'__SCHOOL_DATA__':base64.b64encode(deterministic_gzip(json_text(data).encode('utf-8'))).decode(),'__GEO_DATA__':base64.b64encode(geometry).decode(),'__MANIFEST__':json_text(manifest)};html=(ROOT/'src/index.template.html').read_text(encoding='utf-8')
     for marker,value in values.items():
         if html.count(marker)!=1:raise ValueError('Expected exactly one template marker: '+marker)
         html=html.replace(marker,value)

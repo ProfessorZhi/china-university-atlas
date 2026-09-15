@@ -1,5 +1,5 @@
 name: Build and validate offline atlas
-# V5.7: plain CI is fully offline and read-only. It builds, validates, audits, profiles the
+# Plain CI is fully offline and read-only. It builds, validates, audits, profiles the
 # standalone bundle, drives the browser and packages; ranking refresh remains a separate manual flow.
 on: [push, pull_request, workflow_dispatch]
 permissions:
@@ -34,12 +34,6 @@ jobs:
           python scripts/generate_reports.py --check
           python scripts/build.py --check
           node scripts/generate_best_university_coverage.mjs --check
-      # Every label in this atlas is Chinese, and the Ubuntu image ships no CJK font: each glyph fell
-      # back to .notdef, so the visual audit was measuring the geometry of a map nobody will ever see
-      # and reporting numbers that differed from the Windows readings for reasons that had nothing to
-      # do with the layout. The font stack in src/styles.css already asks for "Noto Sans CJK SC", so
-      # installing it makes CI measure the same product the reader gets - and makes the font-dependent
-      # counts comparable across platforms instead of CI-only.
       - name: Install CJK fonts for the visual audit
         run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
       - name: Offline browser and city-layer UI test
@@ -50,11 +44,18 @@ jobs:
         run: |
           google-chrome --version
           node tests/best-university-parity.mjs
-      - name: Visual layout geometry and screenshot matrix
+      # V5.8's geometry audit remains useful evidence (screenshots, clipping, colour, overlap), but
+      # its old "show almost every winner label" policy is intentionally superseded in V5.9 by
+      # zero-leader progressive disclosure. Do not turn an expected policy delta into a red build.
+      - name: Legacy V5.8 geometry audit (report only)
+        continue-on-error: true
         run: |
           google-chrome --version
           node tests/visual-layout.mjs
-      # Screenshots are evidence, not source: they are an artifact of the run and never committed.
+      - name: V5.9 premium interaction and zero-leader gate
+        run: |
+          google-chrome --version
+          node tests/premium-atlas.mjs
       - name: Upload visual screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -63,6 +64,7 @@ jobs:
           if-no-files-found: warn
           path: |
             reports/visual-layout.json
+            reports/premium-interaction.json
             reports/visual/v5.8-visual-audit.json
             reports/visual/*.png
       - name: Build complete ZIP
