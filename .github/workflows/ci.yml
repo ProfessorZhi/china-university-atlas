@@ -54,6 +54,7 @@ jobs:
           google-chrome --version
           node tests/premium-atlas.mjs
           node tests/premium-atlas-sustained.mjs
+          node tests/premium-atlas-raster.mjs
       - name: Upload visual screenshots
         if: always()
         uses: actions/upload-artifact@v4
@@ -64,6 +65,7 @@ jobs:
             reports/visual-layout.json
             reports/premium-interaction.json
             reports/premium-sustained.json
+            reports/premium-raster.json
             reports/visual/v5.8-visual-audit.json
             reports/visual/*.png
       - name: Build complete ZIP
