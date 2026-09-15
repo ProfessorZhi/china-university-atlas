@@ -1,0 +1,89 @@
+name: V5.9.1 policy writeback
+on:
+  push:
+    branches: [v591-city-clarity-perf]
+permissions:
+  contents: write
+jobs:
+  writeback:
+    if: ${{ !contains(github.event.head_commit.message, '[v591-writeback]') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: v591-city-clarity-perf
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Apply winner policy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('src/winner-core.js')
+          s=p.read_text(encoding='utf-8')
+          old="const RULES = { crossGroupBlocks: true };"
+          assert old in s
+          s=s.replace(old,"const RULES = { crossGroupBlocks: false };",1)
+          old="case 'cross_group_scale_policy': return `${wn} 取自主榜序列；其余候选分属不同榜单体系，名次不可直接比较，按当前项目政策以主榜序列为先`;\n      case 'reference_fallback':"
+          assert old in s
+          new="case 'cross_group_scale_policy': return `${wn} 取自主榜序列；其余候选分属不同榜单体系，名次不可直接比较，按当前项目政策以主榜序列为先`;\n      case 'deterministic_fallback_policy': return `${wn} 由项目稳定兜底规则选出：在层次、重点标签、公办/民办与可比榜单仍无法唯一分开时，按榜单体系优先级、区间下界与稳定名称顺序决定展示 winner；该结论不是发布方跨榜排名`;\n      case 'reference_fallback':"
+          s=s.replace(old,new,1)
+          old="if (inner === 'single_ranked_candidate') return `${base}；公办候选里也只有 ${wn} 被官方榜单覆盖`;\n        return base;"
+          assert old in s
+          new="if (inner === 'single_ranked_candidate') return `${base}；公办候选里也只有 ${wn} 被官方榜单覆盖`;\n        if (inner === 'cross_group_scale_policy') return `${base}；公办候选跨榜时按项目榜单体系优先级选择主榜序列`;\n        if (inner === 'deterministic_fallback_policy') return `${base}；公办候选仍无法由可比榜单唯一分开，使用项目稳定兜底顺序`;\n        return base;"
+          s=s.replace(old,new,1)
+          old="function primaryGroupChampion(decided) {\n    const rank = g => { const i = GROUP_PRECEDENCE.indexOf(g); return i < 0 ? GROUP_PRECEDENCE.length : i; };\n    return decided.slice().sort((a, b) => rank(a.group) - rank(b.group) || COLLATOR.compare(a.group, b.group))[0];\n  }"
+          assert old in s
+          new="function groupPrecedenceIndex(g) { const i = GROUP_PRECEDENCE.indexOf(g); return i < 0 ? GROUP_PRECEDENCE.length : i; }\n  function primaryGroupChampion(decided) {\n    return decided.slice().sort((a, b) => groupPrecedenceIndex(a.group) - groupPrecedenceIndex(b.group) || COLLATOR.compare(a.group, b.group))[0];\n  }\n  function policyFallbackCandidate(items) {\n    return items.slice().sort((a,b)=>{\n      const ag=groupPrecedenceIndex(a.rank.group),bg=groupPrecedenceIndex(b.rank.group);if(ag!==bg)return ag-bg;\n      const at=displayTier(a.rank),bt=displayTier(b.rank);if(at!==bt)return at-bt;\n      const av=a.rank.kind==='numeric'?a.rank.value:(a.rank.kind==='band'?(a.rank.floor??Infinity):Infinity);\n      const bv=b.rank.kind==='numeric'?b.rank.value:(b.rank.kind==='band'?(b.rank.floor??Infinity):Infinity);if(av!==bv)return av-bv;\n      if(!!a.u.private!==!!b.u.private)return a.u.private?1:-1;\n      return COLLATOR.compare(String(a.u.u||''),String(b.u.u||''));\n    })[0]||null;\n  }"
+          s=s.replace(old,new,1)
+          old="return { winner: null, top: champs.flatMap(c => c.top), basis: '', strength: '', reason: undecided[0] ? undecided[0].reason : UNRESOLVED.NO_RANKING, unranked };"
+          assert old in s
+          new="const fallbackPool = (policy && policy.top && policy.top.length) ? policy.top : (champs.length ? champs.flatMap(c=>c.top) : items);\n    const fallback = policyFallbackCandidate(fallbackPool);\n    return { winner: fallback, top: fallback ? [fallback] : [], basis: ctx.basis || 'deterministic_fallback_policy', strength: ctx.strength || 'policy', reason: '', unranked, crossGroup: new Set(fallbackPool.map(x=>x.rank.group).filter(Boolean)).size>1, fallback: true };"
+          s=s.replace(old,new,1)
+          s=s.replace('When those rules cannot separate the leading candidates the unit is left\n * ``unresolved_incomparable`` and no winner is invented: Chinese-name order is\n * allowed to order a candidate list, never to choose a best university.',
+                      'When official evidence cannot separate the leading candidates, the atlas now applies an\n * explicit project fallback so every non-empty administrative unit still has one display winner.\n * Cross-system and final stable fallbacks are always labelled policy, never strong ranking evidence.')
+          p.write_text(s,encoding='utf-8')
+          Path('VERSION').write_text('5.9.1',encoding='utf-8')
+          PY
+      - name: Regenerate and verify
+        run: |
+          python scripts/generate_reports.py
+          python scripts/build.py
+          python scripts/profile_offline_bundle.py
+          node scripts/generate_best_university_coverage.mjs
+          python tests/test_build.py
+          python scripts/validate.py
+          python scripts/validate_facts.py
+          python scripts/generate_reports.py --check
+          python scripts/build.py --check
+          node scripts/generate_best_university_coverage.mjs --check
+          node tests/browser.mjs
+          node tests/best-university-parity.mjs
+          node tests/premium-atlas.mjs
+      - name: Assert required city winners
+        run: |
+          python - <<'PY'
+          import csv
+          rows=list(csv.DictReader(open('reports/best-university-coverage.csv',encoding='utf-8-sig')))
+          def row(city):
+              return next(r for r in rows if r['scope_level']=='city' and r['province']=='山东省' and r['city']==city)
+          z=row('淄博市'); w=row('潍坊市')
+          assert z['candidate_count']=='8' and z['winner']=='山东理工大学', z
+          assert w['candidate_count']=='16' and w['winner']=='山东第二医科大学', w
+          nonempty=[r for r in rows if int(r['candidate_count'] or 0)>0]
+          unresolved=[r for r in nonempty if not r['winner_uid']]
+          assert not unresolved, [(r['scope_level'],r['province'],r['city'],r['district']) for r in unresolved[:20]]
+          print('candidate units',len(nonempty),'all have winners; 淄博=',z['winner'],'潍坊=',w['winner'])
+          PY
+      - name: Commit deterministic products
+        run: |
+          git add src/winner-core.js VERSION dist/china-university-atlas.html dist/SHA256SUMS.txt
+          git add reports/revision.json reports/offline-bundle-profile.json reports/best-university-coverage.csv reports/best-university-coverage.json reports/premium-interaction.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m '[v591-writeback] require one winner for every non-empty unit'
+          git push origin HEAD:v591-city-clarity-perf
